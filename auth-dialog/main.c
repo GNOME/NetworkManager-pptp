@@ -25,9 +25,9 @@
 #endif
 
 #include <string.h>
+#include <stdlib.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#include <libgnomeui/libgnomeui.h>
 
 #include <nm-setting-vpn.h>
 
@@ -128,9 +128,8 @@ main (int argc, char *argv[])
 	gchar *vpn_service = NULL;
 	char *password = NULL;
 	char buf[1];
-	int ret, exit_status = 1;
+	int ret;
 	GOptionContext *context;
-	GnomeProgram *program;
 	GOptionEntry entries[] = {
 			{ "reprompt", 'r', 0, G_OPTION_ARG_NONE, &retry, "Reprompt for passwords", NULL},
 			{ "uuid", 'u', 0, G_OPTION_ARG_STRING, &vpn_uuid, "UUID of VPN connection", NULL},
@@ -143,27 +142,26 @@ main (int argc, char *argv[])
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
+	gtk_init (&argc, &argv);
+
 	context = g_option_context_new ("- pptp auth dialog");
 	g_option_context_add_main_entries (context, entries, GETTEXT_PACKAGE);
+	g_option_context_parse (context, &argc, &argv, NULL);
+	g_option_context_free (context);
 
-	program = gnome_program_init ("nm-pptp-auth-dialog", VERSION,
-				      LIBGNOMEUI_MODULE,
-				      argc, argv,
-				      GNOME_PARAM_GOPTION_CONTEXT, context,
-				      GNOME_PARAM_NONE);
 
 	if (vpn_uuid == NULL || vpn_name == NULL || vpn_service == NULL) {
 		fprintf (stderr, "Have to supply UUID, name, and service\n");
-		goto out;
+		return EXIT_FAILURE;
 	}
 
 	if (strcmp (vpn_service, NM_DBUS_SERVICE_PPTP) != 0) {
 		fprintf (stderr, "This dialog only works with the '%s' service\n", NM_DBUS_SERVICE_PPTP);
-		goto out;		
+		return EXIT_FAILURE;
 	}
 
 	if (!get_secrets (vpn_uuid, vpn_name, vpn_service, retry, &password))
-		goto out;
+		return EXIT_FAILURE;
 
 	/* dump the passwords to stdout */
 	printf ("%s\n%s\n", NM_PPTP_KEY_PASSWORD, password);
@@ -173,7 +171,6 @@ main (int argc, char *argv[])
 		memset (password, 0, strlen (password));
 		gnome_keyring_memory_free (password);
 	}
-	exit_status = 0;
 
 	/* for good measure, flush stdout since Kansas is going Bye-Bye */
 	fflush (stdout);
@@ -181,7 +178,5 @@ main (int argc, char *argv[])
 	/* wait for data on stdin  */
 	ret = fread (buf, sizeof (char), sizeof (buf), stdin);
 
-out:
-	g_object_unref (program);
-	return exit_status;
+	return EXIT_SUCCESS;
 }

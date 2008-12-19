@@ -6,7 +6,7 @@ nm_pptp_auth_dialog_CPPFLAGS =			\
 	$(NM_UTILS_CFLAGS)			\
 	$(GTHREAD_CFLAGS)			\
 	$(GTK_CFLAGS)				\
-	$(LIBGNOMEUI_CFLAGS)			\
+	$(GCONF_CFLAGS)				\
 	$(GNOMEKEYRING_CFLAGS)			\
 	-DICONDIR=\""$(datadir)/pixmaps"\"	\
 	-DGLADEDIR=\""$(gladedir)"\"		\
@@ -27,7 +27,7 @@ nm_pptp_auth_dialog_SOURCES =			\
 
 nm_pptp_auth_dialog_LDADD =			\
 	$(GTK_LIBS)				\
-	$(LIBGNOMEUI_LIBS)			\
+	$(GCONF_LIBS)				\
 	$(top_builddir)/common-gnome/libnm-pptp-common-gnome.la  \
 	$(NULL)
 
