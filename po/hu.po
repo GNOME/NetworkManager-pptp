@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-12 11:38+0000\n"
-"PO-Revision-Date: 2008-09-25 22:41+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=NetworkManager&amp;component=VPN: pptp\n"
+"POT-Creation-Date: 2008-12-15 17:02+0000\n"
+"PO-Revision-Date: 2008-12-16 21:05+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@fsf.hu>\n"
 "MIME-Version: 1.0\n"
@@ -49,12 +49,12 @@ msgstr "Jelszó meg_jegyzése erre a munkamenetre"
 msgid "_Save passwords in keyring"
 msgstr "Jelszavak mentése a k_ulcstartóra"
 
-#: ../auth-dialog/main.c:168
+#: ../auth-dialog/main.c:62
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr "Azonosítania kell magát a(z) „%s” virtuális magánhálózat eléréséhez."
 
-#: ../auth-dialog/main.c:169
+#: ../auth-dialog/main.c:63
 msgid "Authenticate VPN"
 msgstr "VPN hitelesítés"
 
@@ -66,33 +66,37 @@ msgstr "PPTP VPN kapcsolatok hozzáadása, szerkesztése és eltávolítása"
 msgid "PPTP VPN Connection Manager"
 msgstr "PPTP VPN kapcsolatkezelő"
 
-#: ../properties/advanced-dialog.c:147
+#: ../properties/advanced-dialog.c:145
 msgid "All Available (Default)"
 msgstr "Mind elérhető (alapértelmezett)"
 
-#: ../properties/advanced-dialog.c:151
+#: ../properties/advanced-dialog.c:149
 msgid "128-bit (most secure)"
 msgstr "128 bites (legbiztonságosabb)"
 
-#: ../properties/advanced-dialog.c:160
+#: ../properties/advanced-dialog.c:158
 msgid "40-bit (less secure)"
 msgstr "40 bites (kevésbé biztonságos)"
 
-#: ../properties/advanced-dialog.c:231
+#: ../properties/advanced-dialog.c:229
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:237
+#: ../properties/advanced-dialog.c:235
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:243
+#: ../properties/advanced-dialog.c:241
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:249
+#: ../properties/advanced-dialog.c:247
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
+
+#: ../properties/advanced-dialog.c:253
+msgid "EAP"
+msgstr "EAP"
 
 #: ../properties/nm-pptp-dialog.glade.h:1
 msgid "<b>Authentication</b>"
@@ -139,38 +143,46 @@ msgid "Default"
 msgstr "Alapértelmezett"
 
 #: ../properties/nm-pptp-dialog.glade.h:12
-msgid "Domain:"
-msgstr "Tartomány:"
+msgid "NT Domain:"
+msgstr "NT tartomány:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
+msgid "Password:"
+msgstr "Jelszó:"
+
+#: ../properties/nm-pptp-dialog.glade.h:14
 msgid "Send PPP _echo packets"
 msgstr "PPP _visszhangcsomagok küldése"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:15
+msgid "Show password"
+msgstr "Jelszó megjelenítése"
+
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Use TCP _header compression"
 msgstr "TPC _fejléctömörítés használata"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "_Ponttól pontig (MPPE) titkosítás használata"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "User name:"
 msgstr "Felhasználónév:"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "_Gateway:"
 msgstr "Á_tjáró:"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "_Security:"
 msgstr "Bi_ztonság:"
 
-#: ../properties/nm-pptp.c:49
+#: ../properties/nm-pptp.c:50
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Ponttól pontig alagutazási protokoll (PPTP)"
 
-#: ../properties/nm-pptp.c:50
+#: ../properties/nm-pptp.c:51
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Kompatibilis a Microsoft és más PPTP VPN kiszolgálókkal."
 
