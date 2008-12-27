@@ -8,9 +8,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp.HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-12 15:03+0000\n"
-"PO-Revision-Date: 2008-10-16 21:06+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=NetworkManager&amp;component=VPN: pptp\n"
+"POT-Creation-Date: 2008-12-15 17:02+0000\n"
+"PO-Revision-Date: 2008-12-27 15:14+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -68,33 +69,37 @@ msgstr "Añadir, eliminar y editar conexiones VPN PPTP"
 msgid "PPTP VPN Connection Manager"
 msgstr "Gestor de conexiones VPN PPTP"
 
-#: ../properties/advanced-dialog.c:147
+#: ../properties/advanced-dialog.c:145
 msgid "All Available (Default)"
 msgstr "Todas las disponibles (predeterminado)"
 
-#: ../properties/advanced-dialog.c:151
+#: ../properties/advanced-dialog.c:149
 msgid "128-bit (most secure)"
 msgstr "128-bit (más seguro)"
 
-#: ../properties/advanced-dialog.c:160
+#: ../properties/advanced-dialog.c:158
 msgid "40-bit (less secure)"
 msgstr "40-bit (menos seguro)"
 
-#: ../properties/advanced-dialog.c:231
+#: ../properties/advanced-dialog.c:229
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:237
+#: ../properties/advanced-dialog.c:235
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:243
+#: ../properties/advanced-dialog.c:241
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:249
+#: ../properties/advanced-dialog.c:247
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
+
+#: ../properties/advanced-dialog.c:253
+msgid "EAP"
+msgstr "EAP"
 
 #: ../properties/nm-pptp-dialog.glade.h:1
 msgid "<b>Authentication</b>"
