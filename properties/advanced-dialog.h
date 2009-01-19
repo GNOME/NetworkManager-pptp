@@ -24,7 +24,6 @@
 
 #include <glib.h>
 #include <gtk/gtk.h>
-#include <gtk/gtkwidget.h>
 
 #include <nm-connection.h>
 

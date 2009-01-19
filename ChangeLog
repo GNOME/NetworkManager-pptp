@@ -1,3 +1,12 @@
+2008-12-13  Przemysław Grzegorczyk  <pgrzegorczyk@gmail.com>
+
+	* src/nm-pptp-pppd-plugin.c:
+	* src/nm-pptp-service.h:
+	* properties/advanced-dialog.h:
+	* auth-dialog/gnome-two-password-dialog.c:
+	* auth-dialog/gnome-two-password-dialog.h: Cleared up gtk and glib includes
+	to use only toplevel headers. Bug #564376.
+
 2008-12-11  Dan Williams  <dcbw@redhat.com>
 
 	* Split into separate repository
