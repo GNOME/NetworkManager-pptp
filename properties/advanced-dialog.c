@@ -385,9 +385,10 @@ advanced_dialog_new_hash_from_dialog (GtkWidget *dialog, GError **error)
 			g_hash_table_insert (hash, g_strdup (NM_PPTP_KEY_REQUIRE_MPPE_40), g_strdup ("yes"));
 			break;
 		default:
-			g_hash_table_insert (hash, g_strdup (NM_PPTP_KEY_REQUIRE_MPPE), g_strdup ("yes"));
 			break;
 		}
+
+		g_hash_table_insert (hash, g_strdup (NM_PPTP_KEY_REQUIRE_MPPE), g_strdup ("yes"));
 
 		widget = glade_xml_get_widget (xml, "ppp_allow_stateful_mppe");
 		if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget)))
