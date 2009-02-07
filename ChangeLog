@@ -1,3 +1,10 @@
+2009-02-06  Dan Williams  <dcbw@redhat.com>
+
+	Patch from Russell Suter <rsuter@mxlogic.com>
+
+	* properties/advanced-dialog.c
+		- (advanced_dialog_new_hash_from_dialog): fix saving MPPE values
+
 2008-12-13  Przemysław Grzegorczyk  <pgrzegorczyk@gmail.com>
 
 	* src/nm-pptp-pppd-plugin.c:
