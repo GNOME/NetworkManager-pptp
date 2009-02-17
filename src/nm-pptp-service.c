@@ -727,6 +727,9 @@ construct_pppd_args (NMPptpPlugin *plugin,
 	g_ptr_array_add (args, (gpointer) g_strdup ("noipdefault"));
 	g_ptr_array_add (args, (gpointer) g_strdup ("nodefaultroute"));
 
+	/* Don't need to auth the PPTP server */
+	g_ptr_array_add (args, (gpointer) g_strdup ("noauth"));
+
 	if (priv->service)
 		service_priv = NM_PPTP_PPP_SERVICE_GET_PRIVATE (priv->service);
 	if (service_priv && strlen (service_priv->username)) {

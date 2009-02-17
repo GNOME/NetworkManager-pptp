@@ -210,6 +210,9 @@ nm_ip_up (void *data, int arg)
 		g_hash_table_insert (hash, NM_VPN_PLUGIN_IP4_CONFIG_DNS, val);
 	}
 
+	/* Default MTU to 1400, which is also what Windows XP/Vista use */
+	g_hash_table_insert (hash, NM_VPN_PLUGIN_IP4_CONFIG_MTU, uint_to_gvalue (1400));
+
 	dbus_g_proxy_call_no_reply (proxy, "SetIp4Config",
 						   DBUS_TYPE_G_MAP_OF_VARIANT, hash, G_TYPE_INVALID,
 						   G_TYPE_INVALID);
