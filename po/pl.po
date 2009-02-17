@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-19 20:19+0100\n"
-"PO-Revision-Date: 2008-11-19 20:20+0100\n"
+"POT-Creation-Date: 2009-02-17 02:49+0100\n"
+"PO-Revision-Date: 2009-02-17 02:49+0100\n"
 "Last-Translator: Tomasz Dominikowski <dominikowski@gmail.com>\n"
 "Language-Team: Aviary.pl <gnomepl@aviary.pl>\n"
 "MIME-Version: 1.0\n"
@@ -23,35 +23,35 @@ msgstr ""
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: Poland\n"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:144
+#: ../auth-dialog/gnome-two-password-dialog.c:129
 msgid "_Secondary Password:"
 msgstr "Hasło _dodatkowe:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:258
+#: ../auth-dialog/gnome-two-password-dialog.c:243
 msgid "_Username:"
 msgstr "Nazwa _użytkownika:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:260
+#: ../auth-dialog/gnome-two-password-dialog.c:245
 msgid "_Domain:"
 msgstr "_Domena:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:262
+#: ../auth-dialog/gnome-two-password-dialog.c:247
 msgid "_Password:"
 msgstr "_Hasło:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:351
+#: ../auth-dialog/gnome-two-password-dialog.c:336
 msgid "Connect _anonymously"
 msgstr "Połączenie _anonimowe"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:356
+#: ../auth-dialog/gnome-two-password-dialog.c:341
 msgid "Connect as _user:"
 msgstr "Połączenie jako _użytkownik:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:465
+#: ../auth-dialog/gnome-two-password-dialog.c:450
 msgid "_Remember passwords for this session"
 msgstr "_Zapamiętanie hasła na czas tej sesji"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:467
+#: ../auth-dialog/gnome-two-password-dialog.c:452
 msgid "_Save passwords in keyring"
 msgstr "Z_apamiętanie hasła w bazie kluczy"
 
@@ -72,33 +72,37 @@ msgstr "Dodawanie, usuwanie i modyfikowanie połączeń PPTP VPN"
 msgid "PPTP VPN Connection Manager"
 msgstr "Menedżer połączeń PPTP VPN"
 
-#: ../properties/advanced-dialog.c:144
+#: ../properties/advanced-dialog.c:145
 msgid "All Available (Default)"
 msgstr "Wszystkie dostępne (domyślnie)"
 
-#: ../properties/advanced-dialog.c:148
+#: ../properties/advanced-dialog.c:149
 msgid "128-bit (most secure)"
 msgstr "128-bit (najbardziej bezpieczna)"
 
-#: ../properties/advanced-dialog.c:157
+#: ../properties/advanced-dialog.c:158
 msgid "40-bit (less secure)"
 msgstr "40-bit (mniej bezpieczna)"
 
-#: ../properties/advanced-dialog.c:228
+#: ../properties/advanced-dialog.c:229
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:234
+#: ../properties/advanced-dialog.c:235
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:240
+#: ../properties/advanced-dialog.c:241
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:246
+#: ../properties/advanced-dialog.c:247
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
+
+#: ../properties/advanced-dialog.c:253
+msgid "EAP"
+msgstr "EAP"
 
 #: ../properties/nm-pptp-dialog.glade.h:1
 msgid "<b>Authentication</b>"
