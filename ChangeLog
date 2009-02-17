@@ -1,3 +1,12 @@
+2009-02-17  Dan Williams  <dcbw@redhat.com>
+
+	* src/nm-pptp-pppd-plugin.c
+		- (nm_ip_up): set MTU to 1400, which is what Windows XP/Vista currently
+			use for PPTP MTU
+	* src/nm-pptp-service.c
+		- (construct_pppd_args): send 'noauth' since for the moment there's no
+			way we could possibly authenticate the PPTP server
+
 2009-02-13  Dan Williams  <dcbw@redhat.com>
 
 	* nm-pptp-service.conf
