@@ -1,3 +1,9 @@
+2009-03-02  Jani Monoses  <jani@ubuntu.com>
+
+	* LINGUAS:
+	* ro.po: Added Romanian translation
+	by Adi Roiban <adi@roiban.ro>
+
 2009-02-24 Kenneth Nielsen <k.nielsen81@gmail.com>
 
 	* da.po: Updated Danish translation by Mads Lundby
