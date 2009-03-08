@@ -1,14 +1,15 @@
 # Italian translation of  NetworkManager-PPTP.
-# Copyright (C) 2008 THE NetworkManager-PPTP'S COPYRIGHT HOLDER
+# Copyright (C) 2006, 2007, 2008, 2009 the NetworkManager-PPTP'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the NetworkManager-PPTP package.
-# Francesco Marletta <francesco.marletta@tiscali.it>, 2006-2008.
+# Francesco Marletta <francesco.marletta@tiscali.it>, 2006, 2007, 2008, 2009.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: NetworkManager-OpenVPN 0.7\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-17 04:41+0000\n"
-"PO-Revision-Date: 2008-09-17 12:28-0400\n"
+"Project-Id-Version: NetworkManager-OpenVPN 0.7.1\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=NetworkManager&component=VPN: pptp\n"
+"POT-Creation-Date: 2009-03-06 05:39+0000\n"
+"PO-Revision-Date: 2009-03-07 23:40+0100\n"
 "Last-Translator: Francesco Marletta <francesco.marletta@tiscali.it>\n"
 "Language-Team: italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -16,45 +17,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:144
+#: ../auth-dialog/gnome-two-password-dialog.c:129
 msgid "_Secondary Password:"
 msgstr "Password _secondaria:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:258
+#: ../auth-dialog/gnome-two-password-dialog.c:243
 msgid "_Username:"
 msgstr "Nome _utente:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:260
+#: ../auth-dialog/gnome-two-password-dialog.c:245
 msgid "_Domain:"
 msgstr "_Dominio:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:262
+#: ../auth-dialog/gnome-two-password-dialog.c:247
 msgid "_Password:"
 msgstr "_Password:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:351
+#: ../auth-dialog/gnome-two-password-dialog.c:336
 msgid "Connect _anonymously"
 msgstr "Connessione _anonima"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:356
+#: ../auth-dialog/gnome-two-password-dialog.c:341
 msgid "Connect as _user:"
-msgstr "Connesione come _utente:"
+msgstr "Connessione come _utente:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:465
+#: ../auth-dialog/gnome-two-password-dialog.c:450
 msgid "_Remember passwords for this session"
 msgstr "_Ricorda le password per questa sessione"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:467
+#: ../auth-dialog/gnome-two-password-dialog.c:452
 msgid "_Save passwords in keyring"
 msgstr "_Salva le password nel portachiavi"
 
-#: ../auth-dialog/main.c:140
+#: ../auth-dialog/main.c:62
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr ""
-"È necessario autenticarsi per accedere alla Rete Privata Virtuale '%s'."
+"È necessario autenticarsi per accedere alla Rete Privata Virtuale \"%s\"."
 
-#: ../auth-dialog/main.c:141
+#: ../auth-dialog/main.c:63
 msgid "Authenticate VPN"
 msgstr "Autenticazione VPN"
 
@@ -66,33 +67,37 @@ msgstr "Aggiunge, rimuove e modifica connessioni VPN PPTP"
 msgid "PPTP VPN Connection Manager"
 msgstr "Gestore connessioni VPN PPTP"
 
-#: ../properties/advanced-dialog.c:147
+#: ../properties/advanced-dialog.c:145
 msgid "All Available (Default)"
 msgstr "Tutti i disponibili (predefinito)"
 
-#: ../properties/advanced-dialog.c:151
+#: ../properties/advanced-dialog.c:149
 msgid "128-bit (most secure)"
 msgstr "128-bit (più sicuro)"
 
-#: ../properties/advanced-dialog.c:160
+#: ../properties/advanced-dialog.c:158
 msgid "40-bit (less secure)"
 msgstr "40-bit (meno sicuro)"
 
-#: ../properties/advanced-dialog.c:231
+#: ../properties/advanced-dialog.c:229
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:237
+#: ../properties/advanced-dialog.c:235
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:243
+#: ../properties/advanced-dialog.c:241
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:249
+#: ../properties/advanced-dialog.c:247
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
+
+#: ../properties/advanced-dialog.c:253
+msgid "EAP"
+msgstr "EAP"
 
 #: ../properties/nm-pptp-dialog.glade.h:1
 msgid "<b>Authentication</b>"
@@ -139,37 +144,45 @@ msgid "Default"
 msgstr "Predefinito"
 
 #: ../properties/nm-pptp-dialog.glade.h:12
-msgid "Domain:"
-msgstr "Dominio:"
+msgid "NT Domain:"
+msgstr "Dominio NT:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
+msgid "Password:"
+msgstr "Password:"
+
+#: ../properties/nm-pptp-dialog.glade.h:14
 msgid "Send PPP _echo packets"
 msgstr "Inviare pacchetti _eco PPP"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:15
+msgid "Show password"
+msgstr "Mostra password"
+
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Use TCP _header compression"
 msgstr "Usare compressione _intestazioni TCP"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Usare cifratura _Point-to-Point (MPPE)"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "User name:"
 msgstr "Nome utente:"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "_Gateway:"
 msgstr "_Gateway:"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "_Security:"
 msgstr "_Sicurezza:"
 
-#: ../properties/nm-pptp.c:49
+#: ../properties/nm-pptp.c:50
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Point-to-Point Tunneling Protocol (PPTP)"
 
-#: ../properties/nm-pptp.c:50
+#: ../properties/nm-pptp.c:51
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Compatibile con i server Microsoft e altri server VPN PPTP."
