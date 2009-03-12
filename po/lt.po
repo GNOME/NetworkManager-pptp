@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-25 00:10+0300\n"
-"PO-Revision-Date: 2008-09-25 00:17+0300\n"
+"POT-Creation-Date: 2009-03-12 13:37+0200\n"
+"PO-Revision-Date: 2009-03-12 13:37+0200\n"
 "Last-Translator: Žygimantas Beručka <zygis@gnome.org>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
@@ -18,46 +18,46 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%"
 "100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:144
+#: ../auth-dialog/gnome-two-password-dialog.c:129
 msgid "_Secondary Password:"
 msgstr "_Antrinis slaptažodis:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:258
+#: ../auth-dialog/gnome-two-password-dialog.c:243
 msgid "_Username:"
 msgstr "_Naudotojo vardas:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:260
+#: ../auth-dialog/gnome-two-password-dialog.c:245
 msgid "_Domain:"
 msgstr "S_ritis:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:262
+#: ../auth-dialog/gnome-two-password-dialog.c:247
 msgid "_Password:"
 msgstr "_Slaptažodis:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:351
+#: ../auth-dialog/gnome-two-password-dialog.c:336
 msgid "Connect _anonymously"
 msgstr "Jungtis an_onimiškai"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:356
+#: ../auth-dialog/gnome-two-password-dialog.c:341
 msgid "Connect as _user:"
 msgstr "Prisijungti kaip na_udotojas:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:465
+#: ../auth-dialog/gnome-two-password-dialog.c:450
 msgid "_Remember passwords for this session"
 msgstr "_Atsiminti slaptažodžius šiam seansui"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:467
+#: ../auth-dialog/gnome-two-password-dialog.c:452
 msgid "_Save passwords in keyring"
 msgstr "Iš_saugoti slaptažodžius raktinėje"
 
-#: ../auth-dialog/main.c:140
+#: ../auth-dialog/main.c:62
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr ""
 "Norint gauti prieigą prie Virtualiojo Privačiojo Tinklo „%s“, reikia "
 "nustatyti jūsų tapatybę."
 
-#: ../auth-dialog/main.c:141
+#: ../auth-dialog/main.c:63
 msgid "Authenticate VPN"
 msgstr "Nustatyti tapatybę VPN"
 
@@ -69,33 +69,37 @@ msgstr "Pridėti, šalinti ir taisyti PPTP VPN ryšius"
 msgid "PPTP VPN Connection Manager"
 msgstr "PPTP VPN ryšių valdyklė"
 
-#: ../properties/advanced-dialog.c:147
+#: ../properties/advanced-dialog.c:145
 msgid "All Available (Default)"
 msgstr "Visi prieinami (numatytasis)"
 
-#: ../properties/advanced-dialog.c:151
+#: ../properties/advanced-dialog.c:149
 msgid "128-bit (most secure)"
 msgstr "128-bit (saugiausia)"
 
-#: ../properties/advanced-dialog.c:160
+#: ../properties/advanced-dialog.c:158
 msgid "40-bit (less secure)"
 msgstr "40-bit (mažiau saugu)"
 
-#: ../properties/advanced-dialog.c:231
+#: ../properties/advanced-dialog.c:229
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:237
+#: ../properties/advanced-dialog.c:235
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:243
+#: ../properties/advanced-dialog.c:241
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:249
+#: ../properties/advanced-dialog.c:247
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
+
+#: ../properties/advanced-dialog.c:253
+msgid "EAP"
+msgstr "EAP"
 
 #: ../properties/nm-pptp-dialog.glade.h:1
 msgid "<b>Authentication</b>"
@@ -142,37 +146,45 @@ msgid "Default"
 msgstr "Numatytasis"
 
 #: ../properties/nm-pptp-dialog.glade.h:12
-msgid "Domain:"
-msgstr "Sritis:"
+msgid "NT Domain:"
+msgstr "NT sritis:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
+msgid "Password:"
+msgstr "Slaptažodis:"
+
+#: ../properties/nm-pptp-dialog.glade.h:14
 msgid "Send PPP _echo packets"
 msgstr "Siųsti PPP _aido paketus"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:15
+msgid "Show password"
+msgstr "Rodyti slaptažodį"
+
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Use TCP _header compression"
 msgstr "Naudoti TCP _antraštės glaudinimą"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Naudoti _PPP šifravimą (MPPE)"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "User name:"
 msgstr "Naudotojo vardas:"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "_Gateway:"
 msgstr "Š_liuzas:"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "_Security:"
 msgstr "_Saugumas:"
 
-#: ../properties/nm-pptp.c:49
+#: ../properties/nm-pptp.c:50
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "PPP tuneliavimo protokolas (PPTP)"
 
-#: ../properties/nm-pptp.c:50
+#: ../properties/nm-pptp.c:51
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Suderinama su Microsoft ir kitais PPTP VPN serveriais."
