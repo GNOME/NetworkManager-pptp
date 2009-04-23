@@ -15,19 +15,16 @@ nm_pptp_auth_dialog_CPPFLAGS =			\
 	-DGDK_DISABLE_DEPRECATED		\
 	-DGNOME_DISABLE_DEPRECATED		\
 	-DGNOMELOCALEDIR=\"$(datadir)/locale\"	\
-	-DVERSION=\"$(VERSION)\"			\
-	$(NULL)
+	-DVERSION=\"$(VERSION)\"
 
 nm_pptp_auth_dialog_SOURCES =			\
 	main.c					\
 	gnome-two-password-dialog.c		\
-	gnome-two-password-dialog.h		\
-	$(NULL)
+	gnome-two-password-dialog.h
 
 nm_pptp_auth_dialog_LDADD =			\
 	$(GTK_LIBS)				\
 	$(GCONF_LIBS)				\
-	$(top_builddir)/common-gnome/libnm-pptp-common-gnome.la  \
-	$(NULL)
+	$(top_builddir)/common-gnome/libnm-pptp-common-gnome.la
 
 CLEANFILES = *~
