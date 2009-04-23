@@ -117,7 +117,7 @@ enum {
 };
 static guint signals[LAST_SIGNAL] = { 0 };
 
-NMPptpPppService *
+static NMPptpPppService *
 nm_pptp_ppp_service_new (void)
 {
 	DBusGConnection *connection;
@@ -926,13 +926,13 @@ nm_gvalue_destroy (gpointer data)
 static GValue *
 nm_gvalue_dup (const GValue *value)
 {
-	GValue *dup;
+	GValue *value_dup;
 
-	dup = g_slice_new0 (GValue);
-	g_value_init (dup, G_VALUE_TYPE (value));
-	g_value_copy (value, dup);
+	value_dup = g_slice_new0 (GValue);
+	g_value_init (value_dup, G_VALUE_TYPE (value));
+	g_value_copy (value, value_dup);
 
-	return dup;
+	return value_dup;
 }
 
 static void
