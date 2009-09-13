@@ -10,12 +10,12 @@
 # Tomasz Dominikowski <tdominikowski@aviary.pl>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: networkmanager-pptp\n"
+"Project-Id-Version: network-manager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-17 02:49+0100\n"
-"PO-Revision-Date: 2009-02-17 02:49+0100\n"
+"POT-Creation-Date: 2009-09-13 18:10+0200\n"
+"PO-Revision-Date: 2009-09-13 18:11+0100\n"
 "Last-Translator: Tomasz Dominikowski <dominikowski@gmail.com>\n"
-"Language-Team: Aviary.pl <gnomepl@aviary.pl>\n"
+"Language-Team: Polish <gnomepl@aviary.pl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: ../auth-dialog/gnome-two-password-dialog.c:129
 msgid "_Secondary Password:"
-msgstr "Hasło _dodatkowe:"
+msgstr "Ha_sło dodatkowe:"
 
 #: ../auth-dialog/gnome-two-password-dialog.c:243
 msgid "_Username:"
@@ -153,34 +153,38 @@ msgid "NT Domain:"
 msgstr "Domena NT:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
+msgid "PPTP Advanced Options"
+msgstr "Zaawansowane opcje PPTP"
+
+#: ../properties/nm-pptp-dialog.glade.h:14
 msgid "Password:"
 msgstr "Hasło:"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:15
 msgid "Send PPP _echo packets"
 msgstr "Wysyłanie pakietów _echo PPP"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Show password"
 msgstr "Wyświetlanie hasła"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Use TCP _header compression"
 msgstr "Kompresja _nagłówków TCP"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Szyfrowanie _Point-to-Point (MPPE)"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "User name:"
 msgstr "Nazwa użytkownika:"
 
-#: ../properties/nm-pptp-dialog.glade.h:19
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "_Gateway:"
 msgstr "_Brama:"
 
-#: ../properties/nm-pptp-dialog.glade.h:20
+#: ../properties/nm-pptp-dialog.glade.h:21
 msgid "_Security:"
 msgstr "Za_bezpieczenia:"
 
@@ -288,8 +292,6 @@ msgstr "Kompatybilny z serwerami Microsoft i innymi serwerami VPN PPTP."
 #~ msgstr "Maksymalna jednostka odbioru"
 #~ msgid "Maximum Transmit Unit"
 #~ msgstr "Maksymalna jednostka transmisji"
-#~ msgid "PPP Options"
-#~ msgstr "Opcje PPP"
 #~ msgid "Refuse C_HAP"
 #~ msgstr "Odrzuć C_HAP"
 #~ msgid "Refuse _EAP"
