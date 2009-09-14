@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-20 14:07+0100\n"
-"PO-Revision-Date: 2009-03-20 14:09+0100\n"
+"POT-Creation-Date: 2009-09-14 11:48+0200\n"
+"PO-Revision-Date: 2009-09-14 11:48+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../auth-dialog/gnome-two-password-dialog.c:129
 msgid "_Secondary Password:"
@@ -147,34 +147,38 @@ msgid "NT Domain:"
 msgstr "NT domeinua:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
+msgid "PPTP Advanced Options"
+msgstr "PPTP-ren aukera aurreratuak"
+
+#: ../properties/nm-pptp-dialog.glade.h:14
 msgid "Password:"
 msgstr "Pasahitza:"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:15
 msgid "Send PPP _echo packets"
 msgstr "Bidali PPP _oihartzun-paketeak"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Show password"
 msgstr "Erakutsi pasahitza"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Use TCP _header compression"
 msgstr "Erabili TCP _goiburu-konpresioa"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Erabili _puntutik punturako enkriptatzea (MPPE)"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "User name:"
 msgstr "Erabiltzaile-izena:"
 
-#: ../properties/nm-pptp-dialog.glade.h:19
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "_Gateway:"
 msgstr "_Atebidea:"
 
-#: ../properties/nm-pptp-dialog.glade.h:20
+#: ../properties/nm-pptp-dialog.glade.h:21
 msgid "_Security:"
 msgstr "_Segurtasuna:"
 
