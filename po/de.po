@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-05 15:25+0100\n"
-"PO-Revision-Date: 2008-12-05 16:26+0100\n"
+"POT-Creation-Date: 2009-09-24 00:32+0200\n"
+"PO-Revision-Date: 2009-09-23 12:42+0200\n"
 "Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,38 +17,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural(n != 1);\n"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:144
+#: ../auth-dialog/gnome-two-password-dialog.c:129
 msgid "_Secondary Password:"
 msgstr "_Sekundäres Passwort:"
 
 # CHECK: accelerator
-#: ../auth-dialog/gnome-two-password-dialog.c:258
+#: ../auth-dialog/gnome-two-password-dialog.c:243
 msgid "_Username:"
 msgstr "_Benutzername:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:260
+#: ../auth-dialog/gnome-two-password-dialog.c:245
 msgid "_Domain:"
 msgstr "_Domäne"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:262
+#: ../auth-dialog/gnome-two-password-dialog.c:247
 msgid "_Password:"
 msgstr "_Passwort:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:351
+#: ../auth-dialog/gnome-two-password-dialog.c:336
 msgid "Connect _anonymously"
 msgstr "_Anonym verbinden"
 
 # CHECK: accelerator
-#: ../auth-dialog/gnome-two-password-dialog.c:356
+#: ../auth-dialog/gnome-two-password-dialog.c:341
 msgid "Connect as _user:"
 msgstr "Als _Benutzer verbinden"
 
 # CHECK: accelerator
-#: ../auth-dialog/gnome-two-password-dialog.c:465
+#: ../auth-dialog/gnome-two-password-dialog.c:450
 msgid "_Remember passwords for this session"
 msgstr "Passwort für _diese Sitzung behalten"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:467
+#: ../auth-dialog/gnome-two-password-dialog.c:452
 msgid "_Save passwords in keyring"
 msgstr "Passwort im _Schlüsselbund speichern"
 
@@ -152,35 +152,39 @@ msgid "NT Domain:"
 msgstr "NT-Domäne:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
+msgid "PPTP Advanced Options"
+msgstr "Erweiterte PPTP-Optionen"
+
+#: ../properties/nm-pptp-dialog.glade.h:14
 msgid "Password:"
 msgstr "Passwort:"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:15
 msgid "Send PPP _echo packets"
 msgstr "Sende PPP-_Echo Pakete"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Show password"
 msgstr "Zeige Passwort:"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Use TCP _header compression"
 msgstr "TCP-_Header-Komprimierung verwenden"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "_Point-to-Point Verschlüsselung (MPPE) verwenden"
 
 # CHECK: accelerator
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "User name:"
 msgstr "Benutzername:"
 
-#: ../properties/nm-pptp-dialog.glade.h:19
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "_Gateway:"
 msgstr "_Gateway:"
 
-#: ../properties/nm-pptp-dialog.glade.h:20
+#: ../properties/nm-pptp-dialog.glade.h:21
 msgid "_Security:"
 msgstr "_Sicherheit"
 
