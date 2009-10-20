@@ -1,4 +1,4 @@
-# translation of network-manager-pptp.po.master.gu.po to Gujarati
+# translation of network-manager-pptp.master.gu.po to Gujarati
 # Gujarati translation of network-manager-pptp.
 # Copyright (C) 2009 network-manager-pptp's COPYRIGHT HOLDER
 # This file is distributed under the same license as the network-manager-pptp package.
@@ -6,10 +6,10 @@
 # Sweta Kothari <swkothar@redhat.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: network-manager-pptp.po.master.gu\n"
+"Project-Id-Version: network-manager-pptp.master.gu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=NetworkManager&component=VPN: pptp\n"
-"POT-Creation-Date: 2009-04-23 13:16+0000\n"
-"PO-Revision-Date: 2009-05-29 12:53+0530\n"
+"POT-Creation-Date: 2009-09-13 16:12+0000\n"
+"PO-Revision-Date: 2009-10-20 14:45+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
 "Language-Team: Gujarati\n"
 "MIME-Version: 1.0\n"
@@ -148,34 +148,38 @@ msgid "NT Domain:"
 msgstr "NT ડોમેઇન:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
+msgid "PPTP Advanced Options"
+msgstr "PPTP ઉન્નત વિકલ્પો"
+
+#: ../properties/nm-pptp-dialog.glade.h:14
 msgid "Password:"
 msgstr "પાસવર્ડ:"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:15
 msgid "Send PPP _echo packets"
 msgstr "PPP પડઘા પેકેટોને મોકલો (_e)"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Show password"
 msgstr "પાસવર્ડને બતાવો"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Use TCP _header compression"
 msgstr "TCP હેડર દબાણને વાપરો (_h)"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Point-to-Point encryption (MPPE) ને વાપરો (_P)"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "User name:"
 msgstr "વપરાશકર્તા નામ:"
 
-#: ../properties/nm-pptp-dialog.glade.h:19
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "_Gateway:"
 msgstr "ગેટવે (_G):"
 
-#: ../properties/nm-pptp-dialog.glade.h:20
+#: ../properties/nm-pptp-dialog.glade.h:21
 msgid "_Security:"
 msgstr "સુરક્ષા (_S):"
 
