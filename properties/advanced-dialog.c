@@ -45,6 +45,7 @@
 #define COL_NAME  0
 #define COL_VALUE 1
 #define COL_TAG 2
+#define COL_SENSITIVE 3
 
 #define TAG_PAP      0
 #define TAG_CHAP     1
@@ -103,8 +104,35 @@ mppe_toggled_cb (GtkWidget *check, gpointer user_data)
 	GladeXML *xml = (GladeXML *) user_data;
 	GtkWidget *widget;
 	gboolean use_mppe;
+	GtkTreeModel *model;
+	GtkTreeIter iter;
+	gboolean valid;
 
 	use_mppe = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (check));
+
+	/* If MPPE is active, PAP, CHAP, and EAP aren't allowed by the MPPE specs;
+	 * likewise, if MPPE is inactive, sensitize the PAP, CHAP, and EAP checkboxes.
+	 */
+	widget = glade_xml_get_widget (xml, "ppp_auth_methods");
+	model = gtk_tree_view_get_model (GTK_TREE_VIEW (widget));
+	valid = gtk_tree_model_get_iter_first (model, &iter);
+	while (valid) {
+		guint32 tag;
+
+		gtk_tree_model_get (model, &iter, COL_TAG, &tag, -1);
+		switch (tag) {
+		case TAG_PAP:
+		case TAG_CHAP:
+		case TAG_EAP:
+			gtk_list_store_set (GTK_LIST_STORE (model), &iter, COL_VALUE, !use_mppe, -1);
+			gtk_list_store_set (GTK_LIST_STORE (model), &iter, COL_SENSITIVE, !use_mppe, -1);
+			break;
+		default:
+			break;
+		}
+
+		valid = gtk_tree_model_iter_next (model, &iter);
+	}
 
 	widget = glade_xml_get_widget (xml, "ppp_mppe_security_label");
 	gtk_widget_set_sensitive (widget, use_mppe);
@@ -176,6 +204,9 @@ check_toggled_cb (GtkCellRendererToggle *cell, gchar *path_str, gpointer user_da
 	GtkTreeModel *model;
 	GtkTreeIter iter;
 	gboolean toggle_item;
+	gboolean valid;
+	gboolean mschap_state = TRUE;
+	gboolean mschap2_state = TRUE;
 
 	widget = glade_xml_get_widget (xml, "ppp_auth_methods");
 	model = gtk_tree_view_get_model (GTK_TREE_VIEW (widget));
@@ -189,6 +220,33 @@ check_toggled_cb (GtkCellRendererToggle *cell, gchar *path_str, gpointer user_da
 	gtk_list_store_set (GTK_LIST_STORE (model), &iter, COL_VALUE, toggle_item, -1);
 
 	gtk_tree_path_free (path);
+
+	/* If MSCHAP and MSCHAPv2 are both disabled, also disable MPPE */
+	valid = gtk_tree_model_get_iter_first (model, &iter);
+	while (valid) {
+		gboolean allowed;
+		guint32 tag;
+
+		gtk_tree_model_get (model, &iter, COL_VALUE, &allowed, COL_TAG, &tag, -1);
+		switch (tag) {
+		case TAG_MSCHAP:
+			mschap_state = allowed;
+			break;
+		case TAG_MSCHAPV2:
+			mschap2_state = allowed;
+			break;
+		default:
+			break;
+		}
+
+		valid = gtk_tree_model_iter_next (model, &iter);
+	}
+	widget = glade_xml_get_widget (xml, "ppp_use_mppe");
+	if (!mschap_state && !mschap2_state) {
+		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), FALSE);
+		gtk_widget_set_sensitive (widget, FALSE);
+	} else
+		gtk_widget_set_sensitive (widget, TRUE);
 }
 
 static void
@@ -204,8 +262,10 @@ auth_methods_setup (GladeXML *xml, GHashTable *hash)
 	GtkCellRenderer *text_renderer;
 	GtkTreeViewColumn *column;
 	gint offset;
+	gboolean mschap_state = TRUE;
+	gboolean mschap2_state = TRUE;
 
-	store = gtk_list_store_new (3, G_TYPE_STRING, G_TYPE_BOOLEAN, G_TYPE_UINT);
+	store = gtk_list_store_new (4, G_TYPE_STRING, G_TYPE_BOOLEAN, G_TYPE_UINT, G_TYPE_BOOLEAN);
 
 	/* Check for MPPE */
 	value = g_hash_table_lookup (hash, NM_PPTP_KEY_REQUIRE_MPPE);
@@ -225,32 +285,65 @@ auth_methods_setup (GladeXML *xml, GHashTable *hash)
 	/* PAP */
 	value = g_hash_table_lookup (hash, NM_PPTP_KEY_REFUSE_PAP);
 	allowed = (value && !strcmp (value, "yes")) ? FALSE : TRUE;
+	if (use_mppe)
+		allowed = FALSE;
 	gtk_list_store_append (store, &iter);
-	gtk_list_store_set (store, &iter, COL_NAME, _("PAP"), COL_VALUE, allowed, COL_TAG, TAG_PAP, -1);
+	gtk_list_store_set (store, &iter,
+	                    COL_NAME, _("PAP"),
+	                    COL_VALUE, allowed,
+	                    COL_TAG, TAG_PAP,
+	                    COL_SENSITIVE, !use_mppe,
+	                    -1);
 
 	/* CHAP */
 	value = g_hash_table_lookup (hash, NM_PPTP_KEY_REFUSE_CHAP);
 	allowed = (value && !strcmp (value, "yes")) ? FALSE : TRUE;
+	if (use_mppe)
+		allowed = FALSE;
 	gtk_list_store_append (store, &iter);
-	gtk_list_store_set (store, &iter, COL_NAME, _("CHAP"), COL_VALUE, allowed, COL_TAG, TAG_CHAP, -1);
+	gtk_list_store_set (store, &iter,
+	                    COL_NAME, _("CHAP"),
+	                    COL_VALUE, allowed,
+	                    COL_TAG, TAG_CHAP,
+	                    COL_SENSITIVE, !use_mppe,
+	                    -1);
 
 	/* MSCHAP */
 	value = g_hash_table_lookup (hash, NM_PPTP_KEY_REFUSE_MSCHAP);
 	allowed = (value && !strcmp (value, "yes")) ? FALSE : TRUE;
+	mschap_state = allowed;
 	gtk_list_store_append (store, &iter);
-	gtk_list_store_set (store, &iter, COL_NAME, _("MSCHAP"), COL_VALUE, allowed, COL_TAG, TAG_MSCHAP, -1);
+	gtk_list_store_set (store, &iter,
+	                    COL_NAME, _("MSCHAP"),
+	                    COL_VALUE, allowed,
+	                    COL_TAG, TAG_MSCHAP,
+	                    COL_SENSITIVE, TRUE,
+	                    -1);
 
 	/* MSCHAPv2 */
 	value = g_hash_table_lookup (hash, NM_PPTP_KEY_REFUSE_MSCHAPV2);
 	allowed = (value && !strcmp (value, "yes")) ? FALSE : TRUE;
+	mschap2_state = allowed;
 	gtk_list_store_append (store, &iter);
-	gtk_list_store_set (store, &iter, COL_NAME, _("MSCHAPv2"), COL_VALUE, allowed, COL_TAG, TAG_MSCHAPV2, -1);
+	gtk_list_store_set (store, &iter,
+	                    COL_NAME, _("MSCHAPv2"),
+	                    COL_VALUE, allowed,
+	                    COL_TAG, TAG_MSCHAPV2,
+	                    COL_SENSITIVE, TRUE,
+	                    -1);
 
 	/* EAP */
 	value = g_hash_table_lookup (hash, NM_PPTP_KEY_REFUSE_EAP);
 	allowed = (value && !strcmp (value, "yes")) ? FALSE : TRUE;
+	if (use_mppe)
+		allowed = FALSE;
 	gtk_list_store_append (store, &iter);
-	gtk_list_store_set (store, &iter, COL_NAME, _("EAP"), COL_VALUE, allowed, COL_TAG, TAG_EAP, -1);
+	gtk_list_store_set (store, &iter,
+	                    COL_NAME, _("EAP"),
+	                    COL_VALUE, allowed,
+	                    COL_TAG, TAG_EAP,
+	                    COL_SENSITIVE, !use_mppe,
+	                    -1);
 
 	/* Set up the tree view */
 	widget = glade_xml_get_widget (xml, "ppp_auth_methods");
@@ -262,6 +355,8 @@ auth_methods_setup (GladeXML *xml, GHashTable *hash)
 	offset = gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (widget),
 	                                                      -1, "", GTK_CELL_RENDERER (check_renderer),
 	                                                      "active", COL_VALUE,
+	                                                      "sensitive", COL_SENSITIVE,
+	                                                      "activatable", COL_SENSITIVE,
 	                                                      NULL);
 	column = gtk_tree_view_get_column (GTK_TREE_VIEW (widget), offset - 1);
 	gtk_tree_view_column_set_sizing (GTK_TREE_VIEW_COLUMN (column), GTK_TREE_VIEW_COLUMN_FIXED);
@@ -272,9 +367,18 @@ auth_methods_setup (GladeXML *xml, GHashTable *hash)
 	offset = gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (widget),
 	                                                      -1, "", text_renderer,
 	                                                      "text", COL_NAME,
+	                                                      "sensitive", COL_SENSITIVE,
 	                                                      NULL);
 	column = gtk_tree_view_get_column (GTK_TREE_VIEW (widget), offset - 1);
 	gtk_tree_view_column_set_expand (GTK_TREE_VIEW_COLUMN (column), TRUE);
+
+	/* Make sure MPPE is non-sensitive if MSCHAP and MSCHAPv2 are disabled */
+	widget = glade_xml_get_widget (xml, "ppp_use_mppe");
+	if (!mschap_state && !mschap2_state) {
+		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), FALSE);
+		gtk_widget_set_sensitive (widget, FALSE);
+	} else
+		gtk_widget_set_sensitive (widget, TRUE);
 }
 
 GtkWidget *
@@ -306,12 +410,12 @@ advanced_dialog_new (GHashTable *hash)
 	setup_security_combo (xml, hash);
 
 	widget = glade_xml_get_widget (xml, "ppp_use_mppe");
-	g_signal_connect (G_OBJECT (widget), "toggled", G_CALLBACK (mppe_toggled_cb), xml);
 
 	value = g_hash_table_lookup (hash, NM_PPTP_KEY_REQUIRE_MPPE);
 	if (value && !strcmp (value, "yes"))
 		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
-	mppe_toggled_cb (widget, xml);
+
+	g_signal_connect (G_OBJECT (widget), "toggled", G_CALLBACK (mppe_toggled_cb), xml);
 
 	widget = glade_xml_get_widget (xml, "ppp_allow_stateful_mppe");
 	value = g_hash_table_lookup (hash, NM_PPTP_KEY_MPPE_STATEFUL);
@@ -348,6 +452,10 @@ advanced_dialog_new (GHashTable *hash)
 	}
 
 	auth_methods_setup (xml, hash);
+
+	widget = glade_xml_get_widget (xml, "ppp_use_mppe");
+	mppe_toggled_cb (widget, xml);
+	g_signal_connect (G_OBJECT (widget), "toggled", G_CALLBACK (mppe_toggled_cb), xml);
 
 out:
 	g_free (glade_file);
