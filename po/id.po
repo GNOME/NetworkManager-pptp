@@ -7,12 +7,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network manager pptp master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=NetworkManager&component=VPN: pptp\n"
-"POT-Creation-Date: 2009-08-26 19:30+0000\n"
-"PO-Revision-Date: 2009-09-25 18:50+0700\n"
+"POT-Creation-Date: 2009-10-20 09:17+0000\n"
+"PO-Revision-Date: 2009-10-27 10:32+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian Translator <id@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Indonesian\n"
 "X-Poedit-Country: Indonesia\n"
@@ -141,41 +141,45 @@ msgstr "Aktifkan metoda otentikasi berikut:"
 
 #: ../properties/nm-pptp-dialog.glade.h:11
 msgid "Default"
-msgstr "Default"
+msgstr "Baku"
 
 #: ../properties/nm-pptp-dialog.glade.h:12
 msgid "NT Domain:"
 msgstr "Domain NT:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
+msgid "PPTP Advanced Options"
+msgstr "Opsi Tingkat Lanjut PPTP"
+
+#: ../properties/nm-pptp-dialog.glade.h:14
 msgid "Password:"
 msgstr "Kata sandi:"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:15
 msgid "Send PPP _echo packets"
 msgstr "Kirim paket _echo PPP"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Show password"
 msgstr "Tampilkan kata sandi"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Use TCP _header compression"
 msgstr "Gunakan pemampatan _header TCP"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Gunakan _Point-to-Point encryption (MPPE)"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "User name:"
 msgstr "Nama pengguna:"
 
-#: ../properties/nm-pptp-dialog.glade.h:19
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "_Gateway:"
 msgstr "_Gateway:"
 
-#: ../properties/nm-pptp-dialog.glade.h:20
+#: ../properties/nm-pptp-dialog.glade.h:21
 msgid "_Security:"
 msgstr "_Keamanan:"
 
