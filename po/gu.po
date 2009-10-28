@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp.master.gu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=NetworkManager&component=VPN: pptp\n"
-"POT-Creation-Date: 2009-09-13 16:12+0000\n"
-"PO-Revision-Date: 2009-10-20 14:45+0530\n"
+"POT-Creation-Date: 2009-10-27 03:34+0000\n"
+"PO-Revision-Date: 2009-10-28 15:19+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
 "Language-Team: Gujarati\n"
 "MIME-Version: 1.0\n"
@@ -67,35 +67,35 @@ msgstr "PPTP VPN જોડાણોને ઉમેરો, દૂર કરો, 
 msgid "PPTP VPN Connection Manager"
 msgstr "PPTP VPN જોડાણ વ્યવસ્થાપક"
 
-#: ../properties/advanced-dialog.c:145
+#: ../properties/advanced-dialog.c:173
 msgid "All Available (Default)"
 msgstr "બધા ઉપલ્બધ (મૂળભૂત)"
 
-#: ../properties/advanced-dialog.c:149
+#: ../properties/advanced-dialog.c:177
 msgid "128-bit (most secure)"
 msgstr "128-બીટ (એકદમ સુરક્ષિત)"
 
-#: ../properties/advanced-dialog.c:158
+#: ../properties/advanced-dialog.c:186
 msgid "40-bit (less secure)"
 msgstr "40-બીટ (ઓછો સુરક્ષિત)"
 
-#: ../properties/advanced-dialog.c:229
+#: ../properties/advanced-dialog.c:292
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:235
+#: ../properties/advanced-dialog.c:305
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:241
+#: ../properties/advanced-dialog.c:317
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:247
+#: ../properties/advanced-dialog.c:329
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:253
+#: ../properties/advanced-dialog.c:342
 msgid "EAP"
 msgstr "EAP"
 
@@ -148,38 +148,48 @@ msgid "NT Domain:"
 msgstr "NT ડોમેઇન:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
+msgid ""
+"Note: MPPE encryption is only available with MSCHAP authentication methods. "
+"To enable this checkbox, select one or more of the MSCHAP authentication "
+"methods: MSCHAP or MSCHAPv2."
+msgstr ""
+"નોંધ: MPPE એનક્રિપ્શન ફક્ત MSCHAP સત્તાધિકરણ પદ્દતિઓ સાથે ઉપલ્બધ છે. "
+"આ ચેકબોક્સને સક્રિય કરવા માટે, MSCHAP સત્તાધિકરણ પદ્દતિઓની એક અથવા વધારેને પસંદ કરો: "
+"MSCHAP અથવા MSCHAPv2."
+
+#: ../properties/nm-pptp-dialog.glade.h:14
 msgid "PPTP Advanced Options"
 msgstr "PPTP ઉન્નત વિકલ્પો"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:15
 msgid "Password:"
 msgstr "પાસવર્ડ:"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Send PPP _echo packets"
 msgstr "PPP પડઘા પેકેટોને મોકલો (_e)"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Show password"
 msgstr "પાસવર્ડને બતાવો"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "Use TCP _header compression"
 msgstr "TCP હેડર દબાણને વાપરો (_h)"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Point-to-Point encryption (MPPE) ને વાપરો (_P)"
 
-#: ../properties/nm-pptp-dialog.glade.h:19
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "User name:"
 msgstr "વપરાશકર્તા નામ:"
 
-#: ../properties/nm-pptp-dialog.glade.h:20
+#: ../properties/nm-pptp-dialog.glade.h:21
 msgid "_Gateway:"
 msgstr "ગેટવે (_G):"
 
-#: ../properties/nm-pptp-dialog.glade.h:21
+#: ../properties/nm-pptp-dialog.glade.h:22
 msgid "_Security:"
 msgstr "સુરક્ષા (_S):"
 
