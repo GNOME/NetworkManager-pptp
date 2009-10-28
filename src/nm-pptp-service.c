@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * (C) Copyright 2008 Red Hat, Inc.
+ * (C) Copyright 2008 - 2009 Red Hat, Inc.
  */
 
 #include <stdio.h>
@@ -33,9 +33,10 @@
 #include <errno.h>
 #include <sys/socket.h>
 #include <sys/ioctl.h>
-#include <asm/types.h>
+#include <sys/types.h>
 #include <net/if.h>
 #include <arpa/inet.h>
+#include <netdb.h>
 
 #include <dbus/dbus.h>
 #include <dbus/dbus-glib.h>
@@ -945,9 +946,10 @@ static GValue *
 get_pptp_gw_address_as_gvalue (NMConnection *connection)
 {
 	NMSettingVPN *s_vpn;
-	const char *tmp;
-	GValue *value;
+	const char *tmp, *p;
+	GValue *value = NULL;
 	struct in_addr addr;
+	gboolean is_name = FALSE;
 
 	s_vpn = (NMSettingVPN *) nm_connection_get_setting (connection, NM_TYPE_SETTING_VPN);
 	if (!s_vpn) {
@@ -955,21 +957,65 @@ get_pptp_gw_address_as_gvalue (NMConnection *connection)
 		return NULL;
 	}
 
-	tmp = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_GATEWAY);
+	p = tmp = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_GATEWAY);
 	if (!tmp || !strlen (tmp)) {
 		nm_warning ("couldn't get PPTP VPN gateway IP address");
 		return NULL;
 	}
-	
-	errno = 0;
-	if (inet_pton (AF_INET, tmp, &addr) <= 0) {
-		nm_warning ("couldn't convert PPTP VPN gateway IP address '%s' (%d)", tmp, errno);
-		return NULL;
+
+	while (*p) {
+		if (*p != '.' && !isdigit (*p)) {
+			is_name = TRUE;
+			break;
+		}
+		p++;
+	}
+
+	/* Resolve a hostname if required */
+	if (is_name) {
+		struct addrinfo hints;
+		struct addrinfo *result = NULL, *rp;
+		int err;
+
+		memset (&hints, 0, sizeof (hints));
+
+		hints.ai_family = AF_INET;
+		hints.ai_flags = AI_ADDRCONFIG;
+		err = getaddrinfo (tmp, NULL, &hints, &result);
+		if (err != 0) {
+			nm_warning ("couldn't look up PPTP VPN gateway IP address '%s' (%d)", tmp, err);
+			return NULL;
+		}
+
+		/* FIXME: so what if the name resolves to multiple IP addresses?  We
+		 * don't know which one pptp decided to use so we could end up using a
+		 * different one here, and the VPN just won't work.
+		 */
+		for (rp = result; rp; rp = rp->ai_next) {
+			if (   (rp->ai_family == AF_INET)
+			    && (rp->ai_addrlen == sizeof (struct sockaddr_in))) {
+				struct sockaddr_in *inptr = (struct sockaddr_in *) rp->ai_addr;
+
+				memcpy (&addr, &(inptr->sin_addr), sizeof (struct in_addr));
+				break;
+			}
+		}
+
+		freeaddrinfo (result);
+	} else {
+		errno = 0;
+		if (inet_pton (AF_INET, tmp, &addr) <= 0) {
+			nm_warning ("couldn't convert PPTP VPN gateway IP address '%s' (%d)", tmp, errno);
+			return NULL;
+		}
 	}
 	
-	value = g_slice_new0 (GValue);
-	g_value_init (value, G_TYPE_UINT);
-	g_value_set_uint (value, (guint32) addr.s_addr);
+	if (addr.s_addr != 0) {
+		value = g_slice_new0 (GValue);
+		g_value_init (value, G_TYPE_UINT);
+		g_value_set_uint (value, (guint32) addr.s_addr);
+	} else
+		nm_warning ("couldn't determine PPTP VPN gateway IP address from '%s'", tmp);
 
 	return value;
 }
