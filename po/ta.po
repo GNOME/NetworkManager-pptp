@@ -1,4 +1,4 @@
-# translation of network-manager-pptp.po.master.ta.po to Tamil
+# translation of network-manager-pptp.master.ta.po to Tamil
 # Tamil translation of network-manager-pptp.
 # Copyright (C) 2009 network-manager-pptp's COPYRIGHT HOLDER
 # This file is distributed under the same license as the network-manager-pptp package.
@@ -7,10 +7,10 @@
 # I. Felix <ifelix@redhat.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: network-manager-pptp.po.master.ta\n"
+"Project-Id-Version: network-manager-pptp.master.ta\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=NetworkManager&component=VPN: pptp\n"
-"POT-Creation-Date: 2009-06-11 01:30+0000\n"
-"PO-Revision-Date: 2009-06-27 01:10+0530\n"
+"POT-Creation-Date: 2009-10-27 03:34+0000\n"
+"PO-Revision-Date: 2009-10-29 15:36+0530\n"
 "Last-Translator: I. Felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\\n\n"
+"\n"
 "\n"
 "\n"
 
@@ -70,35 +71,35 @@ msgstr "சேர், நீக்கு, மற்றும் PPTP VPN இண�
 msgid "PPTP VPN Connection Manager"
 msgstr "PPTP VPN இணைப்பு மேலாளர்"
 
-#: ../properties/advanced-dialog.c:145
+#: ../properties/advanced-dialog.c:173
 msgid "All Available (Default)"
 msgstr "அனைத்தும் கிடைக்கும் (முன்னிருப்பு)"
 
-#: ../properties/advanced-dialog.c:149
+#: ../properties/advanced-dialog.c:177
 msgid "128-bit (most secure)"
 msgstr "128-பைட் (மேலும் பாதுகாகப்பட்ட)"
 
-#: ../properties/advanced-dialog.c:158
+#: ../properties/advanced-dialog.c:186
 msgid "40-bit (less secure)"
 msgstr "40-பைட் (குறைந்த பாதுகாப்பு)"
 
-#: ../properties/advanced-dialog.c:229
+#: ../properties/advanced-dialog.c:292
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:235
+#: ../properties/advanced-dialog.c:305
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:241
+#: ../properties/advanced-dialog.c:317
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:247
+#: ../properties/advanced-dialog.c:329
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:253
+#: ../properties/advanced-dialog.c:342
 msgid "EAP"
 msgstr "EAP"
 
@@ -151,34 +152,48 @@ msgid "NT Domain:"
 msgstr "NT செயற்களம்:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
+msgid ""
+"Note: MPPE encryption is only available with MSCHAP authentication methods. "
+"To enable this checkbox, select one or more of the MSCHAP authentication "
+"methods: MSCHAP or MSCHAPv2."
+msgstr ""
+"குறிப்பு: MPPE குறிமறையாக்கம் MSCHAP அங்கீகரிக்கப்பட்ட முறைகளில் மட்டுமே இருக்கும். "
+"சரிபார்க்கும் பெட்டியை செயல்படுத்த, ஒன்று அல்லது அதிக MSCHAP அங்கீகரிக்கப்பட்ட  "
+"முறைகளைத் தேர்ந்தெடுக்கலாம்: MSCHAP அல்லது MSCHAPv2."
+
+#: ../properties/nm-pptp-dialog.glade.h:14
+msgid "PPTP Advanced Options"
+msgstr "PPTP கூடுதல் விருப்பங்கள்"
+
+#: ../properties/nm-pptp-dialog.glade.h:15
 msgid "Password:"
 msgstr "கடவுச்சொல்:"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Send PPP _echo packets"
 msgstr "PPP எதிரொலி பாக்கெட்டுகளை அனுப்பு (_e)"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Show password"
 msgstr "கடவுச்சொல்லைக் காட்டு"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "Use TCP _header compression"
 msgstr "TCP தலைப்பு குறுக்கை பயன்படுத்து (_h)"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "புள்ளியிலிருந்து புள்ளி குறிமறையாக்கத்தை பயன்படுத்து (MPPE) (_P)"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "User name:"
 msgstr "பயனர் பெயர்:"
 
-#: ../properties/nm-pptp-dialog.glade.h:19
+#: ../properties/nm-pptp-dialog.glade.h:21
 msgid "_Gateway:"
 msgstr "கேட்வே (_G):"
 
-#: ../properties/nm-pptp-dialog.glade.h:20
+#: ../properties/nm-pptp-dialog.glade.h:22
 msgid "_Security:"
 msgstr "பாதுகாப்பு (_S):"
 
