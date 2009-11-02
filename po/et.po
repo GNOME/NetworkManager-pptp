@@ -10,181 +10,152 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=NetworkManager&amp;component=VPN: pptp\n"
-"POT-Creation-Date: 2008-12-15 17:02+0000\n"
-"PO-Revision-Date: 2009-02-09 01:01+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=NetworkManager&component=VPN: pptp\n"
+"POT-Creation-Date: 2009-10-30 07:34+0000\n"
+"PO-Revision-Date: 2009-11-01 18:52+0300\n"
 "Last-Translator: Mattias Põldaru <mahfiaz gmail com>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:144
 msgid "_Secondary Password:"
 msgstr "_Teisene parool:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:258
 msgid "_Username:"
 msgstr "_Kasutajanimi:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:260
 msgid "_Domain:"
 msgstr "_Domeen:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:262
 msgid "_Password:"
 msgstr "_Parool:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:351
 msgid "Connect _anonymously"
 msgstr "Ühendu _anonüümselt"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:356
 msgid "Connect as _user:"
 msgstr "Ühendu ka_sutajana:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:465
 msgid "_Remember passwords for this session"
 msgstr "_Jäta paroolid selle sessiooni ajaks meelde"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:467
 msgid "_Save passwords in keyring"
 msgstr "Paroolide _salvestamine võtmerõngasse"
 
-#: ../auth-dialog/main.c:62
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr "Ligipääsuks '%s' VPN-i võrku pead autentima."
 
-#: ../auth-dialog/main.c:63
 msgid "Authenticate VPN"
 msgstr "VPN-i autentimine"
 
-#: ../nm-pptp.desktop.in.h:1
 msgid "Add, Remove, and Edit PPTP VPN Connections"
 msgstr "PPTP VPN-ühenduste lisamine, muutmine ja eemaldamine"
 
-#: ../nm-pptp.desktop.in.h:2
 msgid "PPTP VPN Connection Manager"
 msgstr "PPTP VPN-ühenduste haldur"
 
-#: ../properties/advanced-dialog.c:145
 msgid "All Available (Default)"
 msgstr "Kõik saadaval (vaikimisi)"
 
-#: ../properties/advanced-dialog.c:149
 msgid "128-bit (most secure)"
 msgstr "128-bitine (kõige turvalisem)"
 
-#: ../properties/advanced-dialog.c:158
 msgid "40-bit (less secure)"
 msgstr "40-bitine (vähem turvaline)"
 
-#: ../properties/advanced-dialog.c:229
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:235
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:241
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:247
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:253
 msgid "EAP"
 msgstr "EAP"
 
-#: ../properties/nm-pptp-dialog.glade.h:1
 msgid "<b>Authentication</b>"
 msgstr "<b>Autentimine</b>"
 
-#: ../properties/nm-pptp-dialog.glade.h:2
 msgid "<b>Echo</b>"
 msgstr "<b>Echo</b>"
 
-#: ../properties/nm-pptp-dialog.glade.h:3
 msgid "<b>General</b>"
 msgstr "<b>Üldine</b>"
 
-#: ../properties/nm-pptp-dialog.glade.h:4
 msgid "<b>Optional</b>"
 msgstr "<b>Valikuline</b>"
 
-#: ../properties/nm-pptp-dialog.glade.h:5
 msgid "<b>Security and Compression</b>"
 msgstr "<b>Turvalisus ja tihendamine</b>"
 
-#: ../properties/nm-pptp-dialog.glade.h:6
 msgid "Ad_vanced..."
 msgstr "_Laiendatud..."
 
-#: ../properties/nm-pptp-dialog.glade.h:7
 msgid "Allow _BSD data compression"
 msgstr "_BSD tihendus on lubatud"
 
-#: ../properties/nm-pptp-dialog.glade.h:8
 msgid "Allow _Deflate data compression"
 msgstr "_Deflate-tihendus on lubatud"
 
-#: ../properties/nm-pptp-dialog.glade.h:9
 msgid "Allow st_ateful encryption"
 msgstr "Stateful-tihendus on lubatud"
 
-#: ../properties/nm-pptp-dialog.glade.h:10
 msgid "Allow the following authentication methods:"
 msgstr "Luba järgnevad autentimise meetodid:"
 
-#: ../properties/nm-pptp-dialog.glade.h:11
 msgid "Default"
 msgstr "Vaikimisi"
 
-#: ../properties/nm-pptp-dialog.glade.h:12
 msgid "NT Domain:"
 msgstr "NT domeen:"
 
-#: ../properties/nm-pptp-dialog.glade.h:13
+msgid ""
+"Note: MPPE encryption is only available with MSCHAP authentication methods. "
+"To enable this checkbox, select one or more of the MSCHAP authentication "
+"methods: MSCHAP or MSCHAPv2."
+msgstr ""
+"Märkus: MPPE krüpteering on saadaval ainult MSCHAP autentimismeetodiga. "
+"Selle kasti märkimiseks pead valima kummagi MSCHAP autentimismeetodi: MSCHAP "
+"või MSCHAPv2."
+
+msgid "PPTP Advanced Options"
+msgstr "PPP täpsemad valikud"
+
 msgid "Password:"
 msgstr "Parool:"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
 msgid "Send PPP _echo packets"
 msgstr "Saada PPP _echo pakette"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
 msgid "Show password"
 msgstr "Parooli näidatakse"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Use TCP _header compression"
 msgstr "Kasuta TCP-_päiste tihendamist"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Kasuta _Point-to-Point krüpteerimist (MPPE)"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "User name:"
 msgstr "Kasutajanimi:"
 
-#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "_Gateway:"
 msgstr "_Gateway:"
 
-#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "_Security:"
 msgstr "_Turvalisus:"
 
-#: ../properties/nm-pptp.c:50
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Point-to-Point tunneli protokoll (PPTP)"
 
-#: ../properties/nm-pptp.c:51
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Ühilduv Microsofti ja teiste PPTP VPN serveritega."
 
@@ -219,6 +190,7 @@ msgstr "Ühilduv Microsofti ja teiste PPTP VPN serveritega."
 #, fuzzy
 #~ msgid "VPN Connection Manager (PPP generic)"
 #~ msgstr "VPN ühenduse haldamine (PPTP)"
+
 #~ msgid "00:00:00:00"
 #~ msgstr "00:00:00:00"
 
@@ -245,6 +217,7 @@ msgstr "Ühilduv Microsofti ja teiste PPTP VPN serveritega."
 #, fuzzy
 #~ msgid "Co_nnect delay:"
 #~ msgstr "Ühendu ka_sutajana:"
+
 #~ msgid "Compression & Encryption"
 #~ msgstr "Tihendus ja krüptimine"
 
@@ -283,8 +256,6 @@ msgstr "Ühilduv Microsofti ja teiste PPTP VPN serveritega."
 #, fuzzy
 #~ msgid "IP a_ddress:"
 #~ msgstr "IP aadress"
-#~ msgid "PPP Options"
-#~ msgstr "PPP-valikud"
 
 #, fuzzy
 #~ msgid "Refuse C_HAP"
@@ -362,6 +333,7 @@ msgstr "Ühilduv Microsofti ja teiste PPTP VPN serveritega."
 #, fuzzy
 #~ msgid "_Hardware RTS/CTS"
 #~ msgstr "Riistvaraline seade"
+
 #~ msgid "_Import Saved Configuration..."
 #~ msgstr "_Importi salvestatud seadistus..."
 
@@ -384,8 +356,10 @@ msgstr "Ühilduv Microsofti ja teiste PPTP VPN serveritega."
 #, fuzzy
 #~ msgid "Name"
 #~ msgstr "Nimi: %s"
+
 #~ msgid "PPTP Server"
 #~ msgstr "PPTP Server"
+
 #~ msgid "Telephone Number"
 #~ msgstr "Telefoninumber"
 
@@ -436,6 +410,7 @@ msgstr "Ühilduv Microsofti ja teiste PPTP VPN serveritega."
 #, fuzzy
 #~ msgid "Authenticate remote peer"
 #~ msgstr "PPTP VPN-i autentimine"
+
 #~ msgid "Custom PPP options"
 #~ msgstr "PPP kohandatud valikud"
 
@@ -458,12 +433,16 @@ msgstr "Ühilduv Microsofti ja teiste PPTP VPN serveritega."
 #, fuzzy
 #~ msgid "The connection details can be changed using the \"Back\" button."
 #~ msgstr "Ühenduse üksikasju saab muuta kasutades \"Muuda\" nuppu."
+
 #~ msgid "Select file to import"
 #~ msgstr "Imporditava faili valimine"
+
 #~ msgid "Save as..."
 #~ msgstr "Salvesta kui..."
+
 #~ msgid "A file named \"%s\" already exists."
 #~ msgstr "Fail nimega \"%s\" on juba olemas."
+
 #~ msgid "Do you want to replace it with the one you are saving?"
 #~ msgstr "Kas soovid seda salvestatava failiga asendada?"
 
@@ -478,10 +457,10 @@ msgstr "Ühilduv Microsofti ja teiste PPTP VPN serveritega."
 #, fuzzy
 #~ msgid "auth-none-window"
 #~ msgstr "Puudub (samasse aknasse)"
+
 #~ msgid "<b>Connection Name</b>"
 #~ msgstr "<b>Ühenduse nimi</b>"
 
 #, fuzzy
 #~ msgid "Telephone number to dial"
 #~ msgstr "Imporditavate ridade arv"
-
