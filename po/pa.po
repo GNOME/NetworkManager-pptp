@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: NetworkManager-pptp.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
 "cgi?product=NetworkManager&component=VPN: pptp\n"
-"POT-Creation-Date: 2009-09-13 16:12+0000\n"
-"PO-Revision-Date: 2009-10-08 09:06+0530\n"
+"POT-Creation-Date: 2009-10-27 03:34+0000\n"
+"PO-Revision-Date: 2009-11-09 08:11+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
-"Language-Team: Punjabi/Panjabi <kde-i18n-doc@kde.org>\n"
+"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -67,35 +67,35 @@ msgstr "PPTP VPN ਕੁਨੈਕਸ਼ਨ ਸ਼ਾਮਿਲ, ਹਟਾਓ ਅ�
 msgid "PPTP VPN Connection Manager"
 msgstr "PPTP VPN ਕੁਨੈਕਸ਼ਨ ਮੈਨੇਜਰ"
 
-#: ../properties/advanced-dialog.c:145
+#: ../properties/advanced-dialog.c:173
 msgid "All Available (Default)"
 msgstr "ਸਭ ਉਪਲੱਬਧ (ਡਿਫਾਲਟ)"
 
-#: ../properties/advanced-dialog.c:149
+#: ../properties/advanced-dialog.c:177
 msgid "128-bit (most secure)"
 msgstr "128-bit (ਸਭ ਤੋਂ ਸੁਰੱਖਿਅਤ)"
 
-#: ../properties/advanced-dialog.c:158
+#: ../properties/advanced-dialog.c:186
 msgid "40-bit (less secure)"
 msgstr "40-bit (ਘੱਟ ਸੁਰੱਖਿਅਤ)"
 
-#: ../properties/advanced-dialog.c:229
+#: ../properties/advanced-dialog.c:292
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:235
+#: ../properties/advanced-dialog.c:305
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:241
+#: ../properties/advanced-dialog.c:317
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:247
+#: ../properties/advanced-dialog.c:329
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:253
+#: ../properties/advanced-dialog.c:342
 msgid "EAP"
 msgstr "EAP"
 
@@ -148,39 +148,47 @@ msgid "NT Domain:"
 msgstr "NT ਡੋਮੇਨ:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
-#| msgid "PPP Options"
+msgid ""
+"Note: MPPE encryption is only available with MSCHAP authentication methods. "
+"To enable this checkbox, select one or more of the MSCHAP authentication "
+"methods: MSCHAP or MSCHAPv2."
+msgstr ""
+"ਨੋਟ: MPPE ਇੰਕ੍ਰਿਪਸ਼ਨ ਕੇਵਲ MSCHAP ਪਰਮਾਣਕਿਤਾ ਢੰਗਾਂ ਨਾਲ ਹੀ ਉਪਲੱਬਧ ਹੈ। ਇਹ ਚੋਣ-ਬਾਕਸ ਯੋਗ ਕਰਨ "
+"ਵਾਸਤੇ, ਇੱਕ ਜਾਂ ਵੱਧ MSCHAP ਪਰਮਾਣਕਿਤਾ ਢੰਗ ਚੁਣੋ: MSCHAP ਜਾਂ MSCHAPv2"
+
+#: ../properties/nm-pptp-dialog.glade.h:14
 msgid "PPTP Advanced Options"
 msgstr "PPP ਮਾਹਰ ਚੋਣਾਂ"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:15
 msgid "Password:"
 msgstr "ਪਾਸਵਰਡ:"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Send PPP _echo packets"
 msgstr "PPP ਈਚੋ ਪੈਕੇਟ ਭੇਜੋ(_e)"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Show password"
 msgstr "ਪਾਸਵਰਡ ਵੇਖੋ"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "Use TCP _header compression"
 msgstr "TPC ਹੈੱਡਰ ਕੰਪਰੈਸ਼ਨ ਵਰਤੋਂ(_h)"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "ਪੁਆਇੰਟ-ਟੂ-ਪੁਆਇੰਟ ਇੰਕ੍ਰਿਪਸ਼ਨ ਵਰਤੋਂ (M_PPE)"
 
-#: ../properties/nm-pptp-dialog.glade.h:19
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "User name:"
 msgstr "ਯੂਜ਼ਰ ਨਾਂ:"
 
-#: ../properties/nm-pptp-dialog.glade.h:20
+#: ../properties/nm-pptp-dialog.glade.h:21
 msgid "_Gateway:"
 msgstr "ਗੇਟਵੇ(_G):"
 
-#: ../properties/nm-pptp-dialog.glade.h:21
+#: ../properties/nm-pptp-dialog.glade.h:22
 msgid "_Security:"
 msgstr "ਸੁਰੱਖਿਆ(_S):"
 
