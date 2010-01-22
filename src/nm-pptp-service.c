@@ -41,12 +41,6 @@
 #include <dbus/dbus.h>
 #include <dbus/dbus-glib.h>
 
-#include <linux/ppp_defs.h>
-#ifndef aligned_u64
-#define aligned_u64 unsigned long long __attribute__((aligned(8)))
-#endif
-#include <linux/if_ppp.h>
-
 #include <nm-setting-vpn.h>
 #include <nm-utils.h>
 
