@@ -389,6 +389,7 @@ advanced_dialog_new (GHashTable *hash)
 	char *glade_file = NULL;
 	GtkWidget *widget;
 	const char *value;
+	gboolean mppe = FALSE;
 
 	g_return_val_if_fail (hash != NULL, NULL);
 
@@ -409,10 +410,20 @@ advanced_dialog_new (GHashTable *hash)
 
 	setup_security_combo (xml, hash);
 
-	widget = glade_xml_get_widget (xml, "ppp_use_mppe");
-
 	value = g_hash_table_lookup (hash, NM_PPTP_KEY_REQUIRE_MPPE);
 	if (value && !strcmp (value, "yes"))
+		mppe = TRUE;
+
+	value = g_hash_table_lookup (hash, NM_PPTP_KEY_REQUIRE_MPPE_40);
+	if (value && !strcmp (value, "yes"))
+		mppe = TRUE;
+
+	value = g_hash_table_lookup (hash, NM_PPTP_KEY_REQUIRE_MPPE_128);
+	if (value && !strcmp (value, "yes"))
+		mppe = TRUE;
+
+	widget = glade_xml_get_widget (xml, "ppp_use_mppe");
+	if (mppe)
 		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
 
 	g_signal_connect (G_OBJECT (widget), "toggled", G_CALLBACK (mppe_toggled_cb), xml);
