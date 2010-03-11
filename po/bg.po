@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-27 11:28+0300\n"
-"PO-Revision-Date: 2009-09-28 14:07+0300\n"
+"POT-Creation-Date: 2010-03-11 22:04+0200\n"
+"PO-Revision-Date: 2010-03-11 09:10+0200\n"
 "Last-Translator: Krasimir Chonov <mk2616@abv.bg>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
@@ -67,35 +67,35 @@ msgstr "Добавяне, изтриване и редактиране на вр
 msgid "PPTP VPN Connection Manager"
 msgstr "Управление на връзки за ВЧМ по PPTP"
 
-#: ../properties/advanced-dialog.c:145
+#: ../properties/advanced-dialog.c:173
 msgid "All Available (Default)"
 msgstr "Всички налични (стандартно)"
 
-#: ../properties/advanced-dialog.c:149
+#: ../properties/advanced-dialog.c:177
 msgid "128-bit (most secure)"
 msgstr "128-битово (най-сигурно)"
 
-#: ../properties/advanced-dialog.c:158
+#: ../properties/advanced-dialog.c:186
 msgid "40-bit (less secure)"
 msgstr "40-битово (несигурно)"
 
-#: ../properties/advanced-dialog.c:229
+#: ../properties/advanced-dialog.c:292
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:235
+#: ../properties/advanced-dialog.c:305
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:241
+#: ../properties/advanced-dialog.c:317
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:247
+#: ../properties/advanced-dialog.c:329
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:253
+#: ../properties/advanced-dialog.c:342
 msgid "EAP"
 msgstr "EAP"
 
@@ -148,38 +148,48 @@ msgid "NT Domain:"
 msgstr "Домейн:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
+msgid ""
+"Note: MPPE encryption is only available with MSCHAP authentication methods. "
+"To enable this checkbox, select one or more of the MSCHAP authentication "
+"methods: MSCHAP or MSCHAPv2."
+msgstr ""
+"Забележка: шифрирането MPPE е достъпно само с методи за идентифициране "
+"MSCHAP. За да се активира тази отметка, изберете един или повече от следните "
+"методи: MSCHAP или MSCHAPv2."
+
+#: ../properties/nm-pptp-dialog.glade.h:14
 msgid "PPTP Advanced Options"
 msgstr "Допълнителни настройки на PPP"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:15
 msgid "Password:"
 msgstr "Парола:"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Send PPP _echo packets"
 msgstr "_Пращане на пакети „echo“ по PPP"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Show password"
 msgstr "Показване на паролата"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "Use TCP _header compression"
 msgstr "Използване на компресия на заглавните _части на TCP"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Използване на _шифриране точка до точка (MPPE)"
 
-#: ../properties/nm-pptp-dialog.glade.h:19
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "User name:"
 msgstr "Потребителско име:"
 
-#: ../properties/nm-pptp-dialog.glade.h:20
+#: ../properties/nm-pptp-dialog.glade.h:21
 msgid "_Gateway:"
 msgstr "_Шлюз:"
 
-#: ../properties/nm-pptp-dialog.glade.h:21
+#: ../properties/nm-pptp-dialog.glade.h:22
 msgid "_Security:"
 msgstr "_Сигурност:"
 
