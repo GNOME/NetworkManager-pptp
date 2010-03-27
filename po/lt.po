@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-15 03:15+0300\n"
-"PO-Revision-Date: 2009-09-15 03:15+0300\n"
+"POT-Creation-Date: 2010-03-27 12:39+0200\n"
+"PO-Revision-Date: 2010-03-27 12:39+0200\n"
 "Last-Translator: Gintautas Miliauskas <gintautas@miliauskas.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
@@ -69,35 +69,35 @@ msgstr "Pridėti, šalinti ir taisyti PPTP VPN ryšius"
 msgid "PPTP VPN Connection Manager"
 msgstr "PPTP VPN ryšių valdyklė"
 
-#: ../properties/advanced-dialog.c:145
+#: ../properties/advanced-dialog.c:173
 msgid "All Available (Default)"
 msgstr "Visi prieinami (numatytasis)"
 
-#: ../properties/advanced-dialog.c:149
+#: ../properties/advanced-dialog.c:177
 msgid "128-bit (most secure)"
 msgstr "128-bit (saugiausia)"
 
-#: ../properties/advanced-dialog.c:158
+#: ../properties/advanced-dialog.c:186
 msgid "40-bit (less secure)"
 msgstr "40-bit (mažiau saugu)"
 
-#: ../properties/advanced-dialog.c:229
+#: ../properties/advanced-dialog.c:292
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:235
+#: ../properties/advanced-dialog.c:305
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:241
+#: ../properties/advanced-dialog.c:317
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:247
+#: ../properties/advanced-dialog.c:329
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:253
+#: ../properties/advanced-dialog.c:342
 msgid "EAP"
 msgstr "EAP"
 
@@ -150,38 +150,48 @@ msgid "NT Domain:"
 msgstr "NT sritis:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
+msgid ""
+"Note: MPPE encryption is only available with MSCHAP authentication methods. "
+"To enable this checkbox, select one or more of the MSCHAP authentication "
+"methods: MSCHAP or MSCHAPv2."
+msgstr ""
+"Pastaba: MPPE šifravimas galimas tik su MSCHAP autentikacijos metodais. "
+"Norėdami jį pasirinkti, pasirinkite vieną ar kelis MSCHAP autentikacijos "
+"metodus: MSCHAP arba MSCHAPv2."
+
+#: ../properties/nm-pptp-dialog.glade.h:14
 msgid "PPTP Advanced Options"
 msgstr "PPTP sudėtingesni nustatymai"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:15
 msgid "Password:"
 msgstr "Slaptažodis:"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Send PPP _echo packets"
 msgstr "Siųsti PPP _aido paketus"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Show password"
 msgstr "Rodyti slaptažodį"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "Use TCP _header compression"
 msgstr "Naudoti TCP _antraštės glaudinimą"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Naudoti _PPP šifravimą (MPPE)"
 
-#: ../properties/nm-pptp-dialog.glade.h:19
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "User name:"
 msgstr "Naudotojo vardas:"
 
-#: ../properties/nm-pptp-dialog.glade.h:20
+#: ../properties/nm-pptp-dialog.glade.h:21
 msgid "_Gateway:"
 msgstr "Š_liuzas:"
 
-#: ../properties/nm-pptp-dialog.glade.h:21
+#: ../properties/nm-pptp-dialog.glade.h:22
 msgid "_Security:"
 msgstr "_Saugumas:"
 
