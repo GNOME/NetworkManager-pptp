@@ -99,9 +99,8 @@ advanced_dialog_new_hash_from_connection (NMConnection *connection,
 }
 
 static void
-mppe_toggled_cb (GtkWidget *check, gpointer user_data)
+handle_mppe_changed (GtkWidget *check, gboolean is_init, GladeXML *xml)
 {
-	GladeXML *xml = (GladeXML *) user_data;
 	GtkWidget *widget;
 	gboolean use_mppe;
 	GtkTreeModel *model;
@@ -109,6 +108,14 @@ mppe_toggled_cb (GtkWidget *check, gpointer user_data)
 	gboolean valid;
 
 	use_mppe = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (check));
+
+	/* At dialog-setup time, don't touch the auth methods if MPPE is disabled
+	 * since that could overwrite the user's previously chosen auth methods.
+	 * But ensure that at init time if MPPE is on that incompatible auth methods
+	 * aren't selected.
+	 */
+	if (is_init && !use_mppe)
+		return;
 
 	/* If MPPE is active, PAP, CHAP, and EAP aren't allowed by the MPPE specs;
 	 * likewise, if MPPE is inactive, sensitize the PAP, CHAP, and EAP checkboxes.
@@ -146,6 +153,12 @@ mppe_toggled_cb (GtkWidget *check, gpointer user_data)
 	if (!use_mppe)
 		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), FALSE);
 	gtk_widget_set_sensitive (widget, use_mppe);
+}
+
+static void
+mppe_toggled_cb (GtkWidget *check, gpointer user_data)
+{
+	handle_mppe_changed (check, FALSE, (GladeXML *) user_data);
 }
 
 #define SEC_INDEX_DEFAULT   0
@@ -426,8 +439,6 @@ advanced_dialog_new (GHashTable *hash)
 	if (mppe)
 		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
 
-	g_signal_connect (G_OBJECT (widget), "toggled", G_CALLBACK (mppe_toggled_cb), xml);
-
 	widget = glade_xml_get_widget (xml, "ppp_allow_stateful_mppe");
 	value = g_hash_table_lookup (hash, NM_PPTP_KEY_MPPE_STATEFUL);
 	if (value && !strcmp (value, "yes"))
@@ -465,7 +476,7 @@ advanced_dialog_new (GHashTable *hash)
 	auth_methods_setup (xml, hash);
 
 	widget = glade_xml_get_widget (xml, "ppp_use_mppe");
-	mppe_toggled_cb (widget, xml);
+	handle_mppe_changed (widget, TRUE, xml);
 	g_signal_connect (G_OBJECT (widget), "toggled", G_CALLBACK (mppe_toggled_cb), xml);
 
 out:
