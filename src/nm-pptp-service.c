@@ -684,6 +684,8 @@ construct_pppd_args (NMPptpPlugin *plugin,
 	GPtrArray *args = NULL;
 	const char *value, *pptp_binary;
 	char *ipparam, *tmp;
+	const char *loglevel0 = "--loglevel 0";
+	const char *loglevel2 = "--loglevel 2";
 
 	pptp_binary = nm_find_pptp ();
 	if (!pptp_binary) {
@@ -712,7 +714,10 @@ construct_pppd_args (NMPptpPlugin *plugin,
 	ipparam = g_strdup_printf ("nm-pptp-service-%d", getpid ());
 
 	g_ptr_array_add (args, (gpointer) g_strdup ("pty"));
-	tmp = g_strdup_printf ("%s %s --nolaunchpppd --logstring %s", pptp_binary, value, ipparam);
+	tmp = g_strdup_printf ("%s %s --nolaunchpppd %s --logstring %s",
+	                       pptp_binary, value,
+	                       getenv ("NM_PPTP_DEBUG") ? loglevel2 : loglevel0,
+	                       ipparam);
 	g_ptr_array_add (args, (gpointer) tmp);
 
 	if (getenv ("NM_PPP_DEBUG"))
