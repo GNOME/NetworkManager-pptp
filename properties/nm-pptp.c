@@ -188,7 +188,11 @@ advanced_button_clicked_cb (GtkWidget *button, gpointer user_data)
 	GtkWidget *dialog, *toplevel;
 
 	toplevel = gtk_widget_get_toplevel (priv->widget);
+#if GTK_CHECK_VERSION(2,18,0)
+	g_return_if_fail (gtk_widget_is_toplevel (toplevel));
+#else
 	g_return_if_fail (GTK_WIDGET_TOPLEVEL (toplevel));
+#endif
 
 	dialog = advanced_dialog_new (priv->advanced);
 	if (!dialog) {
