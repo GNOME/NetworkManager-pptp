@@ -17,8 +17,10 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * (C) Copyright 2008 - 2009 Red Hat, Inc.
+ * (C) Copyright 2008 - 2010 Red Hat, Inc.
  */
+
+#include <config.h>
 
 #include <stdio.h>
 #include <string.h>
@@ -46,6 +48,12 @@
 
 #include "nm-pptp-service.h"
 #include "nm-ppp-status.h"
+
+#if !defined(DIST_VERSION)
+# define DIST_VERSION VERSION
+#endif
+
+static gboolean debug = FALSE;
 
 /********************************************************/
 /* ppp plugin <-> pptp-service object                   */
@@ -710,11 +718,11 @@ construct_pppd_args (NMPptpPlugin *plugin,
 	g_ptr_array_add (args, (gpointer) g_strdup ("pty"));
 	tmp = g_strdup_printf ("%s %s --nolaunchpppd %s --logstring %s",
 	                       pptp_binary, value,
-	                       getenv ("NM_PPTP_DEBUG") ? loglevel2 : loglevel0,
+	                       debug ? loglevel2 : loglevel0,
 	                       ipparam);
 	g_ptr_array_add (args, (gpointer) tmp);
 
-	if (getenv ("NM_PPP_DEBUG"))
+	if (debug)
 		g_ptr_array_add (args, (gpointer) g_strdup ("debug"));
 
 	/* PPP options */
@@ -1245,8 +1253,35 @@ main (int argc, char *argv[])
 {
 	NMPptpPlugin *plugin;
 	GMainLoop *main_loop;
+	gboolean persist = FALSE;
+	GOptionContext *opt_ctx = NULL;
+
+	GOptionEntry options[] = {
+		{ "persist", 0, 0, G_OPTION_ARG_NONE, &persist, "Don't quit when VPN connection terminates", NULL },
+		{ "debug", 0, 0, G_OPTION_ARG_NONE, &debug, "Enable verbose debug logging (may expose passwords)", NULL },
+		{NULL}
+	};
 
 	g_type_init ();
+
+	/* Parse options */
+	opt_ctx = g_option_context_new ("");
+	g_option_context_set_translation_domain (opt_ctx, "UTF-8");
+	g_option_context_set_ignore_unknown_options (opt_ctx, FALSE);
+	g_option_context_set_help_enabled (opt_ctx, TRUE);
+	g_option_context_add_main_entries (opt_ctx, options, NULL);
+
+	g_option_context_set_summary (opt_ctx,
+		"nm-vpnc-service provides integrated Cisco Legacy IPSec VPN capability to NetworkManager.");
+
+	g_option_context_parse (opt_ctx, &argc, &argv, NULL);
+	g_option_context_free (opt_ctx);
+
+	if (getenv ("NM_PPP_DEBUG"))
+		debug = TRUE;
+
+	if (debug)
+		g_message ("nm-pptp-service (version " DIST_VERSION ") starting...");
 
 	plugin = nm_pptp_plugin_new ();
 	if (!plugin)
@@ -1254,9 +1289,8 @@ main (int argc, char *argv[])
 
 	main_loop = g_main_loop_new (NULL, FALSE);
 
-	g_signal_connect (plugin, "quit",
-				   G_CALLBACK (quit_mainloop),
-				   main_loop);
+	if (!persist)
+		g_signal_connect (plugin, "quit", G_CALLBACK (quit_mainloop), main_loop);
 
 	g_main_loop_run (main_loop);
 
