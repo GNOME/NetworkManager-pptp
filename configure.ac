@@ -69,9 +69,13 @@ PKG_CHECK_MODULES(DBUS, dbus-glib-1 >= 0.74)
 AC_SUBST(DBUS_GLIB_CFLAGS)
 AC_SUBST(DBUS_GLIB_LIBS)
 
-PKG_CHECK_MODULES(NM_UTILS, NetworkManager >= 0.8.1 libnm-util libnm-glib libnm-glib-vpn)
-AC_SUBST(NM_UTILS_CFLAGS)
-AC_SUBST(NM_UTILS_LIBS)
+PKG_CHECK_MODULES(NETWORKMANAGER,
+                  NetworkManager >= 0.8.1.997
+                  libnm-util >= 0.8.1.997
+                  libnm-glib >= 0.8.1.997
+                  libnm-glib-vpn >= 0.8.1.997)
+AC_SUBST(NETWORKMANAGER_CFLAGS)
+AC_SUBST(NETWORKMANAGER_LIBS)
 
 if test x"$with_gnome" != xno; then
 	PKG_CHECK_MODULES(GTK, gtk+-2.0 >= 2.14)
