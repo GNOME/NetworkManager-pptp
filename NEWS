@@ -1,0 +1,10 @@
+=======================================================
+network-manager-pptp-0.8.2
+Overview of changes since network-manager-pptp-0.8.1
+=======================================================
+
+This is a new stable release of network-manager-pptp.  Notable changes include:
+
+* Updated translations
+* Better debugging options
+* Updated for ppp 2.4.5
