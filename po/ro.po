@@ -76,7 +76,7 @@ msgstr "Toate cele disponibile (implicit)"
 
 #: ../properties/advanced-dialog.c:190
 msgid "128-bit (most secure)"
-msgstr "128-bit (mai sigură)"
+msgstr "128-bit (cea mai sigură)"
 
 #: ../properties/advanced-dialog.c:199
 msgid "40-bit (less secure)"
