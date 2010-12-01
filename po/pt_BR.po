@@ -6,15 +6,16 @@
 # Fabrício Godoy <skarllot@gmail.com>, 2008.
 # Vladimir Melo <vmelo@gnome.org>, 2008.
 # Henrique P Machado <zehrique@gmail.com>, 2008.
-# Og Maciel <ogmaciel@gnome.org>, 2009.
+# Og Maciel <ogmaciel@gnome.org>, 2009, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-19 08:58-0400\n"
-"PO-Revision-Date: 2009-09-19 08:59-0500\n"
-"Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=NetworkManager&component=VPN: pptp\n"
+"POT-Creation-Date: 2010-11-27 12:33+0000\n"
+"PO-Revision-Date: 2010-11-30 18:55-0300\n"
+"Last-Translator: Mateus Zenaide <mateus.gnome@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -71,35 +72,35 @@ msgstr "Adicione, remova e edite conexões PPTP VPN"
 msgid "PPTP VPN Connection Manager"
 msgstr "Gerenciador de Conexões PPTP VPN"
 
-#: ../properties/advanced-dialog.c:145
+#: ../properties/advanced-dialog.c:186
 msgid "All Available (Default)"
 msgstr "Todas disponíveis (padrão)"
 
-#: ../properties/advanced-dialog.c:149
+#: ../properties/advanced-dialog.c:190
 msgid "128-bit (most secure)"
 msgstr "128 bits (mais seguro)"
 
-#: ../properties/advanced-dialog.c:158
+#: ../properties/advanced-dialog.c:199
 msgid "40-bit (less secure)"
 msgstr "40 bits (menos seguro)"
 
-#: ../properties/advanced-dialog.c:229
+#: ../properties/advanced-dialog.c:305
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:235
+#: ../properties/advanced-dialog.c:318
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:241
+#: ../properties/advanced-dialog.c:330
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:247
+#: ../properties/advanced-dialog.c:342
 msgid "MSCHAPv2"
 msgstr "MSCHAP v.2"
 
-#: ../properties/advanced-dialog.c:253
+#: ../properties/advanced-dialog.c:355
 msgid "EAP"
 msgstr "EAP"
 
@@ -152,38 +153,48 @@ msgid "NT Domain:"
 msgstr "Domínio NT:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
+msgid ""
+"Note: MPPE encryption is only available with MSCHAP authentication methods. "
+"To enable this checkbox, select one or more of the MSCHAP authentication "
+"methods: MSCHAP or MSCHAPv2."
+msgstr ""
+"Nota: A criptografia MPPE está disponível apenas com métodos de autenticação "
+"MSCHAP. Para ativar esta opção, selecione um ou mais dos métodos de "
+"autenticação MSCHAP: MSCHAP ou MSCHAPv2."
+
+#: ../properties/nm-pptp-dialog.glade.h:14
 msgid "PPTP Advanced Options"
 msgstr "Opções PPTP avançadas"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:15
 msgid "Password:"
 msgstr "Senha:"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Send PPP _echo packets"
 msgstr "Enviar pacotes PPP de _eco"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Show password"
 msgstr "Mostrar senha"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "Use TCP _header compression"
 msgstr "Usar compressão de cabeçal_ho TCP"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Usar criptografia _ponto a ponto (MPPE)"
 
-#: ../properties/nm-pptp-dialog.glade.h:19
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "User name:"
 msgstr "Nome de usuário:"
 
-#: ../properties/nm-pptp-dialog.glade.h:20
+#: ../properties/nm-pptp-dialog.glade.h:21
 msgid "_Gateway:"
 msgstr "_Gateway:"
 
-#: ../properties/nm-pptp-dialog.glade.h:21
+#: ../properties/nm-pptp-dialog.glade.h:22
 msgid "_Security:"
 msgstr "_Segurança:"
 
