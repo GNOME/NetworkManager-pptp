@@ -4,18 +4,21 @@
 #   NetworkManager-pptp package.
 # Gil Forcada <gilforcada@guifi.net>, 2006, 2007.
 # David Planella <david.planella@gmail.com>, 2009.
+# Jordi Estrada <jordi.estrada@gmail.com>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-26 20:54+0100\n"
-"PO-Revision-Date: 2009-01-14 22:33+0100\n"
-"Last-Translator: David Planella <david.planella@gmail.com>\n"
+"POT-Creation-Date: 2010-12-25 21:57+0100\n"
+"PO-Revision-Date: 2010-11-26 12:43+0100\n"
+"Last-Translator: Jordi Estrada <jordi.estrada@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../auth-dialog/gnome-two-password-dialog.c:129
 msgid "_Secondary Password:"
@@ -67,35 +70,35 @@ msgstr "Afegiu, suprimiu i editeu connexions VPN PPTP"
 msgid "PPTP VPN Connection Manager"
 msgstr "Gestor de connexions VPN PPTP"
 
-#: ../properties/advanced-dialog.c:145
+#: ../properties/advanced-dialog.c:186
 msgid "All Available (Default)"
 msgstr "Tots els disponibles (predeterminat)"
 
-#: ../properties/advanced-dialog.c:149
+#: ../properties/advanced-dialog.c:190
 msgid "128-bit (most secure)"
 msgstr "128-bits (el més segur)"
 
-#: ../properties/advanced-dialog.c:158
+#: ../properties/advanced-dialog.c:199
 msgid "40-bit (less secure)"
 msgstr "40-bits (menys segur)"
 
-#: ../properties/advanced-dialog.c:229
+#: ../properties/advanced-dialog.c:305
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:235
+#: ../properties/advanced-dialog.c:318
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:241
+#: ../properties/advanced-dialog.c:330
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:247
+#: ../properties/advanced-dialog.c:342
 msgid "MSCHAPv2"
 msgstr "MSCHAP v2"
 
-#: ../properties/advanced-dialog.c:253
+#: ../properties/advanced-dialog.c:355
 msgid "EAP"
 msgstr "EAP"
 
@@ -148,34 +151,48 @@ msgid "NT Domain:"
 msgstr "Domini NT:"
 
 #: ../properties/nm-pptp-dialog.glade.h:13
+msgid ""
+"Note: MPPE encryption is only available with MSCHAP authentication methods. "
+"To enable this checkbox, select one or more of the MSCHAP authentication "
+"methods: MSCHAP or MSCHAPv2."
+msgstr ""
+"Nota: l'encriptació MPPE només està disponible amb els mètodes "
+"d'autenticació MSCHAP. Per habilitar aquesta opció, seleccioneu un o més "
+"dels mètodes d'autenticació MSCHAP: MSCHAP o MSCHAPv2."
+
+#: ../properties/nm-pptp-dialog.glade.h:14
+msgid "PPTP Advanced Options"
+msgstr "Opcions PPTP avançades"
+
+#: ../properties/nm-pptp-dialog.glade.h:15
 msgid "Password:"
 msgstr "Contrasenya:"
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.glade.h:16
 msgid "Send PPP _echo packets"
 msgstr "Envia paquets d'_eco PPP"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.glade.h:17
 msgid "Show password"
 msgstr "Mostra la contrasenya"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.glade.h:18
 msgid "Use TCP _header compression"
 msgstr "Utilitza compressió de les capçaleres _TCP"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.glade.h:19
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Utilitza el xifratge _punt a punt (MPPE)"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.glade.h:20
 msgid "User name:"
 msgstr "Nom d'usuari:"
 
-#: ../properties/nm-pptp-dialog.glade.h:19
+#: ../properties/nm-pptp-dialog.glade.h:21
 msgid "_Gateway:"
-msgstr "_Pasarel·la:"
+msgstr "_Passarel·la:"
 
-#: ../properties/nm-pptp-dialog.glade.h:20
+#: ../properties/nm-pptp-dialog.glade.h:22
 msgid "_Security:"
 msgstr "_Seguretat"
 
@@ -313,17 +330,14 @@ msgstr "Compatible amb els servidors PPTP VPN de Microsoft i d'altres."
 #~ "If Deflate compression is not allowed the 'nodefate' option is passed to "
 #~ "pppd"
 #~ msgstr ""
-#~ "Si no està permesa la compressió desinflada, es passarà l'opció «nodefate» "
-#~ "al pppd"
+#~ "Si no està permesa la compressió desinflada, es passarà l'opció "
+#~ "«nodefate» al pppd"
 
 #~ msgid "Maximum Receive Unit"
 #~ msgstr "Unitat màxima de recepció"
 
 #~ msgid "Maximum Transmit Unit"
 #~ msgstr "Unitat màxima d'enviament"
-
-#~ msgid "PPP Options"
-#~ msgstr "Opcions PPP"
 
 #~ msgid "Refuse C_HAP"
 #~ msgstr "Rebutja C_HAP"
