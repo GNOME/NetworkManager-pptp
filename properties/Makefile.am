@@ -9,26 +9,24 @@ libnm_pptp_properties_la_SOURCES = \
 	import-export.c \
 	import-export.h
 
-gladedir = $(datadir)/gnome-vpn-properties/pptp
-glade_DATA = nm-pptp-dialog.glade
+uidir = $(datadir)/gnome-vpn-properties/pptp
+ui_DATA = nm-pptp-dialog.ui
 
-libnm_pptp_properties_la_CFLAGS =                    \
-        $(GLADE_CFLAGS)                                 \
+libnm_pptp_properties_la_CFLAGS =                       \
         $(GTK_CFLAGS)                                   \
         $(GCONF_CFLAGS)                                 \
         $(LIBGNOMEUI_CFLAGS)                            \
         $(GNOMEKEYRING_CFLAGS)                          \
         $(NETWORKMANAGER_CFLAGS)                        \
         -DICONDIR=\""$(datadir)/pixmaps"\"              \
-        -DGLADEDIR=\""$(gladedir)"\"                    \
+        -DUIDIR=\""$(uidir)"\"                          \
         -DG_DISABLE_DEPRECATED                          \
         -DGDK_DISABLE_DEPRECATED                        \
         -DGNOME_DISABLE_DEPRECATED                      \
         -DGNOMELOCALEDIR=\"$(datadir)/locale\"          \
         -DVERSION=\"$(VERSION)\"
 
-libnm_pptp_properties_la_LIBADD =    \
-        $(GLADE_LIBS)                   \
+libnm_pptp_properties_la_LIBADD =       \
         $(GTK_LIBS)                     \
         $(GCONF_LIBS)                   \
         $(LIBGNOMEUI_LIBS)              \
@@ -38,7 +36,7 @@ libnm_pptp_properties_la_LIBADD =    \
 libnm_pptp_properties_la_LDFLAGS =   \
         -avoid-version
 
-CLEANFILES = *.bak *.gladep *~
+CLEANFILES = *.bak *~
 
 EXTRA_DIST =                            \
-        $(glade_DATA)
+        $(ui_DATA)
