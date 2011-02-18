@@ -78,7 +78,16 @@ AC_SUBST(NM_CFLAGS)
 AC_SUBST(NM_LIBS)
 
 if test x"$with_gnome" != xno; then
-	PKG_CHECK_MODULES(GTK, gtk+-2.0 >= 2.18)
+	AC_ARG_WITH([gtkver], AS_HELP_STRING([--with-gtkver], [The major version of GTK+ to build with]),
+	            with_gtkver="$withval",with_gtkver=3)
+	case "${with_gtkver}" in
+	       2) PKG_CHECK_MODULES(GTK, gtk+-2.0 >= 2.20)
+	          gtkver=2
+	          ;;
+	       *) PKG_CHECK_MODULES(GTK, gtk+-3.0 >= 2.91.4)
+	          gtkver=3
+	          ;;
+	esac
 	AC_SUBST(GTK_CFLAGS)
 	AC_SUBST(GTK_LIBS)
 
