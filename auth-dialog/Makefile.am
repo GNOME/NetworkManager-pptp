@@ -3,7 +3,7 @@ INCLUDES = -I${top_srcdir}
 libexec_PROGRAMS = nm-pptp-auth-dialog
 
 nm_pptp_auth_dialog_CPPFLAGS =			\
-	$(NETWORKMANAGER_CFLAGS)		\
+	$(NM_CFLAGS)		\
 	$(GTHREAD_CFLAGS)			\
 	$(GTK_CFLAGS)				\
 	$(GCONF_CFLAGS)				\

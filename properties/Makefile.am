@@ -17,7 +17,7 @@ libnm_pptp_properties_la_CFLAGS =                       \
         $(GCONF_CFLAGS)                                 \
         $(LIBGNOMEUI_CFLAGS)                            \
         $(GNOMEKEYRING_CFLAGS)                          \
-        $(NETWORKMANAGER_CFLAGS)                        \
+        $(NM_CFLAGS)                        \
         -DICONDIR=\""$(datadir)/pixmaps"\"              \
         -DUIDIR=\""$(uidir)"\"                          \
         -DG_DISABLE_DEPRECATED                          \
@@ -31,7 +31,7 @@ libnm_pptp_properties_la_LIBADD =       \
         $(GCONF_LIBS)                   \
         $(LIBGNOMEUI_LIBS)              \
         $(top_builddir)/common-gnome/libnm-pptp-common-gnome.la	\
-        $(NETWORKMANAGER_LIBS)
+        $(NM_LIBS)
 
 libnm_pptp_properties_la_LDFLAGS =   \
         -avoid-version

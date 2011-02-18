@@ -1,7 +1,7 @@
 noinst_LTLIBRARIES=libnm-pptp-common-gnome.la
 
 libnm_pptp_common_gnome_la_CPPFLAGS = \
-	$(NETWORKMANAGER_CFLAGS) \
+	$(NM_CFLAGS) \
 	$(GLIB_CFLAGS) \
 	$(GNOMEKEYRING_CFLAGS) \
 	-DG_DISABLE_DEPRECATED
@@ -11,7 +11,7 @@ libnm_pptp_common_gnome_la_SOURCES= \
 	keyring-helpers.h
 
 libnm_pptp_common_gnome_la_LIBADD = \
-	$(NETWORKMANAGER_LIBS) \
+	$(NM_LIBS) \
 	$(GLIB_LIBS) \
 	$(GNOMEKEYRING_LIBS)
 
