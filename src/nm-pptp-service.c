@@ -1110,19 +1110,27 @@ real_need_secrets (NMVPNPlugin *plugin,
                    char **setting_name,
                    GError **error)
 {
-	NMSettingVPN *s_vpn;
+	NMSetting *s_vpn;
+	NMSettingSecretFlags flags = NM_SETTING_SECRET_FLAG_NONE;
 
 	g_return_val_if_fail (NM_IS_VPN_PLUGIN (plugin), FALSE);
 	g_return_val_if_fail (NM_IS_CONNECTION (connection), FALSE);
 
-	s_vpn = NM_SETTING_VPN (nm_connection_get_setting (connection, NM_TYPE_SETTING_VPN));
+	s_vpn = nm_connection_get_setting (connection, NM_TYPE_SETTING_VPN);
 
-	if (!nm_setting_vpn_get_secret (s_vpn, NM_PPTP_KEY_PASSWORD)) {
-		*setting_name = NM_SETTING_VPN_SETTING_NAME;
-		return TRUE;
-	}
+	nm_setting_get_secret_flags (NM_SETTING (s_vpn), NM_PPTP_KEY_PASSWORD, &flags, NULL);
 
-	return FALSE;
+	/* Don't need the password if it's not required */
+	if (flags & NM_SETTING_SECRET_FLAG_NOT_REQUIRED)
+		return FALSE;
+
+	/* Don't need the password if we already have one */
+	if (nm_setting_vpn_get_secret (NM_SETTING_VPN (s_vpn), NM_PPTP_KEY_PASSWORD))
+		return FALSE;
+
+	/* Otherwise we need a password */
+	*setting_name = NM_SETTING_VPN_SETTING_NAME;
+	return TRUE;
 }
 
 static gboolean

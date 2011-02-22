@@ -231,6 +231,8 @@ fill_password (GtkBuilder *builder,
 {
 	GtkWidget *widget = NULL;
 	gchar *password = NULL;
+	NMSettingVPN *s_vpn;
+	gboolean unused;
 
 	widget = GTK_WIDGET (gtk_builder_get_object (builder, widget_name));
 	g_assert (widget);
@@ -238,27 +240,18 @@ fill_password (GtkBuilder *builder,
 	if (!connection)
 		return widget;
 
-	password = NULL;
+	/* Try the connection first */
+	s_vpn = (NMSettingVPN *) nm_connection_get_setting (connection, NM_TYPE_SETTING_VPN);
+	if (s_vpn) {
+		const gchar *tmp = NULL;
 
-	if (nm_connection_get_scope (connection) == NM_CONNECTION_SCOPE_SYSTEM) {
-		NMSettingVPN *s_vpn;
+		tmp = nm_setting_vpn_get_secret (s_vpn, password_type);
+		if (tmp)
+			password = gnome_keyring_memory_strdup (tmp);
+	}
 
-		s_vpn = (NMSettingVPN *) nm_connection_get_setting (connection, NM_TYPE_SETTING_VPN);
-		if (s_vpn) {
-			const gchar *tmp = NULL;
-
-			tmp = nm_setting_vpn_get_secret (s_vpn, password_type);
-			if (tmp)
-				password = gnome_keyring_memory_strdup (tmp);
-		}
-	} else {
-		NMSettingConnection *s_con = NULL;
-		gboolean unused;
-		const char *uuid;
-
-		s_con = NM_SETTING_CONNECTION (nm_connection_get_setting (connection, NM_TYPE_SETTING_CONNECTION));
-		uuid = nm_setting_connection_get_uuid (s_con);
-		password = keyring_helpers_lookup_secret (uuid,
+	if (!password) {
+		password = keyring_helpers_lookup_secret (nm_connection_get_uuid (connection),
 		                                          password_type,
 		                                          &unused);
 	}
@@ -418,26 +411,24 @@ save_secrets (NMVpnPluginUiWidgetInterface *iface,
 	PptpPluginUiWidget *self = PPTP_PLUGIN_UI_WIDGET (iface);
 	PptpPluginUiWidgetPrivate *priv = PPTP_PLUGIN_UI_WIDGET_GET_PRIVATE (self);
 	GnomeKeyringResult ret;
-	NMSettingConnection *s_con;
 	GtkWidget *widget;
 	const char *str, *uuid, *id;
+	NMSettingSecretFlags flags = NM_SETTING_SECRET_FLAG_NONE;
 
-	s_con = (NMSettingConnection *) nm_connection_get_setting (connection, NM_TYPE_SETTING_CONNECTION);
-	if (!s_con) {
+	id = nm_connection_get_id (connection);
+	uuid = nm_connection_get_uuid (connection);
+	if (!id || !uuid) {
 		g_set_error (error,
 		             PPTP_PLUGIN_UI_ERROR,
 		             PPTP_PLUGIN_UI_ERROR_INVALID_CONNECTION,
-		             "missing 'connection' setting");
+		             "missing ID or UUID");
 		return FALSE;
 	}
-
-	id = nm_setting_connection_get_id (s_con);
-	uuid = nm_setting_connection_get_uuid (s_con);
 
     widget = GTK_WIDGET (gtk_builder_get_object (priv->builder, "user_password_entry"));
     g_assert (widget);
     str = gtk_entry_get_text (GTK_ENTRY (widget));
-    if (str && strlen (str)) {
+    if (str && strlen (str) && (flags & NM_SETTING_SECRET_FLAG_AGENT_OWNED)) {
         ret = keyring_helpers_save_secret (uuid, id, NULL, NM_PPTP_KEY_PASSWORD, str);
         if (ret != GNOME_KEYRING_RESULT_OK)
             g_warning ("%s: failed to save user password to keyring.", __func__);

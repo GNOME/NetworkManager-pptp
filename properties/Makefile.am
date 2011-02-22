@@ -14,22 +14,17 @@ ui_DATA = nm-pptp-dialog.ui
 
 libnm_pptp_properties_la_CFLAGS =                       \
         $(GTK_CFLAGS)                                   \
-        $(GCONF_CFLAGS)                                 \
-        $(LIBGNOMEUI_CFLAGS)                            \
         $(GNOMEKEYRING_CFLAGS)                          \
         $(NM_CFLAGS)                        \
         -DICONDIR=\""$(datadir)/pixmaps"\"              \
         -DUIDIR=\""$(uidir)"\"                          \
         -DG_DISABLE_DEPRECATED                          \
         -DGDK_DISABLE_DEPRECATED                        \
-        -DGNOME_DISABLE_DEPRECATED                      \
-        -DGNOMELOCALEDIR=\"$(datadir)/locale\"          \
+	-DGTK_DISABLE_DEPRECATED                        \
         -DVERSION=\"$(VERSION)\"
 
 libnm_pptp_properties_la_LIBADD =       \
         $(GTK_LIBS)                     \
-        $(GCONF_LIBS)                   \
-        $(LIBGNOMEUI_LIBS)              \
         $(top_builddir)/common-gnome/libnm-pptp-common-gnome.la	\
         $(NM_LIBS)
 

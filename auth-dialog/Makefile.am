@@ -6,15 +6,13 @@ nm_pptp_auth_dialog_CPPFLAGS =			\
 	$(NM_CFLAGS)		\
 	$(GTHREAD_CFLAGS)			\
 	$(GTK_CFLAGS)				\
-	$(GCONF_CFLAGS)				\
 	$(GNOMEKEYRING_CFLAGS)			\
 	-DICONDIR=\""$(datadir)/pixmaps"\"	\
 	-DUIDIR=\""$(uidir)"\"			\
 	-DBINDIR=\""$(bindir)"\"		\
 	-DG_DISABLE_DEPRECATED			\
 	-DGDK_DISABLE_DEPRECATED		\
-	-DGNOME_DISABLE_DEPRECATED		\
-	-DGNOMELOCALEDIR=\"$(datadir)/locale\"	\
+	-DGTK_DISABLE_DEPRECATED		\
 	-DVERSION=\"$(VERSION)\"
 
 nm_pptp_auth_dialog_SOURCES =			\
@@ -24,7 +22,6 @@ nm_pptp_auth_dialog_SOURCES =			\
 
 nm_pptp_auth_dialog_LDADD =			\
 	$(GTK_LIBS)				\
-	$(GCONF_LIBS)				\
 	$(top_builddir)/common-gnome/libnm-pptp-common-gnome.la
 
 CLEANFILES = *~
