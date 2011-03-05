@@ -136,9 +136,9 @@ nm_pptp_ppp_service_new (void)
 
 	connection = dbus_g_bus_get (DBUS_BUS_SYSTEM, &error);
 	if (!connection) {
-		nm_warning ("Could not get the system bus.  Make sure "
-		            "the message bus daemon is running!  Message: %s",
-		            error->message);
+		g_warning ("Could not get the system bus.  Make sure "
+		           "the message bus daemon is running!  Message: %s",
+		           error->message);
 		g_error_free (error);
 		g_object_unref (object);
 		return NULL;
@@ -158,7 +158,7 @@ nm_pptp_ppp_service_new (void)
 		dbus_g_connection_register_g_object (connection, NM_DBUS_PATH_PPTP_PPP, object);
 		success = TRUE;
 	} else {
-		nm_warning ("Could not register D-Bus service name.  Message: %s", error->message);
+		g_warning ("Could not register D-Bus service name.  Message: %s", error->message);
 		g_error_free (error);
 		g_object_unref (object);
 		object = NULL;
@@ -341,7 +341,7 @@ impl_pptp_service_set_ip4_config (NMPptpPppService *self,
                                   GHashTable *config_hash,
                                   GError **err)
 {
-	nm_info ("PPTP service (IP Config Get) reply received.");
+	g_message ("PPTP service (IP Config Get) reply received.");
 	g_signal_emit (G_OBJECT (self), signals[PLUGIN_ALIVE], 0);
 
 	/* Just forward the pppd plugin config up to our superclass; no need to modify it */
@@ -572,14 +572,14 @@ pppd_watch_cb (GPid pid, gint status, gpointer user_data)
 	if (WIFEXITED (status)) {
 		error = WEXITSTATUS (status);
 		if (error != 0)
-			nm_warning ("pppd exited with error code %d", error);
+			g_warning ("pppd exited with error code %d", error);
 	}
 	else if (WIFSTOPPED (status))
-		nm_warning ("pppd stopped unexpectedly with signal %d", WSTOPSIG (status));
+		g_warning ("pppd stopped unexpectedly with signal %d", WSTOPSIG (status));
 	else if (WIFSIGNALED (status))
-		nm_warning ("pppd died with signal %d", WTERMSIG (status));
+		g_warning ("pppd died with signal %d", WTERMSIG (status));
 	else
-		nm_warning ("pppd died from an unknown cause");
+		g_warning ("pppd died from an unknown cause");
 
 	/* Reap child if needed. */
 	waitpid (priv->pid, NULL, WNOHANG);
@@ -656,7 +656,7 @@ pppd_timed_out (gpointer user_data)
 {
 	NMPptpPlugin *plugin = NM_PPTP_PLUGIN (user_data);
 
-	nm_warning ("Looks like pppd didn't initialize our dbus module");
+	g_warning ("Looks like pppd didn't initialize our dbus module");
 	nm_vpn_plugin_failure (NM_VPN_PLUGIN (plugin), NM_VPN_CONNECTION_STATE_REASON_SERVICE_START_TIMEOUT);
 
 	return FALSE;
@@ -806,7 +806,7 @@ construct_pppd_args (NMPptpPlugin *plugin,
 			g_ptr_array_add (args, (gpointer) g_strdup ("lcp-echo-failure"));
 			g_ptr_array_add (args, (gpointer) g_strdup_printf ("%ld", tmp_int));
 		} else {
-			nm_warning ("failed to convert lcp-echo-failure value '%s'", value);
+			g_warning ("failed to convert lcp-echo-failure value '%s'", value);
 		}
 	} else {
 		g_ptr_array_add (args, (gpointer) g_strdup ("lcp-echo-failure"));
@@ -826,7 +826,7 @@ construct_pppd_args (NMPptpPlugin *plugin,
 			g_ptr_array_add (args, (gpointer) g_strdup ("lcp-echo-interval"));
 			g_ptr_array_add (args, (gpointer) g_strdup_printf ("%ld", tmp_int));
 		} else {
-			nm_warning ("failed to convert lcp-echo-interval value '%s'", value);
+			g_warning ("failed to convert lcp-echo-interval value '%s'", value);
 		}
 	} else {
 		g_ptr_array_add (args, (gpointer) g_strdup ("lcp-echo-interval"));
@@ -876,7 +876,7 @@ nm_pptp_start_pppd_binary (NMPptpPlugin *plugin,
 	}
 	free_pppd_args (pppd_argv);
 
-	nm_info ("pppd started with pid %d", pid);
+	g_message ("pppd started with pid %d", pid);
 
 	NM_PPTP_PLUGIN_GET_PRIVATE (plugin)->pid = pid;
 	g_child_watch_add (pid, pppd_watch_cb, plugin);
@@ -960,13 +960,13 @@ get_pptp_gw_address_as_gvalue (NMConnection *connection)
 
 	s_vpn = (NMSettingVPN *) nm_connection_get_setting (connection, NM_TYPE_SETTING_VPN);
 	if (!s_vpn) {
-		nm_warning ("couldn't get VPN setting");
+		g_warning ("couldn't get VPN setting");
 		return NULL;
 	}
 
 	p = tmp = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_GATEWAY);
 	if (!tmp || !strlen (tmp)) {
-		nm_warning ("couldn't get PPTP VPN gateway IP address");
+		g_warning ("couldn't get PPTP VPN gateway IP address");
 		return NULL;
 	}
 
@@ -990,7 +990,7 @@ get_pptp_gw_address_as_gvalue (NMConnection *connection)
 		hints.ai_flags = AI_ADDRCONFIG;
 		err = getaddrinfo (tmp, NULL, &hints, &result);
 		if (err != 0) {
-			nm_warning ("couldn't look up PPTP VPN gateway IP address '%s' (%d)", tmp, err);
+			g_warning ("couldn't look up PPTP VPN gateway IP address '%s' (%d)", tmp, err);
 			return NULL;
 		}
 
@@ -1012,7 +1012,7 @@ get_pptp_gw_address_as_gvalue (NMConnection *connection)
 	} else {
 		errno = 0;
 		if (inet_pton (AF_INET, tmp, &addr) <= 0) {
-			nm_warning ("couldn't convert PPTP VPN gateway IP address '%s' (%d)", tmp, errno);
+			g_warning ("couldn't convert PPTP VPN gateway IP address '%s' (%d)", tmp, errno);
 			return NULL;
 		}
 	}
@@ -1022,7 +1022,7 @@ get_pptp_gw_address_as_gvalue (NMConnection *connection)
 		g_value_init (value, G_TYPE_UINT);
 		g_value_set_uint (value, (guint32) addr.s_addr);
 	} else
-		nm_warning ("couldn't determine PPTP VPN gateway IP address from '%s'", tmp);
+		g_warning ("couldn't determine PPTP VPN gateway IP address from '%s'", tmp);
 
 	return value;
 }
@@ -1151,7 +1151,7 @@ real_disconnect (NMVPNPlugin   *plugin,
 		else
 			kill (priv->pid, SIGKILL);
 
-		nm_info ("Terminated ppp daemon with PID %d.", priv->pid);
+		g_message ("Terminated ppp daemon with PID %d.", priv->pid);
 		priv->pid = 0;
 	}
 
