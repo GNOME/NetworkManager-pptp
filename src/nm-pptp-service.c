@@ -394,7 +394,8 @@ static ValidProperty valid_properties[] = {
 	{ NM_PPTP_KEY_NO_VJ_COMP,        G_TYPE_BOOLEAN, FALSE },
 	{ NM_PPTP_KEY_LCP_ECHO_FAILURE,  G_TYPE_UINT, FALSE },
 	{ NM_PPTP_KEY_LCP_ECHO_INTERVAL, G_TYPE_UINT, FALSE },
-	{ NULL,                          G_TYPE_NONE,   FALSE }
+	{ NM_PPTP_KEY_PASSWORD"-flags",  G_TYPE_UINT, FALSE },
+	{ NULL,                          G_TYPE_NONE, FALSE }
 };
 
 static ValidProperty valid_secrets[] = {
