@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: nm-pptp\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=NetworkManager&component=VPN: pptp\n"
 "POT-Creation-Date: 2009-10-27 03:34+0000\n"
-"PO-Revision-Date: 2011-02-27 15:53+0900\n"
+"PO-Revision-Date: 2011-03-19 23:03+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "이 세션에서 암호 저장(_R)"
 
 #: ../auth-dialog/gnome-two-password-dialog.c:452
 msgid "_Save passwords in keyring"
-msgstr "키링에 암호 저장(_S)"
+msgstr "키 모음에 암호 저장(_S)"
 
 #: ../auth-dialog/main.c:62
 #, c-format
