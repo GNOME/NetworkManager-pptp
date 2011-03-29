@@ -20,7 +20,9 @@
  * (C) Copyright 2008 - 2011 Red Hat, Inc.
  */
 
+#ifdef HAVE_CONFIG_H
 #include <config.h>
+#endif
 
 #include <stdio.h>
 #include <string.h>
@@ -40,6 +42,7 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 
+#include <glib/gi18n.h>
 #include <dbus/dbus.h>
 #include <dbus/dbus-glib.h>
 
@@ -248,7 +251,7 @@ nm_pptp_ppp_service_cache_credentials (NMPptpPppService *self,
 		             NM_VPN_PLUGIN_ERROR,
 		             NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
 		             "%s",
-		             "Could not find secrets (connection invalid, no vpn setting).");
+		             _("Could not find secrets (connection invalid, no vpn setting)."));
 		return FALSE;
 	}
 
@@ -261,7 +264,7 @@ nm_pptp_ppp_service_cache_credentials (NMPptpPppService *self,
 			             NM_VPN_PLUGIN_ERROR,
 			             NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
 			             "%s",
-			             "Invalid VPN username.");
+			             _("Invalid VPN username."));
 			return FALSE;
 		}
 	} else {
@@ -271,7 +274,7 @@ nm_pptp_ppp_service_cache_credentials (NMPptpPppService *self,
 			             NM_VPN_PLUGIN_ERROR,
 			             NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
 			             "%s",
-			             "Missing VPN username.");
+			             _("Missing VPN username."));
 			return FALSE;
 		}
 	}
@@ -282,7 +285,7 @@ nm_pptp_ppp_service_cache_credentials (NMPptpPppService *self,
 		             NM_VPN_PLUGIN_ERROR,
 		             NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
 		             "%s",
-		             "Missing or invalid VPN password.");
+		             _("Missing or invalid VPN password."));
 		return FALSE;
 	}
 
@@ -310,7 +313,7 @@ impl_pptp_service_need_secrets (NMPptpPppService *self,
 		             NM_VPN_PLUGIN_ERROR,
 		             NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
 		             "%s",
-		             "No cached credentials.");
+		             _("No cached credentials."));
 		goto error;
 	}
 
@@ -456,7 +459,7 @@ validate_one_property (const char *key, const char *value, gpointer user_data)
 				g_set_error (info->error,
 				             NM_VPN_PLUGIN_ERROR,
 				             NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS,
-				             "invalid gateway '%s'",
+				             _("invalid gateway '%s'"),
 				             key);
 				return;
 			}
@@ -470,7 +473,7 @@ validate_one_property (const char *key, const char *value, gpointer user_data)
 			g_set_error (info->error,
 			             NM_VPN_PLUGIN_ERROR,
 			             NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS,
-			             "invalid integer property '%s'",
+			             _("invalid integer property '%s'"),
 			             key);
 			break;
 		case G_TYPE_BOOLEAN:
@@ -480,14 +483,14 @@ validate_one_property (const char *key, const char *value, gpointer user_data)
 			g_set_error (info->error,
 			             NM_VPN_PLUGIN_ERROR,
 			             NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS,
-			             "invalid boolean property '%s' (not yes or no)",
+			             _("invalid boolean property '%s' (not yes or no)"),
 			             key);
 			break;
 		default:
 			g_set_error (info->error,
 			             NM_VPN_PLUGIN_ERROR,
 			             NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS,
-			             "unhandled property '%s' type %s",
+			             _("unhandled property '%s' type %s"),
 			             key, g_type_name (prop.type));
 			break;
 		}
@@ -498,7 +501,7 @@ validate_one_property (const char *key, const char *value, gpointer user_data)
 		g_set_error (info->error,
 		             NM_VPN_PLUGIN_ERROR,
 		             NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS,
-		             "property '%s' invalid or not supported",
+		             _("property '%s' invalid or not supported"),
 		             key);
 	}
 }
@@ -516,7 +519,7 @@ nm_pptp_properties_validate (NMSettingVPN *s_vpn,
 		             NM_VPN_PLUGIN_ERROR,
 		             NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS,
 		             "%s",
-		             "No VPN configuration options.");
+		             _("No VPN configuration options."));
 		return FALSE;
 	}
 
@@ -536,7 +539,7 @@ nm_pptp_properties_validate (NMSettingVPN *s_vpn,
 			g_set_error (error,
 			             NM_VPN_PLUGIN_ERROR,
 			             NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS,
-			             "Missing required option '%s'.",
+			             _("Missing required option '%s'."),
 			             prop.name);
 			return FALSE;
 		}
@@ -556,7 +559,7 @@ nm_pptp_secrets_validate (NMSettingVPN *s_vpn, GError **error)
 		             NM_VPN_PLUGIN_ERROR,
 		             NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS,
 		             "%s",
-		             "No VPN secrets!");
+		             _("No VPN secrets!"));
 		return FALSE;
 	}
 
@@ -696,7 +699,7 @@ construct_pppd_args (NMPptpPlugin *plugin,
 		             NM_VPN_PLUGIN_ERROR,
 		             NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED,
 		             "%s",
-		             "Could not find pptp client binary.");
+		             _("Could not find pptp client binary."));
 		return FALSE;
 	}
 
@@ -710,7 +713,7 @@ construct_pppd_args (NMPptpPlugin *plugin,
 		             NM_VPN_PLUGIN_ERROR,
 		             NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
 		             "%s",
-		             "Missing VPN gateway.");
+		             _("Missing VPN gateway."));
 		goto error;
 	}
 
@@ -862,7 +865,7 @@ nm_pptp_start_pppd_binary (NMPptpPlugin *plugin,
 		             NM_VPN_PLUGIN_ERROR,
 		             NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED,
 		             "%s",
-		             "Could not find the pppd binary.");
+		             _("Could not find the pppd binary."));
 		return FALSE;
 	}
 
@@ -1083,7 +1086,7 @@ real_connect (NMVPNPlugin   *plugin,
 		             NM_VPN_PLUGIN_ERROR,
 		             NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED,
 		             "%s",
-		             "Could not start pppd plugin helper service.");
+		             _("Could not start pppd plugin helper service."));
 		return FALSE;
 	}
 
@@ -1266,8 +1269,8 @@ main (int argc, char *argv[])
 	GOptionContext *opt_ctx = NULL;
 
 	GOptionEntry options[] = {
-		{ "persist", 0, 0, G_OPTION_ARG_NONE, &persist, "Don't quit when VPN connection terminates", NULL },
-		{ "debug", 0, 0, G_OPTION_ARG_NONE, &debug, "Enable verbose debug logging (may expose passwords)", NULL },
+		{ "persist", 0, 0, G_OPTION_ARG_NONE, &persist, N_("Don't quit when VPN connection terminates"), NULL },
+		{ "debug", 0, 0, G_OPTION_ARG_NONE, &debug, N_("Enable verbose debug logging (may expose passwords)"), NULL },
 		{NULL}
 	};
 
@@ -1281,7 +1284,7 @@ main (int argc, char *argv[])
 	g_option_context_add_main_entries (opt_ctx, options, NULL);
 
 	g_option_context_set_summary (opt_ctx,
-	    "nm-pptp-service provides integrated PPTP VPN capability (compatible with Microsoft and other implementations) to NetworkManager.");
+	    _("nm-pptp-service provides integrated PPTP VPN capability (compatible with Microsoft and other implementations) to NetworkManager."));
 
 	g_option_context_parse (opt_ctx, &argc, &argv, NULL);
 	g_option_context_free (opt_ctx);
