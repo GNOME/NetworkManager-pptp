@@ -1102,6 +1102,9 @@ real_connect (NMVPNPlugin   *plugin,
 	if (!nm_pptp_ppp_service_cache_credentials (priv->service, connection, error))
 		return FALSE;
 
+	if (getenv ("NM_PPP_DUMP_CONNECTION") || debug)
+		nm_connection_dump (connection);
+
 	if (!nm_pptp_start_pppd_binary (NM_PPTP_PLUGIN (plugin), s_vpn, error))
 		return FALSE;
 
