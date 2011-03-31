@@ -109,9 +109,13 @@ static gboolean impl_pptp_service_set_ip4_config (NMPptpPppService *self,
 #define NM_PPTP_PPP_SERVICE_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), NM_TYPE_PPTP_PPP_SERVICE, NMPptpPppServicePrivate))
 
 typedef struct {
-	char username[100];
-	char domain[100];
-	char password[100];
+	char *username;
+	char *domain;
+	char *password;
+
+	/* IP of PPtP gateway in numeric and string format */
+	guint32 naddr;
+	char *saddr;
 } NMPptpPppServicePrivate;
 
 enum {
@@ -123,52 +127,226 @@ enum {
 };
 static guint signals[LAST_SIGNAL] = { 0 };
 
-static NMPptpPppService *
-nm_pptp_ppp_service_new (void)
+static gboolean
+_service_lookup_gateway (NMPptpPppService *self,
+                         const char *src,
+                         GError **error)
 {
-	DBusGConnection *connection;
+	NMPptpPppServicePrivate *priv = NM_PPTP_PPP_SERVICE_GET_PRIVATE (self);
+	const char *p = src;
+	gboolean is_name = FALSE;
+	struct in_addr naddr;
+	struct addrinfo hints;
+	struct addrinfo *result = NULL, *rp;
+	int err;
+	char buf[INET_ADDRSTRLEN + 1];
+
+	g_return_val_if_fail (src != NULL, FALSE);
+
+	while (*p) {
+		if (*p != '.' && !isdigit (*p)) {
+			is_name = TRUE;
+			break;
+		}
+		p++;
+	}
+
+	if (is_name == FALSE) {
+		errno = 0;
+		if (inet_pton (AF_INET, src, &naddr) <= 0) {
+			g_set_error (error,
+			             NM_VPN_PLUGIN_ERROR,
+			             NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED,
+			             _("couldn't convert PPTP VPN gateway IP address '%s' (%d)"),
+			             src, errno);
+			return FALSE;
+		}
+		priv->naddr = naddr.s_addr;
+		priv->saddr = g_strdup (src);
+		return TRUE;
+	}
+
+	/* It's a hostname, resolve it */
+	memset (&hints, 0, sizeof (hints));
+	hints.ai_family = AF_INET;
+	hints.ai_flags = AI_ADDRCONFIG;
+	err = getaddrinfo (src, NULL, &hints, &result);
+	if (err != 0) {
+		g_set_error (error,
+		             NM_VPN_PLUGIN_ERROR,
+		             NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED,
+		             _("couldn't look up PPTP VPN gateway IP address '%s' (%d)"),
+		             src, err);
+		return FALSE;
+	}
+
+	/* If the hostname resolves to multiple IP addresses, use the first one.
+	 * FIXME: maybe we just want to use a random one instead?
+	 */
+	memset (&naddr, 0, sizeof (naddr));
+	for (rp = result; rp; rp = rp->ai_next) {
+		if (   (rp->ai_family == AF_INET)
+		    && (rp->ai_addrlen == sizeof (struct sockaddr_in))) {
+			struct sockaddr_in *inptr = (struct sockaddr_in *) rp->ai_addr;
+
+			memcpy (&naddr, &(inptr->sin_addr), sizeof (struct in_addr));
+			break;
+		}
+	}
+	freeaddrinfo (result);
+
+	if (naddr.s_addr == 0) {
+		g_set_error (error,
+		             NM_VPN_PLUGIN_ERROR,
+		             NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED,
+		             _("no usable addresses returned for PPTP VPN gateway '%s'"),
+		             src);
+		return FALSE;
+	}
+
+	memset (buf, 0, sizeof (buf));
+	errno = 0;
+	if (inet_ntop (AF_INET, &naddr, buf, sizeof (buf) - 1) == NULL) {
+		g_set_error (error,
+		             NM_VPN_PLUGIN_ERROR,
+		             NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED,
+		             _("no usable addresses returned for PPTP VPN gateway '%s' (%d)"),
+		             src, errno);
+		return FALSE;
+	}
+
+	priv->naddr = naddr.s_addr;
+	priv->saddr = g_strdup (buf);
+	return TRUE;
+}
+
+static gboolean
+_service_cache_credentials (NMPptpPppService *self,
+                            NMConnection *connection,
+                            GError **error)
+{
+	NMPptpPppServicePrivate *priv = NM_PPTP_PPP_SERVICE_GET_PRIVATE (self);
+	NMSettingVPN *s_vpn;
+	const char *username, *password, *domain;
+
+	g_return_val_if_fail (self != NULL, FALSE);
+	g_return_val_if_fail (connection != NULL, FALSE);
+
+	s_vpn = (NMSettingVPN *) nm_connection_get_setting (connection, NM_TYPE_SETTING_VPN);
+	if (!s_vpn) {
+		g_set_error_literal (error,
+		                     NM_VPN_PLUGIN_ERROR,
+		                     NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
+		                     _("Could not find secrets (connection invalid, no vpn setting)."));
+		return FALSE;
+	}
+
+	/* Username; try PPTP specific username first, then generic username */
+	username = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_USER);
+	if (username && strlen (username)) {
+		/* FIXME: This check makes about 0 sense. */
+		if (!username || !strlen (username)) {
+			g_set_error_literal (error,
+			                     NM_VPN_PLUGIN_ERROR,
+			                     NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
+			                    _("Invalid VPN username."));
+			return FALSE;
+		}
+	} else {
+		username = nm_setting_vpn_get_user_name (s_vpn);
+		if (!username || !strlen (username)) {
+			g_set_error_literal (error,
+			                     NM_VPN_PLUGIN_ERROR,
+			                     NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
+			                     _("Missing VPN username."));
+			return FALSE;
+		}
+	}
+
+	password = nm_setting_vpn_get_secret (s_vpn, NM_PPTP_KEY_PASSWORD);
+	if (!password || !strlen (password)) {
+		g_set_error_literal (error,
+		                     NM_VPN_PLUGIN_ERROR,
+		                     NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
+		                     _("Missing or invalid VPN password."));
+		return FALSE;
+	}
+
+	domain = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_DOMAIN);
+	if (domain && strlen (domain))
+		priv->domain = g_strdup (domain);
+
+	priv->username = g_strdup (username);
+	priv->password = g_strdup (password);
+	return TRUE;
+}
+
+static NMPptpPppService *
+nm_pptp_ppp_service_new (const char *gwaddr,
+                         NMConnection *connection,
+                         GError **error)
+{
+	NMPptpPppService *self = NULL;
+	DBusGConnection *bus;
 	DBusGProxy *proxy;
-	GError *error = NULL;
 	gboolean success = FALSE;
-	guint request_name_result;
-	GObject *object;
+	guint result;
 
-	object = g_object_new (NM_TYPE_PPTP_PPP_SERVICE, NULL);
-
+	bus = dbus_g_bus_get (DBUS_BUS_SYSTEM, error);
+	if (!bus)
+		return NULL;
 	dbus_connection_set_change_sigpipe (TRUE);
 
-	connection = dbus_g_bus_get (DBUS_BUS_SYSTEM, &error);
-	if (!connection) {
-		g_warning ("Could not get the system bus.  Make sure "
-		           "the message bus daemon is running!  Message: %s",
-		           error->message);
-		g_error_free (error);
-		g_object_unref (object);
-		return NULL;
-	}
-
-	proxy = dbus_g_proxy_new_for_name (connection,
-								"org.freedesktop.DBus",
-								"/org/freedesktop/DBus",
-								"org.freedesktop.DBus");
-
-	if (dbus_g_proxy_call (proxy, "RequestName", &error,
-					   G_TYPE_STRING, NM_DBUS_SERVICE_PPTP_PPP,
-					   G_TYPE_UINT, 0,
-					   G_TYPE_INVALID,
-					   G_TYPE_UINT, &request_name_result,
-					   G_TYPE_INVALID)) {
-		dbus_g_connection_register_g_object (connection, NM_DBUS_PATH_PPTP_PPP, object);
-		success = TRUE;
-	} else {
-		g_warning ("Could not register D-Bus service name.  Message: %s", error->message);
-		g_error_free (error);
-		g_object_unref (object);
-		object = NULL;
-	}
-
+	proxy = dbus_g_proxy_new_for_name (bus,
+	                                   "org.freedesktop.DBus",
+	                                   "/org/freedesktop/DBus",
+	                                   "org.freedesktop.DBus");
+	g_assert (proxy);
+	success = dbus_g_proxy_call (proxy, "RequestName", error,
+	                             G_TYPE_STRING, NM_DBUS_SERVICE_PPTP_PPP,
+	                             G_TYPE_UINT, 0,
+	                             G_TYPE_INVALID,
+	                             G_TYPE_UINT, &result,
+	                             G_TYPE_INVALID);
 	g_object_unref (proxy);
-	return (NMPptpPppService *) object;
+	if (success == FALSE)
+		goto out;
+
+	self = (NMPptpPppService *) g_object_new (NM_TYPE_PPTP_PPP_SERVICE, NULL);
+	g_assert (self);
+
+	/* Look up the IP address of the PPtP server; if the server has multiple
+	 * addresses, because we can't get the actual IP used back from pptp itself,
+	 * we need to do name->addr conversion here and only pass the IP address
+	 * down to pppd/pptp.  If only pptp could somehow return the IP address it's
+	 * using for the connection, we wouldn't need to do this...
+	 */
+	if (!_service_lookup_gateway (self, gwaddr, error)) {
+		g_object_unref (self);
+		self = NULL;
+		goto out;
+	}
+
+	/* Cache the username and password so we can relay the secrets to the pppd
+	 * plugin when it asks for them.
+	 */
+	if (!_service_cache_credentials (self, connection, error)) {
+		g_object_unref (self);
+		self = NULL;
+		goto out;
+	}
+
+	dbus_g_connection_register_g_object (bus, NM_DBUS_PATH_PPTP_PPP, G_OBJECT (self));
+
+out:
+	dbus_g_connection_unref (bus);
+	return self;
+}
+
+static const char *
+nm_pptp_ppp_service_get_gw_address_string (NMPptpPppService *self)
+{
+	return NM_PPTP_PPP_SERVICE_GET_PRIVATE (self)->saddr;
 }
 
 static void
@@ -182,9 +360,13 @@ finalize (GObject *object)
 	NMPptpPppServicePrivate *priv = NM_PPTP_PPP_SERVICE_GET_PRIVATE (object);
 
 	/* Get rid of the cached username and password */
-	memset (priv->username, 0, sizeof (priv->username));
-	memset (priv->domain, 0, sizeof (priv->domain));
-	memset (priv->password, 0, sizeof (priv->password));
+	g_free (priv->username);
+	if (priv->password) {
+		memset (priv->password, 0, strlen (priv->password));
+		g_free (priv->password);
+	}
+	g_free (priv->domain);
+	g_free (priv->saddr);
 }
 
 static void
@@ -227,75 +409,6 @@ nm_pptp_ppp_service_class_init (NMPptpPppServiceClass *service_class)
 
 	dbus_g_object_type_install_info (G_TYPE_FROM_CLASS (service_class),
 									 &dbus_glib_nm_pptp_pppd_service_object_info);
-}
-
-static gboolean
-nm_pptp_ppp_service_cache_credentials (NMPptpPppService *self,
-                                       NMConnection *connection,
-                                       GError **error)
-{
-	NMPptpPppServicePrivate *priv = NM_PPTP_PPP_SERVICE_GET_PRIVATE (self);
-	NMSettingVPN *s_vpn;
-	const char *username, *password, *domain;
-
-	g_return_val_if_fail (self != NULL, FALSE);
-	g_return_val_if_fail (connection != NULL, FALSE);
-
-	memset (priv->username, 0, sizeof (priv->username));
-	memset (priv->domain, 0, sizeof (priv->domain));
-	memset (priv->password, 0, sizeof (priv->password));
-
-	s_vpn = (NMSettingVPN *) nm_connection_get_setting (connection, NM_TYPE_SETTING_VPN);
-	if (!s_vpn) {
-		g_set_error (error,
-		             NM_VPN_PLUGIN_ERROR,
-		             NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
-		             "%s",
-		             _("Could not find secrets (connection invalid, no vpn setting)."));
-		return FALSE;
-	}
-
-	/* Username; try PPTP specific username first, then generic username */
-	username = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_USER);
-	if (username && strlen (username)) {
-		/* FIXME: This check makes about 0 sense. */
-		if (!username || !strlen (username)) {
-			g_set_error (error,
-			             NM_VPN_PLUGIN_ERROR,
-			             NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
-			             "%s",
-			             _("Invalid VPN username."));
-			return FALSE;
-		}
-	} else {
-		username = nm_setting_vpn_get_user_name (s_vpn);
-		if (!username || !strlen (username)) {
-			g_set_error (error,
-			             NM_VPN_PLUGIN_ERROR,
-			             NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
-			             "%s",
-			             _("Missing VPN username."));
-			return FALSE;
-		}
-	}
-
-	password = nm_setting_vpn_get_secret (s_vpn, NM_PPTP_KEY_PASSWORD);
-	if (!password || !strlen (password)) {
-		g_set_error (error,
-		             NM_VPN_PLUGIN_ERROR,
-		             NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
-		             "%s",
-		             _("Missing or invalid VPN password."));
-		return FALSE;
-	}
-
-	domain = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_DOMAIN);
-	if (domain && strlen (domain))
-		memcpy (priv->domain, domain, strlen (domain));
-
-	memcpy (priv->username, username, strlen (username));
-	memcpy (priv->password, password, strlen (password));
-	return TRUE;
 }
 
 static gboolean
@@ -682,6 +795,7 @@ static GPtrArray *
 construct_pppd_args (NMPptpPlugin *plugin,
                      NMSettingVPN *s_vpn,
                      const char *pppd,
+                     const char *gwaddr,
                      GError **error)
 {
 	NMPptpPluginPrivate *priv = NM_PPTP_PLUGIN_GET_PRIVATE (plugin);
@@ -706,8 +820,7 @@ construct_pppd_args (NMPptpPlugin *plugin,
 	g_ptr_array_add (args, (gpointer) g_strdup (pppd));
 
 	/* PPTP options */
-	value = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_GATEWAY);
-	if (!value || !strlen (value)) {
+	if (!gwaddr || !strlen (gwaddr)) {
 		g_set_error (error,
 		             NM_VPN_PLUGIN_ERROR,
 		             NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
@@ -720,7 +833,7 @@ construct_pppd_args (NMPptpPlugin *plugin,
 
 	g_ptr_array_add (args, (gpointer) g_strdup ("pty"));
 	tmp = g_strdup_printf ("%s %s --nolaunchpppd %s --logstring %s",
-	                       pptp_binary, value,
+	                       pptp_binary, gwaddr,
 	                       debug ? loglevel2 : loglevel0,
 	                       ipparam);
 	g_ptr_array_add (args, (gpointer) tmp);
@@ -851,6 +964,7 @@ error:
 static gboolean
 nm_pptp_start_pppd_binary (NMPptpPlugin *plugin,
                            NMSettingVPN *s_vpn,
+                           const char *gwaddr,
                            GError **error)
 {
 	NMPptpPluginPrivate *priv = NM_PPTP_PLUGIN_GET_PRIVATE (plugin);
@@ -868,7 +982,7 @@ nm_pptp_start_pppd_binary (NMPptpPlugin *plugin,
 		return FALSE;
 	}
 
-	pppd_argv = construct_pppd_args (plugin, s_vpn, pppd_binary, error);
+	pppd_argv = construct_pppd_args (plugin, s_vpn, pppd_binary, gwaddr, error);
 	if (!pppd_argv)
 		return FALSE;
 
@@ -952,90 +1066,12 @@ copy_hash (gpointer key, gpointer value, gpointer user_data)
 	g_hash_table_insert ((GHashTable *) user_data, g_strdup (key), nm_gvalue_dup ((GValue *) value));
 }
 
-static GValue *
-get_pptp_gw_address_as_gvalue (NMConnection *connection)
-{
-	NMSettingVPN *s_vpn;
-	const char *tmp, *p;
-	GValue *value = NULL;
-	struct in_addr addr;
-	gboolean is_name = FALSE;
-
-	s_vpn = (NMSettingVPN *) nm_connection_get_setting (connection, NM_TYPE_SETTING_VPN);
-	if (!s_vpn) {
-		g_warning ("couldn't get VPN setting");
-		return NULL;
-	}
-
-	p = tmp = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_GATEWAY);
-	if (!tmp || !strlen (tmp)) {
-		g_warning ("couldn't get PPTP VPN gateway IP address");
-		return NULL;
-	}
-
-	while (*p) {
-		if (*p != '.' && !isdigit (*p)) {
-			is_name = TRUE;
-			break;
-		}
-		p++;
-	}
-
-	/* Resolve a hostname if required */
-	if (is_name) {
-		struct addrinfo hints;
-		struct addrinfo *result = NULL, *rp;
-		int err;
-
-		memset (&hints, 0, sizeof (hints));
-
-		hints.ai_family = AF_INET;
-		hints.ai_flags = AI_ADDRCONFIG;
-		err = getaddrinfo (tmp, NULL, &hints, &result);
-		if (err != 0) {
-			g_warning ("couldn't look up PPTP VPN gateway IP address '%s' (%d)", tmp, err);
-			return NULL;
-		}
-
-		/* FIXME: so what if the name resolves to multiple IP addresses?  We
-		 * don't know which one pptp decided to use so we could end up using a
-		 * different one here, and the VPN just won't work.
-		 */
-		for (rp = result; rp; rp = rp->ai_next) {
-			if (   (rp->ai_family == AF_INET)
-			    && (rp->ai_addrlen == sizeof (struct sockaddr_in))) {
-				struct sockaddr_in *inptr = (struct sockaddr_in *) rp->ai_addr;
-
-				memcpy (&addr, &(inptr->sin_addr), sizeof (struct in_addr));
-				break;
-			}
-		}
-
-		freeaddrinfo (result);
-	} else {
-		errno = 0;
-		if (inet_pton (AF_INET, tmp, &addr) <= 0) {
-			g_warning ("couldn't convert PPTP VPN gateway IP address '%s' (%d)", tmp, errno);
-			return NULL;
-		}
-	}
-	
-	if (addr.s_addr != 0) {
-		value = g_slice_new0 (GValue);
-		g_value_init (value, G_TYPE_UINT);
-		g_value_set_uint (value, (guint32) addr.s_addr);
-	} else
-		g_warning ("couldn't determine PPTP VPN gateway IP address from '%s'", tmp);
-
-	return value;
-}
-
 static void
 service_ip4_config_cb (NMPptpPppService *service,
                        GHashTable *config_hash,
-                       NMPptpPlugin *plugin)
+                       NMVPNPlugin *plugin)
 {
-	NMPptpPluginPrivate *priv = NM_PPTP_PLUGIN_GET_PRIVATE (plugin);
+	NMPptpPppServicePrivate *priv = NM_PPTP_PPP_SERVICE_GET_PRIVATE (service);
 	GHashTable *hash;
 	GValue *value;
 
@@ -1045,11 +1081,12 @@ service_ip4_config_cb (NMPptpPppService *service,
 	/* Insert the external VPN gateway into the table, which the pppd plugin
 	 * simply doesn't know about.
 	 */
-	value = get_pptp_gw_address_as_gvalue (priv->connection);
-	if (value)
-		g_hash_table_insert (hash, g_strdup (NM_PPTP_KEY_GATEWAY), value);
+	value = g_slice_new0 (GValue);
+	g_value_init (value, G_TYPE_UINT);
+	g_value_set_uint (value, priv->naddr);
+	g_hash_table_insert (hash, g_strdup (NM_PPTP_KEY_GATEWAY), value);
 
-	nm_vpn_plugin_set_ip4_config (NM_VPN_PLUGIN (plugin), hash);
+	nm_vpn_plugin_set_ip4_config (plugin, hash);
 
 	g_hash_table_destroy (hash);
 }
@@ -1061,9 +1098,19 @@ real_connect (NMVPNPlugin   *plugin,
 {
 	NMPptpPluginPrivate *priv = NM_PPTP_PLUGIN_GET_PRIVATE (plugin);
 	NMSettingVPN *s_vpn;
+	const char *gwaddr;
 
 	s_vpn = NM_SETTING_VPN (nm_connection_get_setting (connection, NM_TYPE_SETTING_VPN));
 	g_assert (s_vpn);
+
+	gwaddr = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_GATEWAY);
+	if (!gwaddr || !strlen (gwaddr)) {
+		g_set_error_literal (error,
+		                     NM_VPN_PLUGIN_ERROR,
+		                     NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED,
+		                     _("Invalid or missing PPTP gateway."));
+		return FALSE;
+	}
 
 	if (!nm_pptp_properties_validate (s_vpn, error))
 		return FALSE;
@@ -1079,15 +1126,10 @@ real_connect (NMVPNPlugin   *plugin,
 		priv->connection = NULL;
 	}
 
-	priv->service = nm_pptp_ppp_service_new ();
-	if (!priv->service) {
-		g_set_error (error,
-		             NM_VPN_PLUGIN_ERROR,
-		             NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED,
-		             "%s",
-		             _("Could not start pppd plugin helper service."));
+	/* Start our helper D-Bus service that the pppd plugin sends state changes to */
+	priv->service = nm_pptp_ppp_service_new (gwaddr, connection, error);
+	if (!priv->service)
 		return FALSE;
-	}
 
 	priv->connection = g_object_ref (connection);
 
@@ -1095,19 +1137,13 @@ real_connect (NMVPNPlugin   *plugin,
 	g_signal_connect (G_OBJECT (priv->service), "ppp-state", G_CALLBACK (service_ppp_state_cb), plugin);
 	g_signal_connect (G_OBJECT (priv->service), "ip4-config", G_CALLBACK (service_ip4_config_cb), plugin);
 
-	/* Cache the username and password so we can relay the secrets to the pppd
-	 * plugin when it asks for them.
-	 */
-	if (!nm_pptp_ppp_service_cache_credentials (priv->service, connection, error))
-		return FALSE;
-
 	if (getenv ("NM_PPP_DUMP_CONNECTION") || debug)
 		nm_connection_dump (connection);
 
-	if (!nm_pptp_start_pppd_binary (NM_PPTP_PLUGIN (plugin), s_vpn, error))
-		return FALSE;
-
-	return TRUE;
+	return nm_pptp_start_pppd_binary (NM_PPTP_PLUGIN (plugin),
+	                                  s_vpn,
+	                                  nm_pptp_ppp_service_get_gw_address_string (priv->service),
+	                                  error);
 }
 
 static gboolean
