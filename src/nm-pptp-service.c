@@ -431,7 +431,7 @@ impl_pptp_service_need_secrets (NMPptpPppService *self,
 	}
 
 	/* Success */
-	if (strlen (priv->domain))
+	if (priv->domain && strlen (priv->domain))
 		*out_username = g_strdup_printf ("%s\\%s", priv->domain, priv->username);
 	else
 		*out_username = g_strdup (priv->username);
