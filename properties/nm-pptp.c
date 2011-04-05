@@ -388,6 +388,12 @@ update_connection (NMVpnPluginUiWidgetInterface *iface,
 	if (str && strlen (str))
 		nm_setting_vpn_add_data_item (s_vpn, NM_PPTP_KEY_USER, str);
 
+	/* User password */
+	widget = GTK_WIDGET (gtk_builder_get_object (priv->builder, "user_password_entry"));
+	str = gtk_entry_get_text (GTK_ENTRY (widget));
+	if (str && strlen (str))
+		nm_setting_vpn_add_secret (s_vpn, NM_PPTP_KEY_PASSWORD, str);
+
 	/* Domain */
 	widget = GTK_WIDGET (gtk_builder_get_object (priv->builder, "domain_entry"));
 	str = gtk_entry_get_text (GTK_ENTRY (widget));

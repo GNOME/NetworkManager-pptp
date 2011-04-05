@@ -226,7 +226,8 @@ main (int argc, char *argv[])
 		return 1;
 
 	/* dump the passwords to stdout */
-	printf ("%s\n%s\n", NM_PPTP_KEY_PASSWORD, password);
+	if (password)
+		printf ("%s\n%s\n", NM_PPTP_KEY_PASSWORD, password);
 	printf ("\n\n");
 
 	if (password) {
