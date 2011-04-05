@@ -1,6 +1,6 @@
 AC_PREREQ(2.59)
 
-AC_INIT(NetworkManager-pptp, 0.8.995, dcbw@redhat.com, NetworkManager-pptp)
+AC_INIT(NetworkManager-pptp, 0.8.998, dcbw@redhat.com, NetworkManager-pptp)
 AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-bzip2 subdir-objects])
 AM_MAINTAINER_MODE
 
@@ -70,10 +70,10 @@ AC_SUBST(DBUS_GLIB_CFLAGS)
 AC_SUBST(DBUS_GLIB_LIBS)
 
 PKG_CHECK_MODULES(NM,
-                  NetworkManager >= 0.8.992
-                  libnm-util >= 0.8.992
-                  libnm-glib >= 0.8.992
-                  libnm-glib-vpn >= 0.8.992)
+                  NetworkManager >= 0.8.998
+                  libnm-util >= 0.8.998
+                  libnm-glib >= 0.8.998
+                  libnm-glib-vpn >= 0.8.998)
 AC_SUBST(NM_CFLAGS)
 AC_SUBST(NM_LIBS)
 
