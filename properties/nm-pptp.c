@@ -79,6 +79,7 @@ typedef struct {
 	GtkWindowGroup *window_group;
 	gboolean window_added;
 	GHashTable *advanced;
+	gboolean new_connection;
 } PptpPluginUiWidgetPrivate;
 
 
@@ -391,8 +392,16 @@ update_connection (NMVpnPluginUiWidgetInterface *iface,
 	/* User password */
 	widget = GTK_WIDGET (gtk_builder_get_object (priv->builder, "user_password_entry"));
 	str = gtk_entry_get_text (GTK_ENTRY (widget));
-	if (str && strlen (str))
+	if (str && strlen (str)) {
 		nm_setting_vpn_add_secret (s_vpn, NM_PPTP_KEY_PASSWORD, str);
+		/* Default to agent-owned secrets on new connections */
+		if (priv->new_connection) {
+			nm_setting_set_secret_flags (NM_SETTING (s_vpn),
+			                             NM_PPTP_KEY_PASSWORD,
+			                             NM_SETTING_SECRET_FLAG_AGENT_OWNED,
+			                             NULL);
+		}
+	}
 
 	/* Domain */
 	widget = GTK_WIDGET (gtk_builder_get_object (priv->builder, "domain_entry"));
@@ -444,12 +453,23 @@ save_secrets (NMVpnPluginUiWidgetInterface *iface,
 	return TRUE;
 }
 
+static void
+is_new_func (const char *key, const char *value, gpointer user_data)
+{
+	gboolean *is_new = user_data;
+
+	/* If there are any VPN data items the connection isn't new */
+	*is_new = FALSE;
+}
+
 static NMVpnPluginUiWidgetInterface *
 nm_vpn_plugin_ui_widget_interface_new (NMConnection *connection, GError **error)
 {
 	NMVpnPluginUiWidgetInterface *object;
 	PptpPluginUiWidgetPrivate *priv;
 	char *ui_file;
+	gboolean new = TRUE;
+	NMSettingVPN *s_vpn;
 
 	if (error)
 		g_return_val_if_fail (*error == NULL, NULL);
@@ -488,6 +508,11 @@ nm_vpn_plugin_ui_widget_interface_new (NMConnection *connection, GError **error)
 	g_object_ref_sink (priv->widget);
 
 	priv->window_group = gtk_window_group_new ();
+
+	s_vpn = nm_connection_get_setting_vpn (connection);
+	if (s_vpn)
+		nm_setting_vpn_foreach_data_item (s_vpn, is_new_func, &new);
+	priv->new_connection = new;
 
 	if (!init_plugin_ui (PPTP_PLUGIN_UI_WIDGET (object), connection, error)) {
 		g_object_unref (object);
