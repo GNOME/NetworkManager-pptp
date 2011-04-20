@@ -8,6 +8,7 @@ This is a new stable release of network-manager-pptp.  Notable changes include:
 * Updated translations
 * Convert to GtkBuilder; glade is no longer a build requirement
 * Desensitize MPPE-dependent options if MPPE is not selected
+* Better handling of VPN server pools with one DNS name but multiple IP addresses
 
 
 =======================================================
