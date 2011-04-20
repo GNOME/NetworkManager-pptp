@@ -12,7 +12,6 @@ nm_pptp_auth_dialog_CPPFLAGS =			\
 	-DUIDIR=\""$(uidir)"\"			\
 	-DBINDIR=\""$(bindir)"\"		\
 	-DG_DISABLE_DEPRECATED			\
-	-DGDK_DISABLE_DEPRECATED		\
 	-DGNOME_DISABLE_DEPRECATED		\
 	-DGNOMELOCALEDIR=\"$(datadir)/locale\"	\
 	-DVERSION=\"$(VERSION)\"
