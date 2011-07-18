@@ -418,41 +418,6 @@ update_connection (NMVpnPluginUiWidgetInterface *iface,
 	return valid;
 }
 
-static gboolean
-save_secrets (NMVpnPluginUiWidgetInterface *iface,
-              NMConnection *connection,
-              GError **error)
-{
-	PptpPluginUiWidget *self = PPTP_PLUGIN_UI_WIDGET (iface);
-	PptpPluginUiWidgetPrivate *priv = PPTP_PLUGIN_UI_WIDGET_GET_PRIVATE (self);
-	GnomeKeyringResult ret;
-	GtkWidget *widget;
-	const char *str, *uuid, *id;
-	NMSettingSecretFlags flags = NM_SETTING_SECRET_FLAG_NONE;
-
-	id = nm_connection_get_id (connection);
-	uuid = nm_connection_get_uuid (connection);
-	if (!id || !uuid) {
-		g_set_error (error,
-		             PPTP_PLUGIN_UI_ERROR,
-		             PPTP_PLUGIN_UI_ERROR_INVALID_CONNECTION,
-		             "missing ID or UUID");
-		return FALSE;
-	}
-
-    widget = GTK_WIDGET (gtk_builder_get_object (priv->builder, "user_password_entry"));
-    g_assert (widget);
-    str = gtk_entry_get_text (GTK_ENTRY (widget));
-    if (str && strlen (str) && (flags & NM_SETTING_SECRET_FLAG_AGENT_OWNED)) {
-        ret = keyring_helpers_save_secret (uuid, id, NULL, NM_PPTP_KEY_PASSWORD, str);
-        if (ret != GNOME_KEYRING_RESULT_OK)
-            g_warning ("%s: failed to save user password to keyring.", __func__);
-    } else
-        keyring_helpers_delete_secret (uuid, NM_PPTP_KEY_PASSWORD);
-
-	return TRUE;
-}
-
 static void
 is_new_func (const char *key, const char *value, gpointer user_data)
 {
@@ -573,32 +538,6 @@ pptp_plugin_ui_widget_interface_init (NMVpnPluginUiWidgetInterface *iface_class)
 	/* interface implementation */
 	iface_class->get_widget = get_widget;
 	iface_class->update_connection = update_connection;
-	iface_class->save_secrets = save_secrets;
-}
-
-static gboolean
-delete_connection (NMVpnPluginUiInterface *iface,
-                   NMConnection *connection,
-                   GError **error)
-{
-	NMSettingConnection *s_con = NULL;
-	const char *uuid;
-
-	/* Remove any secrets in the keyring associated with this connection's UUID */
-	s_con = (NMSettingConnection *) nm_connection_get_setting (connection,
-			NM_TYPE_SETTING_CONNECTION);
-	if (!s_con) {
-		g_set_error (error,
-		             PPTP_PLUGIN_UI_ERROR,
-		             PPTP_PLUGIN_UI_ERROR_INVALID_CONNECTION,
-		             "missing 'connection' setting");
-		return FALSE;
-	}
-
-	uuid = nm_setting_connection_get_uuid (s_con);
-	keyring_helpers_delete_secret (uuid, NM_PPTP_KEY_PASSWORD);
-
-	return TRUE;
 }
 
 static NMConnection *
@@ -739,7 +678,6 @@ pptp_plugin_ui_interface_init (NMVpnPluginUiInterface *iface_class)
 	iface_class->import_from_file = import;
 	iface_class->export_to_file = export;
 	iface_class->get_suggested_name = get_suggested_name;
-	iface_class->delete_connection = delete_connection;
 }
 
 
