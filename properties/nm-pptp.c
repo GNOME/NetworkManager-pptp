@@ -230,6 +230,7 @@ init_plugin_ui (PptpPluginUiWidget *self, NMConnection *connection, GError **err
 	NMSettingVPN *s_vpn;
 	GtkWidget *widget;
 	const char *value;
+	NMSettingSecretFlags pw_flags = NM_SETTING_SECRET_FLAG_NONE;
 
 	s_vpn = (NMSettingVPN *) nm_connection_get_setting (connection, NM_TYPE_SETTING_VPN);
 
@@ -284,6 +285,14 @@ init_plugin_ui (PptpPluginUiWidget *self, NMConnection *connection, GError **err
 		value = nm_setting_vpn_get_secret (s_vpn, NM_PPTP_KEY_PASSWORD);
 		if (value)
 			gtk_entry_set_text (GTK_ENTRY (widget), value);
+
+		/* Default to agent-owned for new connections */
+		if (priv->new_connection)
+			pw_flags = NM_SETTING_SECRET_FLAG_AGENT_OWNED;
+		else
+			nm_setting_get_secret_flags (NM_SETTING (s_vpn), NM_PPTP_KEY_PASSWORD, &pw_flags, NULL);
+
+		g_object_set_data (G_OBJECT (widget), "flags", GUINT_TO_POINTER (pw_flags));
 	}
 	g_signal_connect (widget, "changed", G_CALLBACK (stuff_changed_cb), self);
 
@@ -318,6 +327,7 @@ update_connection (NMVpnPluginUiWidgetInterface *iface,
 	GtkWidget *widget;
 	const char *str;
 	gboolean valid = FALSE;
+	NMSettingSecretFlags pw_flags;
 
 	if (!check_validity (self, error))
 		return FALSE;
@@ -340,16 +350,12 @@ update_connection (NMVpnPluginUiWidgetInterface *iface,
 	/* User password */
 	widget = GTK_WIDGET (gtk_builder_get_object (priv->builder, "user_password_entry"));
 	str = gtk_entry_get_text (GTK_ENTRY (widget));
-	if (str && strlen (str)) {
+	if (str && strlen (str))
 		nm_setting_vpn_add_secret (s_vpn, NM_PPTP_KEY_PASSWORD, str);
-		/* Default to agent-owned secrets on new connections */
-		if (priv->new_connection) {
-			nm_setting_set_secret_flags (NM_SETTING (s_vpn),
-			                             NM_PPTP_KEY_PASSWORD,
-			                             NM_SETTING_SECRET_FLAG_AGENT_OWNED,
-			                             NULL);
-		}
-	}
+
+	/* And password flags */
+	pw_flags = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (widget), "flags"));
+	nm_setting_set_secret_flags (NM_SETTING (s_vpn), NM_PPTP_KEY_PASSWORD, pw_flags, NULL);
 
 	/* Domain */
 	widget = GTK_WIDGET (gtk_builder_get_object (priv->builder, "domain_entry"));
