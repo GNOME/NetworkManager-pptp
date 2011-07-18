@@ -1,6 +1,8 @@
 plugindir = $(libdir)/NetworkManager
 plugin_LTLIBRARIES = libnm-pptp-properties.la
 
+INCLUDES = -I${top_srcdir}
+
 libnm_pptp_properties_la_SOURCES = \
 	nm-pptp.c \
 	nm-pptp.h \
@@ -14,7 +16,6 @@ ui_DATA = nm-pptp-dialog.ui
 
 libnm_pptp_properties_la_CFLAGS =                       \
         $(GTK_CFLAGS)                                   \
-        $(GNOMEKEYRING_CFLAGS)                          \
         $(NM_CFLAGS)                        \
         -DICONDIR=\""$(datadir)/pixmaps"\"              \
         -DUIDIR=\""$(uidir)"\"                          \
@@ -23,8 +24,8 @@ libnm_pptp_properties_la_CFLAGS =                       \
 	-DGTK_DISABLE_DEPRECATED                        \
         -DVERSION=\"$(VERSION)\"
 
-libnm_pptp_properties_la_LIBADD =       \
-        $(GTK_LIBS)                     \
+libnm_pptp_properties_la_LIBADD = \
+        $(GTK_LIBS) \
         $(top_builddir)/common-gnome/libnm-pptp-common-gnome.la	\
         $(NM_LIBS)
 

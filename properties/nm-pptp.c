@@ -41,8 +41,7 @@
 #include <nm-setting-connection.h>
 #include <nm-setting-ip4-config.h>
 
-#include "../src/nm-pptp-service.h"
-#include "../common-gnome/keyring-helpers.h"
+#include "src/nm-pptp-service.h"
 #include "nm-pptp.h"
 #include "import-export.h"
 #include "advanced-dialog.h"
@@ -224,65 +223,6 @@ show_toggled_cb (GtkCheckButton *button, PptpPluginUiWidget *self)
 	gtk_entry_set_visibility (GTK_ENTRY (widget), visible);
 }
 
-static GtkWidget *
-fill_password (GtkBuilder *builder,
-               const char *widget_name,
-               NMConnection *connection,
-               const char *password_type)
-{
-	GtkWidget *widget = NULL;
-	gchar *password = NULL;
-	NMSettingVPN *s_vpn;
-	gboolean unused;
-
-	widget = GTK_WIDGET (gtk_builder_get_object (builder, widget_name));
-	g_assert (widget);
-
-	if (!connection)
-		return widget;
-
-	/* Try the connection first */
-	s_vpn = (NMSettingVPN *) nm_connection_get_setting (connection, NM_TYPE_SETTING_VPN);
-	if (s_vpn) {
-		const gchar *tmp = NULL;
-
-		tmp = nm_setting_vpn_get_secret (s_vpn, password_type);
-		if (tmp)
-			password = gnome_keyring_memory_strdup (tmp);
-	}
-
-	if (!password) {
-		password = keyring_helpers_lookup_secret (nm_connection_get_uuid (connection),
-		                                          password_type,
-		                                          &unused);
-	}
-
-	if (password) {
-		gtk_entry_set_text (GTK_ENTRY (widget), password);
-		gnome_keyring_memory_free (password);
-	}
-
-	return widget;
-}
-
-static void
-fill_vpn_passwords (GtkBuilder *builder,
-                    GtkSizeGroup *group,
-                    NMConnection *connection,
-                    ChangedCallback changed_cb,
-                    gpointer user_data)
-{
-	GtkWidget *w = NULL;
-
-	w = fill_password (builder, "user_password_entry", connection, NM_PPTP_KEY_PASSWORD);
-	if (w) {
-		gtk_size_group_add_widget (group, w);
-		g_signal_connect (w, "changed", G_CALLBACK (changed_cb), user_data);
-	} else {
-		g_error ("No userbuilder in GtkBuilder file!");
-	}
-}
-
 static gboolean
 init_plugin_ui (PptpPluginUiWidget *self, NMConnection *connection, GError **error)
 {
@@ -337,7 +277,15 @@ init_plugin_ui (PptpPluginUiWidget *self, NMConnection *connection, GError **err
 	                  (GCallback) show_toggled_cb,
 	                  self);
 
-	fill_vpn_passwords (priv->builder, priv->group, connection, stuff_changed_cb, self);
+	widget = (GtkWidget *) gtk_builder_get_object (priv->builder, "user_password_entry");
+	g_assert (widget);
+	gtk_size_group_add_widget (priv->group, widget);
+	if (s_vpn) {
+		value = nm_setting_vpn_get_secret (s_vpn, NM_PPTP_KEY_PASSWORD);
+		if (value)
+			gtk_entry_set_text (GTK_ENTRY (widget), value);
+	}
+	g_signal_connect (widget, "changed", G_CALLBACK (stuff_changed_cb), self);
 
 	return TRUE;
 }
