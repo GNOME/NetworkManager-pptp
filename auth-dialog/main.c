@@ -30,12 +30,47 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
+#include <gnome-keyring.h>
+#include <gnome-keyring-memory.h>
+
 #include <nm-setting-vpn.h>
 #include <nm-vpn-plugin-utils.h>
 
 #include "src/nm-pptp-service.h"
-#include "common-gnome/keyring-helpers.h"
 #include "vpn-password-dialog.h"
+
+#define KEYRING_UUID_TAG "connection-uuid"
+#define KEYRING_SN_TAG "setting-name"
+#define KEYRING_SK_TAG "setting-key"
+
+static char *
+keyring_lookup_secret (const char *uuid, const char *secret_name)
+{
+	GList *found_list = NULL;
+	GnomeKeyringResult ret;
+	GnomeKeyringFound *found;
+	char *secret = NULL;
+
+	ret = gnome_keyring_find_itemsv_sync (GNOME_KEYRING_ITEM_GENERIC_SECRET,
+	                                      &found_list,
+	                                      KEYRING_UUID_TAG,
+	                                      GNOME_KEYRING_ATTRIBUTE_TYPE_STRING,
+	                                      uuid,
+	                                      KEYRING_SN_TAG,
+	                                      GNOME_KEYRING_ATTRIBUTE_TYPE_STRING,
+	                                      NM_SETTING_VPN_SETTING_NAME,
+	                                      KEYRING_SK_TAG,
+	                                      GNOME_KEYRING_ATTRIBUTE_TYPE_STRING,
+	                                      secret_name,
+	                                      NULL);
+	if (ret == GNOME_KEYRING_RESULT_OK && found_list) {
+		found = g_list_nth_data (found_list, 0);
+		secret = gnome_keyring_memory_strdup (found->secret);
+	}
+
+	gnome_keyring_found_list_free (found_list);
+	return secret;
+}
 
 static gboolean
 get_secrets (const char *vpn_uuid,
@@ -47,8 +82,8 @@ get_secrets (const char *vpn_uuid,
              NMSettingSecretFlags pw_flags)
 {
 	VpnPasswordDialog *dialog;
-	gboolean is_session = TRUE;
 	char *prompt, *pw = NULL;
+	const char *new_password = NULL;
 
 	g_return_val_if_fail (vpn_uuid != NULL, FALSE);
 	g_return_val_if_fail (vpn_name != NULL, FALSE);
@@ -61,7 +96,7 @@ get_secrets (const char *vpn_uuid,
 		if (in_pw)
 			pw = gnome_keyring_memory_strdup (in_pw);
 		else
-			pw = keyring_helpers_lookup_secret (vpn_uuid, NM_PPTP_KEY_PASSWORD, &is_session);
+			pw = keyring_lookup_secret (vpn_uuid, NM_PPTP_KEY_PASSWORD);
 	}
 
 	/* Don't ask if the passwords is unused */
@@ -102,21 +137,10 @@ get_secrets (const char *vpn_uuid,
 	gtk_widget_show (GTK_WIDGET (dialog));
 
 	if (vpn_password_dialog_run_and_block (dialog)) {
-		const char *password = NULL;
-		gboolean save = FALSE;
 
-		password = vpn_password_dialog_get_password (dialog);
-		if (password)
-			*out_pw = gnome_keyring_memory_strdup (password);
-
-		if (save && (pw_flags & NM_SETTING_SECRET_FLAG_AGENT_OWNED)) {
-		    if (*out_pw && !(pw_flags & NM_SETTING_SECRET_FLAG_NOT_SAVED))
-				keyring_helpers_save_secret (vpn_uuid, vpn_name, NULL, NM_PPTP_KEY_PASSWORD, *out_pw);
-			else {
-				/* Clear the password from the keyring */
-				keyring_helpers_delete_secret (vpn_uuid, NM_PPTP_KEY_PASSWORD);
-			}
-		}
+		new_password = vpn_password_dialog_get_password (dialog);
+		if (new_password)
+			*out_pw = gnome_keyring_memory_strdup (new_password);
 	}
 
 	gtk_widget_hide (GTK_WIDGET (dialog));
@@ -207,10 +231,8 @@ main (int argc, char *argv[])
 		printf ("%s\n%s\n", NM_PPTP_KEY_PASSWORD, password);
 	printf ("\n\n");
 
-	if (password) {
-		memset (password, 0, strlen (password));
+	if (password)
 		gnome_keyring_memory_free (password);
-	}
 
 	/* for good measure, flush stdout since Kansas is going Bye-Bye */
 	fflush (stdout);
