@@ -15,10 +15,10 @@ nm_pptp_auth_dialog_CPPFLAGS =			\
 	-DGTK_DISABLE_DEPRECATED		\
 	-DVERSION=\"$(VERSION)\"
 
-nm_pptp_auth_dialog_SOURCES =			\
-	main.c					\
-	gnome-two-password-dialog.c		\
-	gnome-two-password-dialog.h
+nm_pptp_auth_dialog_SOURCES = \
+	main.c \
+	vpn-password-dialog.c \
+	vpn-password-dialog.h
 
 nm_pptp_auth_dialog_LDADD =			\
 	$(GTK_LIBS)				\

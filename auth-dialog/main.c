@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * (C) Copyright 2008 Red Hat, Inc.
+ * (C) Copyright 2008 - 2011 Red Hat, Inc.
  */
 
 #ifdef HAVE_CONFIG_H
@@ -35,7 +35,7 @@
 
 #include "src/nm-pptp-service.h"
 #include "common-gnome/keyring-helpers.h"
-#include "gnome-two-password-dialog.h"
+#include "vpn-password-dialog.h"
 
 static gboolean
 get_secrets (const char *vpn_uuid,
@@ -46,7 +46,7 @@ get_secrets (const char *vpn_uuid,
              char **out_pw,
              NMSettingSecretFlags pw_flags)
 {
-	GnomeTwoPasswordDialog *dialog;
+	VpnPasswordDialog *dialog;
 	gboolean is_session = TRUE;
 	char *prompt, *pw = NULL;
 
@@ -90,51 +90,28 @@ get_secrets (const char *vpn_uuid,
 	 * that the password should never be saved.
 	 */
 	prompt = g_strdup_printf (_("You need to authenticate to access the Virtual Private Network '%s'."), vpn_name);
-	dialog = GNOME_TWO_PASSWORD_DIALOG (gnome_two_password_dialog_new (_("Authenticate VPN"), prompt, NULL, NULL, FALSE));
+	dialog = (VpnPasswordDialog *) vpn_password_dialog_new (_("Authenticate VPN"), prompt, NULL);
 	g_free (prompt);
 
-	gnome_two_password_dialog_set_show_username (dialog, FALSE);
-	gnome_two_password_dialog_set_show_userpass_buttons (dialog, FALSE);
-	gnome_two_password_dialog_set_show_domain (dialog, FALSE);
-	gnome_two_password_dialog_set_show_remember (dialog, TRUE);
-	gnome_two_password_dialog_set_show_password_secondary (dialog, FALSE);
-
-	/* If nothing was found in the keyring, default to not remembering any secrets */
-	if (pw) {
-		/* Otherwise set default remember based on which keyring the secrets were found in */
-		if (is_session)
-			gnome_two_password_dialog_set_remember (dialog, GNOME_TWO_PASSWORD_DIALOG_REMEMBER_SESSION);
-		else
-			gnome_two_password_dialog_set_remember (dialog, GNOME_TWO_PASSWORD_DIALOG_REMEMBER_FOREVER);
-	} else
-		gnome_two_password_dialog_set_remember (dialog, GNOME_TWO_PASSWORD_DIALOG_REMEMBER_NOTHING);
+	vpn_password_dialog_set_show_password_secondary (dialog, FALSE);
 
 	/* pre-fill dialog with the password */
 	if (pw && !(pw_flags & NM_SETTING_SECRET_FLAG_NOT_SAVED))
-		gnome_two_password_dialog_set_password (dialog, pw);
+		vpn_password_dialog_set_password (dialog, pw);
 
 	gtk_widget_show (GTK_WIDGET (dialog));
 
-	if (gnome_two_password_dialog_run_and_block (dialog)) {
-		const char *keyring = NULL;
+	if (vpn_password_dialog_run_and_block (dialog)) {
+		const char *password = NULL;
 		gboolean save = FALSE;
 
-		*out_pw = gnome_two_password_dialog_get_password (dialog);
-
-		switch (gnome_two_password_dialog_get_remember (dialog)) {
-		case GNOME_TWO_PASSWORD_DIALOG_REMEMBER_SESSION:
-			keyring = "session";
-			/* Fall through */
-		case GNOME_TWO_PASSWORD_DIALOG_REMEMBER_FOREVER:
-			save = TRUE;
-			break;
-		default:
-			break;
-		}
+		password = vpn_password_dialog_get_password (dialog);
+		if (password)
+			*out_pw = gnome_keyring_memory_strdup (password);
 
 		if (save && (pw_flags & NM_SETTING_SECRET_FLAG_AGENT_OWNED)) {
 		    if (*out_pw && !(pw_flags & NM_SETTING_SECRET_FLAG_NOT_SAVED))
-				keyring_helpers_save_secret (vpn_uuid, vpn_name, keyring, NM_PPTP_KEY_PASSWORD, *out_pw);
+				keyring_helpers_save_secret (vpn_uuid, vpn_name, NULL, NM_PPTP_KEY_PASSWORD, *out_pw);
 			else {
 				/* Clear the password from the keyring */
 				keyring_helpers_delete_secret (vpn_uuid, NM_PPTP_KEY_PASSWORD);
