@@ -26,7 +26,6 @@ libnm_pptp_properties_la_CFLAGS =                       \
 
 libnm_pptp_properties_la_LIBADD = \
         $(GTK_LIBS) \
-        $(top_builddir)/common-gnome/libnm-pptp-common-gnome.la	\
         $(NM_LIBS)
 
 libnm_pptp_properties_la_LDFLAGS =   \
