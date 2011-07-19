@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-26 15:06+0100\n"
-"PO-Revision-Date: 2011-01-26 15:12+0100\n"
+"POT-Creation-Date: 2011-07-19 13:23+0200\n"
+"PO-Revision-Date: 2011-07-19 13:25+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -16,44 +16,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:129
-msgid "_Secondary Password:"
-msgstr "_Sekundært passord:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:243
-msgid "_Username:"
-msgstr "Br_ukernavn:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:245
-msgid "_Domain:"
-msgstr "_Domene:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:247
+#: ../auth-dialog/vpn-password-dialog.c:95
 msgid "_Password:"
 msgstr "_Passord:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:336
-msgid "Connect _anonymously"
-msgstr "Koble til _anonymt"
+#: ../auth-dialog/vpn-password-dialog.c:97
+msgid "_Secondary Password:"
+msgstr "_Sekundært passord:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:341
-msgid "Connect as _user:"
-msgstr "Koble til som br_uker:"
+#: ../auth-dialog/vpn-password-dialog.c:239
+msgid "Sh_ow passwords"
+msgstr "Vis pass_ord"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:450
-msgid "_Remember passwords for this session"
-msgstr "Husk passo_rd for denne sesjonen"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:452
-msgid "_Save passwords in keyring"
-msgstr "_Lagre passord i nøkkelring"
-
-#: ../auth-dialog/main.c:62
+#. Otherwise, we have no saved password, or the password flags indicated
+#. * that the password should never be saved.
+#.
+#: ../auth-dialog/main.c:127
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
-msgstr "Du må autentisere deg for å få tilgang til Virtuelt privat nettverk «%s»."
+msgstr ""
+"Du må autentisere deg for å få tilgang til Virtuelt privat nettverk «%s»."
 
-#: ../auth-dialog/main.c:63
+#: ../auth-dialog/main.c:128
 msgid "Authenticate VPN"
 msgstr "Autentiser VPN"
 
@@ -65,133 +49,243 @@ msgstr "Legg til, fjern og rediger VPN-tilkoblinger"
 msgid "PPTP VPN Connection Manager"
 msgstr "Håndtering av VPN-tilkobling"
 
-#: ../properties/advanced-dialog.c:186
+#: ../properties/advanced-dialog.c:187
 msgid "All Available (Default)"
 msgstr "Alle tilgjengelige (forvalg)"
 
-#: ../properties/advanced-dialog.c:190
+#: ../properties/advanced-dialog.c:191
 msgid "128-bit (most secure)"
 msgstr "128-bit (mest sikker)"
 
-#: ../properties/advanced-dialog.c:199
+#: ../properties/advanced-dialog.c:200
 msgid "40-bit (less secure)"
 msgstr "40-bit (mindre sikker)"
 
-#: ../properties/advanced-dialog.c:305
+#: ../properties/advanced-dialog.c:309
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:318
+#: ../properties/advanced-dialog.c:322
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:330
+#: ../properties/advanced-dialog.c:334
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:342
+#: ../properties/advanced-dialog.c:346
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:355
+#: ../properties/advanced-dialog.c:359
 msgid "EAP"
 msgstr "EAP"
 
-#: ../properties/nm-pptp-dialog.glade.h:1
+#: ../properties/nm-pptp-dialog.ui.h:1
 msgid "<b>Authentication</b>"
 msgstr "<b>Autentisering</b>"
 
-#: ../properties/nm-pptp-dialog.glade.h:2
+#: ../properties/nm-pptp-dialog.ui.h:2
 msgid "<b>Echo</b>"
 msgstr "<b>Ekko</b>"
 
-#: ../properties/nm-pptp-dialog.glade.h:3
+#: ../properties/nm-pptp-dialog.ui.h:3
 msgid "<b>General</b>"
 msgstr "<b>Generelt</b>"
 
-#: ../properties/nm-pptp-dialog.glade.h:4
+#: ../properties/nm-pptp-dialog.ui.h:4
 msgid "<b>Optional</b>"
 msgstr "<b>Valgfritt</b>"
 
-#: ../properties/nm-pptp-dialog.glade.h:5
+#: ../properties/nm-pptp-dialog.ui.h:5
 msgid "<b>Security and Compression</b>"
 msgstr "<b>Sikkerhet og komprimering</b>"
 
-#: ../properties/nm-pptp-dialog.glade.h:6
+#: ../properties/nm-pptp-dialog.ui.h:6
 msgid "Ad_vanced..."
 msgstr "A_vansert …"
 
-#: ../properties/nm-pptp-dialog.glade.h:7
+#: ../properties/nm-pptp-dialog.ui.h:7
 msgid "Allow _BSD data compression"
 msgstr "Tillat _BSD-datakomprimering"
 
-#: ../properties/nm-pptp-dialog.glade.h:8
+#: ../properties/nm-pptp-dialog.ui.h:8
 msgid "Allow _Deflate data compression"
 msgstr "Tillat _deflate-datakomprimering"
 
-#: ../properties/nm-pptp-dialog.glade.h:9
+#: ../properties/nm-pptp-dialog.ui.h:9
 msgid "Allow st_ateful encryption"
 msgstr "Tillat kryptering basert på tilst_and"
 
-#: ../properties/nm-pptp-dialog.glade.h:10
+#: ../properties/nm-pptp-dialog.ui.h:10
 msgid "Allow the following authentication methods:"
 msgstr "Tillat følgende autentiseringsmetoder:"
 
-#: ../properties/nm-pptp-dialog.glade.h:11
+#: ../properties/nm-pptp-dialog.ui.h:11
 msgid "Default"
 msgstr "Forvalgt"
 
-#: ../properties/nm-pptp-dialog.glade.h:12
+#: ../properties/nm-pptp-dialog.ui.h:12
 msgid "NT Domain:"
 msgstr "NT-domene:"
 
-#: ../properties/nm-pptp-dialog.glade.h:13
+#: ../properties/nm-pptp-dialog.ui.h:13
 msgid ""
 "Note: MPPE encryption is only available with MSCHAP authentication methods. "
 "To enable this checkbox, select one or more of the MSCHAP authentication "
 "methods: MSCHAP or MSCHAPv2."
-msgstr "Merk: MPPE-kryptering er kun tilgjengelig med MSCHAP autentiseringsmetoder. For å slå på dette valget må du velge en av disse: MSCHAP eller MSCHAPv2."
+msgstr ""
+"Merk: MPPE-kryptering er kun tilgjengelig med MSCHAP autentiseringsmetoder. "
+"For å slå på dette valget må du velge en av disse: MSCHAP eller MSCHAPv2."
 
-#: ../properties/nm-pptp-dialog.glade.h:14
+#: ../properties/nm-pptp-dialog.ui.h:14
 msgid "PPTP Advanced Options"
 msgstr "Avanserte alternativer for PPTP"
 
-#: ../properties/nm-pptp-dialog.glade.h:15
+#: ../properties/nm-pptp-dialog.ui.h:15
 msgid "Password:"
 msgstr "Passord:"
 
-#: ../properties/nm-pptp-dialog.glade.h:16
+#: ../properties/nm-pptp-dialog.ui.h:16
 msgid "Send PPP _echo packets"
 msgstr "Send _ekkopakker for PPP"
 
-#: ../properties/nm-pptp-dialog.glade.h:17
+#: ../properties/nm-pptp-dialog.ui.h:17
 msgid "Show password"
 msgstr "Vis passord"
 
-#: ../properties/nm-pptp-dialog.glade.h:18
+#: ../properties/nm-pptp-dialog.ui.h:18
 msgid "Use TCP _header compression"
 msgstr "Bruk komprimering av TCP-_hoder"
 
-#: ../properties/nm-pptp-dialog.glade.h:19
+#: ../properties/nm-pptp-dialog.ui.h:19
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Bruk _punkt-til-punkt-kryptering (MPPE)"
 
-#: ../properties/nm-pptp-dialog.glade.h:20
+#: ../properties/nm-pptp-dialog.ui.h:20
 msgid "User name:"
 msgstr "Brukernavn:"
 
-#: ../properties/nm-pptp-dialog.glade.h:21
+#: ../properties/nm-pptp-dialog.ui.h:21
 msgid "_Gateway:"
 msgstr "_Gateway:"
 
-#: ../properties/nm-pptp-dialog.glade.h:22
+#: ../properties/nm-pptp-dialog.ui.h:22
 msgid "_Security:"
 msgstr "_Sikkerhet:"
 
-#: ../properties/nm-pptp.c:50
+#: ../properties/nm-pptp.c:49
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Point-to-Point Tunneling Protocol (PPTP)"
 
-#: ../properties/nm-pptp.c:51
+#: ../properties/nm-pptp.c:50
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Kompatibel med Microsofts og andres VPN-tjenere basert på PPTP."
+
+#: ../src/nm-pptp-service.c:160
+#, c-format
+msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
+msgstr ""
+
+#: ../src/nm-pptp-service.c:178
+#, c-format
+msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
+msgstr ""
+
+#: ../src/nm-pptp-service.c:202
+#, c-format
+msgid "no usable addresses returned for PPTP VPN gateway '%s'"
+msgstr ""
+
+#: ../src/nm-pptp-service.c:213
+#, c-format
+msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
+msgstr ""
+
+#: ../src/nm-pptp-service.c:240
+msgid "Could not find secrets (connection invalid, no vpn setting)."
+msgstr ""
+
+#: ../src/nm-pptp-service.c:252
+msgid "Invalid VPN username."
+msgstr "Ugyldig brukernavn for VPN."
+
+#: ../src/nm-pptp-service.c:261
+msgid "Missing VPN username."
+msgstr "Mangler brukernavn for VPN."
+
+#: ../src/nm-pptp-service.c:271
+msgid "Missing or invalid VPN password."
+msgstr "Passord for VPN mangler eller er ugyldig."
+
+#: ../src/nm-pptp-service.c:429
+msgid "No cached credentials."
+msgstr ""
+
+#: ../src/nm-pptp-service.c:575
+#, c-format
+msgid "invalid gateway '%s'"
+msgstr "ugyldig gateway «%s»"
+
+#: ../src/nm-pptp-service.c:589
+#, c-format
+msgid "invalid integer property '%s'"
+msgstr "ugyldig heltallsegenskap «%s»"
+
+#: ../src/nm-pptp-service.c:599
+#, c-format
+msgid "invalid boolean property '%s' (not yes or no)"
+msgstr ""
+
+#: ../src/nm-pptp-service.c:606
+#, c-format
+msgid "unhandled property '%s' type %s"
+msgstr ""
+
+#: ../src/nm-pptp-service.c:617
+#, c-format
+msgid "property '%s' invalid or not supported"
+msgstr ""
+
+#: ../src/nm-pptp-service.c:635
+msgid "No VPN configuration options."
+msgstr ""
+
+#: ../src/nm-pptp-service.c:655
+#, c-format
+msgid "Missing required option '%s'."
+msgstr ""
+
+#: ../src/nm-pptp-service.c:675
+msgid "No VPN secrets!"
+msgstr ""
+
+#: ../src/nm-pptp-service.c:816
+msgid "Could not find pptp client binary."
+msgstr ""
+
+#: ../src/nm-pptp-service.c:829
+msgid "Missing VPN gateway."
+msgstr "Mangler VPN-gateway."
+
+#: ../src/nm-pptp-service.c:982
+msgid "Could not find the pppd binary."
+msgstr "Fant ikke pppd-binærfilen."
+
+#: ../src/nm-pptp-service.c:1112
+msgid "Invalid or missing PPTP gateway."
+msgstr "Ugyldig eller manglende PPTP-gateway."
+
+#: ../src/nm-pptp-service.c:1311
+msgid "Don't quit when VPN connection terminates"
+msgstr ""
+
+#: ../src/nm-pptp-service.c:1312
+msgid "Enable verbose debug logging (may expose passwords)"
+msgstr ""
+
+#: ../src/nm-pptp-service.c:1326
+msgid ""
+"nm-pptp-service provides integrated PPTP VPN capability (compatible with "
+"Microsoft and other implementations) to NetworkManager."
+msgstr ""
