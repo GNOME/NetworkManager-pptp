@@ -5,15 +5,16 @@
 #
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2006.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2009, 2011.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2011-03-31 19:59+0000\n"
-"PO-Revision-Date: 2011-04-24 11:28+0200\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"POT-Creation-Date: 2011-07-18 17:35+0000\n"
+"PO-Revision-Date: 2011-07-19 11:02+0200\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,47 +22,28 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:129
-msgid "_Secondary Password:"
-msgstr "Contraseña _secundaria:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:243
-msgid "_Username:"
-msgstr "_Usuario:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:245
-msgid "_Domain:"
-msgstr "_Dominio:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:247
+#: ../auth-dialog/vpn-password-dialog.c:95
 msgid "_Password:"
 msgstr "_Contraseña:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:342
-msgid "Connect _anonymously"
-msgstr "Conectar como -anónimo"
+#: ../auth-dialog/vpn-password-dialog.c:97
+msgid "_Secondary Password:"
+msgstr "Contraseña _secundaria:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:347
-msgid "Connect as _user:"
-msgstr "Conectar como _usuario:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:452
-msgid "_Remember passwords for this session"
-msgstr "_Recordar las contraseñas para esta sesión"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:454
-msgid "_Save passwords in keyring"
-msgstr "_Guardar las contraseña en el depósito de claves"
+#: ../auth-dialog/vpn-password-dialog.c:239
+#| msgid "Show password"
+msgid "Sh_ow passwords"
+msgstr "M_ostrar contraseñas"
 
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
 #.
-#: ../auth-dialog/main.c:92
+#: ../auth-dialog/main.c:127
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr "Necesita autenticarse para acceder a la red privada virtual «%s»"
 
-#: ../auth-dialog/main.c:93
+#: ../auth-dialog/main.c:128
 msgid "Authenticate VPN"
 msgstr "Autenticar VPN"
 
@@ -199,11 +181,11 @@ msgstr "_Pasarela:"
 msgid "_Security:"
 msgstr "_Seguridad:"
 
-#: ../properties/nm-pptp.c:50
+#: ../properties/nm-pptp.c:49
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Protocolo de túnel punto a punto (PPTP)"
 
-#: ../properties/nm-pptp.c:51
+#: ../properties/nm-pptp.c:50
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Compatible con servidores PPTP VPN de Microsoft y otros."
 
@@ -225,8 +207,7 @@ msgstr "la puerta de enlace VPN PPTP devolvió una dirección no usable «%s»
 #: ../src/nm-pptp-service.c:213
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
-msgstr ""
-"la puerta de enlace VPN PPTP devolvió una dirección no usable «%s» (%d)"
+msgstr "la puerta de enlace VPN PPTP devolvió una dirección no usable «%s» (%d)"
 
 #: ../src/nm-pptp-service.c:240
 msgid "Could not find secrets (connection invalid, no vpn setting)."
@@ -319,6 +300,24 @@ msgid ""
 msgstr ""
 "nm-pptp-service proporciona capacidades VPN PPTP integradas con "
 "NetworkManager (compatible con Microsoft y otras implementaciones)."
+
+#~ msgid "_Username:"
+#~ msgstr "_Usuario:"
+
+#~ msgid "_Domain:"
+#~ msgstr "_Dominio:"
+
+#~ msgid "Connect _anonymously"
+#~ msgstr "Conectar como -anónimo"
+
+#~ msgid "Connect as _user:"
+#~ msgstr "Conectar como _usuario:"
+
+#~ msgid "_Remember passwords for this session"
+#~ msgstr "_Recordar las contraseñas para esta sesión"
+
+#~ msgid "_Save passwords in keyring"
+#~ msgstr "_Guardar las contraseña en el depósito de claves"
 
 #~ msgid "gtk-cancel"
 #~ msgstr "gtk-cancel"
