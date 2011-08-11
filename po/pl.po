@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-04 08:24+0200\n"
-"PO-Revision-Date: 2010-04-04 08:25+0200\n"
+"POT-Creation-Date: 2011-08-11 21:46+0200\n"
+"PO-Revision-Date: 2011-08-11 21:47+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -21,49 +21,29 @@ msgstr ""
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: Poland\n"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:129
-msgid "_Secondary Password:"
-msgstr "Ha_sło dodatkowe:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:243
-msgid "_Username:"
-msgstr "Nazwa _użytkownika:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:245
-msgid "_Domain:"
-msgstr "_Domena:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:247
+#: ../auth-dialog/vpn-password-dialog.c:95
 msgid "_Password:"
 msgstr "_Hasło:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:342
-msgid "Connect _anonymously"
-msgstr "Połączenie _anonimowe"
+#: ../auth-dialog/vpn-password-dialog.c:97
+msgid "_Secondary Password:"
+msgstr "Ha_sło dodatkowe:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:347
-msgid "Connect as _user:"
-msgstr "Połączenie jako _użytkownik:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:452
-msgid "_Remember passwords for this session"
-msgstr "_Zapamiętanie hasła na czas tej sesji"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:454
-msgid "_Save passwords in keyring"
-msgstr "Z_apamiętanie hasła w bazie kluczy"
+#: ../auth-dialog/vpn-password-dialog.c:239
+msgid "Sh_ow passwords"
+msgstr "Wyświ_etlanie haseł"
 
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
 #.
-#: ../auth-dialog/main.c:92
+#: ../auth-dialog/main.c:127
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr ""
 "Aby uzyskać dostęp do wirtualnej sieci prywatnej \"%s\", należy się "
 "uwierzytelnić."
 
-#: ../auth-dialog/main.c:93
+#: ../auth-dialog/main.c:128
 msgid "Authenticate VPN"
 msgstr "Uwierzytelnianie VPN"
 
@@ -201,11 +181,11 @@ msgstr "_Brama:"
 msgid "_Security:"
 msgstr "Za_bezpieczenia:"
 
-#: ../properties/nm-pptp.c:50
+#: ../properties/nm-pptp.c:49
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Protokół tunelowania Point-to-Point (PPTP)"
 
-#: ../properties/nm-pptp.c:51
+#: ../properties/nm-pptp.c:50
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Zgodny z serwerami firmy Microsoft i innymi serwerami VPN PPTP."
 
