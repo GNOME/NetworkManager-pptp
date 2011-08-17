@@ -414,6 +414,7 @@ advanced_dialog_new (GHashTable *hash)
 	ui_file = g_strdup_printf ("%s/%s", UIDIR, "nm-pptp-dialog.ui");
 	builder = gtk_builder_new ();
 
+	gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
 	if (!gtk_builder_add_from_file (builder, ui_file, &error)) {
 		g_warning ("Couldn't load builder file: %s",
 		           error ? error->message : "(unknown)");
@@ -421,7 +422,6 @@ advanced_dialog_new (GHashTable *hash)
 		g_object_unref (G_OBJECT (builder));
 		goto out;
 	}
-	gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
 
 	dialog = GTK_WIDGET (gtk_builder_get_object (builder, "pptp-advanced-dialog"));
 	if (!dialog) {
