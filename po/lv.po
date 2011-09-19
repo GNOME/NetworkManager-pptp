@@ -8,59 +8,41 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
 "cgi?product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2011-04-02 13:26+0000\n"
-"PO-Revision-Date: 2011-04-18 22:52+0300\n"
+"POT-Creation-Date: 2011-07-18 17:35+0000\n"
+"PO-Revision-Date: 2011-09-16 12:25+0300\n"
 "Last-Translator: Rūdofls Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
+"Language: lv\n"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:129
-msgid "_Secondary Password:"
-msgstr "_Sekundārā parole:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:243
-msgid "_Username:"
-msgstr "_Lietotājvārds:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:245
-msgid "_Domain:"
-msgstr "_Domēns:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:247
+#: ../auth-dialog/vpn-password-dialog.c:95
 msgid "_Password:"
 msgstr "_Parole:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:342
-msgid "Connect _anonymously"
-msgstr "Savienoties _anonīmi"
+#: ../auth-dialog/vpn-password-dialog.c:97
+msgid "_Secondary Password:"
+msgstr "_Sekundārā parole:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:347
-msgid "Connect as _user:"
-msgstr "Savienoties kā _lietotājam:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:452
-msgid "_Remember passwords for this session"
-msgstr "Atce_rēties paroli šai sesijai"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:454
-msgid "_Save passwords in keyring"
-msgstr "_Saglabāt paroli atslēgu saišķī"
+#: ../auth-dialog/vpn-password-dialog.c:239
+#| msgid "Show password"
+msgid "Sh_ow passwords"
+msgstr "Rādīt par_oles"
 
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
 #.
-#: ../auth-dialog/main.c:92
+#: ../auth-dialog/main.c:127
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr ""
 "Jums vajag autentificēties, lai piekļūtu virtuālajam privātajam tīklam '%s'."
 
-#: ../auth-dialog/main.c:93
+#: ../auth-dialog/main.c:128
 msgid "Authenticate VPN"
 msgstr "Autentificēt VPN"
 
@@ -198,11 +180,11 @@ msgstr "_Vārteja:"
 msgid "_Security:"
 msgstr "_Drošība:"
 
-#: ../properties/nm-pptp.c:50
+#: ../properties/nm-pptp.c:49
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Divp_unktu tunelēšanas protokols (PPTP)"
 
-#: ../properties/nm-pptp.c:51
+#: ../properties/nm-pptp.c:50
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Savietojams ar Microsoft un citiem PPTP VPN serveriem."
 
@@ -297,7 +279,6 @@ msgid "Could not find the pppd binary."
 msgstr "Nevarēja atrast pppd bināro failu."
 
 #: ../src/nm-pptp-service.c:1112
-#| msgid "Missing VPN gateway."
 msgid "Invalid or missing PPTP gateway."
 msgstr "Nederīga vai neesoša PPTP vārteja."
 
@@ -316,6 +297,24 @@ msgid ""
 msgstr ""
 "nm-pptp-service nodrošina NetworkManager integrētu PPTP VPN iespēju "
 "(savietojams ar Microsoft un citu realizācijām)."
+
+#~ msgid "_Username:"
+#~ msgstr "_Lietotājvārds:"
+
+#~ msgid "_Domain:"
+#~ msgstr "_Domēns:"
+
+#~ msgid "Connect _anonymously"
+#~ msgstr "Savienoties _anonīmi"
+
+#~ msgid "Connect as _user:"
+#~ msgstr "Savienoties kā _lietotājam:"
+
+#~ msgid "_Remember passwords for this session"
+#~ msgstr "Atce_rēties paroli šai sesijai"
+
+#~ msgid "_Save passwords in keyring"
+#~ msgstr "_Saglabāt paroli atslēgu saišķī"
 
 #~ msgid "Could not start pppd plugin helper service."
 #~ msgstr "Nevarēja palaist pppd spraudņa palīdzības servisu."
