@@ -6,14 +6,15 @@
 # Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun.org>, 2009.
 # Francisco Diéguez <frandieguez@ubuntu.com>, 2010.
 # Fran Diéguez <frandieguez@gnome.org>, 2011.
+# Xosé M. Lamas <correo.xmgz@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-09 21:05+0200\n"
+"POT-Creation-Date: 2011-09-22 00:56+0200\n"
 "PO-Revision-Date: 2011-04-09 21:11+0200\n"
-"Last-Translator: Fran Diéguez <frandieguez@gnome.org>\n"
+"Last-Translator: Xosé M. Lamas <correo.xmgz@gmail.com>\n"
 "Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
@@ -21,47 +22,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:129
-msgid "_Secondary Password:"
-msgstr "Contrasinal _secundario:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:243
-msgid "_Username:"
-msgstr "Nome de _usuario:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:245
-msgid "_Domain:"
-msgstr "_Dominio:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:247
+#: ../auth-dialog/vpn-password-dialog.c:95
 msgid "_Password:"
 msgstr "_Contrasinal:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:342
-msgid "Connect _anonymously"
-msgstr "Conectarse _anonimamente"
+#: ../auth-dialog/vpn-password-dialog.c:97
+msgid "_Secondary Password:"
+msgstr "Contrasinal _secundario:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:347
-msgid "Connect as _user:"
-msgstr "Conectarse como _usuario:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:452
-msgid "_Remember passwords for this session"
-msgstr "_Lembrar os contrasinais para esta sesión"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:454
-msgid "_Save passwords in keyring"
-msgstr "_Gardar os contrasinais no anel de chaves"
+#: ../auth-dialog/vpn-password-dialog.c:239
+msgid "Sh_ow passwords"
+msgstr "M_ostrar os contrasinais"
 
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
 #.
-#: ../auth-dialog/main.c:92
+#: ../auth-dialog/main.c:127
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr "Precisa autenticarse para acceder á rede privada virtual (VPN) '%s'."
 
-#: ../auth-dialog/main.c:93
+#: ../auth-dialog/main.c:128
 msgid "Authenticate VPN"
 msgstr "Autenticar VPN"
 
@@ -199,11 +180,11 @@ msgstr "_Pasarela:"
 msgid "_Security:"
 msgstr "_Seguridade:"
 
-#: ../properties/nm-pptp.c:50
+#: ../properties/nm-pptp.c:49
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Protocolo de Túnel Punto a Punto (PPTP)"
 
-#: ../properties/nm-pptp.c:51
+#: ../properties/nm-pptp.c:50
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Compatíbel con Microsoft e outros servidores VPN PPTP."
 
@@ -322,3 +303,21 @@ msgid ""
 msgstr ""
 "nm-pptp-service fornece a capacidade de integrar VPN PPTP (compatíbel con "
 "Microsoft e outras implementacións) con NetworkManager."
+
+#~ msgid "_Username:"
+#~ msgstr "Nome de _usuario:"
+
+#~ msgid "_Domain:"
+#~ msgstr "_Dominio:"
+
+#~ msgid "Connect _anonymously"
+#~ msgstr "Conectarse _anonimamente"
+
+#~ msgid "Connect as _user:"
+#~ msgstr "Conectarse como _usuario:"
+
+#~ msgid "_Remember passwords for this session"
+#~ msgstr "_Lembrar os contrasinais para esta sesión"
+
+#~ msgid "_Save passwords in keyring"
+#~ msgstr "_Gardar os contrasinais no anel de chaves"
