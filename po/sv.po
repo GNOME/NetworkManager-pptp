@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-09 10:36+0200\n"
-"PO-Revision-Date: 2011-04-09 10:42+0100\n"
+"POT-Creation-Date: 2011-10-07 11:45+0200\n"
+"PO-Revision-Date: 2011-10-07 11:45+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -19,47 +19,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:129
-msgid "_Secondary Password:"
-msgstr "_Sekundärt lösenord:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:243
-msgid "_Username:"
-msgstr "_Användarnamn:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:245
-msgid "_Domain:"
-msgstr "_Domän:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:247
+#: ../auth-dialog/vpn-password-dialog.c:95
 msgid "_Password:"
 msgstr "_Lösenord:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:342
-msgid "Connect _anonymously"
-msgstr "Anslut anon_ymt"
+#: ../auth-dialog/vpn-password-dialog.c:97
+msgid "_Secondary Password:"
+msgstr "_Sekundärt lösenord:"
 
-#: ../auth-dialog/gnome-two-password-dialog.c:347
-msgid "Connect as _user:"
-msgstr "Anslut som _användare:"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:452
-msgid "_Remember passwords for this session"
-msgstr "_Kom ihåg lösenord för denna session"
-
-#: ../auth-dialog/gnome-two-password-dialog.c:454
-msgid "_Save passwords in keyring"
-msgstr "_Spara lösenord i nyckelring"
+#: ../auth-dialog/vpn-password-dialog.c:239
+msgid "Sh_ow passwords"
+msgstr "Vi_sa lösenord"
 
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
 #.
-#: ../auth-dialog/main.c:92
+#: ../auth-dialog/main.c:127
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr "Du måsta autentisera dig för att komma åt det virtuella privata nätverket \"%s\"."
 
-#: ../auth-dialog/main.c:93
+#: ../auth-dialog/main.c:128
 msgid "Authenticate VPN"
 msgstr "Autentisera VPN"
 
@@ -191,11 +171,11 @@ msgstr "_Gateway:"
 msgid "_Security:"
 msgstr "_Säkerhet:"
 
-#: ../properties/nm-pptp.c:50
+#: ../properties/nm-pptp.c:49
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Point-to-Point Tunneling Protocol (PPTP)"
 
-#: ../properties/nm-pptp.c:51
+#: ../properties/nm-pptp.c:50
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Kompatibel med Microsoft och andra PPTP VPN-servrar."
 
@@ -305,6 +285,18 @@ msgstr "Aktivera informativ felsökningsloggning (kan exponera lösenord)"
 msgid "nm-pptp-service provides integrated PPTP VPN capability (compatible with Microsoft and other implementations) to NetworkManager."
 msgstr "nm-pptp-service tillhandahåller integrerade PPTP VPN-förmågor (kompatibla med Microsoft och andra implementationer) till Nätverkshanterare."
 
+#~ msgid "_Username:"
+#~ msgstr "_Användarnamn:"
+#~ msgid "_Domain:"
+#~ msgstr "_Domän:"
+#~ msgid "Connect _anonymously"
+#~ msgstr "Anslut anon_ymt"
+#~ msgid "Connect as _user:"
+#~ msgstr "Anslut som _användare:"
+#~ msgid "_Remember passwords for this session"
+#~ msgstr "_Kom ihåg lösenord för denna session"
+#~ msgid "_Save passwords in keyring"
+#~ msgstr "_Spara lösenord i nyckelring"
 #~ msgid "gtk-cancel"
 #~ msgstr "Avbryt"
 #~ msgid "gtk-ok"
