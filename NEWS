@@ -1,4 +1,15 @@
 =======================================================
+network-manager-pptp-0.8.6
+Overview of changes since network-manager-pptp-0.8.4
+=======================================================
+
+This is a new stable release of network-manager-pptp.  Notable changes include:
+
+* Updated translations
+* Fix some untranslated UI strings
+* Fix saving secrets of system-scoped connections
+
+=======================================================
 network-manager-pptp-0.8.4
 Overview of changes since network-manager-pptp-0.8.2
 =======================================================
