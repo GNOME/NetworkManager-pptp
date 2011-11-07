@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-11 21:46+0200\n"
-"PO-Revision-Date: 2011-08-11 21:47+0200\n"
+"POT-Creation-Date: 2011-11-07 22:25+0100\n"
+"PO-Revision-Date: 2011-11-07 22:26+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -188,6 +188,18 @@ msgstr "Protokół tunelowania Point-to-Point (PPTP)"
 #: ../properties/nm-pptp.c:50
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Zgodny z serwerami firmy Microsoft i innymi serwerami VPN PPTP."
+
+#: ../properties/nm-pptp.c:317
+msgid "Saved"
+msgstr "Zapisano"
+
+#: ../properties/nm-pptp.c:325
+msgid "Always Ask"
+msgstr "Pytanie za każdym razem"
+
+#: ../properties/nm-pptp.c:330
+msgid "Not Required"
+msgstr "Nie jest wymagane"
 
 #: ../src/nm-pptp-service.c:160
 #, c-format
