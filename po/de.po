@@ -1,18 +1,18 @@
-# German translation of NetwokrManager.
+# German translation of networkmanager-pptp.
 # Copyright (C) 2005 Dan Williams <dcbw@redhat.com>
 # This file is distributed under the same license as the NetworkManager package.
 # Thomas Gier <info@thomasgier.de>, 2007.
 # Hauke Mehrtens <hauke@hauke-m.de>, 2008.
-# Mario Blättermann <mariobl@freenet.de>, 2009, 2011.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2009, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2011-07-18 17:35+0000\n"
-"PO-Revision-Date: 2011-07-30 21:16+0100\n"
-"Last-Translator: Mario Blättermann <mariobl@freenet.de>\n"
+"POT-Creation-Date: 2011-11-07 15:35+0000\n"
+"PO-Revision-Date: 2011-11-18 20:21+0100\n"
+"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -187,6 +187,18 @@ msgstr "Point-to-Point Tunneling Protocol (PPTP)"
 #: ../properties/nm-pptp.c:50
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Kompatibel mit Microsofts und anderen PPTP VPN-Servern."
+
+#: ../properties/nm-pptp.c:317
+msgid "Saved"
+msgstr "Gespeichert"
+
+#: ../properties/nm-pptp.c:325
+msgid "Always Ask"
+msgstr "Immer fragen"
+
+#: ../properties/nm-pptp.c:330
+msgid "Not Required"
+msgstr "Nicht notwendig"
 
 #: ../src/nm-pptp-service.c:160
 #, c-format
