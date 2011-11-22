@@ -4,14 +4,14 @@
 #
 # Jakub Friedl <jfriedl@suse.cz>, 2006.
 # Jiří Eischmann <jiri@eischmann.cz>, 2008.
-# Zdeněk Hataš <zdenek.hatas@gmail.com>, 2009, 2010.
+# Zdeněk Hataš <zdenek.hatas@gmail.com>, 2009, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2011-07-18 17:35+0000\n"
-"PO-Revision-Date: 2011-09-05 08:08+0100\n"
+"POT-Creation-Date: 2011-11-07 15:35+0000\n"
+"PO-Revision-Date: 2011-11-22 10:49+0100\n"
 "Last-Translator: Zdeněk Hataš <zdenek.hatas@gmail.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,6 @@ msgid "_Secondary Password:"
 msgstr "_Sekundární heslo:"
 
 #: ../auth-dialog/vpn-password-dialog.c:239
-#| msgid "Show password"
 msgid "Sh_ow passwords"
 msgstr "Z_obrazit hesla"
 
@@ -182,6 +181,18 @@ msgstr "Point-to-Point Tunneling Protocol (PPTP)"
 #: ../properties/nm-pptp.c:50
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Kompatibilní s PPTP VPN servery od Microsoftu a ostatních."
+
+#: ../properties/nm-pptp.c:317
+msgid "Saved"
+msgstr "Uloženo"
+
+#: ../properties/nm-pptp.c:325
+msgid "Always Ask"
+msgstr "Vždy se ptát"
+
+#: ../properties/nm-pptp.c:330
+msgid "Not Required"
+msgstr "Není vyžadováno"
 
 #: ../src/nm-pptp-service.c:160
 #, c-format
