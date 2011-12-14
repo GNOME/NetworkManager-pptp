@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-19 13:23+0200\n"
-"PO-Revision-Date: 2011-07-19 13:25+0200\n"
+"POT-Creation-Date: 2011-12-14 22:27+0100\n"
+"PO-Revision-Date: 2011-12-14 22:28+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -182,6 +182,18 @@ msgstr "Point-to-Point Tunneling Protocol (PPTP)"
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Kompatibel med Microsofts og andres VPN-tjenere basert på PPTP."
 
+#: ../properties/nm-pptp.c:317
+msgid "Saved"
+msgstr "Lagret"
+
+#: ../properties/nm-pptp.c:325
+msgid "Always Ask"
+msgstr "Alltid spør"
+
+#: ../properties/nm-pptp.c:330
+msgid "Not Required"
+msgstr "Ikke krevet"
+
 #: ../src/nm-pptp-service.c:160
 #, c-format
 msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
@@ -220,7 +232,7 @@ msgstr "Passord for VPN mangler eller er ugyldig."
 
 #: ../src/nm-pptp-service.c:429
 msgid "No cached credentials."
-msgstr ""
+msgstr "Ingen mellomlagret påloggingsinformasjon."
 
 #: ../src/nm-pptp-service.c:575
 #, c-format
@@ -262,7 +274,7 @@ msgstr ""
 
 #: ../src/nm-pptp-service.c:816
 msgid "Could not find pptp client binary."
-msgstr ""
+msgstr "Kunne ikke finne kjørbar fil for pptp-klient."
 
 #: ../src/nm-pptp-service.c:829
 msgid "Missing VPN gateway."
@@ -278,7 +290,7 @@ msgstr "Ugyldig eller manglende PPTP-gateway."
 
 #: ../src/nm-pptp-service.c:1311
 msgid "Don't quit when VPN connection terminates"
-msgstr ""
+msgstr "Ikke avslutt når VPN-forbindelsen termineres"
 
 #: ../src/nm-pptp-service.c:1312
 msgid "Enable verbose debug logging (may expose passwords)"
