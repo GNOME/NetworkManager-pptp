@@ -29,6 +29,8 @@ endif
 nm-pptp-service.name: $(srcdir)/nm-pptp-service.name.in
 	sed -e 's|[@]LIBEXECDIR[@]|$(libexecdir)|g' $< >$@
 
+DISTCHECK_CONFIGURE_FLAGS = --enable-more-warnings=yes
+
 EXTRA_DIST = nm-pptp-service.name.in \
              $(dbusservice_DATA)  \
              $(desktopfile) \
