@@ -158,15 +158,15 @@ get_secrets (const char *vpn_uuid,
 		keyfile_print_stdout (keyfile);
 		g_key_file_unref (keyfile);
 		goto out;
-	}
-	if (allow_interaction == FALSE ||
-	    (!retry && pw && !(pw_flags & NM_SETTING_SECRET_FLAG_NOT_SAVED))) {
+	} else if (   allow_interaction == FALSE
+	           || (!retry && pw && !(pw_flags & NM_SETTING_SECRET_FLAG_NOT_SAVED))) {
 		/* If interaction isn't allowed, just return existing secrets.
 		 * Also, don't ask the user if we don't need a new password (ie, !retry),
 		 * we have an existing PW, and the password is saved.
 		 */
 
 		*out_pw = pw;
+		g_free (prompt);
 		return TRUE;
 	}
 
