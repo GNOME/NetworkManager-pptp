@@ -98,8 +98,10 @@ msgid "<b>General</b>"
 msgstr "<b>Allmänt</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
-msgid "PPTP server IP or name.&#10;config: the first parameter of pptp"
-msgstr "IP eller namn på PPTP-server.&#10;config: första parametern för pptp"
+msgid "PPTP server IP or name.\n"
+"config: the first parameter of pptp"
+msgstr "IP eller namn på PPTP-server.\n"
+"config: första parametern för pptp"
 
 #: ../properties/nm-pptp-dialog.ui.h:4
 msgid "_Gateway:"
@@ -110,8 +112,10 @@ msgid "<b>Optional</b>"
 msgstr "<b>Valfritt</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:6
-msgid "Append the domain name <domain> to the local host name for authentication purposes.&#10;config: domain <domain>"
-msgstr "Lägg till domännamnet <domän> till det lokala värdnamnet för autentiseringssyften.&#10;config: domain <domän>"
+msgid "Append the domain name <domain> to the local host name for authentication purposes.\n"
+"config: domain <domain>"
+msgstr "Lägg till domännamnet <domän> till det lokala värdnamnet för autentiseringssyften.\n"
+"config: domain <domän>"
 
 #: ../properties/nm-pptp-dialog.ui.h:7
 msgid "NT Domain:"
@@ -126,8 +130,10 @@ msgid "Password passed to PPTP when prompted for it."
 msgstr "Lösenord att skicka till PPTP när det efterfrågas."
 
 #: ../properties/nm-pptp-dialog.ui.h:11
-msgid "Set the name used for authenticating the local system to the peer to <name>.&#10;config: user <name>"
-msgstr "Ange namnet att använda för autentisering av det lokala systemet till motparten till <namn>.&#10;config: user <namn>"
+msgid "Set the name used for authenticating the local system to the peer to <name>.\n"
+"config: user <name>"
+msgstr "Ange namnet att använda för autentisering av det lokala systemet till motparten till <namn>.\n"
+"config: user <namn>"
 
 #: ../properties/nm-pptp-dialog.ui.h:12
 msgid "User name:"
@@ -150,8 +156,10 @@ msgid "Allow the following authentication methods:"
 msgstr "Tillåt följande autentiseringsmetoder:"
 
 #: ../properties/nm-pptp-dialog.ui.h:17
-msgid "Allow/disable authentication methods.&#10;config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
-msgstr "Tillåt/inaktivera autentiseringsmetoder.&#10;config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
+msgid "Allow/disable authentication methods.\n"
+"config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
+msgstr "Tillåt/inaktivera autentiseringsmetoder.\n"
+"config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:18
 msgid "<b>Security and Compression</b>"
@@ -170,15 +178,18 @@ msgid "_Security:"
 msgstr "_Säkerhet:"
 
 #: ../properties/nm-pptp-dialog.ui.h:22
-msgid "Require the use of MPPE, with 40/128-bit encryption or all.&#10;config: require-mppe, require-mppe-128 or require-mppe-40"
-msgstr "Krävs användning av MPPE, med 40/128-bitars kryptering eller alla.&#10;config: require-mppe, require-mppe-128 eller require-mppe-40"
+msgid "Require the use of MPPE, with 40/128-bit encryption or all.\n"
+"config: require-mppe, require-mppe-128 or require-mppe-40"
+msgstr "Krävs användning av MPPE, med 40/128-bitars kryptering eller alla.\n"
+"config: require-mppe, require-mppe-128 eller require-mppe-40"
 
 #: ../properties/nm-pptp-dialog.ui.h:23
 msgid "Allow st_ateful encryption"
 msgstr "Tillåt t_illståndsbaserad kryptering"
 
 #: ../properties/nm-pptp-dialog.ui.h:24
-msgid "Allow MPPE to use stateful mode. Stateless mode is still attempted first.&#10;config: mppe-stateful (when checked)"
+msgid "Allow MPPE to use stateful mode. Stateless mode is still attempted first.\n"
+"config: mppe-stateful (when checked)"
 msgstr ""
 
 #: ../properties/nm-pptp-dialog.ui.h:25
@@ -186,23 +197,28 @@ msgid "Allow _BSD data compression"
 msgstr "Tillåt _BSD-datakomprimering"
 
 #: ../properties/nm-pptp-dialog.ui.h:26
-msgid "Allow/disable BSD-Compress compression.&#10;config: nobsdcomp (when unchecked)"
-msgstr "Tillåt/inaktivera BSD-Compress-kompression.&#10;config: nobsdcomp (när inte kryssad)"
+msgid "Allow/disable BSD-Compress compression.\n"
+"config: nobsdcomp (when unchecked)"
+msgstr "Tillåt/inaktivera BSD-Compress-kompression.\n"
+"config: nobsdcomp (när inte kryssad)"
 
 #: ../properties/nm-pptp-dialog.ui.h:27
 msgid "Allow _Deflate data compression"
 msgstr "Tillåt _Deflate-datakomprimering"
 
 #: ../properties/nm-pptp-dialog.ui.h:28
-msgid "Allow/disable Deflate compression.&#10;config: nodeflate (when unchecked)"
-msgstr "Tillåt/inaktivera Deflate-kompression.&#10;config: nodeflate (när inte kryssad)"
+msgid "Allow/disable Deflate compression.\n"
+"config: nodeflate (when unchecked)"
+msgstr "Tillåt/inaktivera Deflate-kompression.\n"
+"config: nodeflate (när inte kryssad)"
 
 #: ../properties/nm-pptp-dialog.ui.h:29
 msgid "Use TCP _header compression"
 msgstr "Använd komprimering av TCP-_huvud"
 
 #: ../properties/nm-pptp-dialog.ui.h:30
-msgid "Allow/disable Van Jacobson style TCP/IP header compression in both the transmit and the receive directions.&#10;config: novj (when unchecked)"
+msgid "Allow/disable Van Jacobson style TCP/IP header compression in both the transmit and the receive directions.\n"
+"config: novj (when unchecked)"
 msgstr ""
 
 #: ../properties/nm-pptp-dialog.ui.h:31
@@ -214,7 +230,8 @@ msgid "Send PPP _echo packets"
 msgstr "Skicka PPP-_ekopaket"
 
 #: ../properties/nm-pptp-dialog.ui.h:33
-msgid "Send LCP echo-requests to find out whether peer is alive.&#10;config: lcp-echo-failure and lcp-echo-interval"
+msgid "Send LCP echo-requests to find out whether peer is alive.\n"
+"config: lcp-echo-failure and lcp-echo-interval"
 msgstr ""
 
 #: ../properties/nm-pptp.c:49

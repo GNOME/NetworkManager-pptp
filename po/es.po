@@ -113,10 +113,12 @@ msgstr "A_vanzado..."
 #: ../properties/nm-pptp-dialog.ui.h:7
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
-"&#10;config: mppe-stateful (when checked)"
+"\n"
+"config: mppe-stateful (when checked)"
 msgstr ""
 "Permitir a MPPE usar el modo con estado. El modo sin estado se sigue "
-"intentando primero.&#10;opción: mppe-stateful (desmarcada)"
+"intentando primero.\n"
+"opción: mppe-stateful (desmarcada)"
 
 #: ../properties/nm-pptp-dialog.ui.h:8
 msgid "Allow _BSD data compression"
@@ -136,42 +138,52 @@ msgstr "Permitir los siguientes métodos de autenticación:"
 
 #: ../properties/nm-pptp-dialog.ui.h:12
 msgid ""
-"Allow/disable BSD-Compress compression.&#10;config: nobsdcomp (when "
+"Allow/disable BSD-Compress compression.\n"
+"config: nobsdcomp (when "
 "unchecked)"
 msgstr ""
-"Permitir/desactivar compresión «BSD-Compress».&#10;opción: nobsdcomp "
+"Permitir/desactivar compresión «BSD-Compress».\n"
+"opción: nobsdcomp "
 "(desmarcada)"
 
 #: ../properties/nm-pptp-dialog.ui.h:13
 msgid ""
-"Allow/disable Deflate compression.&#10;config: nodeflate (when unchecked)"
+"Allow/disable Deflate compression.\n"
+"config: nodeflate (when unchecked)"
 msgstr ""
-"Permitir/desactivar la compresión por desinflado.&#10;opción: nodeflate "
+"Permitir/desactivar la compresión por desinflado.\n"
+"opción: nodeflate "
 "(desmarcada)"
 
 #: ../properties/nm-pptp-dialog.ui.h:14
 msgid ""
 "Allow/disable Van Jacobson style TCP/IP header compression in both the "
-"transmit and the receive directions.&#10;config: novj (when unchecked)"
+"transmit and the receive directions.\n"
+"config: novj (when unchecked)"
 msgstr ""
 "Permitir/desactivar compresión de cabeceras TCP/IP estilo Van Jacobson al "
-"enviar y recibir.&#10;opción: novj (desmarcada)"
+"enviar y recibir.\n"
+"opción: novj (desmarcada)"
 
 #: ../properties/nm-pptp-dialog.ui.h:15
 msgid ""
-"Allow/disable authentication methods.&#10;config: refuse-pap, refuse-chap, "
+"Allow/disable authentication methods.\n"
+"config: refuse-pap, refuse-chap, "
 "refuse-mschap, refuse-mschap-v2, refuse-eap"
 msgstr ""
-"Permitir/desactivar métodos de autenticación.&#10;opción: refuse-pap, refuse-"
+"Permitir/desactivar métodos de autenticación.\n"
+"opción: refuse-pap, refuse-"
 "chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:16
 msgid ""
 "Append the domain name <domain> to the local host name for authentication "
-"purposes.&#10;config: domain <domain>"
+"purposes.\n"
+"config: domain <domain>"
 msgstr ""
 "Añadir el nombre del dominio <dominio> al nombre local del equipo por "
-"motivos de autenticación.&#10;opción: domain <dominio>"
+"motivos de autenticación.\n"
+"opción: domain <dominio>"
 
 #: ../properties/nm-pptp-dialog.ui.h:17
 msgid "Default"
@@ -196,8 +208,10 @@ msgid "PPTP Advanced Options"
 msgstr "Opciones avanzadas de PPTP"
 
 #: ../properties/nm-pptp-dialog.ui.h:21
-msgid "PPTP server IP or name.&#10;config: the first parameter of pptp"
-msgstr "Nombre o IP del servidor PPTP.&#10;opción: the first parameter of pptp"
+msgid "PPTP server IP or name.\n"
+"config: the first parameter of pptp"
+msgstr "Nombre o IP del servidor PPTP.\n"
+"opción: the first parameter of pptp"
 
 #: ../properties/nm-pptp-dialog.ui.h:22
 msgid "Password passed to PPTP when prompted for it."
@@ -209,18 +223,22 @@ msgstr "Contraseña:"
 
 #: ../properties/nm-pptp-dialog.ui.h:24
 msgid ""
-"Require the use of MPPE, with 40/128-bit encryption or all.&#10;config: "
+"Require the use of MPPE, with 40/128-bit encryption or all.\n"
+"config: "
 "require-mppe, require-mppe-128 or require-mppe-40"
 msgstr ""
-"Requerir el uso de MPPE, con cifrado de 40/128 bits para todo.&#10;opción: "
+"Requerir el uso de MPPE, con cifrado de 40/128 bits para todo.\n"
+"opción: "
 "require-mppe, require-mppe-128 o require-mppe-40"
 
 #: ../properties/nm-pptp-dialog.ui.h:25
 msgid ""
-"Send LCP echo-requests to find out whether peer is alive.&#10;config: lcp-"
+"Send LCP echo-requests to find out whether peer is alive.\n"
+"config: lcp-"
 "echo-failure and lcp-echo-interval"
 msgstr ""
-"Enviar solicitudes de eco LCP para averiguar si el par está vivo.&#10;"
+"Enviar solicitudes de eco LCP para averiguar si el par está vivo.\n"
+""
 "opción: lcp-echo-failure y lcp-echo-interval"
 
 #: ../properties/nm-pptp-dialog.ui.h:26
@@ -230,10 +248,12 @@ msgstr "Mandar paquetes _eco PPP"
 #: ../properties/nm-pptp-dialog.ui.h:27
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
-"&#10;config: user <name>"
+"\n"
+"config: user <name>"
 msgstr ""
 "Establecer el nombre usado para autenticar el equipo local en el par a "
-"<nombre>.&#10;opción: user <nombre>"
+"<nombre>.\n"
+"opción: user <nombre>"
 
 #: ../properties/nm-pptp-dialog.ui.h:28
 msgid "Show password"

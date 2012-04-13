@@ -57,7 +57,8 @@
                       <object class="GtkEntry" id="gateway_entry">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="tooltip_text" translatable="yes">PPTP server IP or name.&#10;config: the first parameter of pptp</property>
+                        <property name="tooltip_text" translatable="yes">PPTP server IP or name.
+config: the first parameter of pptp</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -124,7 +125,8 @@
                       <object class="GtkEntry" id="domain_entry">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="tooltip_text" translatable="yes">Append the domain name &lt;domain&gt; to the local host name for authentication purposes.&#10;config: domain &lt;domain&gt;</property>
+                        <property name="tooltip_text" translatable="yes">Append the domain name &lt;domain&gt; to the local host name for authentication purposes.
+config: domain &lt;domain&gt;</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -213,7 +215,8 @@
                       <object class="GtkEntry" id="user_entry">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="tooltip_text" translatable="yes">Set the name used for authenticating the local system to the peer to &lt;name&gt;.&#10;config: user &lt;name&gt;</property>
+                        <property name="tooltip_text" translatable="yes">Set the name used for authenticating the local system to the peer to &lt;name&gt;.
+config: user &lt;name&gt;</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -355,7 +358,8 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="headers_visible">False</property>
-                                <property name="tooltip_text" translatable="yes">Allow/disable authentication methods.&#10;config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap</property>
+                                <property name="tooltip_text" translatable="yes">Allow/disable authentication methods.
+config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap</property>
                               </object>
                             </child>
                           </object>
@@ -446,7 +450,8 @@
                                           <object class="GtkComboBox" id="ppp_mppe_security_combo">
                                             <property name="visible">True</property>
                                             <property name="model">model1</property>
-                                            <property name="tooltip_text" translatable="yes">Require the use of MPPE, with 40/128-bit encryption or all.&#10;config: require-mppe, require-mppe-128 or require-mppe-40</property>
+                                            <property name="tooltip_text" translatable="yes">Require the use of MPPE, with 40/128-bit encryption or all.
+config: require-mppe, require-mppe-128 or require-mppe-40</property>
                                             <child>
                                               <object class="GtkCellRendererText" id="renderer1"/>
                                               <attributes>
@@ -468,7 +473,8 @@
                                         <property name="label" translatable="yes">Allow st_ateful encryption</property>
                                         <property name="use_underline">True</property>
                                         <property name="draw_indicator">True</property>
-                                        <property name="tooltip_text" translatable="yes">Allow MPPE to use stateful mode. Stateless mode is still attempted first.&#10;config: mppe-stateful (when checked)</property>
+                                        <property name="tooltip_text" translatable="yes">Allow MPPE to use stateful mode. Stateless mode is still attempted first.
+config: mppe-stateful (when checked)</property>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -496,7 +502,8 @@
                             <property name="label" translatable="yes">Allow _BSD data compression</property>
                             <property name="use_underline">True</property>
                             <property name="draw_indicator">True</property>
-                            <property name="tooltip_text" translatable="yes">Allow/disable BSD-Compress compression.&#10;config: nobsdcomp (when unchecked)</property>
+                            <property name="tooltip_text" translatable="yes">Allow/disable BSD-Compress compression.
+config: nobsdcomp (when unchecked)</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -511,7 +518,8 @@
                             <property name="label" translatable="yes">Allow _Deflate data compression</property>
                             <property name="use_underline">True</property>
                             <property name="draw_indicator">True</property>
-                            <property name="tooltip_text" translatable="yes">Allow/disable Deflate compression.&#10;config: nodeflate (when unchecked)</property>
+                            <property name="tooltip_text" translatable="yes">Allow/disable Deflate compression.
+config: nodeflate (when unchecked)</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -526,7 +534,8 @@
                             <property name="label" translatable="yes">Use TCP _header compression</property>
                             <property name="use_underline">True</property>
                             <property name="draw_indicator">True</property>
-                            <property name="tooltip_text" translatable="yes">Allow/disable Van Jacobson style TCP/IP header compression in both the transmit and the receive directions.&#10;config: novj (when unchecked)</property>
+                            <property name="tooltip_text" translatable="yes">Allow/disable Van Jacobson style TCP/IP header compression in both the transmit and the receive directions.
+config: novj (when unchecked)</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -575,7 +584,8 @@
                         <property name="label" translatable="yes">Send PPP _echo packets</property>
                         <property name="use_underline">True</property>
                         <property name="draw_indicator">True</property>
-                        <property name="tooltip_text" translatable="yes">Send LCP echo-requests to find out whether peer is alive.&#10;config: lcp-echo-failure and lcp-echo-interval</property>
+                        <property name="tooltip_text" translatable="yes">Send LCP echo-requests to find out whether peer is alive.
+config: lcp-echo-failure and lcp-echo-interval</property>
                       </object>
                     </child>
                   </object>

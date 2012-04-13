@@ -112,10 +112,12 @@ msgstr "_Paplašināti..."
 #: ../properties/nm-pptp-dialog.ui.h:7
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
-"&#10;config: mppe-stateful (when checked)"
+"\n"
+"config: mppe-stateful (when checked)"
 msgstr ""
 "Ļaut MPPE izmantot stāvokļa saglabāšanas režīmu. Tāpat vispirms tiks "
-"mēģināts bezstāvokļa zežīms. &#10;config: mppe-stateful (kad atzīmēts)"
+"mēģināts bezstāvokļa zežīms. \n"
+"config: mppe-stateful (kad atzīmēts)"
 
 #: ../properties/nm-pptp-dialog.ui.h:8
 msgid "Allow _BSD data compression"
@@ -135,34 +137,41 @@ msgstr "Atļaut sekojošās autentifikācijas metodes:"
 
 #: ../properties/nm-pptp-dialog.ui.h:12
 msgid ""
-"Allow/disable BSD-Compress compression.&#10;config: nobsdcomp (when "
+"Allow/disable BSD-Compress compression.\n"
+"config: nobsdcomp (when "
 "unchecked)"
 msgstr ""
-"Ļaut/dekativēt BSD-Compress saspiešanu.&#10;config: nobsdcomp (kad "
+"Ļaut/dekativēt BSD-Compress saspiešanu.\n"
+"config: nobsdcomp (kad "
 "nav atzīmēts)"
 
 #: ../properties/nm-pptp-dialog.ui.h:13
 msgid ""
-"Allow/disable Deflate compression.&#10;config: nodeflate (when unchecked)"
+"Allow/disable Deflate compression.\n"
+"config: nodeflate (when unchecked)"
 msgstr ""
-"Ļaut/deaktivēt Deflate saspiešanu.&#10;config: nodeflate (kad nav atzīmēts)"
+"Ļaut/deaktivēt Deflate saspiešanu.\n"
+"config: nodeflate (kad nav atzīmēts)"
 
 #: ../properties/nm-pptp-dialog.ui.h:14
 msgid ""
 "Allow/disable Van Jacobson style TCP/IP header compression in both the "
-"transmit and the receive directions.&#10;config: novj (when unchecked)"
+"transmit and the receive directions.\n"
+"config: novj (when unchecked)"
 msgstr ""
 
 #: ../properties/nm-pptp-dialog.ui.h:15
 msgid ""
-"Allow/disable authentication methods.&#10;config: refuse-pap, refuse-chap, "
+"Allow/disable authentication methods.\n"
+"config: refuse-pap, refuse-chap, "
 "refuse-mschap, refuse-mschap-v2, refuse-eap"
 msgstr ""
 
 #: ../properties/nm-pptp-dialog.ui.h:16
 msgid ""
 "Append the domain name <domain> to the local host name for authentication "
-"purposes.&#10;config: domain <domain>"
+"purposes.\n"
+"config: domain <domain>"
 msgstr ""
 
 #: ../properties/nm-pptp-dialog.ui.h:17
@@ -188,7 +197,9 @@ msgid "PPTP Advanced Options"
 msgstr "PPTP paplašinātas opcijas"
 
 #: ../properties/nm-pptp-dialog.ui.h:21
-msgid "PPTP server IP or name.&#10;config: the first parameter of pptp"
+msgid ""
+"PPTP server IP or name.\n"
+"config: the first parameter of pptp"
 msgstr ""
 
 #: ../properties/nm-pptp-dialog.ui.h:22
@@ -201,13 +212,15 @@ msgstr "Parole:"
 
 #: ../properties/nm-pptp-dialog.ui.h:24
 msgid ""
-"Require the use of MPPE, with 40/128-bit encryption or all.&#10;config: "
+"Require the use of MPPE, with 40/128-bit encryption or all.\n"
+"config: "
 "require-mppe, require-mppe-128 or require-mppe-40"
 msgstr ""
 
 #: ../properties/nm-pptp-dialog.ui.h:25
 msgid ""
-"Send LCP echo-requests to find out whether peer is alive.&#10;config: lcp-"
+"Send LCP echo-requests to find out whether peer is alive.\n"
+"config: lcp-"
 "echo-failure and lcp-echo-interval"
 msgstr ""
 
@@ -218,7 +231,8 @@ msgstr "Sūtīt PPP _atbalss paketi"
 #: ../properties/nm-pptp-dialog.ui.h:27
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
-"&#10;config: user <name>"
+"\n"
+"config: user <name>"
 msgstr ""
 
 #: ../properties/nm-pptp-dialog.ui.h:28

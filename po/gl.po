@@ -100,8 +100,12 @@ msgid "<b>General</b>"
 msgstr "<b>Xeral</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
-msgid "PPTP server IP or name.&#10;config: the first parameter of pptp"
-msgstr "Nome ou IP do servidor PPTP.&#10;opción: the first parameter of pptp"
+msgid ""
+"PPTP server IP or name.\n"
+"config: the first parameter of pptp"
+msgstr ""
+"Nome ou IP do servidor PPTP.\n"
+"opción: the first parameter of pptp"
 
 #: ../properties/nm-pptp-dialog.ui.h:4
 msgid "_Gateway:"
@@ -114,10 +118,12 @@ msgstr "<b>Opcional</b>"
 #: ../properties/nm-pptp-dialog.ui.h:6
 msgid ""
 "Append the domain name <domain> to the local host name for authentication "
-"purposes.&#10;config: domain <domain>"
+"purposes.\n"
+"config: domain <domain>"
 msgstr ""
 "Engadir o nome do dominio <domain> ao nome local do equipo por motivos de "
-"autenticación.&#10;opción: domain <dominio>"
+"autenticación.\n"
+"opción: domain <dominio>"
 
 #: ../properties/nm-pptp-dialog.ui.h:7
 msgid "NT Domain:"
@@ -134,10 +140,12 @@ msgstr "Contrasinal pasada a PPTP ao solicitala."
 #: ../properties/nm-pptp-dialog.ui.h:11
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
-"&#10;config: user <name>"
+"\n"
+"config: user <name>"
 msgstr ""
 "Estabelecer o nome usado para autenticar o equipo local no par a <nombre>."
-"&#10;opción: user <nombre>"
+"\n"
+"opción: user <nombre>"
 
 #: ../properties/nm-pptp-dialog.ui.h:12
 msgid "User name:"
@@ -161,10 +169,12 @@ msgstr "Permitir os seguintes métodos de autenticación:"
 
 #: ../properties/nm-pptp-dialog.ui.h:17
 msgid ""
-"Allow/disable authentication methods.&#10;config: refuse-pap, refuse-chap, "
+"Allow/disable authentication methods.\n"
+"config: refuse-pap, refuse-chap, "
 "refuse-mschap, refuse-mschap-v2, refuse-eap"
 msgstr ""
-"Permitir/desactivar métodos de autenticación.&#10;opción: refuse-pap, refuse-"
+"Permitir/desactivar métodos de autenticación.\n"
+"opción: refuse-pap, refuse-"
 "chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:18
@@ -191,10 +201,12 @@ msgstr "_Seguridade:"
 
 #: ../properties/nm-pptp-dialog.ui.h:22
 msgid ""
-"Require the use of MPPE, with 40/128-bit encryption or all.&#10;config: "
+"Require the use of MPPE, with 40/128-bit encryption or all.\n"
+"config: "
 "require-mppe, require-mppe-128 or require-mppe-40"
 msgstr ""
-"Requirir o uso de MPPE, con cifrado de 40/128 bits para todo.&#10;opción: "
+"Requirir o uso de MPPE, con cifrado de 40/128 bits para todo.\n"
+"opción: "
 "require-mppe, require-mppe-128 o require-mppe-40"
 
 #: ../properties/nm-pptp-dialog.ui.h:23
@@ -204,10 +216,12 @@ msgstr "Permitir o cifrado con est_ados"
 #: ../properties/nm-pptp-dialog.ui.h:24
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
-"&#10;config: mppe-stateful (when checked)"
+"\n"
+"config: mppe-stateful (when checked)"
 msgstr ""
 "Permitir a MPPE usar o modo con estado. O modo sen estado séguese tentando "
-"primeiro.&#10;opción: mppe-stateful (desmarcada)"
+"primeiro.\n"
+"opción: mppe-stateful (desmarcada)"
 
 #: ../properties/nm-pptp-dialog.ui.h:25
 msgid "Allow _BSD data compression"
@@ -215,11 +229,11 @@ msgstr "Permitir a compresión de datos _BSD"
 
 #: ../properties/nm-pptp-dialog.ui.h:26
 msgid ""
-"Allow/disable BSD-Compress compression.&#10;config: nobsdcomp (when "
-"unchecked)"
+"Allow/disable BSD-Compress compression.\n"
+"config: nobsdcomp (when unchecked)"
 msgstr ""
-"Permitir/desactivar compresión «BSD-Compress».&#10;opción: nobsdcomp "
-"(desmarcada)"
+"Permitir/desactivar compresión «BSD-Compress».\n"
+"opción: nobsdcomp (desmarcada)"
 
 #: ../properties/nm-pptp-dialog.ui.h:27
 msgid "Allow _Deflate data compression"
@@ -227,9 +241,11 @@ msgstr "Permitir a compresión de datos _Deflate"
 
 #: ../properties/nm-pptp-dialog.ui.h:28
 msgid ""
-"Allow/disable Deflate compression.&#10;config: nodeflate (when unchecked)"
+"Allow/disable Deflate compression.\n"
+"config: nodeflate (when unchecked)"
 msgstr ""
-"Permitir/desactivar a compresión por desinfrado.&#10;opción: nodeflate "
+"Permitir/desactivar a compresión por desinfrado.\n"
+"opción: nodeflate "
 "(desmarcada)"
 
 #: ../properties/nm-pptp-dialog.ui.h:29
@@ -239,10 +255,12 @@ msgstr "Usar a compresión de _cabeceiras TCP"
 #: ../properties/nm-pptp-dialog.ui.h:30
 msgid ""
 "Allow/disable Van Jacobson style TCP/IP header compression in both the "
-"transmit and the receive directions.&#10;config: novj (when unchecked)"
+"transmit and the receive directions.\n"
+"config: novj (when unchecked)"
 msgstr ""
 "Permitir/desactivar compresión de cabeceiras TCP/IP estilo Van Jacobson ao "
-"envair e recibir.&#10;opción: novj (desmarcada)"
+"envair e recibir.\n"
+"opción: novj (desmarcada)"
 
 #: ../properties/nm-pptp-dialog.ui.h:31
 msgid "<b>Echo</b>"
@@ -254,11 +272,11 @@ msgstr "Enviar paquetes _echo PPP"
 
 #: ../properties/nm-pptp-dialog.ui.h:33
 msgid ""
-"Send LCP echo-requests to find out whether peer is alive.&#10;config: lcp-"
-"echo-failure and lcp-echo-interval"
+"Send LCP echo-requests to find out whether peer is alive.\n"
+"config: lcp-echo-failure and lcp-echo-interval"
 msgstr ""
-"Enviar solicitudes de eco LCP para averiguar se o par está vivo.&#10;opción: "
-"lcp-echo-failure e lcp-echo-interval"
+"Enviar solicitudes de eco LCP para averiguar se o par está vivo.\n"
+"opción: lcp-echo-failure e lcp-echo-interval"
 
 #: ../properties/nm-pptp.c:49
 msgid "Point-to-Point Tunneling Protocol (PPTP)"

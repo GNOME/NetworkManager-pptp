@@ -100,7 +100,8 @@ msgid "<b>General</b>"
 msgstr "<b>Splošno</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
-msgid "PPTP server IP or name.&#10;config: the first parameter of pptp"
+msgid "PPTP server IP or name.\n"
+"config: the first parameter of pptp"
 msgstr "Naslov IP ali ime strežnika PPTP. Nastavitev: prvi parameter protokola PPTP"
 
 #: ../properties/nm-pptp-dialog.ui.h:4
@@ -112,8 +113,10 @@ msgid "<b>Optional</b>"
 msgstr "<b>Izbirno</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:6
-msgid "Append the domain name <domain> to the local host name for authentication purposes.&#10;config: domain <domain>"
-msgstr "Pripni ime <domene> k imenu krajevnega gostitelja za overitev.&#10;Nastavitev: domena <domena>"
+msgid "Append the domain name <domain> to the local host name for authentication purposes.\n"
+"config: domain <domain>"
+msgstr "Pripni ime <domene> k imenu krajevnega gostitelja za overitev.\n"
+"Nastavitev: domena <domena>"
 
 #: ../properties/nm-pptp-dialog.ui.h:7
 msgid "NT Domain:"
@@ -128,8 +131,10 @@ msgid "Password passed to PPTP when prompted for it."
 msgstr "Geslo poslano na PPTP ob zahtevi."
 
 #: ../properties/nm-pptp-dialog.ui.h:11
-msgid "Set the name used for authenticating the local system to the peer to <name>.&#10;config: user <name>"
-msgstr "Določitev imena za overjanje krajevnega sistema odjemalcu na <ime>.&#10;Nastavitev: uporabnik <ime>"
+msgid "Set the name used for authenticating the local system to the peer to <name>.\n"
+"config: user <name>"
+msgstr "Določitev imena za overjanje krajevnega sistema odjemalcu na <ime>.\n"
+"Nastavitev: uporabnik <ime>"
 
 #: ../properties/nm-pptp-dialog.ui.h:12
 msgid "User name:"
@@ -152,8 +157,10 @@ msgid "Allow the following authentication methods:"
 msgstr "Dovoli načine overitve:"
 
 #: ../properties/nm-pptp-dialog.ui.h:17
-msgid "Allow/disable authentication methods.&#10;config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
-msgstr "Dovoli/Onemogoči način overjanja.&#10;Nastavitev: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
+msgid "Allow/disable authentication methods.\n"
+"config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
+msgstr "Dovoli/Onemogoči način overjanja.\n"
+"Nastavitev: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:18
 msgid "<b>Security and Compression</b>"
@@ -172,40 +179,50 @@ msgid "_Security:"
 msgstr "_Varnost:"
 
 #: ../properties/nm-pptp-dialog.ui.h:22
-msgid "Require the use of MPPE, with 40/128-bit encryption or all.&#10;config: require-mppe, require-mppe-128 or require-mppe-40"
-msgstr "Zahtevaj uporabo MPPE z 40/128-bitnim šifriranjem za vse.&#10;Nastavitev: require-mppe, require-mppe-128 ali require-mppe-40"
+msgid "Require the use of MPPE, with 40/128-bit encryption or all.\n"
+"config: require-mppe, require-mppe-128 or require-mppe-40"
+msgstr "Zahtevaj uporabo MPPE z 40/128-bitnim šifriranjem za vse.\n"
+"Nastavitev: require-mppe, require-mppe-128 ali require-mppe-40"
 
 #: ../properties/nm-pptp-dialog.ui.h:23
 msgid "Allow st_ateful encryption"
 msgstr "Dovoli _namensko šifriranje"
 
 #: ../properties/nm-pptp-dialog.ui.h:24
-msgid "Allow MPPE to use stateful mode. Stateless mode is still attempted first.&#10;config: mppe-stateful (when checked)"
-msgstr "Dovoli uporabo načina stanja MPPE. Način brez stanja je preizkušen privzeto.&#10;Nastavitev: mppe-stateful (izbrano)"
+msgid "Allow MPPE to use stateful mode. Stateless mode is still attempted first.\n"
+"config: mppe-stateful (when checked)"
+msgstr "Dovoli uporabo načina stanja MPPE. Način brez stanja je preizkušen privzeto.\n"
+"Nastavitev: mppe-stateful (izbrano)"
 
 #: ../properties/nm-pptp-dialog.ui.h:25
 msgid "Allow _BSD data compression"
 msgstr "Dovoli _BSD stiskanje podatkov"
 
 #: ../properties/nm-pptp-dialog.ui.h:26
-msgid "Allow/disable BSD-Compress compression.&#10;config: nobsdcomp (when unchecked)"
-msgstr "Dovoli/Onemogoči stiskanje z BSD-Compress.&#10;Nastavitev: nobsdcomp (neizbrano)"
+msgid "Allow/disable BSD-Compress compression.\n"
+"config: nobsdcomp (when unchecked)"
+msgstr "Dovoli/Onemogoči stiskanje z BSD-Compress.\n"
+"Nastavitev: nobsdcomp (neizbrano)"
 
 #: ../properties/nm-pptp-dialog.ui.h:27
 msgid "Allow _Deflate data compression"
 msgstr "Dovoli _Deflate stiskanje podatkov"
 
 #: ../properties/nm-pptp-dialog.ui.h:28
-msgid "Allow/disable Deflate compression.&#10;config: nodeflate (when unchecked)"
-msgstr "Dovoli/Onemogoči stiskanje Deflate.&#10;Nastavitev: nodeflate (neizbrano)"
+msgid "Allow/disable Deflate compression.\n"
+"config: nodeflate (when unchecked)"
+msgstr "Dovoli/Onemogoči stiskanje Deflate.\n"
+"Nastavitev: nodeflate (neizbrano)"
 
 #: ../properties/nm-pptp-dialog.ui.h:29
 msgid "Use TCP _header compression"
 msgstr "Uporabi stiskanje _glave TCP"
 
 #: ../properties/nm-pptp-dialog.ui.h:30
-msgid "Allow/disable Van Jacobson style TCP/IP header compression in both the transmit and the receive directions.&#10;config: novj (when unchecked)"
-msgstr "Dovoli/Onemogoči slog stiskanja glav Van Jacobson v obeh smeren prenosa podatkov.&#10;Nastavitev: novj (neizbrano)"
+msgid "Allow/disable Van Jacobson style TCP/IP header compression in both the transmit and the receive directions.\n"
+"config: novj (when unchecked)"
+msgstr "Dovoli/Onemogoči slog stiskanja glav Van Jacobson v obeh smeren prenosa podatkov.\n"
+"Nastavitev: novj (neizbrano)"
 
 #: ../properties/nm-pptp-dialog.ui.h:31
 msgid "<b>Echo</b>"
@@ -216,8 +233,10 @@ msgid "Send PPP _echo packets"
 msgstr "Pošlji PPP _echo pakete"
 
 #: ../properties/nm-pptp-dialog.ui.h:33
-msgid "Send LCP echo-requests to find out whether peer is alive.&#10;config: lcp-echo-failure and lcp-echo-interval"
-msgstr "Pošlji zahteve echo LCP za ohranjevanje povezave.&#10;Nastavitev: lcp-echo-failure in lcp-echo-interval"
+msgid "Send LCP echo-requests to find out whether peer is alive.\n"
+"config: lcp-echo-failure and lcp-echo-interval"
+msgstr "Pošlji zahteve echo LCP za ohranjevanje povezave.\n"
+"Nastavitev: lcp-echo-failure in lcp-echo-interval"
 
 #: ../properties/nm-pptp.c:49
 msgid "Point-to-Point Tunneling Protocol (PPTP)"

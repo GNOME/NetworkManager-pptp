@@ -111,10 +111,12 @@ msgstr "S_peciális…"
 #: ../properties/nm-pptp-dialog.ui.h:7
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
-"&#10;config: mppe-stateful (when checked)"
+"\n"
+"config: mppe-stateful (when checked)"
 msgstr ""
 "Az MPPE használhat állapottartó módot. Az állapot nélküli mód továbbra is "
-"elsőként lesz megpróbálva. &#10;config: mppe-stateful (ha be van jelölve)"
+"elsőként lesz megpróbálva. \n"
+"config: mppe-stateful (ha be van jelölve)"
 
 #: ../properties/nm-pptp-dialog.ui.h:8
 msgid "Allow _BSD data compression"
@@ -134,43 +136,50 @@ msgstr "A következő hitelesítési módszerek engedélyezése:"
 
 #: ../properties/nm-pptp-dialog.ui.h:12
 msgid ""
-"Allow/disable BSD-Compress compression.&#10;config: nobsdcomp (when "
-"unchecked)"
+"Allow/disable BSD-Compress compression.\n"
+"config: nobsdcomp (when unchecked)"
 msgstr ""
-"BSD-Compress tömörítés engedélyezése/letiltása. &#10;config: nobsdcomp (ha "
-"nincs bejelölve)"
+"BSD-Compress tömörítés engedélyezése/letiltása. \n"
+"config: nobsdcomp (ha nincs bejelölve)"
 
 #: ../properties/nm-pptp-dialog.ui.h:13
 msgid ""
-"Allow/disable Deflate compression.&#10;config: nodeflate (when unchecked)"
+"Allow/disable Deflate compression.\n"
+"config: nodeflate (when unchecked)"
 msgstr ""
-"Deflate tömörítés engedélyezése/letiltása. &#10;config: nodeflate (ha nincs "
-"bejelölve)"
+"Deflate tömörítés engedélyezése/letiltása. \n"
+"config: nodeflate (ha nincs bejelölve)"
 
 #: ../properties/nm-pptp-dialog.ui.h:14
 msgid ""
 "Allow/disable Van Jacobson style TCP/IP header compression in both the "
-"transmit and the receive directions.&#10;config: novj (when unchecked)"
+"transmit and the receive directions.\n"
+"config: novj (when unchecked)"
 msgstr ""
 "Van Jacobson stílusú TCP/IP fejléctömörítés engedélyezése/letiltása a "
-"küldés és fogadás irányokban is. &#10;config: novj (ha nincs bejelölve)"
+"küldés és fogadás irányokban is. \n"
+"config: novj (ha nincs bejelölve)"
 
 #: ../properties/nm-pptp-dialog.ui.h:15
 msgid ""
-"Allow/disable authentication methods.&#10;config: refuse-pap, refuse-chap, "
+"Allow/disable authentication methods.\n"
+"config: refuse-pap, refuse-chap, "
 "refuse-mschap, refuse-mschap-v2, refuse-eap"
 msgstr ""
-"Hitelesítési módszerek engedélyezése/letiltása.&#10;config: refuse-pap, "
+"Hitelesítési módszerek engedélyezése/letiltása.\n"
+"config: refuse-pap, "
 "refuse-chap, "
 "refuse-mschap, refuse-mschap-v2, refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:16
 msgid ""
 "Append the domain name <domain> to the local host name for authentication "
-"purposes.&#10;config: domain <domain>"
+"purposes.\n"
+"config: domain <domain>"
 msgstr ""
 "A <tartomány> tartománynév hozzáfűzése a helyi gépnévhez hitelesítési "
-"céllal.&#10;config: domain <tartomány>"
+"céllal.\n"
+"config: domain <tartomány>"
 
 #: ../properties/nm-pptp-dialog.ui.h:17
 msgid "Default"
@@ -195,8 +204,12 @@ msgid "PPTP Advanced Options"
 msgstr "PPTP speciális beállításai"
 
 #: ../properties/nm-pptp-dialog.ui.h:21
-msgid "PPTP server IP or name.&#10;config: the first parameter of pptp"
-msgstr "PPTP kiszolgáló IP-címe vagy neve.&#10;config: a pptp első paramétere"
+msgid ""
+"PPTP server IP or name.\n"
+"config: the first parameter of pptp"
+msgstr ""
+"PPTP kiszolgáló IP-címe vagy neve.\n"
+"config: a pptp első paramétere"
 
 #: ../properties/nm-pptp-dialog.ui.h:22
 msgid "Password passed to PPTP when prompted for it."
@@ -208,21 +221,23 @@ msgstr "Jelszó:"
 
 #: ../properties/nm-pptp-dialog.ui.h:24
 msgid ""
-"Require the use of MPPE, with 40/128-bit encryption or all.&#10;config: "
+"Require the use of MPPE, with 40/128-bit encryption or all.\n"
+"config: "
 "require-mppe, require-mppe-128 or require-mppe-40"
 msgstr ""
 "Az MPPE használatának megkövetelése 40/128 bites titkosítással vagy minddel."
-"&#10;config: "
+"\n"
+"config: "
 "require-mppe, require-mppe-128 vagy require-mppe-40"
 
 #: ../properties/nm-pptp-dialog.ui.h:25
 msgid ""
-"Send LCP echo-requests to find out whether peer is alive.&#10;config: lcp-"
-"echo-failure and lcp-echo-interval"
+"Send LCP echo-requests to find out whether peer is alive.\n"
+"config: lcp-echo-failure and lcp-echo-interval"
 msgstr ""
 "LCP echo kérések küldése a partner elérhetőségének megállapításához."
-"&#10;config: lcp-"
-"echo-failure és lcp-echo-interval"
+"\n"
+"config: lcp-echo-failure és lcp-echo-interval"
 
 #: ../properties/nm-pptp-dialog.ui.h:26
 msgid "Send PPP _echo packets"
@@ -231,10 +246,12 @@ msgstr "PPP _visszhangcsomagok küldése"
 #: ../properties/nm-pptp-dialog.ui.h:27
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
-"&#10;config: user <name>"
+"\n"
+"config: user <name>"
 msgstr ""
 "A helyi rendszer partner felé hitelesítéséhez használt <név> megadása."
-"&#10;config: user <név>"
+"\n"
+"config: user <név>"
 
 #: ../properties/nm-pptp-dialog.ui.h:28
 msgid "Show password"

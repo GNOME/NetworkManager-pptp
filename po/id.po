@@ -107,8 +107,12 @@ msgid "Ad_vanced..."
 msgstr "Tingkat la_njut..."
 
 #: ../properties/nm-pptp-dialog.ui.h:7
-msgid "Allow MPPE to use stateful mode. Stateless mode is still attempted first.&#10;config: mppe-stateful (when checked)"
-msgstr "Ijinkan MPPE memakai mode stateful. Mode stateless masih dicoba untuk pertama.&#10;config: mppe-stateful (ketika dicontreng)"
+msgid ""
+"Allow MPPE to use stateful mode. Stateless mode is still attempted first.\n"
+"config: mppe-stateful (when checked)"
+msgstr ""
+"Ijinkan MPPE memakai mode stateful. Mode stateless masih dicoba untuk pertama.\n"
+"config: mppe-stateful (ketika dicontreng)"
 
 #: ../properties/nm-pptp-dialog.ui.h:8
 msgid "Allow _BSD data compression"
@@ -127,24 +131,44 @@ msgid "Allow the following authentication methods:"
 msgstr "Aktifkan metoda otentikasi berikut:"
 
 #: ../properties/nm-pptp-dialog.ui.h:12
-msgid "Allow/disable BSD-Compress compression.&#10;config: nobsdcomp (when unchecked)"
-msgstr "Ijinkan/matikan kompresi BSD-Compress.&#10;config: nobsdcomp (ketika tak dicontreng)"
+msgid ""
+"Allow/disable BSD-Compress compression.\n"
+"config: nobsdcomp (when unchecked)"
+msgstr ""
+"Ijinkan/matikan kompresi BSD-Compress.\n"
+"config: nobsdcomp (ketika tak dicontreng)"
 
 #: ../properties/nm-pptp-dialog.ui.h:13
-msgid "Allow/disable Deflate compression.&#10;config: nodeflate (when unchecked)"
-msgstr "Ijinkan/matikan kompresi Deflate.&#10;config: nodeflate (ketika tak dicontreng)"
+msgid ""
+"Allow/disable Deflate compression.\n"
+"config: nodeflate (when unchecked)"
+msgstr ""
+"Ijinkan/matikan kompresi Deflate.\n"
+"config: nodeflate (ketika tak dicontreng)"
 
 #: ../properties/nm-pptp-dialog.ui.h:14
-msgid "Allow/disable Van Jacobson style TCP/IP header compression in both the transmit and the receive directions.&#10;config: novj (when unchecked)"
-msgstr "Ijinkan/matikan kompresi header TCP/IP gaya Van Jacobson pada kedua arah kirim dan terima.&#10;config: novj (ketika tak dicontreng)"
+msgid ""
+"Allow/disable Van Jacobson style TCP/IP header compression in both the transmit and the receive directions.\n"
+"config: novj (when unchecked)"
+msgstr ""
+"Ijinkan/matikan kompresi header TCP/IP gaya Van Jacobson pada kedua arah kirim dan terima.\n"
+"config: novj (ketika tak dicontreng)"
 
 #: ../properties/nm-pptp-dialog.ui.h:15
-msgid "Allow/disable authentication methods.&#10;config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
-msgstr "Ijinkan/matikan metode otentikasi.&#10;config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
+msgid ""
+"Allow/disable authentication methods.\n"
+"config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
+msgstr ""
+"Ijinkan/matikan metode otentikasi.\n"
+"config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:16
-msgid "Append the domain name <domain> to the local host name for authentication purposes.&#10;config: domain <domain>"
-msgstr "Imbuhkan nama domain <domain> ke nama host lokal bagi keperluan otentikasi.&#10;config: domain <domain>"
+msgid ""
+"Append the domain name <domain> to the local host name for authentication purposes.\n"
+"config: domain <domain>"
+msgstr ""
+"Imbuhkan nama domain <domain> ke nama host lokal bagi keperluan otentikasi.\n"
+"config: domain <domain>"
 
 #: ../properties/nm-pptp-dialog.ui.h:17
 msgid "Default"
@@ -163,8 +187,12 @@ msgid "PPTP Advanced Options"
 msgstr "Opsi Tingkat Lanjut PPTP"
 
 #: ../properties/nm-pptp-dialog.ui.h:21
-msgid "PPTP server IP or name.&#10;config: the first parameter of pptp"
-msgstr "IP atau nama server PPTP.&#10;config: parameter pertama dari pptp"
+msgid ""
+"PPTP server IP or name.\n"
+"config: the first parameter of pptp"
+msgstr ""
+"IP atau nama server PPTP.\n"
+"config: parameter pertama dari pptp"
 
 #: ../properties/nm-pptp-dialog.ui.h:22
 msgid "Password passed to PPTP when prompted for it."
@@ -175,20 +203,32 @@ msgid "Password:"
 msgstr "Kata sandi:"
 
 #: ../properties/nm-pptp-dialog.ui.h:24
-msgid "Require the use of MPPE, with 40/128-bit encryption or all.&#10;config: require-mppe, require-mppe-128 or require-mppe-40"
-msgstr "Memerlukan pemakaian MPPE, dengan enkripsi 40/128-bit atau semua.&#10;config: require-mppe, require-mppe-128 or require-mppe-40"
+msgid ""
+"Require the use of MPPE, with 40/128-bit encryption or all.\n"
+"config: require-mppe, require-mppe-128 or require-mppe-40"
+msgstr ""
+"Memerlukan pemakaian MPPE, dengan enkripsi 40/128-bit atau semua.\n"
+"config: require-mppe, require-mppe-128 or require-mppe-40"
 
 #: ../properties/nm-pptp-dialog.ui.h:25
-msgid "Send LCP echo-requests to find out whether peer is alive.&#10;config: lcp-echo-failure and lcp-echo-interval"
-msgstr "Kirim echo-request LCP untuk mengetahui apakah pasangan masih hidup.&#10;config: lcp-echo-failure and lcp-echo-interval"
+msgid ""
+"Send LCP echo-requests to find out whether peer is alive.\n"
+"config: lcp-echo-failure and lcp-echo-interval"
+msgstr ""
+"Kirim echo-request LCP untuk mengetahui apakah pasangan masih hidup.\n"
+"config: lcp-echo-failure and lcp-echo-interval"
 
 #: ../properties/nm-pptp-dialog.ui.h:26
 msgid "Send PPP _echo packets"
 msgstr "Kirim paket _echo PPP"
 
 #: ../properties/nm-pptp-dialog.ui.h:27
-msgid "Set the name used for authenticating the local system to the peer to <name>.&#10;config: user <name>"
-msgstr "Tata nama yang dipakai untuk mengotentikasi sistem lokal ke pasangan ke <name>.&#10;config: user <name>"
+msgid ""
+"Set the name used for authenticating the local system to the peer to <name>.\n"
+"config: user <name>"
+msgstr ""
+"Tata nama yang dipakai untuk mengotentikasi sistem lokal ke pasangan ke <name>.\n"
+"config: user <name>"
 
 #: ../properties/nm-pptp-dialog.ui.h:28
 msgid "Show password"

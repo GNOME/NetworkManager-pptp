@@ -98,8 +98,12 @@ msgid "<b>General</b>"
 msgstr "<b>Opšte</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
-msgid "PPTP server IP or name.&#10;config: the first parameter of pptp"
-msgstr "IP ili naziv PPTP servera.&#10;podešavanje: prvi parametar za pptp"
+msgid ""
+"PPTP server IP or name.\n"
+"config: the first parameter of pptp"
+msgstr ""
+"IP ili naziv PPTP servera.\n"
+"podešavanje: prvi parametar za pptp"
 
 #: ../properties/nm-pptp-dialog.ui.h:4
 msgid "_Gateway:"
@@ -112,10 +116,12 @@ msgstr "<b>Mogućnosti</b>"
 #: ../properties/nm-pptp-dialog.ui.h:6
 msgid ""
 "Append the domain name <domain> to the local host name for authentication "
-"purposes.&#10;config: domain <domain>"
+"purposes.\n"
+"config: domain <domain>"
 msgstr ""
 "Kači naziv domena <domain> na naziv lokalnog računara za svrhe "
-"prijavljivanja.&#10;podešavanje: domen <domain>"
+"prijavljivanja.\n"
+"podešavanje: domen <domain>"
 
 #: ../properties/nm-pptp-dialog.ui.h:7
 msgid "NT Domain:"
@@ -132,10 +138,12 @@ msgstr "Lozinka data PPTP-u kada je zatražena."
 #: ../properties/nm-pptp-dialog.ui.h:11
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
-"&#10;config: user <name>"
+"\n"
+"config: user <name>"
 msgstr ""
 "Podesite naziv korišćen za prijavljivanje lokalnog sistema parljaku na "
-"<name>.&#10;podešavanje: korisnik <name>"
+"<name>.\n"
+"podešavanje: korisnik <name>"
 
 #: ../properties/nm-pptp-dialog.ui.h:12
 msgid "User name:"
@@ -159,10 +167,12 @@ msgstr "Dozvoli sledeće načine prijavljivanja:"
 
 #: ../properties/nm-pptp-dialog.ui.h:17
 msgid ""
-"Allow/disable authentication methods.&#10;config: refuse-pap, refuse-chap, "
+"Allow/disable authentication methods.\n"
+"config: refuse-pap, refuse-chap, "
 "refuse-mschap, refuse-mschap-v2, refuse-eap"
 msgstr ""
-"Uključuje/isključuje načine prijavljivanja.&#10;podešavanje: refuse-pap, refuse-"
+"Uključuje/isključuje načine prijavljivanja.\n"
+"podešavanje: refuse-pap, refuse-"
 "chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:18
@@ -189,11 +199,13 @@ msgstr "_Bezbednost:"
 
 #: ../properties/nm-pptp-dialog.ui.h:22
 msgid ""
-"Require the use of MPPE, with 40/128-bit encryption or all.&#10;config: "
+"Require the use of MPPE, with 40/128-bit encryption or all.\n"
+"config: "
 "require-mppe, require-mppe-128 or require-mppe-40"
 msgstr ""
 "Zahteva korišćenje MPPE-a, sa 40/128-bitnim šifrovanjem ili "
-"sve.&#10;podešavanje: require-mppe, require-mppe-128 ili require-mppe-40"
+"sve.\n"
+"podešavanje: require-mppe, require-mppe-128 ili require-mppe-40"
 
 #: ../properties/nm-pptp-dialog.ui.h:23
 msgid "Allow st_ateful encryption"
@@ -202,10 +214,12 @@ msgstr "Dopusti _rečito šifrovanje"
 #: ../properties/nm-pptp-dialog.ui.h:24
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
-"&#10;config: mppe-stateful (when checked)"
+"\n"
+"config: mppe-stateful (when checked)"
 msgstr ""
 "Dopušta MPPE-u da koristi rečit režim. Rečit režim se još uvek pokušava kao "
-"prvi.&#10;podešavanje: mppe-stateful (kada je izabran)"
+"prvi.\n"
+"podešavanje: mppe-stateful (kada je izabran)"
 
 #: ../properties/nm-pptp-dialog.ui.h:25
 msgid "Allow _BSD data compression"
@@ -213,10 +227,12 @@ msgstr "Dozvoli _BSD pakovanje podataka"
 
 #: ../properties/nm-pptp-dialog.ui.h:26
 msgid ""
-"Allow/disable BSD-Compress compression.&#10;config: nobsdcomp (when "
+"Allow/disable BSD-Compress compression.\n"
+"config: nobsdcomp (when "
 "unchecked)"
 msgstr ""
-"Uključuje/isključuje sažimanje BSD-Sažimanja.&#10;podešavanje: nobsdcomp (kada "
+"Uključuje/isključuje sažimanje BSD-Sažimanja.\n"
+"podešavanje: nobsdcomp (kada "
 "nije izabrano)"
 
 #: ../properties/nm-pptp-dialog.ui.h:27
@@ -225,9 +241,11 @@ msgstr "Dozvoli _Deflejt pakovanje podataka"
 
 #: ../properties/nm-pptp-dialog.ui.h:28
 msgid ""
-"Allow/disable Deflate compression.&#10;config: nodeflate (when unchecked)"
+"Allow/disable Deflate compression.\n"
+"config: nodeflate (when unchecked)"
 msgstr ""
-"Uključuje/isključuje Deflejt sažimanje.&#10;podešavanje: nodeflate (kada nije "
+"Uključuje/isključuje Deflejt sažimanje.\n"
+"podešavanje: nodeflate (kada nije "
 "izabrano)"
 
 #: ../properties/nm-pptp-dialog.ui.h:29
@@ -237,10 +255,12 @@ msgstr "Koristi _pakovanje TCP zaglavlja"
 #: ../properties/nm-pptp-dialog.ui.h:30
 msgid ""
 "Allow/disable Van Jacobson style TCP/IP header compression in both the "
-"transmit and the receive directions.&#10;config: novj (when unchecked)"
+"transmit and the receive directions.\n"
+"config: novj (when unchecked)"
 msgstr ""
 "Uključuje/isključuje Van Jakobsonov stil pakovanja TCP/IP zaglavlja kako u smeru "
-"prenosa tako i u smeru prijema.&#10;podešavanje: novj (kada nije izabrano)"
+"prenosa tako i u smeru prijema.\n"
+"podešavanje: novj (kada nije izabrano)"
 
 #: ../properties/nm-pptp-dialog.ui.h:31
 msgid "<b>Echo</b>"
@@ -252,11 +272,13 @@ msgstr "Šalji pakete PPP _odjeka"
 
 #: ../properties/nm-pptp-dialog.ui.h:33
 msgid ""
-"Send LCP echo-requests to find out whether peer is alive.&#10;config: lcp-"
+"Send LCP echo-requests to find out whether peer is alive.\n"
+"config: lcp-"
 "echo-failure and lcp-echo-interval"
 msgstr ""
 "Šalje LCP zahteve odjeka da bi doznao da li je parnjak "
-"aktivan.&#10;podešavanje: lcp-echo-failure i lcp-echo-period"
+"aktivan.\n"
+"podešavanje: lcp-echo-failure i lcp-echo-period"
 
 #: ../properties/nm-pptp.c:49
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
