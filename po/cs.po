@@ -9,8 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2012-02-01 14:41+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
+"POT-Creation-Date: 2012-05-12 06:19+0000\n"
 "PO-Revision-Date: 2012-03-23 12:49+0100\n"
 "Last-Translator: Zdeněk Hataš <zdenek.hatas@gmail.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
@@ -37,22 +38,26 @@ msgstr "Z_obrazit hesla"
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
 #.
-#: ../auth-dialog/main.c:127
+#: ../auth-dialog/main.c:145
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr "Pro přístup k virtuální privátní síti „%s“ musíte provést autentizaci."
 
-#: ../auth-dialog/main.c:128
+#: ../auth-dialog/main.c:154 ../auth-dialog/main.c:174
 msgid "Authenticate VPN"
 msgstr "Autentizovat VPN"
 
-#: ../nm-pptp.desktop.in.h:1
-msgid "Add, Remove, and Edit PPTP VPN Connections"
-msgstr "Přidat, odstranit a upravit spojení PPTP VPN"
+#: ../auth-dialog/main.c:156 ../properties/nm-pptp-dialog.ui.h:12
+msgid "Password:"
+msgstr "Heslo:"
 
-#: ../nm-pptp.desktop.in.h:2
+#: ../nm-pptp.desktop.in.h:1
 msgid "PPTP VPN Connection Manager"
 msgstr "Správce spojení PPTP VPN"
+
+#: ../nm-pptp.desktop.in.h:2
+msgid "Add, Remove, and Edit PPTP VPN Connections"
+msgstr "Přidat, odstranit a upravit spojení PPTP VPN"
 
 #: ../properties/advanced-dialog.c:187
 msgid "All Available (Default)"
@@ -87,136 +92,184 @@ msgid "EAP"
 msgstr "EAP"
 
 #: ../properties/nm-pptp-dialog.ui.h:1
-msgid "<b>Authentication</b>"
-msgstr "<b>Autentizace</b>"
-
-#: ../properties/nm-pptp-dialog.ui.h:2
-msgid "<b>Echo</b>"
-msgstr "<b>Echo</b>"
-
-#: ../properties/nm-pptp-dialog.ui.h:3
-msgid "<b>General</b>"
-msgstr "<b>Obecné</b>"
-
-#: ../properties/nm-pptp-dialog.ui.h:4
-msgid "<b>Optional</b>"
-msgstr "<b>Volitelné</b>"
-
-#: ../properties/nm-pptp-dialog.ui.h:5
-msgid "<b>Security and Compression</b>"
-msgstr "<b>Bezpečnost a komprimace</b>"
-
-#: ../properties/nm-pptp-dialog.ui.h:6
-msgid "Ad_vanced..."
-msgstr "P_okročilé…"
-
-#: ../properties/nm-pptp-dialog.ui.h:7
-msgid "Allow MPPE to use stateful mode. Stateless mode is still attempted first.&#10;config: mppe-stateful (when checked)"
-msgstr "Povolit MPPE používat stavový režim. Bezstavový režim je stále zkoušen jako první..&#10;config: mppe-stateful (pokud je zaškrtnuto)"
-
-#: ../properties/nm-pptp-dialog.ui.h:8
-msgid "Allow _BSD data compression"
-msgstr "Povolit komprimaci _BSD dat"
-
-#: ../properties/nm-pptp-dialog.ui.h:9
-msgid "Allow _Deflate data compression"
-msgstr "Povolit komprimaci dat _Deflate"
-
-#: ../properties/nm-pptp-dialog.ui.h:10
-msgid "Allow st_ateful encryption"
-msgstr "Povolit st_avové šifrování"
-
-#: ../properties/nm-pptp-dialog.ui.h:11
-msgid "Allow the following authentication methods:"
-msgstr "Povolit následující metody autentizace:"
-
-#: ../properties/nm-pptp-dialog.ui.h:12
-msgid "Allow/disable BSD-Compress compression.&#10;config: nobsdcomp (when unchecked)"
-msgstr "Povolit/zakázat komprimaci BSD.&#10;config: nobsdcomp (pokud není zaškrtnuto)"
-
-#: ../properties/nm-pptp-dialog.ui.h:13
-msgid "Allow/disable Deflate compression.&#10;config: nodeflate (when unchecked)"
-msgstr "Povolit/zakázat komprimaci Deflate.&#10;config: nodeflate (pokud není zaškrtnuto)"
-
-#: ../properties/nm-pptp-dialog.ui.h:14
-msgid "Allow/disable Van Jacobson style TCP/IP header compression in both the transmit and the receive directions.&#10;config: novj (when unchecked)"
-msgstr "Povolit/zakázat Van Jacobsonův styl komprimace hlaviček TCP/IP pro oba směry (odesílání a příjem).&#10;config: novj (pokud není zaškrtnuto)"
-
-#: ../properties/nm-pptp-dialog.ui.h:15
-msgid "Allow/disable authentication methods.&#10;config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
-msgstr "Povolit/zakázat metody ověření.&#10;config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
-
-#: ../properties/nm-pptp-dialog.ui.h:16
-msgid "Append the domain name <domain> to the local host name for authentication purposes.&#10;config: domain <domain>"
-msgstr "Připojit název domény <domain> k lokálnímu názvu stroje pro účely ověření.&#10;config: domain <domain>"
-
-#: ../properties/nm-pptp-dialog.ui.h:17
 msgid "Default"
 msgstr "Výchozí"
 
-#: ../properties/nm-pptp-dialog.ui.h:18
-msgid "NT Domain:"
-msgstr "Doména NT:"
+#: ../properties/nm-pptp-dialog.ui.h:2
+msgid "<b>General</b>"
+msgstr "<b>Obecné</b>"
 
-#: ../properties/nm-pptp-dialog.ui.h:19
-msgid "Note: MPPE encryption is only available with MSCHAP authentication methods. To enable this checkbox, select one or more of the MSCHAP authentication methods: MSCHAP or MSCHAPv2."
-msgstr "Poznámka: Šifrování MPPE je možné pouze při použití autentizačních metod MSCHAP. Tento přepínač povolíte vybráním jedné nebo více autentizačních metod (MSCHAP nebo MSCHAPv2)."
+#: ../properties/nm-pptp-dialog.ui.h:3
+msgid ""
+"PPTP server IP or name.\n"
+"config: the first parameter of pptp"
+msgstr ""
+"Název nebo IP PPTP serveru.\n"
+"config: první parametr pptp"
 
-#: ../properties/nm-pptp-dialog.ui.h:20
-msgid "PPTP Advanced Options"
-msgstr "Rozšířené volby PPTP"
-
-#: ../properties/nm-pptp-dialog.ui.h:21
-msgid "PPTP server IP or name.&#10;config: the first parameter of pptp"
-msgstr "Název nebo IP PPTP serveru.&#10;config: první parametr pptp"
-
-#: ../properties/nm-pptp-dialog.ui.h:22
-msgid "Password passed to PPTP when prompted for it."
-msgstr "Heslo poskytnuté PPTP pokud o něj požádá."
-
-#: ../properties/nm-pptp-dialog.ui.h:23
-msgid "Password:"
-msgstr "Heslo:"
-
-#: ../properties/nm-pptp-dialog.ui.h:24
-msgid "Require the use of MPPE, with 40/128-bit encryption or all.&#10;config: require-mppe, require-mppe-128 or require-mppe-40"
-msgstr "Vyžaduje použití MPPE se 40/128bitovým šifrovnáním nebo vše. &#10;config: require-mppe, require-mppe-128 nebo require-mppe-40"
-
-#: ../properties/nm-pptp-dialog.ui.h:25
-msgid "Send LCP echo-requests to find out whether peer is alive.&#10;config: lcp-echo-failure and lcp-echo-interval"
-msgstr "Zjišťovat pomocí LCP echo-request zda protějšek žije.&#10;config: lcp-echo-failure a lcp-echo-interval"
-
-#: ../properties/nm-pptp-dialog.ui.h:26
-msgid "Send PPP _echo packets"
-msgstr "Poslat PPP _echo pakety"
-
-#: ../properties/nm-pptp-dialog.ui.h:27
-msgid "Set the name used for authenticating the local system to the peer to <name>.&#10;config: user <name>"
-msgstr "Nastavit jméno použité pro ověření lokálního systému vůči protějšku na <název>.&#10;config: user <název>"
-
-#: ../properties/nm-pptp-dialog.ui.h:28
-msgid "Show password"
-msgstr "Zobrazit heslo"
-
-#: ../properties/nm-pptp-dialog.ui.h:29
-msgid "Use TCP _header compression"
-msgstr "Použít kompresi TCP _záhlaví"
-
-#: ../properties/nm-pptp-dialog.ui.h:30
-msgid "Use _Point-to-Point encryption (MPPE)"
-msgstr "Použít _Point-to-Point šifrování (MPPE)"
-
-#: ../properties/nm-pptp-dialog.ui.h:31
-msgid "User name:"
-msgstr "Uživatelské jméno:"
-
-#: ../properties/nm-pptp-dialog.ui.h:32
+#: ../properties/nm-pptp-dialog.ui.h:5
 msgid "_Gateway:"
 msgstr "_Brána:"
 
-#: ../properties/nm-pptp-dialog.ui.h:33
+#: ../properties/nm-pptp-dialog.ui.h:6
+msgid "<b>Optional</b>"
+msgstr "<b>Volitelné</b>"
+
+#: ../properties/nm-pptp-dialog.ui.h:7
+msgid ""
+"Append the domain name <domain> to the local host name for authentication "
+"purposes.\n"
+"config: domain <domain>"
+msgstr ""
+"Připojit název domény <domain> k lokálnímu názvu stroje pro účely ověření.\n"
+"config: domain <domain>"
+
+#: ../properties/nm-pptp-dialog.ui.h:9
+msgid "NT Domain:"
+msgstr "Doména NT:"
+
+#: ../properties/nm-pptp-dialog.ui.h:10
+msgid "Show password"
+msgstr "Zobrazit heslo"
+
+#: ../properties/nm-pptp-dialog.ui.h:11
+msgid "Password passed to PPTP when prompted for it."
+msgstr "Heslo poskytnuté PPTP pokud o něj požádá."
+
+#: ../properties/nm-pptp-dialog.ui.h:13
+msgid ""
+"Set the name used for authenticating the local system to the peer to "
+"<name>.\n"
+"config: user <name>"
+msgstr ""
+"Nastavit jméno použité pro ověření lokálního systému vůči protějšku na "
+"<název>.\n"
+"config: user <název>"
+
+#: ../properties/nm-pptp-dialog.ui.h:15
+msgid "User name:"
+msgstr "Uživatelské jméno:"
+
+#: ../properties/nm-pptp-dialog.ui.h:16
+msgid "Ad_vanced..."
+msgstr "P_okročilé…"
+
+#: ../properties/nm-pptp-dialog.ui.h:17
+msgid "PPTP Advanced Options"
+msgstr "Rozšířené volby PPTP"
+
+#: ../properties/nm-pptp-dialog.ui.h:18
+msgid "<b>Authentication</b>"
+msgstr "<b>Autentizace</b>"
+
+#: ../properties/nm-pptp-dialog.ui.h:19
+msgid "Allow the following authentication methods:"
+msgstr "Povolit následující metody autentizace:"
+
+#: ../properties/nm-pptp-dialog.ui.h:20
+msgid ""
+"Allow/disable authentication methods.\n"
+"config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
+msgstr ""
+"Povolit/zakázat metody ověření.\n"
+"config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
+
+#: ../properties/nm-pptp-dialog.ui.h:22
+msgid "<b>Security and Compression</b>"
+msgstr "<b>Bezpečnost a komprimace</b>"
+
+#: ../properties/nm-pptp-dialog.ui.h:23
+msgid "Use _Point-to-Point encryption (MPPE)"
+msgstr "Použít _Point-to-Point šifrování (MPPE)"
+
+#: ../properties/nm-pptp-dialog.ui.h:24
+msgid ""
+"Note: MPPE encryption is only available with MSCHAP authentication methods. "
+"To enable this checkbox, select one or more of the MSCHAP authentication "
+"methods: MSCHAP or MSCHAPv2."
+msgstr ""
+"Poznámka: Šifrování MPPE je možné pouze při použití autentizačních metod "
+"MSCHAP. Tento přepínač povolíte vybráním jedné nebo více autentizačních "
+"metod (MSCHAP nebo MSCHAPv2)."
+
+#: ../properties/nm-pptp-dialog.ui.h:25
 msgid "_Security:"
 msgstr "_Bezpečnost:"
+
+#: ../properties/nm-pptp-dialog.ui.h:26
+msgid ""
+"Require the use of MPPE, with 40/128-bit encryption or all.\n"
+"config: require-mppe, require-mppe-128 or require-mppe-40"
+msgstr ""
+"Vyžaduje použití MPPE se 40/128bitovým šifrovnáním nebo vše.\n"
+"config: require-mppe, require-mppe-128 nebo require-mppe-40"
+
+#: ../properties/nm-pptp-dialog.ui.h:28
+msgid "Allow st_ateful encryption"
+msgstr "Povolit st_avové šifrování"
+
+#: ../properties/nm-pptp-dialog.ui.h:29
+msgid ""
+"Allow MPPE to use stateful mode. Stateless mode is still attempted first.\n"
+"config: mppe-stateful (when checked)"
+msgstr ""
+"Povolit MPPE používat stavový režim. Bezstavový režim je stále zkoušen jako "
+"první.\n"
+"config: mppe-stateful (pokud je zaškrtnuto)"
+
+#: ../properties/nm-pptp-dialog.ui.h:31
+msgid "Allow _BSD data compression"
+msgstr "Povolit komprimaci _BSD dat"
+
+#: ../properties/nm-pptp-dialog.ui.h:32
+msgid ""
+"Allow/disable BSD-Compress compression.\n"
+"config: nobsdcomp (when unchecked)"
+msgstr ""
+"Povolit/zakázat komprimaci BSD.\n"
+"config: nobsdcomp (pokud není zaškrtnuto)"
+
+#: ../properties/nm-pptp-dialog.ui.h:34
+msgid "Allow _Deflate data compression"
+msgstr "Povolit komprimaci dat _Deflate"
+
+#: ../properties/nm-pptp-dialog.ui.h:35
+msgid ""
+"Allow/disable Deflate compression.\n"
+"config: nodeflate (when unchecked)"
+msgstr ""
+"Povolit/zakázat komprimaci Deflate.\n"
+"config: nodeflate (pokud není zaškrtnuto)"
+
+#: ../properties/nm-pptp-dialog.ui.h:37
+msgid "Use TCP _header compression"
+msgstr "Použít kompresi TCP _záhlaví"
+
+#: ../properties/nm-pptp-dialog.ui.h:38
+msgid ""
+"Allow/disable Van Jacobson style TCP/IP header compression in both the "
+"transmit and the receive directions.\n"
+"config: novj (when unchecked)"
+msgstr ""
+"Povolit/zakázat Van Jacobsonův styl komprimace hlaviček TCP/IP pro oba směry "
+"(odesílání a příjem).\n"
+"config: novj (pokud není zaškrtnuto)"
+
+#: ../properties/nm-pptp-dialog.ui.h:40
+msgid "<b>Echo</b>"
+msgstr "<b>Echo</b>"
+
+#: ../properties/nm-pptp-dialog.ui.h:41
+msgid "Send PPP _echo packets"
+msgstr "Poslat PPP _echo pakety"
+
+#: ../properties/nm-pptp-dialog.ui.h:42
+msgid ""
+"Send LCP echo-requests to find out whether peer is alive.\n"
+"config: lcp-echo-failure and lcp-echo-interval"
+msgstr ""
+"Zjišťovat pomocí LCP echo-request zda protějšek žije.\n"
+"config: lcp-echo-failure a lcp-echo-interval"
 
 #: ../properties/nm-pptp.c:49
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
@@ -341,5 +394,9 @@ msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Povolit podrobný ladicí výpis (může prozradit hesla)"
 
 #: ../src/nm-pptp-service.c:1326
-msgid "nm-pptp-service provides integrated PPTP VPN capability (compatible with Microsoft and other implementations) to NetworkManager."
-msgstr "nm-pptp-service poskytuje podporu PPTP VPN (kompatibilní s impelentací Microsoft a ostatními) integrovanou v aplikaci NetworkManager."
+msgid ""
+"nm-pptp-service provides integrated PPTP VPN capability (compatible with "
+"Microsoft and other implementations) to NetworkManager."
+msgstr ""
+"nm-pptp-service poskytuje podporu PPTP VPN (kompatibilní s impelentací "
+"Microsoft a ostatními) integrovanou v aplikaci NetworkManager."
