@@ -116,13 +116,9 @@ handle_mppe_changed (GtkWidget *check, gboolean is_init, GtkBuilder *builder)
 	gtk_widget_set_sensitive (widget, use_mppe && mppe_sensitive);
 
 	widget = GTK_WIDGET (gtk_builder_get_object (builder, "ppp_mppe_security_combo"));
-	if (!(use_mppe && mppe_sensitive))
-		gtk_combo_box_set_active (GTK_COMBO_BOX (widget), 0); /* default */
 	gtk_widget_set_sensitive (widget, use_mppe && mppe_sensitive);
 
 	widget = GTK_WIDGET (gtk_builder_get_object (builder, "ppp_allow_stateful_mppe"));
-	if (!(use_mppe && mppe_sensitive))
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), FALSE);
 	gtk_widget_set_sensitive (widget, use_mppe && mppe_sensitive);
 
 	/* At dialog-setup time, don't touch the auth methods if MPPE is disabled
@@ -141,16 +137,13 @@ handle_mppe_changed (GtkWidget *check, gboolean is_init, GtkBuilder *builder)
 	valid = gtk_tree_model_get_iter_first (model, &iter);
 	while (valid) {
 		guint32 tag;
-		gboolean val;
 
 		gtk_tree_model_get (model, &iter, COL_TAG, &tag, -1);
 		switch (tag) {
 		case TAG_PAP:
 		case TAG_CHAP:
 		case TAG_EAP:
-			gtk_tree_model_get (model, &iter, COL_VALUE, &val, -1);
-			gtk_list_store_set (GTK_LIST_STORE (model), &iter, COL_SENSITIVE, !(use_mppe && mppe_sensitive),
-			                                                   COL_VALUE, !(use_mppe && mppe_sensitive) && val, -1);
+			gtk_list_store_set (GTK_LIST_STORE (model), &iter, COL_SENSITIVE, !(use_mppe && mppe_sensitive), -1);
 			break;
 		default:
 			break;
@@ -261,13 +254,8 @@ check_toggled_cb (GtkCellRendererToggle *cell, gchar *path_str, gpointer user_da
 	}
 	/* Make sure MPPE is non-sensitive if MSCHAP and MSCHAPv2 are disabled */
 	widget = GTK_WIDGET (gtk_builder_get_object (builder, "ppp_use_mppe"));
-	if (!mschap_state && !mschap2_state) {
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), FALSE);
-		gtk_widget_set_sensitive (widget, FALSE);
-		/* Make sure also MPPE security combo and stateful checkbox are non-sensitive */
-		mppe_toggled_cb (widget, builder);
-	} else
-		gtk_widget_set_sensitive (widget, TRUE);
+	gtk_widget_set_sensitive (widget, mschap_state || mschap2_state);
+	mppe_toggled_cb (widget, builder);
 }
 
 static void
