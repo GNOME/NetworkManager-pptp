@@ -103,25 +103,27 @@ handle_mppe_changed (GtkWidget *check, gboolean is_init, GtkBuilder *builder)
 {
 	GtkWidget *widget;
 	gboolean use_mppe;
+	gboolean mppe_sensitive;
 	GtkTreeModel *model;
 	GtkTreeIter iter;
 	gboolean valid;
 
+	mppe_sensitive = gtk_widget_get_sensitive (check);
 	use_mppe = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (check));
 
 	/* (De)-sensitize MPPE related stuff */
 	widget = GTK_WIDGET (gtk_builder_get_object (builder, "ppp_mppe_security_label"));
-	gtk_widget_set_sensitive (widget, use_mppe);
+	gtk_widget_set_sensitive (widget, use_mppe && mppe_sensitive);
 
 	widget = GTK_WIDGET (gtk_builder_get_object (builder, "ppp_mppe_security_combo"));
-	if (!use_mppe)
+	if (!(use_mppe && mppe_sensitive))
 		gtk_combo_box_set_active (GTK_COMBO_BOX (widget), 0); /* default */
-	gtk_widget_set_sensitive (widget, use_mppe);
+	gtk_widget_set_sensitive (widget, use_mppe && mppe_sensitive);
 
 	widget = GTK_WIDGET (gtk_builder_get_object (builder, "ppp_allow_stateful_mppe"));
-	if (!use_mppe)
+	if (!(use_mppe && mppe_sensitive))
 		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), FALSE);
-	gtk_widget_set_sensitive (widget, use_mppe);
+	gtk_widget_set_sensitive (widget, use_mppe && mppe_sensitive);
 
 	/* At dialog-setup time, don't touch the auth methods if MPPE is disabled
 	 * since that could overwrite the user's previously chosen auth methods.
@@ -139,14 +141,16 @@ handle_mppe_changed (GtkWidget *check, gboolean is_init, GtkBuilder *builder)
 	valid = gtk_tree_model_get_iter_first (model, &iter);
 	while (valid) {
 		guint32 tag;
+		gboolean val;
 
 		gtk_tree_model_get (model, &iter, COL_TAG, &tag, -1);
 		switch (tag) {
 		case TAG_PAP:
 		case TAG_CHAP:
 		case TAG_EAP:
-			gtk_list_store_set (GTK_LIST_STORE (model), &iter, COL_VALUE, !use_mppe, -1);
-			gtk_list_store_set (GTK_LIST_STORE (model), &iter, COL_SENSITIVE, !use_mppe, -1);
+			gtk_tree_model_get (model, &iter, COL_VALUE, &val, -1);
+			gtk_list_store_set (GTK_LIST_STORE (model), &iter, COL_SENSITIVE, !(use_mppe && mppe_sensitive),
+			                                                   COL_VALUE, !(use_mppe && mppe_sensitive) && val, -1);
 			break;
 		default:
 			break;
