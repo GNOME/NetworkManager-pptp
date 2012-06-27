@@ -1,6 +1,6 @@
 AC_PREREQ(2.59)
 
-AC_INIT(NetworkManager-pptp, 0.9.4.0, dcbw@redhat.com, NetworkManager-pptp)
+AC_INIT(NetworkManager-pptp, 0.9.5.95, dcbw@redhat.com, NetworkManager-pptp)
 AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-bzip2 subdir-objects])
 AM_MAINTAINER_MODE
 
