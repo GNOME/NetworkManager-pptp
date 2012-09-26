@@ -46,7 +46,7 @@ GQuark pptp_plugin_ui_error_quark (void);
 #define PPTP_PLUGIN_UI(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), PPTP_TYPE_PLUGIN_UI, PptpPluginUi))
 #define PPTP_PLUGIN_UI_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), PPTP_TYPE_PLUGIN_UI, PptpPluginUiClass))
 #define PPTP_IS_PLUGIN_UI(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), PPTP_TYPE_PLUGIN_UI))
-#define PPTP_IS_PLUGIN_UI_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((obj), PPTP_TYPE_PLUGIN_UI))
+#define PPTP_IS_PLUGIN_UI_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), PPTP_TYPE_PLUGIN_UI))
 #define PPTP_PLUGIN_UI_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), PPTP_TYPE_PLUGIN_UI, PptpPluginUiClass))
 
 typedef struct _PptpPluginUi PptpPluginUi;
@@ -67,7 +67,7 @@ GType pptp_plugin_ui_get_type (void);
 #define PPTP_PLUGIN_UI_WIDGET(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), PPTP_TYPE_PLUGIN_UI_WIDGET, PptpPluginUiWidget))
 #define PPTP_PLUGIN_UI_WIDGET_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), PPTP_TYPE_PLUGIN_UI_WIDGET, PptpPluginUiWidgetClass))
 #define PPTP_IS_PLUGIN_UI_WIDGET(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), PPTP_TYPE_PLUGIN_UI_WIDGET))
-#define PPTP_IS_PLUGIN_UI_WIDGET_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((obj), PPTP_TYPE_PLUGIN_UI_WIDGET))
+#define PPTP_IS_PLUGIN_UI_WIDGET_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), PPTP_TYPE_PLUGIN_UI_WIDGET))
 #define PPTP_PLUGIN_UI_WIDGET_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), PPTP_TYPE_PLUGIN_UI_WIDGET, PptpPluginUiWidgetClass))
 
 typedef struct _PptpPluginUiWidget PptpPluginUiWidget;
