@@ -387,7 +387,7 @@ msgstr "Neplatná nebo chybějící brána PPTP."
 
 #: ../src/nm-pptp-service.c:1311
 msgid "Don't quit when VPN connection terminates"
-msgstr "Nevypínat, když se spojení VPN ukončuje"
+msgstr "Neukončovat při uzavření spojení VPN"
 
 #: ../src/nm-pptp-service.c:1312
 msgid "Enable verbose debug logging (may expose passwords)"
@@ -398,5 +398,5 @@ msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
 msgstr ""
-"nm-pptp-service poskytuje podporu PPTP VPN (kompatibilní s impelentací "
-"Microsoft a ostatními) integrovanou v aplikaci NetworkManager."
+"nm-pptp-service umožňuje NetworkManageru poskytovat služby pro připojování "
+"k PPTP VPN serverům (Microsoftu a dalších)."
