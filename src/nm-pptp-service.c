@@ -33,6 +33,7 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <ctype.h>
+#include <locale.h>
 
 #include <errno.h>
 #include <sys/socket.h>
@@ -1313,7 +1314,9 @@ main (int argc, char *argv[])
 		{NULL}
 	};
 
+#if !GLIB_CHECK_VERSION (2, 35, 0)
 	g_type_init ();
+#endif
 
 	/* locale will be set according to environment LC_* variables */
 	setlocale (LC_ALL, "");
