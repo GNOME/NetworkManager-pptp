@@ -1,4 +1,16 @@
 =======================================================
+network-manager-pptp-0.9.8
+Overview of changes since network-manager-pptp-0.9.6
+=======================================================
+
+This is a new stable release of network-manager-pptp.  Notable changes include:
+
+* Updated translations
+* Builds against the GNOME 3.8 versions of GLib and Gtk+
+* nm-pptp-service now returns translated error messages
+
+
+=======================================================
 network-manager-pptp-0.9.6
 Overview of changes since network-manager-pptp-0.9.4
 =======================================================
