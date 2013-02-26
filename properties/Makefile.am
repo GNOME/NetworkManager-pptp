@@ -15,6 +15,7 @@ uidir = $(datadir)/gnome-vpn-properties/pptp
 ui_DATA = nm-pptp-dialog.ui
 
 libnm_pptp_properties_la_CFLAGS =                       \
+        $(GLIB_CFLAGS)                                  \
         $(GTK_CFLAGS)                                   \
         $(NM_CFLAGS)                        \
         -DICONDIR=\""$(datadir)/pixmaps"\"              \
