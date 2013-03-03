@@ -179,7 +179,7 @@ msgstr "<b>Drošība un saspiešana</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:23
 msgid "Use _Point-to-Point encryption (MPPE)"
-msgstr "Izmantot divp_unktu šifrēšanu (MPPE)"
+msgstr "Izmantot div_punktu šifrēšanu (MPPE)"
 
 #: ../properties/nm-pptp-dialog.ui.h:24
 msgid ""
@@ -272,7 +272,7 @@ msgstr ""
 
 #: ../properties/nm-pptp.c:49
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
-msgstr "Divp_unktu tunelēšanas protokols (PPTP)"
+msgstr "Divpunktu tunelēšanas protokols (PPTP)"
 
 #: ../properties/nm-pptp.c:50
 msgid "Compatible with Microsoft and other PPTP VPN servers."
