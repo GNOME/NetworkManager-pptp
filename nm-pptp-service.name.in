@@ -5,5 +5,5 @@ program=@LIBEXECDIR@/nm-pptp-service
 
 [GNOME]
 auth-dialog=@LIBEXECDIR@/nm-pptp-auth-dialog
-properties=@LIBDIR@/libnm-pptp-properties
+properties=@PLUGINDIR@/libnm-pptp-properties
 supports-external-ui-mode=true
