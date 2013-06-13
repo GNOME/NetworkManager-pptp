@@ -17,9 +17,10 @@ ui_DATA = nm-pptp-dialog.ui
 libnm_pptp_properties_la_CFLAGS =                       \
         $(GLIB_CFLAGS)                                  \
         $(GTK_CFLAGS)                                   \
-        $(NM_CFLAGS)                        \
+        $(NM_CFLAGS)                                    \
         -DICONDIR=\""$(datadir)/pixmaps"\"              \
         -DUIDIR=\""$(uidir)"\"                          \
+        -DLOCALEDIR=\""$(datadir)/locale"\"             \
         -DG_DISABLE_DEPRECATED                          \
         -DVERSION=\"$(VERSION)\"
 
