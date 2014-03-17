@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * (C) Copyright 2008 - 2011 Red Hat, Inc.
+ * (C) Copyright 2008 - 2014 Red Hat, Inc.
  */
 
 #ifdef HAVE_CONFIG_H
@@ -44,6 +44,7 @@
 #include <netdb.h>
 
 #include <glib/gi18n.h>
+#include <gio/gio.h>
 #include <dbus/dbus.h>
 #include <dbus/dbus-glib.h>
 
@@ -1284,13 +1285,17 @@ NMPptpPlugin *
 nm_pptp_plugin_new (void)
 {
 	NMPptpPlugin *plugin;
+	GError *error = NULL;
 
-	plugin = g_object_new (NM_TYPE_PPTP_PLUGIN,
-	                       NM_VPN_PLUGIN_DBUS_SERVICE_NAME,
-	                       NM_DBUS_SERVICE_PPTP,
-	                       NULL);
-	if (plugin)
+	plugin = g_initable_new (NM_TYPE_PPTP_PLUGIN, NULL, &error,
+	                         NM_VPN_PLUGIN_DBUS_SERVICE_NAME, NM_DBUS_SERVICE_PPTP,
+	                         NULL);
+	if (!plugin) {
+		g_warning ("%s", error->message);
+		g_error_free (error);
+	} else
 		g_signal_connect (G_OBJECT (plugin), "state-changed", G_CALLBACK (state_changed_cb), NULL);
+
 	return plugin;
 }
 
