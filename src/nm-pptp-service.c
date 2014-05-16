@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * (C) Copyright 2008 - 2011 Red Hat, Inc.
+ * (C) Copyright 2008 - 2014 Red Hat, Inc.
  */
 
 #ifdef HAVE_CONFIG_H
@@ -1121,12 +1121,8 @@ real_connect (NMVPNPlugin   *plugin,
 		return FALSE;
 
 	/* Start our pppd plugin helper service */
-	if (priv->service)
-		g_object_unref (priv->service);
-	if (priv->connection) {
-		g_object_unref (priv->connection);
-		priv->connection = NULL;
-	}
+	g_clear_object (&priv->service);
+	g_clear_object (&priv->connection);
 
 	/* Start our helper D-Bus service that the pppd plugin sends state changes to */
 	priv->service = nm_pptp_ppp_service_new (gwaddr, connection, error);
@@ -1204,15 +1200,8 @@ real_disconnect (NMVPNPlugin   *plugin,
 		priv->pid = 0;
 	}
 
-	if (priv->connection) {
-		g_object_unref (priv->connection);
-		priv->connection = NULL;
-	}
-
-	if (priv->service) {
-		g_object_unref (priv->service);
-		priv->service = NULL;
-	}
+	g_clear_object (&priv->connection);
+	g_clear_object (&priv->service);
 
 	return TRUE;
 }
@@ -1232,14 +1221,8 @@ state_changed_cb (GObject *object, NMVPNServiceState state, gpointer user_data)
 	case NM_VPN_SERVICE_STATE_STOPPING:
 	case NM_VPN_SERVICE_STATE_STOPPED:
 		remove_timeout_handler (NM_PPTP_PLUGIN (object));
-		if (priv->connection) {
-			g_object_unref (priv->connection);
-			priv->connection = NULL;
-		}
-		if (priv->service) {
-			g_object_unref (priv->service);
-			priv->service = NULL;
-		}
+		g_clear_object (&priv->connection);
+		g_clear_object (&priv->service);
 		break;
 	default:
 		break;
@@ -1251,11 +1234,8 @@ dispose (GObject *object)
 {
 	NMPptpPluginPrivate *priv = NM_PPTP_PLUGIN_GET_PRIVATE (object);
 
-	if (priv->connection)
-		g_object_unref (priv->connection);
-
-	if (priv->service)
-		g_object_unref (priv->service);
+	g_clear_object (&priv->connection);
+	g_clear_object (&priv->service);
 
 	G_OBJECT_CLASS (nm_pptp_plugin_parent_class)->dispose (object);
 }
