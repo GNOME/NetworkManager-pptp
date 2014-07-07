@@ -1,4 +1,17 @@
 =======================================================
+network-manager-pptp-0.9.10
+Overview of changes since network-manager-pptp-0.9.8
+=======================================================
+
+This is a new stable release of network-manager-pptp.  Notable changes include:
+
+* Updated translations
+* Uses libsecret for password storage instead of gnome-keyring
+* Fixes a potential crash when the plugin exits
+* Ensure property dialog's translations show correctly in non-UTF-8 locales
+
+
+=======================================================
 network-manager-pptp-0.9.8
 Overview of changes since network-manager-pptp-0.9.6
 =======================================================
