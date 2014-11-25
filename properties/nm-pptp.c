@@ -347,7 +347,7 @@ init_plugin_ui (PptpPluginUiWidget *self, NMConnection *connection, GError **err
 	GtkWidget *widget;
 	const char *value;
 
-	s_vpn = (NMSettingVPN *) nm_connection_get_setting (connection, NM_TYPE_SETTING_VPN);
+	s_vpn = nm_connection_get_setting_vpn (connection);
 
 	priv->group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
 
@@ -702,7 +702,7 @@ get_suggested_name (NMVpnPluginUiInterface *iface, NMConnection *connection)
 
 	g_return_val_if_fail (connection != NULL, NULL);
 
-	s_con = NM_SETTING_CONNECTION (nm_connection_get_setting (connection, NM_TYPE_SETTING_CONNECTION));
+	s_con = nm_connection_get_setting_connection (connection);
 	g_return_val_if_fail (s_con != NULL, NULL);
 
 	id = nm_setting_connection_get_id (s_con);
