@@ -1,6 +1,6 @@
 AC_PREREQ(2.59)
 
-AC_INIT(NetworkManager-pptp, 0.9.9.0, dcbw@redhat.com, NetworkManager-pptp)
+AC_INIT(NetworkManager-pptp, 0.995.0.0, dcbw@redhat.com, NetworkManager-pptp)
 AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-bzip2 subdir-objects])
 AM_MAINTAINER_MODE
 
@@ -71,10 +71,10 @@ AC_SUBST(DBUS_GLIB_CFLAGS)
 AC_SUBST(DBUS_GLIB_LIBS)
 
 PKG_CHECK_MODULES(NM,
-                  NetworkManager >= 0.9.6
-                  libnm-util >= 0.9.6
-                  libnm-glib >= 0.9.6
-                  libnm-glib-vpn >= 0.9.6)
+                  NetworkManager >= 0.9.10
+                  libnm-util >= 0.9.10
+                  libnm-glib >= 0.9.10
+                  libnm-glib-vpn >= 0.9.10)
 AC_SUBST(NM_CFLAGS)
 AC_SUBST(NM_LIBS)
 
@@ -84,7 +84,7 @@ if test x"$with_gnome" != xno; then
 	AC_SUBST(GTK_LIBS)
 	GTK_CFLAGS="$GTK_CFLAGS -DGDK_VERSION_MIN_REQUIRED=GDK_VERSION_3_4"
 
-	PKG_CHECK_MODULES(NMGTK, libnm-gtk >= 0.9.9.0)
+	PKG_CHECK_MODULES(NMGTK, libnm-gtk >= 0.9.10)
 	AC_SUBST(NMGTK_CFLAGS)
 	AC_SUBST(NMGTK_LIBS)
 
