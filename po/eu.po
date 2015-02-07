@@ -1,22 +1,24 @@
 # Basque translation of network-manager-pptp.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# 
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2008, 2009, 2010, 2014, 2015.
+# Edurne Labaka <elabaka@uzei.com>, 2015.
 #
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2008, 2009, 2010, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: network-manager-pptp master\n"
+"Project-Id-Version: network-manager-pptp nm-1-0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2014-05-04 12:03+0200\n"
-"PO-Revision-Date: 2014-05-04 12:30+0200\n"
+"POT-Creation-Date: 2015-02-07 18:03+0100\n"
+"PO-Revision-Date: 2014-11-19 16:39+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Poedit 1.6.10\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Otherwise, we have no saved password, or the password flags indicated
@@ -192,15 +194,15 @@ msgstr ""
 
 #: ../properties/nm-pptp-dialog.ui.h:28
 msgid "Allow st_ateful encryption"
-msgstr "Onartu enkripzioa _egoerarekin"
+msgstr "Onartu enkriptazioa _egoerarekin"
 
 #: ../properties/nm-pptp-dialog.ui.h:29
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first.\n"
 "config: mppe-stateful (when checked)"
 msgstr ""
-"Baimendu MPPE-k egoeraren modua erabiltzea. Hala ere, egoerarik gabeko "
-"modua saiatuko da aurrenik.\n"
+"Baimendu MPPE-k egoeraren modua erabiltzea. Hala ere, egoerarik gabeko modua "
+"saiatuko da lehendabizi.\n"
 "konfigurazioa: mppe-stateful (aktibatutakoan)"
 
 #: ../properties/nm-pptp-dialog.ui.h:31
@@ -237,8 +239,8 @@ msgid ""
 "transmit and the receive directions.\n"
 "config: novj (when unchecked)"
 msgstr ""
-"Baimendu/desgaitu Van Jacobson estiloa TCP/IParen goiburuaren konpresioan "
-"bi norabideetan: jasotzekoa eta bidaltzekoa.\n"
+"Baimendu/desgaitu Van Jacobson estiloa TCP/IParen goiburuaren konpresioan bi "
+"noranzkoetan: jasotzekoa eta bidaltzekoa.\n"
 "konfigurazioa: novj (desaktibatutakoan)"
 
 #: ../properties/nm-pptp-dialog.ui.h:40
@@ -375,22 +377,22 @@ msgstr "Ezin izan da pppd-ren bitarrik aurkitu."
 msgid "Invalid or missing PPTP gateway."
 msgstr "PPTP-ren atebidea falta da, edo baliogabea da."
 
-#: ../src/nm-pptp-service.c:1312
+#: ../src/nm-pptp-service.c:1292
 msgid "Don't quit when VPN connection terminates"
 msgstr "Ez irten VPNaren konexioa amaitzean"
 
-#: ../src/nm-pptp-service.c:1313
+#: ../src/nm-pptp-service.c:1293
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Gaitu arazketaren erregistro xehea (pasahitzak erakuts ditzake)"
 
-#: ../src/nm-pptp-service.c:1336
+#: ../src/nm-pptp-service.c:1316
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
 msgstr ""
 "'nm-pptp-service' zerbitzuak (Microsoft eta beste inplementazioekin "
-"bateragarria den) "
-"VPN PPTP gaitasuna erabiltzea baimentzen dio NetworkManager-i."
+"bateragarria den) VPN PPTP gaitasuna erabiltzea baimentzen dio "
+"NetworkManager-i."
 
 #~ msgid "_Secondary Password:"
 #~ msgstr "_Bigarren pasahitza:"
