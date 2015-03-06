@@ -34,13 +34,11 @@
 
 #include <glib/gi18n-lib.h>
 
-#include <nm-setting-vpn.h>
-#include <nm-setting-connection.h>
-#include <nm-setting-ip4-config.h>
+#include <NetworkManager.h>
 
 #include "import-export.h"
 #include "nm-pptp.h"
-#include "../src/nm-pptp-service.h"
+#include "../src/nm-pptp-service-defines.h"
 
 NMConnection *
 do_import (const char *path, char **lines, GError **error)

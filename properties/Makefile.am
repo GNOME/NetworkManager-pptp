@@ -20,8 +20,6 @@ ui_DATA = nm-pptp-dialog.ui
 common_CFLAGS =                                         \
         $(GLIB_CFLAGS)                                  \
         $(GTK_CFLAGS)                                   \
-        $(NM_CFLAGS)                                    \
-        $(NMGTK_CFLAGS)                                 \
         -I$(top_srcdir)/src                             \
         -DICONDIR=\""$(datadir)/pixmaps"\"              \
         -DUIDIR=\""$(uidir)"\"                          \
@@ -30,16 +28,20 @@ common_CFLAGS =                                         \
         -DVERSION=\"$(VERSION)\"
 
 libnm_vpn_plugin_pptp_la_CFLAGS =                       \
-        $(common_CFLAGS)
+        $(common_CFLAGS)                                \
+        $(LIBNMA_CFLAGS)                                \
+        $(LIBNM_CFLAGS)
 
 libnm_pptp_properties_la_CFLAGS =                       \
         -DNM_PPTP_OLD                                   \
-        $(common_CFLAGS)
+        $(common_CFLAGS)                                \
+        $(LIBNM_GLIB_CFLAGS)                            \
+        $(LIBNM_GTK_CFLAGS)
 
 libnm_vpn_plugin_pptp_la_LIBADD =                       \
         $(GTK_LIBS)                                     \
-        $(NM_LIBS)                                      \
-        $(NMGTK_LIBS)
+        $(LIBNMA_LIBS)                                  \
+        $(LIBNM_LIBS)
 
 libnm_pptp_properties_la_LIBADD =                       \
         $(GTK_LIBS)                                     \

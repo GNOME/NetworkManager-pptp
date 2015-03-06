@@ -35,12 +35,18 @@
 #include <glib.h>
 #include <glib/gi18n-lib.h>
 
+#ifdef NM_PPTP_OLD
+#define NM_VPN_LIBNM_COMPAT
 #include <nm-connection.h>
 #include <nm-setting-vpn.h>
 
+#else /* !NM_PPTP_OLD */
+#include <NetworkManager.h>
+#endif
+
 #include "advanced-dialog.h"
 #include "nm-pptp.h"
-#include "../src/nm-pptp-service.h"
+#include "../src/nm-pptp-service-defines.h"
 
 #define COL_NAME  0
 #define COL_VALUE 1
@@ -90,7 +96,7 @@ advanced_dialog_new_hash_from_connection (NMConnection *connection,
                                           GError **error)
 {
 	GHashTable *hash;
-	NMSettingVPN *s_vpn;
+	NMSettingVpn *s_vpn;
 
 	hash = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
 

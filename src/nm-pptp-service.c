@@ -47,8 +47,7 @@
 #include <dbus/dbus.h>
 #include <dbus/dbus-glib.h>
 
-#include <nm-setting-vpn.h>
-#include <nm-utils.h>
+#include <NetworkManager.h>
 
 #include "nm-pptp-service.h"
 #include "nm-ppp-status.h"
@@ -227,7 +226,7 @@ _service_cache_credentials (NMPptpPppService *self,
                             GError **error)
 {
 	NMPptpPppServicePrivate *priv = NM_PPTP_PPP_SERVICE_GET_PRIVATE (self);
-	NMSettingVPN *s_vpn;
+	NMSettingVpn *s_vpn;
 	const char *username, *password, *domain;
 
 	g_return_val_if_fail (self != NULL, FALSE);
@@ -237,7 +236,7 @@ _service_cache_credentials (NMPptpPppService *self,
 	if (!s_vpn) {
 		g_set_error_literal (error,
 		                     NM_VPN_PLUGIN_ERROR,
-		                     NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
+		                     NM_VPN_PLUGIN_ERROR_INVALID_CONNECTION,
 		                     _("Could not find secrets (connection invalid, no vpn setting)."));
 		return FALSE;
 	}
@@ -249,7 +248,7 @@ _service_cache_credentials (NMPptpPppService *self,
 		if (!username || !*username) {
 			g_set_error_literal (error,
 			                     NM_VPN_PLUGIN_ERROR,
-			                     NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
+			                     NM_VPN_PLUGIN_ERROR_INVALID_CONNECTION,
 			                     _("Missing or invalid VPN username."));
 			return FALSE;
 		}
@@ -259,7 +258,7 @@ _service_cache_credentials (NMPptpPppService *self,
 	if (!password || !strlen (password)) {
 		g_set_error_literal (error,
 		                     NM_VPN_PLUGIN_ERROR,
-		                     NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
+		                     NM_VPN_PLUGIN_ERROR_INVALID_CONNECTION,
 		                     _("Missing or invalid VPN password."));
 		return FALSE;
 	}
@@ -416,7 +415,7 @@ impl_pptp_service_need_secrets (NMPptpPppService *self,
 	if (!strlen (priv->username) || !strlen (priv->password)) {
 		g_set_error (error,
 		             NM_VPN_PLUGIN_ERROR,
-		             NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
+		             NM_VPN_PLUGIN_ERROR_INVALID_CONNECTION,
 		             "%s",
 		             _("No cached credentials."));
 		goto error;
@@ -463,7 +462,7 @@ impl_pptp_service_set_ip4_config (NMPptpPppService *self,
 /* The VPN plugin service                               */
 /********************************************************/
 
-G_DEFINE_TYPE (NMPptpPlugin, nm_pptp_plugin, NM_TYPE_VPN_PLUGIN)
+G_DEFINE_TYPE (NMPptpPlugin, nm_pptp_plugin, NM_TYPE_VPN_SERVICE_PLUGIN)
 
 typedef struct {
 	GPid pid;
@@ -613,7 +612,7 @@ validate_one_property (const char *key, const char *value, gpointer user_data)
 }
 
 static gboolean
-nm_pptp_properties_validate (NMSettingVPN *s_vpn,
+nm_pptp_properties_validate (NMSettingVpn *s_vpn,
                              GError **error)
 {
 	ValidateInfo info = { &valid_properties[0], error, FALSE };
@@ -655,7 +654,7 @@ nm_pptp_properties_validate (NMSettingVPN *s_vpn,
 }
 
 static gboolean
-nm_pptp_secrets_validate (NMSettingVPN *s_vpn, GError **error)
+nm_pptp_secrets_validate (NMSettingVpn *s_vpn, GError **error)
 {
 	ValidateInfo info = { &valid_secrets[0], error, FALSE };
 
@@ -700,21 +699,21 @@ pppd_watch_cb (GPid pid, gint status, gpointer user_data)
 	case 16:
 		/* hangup */
 		// FIXME: better failure reason
-		nm_vpn_plugin_failure (NM_VPN_PLUGIN (plugin), NM_VPN_PLUGIN_FAILURE_CONNECT_FAILED);
+		nm_vpn_service_plugin_failure (NM_VPN_SERVICE_PLUGIN (plugin), NM_VPN_PLUGIN_FAILURE_CONNECT_FAILED);
 		break;
 	case 2:
 		/* Couldn't log in due to bad user/pass */
-		nm_vpn_plugin_failure (NM_VPN_PLUGIN (plugin), NM_VPN_PLUGIN_FAILURE_LOGIN_FAILED);
+		nm_vpn_service_plugin_failure (NM_VPN_SERVICE_PLUGIN (plugin), NM_VPN_PLUGIN_FAILURE_LOGIN_FAILED);
 		break;
 	case 1:
 		/* Other error (couldn't bind to address, etc) */
-		nm_vpn_plugin_failure (NM_VPN_PLUGIN (plugin), NM_VPN_PLUGIN_FAILURE_CONNECT_FAILED);
+		nm_vpn_service_plugin_failure (NM_VPN_SERVICE_PLUGIN (plugin), NM_VPN_PLUGIN_FAILURE_CONNECT_FAILED);
 		break;
 	default:
 		break;
 	}
 
-	nm_vpn_plugin_set_state (NM_VPN_PLUGIN (plugin), NM_VPN_SERVICE_STATE_STOPPED);
+	nm_vpn_service_plugin_set_state (NM_VPN_SERVICE_PLUGIN (plugin), NM_VPN_SERVICE_STATE_STOPPED);
 }
 
 static inline const char *
@@ -767,7 +766,7 @@ pppd_timed_out (gpointer user_data)
 	NMPptpPlugin *plugin = NM_PPTP_PLUGIN (user_data);
 
 	g_warning ("Looks like pppd didn't initialize our dbus module");
-	nm_vpn_plugin_failure (NM_VPN_PLUGIN (plugin), NM_VPN_CONNECTION_STATE_REASON_SERVICE_START_TIMEOUT);
+	nm_vpn_service_plugin_failure (NM_VPN_SERVICE_PLUGIN (plugin), NM_VPN_CONNECTION_STATE_REASON_SERVICE_START_TIMEOUT);
 
 	return FALSE;
 }
@@ -804,7 +803,7 @@ str_to_int (const char *str, long int *out)
 
 static GPtrArray *
 construct_pppd_args (NMPptpPlugin *plugin,
-                     NMSettingVPN *s_vpn,
+                     NMSettingVpn *s_vpn,
                      const char *pppd,
                      const char *gwaddr,
                      GError **error)
@@ -834,7 +833,7 @@ construct_pppd_args (NMPptpPlugin *plugin,
 	if (!gwaddr || !strlen (gwaddr)) {
 		g_set_error (error,
 		             NM_VPN_PLUGIN_ERROR,
-		             NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
+		             NM_VPN_PLUGIN_ERROR_INVALID_CONNECTION,
 		             "%s",
 		             _("Missing VPN gateway."));
 		goto error;
@@ -982,7 +981,7 @@ error:
 
 static gboolean
 nm_pptp_start_pppd_binary (NMPptpPlugin *plugin,
-                           NMSettingVPN *s_vpn,
+                           NMSettingVpn *s_vpn,
                            const char *gwaddr,
                            GError **error)
 {
@@ -1045,15 +1044,15 @@ service_ppp_state_cb (NMPptpPppService *service,
                       guint32 ppp_state,
                       NMPptpPlugin *plugin)
 {
-	NMVPNServiceState plugin_state = nm_vpn_plugin_get_state (NM_VPN_PLUGIN (plugin));
+	NMVpnServiceState plugin_state = nm_vpn_service_plugin_get_state (NM_VPN_SERVICE_PLUGIN (plugin));
 
 	switch (ppp_state) {
 	case NM_PPP_STATUS_DEAD:
 	case NM_PPP_STATUS_DISCONNECT:
 		if (plugin_state == NM_VPN_SERVICE_STATE_STARTED)
-			nm_vpn_plugin_disconnect (NM_VPN_PLUGIN (plugin), NULL);
+			nm_vpn_service_plugin_disconnect (NM_VPN_SERVICE_PLUGIN (plugin), NULL);
 		else if (plugin_state == NM_VPN_SERVICE_STATE_STARTING)
-			nm_vpn_plugin_failure (NM_VPN_PLUGIN (plugin), NM_VPN_PLUGIN_FAILURE_CONNECT_FAILED);
+			nm_vpn_service_plugin_failure (NM_VPN_SERVICE_PLUGIN (plugin), NM_VPN_PLUGIN_FAILURE_CONNECT_FAILED);
 		break;
 	default:
 		break;
@@ -1061,62 +1060,53 @@ service_ppp_state_cb (NMPptpPppService *service,
 }
 
 static void
-nm_gvalue_destroy (gpointer data)
-{
-	g_value_unset ((GValue *) data);
-	g_slice_free (GValue, data);
-}
-
-static GValue *
-nm_gvalue_dup (const GValue *value)
-{
-	GValue *value_dup;
-
-	value_dup = g_slice_new0 (GValue);
-	g_value_init (value_dup, G_VALUE_TYPE (value));
-	g_value_copy (value, value_dup);
-
-	return value_dup;
-}
-
-static void
-copy_hash (gpointer key, gpointer value, gpointer user_data)
-{
-	g_hash_table_insert ((GHashTable *) user_data, g_strdup (key), nm_gvalue_dup ((GValue *) value));
-}
-
-static void
 service_ip4_config_cb (NMPptpPppService *service,
                        GHashTable *config_hash,
-                       NMVPNPlugin *plugin)
+                       NMVpnServicePlugin *plugin)
 {
 	NMPptpPppServicePrivate *priv = NM_PPTP_PPP_SERVICE_GET_PRIVATE (service);
-	GHashTable *hash;
+	GHashTableIter iter;
+	char *key;
 	GValue *value;
+	GVariantBuilder builder;
+	GVariant *new_config;
+	GVariant *tmp;
 
-	hash = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, nm_gvalue_destroy);
-	g_hash_table_foreach (config_hash, copy_hash, hash);
+        g_variant_builder_init (&builder, G_VARIANT_TYPE ("a{sv}"));
+	g_hash_table_iter_init (&iter, config_hash);
+	while (g_hash_table_iter_next (&iter, (gpointer *) &key, (gpointer *) &value)) {
+		if (G_VALUE_HOLDS_STRING (value))
+			tmp = g_variant_new_string (g_value_get_string (value));
+		else if (G_VALUE_HOLDS_UINT (value))
+			tmp = g_variant_new_uint32 (g_value_get_uint (value));
+		else if (G_VALUE_HOLDS (value, DBUS_TYPE_G_UINT_ARRAY)) {
+			GArray *arr = g_value_get_boxed (value);
+			tmp = g_variant_new_fixed_array (G_VARIANT_TYPE_UINT32, arr->data, arr->len, sizeof (guint32));
+		} else
+			tmp = NULL;
+
+		if (tmp)
+			g_variant_builder_add (&builder, "{sv}", key, tmp);
+	}
 
 	/* Insert the external VPN gateway into the table, which the pppd plugin
 	 * simply doesn't know about.
 	 */
-	value = g_slice_new0 (GValue);
-	g_value_init (value, G_TYPE_UINT);
-	g_value_set_uint (value, priv->naddr);
-	g_hash_table_insert (hash, g_strdup (NM_PPTP_KEY_GATEWAY), value);
+	g_variant_builder_add (&builder, "{sv}", NM_PPTP_KEY_GATEWAY, g_variant_new_uint32 (priv->naddr));
+	new_config = g_variant_builder_end (&builder);
+	g_variant_ref_sink (new_config);
 
-	nm_vpn_plugin_set_ip4_config (plugin, hash);
-
-	g_hash_table_destroy (hash);
+	nm_vpn_service_plugin_set_ip4_config (plugin, new_config);
+	g_variant_unref (new_config);
 }
 
 static gboolean
-real_connect (NMVPNPlugin   *plugin,
-              NMConnection  *connection,
-              GError       **error)
+real_connect (NMVpnServicePlugin *plugin,
+              NMConnection *connection,
+              GError **error)
 {
 	NMPptpPluginPrivate *priv = NM_PPTP_PLUGIN_GET_PRIVATE (plugin);
-	NMSettingVPN *s_vpn;
+	NMSettingVpn *s_vpn;
 	const char *gwaddr;
 
 	s_vpn = nm_connection_get_setting_vpn (connection);
@@ -1162,15 +1152,15 @@ real_connect (NMVPNPlugin   *plugin,
 }
 
 static gboolean
-real_need_secrets (NMVPNPlugin *plugin,
+real_need_secrets (NMVpnServicePlugin *plugin,
                    NMConnection *connection,
-                   char **setting_name,
+                   const char **setting_name,
                    GError **error)
 {
-	NMSettingVPN *s_vpn;
+	NMSettingVpn *s_vpn;
 	NMSettingSecretFlags flags = NM_SETTING_SECRET_FLAG_NONE;
 
-	g_return_val_if_fail (NM_IS_VPN_PLUGIN (plugin), FALSE);
+	g_return_val_if_fail (NM_IS_VPN_SERVICE_PLUGIN (plugin), FALSE);
 	g_return_val_if_fail (NM_IS_CONNECTION (connection), FALSE);
 
 	s_vpn = nm_connection_get_setting_vpn (connection);
@@ -1202,8 +1192,7 @@ ensure_killed (gpointer data)
 }
 
 static gboolean
-real_disconnect (NMVPNPlugin   *plugin,
-			  GError       **err)
+real_disconnect (NMVpnServicePlugin *plugin, GError **err)
 {
 	NMPptpPluginPrivate *priv = NM_PPTP_PLUGIN_GET_PRIVATE (plugin);
 
@@ -1224,7 +1213,7 @@ real_disconnect (NMVPNPlugin   *plugin,
 }
 
 static void
-state_changed_cb (GObject *object, NMVPNServiceState state, gpointer user_data)
+state_changed_cb (GObject *object, NMVpnServiceState state, gpointer user_data)
 {
 	NMPptpPluginPrivate *priv = NM_PPTP_PLUGIN_GET_PRIVATE (object);
 
@@ -1266,7 +1255,7 @@ static void
 nm_pptp_plugin_class_init (NMPptpPluginClass *pptp_class)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (pptp_class);
-	NMVPNPluginClass *parent_class = NM_VPN_PLUGIN_CLASS (pptp_class);
+	NMVpnServicePluginClass *parent_class = NM_VPN_SERVICE_PLUGIN_CLASS (pptp_class);
 
 	g_type_class_add_private (object_class, sizeof (NMPptpPluginPrivate));
 
@@ -1281,13 +1270,19 @@ NMPptpPlugin *
 nm_pptp_plugin_new (void)
 {
 	NMPptpPlugin *plugin;
+	GError *error = NULL;
 
-	plugin = g_object_new (NM_TYPE_PPTP_PLUGIN,
-	                       NM_VPN_PLUGIN_DBUS_SERVICE_NAME,
-	                       NM_DBUS_SERVICE_PPTP,
-	                       NULL);
+	plugin = g_initable_new (NM_TYPE_PPTP_PLUGIN, NULL, &error,
+	                         NM_VPN_SERVICE_PLUGIN_DBUS_SERVICE_NAME,
+	                         NM_DBUS_SERVICE_PPTP,
+	                         NULL);
 	if (plugin)
 		g_signal_connect (G_OBJECT (plugin), "state-changed", G_CALLBACK (state_changed_cb), NULL);
+
+	if (debug && error)
+		g_message ("Error: failed to create NMPptpPlugin: %s", error->message);
+	g_clear_error (&error);
+
 	return plugin;
 }
 
