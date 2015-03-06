@@ -35,8 +35,7 @@
 #include <glib.h>
 #include <glib/gi18n-lib.h>
 
-#include <nm-connection.h>
-#include <nm-setting-vpn.h>
+#include <NetworkManager.h>
 
 #include "advanced-dialog.h"
 #include "nm-pptp.h"
@@ -90,7 +89,7 @@ advanced_dialog_new_hash_from_connection (NMConnection *connection,
                                           GError **error)
 {
 	GHashTable *hash;
-	NMSettingVPN *s_vpn;
+	NMSettingVpn *s_vpn;
 
 	hash = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
 

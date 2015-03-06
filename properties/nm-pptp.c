@@ -34,10 +34,7 @@
 #include <string.h>
 #include <gtk/gtk.h>
 
-#include <nm-vpn-plugin-ui-interface.h>
-#include <nm-setting-vpn.h>
-#include <nm-setting-connection.h>
-#include <nm-setting-ip4-config.h>
+#include <NetworkManager.h>
 
 #include "nm-pptp-service-defines.h"
 #include "nm-pptp.h"
@@ -56,18 +53,18 @@ typedef void (*ChangedCallback) (GtkWidget *widget, gpointer user_data);
 
 /************** plugin class **************/
 
-static void pptp_plugin_ui_interface_init (NMVpnPluginUiInterface *iface_class);
+static void pptp_plugin_ui_interface_init (NMVpnEditorPluginInterface *iface_class);
 
 G_DEFINE_TYPE_EXTENDED (PptpPluginUi, pptp_plugin_ui, G_TYPE_OBJECT, 0,
-                        G_IMPLEMENT_INTERFACE (NM_TYPE_VPN_PLUGIN_UI_INTERFACE,
+                        G_IMPLEMENT_INTERFACE (NM_TYPE_VPN_EDITOR_PLUGIN,
                                                pptp_plugin_ui_interface_init))
 
 /************** UI widget class **************/
 
-static void pptp_plugin_ui_widget_interface_init (NMVpnPluginUiWidgetInterface *iface_class);
+static void pptp_plugin_ui_widget_interface_init (NMVpnEditorInterface *iface_class);
 
 G_DEFINE_TYPE_EXTENDED (PptpPluginUiWidget, pptp_plugin_ui_widget, G_TYPE_OBJECT, 0,
-                        G_IMPLEMENT_INTERFACE (NM_TYPE_VPN_PLUGIN_UI_WIDGET_INTERFACE,
+                        G_IMPLEMENT_INTERFACE (NM_TYPE_VPN_EDITOR,
                                                pptp_plugin_ui_widget_interface_init))
 
 #define PPTP_PLUGIN_UI_WIDGET_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), PPTP_TYPE_PLUGIN_UI_WIDGET, PptpPluginUiWidgetPrivate))
@@ -82,6 +79,14 @@ typedef struct {
 	gboolean new_connection;
 } PptpPluginUiWidgetPrivate;
 
+enum {
+	PROP_0,
+	PROP_NAME,
+	PROP_DESC,
+	PROP_SERVICE,
+
+	LAST_PROP
+};
 
 GQuark
 pptp_plugin_ui_error_quark (void)
@@ -213,7 +218,7 @@ advanced_button_clicked_cb (GtkWidget *button, gpointer user_data)
 static void
 setup_password_widget (PptpPluginUiWidget *self,
                        const char *entry_name,
-                       NMSettingVPN *s_vpn,
+                       NMSettingVpn *s_vpn,
                        const char *secret_name,
                        gboolean new_connection)
 {
@@ -284,7 +289,7 @@ pw_type_combo_changed_cb (GtkWidget *combo, gpointer user_data)
 
 static void
 init_one_pw_combo (PptpPluginUiWidget *self,
-                   NMSettingVPN *s_vpn,
+                   NMSettingVpn *s_vpn,
                    const char *combo_name,
                    const char *secret_key,
                    const char *entry_name)
@@ -343,7 +348,7 @@ static gboolean
 init_plugin_ui (PptpPluginUiWidget *self, NMConnection *connection, GError **error)
 {
 	PptpPluginUiWidgetPrivate *priv = PPTP_PLUGIN_UI_WIDGET_GET_PRIVATE (self);
-	NMSettingVPN *s_vpn;
+	NMSettingVpn *s_vpn;
 	GtkWidget *widget;
 	const char *value;
 
@@ -412,7 +417,7 @@ init_plugin_ui (PptpPluginUiWidget *self, NMConnection *connection, GError **err
 }
 
 static GObject *
-get_widget (NMVpnPluginUiWidgetInterface *iface)
+get_widget (NMVpnEditor *iface)
 {
 	PptpPluginUiWidget *self = PPTP_PLUGIN_UI_WIDGET (iface);
 	PptpPluginUiWidgetPrivate *priv = PPTP_PLUGIN_UI_WIDGET_GET_PRIVATE (self);
@@ -423,13 +428,13 @@ get_widget (NMVpnPluginUiWidgetInterface *iface)
 static void
 hash_copy_advanced (gpointer key, gpointer data, gpointer user_data)
 {
-	NMSettingVPN *s_vpn = NM_SETTING_VPN (user_data);
+	NMSettingVpn *s_vpn = NM_SETTING_VPN (user_data);
 
 	nm_setting_vpn_add_data_item (s_vpn, (const char *) key, (const char *) data);
 }
 
 static void
-save_password_and_flags (NMSettingVPN *s_vpn,
+save_password_and_flags (NMSettingVpn *s_vpn,
                          GtkBuilder *builder,
                          const char *entry_name,
                          const char *combo_name,
@@ -466,13 +471,13 @@ save_password_and_flags (NMSettingVPN *s_vpn,
 }
 
 static gboolean
-update_connection (NMVpnPluginUiWidgetInterface *iface,
+update_connection (NMVpnEditor *iface,
                    NMConnection *connection,
                    GError **error)
 {
 	PptpPluginUiWidget *self = PPTP_PLUGIN_UI_WIDGET (iface);
 	PptpPluginUiWidgetPrivate *priv = PPTP_PLUGIN_UI_WIDGET_GET_PRIVATE (self);
-	NMSettingVPN *s_vpn;
+	NMSettingVpn *s_vpn;
 	GtkWidget *widget;
 	const char *str;
 	gboolean valid = FALSE;
@@ -526,19 +531,19 @@ is_new_func (const char *key, const char *value, gpointer user_data)
 	*is_new = FALSE;
 }
 
-static NMVpnPluginUiWidgetInterface *
+static NMVpnEditor *
 nm_vpn_plugin_ui_widget_interface_new (NMConnection *connection, GError **error)
 {
-	NMVpnPluginUiWidgetInterface *object;
+	NMVpnEditor *object;
 	PptpPluginUiWidgetPrivate *priv;
 	char *ui_file;
 	gboolean new = TRUE;
-	NMSettingVPN *s_vpn;
+	NMSettingVpn *s_vpn;
 
 	if (error)
 		g_return_val_if_fail (*error == NULL, NULL);
 
-	object = NM_VPN_PLUGIN_UI_WIDGET_INTERFACE (g_object_new (PPTP_TYPE_PLUGIN_UI_WIDGET, NULL));
+	object = NM_VPN_EDITOR (g_object_new (PPTP_TYPE_PLUGIN_UI_WIDGET, NULL));
 	if (!object) {
 		g_set_error (error, PPTP_PLUGIN_UI_ERROR, 0, "could not create pptp object");
 		return NULL;
@@ -632,7 +637,7 @@ pptp_plugin_ui_widget_init (PptpPluginUiWidget *plugin)
 }
 
 static void
-pptp_plugin_ui_widget_interface_init (NMVpnPluginUiWidgetInterface *iface_class)
+pptp_plugin_ui_widget_interface_init (NMVpnEditorInterface *iface_class)
 {
 	/* interface implementation */
 	iface_class->get_widget = get_widget;
@@ -640,7 +645,7 @@ pptp_plugin_ui_widget_interface_init (NMVpnPluginUiWidgetInterface *iface_class)
 }
 
 static NMConnection *
-import (NMVpnPluginUiInterface *iface, const char *path, GError **error)
+import (NMVpnEditorPlugin *iface, const char *path, GError **error)
 {
 	NMConnection *connection = NULL;
 	char *contents = NULL;
@@ -686,7 +691,7 @@ out:
 }
 
 static gboolean
-export (NMVpnPluginUiInterface *iface,
+export (NMVpnEditorPlugin *iface,
         const char *path,
         NMConnection *connection,
         GError **error)
@@ -695,7 +700,7 @@ export (NMVpnPluginUiInterface *iface,
 }
 
 static char *
-get_suggested_name (NMVpnPluginUiInterface *iface, NMConnection *connection)
+get_suggested_filename (NMVpnEditorPlugin *iface, NMConnection *connection)
 {
 	NMSettingConnection *s_con;
 	const char *id;
@@ -711,14 +716,14 @@ get_suggested_name (NMVpnPluginUiInterface *iface, NMConnection *connection)
 	return g_strdup_printf ("%s (pptp).conf", id);
 }
 
-static guint32
-get_capabilities (NMVpnPluginUiInterface *iface)
+static NMVpnEditorPluginCapability
+get_capabilities (NMVpnEditorPlugin *iface)
 {
-	return (NM_VPN_PLUGIN_UI_CAPABILITY_IMPORT | NM_VPN_PLUGIN_UI_CAPABILITY_EXPORT);
+	return (NM_VPN_EDITOR_PLUGIN_CAPABILITY_IMPORT | NM_VPN_EDITOR_PLUGIN_CAPABILITY_EXPORT);
 }
 
-static NMVpnPluginUiWidgetInterface *
-ui_factory (NMVpnPluginUiInterface *iface, NMConnection *connection, GError **error)
+static NMVpnEditor *
+get_editor (NMVpnEditorPlugin *iface, NMConnection *connection, GError **error)
 {
 	return nm_vpn_plugin_ui_widget_interface_new (connection, error);
 }
@@ -728,13 +733,13 @@ get_property (GObject *object, guint prop_id,
 			  GValue *value, GParamSpec *pspec)
 {
 	switch (prop_id) {
-	case NM_VPN_PLUGIN_UI_INTERFACE_PROP_NAME:
+	case PROP_NAME:
 		g_value_set_string (value, PPTP_PLUGIN_NAME);
 		break;
-	case NM_VPN_PLUGIN_UI_INTERFACE_PROP_DESC:
+	case PROP_DESC:
 		g_value_set_string (value, PPTP_PLUGIN_DESC);
 		break;
-	case NM_VPN_PLUGIN_UI_INTERFACE_PROP_SERVICE:
+	case PROP_SERVICE:
 		g_value_set_string (value, PPTP_PLUGIN_SERVICE);
 		break;
 	default:
@@ -751,16 +756,16 @@ pptp_plugin_ui_class_init (PptpPluginUiClass *req_class)
 	object_class->get_property = get_property;
 
 	g_object_class_override_property (object_class,
-	                                  NM_VPN_PLUGIN_UI_INTERFACE_PROP_NAME,
-	                                  NM_VPN_PLUGIN_UI_INTERFACE_NAME);
+	                                  PROP_NAME,
+	                                  NM_VPN_EDITOR_PLUGIN_NAME);
 
 	g_object_class_override_property (object_class,
-	                                  NM_VPN_PLUGIN_UI_INTERFACE_PROP_DESC,
-	                                  NM_VPN_PLUGIN_UI_INTERFACE_DESC);
+	                                  PROP_DESC,
+	                                  NM_VPN_EDITOR_PLUGIN_DESCRIPTION);
 
 	g_object_class_override_property (object_class,
-	                                  NM_VPN_PLUGIN_UI_INTERFACE_PROP_SERVICE,
-	                                  NM_VPN_PLUGIN_UI_INTERFACE_SERVICE);
+	                                  PROP_SERVICE,
+	                                  NM_VPN_EDITOR_PLUGIN_SERVICE);
 }
 
 static void
@@ -769,19 +774,18 @@ pptp_plugin_ui_init (PptpPluginUi *plugin)
 }
 
 static void
-pptp_plugin_ui_interface_init (NMVpnPluginUiInterface *iface_class)
+pptp_plugin_ui_interface_init (NMVpnEditorPluginInterface *iface_class)
 {
 	/* interface implementation */
-	iface_class->ui_factory = ui_factory;
+	iface_class->get_editor = get_editor;
 	iface_class->get_capabilities = get_capabilities;
 	iface_class->import_from_file = import;
 	iface_class->export_to_file = export;
-	iface_class->get_suggested_name = get_suggested_name;
+	iface_class->get_suggested_filename = get_suggested_filename;
 }
 
-
-G_MODULE_EXPORT NMVpnPluginUiInterface *
-nm_vpn_plugin_ui_factory (GError **error)
+G_MODULE_EXPORT NMVpnEditorPlugin *
+nm_vpn_editor_plugin_factory (GError **error)
 {
 	if (error)
 		g_return_val_if_fail (*error == NULL, NULL);
@@ -789,6 +793,6 @@ nm_vpn_plugin_ui_factory (GError **error)
 	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 
-	return NM_VPN_PLUGIN_UI_INTERFACE (g_object_new (PPTP_TYPE_PLUGIN_UI, NULL));
+	return NM_VPN_EDITOR_PLUGIN (g_object_new (PPTP_TYPE_PLUGIN_UI, NULL));
 }
 

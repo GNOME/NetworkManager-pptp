@@ -67,10 +67,8 @@ GLIB_CFLAGS="$GLIB_CFLAGS -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_32"
 PKG_CHECK_MODULES(DBUS, dbus-glib-1 >= 0.74)
 
 PKG_CHECK_MODULES(NM,
-                  NetworkManager >= 0.9.10
-                  libnm-util >= 0.9.10
-                  libnm-glib >= 0.9.10
-                  libnm-glib-vpn >= 0.9.10)
+                  NetworkManager >= 1.0
+                  libnm >= 1.0)
 
 if test x"$with_gnome" != xno; then
 	PKG_CHECK_MODULES(GTK, gtk+-3.0 >= 3.4)
