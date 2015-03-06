@@ -65,6 +65,7 @@
 #define NM_PPTP_KEY_NO_VJ_COMP        "no-vj-comp"
 #define NM_PPTP_KEY_LCP_ECHO_FAILURE  "lcp-echo-failure"
 #define NM_PPTP_KEY_LCP_ECHO_INTERVAL "lcp-echo-interval"
+#define NM_PPTP_KEY_UNIT_NUM          "unit"
 
 
 typedef struct {

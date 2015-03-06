@@ -68,6 +68,7 @@ static const char *advanced_keys[] = {
 	NM_PPTP_KEY_NO_VJ_COMP,
 	NM_PPTP_KEY_LCP_ECHO_FAILURE,
 	NM_PPTP_KEY_LCP_ECHO_INTERVAL,
+	NM_PPTP_KEY_UNIT_NUM,
 	NULL
 };
 
@@ -390,13 +391,21 @@ auth_methods_setup (GtkBuilder *builder, GHashTable *hash)
 		gtk_widget_set_sensitive (widget, TRUE);
 }
 
+static void
+checkbox_toggled_update_widget_cb (GtkWidget *check, gpointer user_data)
+{
+	GtkWidget *widget = (GtkWidget*) user_data;
+
+	gtk_widget_set_sensitive (widget, gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (check)));
+}
+
 GtkWidget *
 advanced_dialog_new (GHashTable *hash)
 {
 	GtkBuilder *builder;
 	GtkWidget *dialog = NULL;
 	char *ui_file = NULL;
-	GtkWidget *widget;
+	GtkWidget *widget, *spin;
 	const char *value;
 	gboolean mppe = FALSE;
 	GError *error = NULL;
@@ -482,6 +491,31 @@ advanced_dialog_new (GHashTable *hash)
 	widget = GTK_WIDGET (gtk_builder_get_object (builder, "ppp_use_mppe"));
 	handle_mppe_changed (widget, TRUE, builder);
 	g_signal_connect (G_OBJECT (widget), "toggled", G_CALLBACK (mppe_toggled_cb), builder);
+
+	widget = GTK_WIDGET (gtk_builder_get_object (builder, "ppp_unit_checkbutton"));
+	spin = GTK_WIDGET (gtk_builder_get_object (builder, "ppp_unit_spinbutton"));
+	g_signal_connect (G_OBJECT (widget), "toggled", G_CALLBACK (checkbox_toggled_update_widget_cb), spin);
+
+	value = g_hash_table_lookup (hash, NM_PPTP_KEY_UNIT_NUM);
+	if (value && *value) {
+		long int tmp;
+
+		errno = 0;
+		tmp = strtol (value, NULL, 10);
+		if (errno == 0 && tmp >= 0 && tmp < 65536) {
+			gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
+
+			widget = GTK_WIDGET (gtk_builder_get_object (builder, "ppp_unit_spinbutton"));
+			gtk_spin_button_set_value (GTK_SPIN_BUTTON (widget), (gdouble) tmp);
+			gtk_widget_set_sensitive (widget, TRUE);
+		}
+	} else {
+		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), FALSE);
+
+		widget = GTK_WIDGET (gtk_builder_get_object (builder, "ppp_unit_spinbutton"));
+		gtk_spin_button_set_value (GTK_SPIN_BUTTON (widget), 0.0);
+		gtk_widget_set_sensitive (widget, FALSE);
+	}
 
 out:
 	g_free (ui_file);
@@ -580,6 +614,16 @@ advanced_dialog_new_hash_from_dialog (GtkWidget *dialog, GError **error)
 		}
 
 		valid = gtk_tree_model_iter_next (model, &iter);
+	}
+
+	widget = GTK_WIDGET (gtk_builder_get_object (builder, "ppp_unit_checkbutton"));
+	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget))) {
+		int unit_num;
+
+		widget = GTK_WIDGET (gtk_builder_get_object (builder, "ppp_unit_spinbutton"));
+		unit_num = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (widget));
+		g_hash_table_insert (hash, g_strdup (NM_PPTP_KEY_UNIT_NUM),
+		                     g_strdup_printf ("%d", unit_num));
 	}
 
 	return hash;

@@ -511,6 +511,7 @@ static ValidProperty valid_properties[] = {
 	{ NM_PPTP_KEY_NO_VJ_COMP,        G_TYPE_BOOLEAN, FALSE },
 	{ NM_PPTP_KEY_LCP_ECHO_FAILURE,  G_TYPE_UINT, FALSE },
 	{ NM_PPTP_KEY_LCP_ECHO_INTERVAL, G_TYPE_UINT, FALSE },
+	{ NM_PPTP_KEY_UNIT_NUM,          G_TYPE_UINT, FALSE },
 	{ NM_PPTP_KEY_PASSWORD"-flags",  G_TYPE_UINT, FALSE },
 	{ NULL,                          G_TYPE_NONE, FALSE }
 };
@@ -793,6 +794,23 @@ free_pppd_args (GPtrArray *args)
 	g_ptr_array_free (args, TRUE);
 }
 
+static gboolean
+str_to_int (const char *str, long int *out)
+{
+	long int tmp_int;
+
+	if (!str)
+		return FALSE;
+
+	errno = 0;
+	tmp_int = strtol (str, NULL, 10);
+	if (errno == 0) {
+		*out = tmp_int;
+		return TRUE;
+	}
+	return FALSE;
+}
+
 static GPtrArray *
 construct_pppd_args (NMPptpPlugin *plugin,
                      NMSettingVPN *s_vpn,
@@ -932,15 +950,13 @@ construct_pppd_args (NMPptpPlugin *plugin,
 	}
 
 	value = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_LCP_ECHO_INTERVAL);
-	if (value && strlen (value)) {
+	if (value && *value) {
 		long int tmp_int;
 
 		/* Convert to integer and then back to string for security's sake
 		 * because strtol ignores some leading and trailing characters.
 		 */
-		errno = 0;
-		tmp_int = strtol (value, NULL, 10);
-		if (errno == 0) {
+		if (str_to_int (value, &tmp_int)) {
 			g_ptr_array_add (args, (gpointer) g_strdup ("lcp-echo-interval"));
 			g_ptr_array_add (args, (gpointer) g_strdup_printf ("%ld", tmp_int));
 		} else {
@@ -949,6 +965,16 @@ construct_pppd_args (NMPptpPlugin *plugin,
 	} else {
 		g_ptr_array_add (args, (gpointer) g_strdup ("lcp-echo-interval"));
 		g_ptr_array_add (args, (gpointer) g_strdup ("0"));
+	}
+
+	value = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_UNIT_NUM);
+	if (value && *value) {
+		long int tmp_int;
+		if (str_to_int (value, &tmp_int)) {
+			g_ptr_array_add (args, (gpointer) g_strdup ("unit"));
+			g_ptr_array_add (args, (gpointer) g_strdup_printf ("%ld", tmp_int));
+		} else
+			g_warning ("failed to convert unit value '%s'", value);
 	}
 
 	g_ptr_array_add (args, (gpointer) g_strdup ("plugin"));
