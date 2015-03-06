@@ -25,7 +25,8 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <nm-vpn-plugin.h>
+#include <NetworkManager.h>
+#include <nm-vpn-plugin-old.h>
 
 #include "nm-pptp-service-defines.h"
 
@@ -40,11 +41,11 @@
 #define DBUS_TYPE_G_MAP_OF_VARIANT (dbus_g_type_get_map ("GHashTable", G_TYPE_STRING, G_TYPE_VALUE))
 
 typedef struct {
-	NMVPNPlugin parent;
+	NMVpnPluginOld parent;
 } NMPptpPlugin;
 
 typedef struct {
-	NMVPNPluginClass parent;
+	NMVpnPluginOldClass parent;
 } NMPptpPluginClass;
 
 GType nm_pptp_plugin_get_type (void);

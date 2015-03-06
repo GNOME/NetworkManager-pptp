@@ -1,10 +1,10 @@
 libexec_PROGRAMS = nm-pptp-auth-dialog
 
 nm_pptp_auth_dialog_CPPFLAGS =			\
-	$(LIBNM_GLIB_CFLAGS)			\
+	$(LIBNM_CFLAGS)				\
 	$(GLIB_CFLAGS)				\
 	$(GTK_CFLAGS)				\
-	$(LIBNM_GTK_CFLAGS)			\
+	$(LIBNMA_CFLAGS)			\
 	$(LIBSECRET_CFLAGS)			\
 	-I${top_srcdir}				\
 	-DICONDIR=\""$(datadir)/pixmaps"\"	\
@@ -17,9 +17,9 @@ nm_pptp_auth_dialog_SOURCES = \
 	main.c
 
 nm_pptp_auth_dialog_LDADD = \
-	$(LIBNM_GLIB_LIBS) \
+	$(LIBNM_LIBS) \
 	$(GTK_LIBS) \
-	$(LIBNM_GTK_LIBS) \
+	$(LIBNMA_LIBS) \
 	$(LIBSECRET_LIBS)
 
 CLEANFILES = *~

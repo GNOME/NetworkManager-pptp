@@ -1,7 +1,7 @@
 AM_CPPFLAGS =							\
 	$(DBUS_GLIB_CFLAGS)					\
 	$(GLIB_CFLAGS)						\
-	$(LIBNM_GLIB_CFLAGS)					\
+	$(LIBNM_CFLAGS)						\
 	-I${top_srcdir}						\
 	-DG_DISABLE_DEPRECATED					\
 	-DBINDIR=\"$(bindir)\"					\
@@ -28,7 +28,7 @@ nm-pptp-pppd-service-glue.h: $(top_srcdir)/src/nm-pptp-pppd-service.xml
 nm_pptp_service_LDADD = \
 	$(DBUS_GLIB_LIBS) \
 	$(GLIB_LIBS) \
-	$(LIBNM_GLIB_LIBS)
+	$(LIBNM_LIBS)
 
 pppd_plugindir = $(PPPD_PLUGIN_DIR)
 pppd_plugin_LTLIBRARIES = nm-pptp-pppd-plugin.la
@@ -40,14 +40,14 @@ nm_pptp_pppd_plugin_la_SOURCES = \
 nm_pptp_pppd_plugin_la_CPPFLAGS = \
 	$(DBUS_GLIB_CFLAGS) \
 	$(GLIB_CFLAGS) \
-	$(LIBNM_GLIB_CFLAGS)
+	$(LIBNM_CFLAGS)
 
 nm_pptp_pppd_plugin_la_LDFLAGS = -module -avoid-version
 
 nm_pptp_pppd_plugin_la_LIBADD = \
 	$(DBUS_GLIB_LIBS) \
 	$(GLIB_LIBS) \
-	$(LIBNM_GLIB_LIBS)
+	$(LIBNM_LIBS)
 
 BUILT_SOURCES = nm-pptp-pppd-service-glue.h
 
