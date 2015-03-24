@@ -27,6 +27,8 @@
 #include <glib-object.h>
 #include <nm-vpn-plugin.h>
 
+#include "nm-pptp-service-defines.h"
+
 #define NM_TYPE_PPTP_PLUGIN            (nm_pptp_plugin_get_type ())
 #define NM_PPTP_PLUGIN(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), NM_TYPE_PPTP_PLUGIN, NMPptpPlugin))
 #define NM_PPTP_PLUGIN_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), NM_TYPE_PPTP_PLUGIN, NMPptpPluginClass))
@@ -36,37 +38,6 @@
 
 /* For the pppd plugin <-> VPN plugin service */
 #define DBUS_TYPE_G_MAP_OF_VARIANT (dbus_g_type_get_map ("GHashTable", G_TYPE_STRING, G_TYPE_VALUE))
-
-#define NM_DBUS_SERVICE_PPTP_PPP    "org.freedesktop.NetworkManager.pptp-ppp"
-#define NM_DBUS_PATH_PPTP_PPP       "/org/freedesktop/NetworkManager/pptp/ppp"
-#define NM_DBUS_INTERFACE_PPTP_PPP  "org.freedesktop.NetworkManager.pptp.ppp"
-
-
-/* For the NM <-> VPN plugin service */
-#define NM_DBUS_SERVICE_PPTP    "org.freedesktop.NetworkManager.pptp"
-#define NM_DBUS_INTERFACE_PPTP  "org.freedesktop.NetworkManager.pptp"
-#define NM_DBUS_PATH_PPTP       "/org/freedesktop/NetworkManager/pptp"
-
-#define NM_PPTP_KEY_GATEWAY           "gateway"
-#define NM_PPTP_KEY_USER              "user"
-#define NM_PPTP_KEY_PASSWORD          "password"
-#define NM_PPTP_KEY_DOMAIN            "domain"
-#define NM_PPTP_KEY_REFUSE_EAP        "refuse-eap"
-#define NM_PPTP_KEY_REFUSE_PAP        "refuse-pap"
-#define NM_PPTP_KEY_REFUSE_CHAP       "refuse-chap"
-#define NM_PPTP_KEY_REFUSE_MSCHAP     "refuse-mschap"
-#define NM_PPTP_KEY_REFUSE_MSCHAPV2   "refuse-mschapv2"
-#define NM_PPTP_KEY_REQUIRE_MPPE      "require-mppe"
-#define NM_PPTP_KEY_REQUIRE_MPPE_40   "require-mppe-40"
-#define NM_PPTP_KEY_REQUIRE_MPPE_128  "require-mppe-128"
-#define NM_PPTP_KEY_MPPE_STATEFUL     "mppe-stateful"
-#define NM_PPTP_KEY_NOBSDCOMP         "nobsdcomp"
-#define NM_PPTP_KEY_NODEFLATE         "nodeflate"
-#define NM_PPTP_KEY_NO_VJ_COMP        "no-vj-comp"
-#define NM_PPTP_KEY_LCP_ECHO_FAILURE  "lcp-echo-failure"
-#define NM_PPTP_KEY_LCP_ECHO_INTERVAL "lcp-echo-interval"
-#define NM_PPTP_KEY_UNIT_NUM          "unit"
-
 
 typedef struct {
 	NMVPNPlugin parent;

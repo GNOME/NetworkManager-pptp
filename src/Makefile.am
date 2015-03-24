@@ -19,8 +19,9 @@ AM_CPPFLAGS =							\
 libexec_PROGRAMS = nm-pptp-service
 
 nm_pptp_service_SOURCES = \
-				nm-pptp-service.c \
-				nm-pptp-service.h
+	nm-pptp-service-defines.h \
+	nm-pptp-service.c \
+	nm-pptp-service.h
 
 nm-pptp-pppd-service-glue.h: $(top_srcdir)/src/nm-pptp-pppd-service.xml
 	dbus-binding-tool --prefix=nm_pptp_pppd_service --mode=glib-server --output=$@ $<

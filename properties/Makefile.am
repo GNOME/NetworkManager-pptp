@@ -18,6 +18,7 @@ libnm_pptp_properties_la_CFLAGS =                       \
         $(GLIB_CFLAGS)                                  \
         $(GTK_CFLAGS)                                   \
         $(NM_CFLAGS)                                    \
+	-I$(top_srcdir)/src				\
         -DICONDIR=\""$(datadir)/pixmaps"\"              \
         -DUIDIR=\""$(uidir)"\"                          \
         -DLOCALEDIR=\""$(datadir)/locale"\"             \
