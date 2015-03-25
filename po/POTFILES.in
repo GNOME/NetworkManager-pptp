@@ -1,8 +1,7 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
 auth-dialog/main.c
-nm-pptp.desktop.in
 properties/advanced-dialog.c
-[type: gettext/glade]properties/nm-pptp-dialog.ui
 properties/nm-pptp.c
+[type: gettext/glade]properties/nm-pptp-dialog.ui
 src/nm-pptp-service.c
