@@ -18,7 +18,6 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * 
  */
 
 #include <string.h>
@@ -175,11 +174,10 @@ nm_ip_up (void *data, int arg)
 		return;
 	}
 
-	hash = g_hash_table_new_full (g_str_hash, g_str_equal,
-							NULL, value_destroy);
+	hash = g_hash_table_new_full (g_str_hash, g_str_equal, NULL, value_destroy);
 
-	g_hash_table_insert (hash, NM_VPN_PLUGIN_IP4_CONFIG_TUNDEV, 
-					 str_to_gvalue (ifname));
+	g_hash_table_insert (hash, NM_VPN_PLUGIN_IP4_CONFIG_TUNDEV,
+	                     str_to_gvalue (ifname));
 
 	/* Prefer the peer options remote address first, _unless_ pppd made the
 	 * address up, at which point prefer the local options remote address,
@@ -197,8 +195,8 @@ nm_ip_up (void *data, int arg)
 		                     uint_to_gvalue (peer_opts.hisaddr));
 	}
 
-	g_hash_table_insert (hash, NM_VPN_PLUGIN_IP4_CONFIG_ADDRESS, 
-					 uint_to_gvalue (opts.ouraddr));
+	g_hash_table_insert (hash, NM_VPN_PLUGIN_IP4_CONFIG_ADDRESS,
+	                     uint_to_gvalue (opts.ouraddr));
 
 	g_hash_table_insert (hash, NM_VPN_PLUGIN_IP4_CONFIG_PREFIX, uint_to_gvalue (32));
 
@@ -332,9 +330,9 @@ plugin_init (void)
 	}
 
 	proxy = dbus_g_proxy_new_for_name (bus,
-								NM_DBUS_SERVICE_PPTP_PPP,
-								NM_DBUS_PATH_PPTP_PPP,
-								NM_DBUS_INTERFACE_PPTP_PPP);
+	                                   NM_DBUS_SERVICE_PPTP_PPP,
+	                                   NM_DBUS_PATH_PPTP_PPP,
+	                                   NM_DBUS_INTERFACE_PPTP_PPP);
 
 	dbus_g_connection_unref (bus);
 

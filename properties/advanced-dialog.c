@@ -281,7 +281,7 @@ auth_methods_setup (GtkBuilder *builder, GHashTable *hash)
 	value = g_hash_table_lookup (hash, NM_PPTP_KEY_REQUIRE_MPPE);
 	if (value && !strcmp (value, "yes"))
 		use_mppe = TRUE;
-	
+
 	/* Or MPPE-128 */
 	value = g_hash_table_lookup (hash, NM_PPTP_KEY_REQUIRE_MPPE_128);
 	if (value && !strcmp (value, "yes"))

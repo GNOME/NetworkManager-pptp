@@ -59,16 +59,16 @@ typedef void (*ChangedCallback) (GtkWidget *widget, gpointer user_data);
 static void pptp_plugin_ui_interface_init (NMVpnPluginUiInterface *iface_class);
 
 G_DEFINE_TYPE_EXTENDED (PptpPluginUi, pptp_plugin_ui, G_TYPE_OBJECT, 0,
-						G_IMPLEMENT_INTERFACE (NM_TYPE_VPN_PLUGIN_UI_INTERFACE,
-											   pptp_plugin_ui_interface_init))
+                        G_IMPLEMENT_INTERFACE (NM_TYPE_VPN_PLUGIN_UI_INTERFACE,
+                                               pptp_plugin_ui_interface_init))
 
 /************** UI widget class **************/
 
 static void pptp_plugin_ui_widget_interface_init (NMVpnPluginUiWidgetInterface *iface_class);
 
 G_DEFINE_TYPE_EXTENDED (PptpPluginUiWidget, pptp_plugin_ui_widget, G_TYPE_OBJECT, 0,
-						G_IMPLEMENT_INTERFACE (NM_TYPE_VPN_PLUGIN_UI_WIDGET_INTERFACE,
-											   pptp_plugin_ui_widget_interface_init))
+                        G_IMPLEMENT_INTERFACE (NM_TYPE_VPN_PLUGIN_UI_WIDGET_INTERFACE,
+                                               pptp_plugin_ui_widget_interface_init))
 
 #define PPTP_PLUGIN_UI_WIDGET_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), PPTP_TYPE_PLUGIN_UI_WIDGET, PptpPluginUiWidgetPrivate))
 
@@ -751,16 +751,16 @@ pptp_plugin_ui_class_init (PptpPluginUiClass *req_class)
 	object_class->get_property = get_property;
 
 	g_object_class_override_property (object_class,
-									  NM_VPN_PLUGIN_UI_INTERFACE_PROP_NAME,
-									  NM_VPN_PLUGIN_UI_INTERFACE_NAME);
+	                                  NM_VPN_PLUGIN_UI_INTERFACE_PROP_NAME,
+	                                  NM_VPN_PLUGIN_UI_INTERFACE_NAME);
 
 	g_object_class_override_property (object_class,
-									  NM_VPN_PLUGIN_UI_INTERFACE_PROP_DESC,
-									  NM_VPN_PLUGIN_UI_INTERFACE_DESC);
+	                                  NM_VPN_PLUGIN_UI_INTERFACE_PROP_DESC,
+	                                  NM_VPN_PLUGIN_UI_INTERFACE_DESC);
 
 	g_object_class_override_property (object_class,
-									  NM_VPN_PLUGIN_UI_INTERFACE_PROP_SERVICE,
-									  NM_VPN_PLUGIN_UI_INTERFACE_SERVICE);
+	                                  NM_VPN_PLUGIN_UI_INTERFACE_PROP_SERVICE,
+	                                  NM_VPN_PLUGIN_UI_INTERFACE_SERVICE);
 }
 
 static void
