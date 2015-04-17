@@ -1313,6 +1313,8 @@ main (int argc, char *argv[])
 	GMainLoop *main_loop;
 	gboolean persist = FALSE;
 	GOptionContext *opt_ctx = NULL;
+	char *conntrack_module[] = { "/sbin/modprobe", "nf_conntrack_pptp", NULL };
+	GError *error = NULL;
 
 	GOptionEntry options[] = {
 		{ "persist", 0, 0, G_OPTION_ARG_NONE, &persist, N_("Don't quit when VPN connection terminates"), NULL },
@@ -1358,6 +1360,16 @@ main (int argc, char *argv[])
 
 	if (!persist)
 		g_signal_connect (plugin, "quit", G_CALLBACK (quit_mainloop), main_loop);
+
+	/* Newer kernels require nf_conntrack_pptp kernel module so that PPTP
+	 * worked correctly. Load the module now. Ignore errors, the module
+	 * might not exist (older kernels).
+	 * https://bugzilla.redhat.com/show_bug.cgi?id=1187328
+	 */
+	if (!g_spawn_sync (NULL, conntrack_module, NULL, 0, NULL, NULL, NULL, NULL, NULL, &error)) {
+		g_warning ("modprobing nf_conntrack_pptp failed: %s", error->message);
+		g_error_free (error);
+	}
 
 	g_main_loop_run (main_loop);
 
