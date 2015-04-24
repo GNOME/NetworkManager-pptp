@@ -18,6 +18,7 @@ libnm_pptp_properties_la_CFLAGS =                       \
         $(GLIB_CFLAGS)                                  \
         $(GTK_CFLAGS)                                   \
         $(NM_CFLAGS)                                    \
+        $(NMGTK_CFLAGS)                                 \
         -DICONDIR=\""$(datadir)/pixmaps"\"              \
         -DUIDIR=\""$(uidir)"\"                          \
         -DLOCALEDIR=\""$(datadir)/locale"\"             \
@@ -26,7 +27,8 @@ libnm_pptp_properties_la_CFLAGS =                       \
 
 libnm_pptp_properties_la_LIBADD = \
         $(GTK_LIBS) \
-        $(NM_LIBS)
+        $(NM_LIBS) \
+        $(NMGTK_LIBS)
 
 libnm_pptp_properties_la_LDFLAGS =   \
         -avoid-version
