@@ -1,4 +1,16 @@
 =======================================================
+network-manager-pptp-1.0.2
+Overview of changes since network-manager-pptp-1.0
+=======================================================
+
+This is a new stable release of network-manager-pptp.  Notable changes include:
+
+* Update the UI to use modern GTK witgets instead of deprecated ones
+* Added Bosnian translation
+* Updated Basque translation
+
+
+=======================================================
 network-manager-pptp-1.0
 Overview of changes since network-manager-pptp-0.9.10
 =======================================================
