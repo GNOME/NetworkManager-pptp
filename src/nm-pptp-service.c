@@ -244,22 +244,13 @@ _service_cache_credentials (NMPptpPppService *self,
 
 	/* Username; try PPTP specific username first, then generic username */
 	username = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_USER);
-	if (username && strlen (username)) {
-		/* FIXME: This check makes about 0 sense. */
-		if (!username || !strlen (username)) {
-			g_set_error_literal (error,
-			                     NM_VPN_PLUGIN_ERROR,
-			                     NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
-			                    _("Invalid VPN username."));
-			return FALSE;
-		}
-	} else {
+	if (!username || !*username) {
 		username = nm_setting_vpn_get_user_name (s_vpn);
-		if (!username || !strlen (username)) {
+		if (!username || !*username) {
 			g_set_error_literal (error,
 			                     NM_VPN_PLUGIN_ERROR,
 			                     NM_VPN_PLUGIN_ERROR_CONNECTION_INVALID,
-			                     _("Missing VPN username."));
+			                     _("Missing or invalid VPN username."));
 			return FALSE;
 		}
 	}
