@@ -37,9 +37,6 @@
 #define NM_IS_PPTP_PLUGIN_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), NM_TYPE_PPTP_PLUGIN))
 #define NM_PPTP_PLUGIN_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), NM_TYPE_PPTP_PLUGIN, NMPptpPluginClass))
 
-/* For the pppd plugin <-> VPN plugin service */
-#define DBUS_TYPE_G_MAP_OF_VARIANT (dbus_g_type_get_map ("GHashTable", G_TYPE_STRING, G_TYPE_VALUE))
-
 typedef struct {
 	NMVpnServicePlugin parent;
 } NMPptpPlugin;
