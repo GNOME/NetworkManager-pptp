@@ -22,13 +22,31 @@ nm_pptp_service_SOURCES = \
 	nm-pptp-service.c \
 	nm-pptp-service.h
 
-nm-pptp-pppd-service-glue.h: $(top_srcdir)/src/nm-pptp-pppd-service.xml
-	dbus-binding-tool --prefix=nm_pptp_pppd_service --mode=glib-server --output=$@ $<
+
+# D-Bus stuff
+noinst_LTLIBRARIES = libnm-pptp-pppd-service-dbus.la
+
+nodist_libnm_pptp_pppd_service_dbus_la_SOURCES = \
+	nm-pptp-pppd-service-dbus.c \
+	nm-pptp-pppd-service-dbus.h
+
+libnm_pptp_pppd_service_dbus_la_CPPFLAGS = $(filter-out -DGLIB_VERSION_MAX_ALLOWED%,$(AM_CPPFLAGS))
+
+nm-pptp-pppd-service-dbus.h: $(top_srcdir)/src/nm-pptp-pppd-service.xml
+	$(AM_V_GEN) gdbus-codegen \
+		--generate-c-code $(basename $@) \
+		--c-namespace NMDBus \
+		--interface-prefix org.freedesktop \
+		$<
+
+nm-pptp-pppd-service-dbus.c:
+	@true
 
 nm_pptp_service_LDADD = \
 	$(DBUS_GLIB_LIBS) \
 	$(GLIB_LIBS) \
-	$(NM_LIBS)
+	$(NM_LIBS) \
+	libnm-pptp-pppd-service-dbus.la
 
 pppd_plugindir = $(PPPD_PLUGIN_DIR)
 pppd_plugin_LTLIBRARIES = nm-pptp-pppd-plugin.la
@@ -49,7 +67,7 @@ nm_pptp_pppd_plugin_la_LIBADD = \
 	$(GLIB_LIBS) \
 	$(NM_LIBS)
 
-BUILT_SOURCES = nm-pptp-pppd-service-glue.h
+BUILT_SOURCES = nm-pptp-pppd-service-dbus.h nm-pptp-pppd-service-dbus.c
 
 CLEANFILES = $(BUILT_SOURCES)
 
