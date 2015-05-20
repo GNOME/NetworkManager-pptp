@@ -63,10 +63,9 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
 IT_PROG_INTLTOOL([0.35])
 AM_GLIB_GNU_GETTEXT
 
-PKG_CHECK_MODULES(GLIB, glib-2.0 >= 2.32)
+# gio-unix will require glib and gio
+PKG_CHECK_MODULES(GLIB, gio-unix-2.0 >= 2.32)
 GLIB_CFLAGS="$GLIB_CFLAGS -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_32"
-
-PKG_CHECK_MODULES(DBUS_GLIB, dbus-glib-1 >= 0.74)
 
 if test x"$with_gnome" != xno; then
 	PKG_CHECK_MODULES(GTK, gtk+-3.0 >= 3.4)
