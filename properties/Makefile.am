@@ -1,7 +1,7 @@
 plugindir = $(libdir)/NetworkManager
 plugin_LTLIBRARIES = libnm-pptp-properties.la
 
-INCLUDES = -I${top_srcdir}
+AM_CPPFLAGS = -I${top_srcdir}
 
 libnm_pptp_properties_la_SOURCES = \
 	nm-pptp.c \
