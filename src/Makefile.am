@@ -1,9 +1,8 @@
-INCLUDES = -I${top_srcdir}
-
 AM_CPPFLAGS =							\
-	$(DBUS_GLIB_CFLAGS)						\
+	$(DBUS_GLIB_CFLAGS)					\
 	$(GLIB_CFLAGS)						\
-	$(NM_CFLAGS)				\
+	$(NM_CFLAGS)						\
+	-I${top_srcdir}						\
 	-DG_DISABLE_DEPRECATED					\
 	-DBINDIR=\"$(bindir)\"					\
 	-DPREFIX=\""$(prefix)"\"				\
@@ -11,7 +10,7 @@ AM_CPPFLAGS =							\
 	-DNM_VERSION="\"$(VERSION)\""				\
 	-DLIBDIR=\""$(libdir)"\"				\
 	-DLIBEXECDIR=\""$(libexecdir)"\"			\
-	-DLOCALSTATEDIR=\""$(localstatedir)"\"		 	\
+	-DLOCALSTATEDIR=\""$(localstatedir)"\"			\
 	-DDATADIR=\"$(datadir)\"				\
 	-DNM_PPTP_LOCALEDIR=\"$(datadir)/locale\"		\
 	-DPLUGINDIR=\"$(PPPD_PLUGIN_DIR)\" 
