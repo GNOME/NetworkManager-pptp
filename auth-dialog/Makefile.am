@@ -1,5 +1,3 @@
-INCLUDES = -I${top_srcdir}
-
 libexec_PROGRAMS = nm-pptp-auth-dialog
 
 nm_pptp_auth_dialog_CPPFLAGS =			\
@@ -8,6 +6,7 @@ nm_pptp_auth_dialog_CPPFLAGS =			\
 	$(GTK_CFLAGS)				\
 	$(NMGTK_CFLAGS)				\
 	$(LIBSECRET_CFLAGS)			\
+	-I${top_srcdir}				\
 	-DICONDIR=\""$(datadir)/pixmaps"\"	\
 	-DUIDIR=\""$(uidir)"\"			\
 	-DBINDIR=\""$(bindir)"\"		\
