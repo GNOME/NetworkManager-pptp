@@ -34,7 +34,7 @@
 #include "nm-pptp-service.h"
 #include "nm-ppp-status.h"
 
-#include <NetworkManager.h>
+#include <nm-utils.h>
 
 int plugin_init (void);
 
