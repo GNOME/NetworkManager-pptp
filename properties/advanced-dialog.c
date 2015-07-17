@@ -35,7 +35,14 @@
 #include <glib.h>
 #include <glib/gi18n-lib.h>
 
+#ifdef NM_PPTP_OLD
+#define NM_VPN_LIBNM_COMPAT
+#include <nm-connection.h>
+#include <nm-setting-vpn.h>
+
+#else /* !NM_PPTP_OLD */
 #include <NetworkManager.h>
+#endif
 
 #include "advanced-dialog.h"
 #include "nm-pptp.h"

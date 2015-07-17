@@ -34,17 +34,30 @@
 #include <string.h>
 #include <gtk/gtk.h>
 
+#ifdef NM_PPTP_OLD
+#define NM_VPN_LIBNM_COMPAT
+#include <nm-vpn-plugin-ui-interface.h>
+#include <nm-setting-vpn.h>
+#include <nm-setting-connection.h>
+#include <nm-setting-ip4-config.h>
+#include <nm-ui-utils.h>
+
+#define PPTP_PLUGIN_NAME    _("Point-to-Point Tunneling Protocol (PPTP)")
+#define PPTP_PLUGIN_DESC    _("Compatible with Microsoft and other PPTP VPN servers.")
+
+#else /* !NM_PPTP_OLD */
+
 #include <NetworkManager.h>
 #include <nma-ui-utils.h>
+
+#define PPTP_PLUGIN_NAME    _("pptp")
+#define PPTP_PLUGIN_DESC    _("Point-to-Point Tunneling Protocol (PPTP)")
+#endif
 
 #include "nm-pptp-service-defines.h"
 #include "nm-pptp.h"
 #include "import-export.h"
 #include "advanced-dialog.h"
-
-#define PPTP_PLUGIN_NAME    _("Point-to-Point Tunneling Protocol (PPTP)")
-#define PPTP_PLUGIN_DESC    _("Compatible with Microsoft and other PPTP VPN servers.")
-#define PPTP_PLUGIN_SERVICE NM_DBUS_SERVICE_PPTP
 
 typedef void (*ChangedCallback) (GtkWidget *widget, gpointer user_data);
 
@@ -686,7 +699,7 @@ get_property (GObject *object, guint prop_id,
 		g_value_set_string (value, PPTP_PLUGIN_DESC);
 		break;
 	case PROP_SERVICE:
-		g_value_set_string (value, PPTP_PLUGIN_SERVICE);
+		g_value_set_string (value, NM_DBUS_SERVICE_PPTP);
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);

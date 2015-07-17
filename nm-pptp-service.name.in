@@ -3,7 +3,10 @@ name=pptp
 service=org.freedesktop.NetworkManager.pptp
 program=@LIBEXECDIR@/nm-pptp-service
 
+[libnm]
+plugin=@PLUGINDIR@/libnm-pptp-properties
+
 [GNOME]
 auth-dialog=@LIBEXECDIR@/nm-pptp-auth-dialog
-properties=@PLUGINDIR@/libnm-pptp-properties
+properties=@PLUGINDIR@/libnm-pptp-properties-old
 supports-external-ui-mode=true
