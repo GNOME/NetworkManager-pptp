@@ -4,7 +4,7 @@ nm_pptp_auth_dialog_CPPFLAGS =			\
 	$(LIBNM_GLIB_CFLAGS)			\
 	$(GLIB_CFLAGS)				\
 	$(GTK_CFLAGS)				\
-	$(NMGTK_CFLAGS)				\
+	$(LIBNM_GTK_CFLAGS)			\
 	$(LIBSECRET_CFLAGS)			\
 	-I${top_srcdir}				\
 	-DICONDIR=\""$(datadir)/pixmaps"\"	\
@@ -19,7 +19,7 @@ nm_pptp_auth_dialog_SOURCES = \
 nm_pptp_auth_dialog_LDADD = \
 	$(LIBNM_GLIB_LIBS) \
 	$(GTK_LIBS) \
-	$(NMGTK_LIBS) \
+	$(LIBNM_GTK_LIBS) \
 	$(LIBSECRET_LIBS)
 
 CLEANFILES = *~

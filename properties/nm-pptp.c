@@ -35,6 +35,7 @@
 #include <gtk/gtk.h>
 
 #include <NetworkManager.h>
+#include <nma-ui-utils.h>
 
 #include "nm-pptp-service-defines.h"
 #include "nm-pptp.h"

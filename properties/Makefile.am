@@ -17,7 +17,7 @@ ui_DATA = nm-pptp-dialog.ui
 libnm_pptp_properties_la_CFLAGS =                       \
         $(GLIB_CFLAGS)                                  \
         $(GTK_CFLAGS)                                   \
-        $(NMGTK_CFLAGS)                                 \
+        $(LIBNMA_CFLAGS)                                \
         $(LIBNM_CFLAGS)                                 \
 	-I$(top_srcdir)/src				\
         -DICONDIR=\""$(datadir)/pixmaps"\"              \
@@ -29,7 +29,7 @@ libnm_pptp_properties_la_CFLAGS =                       \
 libnm_pptp_properties_la_LIBADD = \
         $(GTK_LIBS) \
         $(LIBNM_LIBS) \
-        $(NMGTK_LIBS)
+        $(LIBNMA_LIBS)
 
 libnm_pptp_properties_la_LDFLAGS =   \
         -avoid-version

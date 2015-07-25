@@ -38,7 +38,7 @@
 
 #include "import-export.h"
 #include "nm-pptp.h"
-#include "../src/nm-pptp-service.h"
+#include "../src/nm-pptp-service-defines.h"
 
 NMConnection *
 do_import (const char *path, char **lines, GError **error)
