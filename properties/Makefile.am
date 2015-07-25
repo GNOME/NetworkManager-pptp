@@ -1,5 +1,8 @@
 plugindir = $(libdir)/NetworkManager
-plugin_LTLIBRARIES = libnm-pptp-properties.la libnm-pptp-properties-old.la
+plugin_LTLIBRARIES = libnm-pptp-properties.la
+if WITH_LIBNM_GLIB
+plugin_LTLIBRARIES += libnm-pptp-properties-old.la
+endif
 
 AM_CPPFLAGS = -I${top_srcdir}
 
