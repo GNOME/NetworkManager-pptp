@@ -44,7 +44,6 @@
 #include <netdb.h>
 
 #include <glib/gi18n.h>
-#include <dbus/dbus.h>
 
 #include <NetworkManager.h>
 
@@ -293,15 +292,14 @@ nm_pptp_ppp_service_new (const char *gwaddr,
 	bus = g_bus_get_sync (G_BUS_TYPE_SYSTEM, NULL, error);
 	if (!bus)
 		return NULL;
-	dbus_connection_set_change_sigpipe (TRUE);
 
 	proxy = g_dbus_proxy_new_sync (bus,
 	                               G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES |
 	                               G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS,
 	                               NULL,
-	                               DBUS_SERVICE_DBUS,
-	                               DBUS_PATH_DBUS,
-	                               DBUS_INTERFACE_DBUS,
+	                               "org.freedesktop.DBus",
+	                               "/org/freedesktop/DBus",
+	                               "org.freedesktop.DBus",
 	                               NULL, error);
 	g_assert (proxy);
 	ret = g_dbus_proxy_call_sync (proxy,

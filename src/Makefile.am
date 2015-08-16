@@ -1,5 +1,4 @@
 AM_CPPFLAGS =							\
-	$(DBUS_GLIB_CFLAGS)					\
 	$(GLIB_CFLAGS)						\
 	$(LIBNM_CFLAGS)						\
 	-I${top_srcdir}						\
@@ -43,7 +42,6 @@ nm-pptp-pppd-service-dbus.c:
 	@true
 
 nm_pptp_service_LDADD = \
-	$(DBUS_GLIB_LIBS) \
 	$(GLIB_LIBS) \
 	$(LIBNM_LIBS) \
 	libnm-pptp-pppd-service-dbus.la
@@ -56,14 +54,12 @@ nm_pptp_pppd_plugin_la_SOURCES = \
 	nm-ppp-status.h
 
 nm_pptp_pppd_plugin_la_CPPFLAGS = \
-	$(DBUS_GLIB_CFLAGS) \
 	$(GLIB_CFLAGS) \
 	$(LIBNM_CFLAGS)
 
 nm_pptp_pppd_plugin_la_LDFLAGS = -module -avoid-version
 
 nm_pptp_pppd_plugin_la_LIBADD = \
-	$(DBUS_GLIB_LIBS) \
 	$(GLIB_LIBS) \
 	$(LIBNM_LIBS)
 
