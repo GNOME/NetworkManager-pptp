@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-30 17:44+0200\n"
-"PO-Revision-Date: 2015-08-30 17:45+0200\n"
+"POT-Creation-Date: 2015-08-31 21:25+0200\n"
+"PO-Revision-Date: 2015-08-31 21:27+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -27,58 +27,58 @@ msgstr ""
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
 #.
-#: ../auth-dialog/main.c:155
+#: ../auth-dialog/main.c:154
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr ""
 "Aby uzyskać dostęp do wirtualnej sieci prywatnej „%s”, należy się "
 "uwierzytelnić."
 
-#: ../auth-dialog/main.c:164 ../auth-dialog/main.c:184
+#: ../auth-dialog/main.c:163 ../auth-dialog/main.c:183
 msgid "Authenticate VPN"
 msgstr "Uwierzytelnianie VPN"
 
-#: ../auth-dialog/main.c:166 ../properties/nm-pptp-dialog.ui.h:43
+#: ../auth-dialog/main.c:165 ../properties/nm-pptp-dialog.ui.h:43
 msgid "Password:"
 msgstr "Hasło:"
 
-#: ../properties/advanced-dialog.c:185
+#: ../properties/advanced-dialog.c:191
 msgid "All Available (Default)"
 msgstr "Wszystkie dostępne (domyślnie)"
 
-#: ../properties/advanced-dialog.c:189
+#: ../properties/advanced-dialog.c:195
 msgid "128-bit (most secure)"
 msgstr "128-bitowe (najbardziej bezpieczne)"
 
-#: ../properties/advanced-dialog.c:198
+#: ../properties/advanced-dialog.c:204
 msgid "40-bit (less secure)"
 msgstr "40-bitowe (mniej bezpieczne)"
 
-#: ../properties/advanced-dialog.c:302
+#: ../properties/advanced-dialog.c:308
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:315
+#: ../properties/advanced-dialog.c:321
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:327
+#: ../properties/advanced-dialog.c:333
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:339
+#: ../properties/advanced-dialog.c:345
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:352
+#: ../properties/advanced-dialog.c:358
 msgid "EAP"
 msgstr "EAP"
 
-#: ../properties/nm-pptp.c:48
+#: ../properties/nm-pptp.c:56
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Protokół tunelowania Point-to-Point (PPTP)"
 
-#: ../properties/nm-pptp.c:49
+#: ../properties/nm-pptp.c:57
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Zgodny z serwerami firmy Microsoft i innymi serwerami VPN PPTP."
 
@@ -280,111 +280,107 @@ msgstr "Nazwa użytkownika:"
 msgid "Ad_vanced..."
 msgstr "Zaa_wansowane…"
 
-#: ../src/nm-pptp-service.c:161
+#: ../src/nm-pptp-service.c:166
 #, c-format
 msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
 msgstr "nie można skonwertować adresu IP bramy VPN PPTP „%s” (%d)"
 
-#: ../src/nm-pptp-service.c:179
+#: ../src/nm-pptp-service.c:184
 #, c-format
 msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
 msgstr "nie można wyszukać adresu IP bramy VPN PPTP „%s” (%d)"
 
-#: ../src/nm-pptp-service.c:203
+#: ../src/nm-pptp-service.c:208
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway '%s'"
 msgstr "nie zwrócono używalnych adresów dla bramy VPN PPTP „%s”"
 
-#: ../src/nm-pptp-service.c:214
+#: ../src/nm-pptp-service.c:219
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 msgstr "nie zwrócono używalnych adresów dla bramy VPN PPTP „%s”(%d)"
 
-#: ../src/nm-pptp-service.c:241
+#: ../src/nm-pptp-service.c:246
 msgid "Could not find secrets (connection invalid, no vpn setting)."
 msgstr ""
 "Nie można odnaleźć haseł (połączenie jest nieprawidłowe, brak ustawień VPN)."
 
-#: ../src/nm-pptp-service.c:253
-msgid "Invalid VPN username."
-msgstr "Nieprawidłowa nazwa użytkownika VPN."
+#: ../src/nm-pptp-service.c:258
+msgid "Missing or invalid VPN username."
+msgstr "Brak nazwy użytkownika VPN lub jest nieprawidłowa."
 
-#: ../src/nm-pptp-service.c:262
-msgid "Missing VPN username."
-msgstr "Brak nazwy użytkownika VPN."
-
-#: ../src/nm-pptp-service.c:272
+#: ../src/nm-pptp-service.c:268
 msgid "Missing or invalid VPN password."
 msgstr "Brak hasła VPN lub jest nieprawidłowe."
 
-#: ../src/nm-pptp-service.c:430
+#: ../src/nm-pptp-service.c:460
 msgid "No cached credentials."
 msgstr "Brak danych uwierzytelniających w pamięci podręcznej."
 
-#: ../src/nm-pptp-service.c:577
+#: ../src/nm-pptp-service.c:616
 #, c-format
 msgid "invalid gateway '%s'"
 msgstr "nieprawidłowa brama „%s”"
 
-#: ../src/nm-pptp-service.c:591
+#: ../src/nm-pptp-service.c:630
 #, c-format
 msgid "invalid integer property '%s'"
 msgstr "nieprawidłowa własność liczby całkowitej „%s”"
 
-#: ../src/nm-pptp-service.c:601
+#: ../src/nm-pptp-service.c:640
 #, c-format
 msgid "invalid boolean property '%s' (not yes or no)"
 msgstr ""
 "nieprawidłowa własność zmiennej logicznej „%s” (nie wynosi „yes” lub „no”)"
 
-#: ../src/nm-pptp-service.c:608
+#: ../src/nm-pptp-service.c:647
 #, c-format
 msgid "unhandled property '%s' type %s"
 msgstr "nieobsługiwana własność „%s” typu „%s”"
 
-#: ../src/nm-pptp-service.c:619
+#: ../src/nm-pptp-service.c:658
 #, c-format
 msgid "property '%s' invalid or not supported"
 msgstr "własność „%s” jest nieprawidłowa lub nieobsługiwana"
 
-#: ../src/nm-pptp-service.c:637
+#: ../src/nm-pptp-service.c:676
 msgid "No VPN configuration options."
 msgstr "Brak opcji konfiguracji VPN."
 
-#: ../src/nm-pptp-service.c:657
+#: ../src/nm-pptp-service.c:696
 #, c-format
 msgid "Missing required option '%s'."
 msgstr "Brak wymaganej opcji „%s”."
 
-#: ../src/nm-pptp-service.c:677
+#: ../src/nm-pptp-service.c:716
 msgid "No VPN secrets!"
 msgstr "Brak haseł VPN."
 
-#: ../src/nm-pptp-service.c:835
+#: ../src/nm-pptp-service.c:874
 msgid "Could not find pptp client binary."
 msgstr "Nie można odnaleźć pliku binarnego pptp."
 
-#: ../src/nm-pptp-service.c:848
+#: ../src/nm-pptp-service.c:887
 msgid "Missing VPN gateway."
 msgstr "Brak bramy VPN."
 
-#: ../src/nm-pptp-service.c:1009
+#: ../src/nm-pptp-service.c:1048
 msgid "Could not find the pppd binary."
 msgstr "Nie można odnaleźć pliku binarnego pppd."
 
-#: ../src/nm-pptp-service.c:1139
+#: ../src/nm-pptp-service.c:1161
 msgid "Invalid or missing PPTP gateway."
 msgstr "Brak bramy PPTP lub jest nieprawidłowa."
 
-#: ../src/nm-pptp-service.c:1320
+#: ../src/nm-pptp-service.c:1347
 msgid "Don't quit when VPN connection terminates"
 msgstr "Nie kończy działania, kiedy połączenie VPN jest kończone"
 
-#: ../src/nm-pptp-service.c:1321
+#: ../src/nm-pptp-service.c:1348
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Włącza więcej komunikatów debugowania (może wyjawić hasła)"
 
-#: ../src/nm-pptp-service.c:1344
+#: ../src/nm-pptp-service.c:1371
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
