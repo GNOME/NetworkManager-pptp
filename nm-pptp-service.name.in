@@ -3,6 +3,9 @@ name=pptp
 service=org.freedesktop.NetworkManager.pptp
 program=@LIBEXECDIR@/nm-pptp-service
 
+[libnm]
+plugin=@PLUGINDIR@/libnm-vpn-plugin-pptp.so
+
 [GNOME]
 auth-dialog=@LIBEXECDIR@/nm-pptp-auth-dialog
 properties=@PLUGINDIR@/libnm-pptp-properties
