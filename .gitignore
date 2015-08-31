@@ -32,3 +32,5 @@ nm-pptp-service.name
 nm-pptp.desktop
 src/nm-pptp-pppd-service-glue.h
 src/nm-pptp-service
+
+/NetworkManager-pptp*.tar*
