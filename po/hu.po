@@ -2,7 +2,7 @@
 # Copyright (C) 2006, 2007, 2008, 2010, Free Software Foundation, Inc.
 # This file is distributed under the same license as the network-manager-pptp package.
 #
-# Gabor Kelemen <kelemeng at gnome dot hu>, 2006, 2007, 2008, 2010, 2012.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2006, 2007, 2008, 2010, 2012, 2015.
 # Mate Ory <orymate at ubuntu dot com>, 2011.
 # Balázs Úr <urbalazs at gmail dot com>, 2015.
 msgid ""
@@ -10,149 +10,90 @@ msgstr ""
 "Project-Id-Version: network-manager-pptp master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2015-03-09 09:37+0000\n"
-"PO-Revision-Date: 2015-03-15 11:22+0100\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
-"Language-Team: Hungarian <openscope at googlegroups dot com>\n"
+"POT-Creation-Date: 2015-09-01 23:15+0000\n"
+"PO-Revision-Date: 2015-09-02 11:52+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"Language-Team: Hungarian <openscope at gmail dot com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
 #.
-#: ../auth-dialog/main.c:155
+#: ../auth-dialog/main.c:154
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr "Azonosítania kell magát a(z) „%s” virtuális magánhálózat eléréséhez."
 
-#: ../auth-dialog/main.c:164 ../auth-dialog/main.c:184
+#: ../auth-dialog/main.c:163 ../auth-dialog/main.c:183
 msgid "Authenticate VPN"
 msgstr "VPN-hitelesítés"
 
-#: ../auth-dialog/main.c:166 ../properties/nm-pptp-dialog.ui.h:12
+#: ../auth-dialog/main.c:165 ../properties/nm-pptp-dialog.ui.h:43
 msgid "Password:"
 msgstr "Jelszó:"
 
-#: ../nm-pptp.desktop.in.h:1
-msgid "PPTP VPN Connection Manager"
-msgstr "PPTP VPN-kapcsolatkezelő"
-
-#: ../nm-pptp.desktop.in.h:2
-msgid "Add, Remove, and Edit PPTP VPN Connections"
-msgstr "PPTP VPN-kapcsolatok hozzáadása, szerkesztése és eltávolítása"
-
-#: ../properties/advanced-dialog.c:185
+#: ../properties/advanced-dialog.c:191
 msgid "All Available (Default)"
 msgstr "Mind elérhető (alapértelmezett)"
 
-#: ../properties/advanced-dialog.c:189
+#: ../properties/advanced-dialog.c:195
 msgid "128-bit (most secure)"
 msgstr "128 bites (legbiztonságosabb)"
 
-#: ../properties/advanced-dialog.c:198
+#: ../properties/advanced-dialog.c:204
 msgid "40-bit (less secure)"
 msgstr "40 bites (kevésbé biztonságos)"
 
-#: ../properties/advanced-dialog.c:302
+#: ../properties/advanced-dialog.c:308
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:315
+#: ../properties/advanced-dialog.c:321
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:327
+#: ../properties/advanced-dialog.c:333
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:339
+#: ../properties/advanced-dialog.c:345
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:352
+#: ../properties/advanced-dialog.c:358
 msgid "EAP"
 msgstr "EAP"
+
+#: ../properties/nm-pptp.c:56
+msgid "Point-to-Point Tunneling Protocol (PPTP)"
+msgstr "Ponttól pontig alagutazási protokoll (PPTP)"
+
+#: ../properties/nm-pptp.c:57
+msgid "Compatible with Microsoft and other PPTP VPN servers."
+msgstr "Kompatibilis a Microsoft és más PPTP VPN-kiszolgálókkal."
 
 #: ../properties/nm-pptp-dialog.ui.h:1
 msgid "Default"
 msgstr "Alapértelmezett"
 
 #: ../properties/nm-pptp-dialog.ui.h:2
-msgid "<b>General</b>"
-msgstr "<b>Általános</b>"
-
-#: ../properties/nm-pptp-dialog.ui.h:3
-msgid ""
-"PPTP server IP or name.\n"
-"config: the first parameter of pptp"
-msgstr ""
-"PPTP kiszolgáló IP-címe vagy neve.\n"
-"config: a pptp első paramétere"
-
-#: ../properties/nm-pptp-dialog.ui.h:5
-msgid "_Gateway:"
-msgstr "Á_tjáró:"
-
-#: ../properties/nm-pptp-dialog.ui.h:6
-msgid "<b>Optional</b>"
-msgstr "<b>Opcionális</b>"
-
-#: ../properties/nm-pptp-dialog.ui.h:7
-msgid ""
-"Append the domain name <domain> to the local host name for authentication "
-"purposes.\n"
-"config: domain <domain>"
-msgstr ""
-"A <tartomány> tartománynév hozzáfűzése a helyi gépnévhez hitelesítési "
-"céllal.\n"
-"config: domain <tartomány>"
-
-#: ../properties/nm-pptp-dialog.ui.h:9
-msgid "NT Domain:"
-msgstr "NT tartomány:"
-
-#: ../properties/nm-pptp-dialog.ui.h:10
-msgid "Show password"
-msgstr "Jelszó megjelenítése"
-
-#: ../properties/nm-pptp-dialog.ui.h:11
-msgid "Password passed to PPTP when prompted for it."
-msgstr "A PPTP-nek átadott jelszó, amikor kéri."
-
-#: ../properties/nm-pptp-dialog.ui.h:13
-msgid ""
-"Set the name used for authenticating the local system to the peer to "
-"<name>.\n"
-"config: user <name>"
-msgstr ""
-"A helyi rendszer partner felé hitelesítéséhez használt <név> megadása.\n"
-"config: user <név>"
-
-#: ../properties/nm-pptp-dialog.ui.h:15
-msgid "User name:"
-msgstr "Felhasználónév:"
-
-#: ../properties/nm-pptp-dialog.ui.h:16
-msgid "Ad_vanced..."
-msgstr "S_peciális…"
-
-#: ../properties/nm-pptp-dialog.ui.h:17
 msgid "PPTP Advanced Options"
 msgstr "PPTP speciális beállításai"
 
-#: ../properties/nm-pptp-dialog.ui.h:18
+#: ../properties/nm-pptp-dialog.ui.h:3
 msgid "<b>Authentication</b>"
 msgstr "<b>Hitelesítés</b>"
 
-#: ../properties/nm-pptp-dialog.ui.h:19
+#: ../properties/nm-pptp-dialog.ui.h:4
 msgid "Allow the following authentication methods:"
 msgstr "A következő hitelesítési módszerek engedélyezése:"
 
-#: ../properties/nm-pptp-dialog.ui.h:20
+#: ../properties/nm-pptp-dialog.ui.h:5
 msgid ""
 "Allow/disable authentication methods.\n"
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
@@ -160,15 +101,15 @@ msgstr ""
 "Hitelesítési módszerek engedélyezése/letiltása.\n"
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
-#: ../properties/nm-pptp-dialog.ui.h:22
+#: ../properties/nm-pptp-dialog.ui.h:7
 msgid "<b>Security and Compression</b>"
 msgstr "<b>Biztonság és tömörítés</b>"
 
-#: ../properties/nm-pptp-dialog.ui.h:23
+#: ../properties/nm-pptp-dialog.ui.h:8
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "_Ponttól pontig (MPPE) titkosítás használata"
 
-#: ../properties/nm-pptp-dialog.ui.h:24
+#: ../properties/nm-pptp-dialog.ui.h:9
 msgid ""
 "Note: MPPE encryption is only available with MSCHAP authentication methods. "
 "To enable this checkbox, select one or more of the MSCHAP authentication "
@@ -178,11 +119,11 @@ msgstr ""
 "el. Ezen négyzet engedélyezéséhez válassza ki legalább az egyik MSCHAP "
 "hitelesítési módot: MSCHAP vagy MSCHAPv2."
 
-#: ../properties/nm-pptp-dialog.ui.h:25
+#: ../properties/nm-pptp-dialog.ui.h:10
 msgid "_Security:"
 msgstr "Bi_ztonság:"
 
-#: ../properties/nm-pptp-dialog.ui.h:26
+#: ../properties/nm-pptp-dialog.ui.h:11
 msgid ""
 "Require the use of MPPE, with 40/128-bit encryption or all.\n"
 "config: require-mppe, require-mppe-128 or require-mppe-40"
@@ -191,11 +132,11 @@ msgstr ""
 "minddel.\n"
 "config: require-mppe, require-mppe-128 vagy require-mppe-40"
 
-#: ../properties/nm-pptp-dialog.ui.h:28
+#: ../properties/nm-pptp-dialog.ui.h:13
 msgid "Allow st_ateful encryption"
 msgstr "Állap_ottartó tömörítés engedélyezése"
 
-#: ../properties/nm-pptp-dialog.ui.h:29
+#: ../properties/nm-pptp-dialog.ui.h:14
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first.\n"
 "config: mppe-stateful (when checked)"
@@ -204,11 +145,11 @@ msgstr ""
 "elsőként lesz megpróbálva. \n"
 "config: mppe-stateful (ha be van jelölve)"
 
-#: ../properties/nm-pptp-dialog.ui.h:31
+#: ../properties/nm-pptp-dialog.ui.h:16
 msgid "Allow _BSD data compression"
 msgstr "B_SD tömörítés engedélyezése"
 
-#: ../properties/nm-pptp-dialog.ui.h:32
+#: ../properties/nm-pptp-dialog.ui.h:17
 msgid ""
 "Allow/disable BSD-Compress compression.\n"
 "config: nobsdcomp (when unchecked)"
@@ -216,11 +157,11 @@ msgstr ""
 "BSD-Compress tömörítés engedélyezése/letiltása. \n"
 "config: nobsdcomp (ha nincs bejelölve)"
 
-#: ../properties/nm-pptp-dialog.ui.h:34
+#: ../properties/nm-pptp-dialog.ui.h:19
 msgid "Allow _Deflate data compression"
 msgstr "_Deflate tömörítés engedélyezése"
 
-#: ../properties/nm-pptp-dialog.ui.h:35
+#: ../properties/nm-pptp-dialog.ui.h:20
 msgid ""
 "Allow/disable Deflate compression.\n"
 "config: nodeflate (when unchecked)"
@@ -228,11 +169,11 @@ msgstr ""
 "Deflate tömörítés engedélyezése/letiltása. \n"
 "config: nodeflate (ha nincs bejelölve)"
 
-#: ../properties/nm-pptp-dialog.ui.h:37
+#: ../properties/nm-pptp-dialog.ui.h:22
 msgid "Use TCP _header compression"
 msgstr "TPC _fejléctömörítés használata"
 
-#: ../properties/nm-pptp-dialog.ui.h:38
+#: ../properties/nm-pptp-dialog.ui.h:23
 msgid ""
 "Allow/disable Van Jacobson style TCP/IP header compression in both the "
 "transmit and the receive directions.\n"
@@ -242,15 +183,15 @@ msgstr ""
 "és fogadás irányokban is. \n"
 "config: novj (ha nincs bejelölve)"
 
-#: ../properties/nm-pptp-dialog.ui.h:40
+#: ../properties/nm-pptp-dialog.ui.h:25
 msgid "<b>Echo</b>"
 msgstr "<b>Visszhang</b>"
 
-#: ../properties/nm-pptp-dialog.ui.h:41
+#: ../properties/nm-pptp-dialog.ui.h:26
 msgid "Send PPP _echo packets"
 msgstr "PPP _visszhangcsomagok küldése"
 
-#: ../properties/nm-pptp-dialog.ui.h:42
+#: ../properties/nm-pptp-dialog.ui.h:27
 msgid ""
 "Send LCP echo-requests to find out whether peer is alive.\n"
 "config: lcp-echo-failure and lcp-echo-interval"
@@ -258,16 +199,15 @@ msgstr ""
 "LCP echo kérések küldése a partner elérhetőségének megállapításához.\n"
 "config: lcp-echo-failure és lcp-echo-interval"
 
-#: ../properties/nm-pptp-dialog.ui.h:44
-#| msgid "<b>Echo</b>"
+#: ../properties/nm-pptp-dialog.ui.h:29
 msgid "<b>Misc</b>"
 msgstr "<b>Egyéb</b>"
 
-#: ../properties/nm-pptp-dialog.ui.h:45
+#: ../properties/nm-pptp-dialog.ui.h:30
 msgid "Use custom _unit number:"
 msgstr "Egyéni _egységszám használata:"
 
-#: ../properties/nm-pptp-dialog.ui.h:46
+#: ../properties/nm-pptp-dialog.ui.h:31
 msgid ""
 "Enable custom index for ppp<n> device name.\n"
 "config: unit <n>"
@@ -275,138 +215,195 @@ msgstr ""
 "Egyéni index engedélyezése a ppp<n> eszköznévhez.\n"
 "beállítás: egység <n>"
 
-#: ../properties/nm-pptp.c:49
-msgid "Point-to-Point Tunneling Protocol (PPTP)"
-msgstr "Ponttól pontig alagutazási protokoll (PPTP)"
+#: ../properties/nm-pptp-dialog.ui.h:33
+msgid "<b>General</b>"
+msgstr "<b>Általános</b>"
 
-#: ../properties/nm-pptp.c:50
-msgid "Compatible with Microsoft and other PPTP VPN servers."
-msgstr "Kompatibilis a Microsoft és más PPTP VPN-kiszolgálókkal."
+#: ../properties/nm-pptp-dialog.ui.h:34
+msgid ""
+"PPTP server IP or name.\n"
+"config: the first parameter of pptp"
+msgstr ""
+"PPTP kiszolgáló IP-címe vagy neve.\n"
+"config: a pptp első paramétere"
 
-#: ../properties/nm-pptp.c:317
-msgid "Saved"
-msgstr "Mentett"
+#: ../properties/nm-pptp-dialog.ui.h:36
+msgid "_Gateway:"
+msgstr "Á_tjáró:"
 
-#: ../properties/nm-pptp.c:325
-msgid "Always Ask"
-msgstr "Mindig kérdezzen"
+#: ../properties/nm-pptp-dialog.ui.h:37
+msgid "<b>Optional</b>"
+msgstr "<b>Opcionális</b>"
 
-#: ../properties/nm-pptp.c:330
-msgid "Not Required"
-msgstr "Nem szükséges"
+#: ../properties/nm-pptp-dialog.ui.h:38
+msgid ""
+"Append the domain name <domain> to the local host name for authentication "
+"purposes.\n"
+"config: domain <domain>"
+msgstr ""
+"A <tartomány> tartománynév hozzáfűzése a helyi gépnévhez hitelesítési "
+"céllal.\n"
+"config: domain <tartomány>"
 
-#: ../src/nm-pptp-service.c:161
+#: ../properties/nm-pptp-dialog.ui.h:40
+msgid "NT Domain:"
+msgstr "NT tartomány:"
+
+#: ../properties/nm-pptp-dialog.ui.h:41
+msgid "Show password"
+msgstr "Jelszó megjelenítése"
+
+#: ../properties/nm-pptp-dialog.ui.h:42
+msgid "Password passed to PPTP when prompted for it."
+msgstr "A PPTP-nek átadott jelszó, amikor kéri."
+
+#: ../properties/nm-pptp-dialog.ui.h:44
+msgid ""
+"Set the name used for authenticating the local system to the peer to "
+"<name>.\n"
+"config: user <name>"
+msgstr ""
+"A helyi rendszer partner felé hitelesítéséhez használt <név> megadása.\n"
+"config: user <név>"
+
+#: ../properties/nm-pptp-dialog.ui.h:46
+msgid "User name:"
+msgstr "Felhasználónév:"
+
+#: ../properties/nm-pptp-dialog.ui.h:47
+msgid "Ad_vanced..."
+msgstr "S_peciális…"
+
+#: ../src/nm-pptp-service.c:166
 #, c-format
 msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
 msgstr "A PPTP VPN-átjáró IP-címének átalakítása sikertelen: „%s” (%d)"
 
-#: ../src/nm-pptp-service.c:179
+#: ../src/nm-pptp-service.c:184
 #, c-format
 msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
 msgstr "Nem található a PPTP VPN-átjáró IP-címe: „%s” (%d)"
 
-#: ../src/nm-pptp-service.c:203
+#: ../src/nm-pptp-service.c:208
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway '%s'"
 msgstr "Nem küldött a PPTP VPN-átjáró használható IP-címet: „%s”"
 
-#: ../src/nm-pptp-service.c:214
+#: ../src/nm-pptp-service.c:219
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 msgstr "Nem küldött a PPTP VPN-átjáró használható IP-címet: „%s” (%d)"
 
-#: ../src/nm-pptp-service.c:241
+#: ../src/nm-pptp-service.c:246
 msgid "Could not find secrets (connection invalid, no vpn setting)."
 msgstr ""
 "Nem található titok (érvénytelen kapcsolat, nincsenek vpn beállítások)."
 
-#: ../src/nm-pptp-service.c:253
-msgid "Invalid VPN username."
-msgstr "Érvénytelen VPN-felhasználónév."
+#: ../src/nm-pptp-service.c:258
+#| msgid "Missing or invalid VPN password."
+msgid "Missing or invalid VPN username."
+msgstr "Hiányzó vagy érvénytelen VPN-felhasználónév."
 
-#: ../src/nm-pptp-service.c:262
-msgid "Missing VPN username."
-msgstr "Hiányzó VPN-felhasználónév."
-
-#: ../src/nm-pptp-service.c:272
+#: ../src/nm-pptp-service.c:268
 msgid "Missing or invalid VPN password."
 msgstr "Hiányzó vagy érvénytelen VPN-jelszó."
 
-#: ../src/nm-pptp-service.c:430
+#: ../src/nm-pptp-service.c:460
 msgid "No cached credentials."
 msgstr "Nincsenek gyorsítótárazott hitelesítési adatok."
 
-#: ../src/nm-pptp-service.c:577
+#: ../src/nm-pptp-service.c:616
 #, c-format
 msgid "invalid gateway '%s'"
 msgstr "Érvénytelen átjáró: „%s”"
 
-#: ../src/nm-pptp-service.c:591
+#: ../src/nm-pptp-service.c:630
 #, c-format
 msgid "invalid integer property '%s'"
 msgstr "érvénytelen egész érték: „%s”"
 
-#: ../src/nm-pptp-service.c:601
+#: ../src/nm-pptp-service.c:640
 #, c-format
 msgid "invalid boolean property '%s' (not yes or no)"
 msgstr "érvénytelen logikai érték: „%s” (érvényes értékek: yes, no)"
 
-#: ../src/nm-pptp-service.c:608
+#: ../src/nm-pptp-service.c:647
 #, c-format
 msgid "unhandled property '%s' type %s"
 msgstr "kezeletlen %2$s típusú érték: „%1$s”"
 
-#: ../src/nm-pptp-service.c:619
+#: ../src/nm-pptp-service.c:658
 #, c-format
 msgid "property '%s' invalid or not supported"
 msgstr "érvénytelen vagy nem támogatott érték: „%s”"
 
-#: ../src/nm-pptp-service.c:637
+#: ../src/nm-pptp-service.c:676
 msgid "No VPN configuration options."
 msgstr "Nincsenek VPN-beállítások."
 
-#: ../src/nm-pptp-service.c:657
+#: ../src/nm-pptp-service.c:696
 #, c-format
 msgid "Missing required option '%s'."
 msgstr "Hiányzó kötelező argumentum: „%s”."
 
-#: ../src/nm-pptp-service.c:677
+#: ../src/nm-pptp-service.c:716
 msgid "No VPN secrets!"
 msgstr "Nincs VPN-titok!"
 
-#: ../src/nm-pptp-service.c:835
+#: ../src/nm-pptp-service.c:874
 msgid "Could not find pptp client binary."
 msgstr "Nem található a pptp client program."
 
-#: ../src/nm-pptp-service.c:848
+#: ../src/nm-pptp-service.c:887
 msgid "Missing VPN gateway."
 msgstr "Hiányzik a VPN-átjáró."
 
-#: ../src/nm-pptp-service.c:1009
+#: ../src/nm-pptp-service.c:1048
 msgid "Could not find the pppd binary."
 msgstr "Nem található a pptp program."
 
-#: ../src/nm-pptp-service.c:1139
+#: ../src/nm-pptp-service.c:1161
 msgid "Invalid or missing PPTP gateway."
 msgstr "Érvénytelen vagy hiányzó PPTP-átjáró."
 
-#: ../src/nm-pptp-service.c:1318
+#: ../src/nm-pptp-service.c:1347
 msgid "Don't quit when VPN connection terminates"
 msgstr "Ne lépjen ki, ha a VPN-kapcsolat megszakad"
 
-#: ../src/nm-pptp-service.c:1319
+#: ../src/nm-pptp-service.c:1348
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr ""
 "Részletes hibakeresési naplózás engedélyezése (jelszavak is  a naplóba "
 "kerülhetnek)"
 
-#: ../src/nm-pptp-service.c:1342
+#: ../src/nm-pptp-service.c:1371
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
 msgstr ""
 "Az nm-pptp-service integrált PPTP VPN-támogatást nyújt a Hálózatkezelőhöz, "
 "amely kompatibilis a Microsoft és mások megvalósításaival."
+
+#~ msgid "PPTP VPN Connection Manager"
+#~ msgstr "PPTP VPN-kapcsolatkezelő"
+
+#~ msgid "Add, Remove, and Edit PPTP VPN Connections"
+#~ msgstr "PPTP VPN-kapcsolatok hozzáadása, szerkesztése és eltávolítása"
+
+#~ msgid "Saved"
+#~ msgstr "Mentett"
+
+#~ msgid "Always Ask"
+#~ msgstr "Mindig kérdezzen"
+
+#~ msgid "Not Required"
+#~ msgstr "Nem szükséges"
+
+#~ msgid "Invalid VPN username."
+#~ msgstr "Érvénytelen VPN-felhasználónév."
+
+#~ msgid "Missing VPN username."
+#~ msgstr "Hiányzó VPN-felhasználónév."
 
 #~ msgid "_Password:"
 #~ msgstr "_Jelszó:"
