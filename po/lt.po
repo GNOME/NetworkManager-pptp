@@ -2,165 +2,100 @@
 # Copyright (C) 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the NetworkManager package.
 # Žygimantas Beručka <zygis@gnome.org>, 2008.
-#
+# Aurimas Černius <aurisc4@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp HEAD\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2012-04-13 12:37+0000\n"
-"PO-Revision-Date: 2012-09-15 21:04+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
+"POT-Creation-Date: 2015-08-31 12:20+0000\n"
+"PO-Revision-Date: 2015-09-12 21:12+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
-"Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
+"Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-
-#: ../auth-dialog/vpn-password-dialog.c:95
-msgid "_Password:"
-msgstr "_Slaptažodis:"
-
-#: ../auth-dialog/vpn-password-dialog.c:97
-msgid "_Secondary Password:"
-msgstr "_Antrinis slaptažodis:"
-
-#: ../auth-dialog/vpn-password-dialog.c:239
-#| msgid "Show password"
-msgid "Sh_ow passwords"
-msgstr "R_odyti slaptažodžius"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
 #.
-#: ../auth-dialog/main.c:145
+#: ../auth-dialog/main.c:154
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
-msgstr "Norint gauti prieigą prie Virtualiojo Privačiojo Tinklo „%s“, reikia nustatyti jūsų tapatybę."
+msgstr ""
+"Norint gauti prieigą prie Virtualiojo Privačiojo Tinklo „%s“, reikia "
+"nustatyti jūsų tapatybę."
 
-#: ../auth-dialog/main.c:154
-#: ../auth-dialog/main.c:174
+#: ../auth-dialog/main.c:163 ../auth-dialog/main.c:183
 msgid "Authenticate VPN"
 msgstr "Nustatyti tapatybę VPN"
 
-#: ../auth-dialog/main.c:156
-#: ../properties/nm-pptp-dialog.ui.h:12
+#: ../auth-dialog/main.c:165 ../properties/nm-pptp-dialog.ui.h:43
 msgid "Password:"
 msgstr "Slaptažodis:"
 
-#: ../nm-pptp.desktop.in.h:1
-msgid "PPTP VPN Connection Manager"
-msgstr "PPTP VPN ryšių valdyklė"
-
-#: ../nm-pptp.desktop.in.h:2
-msgid "Add, Remove, and Edit PPTP VPN Connections"
-msgstr "Pridėti, šalinti ir taisyti PPTP VPN ryšius"
-
-#: ../properties/advanced-dialog.c:187
+#: ../properties/advanced-dialog.c:191
 msgid "All Available (Default)"
 msgstr "Visi prieinami (numatytasis)"
 
-#: ../properties/advanced-dialog.c:191
+#: ../properties/advanced-dialog.c:195
 msgid "128-bit (most secure)"
 msgstr "128-bit (saugiausia)"
 
-#: ../properties/advanced-dialog.c:200
+#: ../properties/advanced-dialog.c:204
 msgid "40-bit (less secure)"
 msgstr "40-bit (mažiau saugu)"
 
-#: ../properties/advanced-dialog.c:309
+#: ../properties/advanced-dialog.c:308
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:322
+#: ../properties/advanced-dialog.c:321
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:334
+#: ../properties/advanced-dialog.c:333
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:346
+#: ../properties/advanced-dialog.c:345
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:359
+#: ../properties/advanced-dialog.c:358
 msgid "EAP"
 msgstr "EAP"
+
+#: ../properties/nm-pptp.c:56
+msgid "Point-to-Point Tunneling Protocol (PPTP)"
+msgstr "PPP tuneliavimo protokolas (PPTP)"
+
+#: ../properties/nm-pptp.c:57
+msgid "Compatible with Microsoft and other PPTP VPN servers."
+msgstr "Suderinama su Microsoft ir kitais PPTP VPN serveriais."
 
 #: ../properties/nm-pptp-dialog.ui.h:1
 msgid "Default"
 msgstr "Numatytasis"
 
 #: ../properties/nm-pptp-dialog.ui.h:2
-msgid "<b>General</b>"
-msgstr "<b>Bendra</b>"
-
-#: ../properties/nm-pptp-dialog.ui.h:3
-msgid ""
-"PPTP server IP or name.\n"
-"config: the first parameter of pptp"
-msgstr ""
-"PPTP serverio IP arba pavadinimas.\n"
-"konfig: pirmas pptp parametras"
-
-#: ../properties/nm-pptp-dialog.ui.h:5
-msgid "_Gateway:"
-msgstr "Š_liuzas:"
-
-#: ../properties/nm-pptp-dialog.ui.h:6
-msgid "<b>Optional</b>"
-msgstr "<b>Neprivaloma</b>"
-
-#: ../properties/nm-pptp-dialog.ui.h:7
-msgid ""
-"Append the domain name <domain> to the local host name for authentication purposes.\n"
-"config: domain <domain>"
-msgstr ""
-"Pridėti domeno vardą <domenas> prie vietinio serverio pavadinimo tapatybės patvirtinimo tikslais.\n"
-"konfig: domain <domenas>"
-
-#: ../properties/nm-pptp-dialog.ui.h:9
-msgid "NT Domain:"
-msgstr "NT sritis:"
-
-#: ../properties/nm-pptp-dialog.ui.h:10
-msgid "Show password"
-msgstr "Rodyti slaptažodį"
-
-#: ../properties/nm-pptp-dialog.ui.h:11
-msgid "Password passed to PPTP when prompted for it."
-msgstr "Slaptažodis, perduodamas PPTP, kai jo prašoma."
-
-#: ../properties/nm-pptp-dialog.ui.h:13
-msgid ""
-"Set the name used for authenticating the local system to the peer to <name>.\n"
-"config: user <name>"
-msgstr ""
-"Nustatyti <vardas> tapatybės patvirtinimo vardą vietinei sistemai porininkui.\n"
-"konfig: user <vardas>"
-
-#: ../properties/nm-pptp-dialog.ui.h:15
-msgid "User name:"
-msgstr "Naudotojo vardas:"
-
-#: ../properties/nm-pptp-dialog.ui.h:16
-msgid "Ad_vanced..."
-msgstr "Išsa_miau..."
-
-#: ../properties/nm-pptp-dialog.ui.h:17
 msgid "PPTP Advanced Options"
 msgstr "PPTP sudėtingesni nustatymai"
 
-#: ../properties/nm-pptp-dialog.ui.h:18
+#: ../properties/nm-pptp-dialog.ui.h:3
 msgid "<b>Authentication</b>"
 msgstr "<b>Tapatybės nustatymas</b>"
 
-#: ../properties/nm-pptp-dialog.ui.h:19
+#: ../properties/nm-pptp-dialog.ui.h:4
 msgid "Allow the following authentication methods:"
 msgstr "Leisti šiuos tapatybės nustatymo metodus:"
 
-#: ../properties/nm-pptp-dialog.ui.h:20
+#: ../properties/nm-pptp-dialog.ui.h:5
 msgid ""
 "Allow/disable authentication methods.\n"
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
@@ -168,23 +103,29 @@ msgstr ""
 "Leisti/išjungti tapatybės patvirtinimo metodus.\n"
 "konfig: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
-#: ../properties/nm-pptp-dialog.ui.h:22
+#: ../properties/nm-pptp-dialog.ui.h:7
 msgid "<b>Security and Compression</b>"
 msgstr "<b>Saugumas ir glaudinimas</b>"
 
-#: ../properties/nm-pptp-dialog.ui.h:23
+#: ../properties/nm-pptp-dialog.ui.h:8
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Naudoti _PPP šifravimą (MPPE)"
 
-#: ../properties/nm-pptp-dialog.ui.h:24
-msgid "Note: MPPE encryption is only available with MSCHAP authentication methods. To enable this checkbox, select one or more of the MSCHAP authentication methods: MSCHAP or MSCHAPv2."
-msgstr "Pastaba: MPPE šifravimas galimas tik su MSCHAP autentikacijos metodais. Norėdami jį pasirinkti, pasirinkite vieną ar kelis MSCHAP autentikacijos metodus: MSCHAP arba MSCHAPv2."
+#: ../properties/nm-pptp-dialog.ui.h:9
+msgid ""
+"Note: MPPE encryption is only available with MSCHAP authentication methods. "
+"To enable this checkbox, select one or more of the MSCHAP authentication "
+"methods: MSCHAP or MSCHAPv2."
+msgstr ""
+"Pastaba: MPPE šifravimas galimas tik su MSCHAP autentikacijos metodais. "
+"Norėdami jį pasirinkti, pasirinkite vieną ar kelis MSCHAP autentikacijos "
+"metodus: MSCHAP arba MSCHAPv2."
 
-#: ../properties/nm-pptp-dialog.ui.h:25
+#: ../properties/nm-pptp-dialog.ui.h:10
 msgid "_Security:"
 msgstr "_Saugumas:"
 
-#: ../properties/nm-pptp-dialog.ui.h:26
+#: ../properties/nm-pptp-dialog.ui.h:11
 msgid ""
 "Require the use of MPPE, with 40/128-bit encryption or all.\n"
 "config: require-mppe, require-mppe-128 or require-mppe-40"
@@ -192,23 +133,24 @@ msgstr ""
 "Reikalauti naudoti MPPE su 40/128-bitų šifravimu ar visais.\n"
 "konfig: require-mppe, require-mppe-128 or require-mppe-40"
 
-#: ../properties/nm-pptp-dialog.ui.h:28
+#: ../properties/nm-pptp-dialog.ui.h:13
 msgid "Allow st_ateful encryption"
 msgstr "Leisti _atmenųjį šifravimą"
 
-#: ../properties/nm-pptp-dialog.ui.h:29
+#: ../properties/nm-pptp-dialog.ui.h:14
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first.\n"
 "config: mppe-stateful (when checked)"
 msgstr ""
-"Leisti MPPE naudoti veikseną su būsena. Pirmiausia bandoma veiksena be būsenos.\n"
+"Leisti MPPE naudoti veikseną su būsena. Pirmiausia bandoma veiksena be "
+"būsenos.\n"
 "konfig: mppe-statefull (kai tikrinama)"
 
-#: ../properties/nm-pptp-dialog.ui.h:31
+#: ../properties/nm-pptp-dialog.ui.h:16
 msgid "Allow _BSD data compression"
 msgstr "Leisti _BSD duomenų glaudinimą"
 
-#: ../properties/nm-pptp-dialog.ui.h:32
+#: ../properties/nm-pptp-dialog.ui.h:17
 msgid ""
 "Allow/disable BSD-Compress compression.\n"
 "config: nobsdcomp (when unchecked)"
@@ -216,11 +158,11 @@ msgstr ""
 "Leisti/išjungti BSD-Compress suspaudimą.\n"
 "konfig: nobsdcomp (kai nepažymėta)"
 
-#: ../properties/nm-pptp-dialog.ui.h:34
+#: ../properties/nm-pptp-dialog.ui.h:19
 msgid "Allow _Deflate data compression"
 msgstr "Leisti _Deflate duomenų glaudinimą"
 
-#: ../properties/nm-pptp-dialog.ui.h:35
+#: ../properties/nm-pptp-dialog.ui.h:20
 msgid ""
 "Allow/disable Deflate compression.\n"
 "config: nodeflate (when unchecked)"
@@ -228,27 +170,29 @@ msgstr ""
 "Leisti/išjungti Deflate suspaudimą.\n"
 "konfig: nodeflate (kai nepažymėta)"
 
-#: ../properties/nm-pptp-dialog.ui.h:37
+#: ../properties/nm-pptp-dialog.ui.h:22
 msgid "Use TCP _header compression"
 msgstr "Naudoti TCP _antraštės glaudinimą"
 
-#: ../properties/nm-pptp-dialog.ui.h:38
+#: ../properties/nm-pptp-dialog.ui.h:23
 msgid ""
-"Allow/disable Van Jacobson style TCP/IP header compression in both the transmit and the receive directions.\n"
+"Allow/disable Van Jacobson style TCP/IP header compression in both the "
+"transmit and the receive directions.\n"
 "config: novj (when unchecked)"
 msgstr ""
-"Leisti/išjungti Van Jacobson stiliaus TCP/IP antraštės suspaudimą siuntimo ir gavimo kryptyse.\n"
+"Leisti/išjungti Van Jacobson stiliaus TCP/IP antraštės suspaudimą siuntimo "
+"ir gavimo kryptyse.\n"
 "konfig: novj (kai nepažymėta)"
 
-#: ../properties/nm-pptp-dialog.ui.h:40
+#: ../properties/nm-pptp-dialog.ui.h:25
 msgid "<b>Echo</b>"
 msgstr "<b>Aidas</b>"
 
-#: ../properties/nm-pptp-dialog.ui.h:41
+#: ../properties/nm-pptp-dialog.ui.h:26
 msgid "Send PPP _echo packets"
 msgstr "Siųsti PPP _aido paketus"
 
-#: ../properties/nm-pptp-dialog.ui.h:42
+#: ../properties/nm-pptp-dialog.ui.h:27
 msgid ""
 "Send LCP echo-requests to find out whether peer is alive.\n"
 "config: lcp-echo-failure and lcp-echo-interval"
@@ -256,129 +200,217 @@ msgstr ""
 "Siųsti LCP aido prašymus pasitikrinimui, ar porininkas veikia.\n"
 "konfig: lcp-echo-failure ir lcp-echo-interval"
 
-#: ../properties/nm-pptp.c:49
-msgid "Point-to-Point Tunneling Protocol (PPTP)"
-msgstr "PPP tuneliavimo protokolas (PPTP)"
+#: ../properties/nm-pptp-dialog.ui.h:29
+#| msgid "<b>Echo</b>"
+msgid "<b>Misc</b>"
+msgstr "<b>Įvairūs</b>"
 
-#: ../properties/nm-pptp.c:50
-msgid "Compatible with Microsoft and other PPTP VPN servers."
-msgstr "Suderinama su Microsoft ir kitais PPTP VPN serveriais."
+#: ../properties/nm-pptp-dialog.ui.h:30
+msgid "Use custom _unit number:"
+msgstr "Naudoti pasirinktinius _vienetus:"
 
-#: ../properties/nm-pptp.c:317
-msgid "Saved"
-msgstr "Įrašyta"
+#: ../properties/nm-pptp-dialog.ui.h:31
+msgid ""
+"Enable custom index for ppp<n> device name.\n"
+"config: unit <n>"
+msgstr ""
+"Įjungti pasirinktinį indeksą ppp<n> įrenginio pavadinimui.\n"
+"config: unit <n>"
 
-#: ../properties/nm-pptp.c:325
-msgid "Always Ask"
-msgstr "Visada klausti"
+#: ../properties/nm-pptp-dialog.ui.h:33
+msgid "<b>General</b>"
+msgstr "<b>Bendra</b>"
 
-#: ../properties/nm-pptp.c:330
-msgid "Not Required"
-msgstr "Nebūtinas"
+#: ../properties/nm-pptp-dialog.ui.h:34
+msgid ""
+"PPTP server IP or name.\n"
+"config: the first parameter of pptp"
+msgstr ""
+"PPTP serverio IP arba pavadinimas.\n"
+"konfig: pirmas pptp parametras"
 
-#: ../src/nm-pptp-service.c:160
+#: ../properties/nm-pptp-dialog.ui.h:36
+msgid "_Gateway:"
+msgstr "Š_liuzas:"
+
+#: ../properties/nm-pptp-dialog.ui.h:37
+msgid "<b>Optional</b>"
+msgstr "<b>Neprivaloma</b>"
+
+#: ../properties/nm-pptp-dialog.ui.h:38
+msgid ""
+"Append the domain name <domain> to the local host name for authentication "
+"purposes.\n"
+"config: domain <domain>"
+msgstr ""
+"Pridėti domeno vardą <domenas> prie vietinio serverio pavadinimo tapatybės "
+"patvirtinimo tikslais.\n"
+"konfig: domain <domenas>"
+
+#: ../properties/nm-pptp-dialog.ui.h:40
+msgid "NT Domain:"
+msgstr "NT sritis:"
+
+#: ../properties/nm-pptp-dialog.ui.h:41
+msgid "Show password"
+msgstr "Rodyti slaptažodį"
+
+#: ../properties/nm-pptp-dialog.ui.h:42
+msgid "Password passed to PPTP when prompted for it."
+msgstr "Slaptažodis, perduodamas PPTP, kai jo prašoma."
+
+#: ../properties/nm-pptp-dialog.ui.h:44
+msgid ""
+"Set the name used for authenticating the local system to the peer to "
+"<name>.\n"
+"config: user <name>"
+msgstr ""
+"Nustatyti <vardas> tapatybės patvirtinimo vardą vietinei sistemai "
+"porininkui.\n"
+"konfig: user <vardas>"
+
+#: ../properties/nm-pptp-dialog.ui.h:46
+msgid "User name:"
+msgstr "Naudotojo vardas:"
+
+#: ../properties/nm-pptp-dialog.ui.h:47
+msgid "Ad_vanced..."
+msgstr "Išsa_miau..."
+
+#: ../src/nm-pptp-service.c:166
 #, c-format
 msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
 msgstr "nepavyko pakeisti PPTP VPN kelvedžio IP adreso „%s“ (%d)"
 
-#: ../src/nm-pptp-service.c:178
+#: ../src/nm-pptp-service.c:184
 #, c-format
 msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
 msgstr "nepavyko rasti PPTP VPN kelvedžio IP adreso „%s“ (%d)"
 
-#: ../src/nm-pptp-service.c:202
+#: ../src/nm-pptp-service.c:208
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway '%s'"
 msgstr "negrąžinti tinkami PPTP VPN kelvedžio „%s“ adresai"
 
-#: ../src/nm-pptp-service.c:213
+#: ../src/nm-pptp-service.c:219
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 msgstr "negrąžinti tinkami PPTP VPN kelvedžio „%s“ adresai (%d)"
 
-#: ../src/nm-pptp-service.c:240
+#: ../src/nm-pptp-service.c:246
 msgid "Could not find secrets (connection invalid, no vpn setting)."
 msgstr "Nepavyko rasti paslapčių (ryšis netinkamas, nėra vpn nustatymo)."
 
-#: ../src/nm-pptp-service.c:252
-msgid "Invalid VPN username."
-msgstr "Netinkamas VPN naudotojo vardas."
+#: ../src/nm-pptp-service.c:258
+#| msgid "Missing or invalid VPN password."
+msgid "Missing or invalid VPN username."
+msgstr "Nėra arba netinkamas VPN naudotojo vardas."
 
-#: ../src/nm-pptp-service.c:261
-msgid "Missing VPN username."
-msgstr "Trūksta VPN naudotojo vardo."
-
-#: ../src/nm-pptp-service.c:271
+#: ../src/nm-pptp-service.c:268
 msgid "Missing or invalid VPN password."
 msgstr "Nėra arba netinkamas VPN slaptažodis."
 
-#: ../src/nm-pptp-service.c:429
+#: ../src/nm-pptp-service.c:460
 msgid "No cached credentials."
 msgstr "Podėlyje nėra įgaliojimų."
 
-#: ../src/nm-pptp-service.c:575
+#: ../src/nm-pptp-service.c:616
 #, c-format
 msgid "invalid gateway '%s'"
 msgstr "netinkamas kelvedys „%s“"
 
-#: ../src/nm-pptp-service.c:589
+#: ../src/nm-pptp-service.c:630
 #, c-format
 msgid "invalid integer property '%s'"
 msgstr "netinkama skaitinė savybė „%s“"
 
-#: ../src/nm-pptp-service.c:599
+#: ../src/nm-pptp-service.c:640
 #, c-format
 msgid "invalid boolean property '%s' (not yes or no)"
 msgstr "netinkama loginė savybė „%s“ (ne taip arba ne)"
 
-#: ../src/nm-pptp-service.c:606
+#: ../src/nm-pptp-service.c:647
 #, c-format
 msgid "unhandled property '%s' type %s"
 msgstr "neapdorotas savybės „%s“ tipas %s"
 
-#: ../src/nm-pptp-service.c:617
+#: ../src/nm-pptp-service.c:658
 #, c-format
 msgid "property '%s' invalid or not supported"
 msgstr "savybė „%s“ netinkama arba nepalaikoma"
 
-#: ../src/nm-pptp-service.c:635
+#: ../src/nm-pptp-service.c:676
 msgid "No VPN configuration options."
 msgstr "Nėra VPN konfigūracijos parinkčių."
 
-#: ../src/nm-pptp-service.c:655
+#: ../src/nm-pptp-service.c:696
 #, c-format
 msgid "Missing required option '%s'."
 msgstr "Trūksta būtinos parinkties „%s“."
 
-#: ../src/nm-pptp-service.c:675
+#: ../src/nm-pptp-service.c:716
 msgid "No VPN secrets!"
 msgstr "Nėra VPN paslapčių!"
 
-#: ../src/nm-pptp-service.c:816
+#: ../src/nm-pptp-service.c:874
 msgid "Could not find pptp client binary."
 msgstr "Nepavyko rasti pptp klientinės programos."
 
-#: ../src/nm-pptp-service.c:829
+#: ../src/nm-pptp-service.c:887
 msgid "Missing VPN gateway."
 msgstr "Trūksta VPN kelvedžio."
 
-#: ../src/nm-pptp-service.c:982
+#: ../src/nm-pptp-service.c:1048
 msgid "Could not find the pppd binary."
 msgstr "Nepavyko rasti pppd programos."
 
-#: ../src/nm-pptp-service.c:1112
+#: ../src/nm-pptp-service.c:1161
 msgid "Invalid or missing PPTP gateway."
 msgstr "Netinkamas arba trūkstamas PPTP kelvedys."
 
-#: ../src/nm-pptp-service.c:1311
+#: ../src/nm-pptp-service.c:1347
 msgid "Don't quit when VPN connection terminates"
 msgstr "Neužverti kai VPN ryšys baigiasi"
 
-#: ../src/nm-pptp-service.c:1312
+#: ../src/nm-pptp-service.c:1348
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Įjungti išsamų derinimo žurnalą (gali parodyti slaptažodžius)"
 
-#: ../src/nm-pptp-service.c:1326
-msgid "nm-pptp-service provides integrated PPTP VPN capability (compatible with Microsoft and other implementations) to NetworkManager."
-msgstr "nm-pptp-service suteikia NetworkManager integruotą PPTP VPN galimybę (suderinamą su Microsoft ir kitomis realizacijomis)."
+#: ../src/nm-pptp-service.c:1371
+msgid ""
+"nm-pptp-service provides integrated PPTP VPN capability (compatible with "
+"Microsoft and other implementations) to NetworkManager."
+msgstr ""
+"nm-pptp-service suteikia NetworkManager integruotą PPTP VPN galimybę "
+"(suderinamą su Microsoft ir kitomis realizacijomis)."
 
+#~ msgid "_Password:"
+#~ msgstr "_Slaptažodis:"
+
+#~ msgid "_Secondary Password:"
+#~ msgstr "_Antrinis slaptažodis:"
+
+#~| msgid "Show password"
+#~ msgid "Sh_ow passwords"
+#~ msgstr "R_odyti slaptažodžius"
+
+#~ msgid "PPTP VPN Connection Manager"
+#~ msgstr "PPTP VPN ryšių valdyklė"
+
+#~ msgid "Add, Remove, and Edit PPTP VPN Connections"
+#~ msgstr "Pridėti, šalinti ir taisyti PPTP VPN ryšius"
+
+#~ msgid "Saved"
+#~ msgstr "Įrašyta"
+
+#~ msgid "Always Ask"
+#~ msgstr "Visada klausti"
+
+#~ msgid "Not Required"
+#~ msgstr "Nebūtinas"
+
+#~ msgid "Invalid VPN username."
+#~ msgstr "Netinkamas VPN naudotojo vardas."
+
+#~ msgid "Missing VPN username."
+#~ msgstr "Trūksta VPN naudotojo vardo."
