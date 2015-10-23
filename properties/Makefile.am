@@ -26,9 +26,7 @@ common_CFLAGS =                                         \
         -I$(top_srcdir)/src                             \
         -DICONDIR=\""$(datadir)/pixmaps"\"              \
         -DUIDIR=\""$(uidir)"\"                          \
-        -DLOCALEDIR=\""$(datadir)/locale"\"             \
-        -DG_DISABLE_DEPRECATED                          \
-        -DVERSION=\"$(VERSION)\"
+        -DLOCALEDIR=\""$(datadir)/locale"\"
 
 libnm_vpn_plugin_pptp_la_CFLAGS =                       \
         $(common_CFLAGS)                                \

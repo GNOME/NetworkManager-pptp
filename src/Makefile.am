@@ -2,11 +2,9 @@ AM_CPPFLAGS =							\
 	$(GLIB_CFLAGS)						\
 	$(LIBNM_CFLAGS)						\
 	-I${top_srcdir}						\
-	-DG_DISABLE_DEPRECATED					\
 	-DBINDIR=\"$(bindir)\"					\
 	-DPREFIX=\""$(prefix)"\"				\
 	-DSYSCONFDIR=\""$(sysconfdir)"\"			\
-	-DNM_VERSION="\"$(VERSION)\""				\
 	-DLIBDIR=\""$(libdir)"\"				\
 	-DLIBEXECDIR=\""$(libexecdir)"\"			\
 	-DLOCALSTATEDIR=\""$(localstatedir)"\"			\

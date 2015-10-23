@@ -9,9 +9,7 @@ nm_pptp_auth_dialog_CPPFLAGS =			\
 	-I${top_srcdir}				\
 	-DICONDIR=\""$(datadir)/pixmaps"\"	\
 	-DUIDIR=\""$(uidir)"\"			\
-	-DBINDIR=\""$(bindir)"\"		\
-	-DG_DISABLE_DEPRECATED			\
-	-DVERSION=\"$(VERSION)\"
+	-DBINDIR=\""$(bindir)"\"
 
 nm_pptp_auth_dialog_SOURCES = \
 	main.c
