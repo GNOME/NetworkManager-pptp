@@ -376,9 +376,11 @@ nm_pptp_ppp_service_dispose (GObject *object)
 {
 	NMPptpPppServicePrivate *priv = NM_PPTP_PPP_SERVICE_GET_PRIVATE (object);
 
-	g_signal_handlers_disconnect_by_func (priv->dbus_skeleton, handle_need_secrets, object);
-	g_signal_handlers_disconnect_by_func (priv->dbus_skeleton, handle_set_state, object);
-	g_signal_handlers_disconnect_by_func (priv->dbus_skeleton, handle_set_ip4_config, object);
+	if (priv->dbus_skeleton) {
+		g_signal_handlers_disconnect_by_func (priv->dbus_skeleton, handle_need_secrets, object);
+		g_signal_handlers_disconnect_by_func (priv->dbus_skeleton, handle_set_state, object);
+		g_signal_handlers_disconnect_by_func (priv->dbus_skeleton, handle_set_ip4_config, object);
+	}
 
 	G_OBJECT_CLASS (nm_pptp_ppp_service_parent_class)->dispose (object);
 }
