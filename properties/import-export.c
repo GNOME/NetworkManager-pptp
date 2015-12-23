@@ -43,14 +43,19 @@
 NMConnection *
 do_import (const char *path, char **lines, GError **error)
 {
+	g_set_error_literal (error,
+	                     PPTP_PLUGIN_UI_ERROR,
+	                     PPTP_PLUGIN_UI_ERROR_UNKNOWN,
+	                     "PPTP import is not implemented");
 	return NULL;
 }
 
 gboolean
 do_export (const char *path, NMConnection *connection, GError **error)
 {
+	g_set_error_literal (error,
+	                     PPTP_PLUGIN_UI_ERROR,
+	                     PPTP_PLUGIN_UI_ERROR_UNKNOWN,
+	                     "PPTP export is not implemented");
 	return FALSE;
 }
-
-
-

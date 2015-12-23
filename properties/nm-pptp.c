@@ -675,7 +675,7 @@ get_suggested_filename (NMVpnEditorPlugin *iface, NMConnection *connection)
 static NMVpnEditorPluginCapability
 get_capabilities (NMVpnEditorPlugin *iface)
 {
-	return (NM_VPN_EDITOR_PLUGIN_CAPABILITY_IMPORT | NM_VPN_EDITOR_PLUGIN_CAPABILITY_EXPORT);
+	return NM_VPN_EDITOR_PLUGIN_CAPABILITY_NONE;
 }
 
 static NMVpnEditor *
