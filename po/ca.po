@@ -5,15 +5,15 @@
 # Gil Forcada <gilforcada@guifi.net>, 2006, 2007.
 # David Planella <david.planella@gmail.com>, 2009.
 # Jordi Estrada <jordi.estrada@gmail.com>, 2010.
+# Walter Garcia-Fontes <walter.garcia@upf.edu>, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2015-03-25 17:23+0000\n"
-"PO-Revision-Date: 2010-11-26 12:43+0100\n"
-"Last-Translator: Jordi Estrada <jordi.estrada@gmail.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-23 08:10+0100\n"
+"PO-Revision-Date: 2016-01-13 09:04+0100\n"
+"Last-Translator: Walter Garcia-Fontes <walter.garcia@upf.edu>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -24,155 +24,93 @@ msgstr ""
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
 #.
-#: ../auth-dialog/main.c:155
+#: ../auth-dialog/main.c:154
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr ""
 "Cal que us autentiqueu per a poder accedir a la xarxa privada virtual «%s»."
 
-#: ../auth-dialog/main.c:164 ../auth-dialog/main.c:184
+#: ../auth-dialog/main.c:163 ../auth-dialog/main.c:183
 msgid "Authenticate VPN"
 msgstr "Autentica la VPN"
 
-#: ../auth-dialog/main.c:166 ../properties/nm-pptp-dialog.ui.h:12
+#: ../auth-dialog/main.c:165 ../properties/nm-pptp-dialog.ui.h:43
 msgid "Password:"
 msgstr "Contrasenya:"
 
-#: ../properties/advanced-dialog.c:185
+#: ../properties/advanced-dialog.c:191
 msgid "All Available (Default)"
 msgstr "Tots els disponibles (predeterminat)"
 
-#: ../properties/advanced-dialog.c:189
+#: ../properties/advanced-dialog.c:195
 msgid "128-bit (most secure)"
 msgstr "128-bits (el més segur)"
 
-#: ../properties/advanced-dialog.c:198
+#: ../properties/advanced-dialog.c:204
 msgid "40-bit (less secure)"
 msgstr "40-bits (menys segur)"
 
-#: ../properties/advanced-dialog.c:302
+#: ../properties/advanced-dialog.c:308
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:315
+#: ../properties/advanced-dialog.c:321
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:327
+#: ../properties/advanced-dialog.c:333
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:339
+#: ../properties/advanced-dialog.c:345
 msgid "MSCHAPv2"
 msgstr "MSCHAP v2"
 
-#: ../properties/advanced-dialog.c:352
+#: ../properties/advanced-dialog.c:358
 msgid "EAP"
 msgstr "EAP"
 
-#: ../properties/nm-pptp.c:47
+#: ../properties/nm-pptp.c:56
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Protocol de túnel punt a punt (PPTP)"
 
-#: ../properties/nm-pptp.c:48
+#: ../properties/nm-pptp.c:57
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Compatible amb els servidors PPTP VPN de Microsoft i d'altres."
-
-#: ../properties/nm-pptp.c:315
-msgid "Saved"
-msgstr ""
-
-#: ../properties/nm-pptp.c:323
-msgid "Always Ask"
-msgstr ""
-
-#: ../properties/nm-pptp.c:328
-msgid "Not Required"
-msgstr ""
 
 #: ../properties/nm-pptp-dialog.ui.h:1
 msgid "Default"
 msgstr "Predeterminat"
 
 #: ../properties/nm-pptp-dialog.ui.h:2
-msgid "<b>General</b>"
-msgstr "<b>General</b>"
-
-#: ../properties/nm-pptp-dialog.ui.h:3
-msgid ""
-"PPTP server IP or name.\n"
-"config: the first parameter of pptp"
-msgstr ""
-
-#: ../properties/nm-pptp-dialog.ui.h:5
-msgid "_Gateway:"
-msgstr "_Passarel·la:"
-
-#: ../properties/nm-pptp-dialog.ui.h:6
-msgid "<b>Optional</b>"
-msgstr "<b>Opcional</b>"
-
-#: ../properties/nm-pptp-dialog.ui.h:7
-msgid ""
-"Append the domain name <domain> to the local host name for authentication "
-"purposes.\n"
-"config: domain <domain>"
-msgstr ""
-
-#: ../properties/nm-pptp-dialog.ui.h:9
-msgid "NT Domain:"
-msgstr "Domini NT:"
-
-#: ../properties/nm-pptp-dialog.ui.h:10
-msgid "Show password"
-msgstr "Mostra la contrasenya"
-
-#: ../properties/nm-pptp-dialog.ui.h:11
-msgid "Password passed to PPTP when prompted for it."
-msgstr ""
-
-#: ../properties/nm-pptp-dialog.ui.h:13
-msgid ""
-"Set the name used for authenticating the local system to the peer to "
-"<name>.\n"
-"config: user <name>"
-msgstr ""
-
-#: ../properties/nm-pptp-dialog.ui.h:15
-msgid "User name:"
-msgstr "Nom d'usuari:"
-
-#: ../properties/nm-pptp-dialog.ui.h:16
-msgid "Ad_vanced..."
-msgstr "A_vançat..."
-
-#: ../properties/nm-pptp-dialog.ui.h:17
 msgid "PPTP Advanced Options"
 msgstr "Opcions PPTP avançades"
 
-#: ../properties/nm-pptp-dialog.ui.h:18
+#: ../properties/nm-pptp-dialog.ui.h:3
 msgid "<b>Authentication</b>"
 msgstr "<b>Autenticació</b>"
 
-#: ../properties/nm-pptp-dialog.ui.h:19
+#: ../properties/nm-pptp-dialog.ui.h:4
 msgid "Allow the following authentication methods:"
 msgstr "Permet els mètodes d'autenticació següents:"
 
-#: ../properties/nm-pptp-dialog.ui.h:20
+#: ../properties/nm-pptp-dialog.ui.h:5
 msgid ""
 "Allow/disable authentication methods.\n"
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 msgstr ""
+"Permet/inhabilita els mètodos d'autenticació.\n"
+"config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
-#: ../properties/nm-pptp-dialog.ui.h:22
+#: ../properties/nm-pptp-dialog.ui.h:7
 msgid "<b>Security and Compression</b>"
 msgstr "<b>Seguretat i compressió</b>"
 
-#: ../properties/nm-pptp-dialog.ui.h:23
+#: ../properties/nm-pptp-dialog.ui.h:8
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Utilitza el xifratge _punt a punt (MPPE)"
 
-#: ../properties/nm-pptp-dialog.ui.h:24
+#: ../properties/nm-pptp-dialog.ui.h:9
 msgid ""
 "Note: MPPE encryption is only available with MSCHAP authentication methods. "
 "To enable this checkbox, select one or more of the MSCHAP authentication "
@@ -182,194 +120,272 @@ msgstr ""
 "d'autenticació MSCHAP. Per habilitar aquesta opció, seleccioneu un o més "
 "dels mètodes d'autenticació MSCHAP: MSCHAP o MSCHAPv2."
 
-#: ../properties/nm-pptp-dialog.ui.h:25
+#: ../properties/nm-pptp-dialog.ui.h:10
 msgid "_Security:"
 msgstr "_Seguretat:"
 
-#: ../properties/nm-pptp-dialog.ui.h:26
+#: ../properties/nm-pptp-dialog.ui.h:11
 msgid ""
 "Require the use of MPPE, with 40/128-bit encryption or all.\n"
 "config: require-mppe, require-mppe-128 or require-mppe-40"
 msgstr ""
+"Exigeix l'ús de MPPE, amb encriptat 40/128-bit o tot.\n"
+"config: require-mppe, require-mppe-128 o require-mppe-40"
 
-#: ../properties/nm-pptp-dialog.ui.h:28
+#: ../properties/nm-pptp-dialog.ui.h:13
 msgid "Allow st_ateful encryption"
 msgstr "Permet el xifratge d'_estats"
 
-#: ../properties/nm-pptp-dialog.ui.h:29
+#: ../properties/nm-pptp-dialog.ui.h:14
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first.\n"
 "config: mppe-stateful (when checked)"
 msgstr ""
+"Permet al MPPE d'usar el mode amb estat. S'intentarà encara el mode sense "
+"estat primer.\n"
+"\"config: mppe-stateful (si està marcat)."
 
-#: ../properties/nm-pptp-dialog.ui.h:31
+#: ../properties/nm-pptp-dialog.ui.h:16
 msgid "Allow _BSD data compression"
 msgstr "Permet la compressió de dades _BSD"
 
-#: ../properties/nm-pptp-dialog.ui.h:32
+#: ../properties/nm-pptp-dialog.ui.h:17
 msgid ""
 "Allow/disable BSD-Compress compression.\n"
 "config: nobsdcomp (when unchecked)"
 msgstr ""
+"Permet/inhabilita la compressió BSD-Compress.\n"
+"config: nobsdcomp (quan no està marcat)"
 
-#: ../properties/nm-pptp-dialog.ui.h:34
+#: ../properties/nm-pptp-dialog.ui.h:19
 msgid "Allow _Deflate data compression"
 msgstr "Permet la compressió de dades _deflate"
 
-#: ../properties/nm-pptp-dialog.ui.h:35
+#: ../properties/nm-pptp-dialog.ui.h:20
 msgid ""
 "Allow/disable Deflate compression.\n"
 "config: nodeflate (when unchecked)"
 msgstr ""
+"Permet/inhabilita la compressió Deflate.\n"
+"config: nodeflate (quan no està marcat)"
 
-#: ../properties/nm-pptp-dialog.ui.h:37
+#: ../properties/nm-pptp-dialog.ui.h:22
 msgid "Use TCP _header compression"
 msgstr "Utilitza compressió de les capçaleres _TCP"
 
-#: ../properties/nm-pptp-dialog.ui.h:38
+#: ../properties/nm-pptp-dialog.ui.h:23
 msgid ""
 "Allow/disable Van Jacobson style TCP/IP header compression in both the "
 "transmit and the receive directions.\n"
 "config: novj (when unchecked)"
 msgstr ""
+"Permet/inhabilita compressió de capçaleres TCP/IP d'estil Van Jacobson a "
+"ambdues direccions de transmissió i recepció.\n"
+"config: novj (quan no està marcat)"
 
-#: ../properties/nm-pptp-dialog.ui.h:40
+#: ../properties/nm-pptp-dialog.ui.h:25
 msgid "<b>Echo</b>"
 msgstr "<b>Eco</b>"
 
-#: ../properties/nm-pptp-dialog.ui.h:41
+#: ../properties/nm-pptp-dialog.ui.h:26
 msgid "Send PPP _echo packets"
 msgstr "Envia paquets d'_eco PPP"
 
-#: ../properties/nm-pptp-dialog.ui.h:42
+#: ../properties/nm-pptp-dialog.ui.h:27
 msgid ""
 "Send LCP echo-requests to find out whether peer is alive.\n"
 "config: lcp-echo-failure and lcp-echo-interval"
 msgstr ""
+"Envia demandes d'eco LCP per veure si el parell està viu.\n"
+"config: lcp-echo-failure i lcop-echo-interval"
 
-#: ../properties/nm-pptp-dialog.ui.h:44
-#, fuzzy
-#| msgid "<b>Echo</b>"
+#: ../properties/nm-pptp-dialog.ui.h:29
 msgid "<b>Misc</b>"
-msgstr "<b>Eco</b>"
+msgstr "<b>Misc</b>"
 
-#: ../properties/nm-pptp-dialog.ui.h:45
+#: ../properties/nm-pptp-dialog.ui.h:30
 msgid "Use custom _unit number:"
-msgstr ""
+msgstr "Usa un número _unit personalitzat:"
 
-#: ../properties/nm-pptp-dialog.ui.h:46
+#: ../properties/nm-pptp-dialog.ui.h:31
 msgid ""
 "Enable custom index for ppp<n> device name.\n"
 "config: unit <n>"
 msgstr ""
+"Habilita un índex personalitzat per al nom de dispositiu ppp<n>.\n"
+"config: unit <n>"
 
-#: ../src/nm-pptp-service.c:161
+#: ../properties/nm-pptp-dialog.ui.h:33
+msgid "<b>General</b>"
+msgstr "<b>General</b>"
+
+#: ../properties/nm-pptp-dialog.ui.h:34
+msgid ""
+"PPTP server IP or name.\n"
+"config: the first parameter of pptp"
+msgstr ""
+"IP del servidor PPTP o nom.\n"
+"config: el primer paràmetre de pptp"
+
+#: ../properties/nm-pptp-dialog.ui.h:36
+msgid "_Gateway:"
+msgstr "_Passarel·la:"
+
+#: ../properties/nm-pptp-dialog.ui.h:37
+msgid "<b>Optional</b>"
+msgstr "<b>Opcional</b>"
+
+#: ../properties/nm-pptp-dialog.ui.h:38
+msgid ""
+"Append the domain name <domain> to the local host name for authentication "
+"purposes.\n"
+"config: domain <domain>"
+msgstr ""
+"Annexa el nom de domini <domini> al nom de l'ordinador local per motius "
+"d'autenticació.\n"
+"config: domain <domini>"
+
+#: ../properties/nm-pptp-dialog.ui.h:40
+msgid "NT Domain:"
+msgstr "Domini NT:"
+
+#: ../properties/nm-pptp-dialog.ui.h:41
+msgid "Show password"
+msgstr "Mostra la contrasenya"
+
+#: ../properties/nm-pptp-dialog.ui.h:42
+msgid "Password passed to PPTP when prompted for it."
+msgstr "La contrasenya que es passa al PPTP quan la demana."
+
+#: ../properties/nm-pptp-dialog.ui.h:44
+msgid ""
+"Set the name used for authenticating the local system to the peer to "
+"<name>.\n"
+"config: user <name>"
+msgstr ""
+"Estableix el nom usat per a l'autenticació del sistema local amb el parell a "
+"<nom>.\n"
+"config: user <nom>"
+
+#: ../properties/nm-pptp-dialog.ui.h:46
+msgid "User name:"
+msgstr "Nom d'usuari:"
+
+#: ../properties/nm-pptp-dialog.ui.h:47
+msgid "Ad_vanced..."
+msgstr "A_vançat..."
+
+#: ../src/nm-pptp-service.c:166
 #, c-format
 msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
 msgstr ""
+"no s'ha pogut convertir l'adreça IP de la passarel·la PPTP VPN «%s» (%d)"
 
-#: ../src/nm-pptp-service.c:179
+#: ../src/nm-pptp-service.c:184
 #, c-format
 msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
-msgstr ""
+msgstr "no s'ha pogut buscar l'adreça ID de la passarel·la PPTP VPN «%s» (%d)"
 
-#: ../src/nm-pptp-service.c:203
+#: ../src/nm-pptp-service.c:208
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway '%s'"
-msgstr ""
+msgstr "no s'han retornat adreces usables per a la passarel·la PPTP VPN «%s»"
 
-#: ../src/nm-pptp-service.c:214
+#: ../src/nm-pptp-service.c:219
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 msgstr ""
+"no s'han retornat adreces usables per a la passarel·la PPTP VPN «%s» (%d)"
 
-#: ../src/nm-pptp-service.c:241
+#: ../src/nm-pptp-service.c:246
 msgid "Could not find secrets (connection invalid, no vpn setting)."
 msgstr ""
+"No s'ha pogut trobar els secrets (la connexió no és vàlida, no hi paràmetres "
+"de configuració vpn)."
 
-#: ../src/nm-pptp-service.c:253
-msgid "Invalid VPN username."
-msgstr ""
+#: ../src/nm-pptp-service.c:258
+msgid "Missing or invalid VPN username."
+msgstr "Falta el nom d'usuari de la VPN o no és vàlid."
 
-#: ../src/nm-pptp-service.c:262
-msgid "Missing VPN username."
-msgstr ""
-
-#: ../src/nm-pptp-service.c:272
+#: ../src/nm-pptp-service.c:268
 msgid "Missing or invalid VPN password."
-msgstr ""
+msgstr "Falta la contrasenya de la VPN o no és vàlida."
 
-#: ../src/nm-pptp-service.c:430
+#: ../src/nm-pptp-service.c:462
 msgid "No cached credentials."
-msgstr ""
+msgstr "No hi ha credencials a la memòria cau."
 
-#: ../src/nm-pptp-service.c:577
+#: ../src/nm-pptp-service.c:618
 #, c-format
 msgid "invalid gateway '%s'"
-msgstr ""
+msgstr "passarel·la «%s» no vàlida"
 
-#: ../src/nm-pptp-service.c:591
+#: ../src/nm-pptp-service.c:632
 #, c-format
 msgid "invalid integer property '%s'"
-msgstr ""
+msgstr "propietat «%s» d'enter no vàlida"
 
-#: ../src/nm-pptp-service.c:601
+#: ../src/nm-pptp-service.c:642
 #, c-format
 msgid "invalid boolean property '%s' (not yes or no)"
-msgstr ""
+msgstr "propietat booleana «%s» no vàlida (no és sí o no)"
 
-#: ../src/nm-pptp-service.c:608
+#: ../src/nm-pptp-service.c:649
 #, c-format
 msgid "unhandled property '%s' type %s"
-msgstr ""
+msgstr "propietat «%s» no gestionada de tipus %s"
 
-#: ../src/nm-pptp-service.c:619
+#: ../src/nm-pptp-service.c:660
 #, c-format
 msgid "property '%s' invalid or not supported"
-msgstr ""
+msgstr "la propietat «%s» no és vàlida o no està suportada"
 
-#: ../src/nm-pptp-service.c:637
+#: ../src/nm-pptp-service.c:678
 msgid "No VPN configuration options."
-msgstr ""
+msgstr "No hi ha opcions de configuració de la VPN."
 
-#: ../src/nm-pptp-service.c:657
+#: ../src/nm-pptp-service.c:698
 #, c-format
 msgid "Missing required option '%s'."
-msgstr ""
+msgstr "Falta l'opció requerida «%s»."
 
-#: ../src/nm-pptp-service.c:677
+#: ../src/nm-pptp-service.c:718
 msgid "No VPN secrets!"
-msgstr ""
+msgstr "No ha secrets de la VPN!"
 
-#: ../src/nm-pptp-service.c:835
+#: ../src/nm-pptp-service.c:875
 msgid "Could not find pptp client binary."
-msgstr ""
+msgstr "No s'ha pogut trobar el binari del client pptp."
 
-#: ../src/nm-pptp-service.c:848
+#: ../src/nm-pptp-service.c:888
 msgid "Missing VPN gateway."
-msgstr ""
+msgstr "Falta la passarel·la de la VPN."
 
-#: ../src/nm-pptp-service.c:1009
+#: ../src/nm-pptp-service.c:1049
 msgid "Could not find the pppd binary."
-msgstr ""
+msgstr "No s'ha pogut trobar el binari pppd."
 
-#: ../src/nm-pptp-service.c:1139
+#: ../src/nm-pptp-service.c:1151
 msgid "Invalid or missing PPTP gateway."
-msgstr ""
+msgstr "Passarel·la PPTP no vàlida o faltant."
 
-#: ../src/nm-pptp-service.c:1318
+#: ../src/nm-pptp-service.c:1337
 msgid "Don't quit when VPN connection terminates"
-msgstr ""
+msgstr "No surtis quan acabi la connexió de la VPN"
 
-#: ../src/nm-pptp-service.c:1319
+#: ../src/nm-pptp-service.c:1338
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr ""
+"Habilita el registre de depuració amb missatges (potser s'exposaran les "
+"contrasenyes)"
 
-#: ../src/nm-pptp-service.c:1342
+#: ../src/nm-pptp-service.c:1361
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
 msgstr ""
+"el nm-pptp-service proveeix funcionalitat PPTP VPN integrada (compatible amb "
+"Microsoft i altres implementacions) per al NetworkManager."
 
 #~ msgid "_Secondary Password:"
 #~ msgstr "Contrasenya _secundària:"
