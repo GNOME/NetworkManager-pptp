@@ -46,8 +46,8 @@ libnm_vpn_plugin_pptp_la_LIBADD =                       \
 
 libnm_pptp_properties_la_LIBADD =                       \
         $(GTK_LIBS)                                     \
-        $(NM_LIBS)                                      \
-        $(NMGTK_LIBS)
+        $(LIBNM_GLIB_LIBS)                              \
+        $(LIBNM_GTK_LIBS)
 
 libnm_vpn_plugin_pptp_la_LDFLAGS =                      \
         -avoid-version
