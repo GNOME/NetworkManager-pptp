@@ -5,14 +5,14 @@
 # gnomepl@aviary.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2008-2009.
-# Piotr Drąg <piotrdrag@gmail.com>, 2010-2015.
-# Aviary.pl <gnomepl@aviary.pl>, 2008-2015.
+# Piotr Drąg <piotrdrag@gmail.com>, 2010-2016.
+# Aviary.pl <gnomepl@aviary.pl>, 2008-2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-31 21:25+0200\n"
-"PO-Revision-Date: 2015-08-31 21:27+0200\n"
+"POT-Creation-Date: 2016-03-20 18:04+0100\n"
+"PO-Revision-Date: 2016-03-20 18:05+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -313,74 +313,78 @@ msgstr "Brak nazwy użytkownika VPN lub jest nieprawidłowa."
 msgid "Missing or invalid VPN password."
 msgstr "Brak hasła VPN lub jest nieprawidłowe."
 
-#: ../src/nm-pptp-service.c:460
+#: ../src/nm-pptp-service.c:462
 msgid "No cached credentials."
 msgstr "Brak danych uwierzytelniających w pamięci podręcznej."
 
-#: ../src/nm-pptp-service.c:616
+#: ../src/nm-pptp-service.c:618
 #, c-format
 msgid "invalid gateway '%s'"
 msgstr "nieprawidłowa brama „%s”"
 
-#: ../src/nm-pptp-service.c:630
+#: ../src/nm-pptp-service.c:632
 #, c-format
 msgid "invalid integer property '%s'"
 msgstr "nieprawidłowa własność liczby całkowitej „%s”"
 
-#: ../src/nm-pptp-service.c:640
+#: ../src/nm-pptp-service.c:642
 #, c-format
 msgid "invalid boolean property '%s' (not yes or no)"
 msgstr ""
 "nieprawidłowa własność zmiennej logicznej „%s” (nie wynosi „yes” lub „no”)"
 
-#: ../src/nm-pptp-service.c:647
+#: ../src/nm-pptp-service.c:649
 #, c-format
 msgid "unhandled property '%s' type %s"
 msgstr "nieobsługiwana własność „%s” typu „%s”"
 
-#: ../src/nm-pptp-service.c:658
+#: ../src/nm-pptp-service.c:660
 #, c-format
 msgid "property '%s' invalid or not supported"
 msgstr "własność „%s” jest nieprawidłowa lub nieobsługiwana"
 
-#: ../src/nm-pptp-service.c:676
+#: ../src/nm-pptp-service.c:678
 msgid "No VPN configuration options."
 msgstr "Brak opcji konfiguracji VPN."
 
-#: ../src/nm-pptp-service.c:696
+#: ../src/nm-pptp-service.c:698
 #, c-format
 msgid "Missing required option '%s'."
 msgstr "Brak wymaganej opcji „%s”."
 
-#: ../src/nm-pptp-service.c:716
+#: ../src/nm-pptp-service.c:718
 msgid "No VPN secrets!"
 msgstr "Brak haseł VPN."
 
-#: ../src/nm-pptp-service.c:874
+#: ../src/nm-pptp-service.c:875
 msgid "Could not find pptp client binary."
 msgstr "Nie można odnaleźć pliku binarnego pptp."
 
-#: ../src/nm-pptp-service.c:887
+#: ../src/nm-pptp-service.c:888
 msgid "Missing VPN gateway."
 msgstr "Brak bramy VPN."
 
-#: ../src/nm-pptp-service.c:1048
+#: ../src/nm-pptp-service.c:1049
 msgid "Could not find the pppd binary."
 msgstr "Nie można odnaleźć pliku binarnego pppd."
 
-#: ../src/nm-pptp-service.c:1161
+#: ../src/nm-pptp-service.c:1151
 msgid "Invalid or missing PPTP gateway."
 msgstr "Brak bramy PPTP lub jest nieprawidłowa."
 
-#: ../src/nm-pptp-service.c:1347
+#: ../src/nm-pptp-service.c:1338
 msgid "Don't quit when VPN connection terminates"
 msgstr "Nie kończy działania, kiedy połączenie VPN jest kończone"
 
-#: ../src/nm-pptp-service.c:1348
+#: ../src/nm-pptp-service.c:1339
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Włącza więcej komunikatów debugowania (może wyjawić hasła)"
 
-#: ../src/nm-pptp-service.c:1371
+#: ../src/nm-pptp-service.c:1340
+msgid "D-Bus name to use for this instance"
+msgstr "Nazwa D-Bus dla tego wystąpienia"
+
+#: ../src/nm-pptp-service.c:1363
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
