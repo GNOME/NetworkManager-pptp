@@ -47,6 +47,6 @@ typedef struct {
 
 GType nm_pptp_plugin_get_type (void);
 
-NMPptpPlugin *nm_pptp_plugin_new (void);
+NMPptpPlugin *nm_pptp_plugin_new (const gchar *);
 
 #endif /* NM_PPTP_PLUGIN_H */

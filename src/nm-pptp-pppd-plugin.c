@@ -21,6 +21,7 @@
  */
 
 #include <string.h>
+#include <stdlib.h>
 #include <pppd/pppd.h>
 #include <pppd/fsm.h>
 #include <pppd/ipcp.h>
@@ -292,10 +293,15 @@ plugin_init (void)
 {
 	GDBusConnection *bus;
 	GError *err = NULL;
+	const char *bus_name;
 
 #if !GLIB_CHECK_VERSION (2, 35, 0)
 	g_type_init ();
 #endif
+
+	bus_name = getenv ("NM_DBUS_SERVICE_PPTP");
+	if (!bus_name)
+		bus_name = NM_DBUS_SERVICE_PPTP;
 
 	g_message ("nm-pptp-ppp-plugin: (%s): initializing", __func__);
 
@@ -311,7 +317,7 @@ plugin_init (void)
 
 	proxy = g_dbus_proxy_new_sync (bus, G_DBUS_CALL_FLAGS_NONE, NULL,
 	                               NM_DBUS_SERVICE_PPTP_PPP,
-	                               NM_DBUS_PATH_PPTP_PPP,
+	                               bus_name,
 	                               NM_DBUS_INTERFACE_PPTP_PPP,
 	                               NULL, &err);
 	g_object_unref (bus);

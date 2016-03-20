@@ -1298,14 +1298,14 @@ nm_pptp_plugin_class_init (NMPptpPluginClass *pptp_class)
 }
 
 NMPptpPlugin *
-nm_pptp_plugin_new (void)
+nm_pptp_plugin_new (const char *bus_name)
 {
 	NMPptpPlugin *plugin;
 	GError *error = NULL;
 
 	plugin = g_initable_new (NM_TYPE_PPTP_PLUGIN, NULL, &error,
-	                         NM_VPN_SERVICE_PLUGIN_DBUS_SERVICE_NAME,
-	                         NM_DBUS_SERVICE_PPTP,
+	                         NM_VPN_SERVICE_PLUGIN_DBUS_SERVICE_NAME, bus_name,
+	                         NM_VPN_SERVICE_PLUGIN_DBUS_WATCH_PEER, !debug,
 	                         NULL);
 	if (plugin)
 		g_signal_connect (G_OBJECT (plugin), "state-changed", G_CALLBACK (state_changed_cb), NULL);
@@ -1332,10 +1332,12 @@ main (int argc, char *argv[])
 	GOptionContext *opt_ctx = NULL;
 	char *conntrack_module[] = { "/sbin/modprobe", "nf_conntrack_pptp", NULL };
 	GError *error = NULL;
+	gchar *bus_name = NM_DBUS_SERVICE_PPTP;
 
 	GOptionEntry options[] = {
 		{ "persist", 0, 0, G_OPTION_ARG_NONE, &persist, N_("Don't quit when VPN connection terminates"), NULL },
 		{ "debug", 0, 0, G_OPTION_ARG_NONE, &debug, N_("Enable verbose debug logging (may expose passwords)"), NULL },
+		{ "bus-name", 0, 0, G_OPTION_ARG_STRING, &bus_name, N_("D-Bus name to use for this instance"), NULL },
 		{NULL}
 	};
 
@@ -1369,7 +1371,10 @@ main (int argc, char *argv[])
 	if (debug)
 		g_message ("nm-pptp-service (version " DIST_VERSION ") starting...");
 
-	plugin = nm_pptp_plugin_new ();
+	if (bus_name)
+		setenv ("NM_DBUS_SERVICE_PPTP", bus_name, 0);
+
+	plugin = nm_pptp_plugin_new (bus_name);
 	if (!plugin)
 		exit (EXIT_FAILURE);
 
