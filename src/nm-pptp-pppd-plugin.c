@@ -315,7 +315,9 @@ plugin_init (void)
 		return -1;
 	}
 
-	proxy = g_dbus_proxy_new_sync (bus, G_DBUS_CALL_FLAGS_NONE, NULL,
+	proxy = g_dbus_proxy_new_sync (bus,
+	                               G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES,
+	                               NULL,
 	                               NM_DBUS_SERVICE_PPTP_PPP,
 	                               bus_name,
 	                               NM_DBUS_INTERFACE_PPTP_PPP,
