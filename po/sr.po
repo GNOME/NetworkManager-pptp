@@ -1,16 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the network-manager-pptp package.
 # Мирослав Николић <miroslavnikolic@rocketmail.com>, 2012—2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=Network"
 "Manager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2015-08-31 12:20+0000\n"
-"PO-Revision-Date: 2016-01-04 11:35+0200\n"
+"POT-Creation-Date: 2016-03-21 12:40+0000\n"
+"PO-Revision-Date: 2016-03-21 19:44+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
-"Language-Team: Serbian <gnom@prevod.org>\n"
+"Language-Team: Serbian <(nothing)>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -197,10 +197,9 @@ msgid ""
 "config: lcp-echo-failure and lcp-echo-interval"
 msgstr ""
 "Шаље ЛЦП захтеве одјека да би дознао да ли је парњак активан.\n"
-"подешавање: lcp-echo-failure и lcp-echo-период"
+"подешавање: lcp-echo-failure и lcp-echo-interval"
 
 #: ../properties/nm-pptp-dialog.ui.h:29
-#| msgid "<b>Echo</b>"
 msgid "<b>Misc</b>"
 msgstr "<b>Разно</b>"
 
@@ -242,8 +241,8 @@ msgid ""
 "purposes.\n"
 "config: domain <domain>"
 msgstr ""
-"Качи назив домена <domain> на назив локалног рачунара за сврхе пријављивања."
-"\n"
+"Качи назив домена <domain> на назив локалног рачунара за сврхе "
+"пријављивања.\n"
 "подешавање: домен <domain>"
 
 #: ../properties/nm-pptp-dialog.ui.h:40
@@ -300,7 +299,6 @@ msgid "Could not find secrets (connection invalid, no vpn setting)."
 msgstr "Не могу да пронађем тајне (веза је неисправна, нема впн подешавања)."
 
 #: ../src/nm-pptp-service.c:258
-#| msgid "Missing or invalid VPN password."
 msgid "Missing or invalid VPN username."
 msgstr "Недостаје или је неисправно ВПН корисничко име."
 
@@ -308,74 +306,78 @@ msgstr "Недостаје или је неисправно ВПН корисн�
 msgid "Missing or invalid VPN password."
 msgstr "Недостаје или је неисправна ВПН лозинка."
 
-#: ../src/nm-pptp-service.c:460
+#: ../src/nm-pptp-service.c:462
 msgid "No cached credentials."
 msgstr "Нема причуваних уверења."
 
-#: ../src/nm-pptp-service.c:616
+#: ../src/nm-pptp-service.c:618
 #, c-format
 msgid "invalid gateway '%s'"
 msgstr "неисправан мрежни пролаз „%s“"
 
-#: ../src/nm-pptp-service.c:630
+#: ../src/nm-pptp-service.c:632
 #, c-format
 msgid "invalid integer property '%s'"
 msgstr "неисправно својство целог броја „%s“"
 
-#: ../src/nm-pptp-service.c:640
+#: ../src/nm-pptp-service.c:642
 #, c-format
 msgid "invalid boolean property '%s' (not yes or no)"
 msgstr "неисправно логичко својство „%s“ (није „да“ или „не“)"
 
-#: ../src/nm-pptp-service.c:647
+#: ../src/nm-pptp-service.c:649
 #, c-format
 msgid "unhandled property '%s' type %s"
 msgstr "неруковано својство „%s“ врсте %s"
 
-#: ../src/nm-pptp-service.c:658
+#: ../src/nm-pptp-service.c:660
 #, c-format
 msgid "property '%s' invalid or not supported"
 msgstr "својство „%s“ је неисправно или није подржано"
 
-#: ../src/nm-pptp-service.c:676
+#: ../src/nm-pptp-service.c:678
 msgid "No VPN configuration options."
 msgstr "Нема опција за ВПН подешавање."
 
-#: ../src/nm-pptp-service.c:696
+#: ../src/nm-pptp-service.c:698
 #, c-format
 msgid "Missing required option '%s'."
 msgstr "Недостаје затражена опција „%s“."
 
-#: ../src/nm-pptp-service.c:716
+#: ../src/nm-pptp-service.c:718
 msgid "No VPN secrets!"
 msgstr "Нема ВПН тајни!"
 
-#: ../src/nm-pptp-service.c:874
+#: ../src/nm-pptp-service.c:875
 msgid "Could not find pptp client binary."
 msgstr "Не могу да пронађем извршни пптп клијента."
 
-#: ../src/nm-pptp-service.c:887
+#: ../src/nm-pptp-service.c:888
 msgid "Missing VPN gateway."
 msgstr "Недостаје ВПН мрежни пролаз."
 
-#: ../src/nm-pptp-service.c:1048
+#: ../src/nm-pptp-service.c:1049
 msgid "Could not find the pppd binary."
 msgstr "Не могу да пронађем пптп извршни."
 
-#: ../src/nm-pptp-service.c:1161
+#: ../src/nm-pptp-service.c:1151
 msgid "Invalid or missing PPTP gateway."
 msgstr "Неисправан или недостаје ППТП мрежни пролаз."
 
-#: ../src/nm-pptp-service.c:1347
+#: ../src/nm-pptp-service.c:1338
 msgid "Don't quit when VPN connection terminates"
 msgstr "Не прекида када се завршава ВПН веза"
 
-#: ../src/nm-pptp-service.c:1348
+#: ../src/nm-pptp-service.c:1339
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr ""
 "Укључује опширно записивање зарад исправљања грешака (може да изложи лозинке)"
 
-#: ../src/nm-pptp-service.c:1371
+#: ../src/nm-pptp-service.c:1340
+msgid "D-Bus name to use for this instance"
+msgstr "Назив Д-сабирнице која ће се користити за овај примерак"
+
+#: ../src/nm-pptp-service.c:1363
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
