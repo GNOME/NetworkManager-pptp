@@ -1,17 +1,17 @@
 # Italian translation of  NetworkManager-PPTP.
-# Copyright (C) 2006, 2007, 2008, 2009, 2010, 2012, 2015 the NetworkManager-PPTP'S COPYRIGHT HOLDER
+# Copyright (C) 2006, 2007, 2008, 2009, 2010, 2012, 2015, 2016 the NetworkManager-PPTP'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the NetworkManager-PPTP package.
 # Francesco Marletta <francesco.marletta@tiscali.it>, 2006, 2007, 2008, 2009, 2010.
 # Luca Ferretti <elle.uca@libero.it>, 2010.
-# Milo Casagrande <milo@milo.name>, 2012, 2015.
+# Milo Casagrande <milo@milo.name>, 2012, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2015-11-13 13:50+0000\n"
-"PO-Revision-Date: 2015-11-13 20:43+0100\n"
+"POT-Creation-Date: 2016-03-21 18:46+0000\n"
+"PO-Revision-Date: 2016-03-22 15:17+0100\n"
 "Last-Translator: Milo Casagrande <milo@milo.name>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-04-14 14:49+0000\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.7\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #. Otherwise, we have no saved password, or the password flags indicated
@@ -314,73 +314,77 @@ msgstr "Nome utente VPN mancante o non valido."
 msgid "Missing or invalid VPN password."
 msgstr "Password VPN mancante o non valida."
 
-#: ../src/nm-pptp-service.c:460
+#: ../src/nm-pptp-service.c:462
 msgid "No cached credentials."
 msgstr "Nessuna credenziale salvata."
 
-#: ../src/nm-pptp-service.c:616
+#: ../src/nm-pptp-service.c:618
 #, c-format
 msgid "invalid gateway '%s'"
 msgstr "gateway «%s» non valido"
 
-#: ../src/nm-pptp-service.c:630
+#: ../src/nm-pptp-service.c:632
 #, c-format
 msgid "invalid integer property '%s'"
 msgstr "proprietà intera «%s» non valida"
 
-#: ../src/nm-pptp-service.c:640
+#: ../src/nm-pptp-service.c:642
 #, c-format
 msgid "invalid boolean property '%s' (not yes or no)"
 msgstr "proprietà booleana «%s» non valida (non yes o no)"
 
-#: ../src/nm-pptp-service.c:647
+#: ../src/nm-pptp-service.c:649
 #, c-format
 msgid "unhandled property '%s' type %s"
 msgstr "proprietà «%s» di tipo %s non gestita"
 
-#: ../src/nm-pptp-service.c:658
+#: ../src/nm-pptp-service.c:660
 #, c-format
 msgid "property '%s' invalid or not supported"
 msgstr "proprietà «%s» non valida o non supportata"
 
-#: ../src/nm-pptp-service.c:676
+#: ../src/nm-pptp-service.c:678
 msgid "No VPN configuration options."
 msgstr "Nessuna opzione di configurazione VPN."
 
-#: ../src/nm-pptp-service.c:696
+#: ../src/nm-pptp-service.c:698
 #, c-format
 msgid "Missing required option '%s'."
 msgstr "Opzioni richiesta «%s» mancante."
 
-#: ../src/nm-pptp-service.c:716
+#: ../src/nm-pptp-service.c:718
 msgid "No VPN secrets!"
 msgstr "Nessun segreto VPN."
 
-#: ../src/nm-pptp-service.c:873
+#: ../src/nm-pptp-service.c:875
 msgid "Could not find pptp client binary."
 msgstr "Impossibile trovare il binario del client pptp."
 
-#: ../src/nm-pptp-service.c:886
+#: ../src/nm-pptp-service.c:888
 msgid "Missing VPN gateway."
 msgstr "Gateway VPN mancante."
 
-#: ../src/nm-pptp-service.c:1047
+#: ../src/nm-pptp-service.c:1049
 msgid "Could not find the pppd binary."
 msgstr "Impossibile trovare il binario pppd."
 
-#: ../src/nm-pptp-service.c:1149
+#: ../src/nm-pptp-service.c:1151
 msgid "Invalid or missing PPTP gateway."
 msgstr "Gateway PPTP non valido o mancante."
 
-#: ../src/nm-pptp-service.c:1335
+#: ../src/nm-pptp-service.c:1338
 msgid "Don't quit when VPN connection terminates"
 msgstr "Non esce quando la connessione VPN termina"
 
-#: ../src/nm-pptp-service.c:1336
+#: ../src/nm-pptp-service.c:1339
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Abilita output prolisso per il debug (potrebbe visualizzare password)"
 
-#: ../src/nm-pptp-service.c:1359
+#: ../src/nm-pptp-service.c:1340
+msgid "D-Bus name to use for this instance"
+msgstr "Nome D-Bus da usare per questa istanza"
+
+#: ../src/nm-pptp-service.c:1363
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
