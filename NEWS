@@ -6,6 +6,7 @@ Overview of changes since network-manager-pptp-1.0
 This is a new stable release of NetworkManager-pptp.  Notable changes include:
 
 * Ported to libnm, libnma and GDBus
+* Support multiple concurrent PPTP connections
 * Enhanced the GUI to support agent-owned and always-ask passwords
 * Update the UI to use modern GTK witgets instead of deprecated ones
 * Translation updates
