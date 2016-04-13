@@ -318,8 +318,8 @@ plugin_init (void)
 	proxy = g_dbus_proxy_new_sync (bus,
 	                               G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES,
 	                               NULL,
-	                               NM_DBUS_SERVICE_PPTP_PPP,
 	                               bus_name,
+	                               NM_DBUS_PATH_PPTP_PPP,
 	                               NM_DBUS_INTERFACE_PPTP_PPP,
 	                               NULL, &err);
 	g_object_unref (bus);
