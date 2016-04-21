@@ -23,14 +23,15 @@
 #ifndef NM_PPTP_SERVICE_DEFINES_H
 #define NM_PPTP_SERVICE_DEFINES_H
 
-#define NM_DBUS_SERVICE_PPTP_PPP    "org.freedesktop.NetworkManager.pptp-ppp"
-#define NM_DBUS_PATH_PPTP_PPP       "/org/freedesktop/NetworkManager/pptp/ppp"
-#define NM_DBUS_INTERFACE_PPTP_PPP  "org.freedesktop.NetworkManager.pptp.ppp"
+#define NM_DBUS_SERVICE_PPTP    "org.freedesktop.NetworkManager.pptp"
 
 /* For the NM <-> VPN plugin service */
-#define NM_DBUS_SERVICE_PPTP    "org.freedesktop.NetworkManager.pptp"
 #define NM_DBUS_INTERFACE_PPTP  "org.freedesktop.NetworkManager.pptp"
 #define NM_DBUS_PATH_PPTP       "/org/freedesktop/NetworkManager/pptp"
+
+/* For the VPN plugin service <-> PPP plugin */
+#define NM_DBUS_INTERFACE_PPTP_PPP  "org.freedesktop.NetworkManager.pptp.ppp"
+#define NM_DBUS_PATH_PPTP_PPP       "/org/freedesktop/NetworkManager/pptp/ppp"
 
 #define NM_PPTP_KEY_GATEWAY           "gateway"
 #define NM_PPTP_KEY_USER              "user"
