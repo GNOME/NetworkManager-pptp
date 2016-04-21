@@ -33,7 +33,7 @@ nm-pptp-pppd-service-dbus.h: $(top_srcdir)/src/nm-pptp-pppd-service.xml
 	$(AM_V_GEN) gdbus-codegen \
 		--generate-c-code $(basename $@) \
 		--c-namespace NMDBus \
-		--interface-prefix org.freedesktop \
+		--interface-prefix org.freedesktop.NetworkManager \
 		$<
 
 nm-pptp-pppd-service-dbus.c:
