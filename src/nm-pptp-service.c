@@ -748,7 +748,7 @@ lookup_gateway (NMPptpPlugin *self,
 	struct addrinfo hints;
 	struct addrinfo *result = NULL, *rp;
 	int err;
-	char buf[INET_ADDRSTRLEN + 1];
+	char buf[INET_ADDRSTRLEN];
 
 	g_return_val_if_fail (src != NULL, FALSE);
 
@@ -818,19 +818,9 @@ lookup_gateway (NMPptpPlugin *self,
 		return FALSE;
 	}
 
-	memset (buf, 0, sizeof (buf));
-	errno = 0;
-	if (inet_ntop (AF_INET, &naddr, buf, sizeof (buf) - 1) == NULL) {
-		g_set_error (error,
-		             NM_VPN_PLUGIN_ERROR,
-		             NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED,
-		             _("no usable addresses returned for PPTP VPN gateway '%s' (%d)"),
-		             src, errno);
-		return FALSE;
-	}
-
 	priv->naddr = naddr.s_addr;
-	priv->saddr = g_strdup (buf);
+	priv->saddr = g_strdup (inet_ntop (AF_INET, &naddr, buf, sizeof (buf)));
+
 	return TRUE;
 }
 
