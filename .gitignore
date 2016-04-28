@@ -26,7 +26,7 @@ m4/gtk-doc.m4
 m4/intltool.m4
 m4/libtool.m4
 m4/lt*.m4
-appdata/network-manager-pptp.appdata.xml
+appdata/network-manager-pptp.metainfo.xml
 
 auth-dialog/nm-pptp-auth-dialog
 nm-pptp-service.name

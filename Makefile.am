@@ -19,7 +19,7 @@ endif
 
 appdatadir = $(datadir)/appdata
 appdata_DATA = $(appdata_in_files:.xml.in=.xml)
-appdata_in_files = appdata/network-manager-pptp.appdata.xml.in
+appdata_in_files = appdata/network-manager-pptp.metainfo.xml.in
 @INTLTOOL_XML_RULE@
 
 nm-pptp-service.name: $(srcdir)/nm-pptp-service.name.in
