@@ -57,10 +57,10 @@
 
 static gboolean debug = FALSE;
 
-static void nm_ptpp_plugin_initable_iface_init (GInitableIface *iface);
+static void nm_pptp_plugin_initable_iface_init (GInitableIface *iface);
 
 G_DEFINE_TYPE_WITH_CODE (NMPptpPlugin, nm_pptp_plugin, NM_TYPE_VPN_SERVICE_PLUGIN,
-                         G_IMPLEMENT_INTERFACE (G_TYPE_INITABLE, nm_ptpp_plugin_initable_iface_init));
+                         G_IMPLEMENT_INTERFACE (G_TYPE_INITABLE, nm_pptp_plugin_initable_iface_init));
 
 typedef struct {
 	GPid pid;
@@ -1045,7 +1045,7 @@ init_sync (GInitable *object, GCancellable *cancellable, GError **error)
 }
 
 static void
-nm_ptpp_plugin_initable_iface_init (GInitableIface *iface)
+nm_pptp_plugin_initable_iface_init (GInitableIface *iface)
 {
 	ginitable_parent_iface = g_type_interface_peek_parent (iface);
 	iface->init = init_sync;
