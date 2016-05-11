@@ -1,4 +1,16 @@
 =======================================================
+NetworkManager-pptp-1.2.2
+Overview of changes since network-manager-pptp-1.2
+=======================================================
+
+This is a new stable release of NetworkManager-pptp.  Notable changes include:
+
+* Fixed the D-Bus API for multiple concurrent connections
+* Use a proper name for the AppStream metadata
+* Updated Italian, Polish, German and Hungarian translations
+
+
+=======================================================
 NetworkManager-pptp-1.2
 Overview of changes since network-manager-pptp-1.0
 =======================================================
