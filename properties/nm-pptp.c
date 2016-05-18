@@ -34,7 +34,7 @@
 #include <string.h>
 #include <gtk/gtk.h>
 
-#ifdef NM_PPTP_OLD
+#ifdef NM_VPN_OLD
 #define NM_VPN_LIBNM_COMPAT
 #include <nm-vpn-plugin-ui-interface.h>
 #include <nm-setting-vpn.h>
@@ -42,7 +42,7 @@
 #include <nm-setting-ip4-config.h>
 #include <nm-ui-utils.h>
 
-#else /* !NM_PPTP_OLD */
+#else /* !NM_VPN_OLD */
 
 #include <NetworkManager.h>
 #include <nma-ui-utils.h>

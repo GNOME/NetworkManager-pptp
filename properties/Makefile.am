@@ -34,7 +34,7 @@ libnm_vpn_plugin_pptp_la_CFLAGS =                       \
         $(LIBNM_CFLAGS)
 
 libnm_pptp_properties_la_CFLAGS =                       \
-        -DNM_PPTP_OLD                                   \
+        -DNM_VPN_OLD                                    \
         $(common_CFLAGS)                                \
         $(LIBNM_GLIB_CFLAGS)                            \
         $(LIBNM_GTK_CFLAGS)
