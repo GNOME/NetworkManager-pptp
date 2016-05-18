@@ -41,5 +41,14 @@ struct _PptpPluginUiClass {
 
 GType pptp_plugin_ui_get_type (void);
 
+typedef NMVpnEditor *(*NMVpnEditorFactory) (NMVpnEditorPlugin *editor_plugin,
+                                            NMConnection *connection,
+                                            GError **error);
+
+NMVpnEditor *
+nm_vpn_editor_factory_pptp (NMVpnEditorPlugin *editor_plugin,
+                            NMConnection *connection,
+                            GError **error);
+
 #endif /* __NM_PPTP_EDITOR_PLUGIN_H__ */
 
