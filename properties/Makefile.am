@@ -8,9 +8,7 @@ AM_CPPFLAGS = -I${top_srcdir}
 
 plugin_sources = \
     nm-pptp-editor-plugin.c \
-    nm-pptp-editor-plugin.h \
-    import-export.c \
-    import-export.h
+    nm-pptp-editor-plugin.h
 
 editor_sources = \
     advanced-dialog.c \

@@ -26,7 +26,6 @@
 #include "nm-pptp-editor-plugin.h"
 
 #include "nm-pptp-editor.h"
-#include "import-export.h"
 
 #define PPTP_PLUGIN_NAME    _("Point-to-Point Tunneling Protocol (PPTP)")
 #define PPTP_PLUGIN_DESC    _("Compatible with Microsoft and other PPTP VPN servers.")
@@ -53,9 +52,8 @@ enum {
 static NMConnection *
 import (NMVpnEditorPlugin *iface, const char *path, GError **error)
 {
-	NMConnection *connection = NULL;
-	char *contents = NULL;
-	char **lines = NULL;
+	gs_free char *contents = NULL;
+	gs_strfreev char **lines = NULL;
 	char *ext;
 
 	ext = strrchr (path, '.');
@@ -64,7 +62,7 @@ import (NMVpnEditorPlugin *iface, const char *path, GError **error)
 		             NMV_EDITOR_PLUGIN_ERROR,
 		             NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_VPN,
 		             "unknown PPTP file extension");
-		goto out;
+		return NULL;
 	}
 
 	if (strcmp (ext, ".conf") && strcmp (ext, ".cnf")) {
@@ -72,7 +70,7 @@ import (NMVpnEditorPlugin *iface, const char *path, GError **error)
 		             NMV_EDITOR_PLUGIN_ERROR,
 		             NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_VPN,
 		             "unknown PPTP file extension");
-		goto out;
+		return NULL;
 	}
 
 	if (!g_file_get_contents (path, &contents, NULL, error))
@@ -84,16 +82,14 @@ import (NMVpnEditorPlugin *iface, const char *path, GError **error)
 		             NMV_EDITOR_PLUGIN_ERROR,
 		             NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_READABLE,
 		             "not a valid PPTP configuration file");
-		goto out;
+		return NULL;
 	}
 
-	connection = do_import (path, lines, error);
-
-out:
-	if (lines)
-		g_strfreev (lines);
-	g_free (contents);
-	return connection;
+	g_set_error_literal (error,
+	                     NMV_EDITOR_PLUGIN_ERROR,
+	                     NMV_EDITOR_PLUGIN_ERROR_FAILED,
+	                     "PPTP import is not implemented");
+	return NULL;
 }
 
 static gboolean
@@ -102,7 +98,11 @@ export (NMVpnEditorPlugin *iface,
         NMConnection *connection,
         GError **error)
 {
-	return do_export (path, connection, error);
+	g_set_error_literal (error,
+	                     NMV_EDITOR_PLUGIN_ERROR,
+	                     NMV_EDITOR_PLUGIN_ERROR_FAILED,
+	                     "PPTP export is not implemented");
+	return FALSE;
 }
 
 static char *
