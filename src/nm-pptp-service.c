@@ -20,9 +20,9 @@
  * (C) Copyright 2008 - 2014 Red Hat, Inc.
  */
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
+#include "nm-default.h"
+
+#include "nm-pptp-service.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -43,11 +43,6 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 
-#include <glib/gi18n.h>
-
-#include <NetworkManager.h>
-
-#include "nm-pptp-service.h"
 #include "nm-ppp-status.h"
 #include "nm-pptp-pppd-service-dbus.h"
 

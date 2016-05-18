@@ -19,9 +19,9 @@
  *
  **************************************************************************/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
+#include "nm-default.h"
+
+#include "import-export.h"
 
 #include <string.h>
 #include <sys/types.h>
@@ -32,13 +32,7 @@
 #include <errno.h>
 #include <ctype.h>
 
-#include <glib/gi18n-lib.h>
-
-#include <NetworkManager.h>
-
-#include "import-export.h"
 #include "nm-pptp.h"
-#include "nm-service-defines.h"
 
 NMConnection *
 do_import (const char *path, char **lines, GError **error)

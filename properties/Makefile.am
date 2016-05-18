@@ -31,6 +31,7 @@ libnm_vpn_plugin_pptp_la_SOURCES = \
     $(plugin_sources)
 
 libnm_vpn_plugin_pptp_la_CFLAGS = \
+    -DNETWORKMANAGER_COMPILATION=NM_NETWORKMANAGER_COMPILATION_LIB \
     $(common_CFLAGS) \
     $(LIBNMA_CFLAGS) \
     $(LIBNM_CFLAGS)
@@ -50,6 +51,7 @@ libnm_pptp_properties_la_SOURCES = \
 
 libnm_pptp_properties_la_CFLAGS = \
     -DNM_VPN_OLD \
+    -DNETWORKMANAGER_COMPILATION=NM_NETWORKMANAGER_COMPILATION_LIB \
     $(common_CFLAGS) \
     $(LIBNM_GLIB_CFLAGS) \
     $(LIBNM_GTK_CFLAGS)

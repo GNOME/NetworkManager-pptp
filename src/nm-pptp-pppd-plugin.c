@@ -20,22 +20,25 @@
  *
  */
 
-#include <string.h>
-#include <stdlib.h>
+#include <config.h>
+#define ___CONFIG_H__
+
+/* pppd headers *sigh* */
 #include <pppd/pppd.h>
 #include <pppd/fsm.h>
 #include <pppd/ipcp.h>
+
+#include "nm-default.h"
+
+#include <string.h>
+#include <stdlib.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <dlfcn.h>
-#include <glib.h>
-#include <gio/gio.h>
 
 #include "nm-pptp-service.h"
 #include "nm-ppp-status.h"
-
-#include <NetworkManager.h>
 
 int plugin_init (void);
 

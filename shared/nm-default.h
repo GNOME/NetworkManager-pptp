@@ -38,7 +38,10 @@
 
 /*****************************************************************************/
 
+#ifndef ___CONFIG_H__
+#define ___CONFIG_H__
 #include <config.h>
+#endif
 
 /* always include these headers for our internal source files. */
 
