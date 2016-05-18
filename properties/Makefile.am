@@ -42,7 +42,8 @@ libnm_vpn_plugin_pptp_la_LIBADD = \
     $(LIBNM_LIBS)
 
 libnm_vpn_plugin_pptp_la_LDFLAGS = \
-    -avoid-version
+    -avoid-version \
+    -Wl,--version-script="$(srcdir)/libnm-vpn-plugin-pptp.ver"
 
 ###############################################################################
 
@@ -62,11 +63,14 @@ libnm_pptp_properties_la_LIBADD = \
     $(LIBNM_GTK_LIBS)
 
 libnm_pptp_properties_la_LDFLAGS = \
-    -avoid-version
+    -avoid-version \
+    -Wl,--version-script="$(srcdir)/libnm-pptp-properties.ver"
 
 ###############################################################################
 
 CLEANFILES = *.bak *~
 
 EXTRA_DIST = \
-    $(ui_DATA)
+    $(ui_DATA) \
+    libnm-pptp-properties.ver \
+    libnm-vpn-plugin-pptp.ver
