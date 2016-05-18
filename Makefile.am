@@ -19,7 +19,7 @@ install-data-hook:
 	mkdir -p $(DESTDIR)$(sysconfdir)/NetworkManager/VPN
 	sed -e "1s|^|# This file is obsoleted by a file in $(NM_VPN_SERVICE_DIR)\n\n|" \
 	    -e 's|[@]LIBEXECDIR[@]|$(libexecdir)|g' \
-	    -e 's|[@]PLUGINDIR[@]|$(libdir)/NetworkManager|g' \
+	    -e 's|[@]PLUGINDIR[@]|@NM_PLUGIN_DIR@|g' \
 	    <$(srcdir)/nm-pptp-service.name.in \
 	    >$(DESTDIR)$(sysconfdir)/NetworkManager/VPN/nm-pptp-service.name
 
@@ -34,7 +34,7 @@ appdata_in_files = appdata/network-manager-pptp.metainfo.xml.in
 
 nm-pptp-service.name: $(srcdir)/nm-pptp-service.name.in
 	sed -e 's|[@]LIBEXECDIR[@]|$(libexecdir)|g' \
-	    -e 's|[@]PLUGINDIR[@]/|@NM_PLUGIN_DIR@|g' \
+	    -e 's|[@]PLUGINDIR[@]/|@NM_PLUGIN_DIR_NAME_FILE@|g' \
 	    $< >$@
 
 DISTCHECK_CONFIGURE_FLAGS = --enable-more-warnings=yes
