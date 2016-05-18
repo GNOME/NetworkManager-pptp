@@ -25,7 +25,7 @@
 
 #include "nm-pptp-editor-plugin.h"
 
-#include "nm-pptp.h"
+#include "nm-pptp-editor.h"
 #include "import-export.h"
 
 #define PPTP_PLUGIN_NAME    _("Point-to-Point Tunneling Protocol (PPTP)")

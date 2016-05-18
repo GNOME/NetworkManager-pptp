@@ -32,8 +32,6 @@
 #include <errno.h>
 #include <ctype.h>
 
-#include "nm-pptp.h"
-
 NMConnection *
 do_import (const char *path, char **lines, GError **error)
 {

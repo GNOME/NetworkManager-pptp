@@ -15,8 +15,8 @@ plugin_sources = \
 editor_sources = \
     advanced-dialog.c \
     advanced-dialog.h \
-    nm-pptp.c \
-    nm-pptp.h
+    nm-pptp-editor.c \
+    nm-pptp-editor.h
 
 uidir = $(datadir)/gnome-vpn-properties/pptp
 ui_DATA = nm-pptp-dialog.ui

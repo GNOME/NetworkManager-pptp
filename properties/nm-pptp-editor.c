@@ -22,7 +22,7 @@
 
 #include "nm-default.h"
 
-#include "nm-pptp.h"
+#include "nm-pptp-editor.h"
 
 #include <gtk/gtk.h>
 

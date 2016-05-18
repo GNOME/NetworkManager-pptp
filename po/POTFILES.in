@@ -4,7 +4,7 @@ appdata/network-manager-pptp.metainfo.xml.in
 auth-dialog/main.c
 properties/advanced-dialog.c
 properties/nm-pptp-editor-plugin.c
-properties/nm-pptp.c
+properties/nm-pptp-editor.c
 shared/nm-utils/nm-shared-utils.c
 shared/nm-vpn/nm-vpn-plugin-utils.c
 src/nm-pptp-service.c

@@ -24,16 +24,7 @@
 
 #include "advanced-dialog.h"
 
-#include <string.h>
-#include <sys/types.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include <errno.h>
-
-#include "nm-pptp.h"
-
 
 #define COL_NAME  0
 #define COL_VALUE 1
