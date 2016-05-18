@@ -1,7 +1,5 @@
 /* -*- Mode: C; tab-width: 4; indent-tabs-mode: t; c-basic-offset: 4 -*- */
 /***************************************************************************
- * nm-pptp.c : GNOME UI dialogs for configuring PPTP VPN connections
- *
  * Copyright (C) 2008 Dan Williams, <dcbw@redhat.com>
  * Copyright (C) 2008 - 2011 Red Hat, Inc.
  * Based on work by David Zeuthen, <davidz@redhat.com>
@@ -26,31 +24,11 @@
 
 #include "nm-pptp.h"
 
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <errno.h>
-#include <stdlib.h>
-#include <glib/gi18n-lib.h>
-#include <string.h>
 #include <gtk/gtk.h>
 
-#include "import-export.h"
 #include "advanced-dialog.h"
 
-#define PPTP_PLUGIN_NAME    _("Point-to-Point Tunneling Protocol (PPTP)")
-#define PPTP_PLUGIN_DESC    _("Compatible with Microsoft and other PPTP VPN servers.")
-
-typedef void (*ChangedCallback) (GtkWidget *widget, gpointer user_data);
-
-/************** plugin class **************/
-
-static void pptp_plugin_ui_interface_init (NMVpnEditorPluginInterface *iface_class);
-
-G_DEFINE_TYPE_EXTENDED (PptpPluginUi, pptp_plugin_ui, G_TYPE_OBJECT, 0,
-                        G_IMPLEMENT_INTERFACE (NM_TYPE_VPN_EDITOR_PLUGIN,
-                                               pptp_plugin_ui_interface_init))
-
-/************** UI widget class **************/
+/*****************************************************************************/
 
 static void pptp_plugin_ui_widget_interface_init (NMVpnEditorInterface *iface_class);
 
@@ -70,14 +48,7 @@ typedef struct {
 	gboolean new_connection;
 } PptpPluginUiWidgetPrivate;
 
-enum {
-	PROP_0,
-	PROP_NAME,
-	PROP_DESC,
-	PROP_SERVICE,
-
-	LAST_PROP
-};
+/*****************************************************************************/
 
 static gboolean
 check_validity (PptpPluginUiWidget *self, GError **error)
@@ -425,7 +396,14 @@ is_new_func (const char *key, const char *value, gpointer user_data)
 	*is_new = FALSE;
 }
 
-static NMVpnEditor *
+/*****************************************************************************/
+
+static void
+pptp_plugin_ui_widget_init (PptpPluginUiWidget *plugin)
+{
+}
+
+NMVpnEditor *
 nm_vpn_plugin_ui_widget_interface_new (NMConnection *connection, GError **error)
 {
 	NMVpnEditor *object;
@@ -532,167 +510,9 @@ pptp_plugin_ui_widget_class_init (PptpPluginUiWidgetClass *req_class)
 }
 
 static void
-pptp_plugin_ui_widget_init (PptpPluginUiWidget *plugin)
-{
-}
-
-static void
 pptp_plugin_ui_widget_interface_init (NMVpnEditorInterface *iface_class)
 {
-	/* interface implementation */
 	iface_class->get_widget = get_widget;
 	iface_class->update_connection = update_connection;
-}
-
-static NMConnection *
-import (NMVpnEditorPlugin *iface, const char *path, GError **error)
-{
-	NMConnection *connection = NULL;
-	char *contents = NULL;
-	char **lines = NULL;
-	char *ext;
-
-	ext = strrchr (path, '.');
-	if (!ext) {
-		g_set_error (error,
-		             NMV_EDITOR_PLUGIN_ERROR,
-		             NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_VPN,
-		             "unknown PPTP file extension");
-		goto out;
-	}
-
-	if (strcmp (ext, ".conf") && strcmp (ext, ".cnf")) {
-		g_set_error (error,
-		             NMV_EDITOR_PLUGIN_ERROR,
-		             NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_VPN,
-		             "unknown PPTP file extension");
-		goto out;
-	}
-
-	if (!g_file_get_contents (path, &contents, NULL, error))
-		return NULL;
-
-	lines = g_strsplit_set (contents, "\r\n", 0);
-	if (g_strv_length (lines) <= 1) {
-		g_set_error (error,
-		             NMV_EDITOR_PLUGIN_ERROR,
-		             NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_READABLE,
-		             "not a valid PPTP configuration file");
-		goto out;
-	}
-
-	connection = do_import (path, lines, error);
-
-out:
-	if (lines)
-		g_strfreev (lines);
-	g_free (contents);
-	return connection;
-}
-
-static gboolean
-export (NMVpnEditorPlugin *iface,
-        const char *path,
-        NMConnection *connection,
-        GError **error)
-{
-	return do_export (path, connection, error);
-}
-
-static char *
-get_suggested_filename (NMVpnEditorPlugin *iface, NMConnection *connection)
-{
-	NMSettingConnection *s_con;
-	const char *id;
-
-	g_return_val_if_fail (connection != NULL, NULL);
-
-	s_con = nm_connection_get_setting_connection (connection);
-	g_return_val_if_fail (s_con != NULL, NULL);
-
-	id = nm_setting_connection_get_id (s_con);
-	g_return_val_if_fail (id != NULL, NULL);
-
-	return g_strdup_printf ("%s (pptp).conf", id);
-}
-
-static NMVpnEditorPluginCapability
-get_capabilities (NMVpnEditorPlugin *iface)
-{
-	return NM_VPN_EDITOR_PLUGIN_CAPABILITY_NONE;
-}
-
-static NMVpnEditor *
-get_editor (NMVpnEditorPlugin *iface, NMConnection *connection, GError **error)
-{
-	return nm_vpn_plugin_ui_widget_interface_new (connection, error);
-}
-
-static void
-get_property (GObject *object, guint prop_id,
-			  GValue *value, GParamSpec *pspec)
-{
-	switch (prop_id) {
-	case PROP_NAME:
-		g_value_set_string (value, PPTP_PLUGIN_NAME);
-		break;
-	case PROP_DESC:
-		g_value_set_string (value, PPTP_PLUGIN_DESC);
-		break;
-	case PROP_SERVICE:
-		g_value_set_string (value, NM_DBUS_SERVICE_PPTP);
-		break;
-	default:
-		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-		break;
-	}
-}
-
-static void
-pptp_plugin_ui_class_init (PptpPluginUiClass *req_class)
-{
-	GObjectClass *object_class = G_OBJECT_CLASS (req_class);
-
-	object_class->get_property = get_property;
-
-	g_object_class_override_property (object_class,
-	                                  PROP_NAME,
-	                                  NM_VPN_EDITOR_PLUGIN_NAME);
-
-	g_object_class_override_property (object_class,
-	                                  PROP_DESC,
-	                                  NM_VPN_EDITOR_PLUGIN_DESCRIPTION);
-
-	g_object_class_override_property (object_class,
-	                                  PROP_SERVICE,
-	                                  NM_VPN_EDITOR_PLUGIN_SERVICE);
-}
-
-static void
-pptp_plugin_ui_init (PptpPluginUi *plugin)
-{
-}
-
-static void
-pptp_plugin_ui_interface_init (NMVpnEditorPluginInterface *iface_class)
-{
-	/* interface implementation */
-	iface_class->get_editor = get_editor;
-	iface_class->get_capabilities = get_capabilities;
-	iface_class->import_from_file = import;
-	iface_class->export_to_file = export;
-	iface_class->get_suggested_filename = get_suggested_filename;
-}
-
-G_MODULE_EXPORT NMVpnEditorPlugin *
-nm_vpn_editor_plugin_factory (GError **error)
-{
-	if (error)
-		g_return_val_if_fail (*error == NULL, NULL);
-
-	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
-	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-
-	return NM_VPN_EDITOR_PLUGIN (g_object_new (PPTP_TYPE_PLUGIN_UI, NULL));
 }
 

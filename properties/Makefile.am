@@ -7,12 +7,16 @@ endif
 AM_CPPFLAGS = -I${top_srcdir}
 
 plugin_sources = \
-    nm-pptp.c \
-    nm-pptp.h \
-    advanced-dialog.c \
-    advanced-dialog.h \
+    nm-pptp-editor-plugin.c \
+    nm-pptp-editor-plugin.h \
     import-export.c \
     import-export.h
+
+editor_sources = \
+    advanced-dialog.c \
+    advanced-dialog.h \
+    nm-pptp.c \
+    nm-pptp.h
 
 uidir = $(datadir)/gnome-vpn-properties/pptp
 ui_DATA = nm-pptp-dialog.ui
@@ -28,7 +32,8 @@ common_CFLAGS = \
 ###############################################################################
 
 libnm_vpn_plugin_pptp_la_SOURCES = \
-    $(plugin_sources)
+    $(plugin_sources) \
+    $(editor_sources)
 
 libnm_vpn_plugin_pptp_la_CFLAGS = \
     -DNETWORKMANAGER_COMPILATION=NM_NETWORKMANAGER_COMPILATION_LIB \
@@ -48,7 +53,8 @@ libnm_vpn_plugin_pptp_la_LDFLAGS = \
 ###############################################################################
 
 libnm_pptp_properties_la_SOURCES = \
-    $(plugin_sources)
+    $(plugin_sources) \
+    $(editor_sources)
 
 libnm_pptp_properties_la_CFLAGS = \
     -DNM_VPN_OLD \
@@ -71,6 +77,6 @@ libnm_pptp_properties_la_LDFLAGS = \
 CLEANFILES = *.bak *~
 
 EXTRA_DIST = \
-    $(ui_DATA) \
     libnm-pptp-properties.ver \
-    libnm-vpn-plugin-pptp.ver
+    libnm-vpn-plugin-pptp.ver \
+    nm-pptp-dialog.ui
