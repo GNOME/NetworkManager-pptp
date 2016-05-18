@@ -1,31 +1,31 @@
-AM_CPPFLAGS =							\
-	$(GLIB_CFLAGS)						\
-	$(LIBNM_CFLAGS)						\
-	-I${top_srcdir}						\
-	-DBINDIR=\"$(bindir)\"					\
-	-DPREFIX=\""$(prefix)"\"				\
-	-DSYSCONFDIR=\""$(sysconfdir)"\"			\
-	-DLIBDIR=\""$(libdir)"\"				\
-	-DLIBEXECDIR=\""$(libexecdir)"\"			\
-	-DLOCALSTATEDIR=\""$(localstatedir)"\"			\
-	-DDATADIR=\"$(datadir)\"				\
-	-DNM_PPTP_LOCALEDIR=\"$(datadir)/locale\"		\
-	-DPLUGINDIR=\"$(PPPD_PLUGIN_DIR)\" 
+AM_CPPFLAGS = \
+    $(GLIB_CFLAGS) \
+    $(LIBNM_CFLAGS) \
+    -I${top_srcdir} \
+    -DBINDIR=\"$(bindir)\" \
+    -DPREFIX=\""$(prefix)"\" \
+    -DSYSCONFDIR=\""$(sysconfdir)"\" \
+    -DLIBDIR=\""$(libdir)"\" \
+    -DLIBEXECDIR=\""$(libexecdir)"\" \
+    -DLOCALSTATEDIR=\""$(localstatedir)"\" \
+    -DDATADIR=\"$(datadir)\" \
+    -DNM_PPTP_LOCALEDIR=\"$(datadir)/locale\" \
+    -DPLUGINDIR=\"$(PPPD_PLUGIN_DIR)\"
 
 libexec_PROGRAMS = nm-pptp-service
 
 nm_pptp_service_SOURCES = \
-	nm-pptp-service-defines.h \
-	nm-pptp-service.c \
-	nm-pptp-service.h
+    nm-pptp-service-defines.h \
+    nm-pptp-service.c \
+    nm-pptp-service.h
 
 
 # D-Bus stuff
 noinst_LTLIBRARIES = libnm-pptp-pppd-service-dbus.la
 
 nodist_libnm_pptp_pppd_service_dbus_la_SOURCES = \
-	nm-pptp-pppd-service-dbus.c \
-	nm-pptp-pppd-service-dbus.h
+    nm-pptp-pppd-service-dbus.c \
+    nm-pptp-pppd-service-dbus.h
 
 libnm_pptp_pppd_service_dbus_la_CPPFLAGS = $(filter-out -DGLIB_VERSION_MAX_ALLOWED%,$(AM_CPPFLAGS))
 
@@ -40,26 +40,26 @@ nm-pptp-pppd-service-dbus.c:
 	@true
 
 nm_pptp_service_LDADD = \
-	$(GLIB_LIBS) \
-	$(LIBNM_LIBS) \
-	libnm-pptp-pppd-service-dbus.la
+    $(GLIB_LIBS) \
+    $(LIBNM_LIBS) \
+    libnm-pptp-pppd-service-dbus.la
 
 pppd_plugindir = $(PPPD_PLUGIN_DIR)
 pppd_plugin_LTLIBRARIES = nm-pptp-pppd-plugin.la
 
 nm_pptp_pppd_plugin_la_SOURCES = \
-	nm-pptp-pppd-plugin.c \
-	nm-ppp-status.h
+    nm-pptp-pppd-plugin.c \
+    nm-ppp-status.h
 
 nm_pptp_pppd_plugin_la_CPPFLAGS = \
-	$(GLIB_CFLAGS) \
-	$(LIBNM_CFLAGS)
+    $(GLIB_CFLAGS) \
+    $(LIBNM_CFLAGS)
 
 nm_pptp_pppd_plugin_la_LDFLAGS = -module -avoid-version
 
 nm_pptp_pppd_plugin_la_LIBADD = \
-	$(GLIB_LIBS) \
-	$(LIBNM_LIBS)
+    $(GLIB_LIBS) \
+    $(LIBNM_LIBS)
 
 BUILT_SOURCES = nm-pptp-pppd-service-dbus.h nm-pptp-pppd-service-dbus.c
 
