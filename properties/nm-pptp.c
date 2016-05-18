@@ -48,7 +48,7 @@
 #include <nma-ui-utils.h>
 #endif
 
-#include "nm-pptp-service-defines.h"
+#include "nm-service-defines.h"
 #include "nm-pptp.h"
 #include "import-export.h"
 #include "advanced-dialog.h"

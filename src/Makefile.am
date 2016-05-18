@@ -1,7 +1,7 @@
 AM_CPPFLAGS = \
     $(GLIB_CFLAGS) \
     $(LIBNM_CFLAGS) \
-    -I${top_srcdir} \
+    -I"${top_srcdir}/shared/" \
     -DBINDIR=\"$(bindir)\" \
     -DPREFIX=\""$(prefix)"\" \
     -DSYSCONFDIR=\""$(sysconfdir)"\" \
@@ -15,7 +15,7 @@ AM_CPPFLAGS = \
 libexec_PROGRAMS = nm-pptp-service
 
 nm_pptp_service_SOURCES = \
-    nm-pptp-service-defines.h \
+    $(top_srcdir)/shared/nm-service-defines.h \
     nm-pptp-service.c \
     nm-pptp-service.h
 
@@ -52,6 +52,7 @@ nm_pptp_pppd_plugin_la_SOURCES = \
     nm-ppp-status.h
 
 nm_pptp_pppd_plugin_la_CPPFLAGS = \
+    -I"$(top_srcdir)/shared/" \
     $(GLIB_CFLAGS) \
     $(LIBNM_CFLAGS)
 
