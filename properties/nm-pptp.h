@@ -27,19 +27,19 @@
 
 typedef enum
 {
-	PPTP_PLUGIN_UI_ERROR_UNKNOWN = 0,
-	PPTP_PLUGIN_UI_ERROR_INVALID_CONNECTION,
-	PPTP_PLUGIN_UI_ERROR_INVALID_PROPERTY,
-	PPTP_PLUGIN_UI_ERROR_MISSING_PROPERTY,
-	PPTP_PLUGIN_UI_ERROR_FILE_NOT_READABLE,
-	PPTP_PLUGIN_UI_ERROR_FILE_NOT_PPTP
+	NMV_EDITOR_PLUGIN_ERROR_UNKNOWN = 0,
+	NMV_EDITOR_PLUGIN_ERROR_INVALID_CONNECTION,
+	NMV_EDITOR_PLUGIN_ERROR_INVALID_PROPERTY,
+	NMV_EDITOR_PLUGIN_ERROR_MISSING_PROPERTY,
+	NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_READABLE,
+	NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_VPN,
 } PptpPluginUiError;
 
-#define PPTP_TYPE_PLUGIN_UI_ERROR (pptp_plugin_ui_error_get_type ()) 
+#define PPTP_TYPE_PLUGIN_UI_ERROR (pptp_plugin_ui_error_get_type ())
 GType pptp_plugin_ui_error_get_type (void);
 
-#define PPTP_PLUGIN_UI_ERROR (pptp_plugin_ui_error_quark ())
-GQuark pptp_plugin_ui_error_quark (void);
+#define NMV_EDITOR_PLUGIN_ERROR (nmv_editor_plugin_error_quark ())
+GQuark nmv_editor_plugin_error_quark (void);
 
 
 #define PPTP_TYPE_PLUGIN_UI            (pptp_plugin_ui_get_type ())

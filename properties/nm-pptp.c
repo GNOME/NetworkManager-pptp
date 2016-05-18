@@ -96,7 +96,7 @@ enum {
 };
 
 GQuark
-pptp_plugin_ui_error_quark (void)
+nmv_editor_plugin_error_quark (void)
 {
 	static GQuark error_quark = 0;
 
@@ -117,17 +117,17 @@ pptp_plugin_ui_error_get_type (void)
 	if (etype == 0) {
 		static const GEnumValue values[] = {
 			/* Unknown error. */
-			ENUM_ENTRY (PPTP_PLUGIN_UI_ERROR_UNKNOWN, "UnknownError"),
+			ENUM_ENTRY (NMV_EDITOR_PLUGIN_ERROR_UNKNOWN, "UnknownError"),
 			/* The connection was missing invalid. */
-			ENUM_ENTRY (PPTP_PLUGIN_UI_ERROR_INVALID_CONNECTION, "InvalidConnection"),
+			ENUM_ENTRY (NMV_EDITOR_PLUGIN_ERROR_INVALID_CONNECTION, "InvalidConnection"),
 			/* The specified property was invalid. */
-			ENUM_ENTRY (PPTP_PLUGIN_UI_ERROR_INVALID_PROPERTY, "InvalidProperty"),
+			ENUM_ENTRY (NMV_EDITOR_PLUGIN_ERROR_INVALID_PROPERTY, "InvalidProperty"),
 			/* The specified property was missing and is required. */
-			ENUM_ENTRY (PPTP_PLUGIN_UI_ERROR_MISSING_PROPERTY, "MissingProperty"),
+			ENUM_ENTRY (NMV_EDITOR_PLUGIN_ERROR_MISSING_PROPERTY, "MissingProperty"),
 			/* The file to import could not be read. */
-			ENUM_ENTRY (PPTP_PLUGIN_UI_ERROR_FILE_NOT_READABLE, "FileNotReadable"),
+			ENUM_ENTRY (NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_READABLE, "FileNotReadable"),
 			/* The file to import could was not an PPTP client file. */
-			ENUM_ENTRY (PPTP_PLUGIN_UI_ERROR_FILE_NOT_PPTP, "FileNotPPTP"),
+			ENUM_ENTRY (NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_VPN, "FileNotPPTP"),
 			{ 0, 0, 0 }
 		};
 		etype = g_enum_register_static ("PptpPluginUiError", values);
@@ -146,8 +146,8 @@ check_validity (PptpPluginUiWidget *self, GError **error)
 	str = gtk_entry_get_text (GTK_ENTRY (widget));
 	if (!str || !strlen (str)) {
 		g_set_error (error,
-		             PPTP_PLUGIN_UI_ERROR,
-		             PPTP_PLUGIN_UI_ERROR_INVALID_PROPERTY,
+		             NMV_EDITOR_PLUGIN_ERROR,
+		             NMV_EDITOR_PLUGIN_ERROR_INVALID_PROPERTY,
 		             NM_PPTP_KEY_GATEWAY);
 		return FALSE;
 	}
@@ -495,7 +495,7 @@ nm_vpn_plugin_ui_widget_interface_new (NMConnection *connection, GError **error)
 
 	object = NM_VPN_EDITOR (g_object_new (PPTP_TYPE_PLUGIN_UI_WIDGET, NULL));
 	if (!object) {
-		g_set_error (error, PPTP_PLUGIN_UI_ERROR, 0, "could not create pptp object");
+		g_set_error (error, NMV_EDITOR_PLUGIN_ERROR, 0, "could not create pptp object");
 		return NULL;
 	}
 
@@ -510,7 +510,7 @@ nm_vpn_plugin_ui_widget_interface_new (NMConnection *connection, GError **error)
 		g_warning ("Couldn't load builder file: %s",
 		           error && *error ? (*error)->message : "(unknown)");
 		g_clear_error (error);
-		g_set_error (error, PPTP_PLUGIN_UI_ERROR, 0,
+		g_set_error (error, NMV_EDITOR_PLUGIN_ERROR, 0,
 		             "could not load required resources at %s", ui_file);
 		g_free (ui_file);
 		g_object_unref (object);
@@ -520,7 +520,7 @@ nm_vpn_plugin_ui_widget_interface_new (NMConnection *connection, GError **error)
 
 	priv->widget = GTK_WIDGET (gtk_builder_get_object (priv->builder, "pptp-vbox"));
 	if (!priv->widget) {
-		g_set_error (error, PPTP_PLUGIN_UI_ERROR, 0, "could not load UI widget");
+		g_set_error (error, NMV_EDITOR_PLUGIN_ERROR, 0, "could not load UI widget");
 		g_object_unref (object);
 		return NULL;
 	}
@@ -611,16 +611,16 @@ import (NMVpnEditorPlugin *iface, const char *path, GError **error)
 	ext = strrchr (path, '.');
 	if (!ext) {
 		g_set_error (error,
-		             PPTP_PLUGIN_UI_ERROR,
-		             PPTP_PLUGIN_UI_ERROR_FILE_NOT_PPTP,
+		             NMV_EDITOR_PLUGIN_ERROR,
+		             NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_VPN,
 		             "unknown PPTP file extension");
 		goto out;
 	}
 
 	if (strcmp (ext, ".conf") && strcmp (ext, ".cnf")) {
 		g_set_error (error,
-		             PPTP_PLUGIN_UI_ERROR,
-		             PPTP_PLUGIN_UI_ERROR_FILE_NOT_PPTP,
+		             NMV_EDITOR_PLUGIN_ERROR,
+		             NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_VPN,
 		             "unknown PPTP file extension");
 		goto out;
 	}
@@ -631,8 +631,8 @@ import (NMVpnEditorPlugin *iface, const char *path, GError **error)
 	lines = g_strsplit_set (contents, "\r\n", 0);
 	if (g_strv_length (lines) <= 1) {
 		g_set_error (error,
-		             PPTP_PLUGIN_UI_ERROR,
-		             PPTP_PLUGIN_UI_ERROR_FILE_NOT_READABLE,
+		             NMV_EDITOR_PLUGIN_ERROR,
+		             NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_READABLE,
 		             "not a valid PPTP configuration file");
 		goto out;
 	}
