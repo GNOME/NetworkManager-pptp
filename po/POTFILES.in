@@ -4,5 +4,7 @@ appdata/network-manager-pptp.metainfo.xml.in
 auth-dialog/main.c
 properties/advanced-dialog.c
 properties/nm-pptp.c
+shared/nm-utils/nm-shared-utils.c
+shared/nm-vpn/nm-vpn-plugin-utils.c
 src/nm-pptp-service.c
 [type: gettext/glade]properties/nm-pptp-dialog.ui
