@@ -106,35 +106,6 @@ nmv_editor_plugin_error_quark (void)
 	return error_quark;
 }
 
-/* This should really be standard. */
-#define ENUM_ENTRY(NAME, DESC) { NAME, "" #NAME "", DESC }
-
-GType
-pptp_plugin_ui_error_get_type (void)
-{
-	static GType etype = 0;
-
-	if (etype == 0) {
-		static const GEnumValue values[] = {
-			/* Unknown error. */
-			ENUM_ENTRY (NMV_EDITOR_PLUGIN_ERROR_UNKNOWN, "UnknownError"),
-			/* The connection was missing invalid. */
-			ENUM_ENTRY (NMV_EDITOR_PLUGIN_ERROR_INVALID_CONNECTION, "InvalidConnection"),
-			/* The specified property was invalid. */
-			ENUM_ENTRY (NMV_EDITOR_PLUGIN_ERROR_INVALID_PROPERTY, "InvalidProperty"),
-			/* The specified property was missing and is required. */
-			ENUM_ENTRY (NMV_EDITOR_PLUGIN_ERROR_MISSING_PROPERTY, "MissingProperty"),
-			/* The file to import could not be read. */
-			ENUM_ENTRY (NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_READABLE, "FileNotReadable"),
-			/* The file to import could was not an PPTP client file. */
-			ENUM_ENTRY (NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_VPN, "FileNotPPTP"),
-			{ 0, 0, 0 }
-		};
-		etype = g_enum_register_static ("PptpPluginUiError", values);
-	}
-	return etype;
-}
-
 static gboolean
 check_validity (PptpPluginUiWidget *self, GError **error)
 {

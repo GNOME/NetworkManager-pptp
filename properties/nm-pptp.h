@@ -35,9 +35,6 @@ typedef enum
 	NMV_EDITOR_PLUGIN_ERROR_FILE_NOT_VPN,
 } PptpPluginUiError;
 
-#define PPTP_TYPE_PLUGIN_UI_ERROR (pptp_plugin_ui_error_get_type ())
-GType pptp_plugin_ui_error_get_type (void);
-
 #define NMV_EDITOR_PLUGIN_ERROR (nmv_editor_plugin_error_quark ())
 GQuark nmv_editor_plugin_error_quark (void);
 
