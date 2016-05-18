@@ -45,7 +45,7 @@ do_import (const char *path, char **lines, GError **error)
 {
 	g_set_error_literal (error,
 	                     NMV_EDITOR_PLUGIN_ERROR,
-	                     NMV_EDITOR_PLUGIN_ERROR_UNKNOWN,
+	                     NMV_EDITOR_PLUGIN_ERROR_FAILED,
 	                     "PPTP import is not implemented");
 	return NULL;
 }
@@ -55,7 +55,7 @@ do_export (const char *path, NMConnection *connection, GError **error)
 {
 	g_set_error_literal (error,
 	                     NMV_EDITOR_PLUGIN_ERROR,
-	                     NMV_EDITOR_PLUGIN_ERROR_UNKNOWN,
+	                     NMV_EDITOR_PLUGIN_ERROR_FAILED,
 	                     "PPTP export is not implemented");
 	return FALSE;
 }

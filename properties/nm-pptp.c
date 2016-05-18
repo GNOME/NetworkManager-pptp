@@ -95,17 +95,6 @@ enum {
 	LAST_PROP
 };
 
-GQuark
-nmv_editor_plugin_error_quark (void)
-{
-	static GQuark error_quark = 0;
-
-	if (G_UNLIKELY (error_quark == 0))
-		error_quark = g_quark_from_static_string ("pptp-plugin-ui-error-quark");
-
-	return error_quark;
-}
-
 static gboolean
 check_validity (PptpPluginUiWidget *self, GError **error)
 {
