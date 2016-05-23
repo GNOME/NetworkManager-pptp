@@ -1120,6 +1120,8 @@ main (int argc, char *argv[])
 
 	if (bus_name)
 		setenv ("NM_DBUS_SERVICE_PPTP", bus_name, 0);
+	else
+		unsetenv ("NM_DBUS_SERVICE_PPTP");
 
 	plugin = nm_pptp_plugin_new (bus_name);
 	if (!plugin)
