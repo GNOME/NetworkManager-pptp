@@ -23,13 +23,6 @@
 #ifndef NM_PPTP_PLUGIN_H
 #define NM_PPTP_PLUGIN_H
 
-#include <glib.h>
-#include <glib-object.h>
-#include <NetworkManager.h>
-#include <nm-vpn-service-plugin.h>
-
-#include "nm-pptp-service-defines.h"
-
 #define NM_TYPE_PPTP_PLUGIN            (nm_pptp_plugin_get_type ())
 #define NM_PPTP_PLUGIN(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), NM_TYPE_PPTP_PLUGIN, NMPptpPlugin))
 #define NM_PPTP_PLUGIN_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), NM_TYPE_PPTP_PLUGIN, NMPptpPluginClass))

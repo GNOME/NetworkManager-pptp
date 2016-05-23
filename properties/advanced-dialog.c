@@ -20,33 +20,11 @@
  *
  **************************************************************************/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
-#include <string.h>
-#include <sys/types.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <errno.h>
-
-#include <glib.h>
-#include <glib/gi18n-lib.h>
-
-#ifdef NM_PPTP_OLD
-#define NM_VPN_LIBNM_COMPAT
-#include <nm-connection.h>
-#include <nm-setting-vpn.h>
-
-#else /* !NM_PPTP_OLD */
-#include <NetworkManager.h>
-#endif
+#include "nm-default.h"
 
 #include "advanced-dialog.h"
-#include "nm-pptp.h"
-#include "../src/nm-pptp-service-defines.h"
+
+#include <errno.h>
 
 #define COL_NAME  0
 #define COL_VALUE 1
