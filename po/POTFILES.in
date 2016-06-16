@@ -5,7 +5,6 @@ auth-dialog/main.c
 properties/advanced-dialog.c
 properties/nm-pptp-editor-plugin.c
 properties/nm-pptp-editor.c
-shared/nm-utils/nm-shared-utils.c
 shared/nm-utils/nm-vpn-plugin-utils.c
 src/nm-pptp-service.c
 [type: gettext/glade]properties/nm-pptp-dialog.ui

@@ -4,7 +4,7 @@ AC_INIT(NetworkManager-pptp,
         1.3.0,
         https://bugzilla.gnome.org/enter_bug.cgi?product=NetworkManager,
         NetworkManager-pptp)
-AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-xz subdir-objects])
+AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-xz])
 AM_MAINTAINER_MODE
 
 AC_CONFIG_MACRO_DIR([m4])
