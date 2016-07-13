@@ -99,7 +99,7 @@ msgid ""
 "Allow/disable authentication methods.\n"
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 msgstr ""
-"Permet/inhabilita els mètodos d'autenticació.\n"
+"Permet/inhabilita els mètodes d'autenticació.\n"
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:7
@@ -351,7 +351,7 @@ msgstr "Falta l'opció requerida «%s»."
 
 #: ../src/nm-pptp-service.c:718
 msgid "No VPN secrets!"
-msgstr "No ha secrets de la VPN!"
+msgstr "No hi ha secrets de la VPN!"
 
 #: ../src/nm-pptp-service.c:875
 msgid "Could not find pptp client binary."
