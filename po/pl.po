@@ -1,28 +1,24 @@
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Aviary.pl
-# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
-# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
-# gnomepl@aviary.pl
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Polish translation for network-manager-pptp.
+# Copyright © 2008-2016 the network-manager-pptp authors.
+# This file is distributed under the same license as the network-manager-pptp package.
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2008-2009.
 # Piotr Drąg <piotrdrag@gmail.com>, 2010-2016.
-# Aviary.pl <gnomepl@aviary.pl>, 2008-2016.
+# Aviary.pl <community-poland@mozilla.org>, 2008-2016.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-23 18:38+0200\n"
-"PO-Revision-Date: 2016-05-23 18:39+0200\n"
+"POT-Creation-Date: 2016-08-17 19:48+0200\n"
+"PO-Revision-Date: 2016-08-17 19:49+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish <gnomepl@aviary.pl>\n"
+"Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Poedit-Language: Polish\n"
-"X-Poedit-Country: Poland\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
 msgid "PPTP VPN client"
@@ -38,7 +34,7 @@ msgstr "Obsługa konfigurowania połączeń wirtualnych sieci prywatnych PPTP."
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:4
 msgid "Compatible with various PPTP servers including Microsoft."
-msgstr "Zgodne z różnymi serwerami PPTP, w tym firmy Microsoft."
+msgstr "Zgodne z różnymi serwerami PPTP, w tym firmy Microsoft."
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:5
 msgid "The NetworkManager Developers"
@@ -100,63 +96,24 @@ msgstr "Protokół tunelowania Point-to-Point (PPTP)"
 
 #: ../properties/nm-pptp-editor-plugin.c:35
 msgid "Compatible with Microsoft and other PPTP VPN servers."
-msgstr "Zgodny z serwerami firmy Microsoft i innymi serwerami VPN PPTP."
+msgstr "Zgodny z serwerami firmy Microsoft i innymi serwerami VPN PPTP."
 
-#: ../shared/nm-utils/nm-shared-utils.c:185
-#, c-format
-msgid "object class '%s' has no property named '%s'"
-msgstr "klasa obiektów „%s” nie posiada właściwości o nazwie „%s”"
-
-#: ../shared/nm-utils/nm-shared-utils.c:192
-#, c-format
-msgid "property '%s' of object class '%s' is not writable"
-msgstr "właściwość „%s” klasy obiektów „%s” nie jest zapisywalna"
-
-#: ../shared/nm-utils/nm-shared-utils.c:199
-#, c-format
-msgid ""
-"construct property \"%s\" for object '%s' can't be set after construction"
-msgstr ""
-"właściwość konstruktu „%s” dla obiektu „%s” nie może zostać ustawiona po "
-"konstrukcji"
-
-#: ../shared/nm-utils/nm-shared-utils.c:207
-#, c-format
-msgid "'%s::%s' is not a valid property name; '%s' is not a GObject subtype"
-msgstr ""
-"„%s::%s” nie jest prawidłową nazwą właściwości; „%s” nie jest podtypem "
-"GObject"
-
-#: ../shared/nm-utils/nm-shared-utils.c:216
-#, c-format
-msgid "unable to set property '%s' of type '%s' from value of type '%s'"
-msgstr "nie można ustawić właściwości „%s” typu „%s” z wartości typu „%s”"
-
-#: ../shared/nm-utils/nm-shared-utils.c:227
-#, c-format
-msgid ""
-"value \"%s\" of type '%s' is invalid or out of range for property '%s' of "
-"type '%s'"
-msgstr ""
-"wartość „%s” typu „%s” jest nieprawidłowa lub spoza zakresu dla właściwości "
-"„%s” typu „%s”"
-
-#: ../shared/nm-vpn/nm-vpn-plugin-utils.c:80
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
 #, c-format
 msgid "missing plugin file \"%s\""
 msgstr "brak pliku wtyczki „%s”"
 
-#: ../shared/nm-vpn/nm-vpn-plugin-utils.c:86
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
 #, c-format
 msgid "cannot load editor plugin: %s"
 msgstr "nie można wczytać wtyczki edytora: %s"
 
-#: ../shared/nm-vpn/nm-vpn-plugin-utils.c:95
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:95
 #, c-format
 msgid "cannot load factory %s from plugin: %s"
-msgstr "nie można wczytać generatora %s z wtyczki: %s"
+msgstr "nie można wczytać generatora %s z wtyczki: %s"
 
-#: ../shared/nm-vpn/nm-vpn-plugin-utils.c:121
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:121
 msgid "unknown error creating editor instance"
 msgstr "nieznany błąd podczas tworzenia wystąpienia edytora"
 
@@ -255,8 +212,8 @@ msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
 msgstr ""
-"nm-pptp-service dostarcza zintegrowaną możliwość VPN PPTP (zgodną z "
-"implementacją firmy Microsoft i innymi) dla usługi NetworkManager."
+"nm-pptp-service dostarcza zintegrowaną możliwość VPN PPTP (zgodną "
+"z implementacją firmy Microsoft i innymi) dla usługi NetworkManager."
 
 #: ../properties/nm-pptp-dialog.ui.h:1
 msgid "Default"
@@ -285,7 +242,7 @@ msgstr ""
 
 #: ../properties/nm-pptp-dialog.ui.h:7
 msgid "<b>Security and Compression</b>"
-msgstr "<b>Zabezpieczenia i kompresja</b>"
+msgstr "<b>Zabezpieczenia i kompresja</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:8
 msgid "Use _Point-to-Point encryption (MPPE)"
@@ -297,9 +254,9 @@ msgid ""
 "To enable this checkbox, select one or more of the MSCHAP authentication "
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
-"Uwaga: szyfrowanie MPPE jest dostępne tylko razem z metodami "
+"Uwaga: szyfrowanie MPPE jest dostępne tylko razem z metodami "
 "uwierzytelniania MSCHAP. Aby zaznaczyć te pole wyboru, należy wybrać jedną "
-"lub więcej z tych metod uwierzytelniania MSCHAP: MSCHAP lub MSCHAPv2."
+"lub więcej z tych metod uwierzytelniania MSCHAP: MSCHAP lub MSCHAPv2."
 
 #: ../properties/nm-pptp-dialog.ui.h:10
 msgid "_Security:"
@@ -310,7 +267,7 @@ msgid ""
 "Require the use of MPPE, with 40/128-bit encryption or all.\n"
 "config: require-mppe, require-mppe-128 or require-mppe-40"
 msgstr ""
-"Wymaga użycia MPPE, z 40/128-bitowym szyfrowaniem lub wszystkich.\n"
+"Wymaga użycia MPPE, z 40/128-bitowym szyfrowaniem lub wszystkich.\n"
 "konfiguracja: require-mppe, require-mppe-128 lub require-mppe-40"
 
 #: ../properties/nm-pptp-dialog.ui.h:13
@@ -360,8 +317,8 @@ msgid ""
 "transmit and the receive directions.\n"
 "config: novj (when unchecked)"
 msgstr ""
-"Umożliwia/wyłącza kompresję nagłówków TCP/IP w stylu Van Jacobsona w obu "
-"kierunkach (wysyłanie i pobieranie).\n"
+"Umożliwia/wyłącza kompresję nagłówków TCP/IP w stylu Van Jacobsona w obu "
+"kierunkach (wysyłanie i pobieranie).\n"
 "konfiguracja: novj (kiedy nie jest wybrane)"
 
 #: ../properties/nm-pptp-dialog.ui.h:25
@@ -378,7 +335,7 @@ msgid ""
 "config: lcp-echo-failure and lcp-echo-interval"
 msgstr ""
 "Wysyła żądania echa LCP, aby stwierdzić, czy partner jest aktywny.\n"
-"konfiguracja: lcp-echo-failure i lcp-echo-interval"
+"konfiguracja: lcp-echo-failure i lcp-echo-interval"
 
 #: ../properties/nm-pptp-dialog.ui.h:29
 msgid "<b>Misc</b>"
@@ -422,7 +379,7 @@ msgid ""
 "purposes.\n"
 "config: domain <domain>"
 msgstr ""
-"Dołącza nazwę domeny <domena> do lokalnej nazwy komputera w celach "
+"Dołącza nazwę domeny <domena> do lokalnej nazwy komputera w celach "
 "uwierzytelniania.\n"
 "konfiguracja: domain <domena>"
 
@@ -444,7 +401,7 @@ msgid ""
 "<name>.\n"
 "config: user <name>"
 msgstr ""
-"Ustawia nazwę używaną do uwierzytelniania lokalnego systemu z partnerem na "
+"Ustawia nazwę używaną do uwierzytelniania lokalnego systemu z partnerem na "
 "<nazwę>.\n"
 "konfiguracja: user <nazwa>"
 
