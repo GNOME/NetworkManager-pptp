@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2016-03-21 18:46+0000\n"
-"PO-Revision-Date: 2016-03-22 14:39+0100\n"
+"POT-Creation-Date: 2016-06-16 11:19+0000\n"
+"PO-Revision-Date: 2016-06-30 14:45+0100\n"
 "Last-Translator: Zdeněk Hataš <zdenek.hatas@gmail.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -22,61 +22,198 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Poedit 1.5.4\n"
 
+#: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
+msgid "PPTP VPN client"
+msgstr "Klient PPTP VPN"
+
+#: ../appdata/network-manager-pptp.metainfo.xml.in.h:2
+msgid "Client for PPTP virtual private networks"
+msgstr "Klient pro virtuální privátní sítě PPTP"
+
+#: ../appdata/network-manager-pptp.metainfo.xml.in.h:3
+msgid "Support for configuring PPTP virtual private network connections."
+msgstr "Podpora konfigurace připojení virtuálních privátních sítí PPTP."
+
+#: ../appdata/network-manager-pptp.metainfo.xml.in.h:4
+msgid "Compatible with various PPTP servers including Microsoft."
+msgstr "Kompatibilní s různými servery PPTP včetně těch od firmy Microsoft."
+
+#: ../appdata/network-manager-pptp.metainfo.xml.in.h:5
+msgid "The NetworkManager Developers"
+msgstr "Vývojáři NetworkManageru"
+
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
 #.
-#: ../auth-dialog/main.c:154
+#: ../auth-dialog/main.c:146
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr "Pro přístup k virtuální privátní síti „%s“ musíte provést autentizaci."
 
-#: ../auth-dialog/main.c:163 ../auth-dialog/main.c:183
+#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
 msgid "Authenticate VPN"
 msgstr "Autentizovat VPN"
 
-#: ../auth-dialog/main.c:165 ../properties/nm-pptp-dialog.ui.h:43
+#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
 msgid "Password:"
 msgstr "Heslo:"
 
-#: ../properties/advanced-dialog.c:191
+#: ../properties/advanced-dialog.c:169
 msgid "All Available (Default)"
 msgstr "Vše dostupné (výchozí)"
 
-#: ../properties/advanced-dialog.c:195
+#: ../properties/advanced-dialog.c:173
 msgid "128-bit (most secure)"
 msgstr "128 bitů (nejbezpečnější)"
 
-#: ../properties/advanced-dialog.c:204
+#: ../properties/advanced-dialog.c:182
 msgid "40-bit (less secure)"
 msgstr "40 bitů (méně bezpečné)"
 
-#: ../properties/advanced-dialog.c:308
+#: ../properties/advanced-dialog.c:286
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:321
+#: ../properties/advanced-dialog.c:299
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:333
+#: ../properties/advanced-dialog.c:311
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:345
+#: ../properties/advanced-dialog.c:323
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:358
+#: ../properties/advanced-dialog.c:336
 msgid "EAP"
 msgstr "EAP"
 
-#: ../properties/nm-pptp.c:56
+#: ../properties/nm-pptp-editor-plugin.c:34
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Point-to-Point Tunneling Protocol (PPTP)"
 
-#: ../properties/nm-pptp.c:57
+#: ../properties/nm-pptp-editor-plugin.c:35
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Kompatibilní s PPTP VPN servery od Microsoftu a ostatních."
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
+#, c-format
+msgid "missing plugin file \"%s\""
+msgstr "chybějící soubor zásuvného modulu „%s“"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
+#, c-format
+msgid "cannot load editor plugin: %s"
+msgstr "nelze nahrát editor zásuvného modulu: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:95
+#, c-format
+msgid "cannot load factory %s from plugin: %s"
+msgstr "nelze nahrát generátor %s ze zásuvného modulu: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:121
+msgid "unknown error creating editor instance"
+msgstr "neznámá chyba vytváření instance editoru"
+
+#: ../src/nm-pptp-service.c:164
+#, c-format
+msgid "invalid gateway '%s'"
+msgstr "neplatná brána „%s“"
+
+#: ../src/nm-pptp-service.c:178
+#, c-format
+msgid "invalid integer property '%s'"
+msgstr "neplatná číselná vlastnost „%s“"
+
+#: ../src/nm-pptp-service.c:188
+#, c-format
+msgid "invalid boolean property '%s' (not yes or no)"
+msgstr "neplatná pravdivostní vlastnost „%s“ (není ano či ne)"
+
+#: ../src/nm-pptp-service.c:195
+#, c-format
+msgid "unhandled property '%s' type %s"
+msgstr "neošetřená vlastnost „%s“ typu %s"
+
+#: ../src/nm-pptp-service.c:206
+#, c-format
+msgid "property '%s' invalid or not supported"
+msgstr "vlastnost „%s“ není platná nebo podporovaná"
+
+#: ../src/nm-pptp-service.c:224
+msgid "No VPN configuration options."
+msgstr "Žádné volby nastavení VPN."
+
+#: ../src/nm-pptp-service.c:244
+#, c-format
+msgid "Missing required option '%s'."
+msgstr "Chybí požadovaná volba „%s“."
+
+#: ../src/nm-pptp-service.c:264
+msgid "No VPN secrets!"
+msgstr "Žádná hesla VPN!"
+
+#: ../src/nm-pptp-service.c:419
+msgid "Could not find pptp client binary."
+msgstr "Nelze najít program klienta pptp."
+
+#: ../src/nm-pptp-service.c:432
+msgid "Missing VPN gateway."
+msgstr "Chybí brána VPN."
+
+#: ../src/nm-pptp-service.c:594
+msgid "Could not find the pppd binary."
+msgstr "Nelze nalézt program pptp."
+
+#: ../src/nm-pptp-service.c:654
+#| msgid "Missing or invalid VPN username."
+msgid "Missing VPN username."
+msgstr "Chybí jméno uživatele VPN."
+
+#: ../src/nm-pptp-service.c:663
+msgid "Missing or invalid VPN password."
+msgstr "Chybějící nebo neplatné heslo pro VPN."
+
+#: ../src/nm-pptp-service.c:769
+#, c-format
+msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
+msgstr "nelze převést adresu IP „%s“ (%d) brány PPTP VPN"
+
+#: ../src/nm-pptp-service.c:787
+#, c-format
+msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
+msgstr "nelze nalézt adresu IP „%s“ (%d) brány PPTP VPN"
+
+#: ../src/nm-pptp-service.c:811
+#, c-format
+msgid "no usable addresses returned for PPTP VPN gateway '%s'"
+msgstr "nebyla vrácena žádná použitelná adresa brány PPTP VPN „%s“"
+
+#: ../src/nm-pptp-service.c:840
+msgid "Invalid or missing PPTP gateway."
+msgstr "Neplatná nebo chybějící brána PPTP."
+
+#: ../src/nm-pptp-service.c:1085
+msgid "Don't quit when VPN connection terminates"
+msgstr "Neukončovat při uzavření spojení VPN"
+
+#: ../src/nm-pptp-service.c:1086
+msgid "Enable verbose debug logging (may expose passwords)"
+msgstr "Povolit podrobný ladicí výpis (může prozradit hesla)"
+
+#: ../src/nm-pptp-service.c:1087
+msgid "D-Bus name to use for this instance"
+msgstr "Název použitý v D-Bus pro tuto instanci"
+
+#: ../src/nm-pptp-service.c:1110
+msgid ""
+"nm-pptp-service provides integrated PPTP VPN capability (compatible with "
+"Microsoft and other implementations) to NetworkManager."
+msgstr ""
+"nm-pptp-service umožňuje NetworkManageru poskytovat služby pro připojování k "
+"serverům VPN s protokolem PPTP (Microsoftu a dalších)."
 
 #: ../properties/nm-pptp-dialog.ui.h:1
 msgid "Default"
@@ -274,112 +411,11 @@ msgstr "Uživatelské jméno:"
 msgid "Ad_vanced..."
 msgstr "P_okročilé…"
 
-#: ../src/nm-pptp-service.c:166
-#, c-format
-msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
-msgstr "nelze převést adresu IP „%s“ (%d) brány PPTP VPN"
+#~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
+#~ msgstr "nebyla vrácena žádná použitelná adresa brány PPTP VPN „%s“ (%d)"
 
-#: ../src/nm-pptp-service.c:184
-#, c-format
-msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
-msgstr "nelze nalézt adresu IP „%s“ (%d) brány PPTP VPN"
+#~ msgid "Could not find secrets (connection invalid, no vpn setting)."
+#~ msgstr "Nelze nalézt hesla (neplatné připojení, žádná nastavení vpn)."
 
-#: ../src/nm-pptp-service.c:208
-#, c-format
-msgid "no usable addresses returned for PPTP VPN gateway '%s'"
-msgstr "nebyla vrácena žádná použitelná adresa brány PPTP VPN „%s“"
-
-#: ../src/nm-pptp-service.c:219
-#, c-format
-msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
-msgstr "nebyla vrácena žádná použitelná adresa brány PPTP VPN „%s“ (%d)"
-
-#: ../src/nm-pptp-service.c:246
-msgid "Could not find secrets (connection invalid, no vpn setting)."
-msgstr "Nelze nalézt hesla (neplatné připojení, žádná nastavení vpn)."
-
-#: ../src/nm-pptp-service.c:258
-msgid "Missing or invalid VPN username."
-msgstr "Chybějící nebo neplatné uživatelské jméno pro VPN."
-
-#: ../src/nm-pptp-service.c:268
-msgid "Missing or invalid VPN password."
-msgstr "Chybějící nebo neplatné heslo pro VPN."
-
-#: ../src/nm-pptp-service.c:462
-msgid "No cached credentials."
-msgstr "Nejsou žádné přihlašovací údaje v mezipaměti."
-
-#: ../src/nm-pptp-service.c:618
-#, c-format
-msgid "invalid gateway '%s'"
-msgstr "neplatná brána „%s“"
-
-#: ../src/nm-pptp-service.c:632
-#, c-format
-msgid "invalid integer property '%s'"
-msgstr "neplatná číselná vlastnost „%s“"
-
-#: ../src/nm-pptp-service.c:642
-#, c-format
-msgid "invalid boolean property '%s' (not yes or no)"
-msgstr "neplatná pravdivostní vlastnost „%s“ (není ano či ne)"
-
-#: ../src/nm-pptp-service.c:649
-#, c-format
-msgid "unhandled property '%s' type %s"
-msgstr "neošetřená vlastnost „%s“ typu %s"
-
-#: ../src/nm-pptp-service.c:660
-#, c-format
-msgid "property '%s' invalid or not supported"
-msgstr "vlastnost „%s“ není platná nebo podporovaná"
-
-#: ../src/nm-pptp-service.c:678
-msgid "No VPN configuration options."
-msgstr "Žádné volby nastavení VPN."
-
-#: ../src/nm-pptp-service.c:698
-#, c-format
-msgid "Missing required option '%s'."
-msgstr "Chybí požadovaná volba „%s“."
-
-#: ../src/nm-pptp-service.c:718
-msgid "No VPN secrets!"
-msgstr "Žádná hesla VPN!"
-
-#: ../src/nm-pptp-service.c:875
-msgid "Could not find pptp client binary."
-msgstr "Nelze najít program klienta pptp."
-
-#: ../src/nm-pptp-service.c:888
-msgid "Missing VPN gateway."
-msgstr "Chybí brána VPN."
-
-#: ../src/nm-pptp-service.c:1049
-msgid "Could not find the pppd binary."
-msgstr "Nelze nalézt program pptp."
-
-#: ../src/nm-pptp-service.c:1151
-msgid "Invalid or missing PPTP gateway."
-msgstr "Neplatná nebo chybějící brána PPTP."
-
-#: ../src/nm-pptp-service.c:1338
-msgid "Don't quit when VPN connection terminates"
-msgstr "Neukončovat při uzavření spojení VPN"
-
-#: ../src/nm-pptp-service.c:1339
-msgid "Enable verbose debug logging (may expose passwords)"
-msgstr "Povolit podrobný ladicí výpis (může prozradit hesla)"
-
-#: ../src/nm-pptp-service.c:1340
-msgid "D-Bus name to use for this instance"
-msgstr "Název použitý v D-Bus pro tuto instanci"
-
-#: ../src/nm-pptp-service.c:1363
-msgid ""
-"nm-pptp-service provides integrated PPTP VPN capability (compatible with "
-"Microsoft and other implementations) to NetworkManager."
-msgstr ""
-"nm-pptp-service umožňuje NetworkManageru poskytovat služby pro připojování k "
-"serverům VPN s protokolem PPTP (Microsoftu a dalších)."
+#~ msgid "No cached credentials."
+#~ msgstr "Nejsou žádné přihlašovací údaje v mezipaměti."
