@@ -1,28 +1,24 @@
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Aviary.pl
-# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
-# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
-# gnomepl@aviary.pl
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Polish translation for network-manager-pptp.
+# Copyright © 2008-2016 the network-manager-pptp authors.
+# This file is distributed under the same license as the network-manager-pptp package.
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2008-2009.
 # Piotr Drąg <piotrdrag@gmail.com>, 2010-2016.
-# Aviary.pl <gnomepl@aviary.pl>, 2008-2016.
+# Aviary.pl <community-poland@mozilla.org>, 2008-2016.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-29 16:10+0200\n"
-"PO-Revision-Date: 2016-04-29 16:11+0200\n"
+"POT-Creation-Date: 2016-08-17 19:48+0200\n"
+"PO-Revision-Date: 2016-08-17 19:49+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish <gnomepl@aviary.pl>\n"
+"Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Poedit-Language: Polish\n"
-"X-Poedit-Country: Poland\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
 msgid "PPTP VPN client"
@@ -38,7 +34,7 @@ msgstr "Obsługa konfigurowania połączeń wirtualnych sieci prywatnych PPTP."
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:4
 msgid "Compatible with various PPTP servers including Microsoft."
-msgstr "Zgodne z różnymi serwerami PPTP, w tym firmy Microsoft."
+msgstr "Zgodne z różnymi serwerami PPTP, w tym firmy Microsoft."
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:5
 msgid "The NetworkManager Developers"
@@ -47,158 +43,177 @@ msgstr "Programiści projektu NetworkManager"
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
 #.
-#: ../auth-dialog/main.c:154
+#: ../auth-dialog/main.c:146
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr ""
 "Aby uzyskać dostęp do wirtualnej sieci prywatnej „%s”, należy się "
 "uwierzytelnić."
 
-#: ../auth-dialog/main.c:163 ../auth-dialog/main.c:183
+#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
 msgid "Authenticate VPN"
 msgstr "Uwierzytelnianie VPN"
 
-#: ../auth-dialog/main.c:165 ../properties/nm-pptp-dialog.ui.h:43
+#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
 msgid "Password:"
 msgstr "Hasło:"
 
-#: ../properties/advanced-dialog.c:191
+#: ../properties/advanced-dialog.c:169
 msgid "All Available (Default)"
 msgstr "Wszystkie dostępne (domyślnie)"
 
-#: ../properties/advanced-dialog.c:195
+#: ../properties/advanced-dialog.c:173
 msgid "128-bit (most secure)"
 msgstr "128-bitowe (najbardziej bezpieczne)"
 
-#: ../properties/advanced-dialog.c:204
+#: ../properties/advanced-dialog.c:182
 msgid "40-bit (less secure)"
 msgstr "40-bitowe (mniej bezpieczne)"
 
-#: ../properties/advanced-dialog.c:308
+#: ../properties/advanced-dialog.c:286
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:321
+#: ../properties/advanced-dialog.c:299
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:333
+#: ../properties/advanced-dialog.c:311
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:345
+#: ../properties/advanced-dialog.c:323
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:358
+#: ../properties/advanced-dialog.c:336
 msgid "EAP"
 msgstr "EAP"
 
-#: ../properties/nm-pptp.c:56
+#: ../properties/nm-pptp-editor-plugin.c:34
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Protokół tunelowania Point-to-Point (PPTP)"
 
-#: ../properties/nm-pptp.c:57
+#: ../properties/nm-pptp-editor-plugin.c:35
 msgid "Compatible with Microsoft and other PPTP VPN servers."
-msgstr "Zgodny z serwerami firmy Microsoft i innymi serwerami VPN PPTP."
+msgstr "Zgodny z serwerami firmy Microsoft i innymi serwerami VPN PPTP."
 
-#: ../src/nm-pptp-service.c:169
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
+#, c-format
+msgid "missing plugin file \"%s\""
+msgstr "brak pliku wtyczki „%s”"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
+#, c-format
+msgid "cannot load editor plugin: %s"
+msgstr "nie można wczytać wtyczki edytora: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:95
+#, c-format
+msgid "cannot load factory %s from plugin: %s"
+msgstr "nie można wczytać generatora %s z wtyczki: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:121
+msgid "unknown error creating editor instance"
+msgstr "nieznany błąd podczas tworzenia wystąpienia edytora"
+
+#: ../src/nm-pptp-service.c:164
 #, c-format
 msgid "invalid gateway '%s'"
 msgstr "nieprawidłowa brama „%s”"
 
-#: ../src/nm-pptp-service.c:183
+#: ../src/nm-pptp-service.c:178
 #, c-format
 msgid "invalid integer property '%s'"
 msgstr "nieprawidłowa własność liczby całkowitej „%s”"
 
-#: ../src/nm-pptp-service.c:193
+#: ../src/nm-pptp-service.c:188
 #, c-format
 msgid "invalid boolean property '%s' (not yes or no)"
 msgstr ""
 "nieprawidłowa własność zmiennej logicznej „%s” (nie wynosi „yes” lub „no”)"
 
-#: ../src/nm-pptp-service.c:200
+#: ../src/nm-pptp-service.c:195
 #, c-format
 msgid "unhandled property '%s' type %s"
 msgstr "nieobsługiwana własność „%s” typu „%s”"
 
-#: ../src/nm-pptp-service.c:211
+#: ../src/nm-pptp-service.c:206
 #, c-format
 msgid "property '%s' invalid or not supported"
 msgstr "własność „%s” jest nieprawidłowa lub nieobsługiwana"
 
-#: ../src/nm-pptp-service.c:229
+#: ../src/nm-pptp-service.c:224
 msgid "No VPN configuration options."
 msgstr "Brak opcji konfiguracji VPN."
 
-#: ../src/nm-pptp-service.c:249
+#: ../src/nm-pptp-service.c:244
 #, c-format
 msgid "Missing required option '%s'."
 msgstr "Brak wymaganej opcji „%s”."
 
-#: ../src/nm-pptp-service.c:269
+#: ../src/nm-pptp-service.c:264
 msgid "No VPN secrets!"
 msgstr "Brak haseł VPN."
 
-#: ../src/nm-pptp-service.c:424
+#: ../src/nm-pptp-service.c:419
 msgid "Could not find pptp client binary."
 msgstr "Nie można odnaleźć pliku binarnego pptp."
 
-#: ../src/nm-pptp-service.c:437
+#: ../src/nm-pptp-service.c:432
 msgid "Missing VPN gateway."
 msgstr "Brak bramy VPN."
 
-#: ../src/nm-pptp-service.c:599
+#: ../src/nm-pptp-service.c:594
 msgid "Could not find the pppd binary."
 msgstr "Nie można odnaleźć pliku binarnego pppd."
 
-#: ../src/nm-pptp-service.c:659
+#: ../src/nm-pptp-service.c:654
 msgid "Missing VPN username."
 msgstr "Brak nazwy użytkownika VPN."
 
-#: ../src/nm-pptp-service.c:668
+#: ../src/nm-pptp-service.c:663
 msgid "Missing or invalid VPN password."
 msgstr "Brak hasła VPN lub jest nieprawidłowe."
 
-#: ../src/nm-pptp-service.c:774
+#: ../src/nm-pptp-service.c:769
 #, c-format
 msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
 msgstr "nie można skonwertować adresu IP bramy VPN PPTP „%s” (%d)"
 
-#: ../src/nm-pptp-service.c:792
+#: ../src/nm-pptp-service.c:787
 #, c-format
 msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
 msgstr "nie można wyszukać adresu IP bramy VPN PPTP „%s” (%d)"
 
-#: ../src/nm-pptp-service.c:816
+#: ../src/nm-pptp-service.c:811
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway '%s'"
 msgstr "nie zwrócono używalnych adresów dla bramy VPN PPTP „%s”"
 
-#: ../src/nm-pptp-service.c:845
+#: ../src/nm-pptp-service.c:840
 msgid "Invalid or missing PPTP gateway."
 msgstr "Brak bramy PPTP lub jest nieprawidłowa."
 
-#: ../src/nm-pptp-service.c:1090
+#: ../src/nm-pptp-service.c:1085
 msgid "Don't quit when VPN connection terminates"
 msgstr "Nie kończy działania, kiedy połączenie VPN jest kończone"
 
-#: ../src/nm-pptp-service.c:1091
+#: ../src/nm-pptp-service.c:1086
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Włącza więcej komunikatów debugowania (może wyjawić hasła)"
 
-#: ../src/nm-pptp-service.c:1092
+#: ../src/nm-pptp-service.c:1087
 msgid "D-Bus name to use for this instance"
 msgstr "Nazwa D-Bus dla tego wystąpienia"
 
-#: ../src/nm-pptp-service.c:1115
+#: ../src/nm-pptp-service.c:1110
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
 msgstr ""
-"nm-pptp-service dostarcza zintegrowaną możliwość VPN PPTP (zgodną z "
-"implementacją firmy Microsoft i innymi) dla usługi NetworkManager."
+"nm-pptp-service dostarcza zintegrowaną możliwość VPN PPTP (zgodną "
+"z implementacją firmy Microsoft i innymi) dla usługi NetworkManager."
 
 #: ../properties/nm-pptp-dialog.ui.h:1
 msgid "Default"
@@ -227,7 +242,7 @@ msgstr ""
 
 #: ../properties/nm-pptp-dialog.ui.h:7
 msgid "<b>Security and Compression</b>"
-msgstr "<b>Zabezpieczenia i kompresja</b>"
+msgstr "<b>Zabezpieczenia i kompresja</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:8
 msgid "Use _Point-to-Point encryption (MPPE)"
@@ -239,9 +254,9 @@ msgid ""
 "To enable this checkbox, select one or more of the MSCHAP authentication "
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
-"Uwaga: szyfrowanie MPPE jest dostępne tylko razem z metodami "
+"Uwaga: szyfrowanie MPPE jest dostępne tylko razem z metodami "
 "uwierzytelniania MSCHAP. Aby zaznaczyć te pole wyboru, należy wybrać jedną "
-"lub więcej z tych metod uwierzytelniania MSCHAP: MSCHAP lub MSCHAPv2."
+"lub więcej z tych metod uwierzytelniania MSCHAP: MSCHAP lub MSCHAPv2."
 
 #: ../properties/nm-pptp-dialog.ui.h:10
 msgid "_Security:"
@@ -252,7 +267,7 @@ msgid ""
 "Require the use of MPPE, with 40/128-bit encryption or all.\n"
 "config: require-mppe, require-mppe-128 or require-mppe-40"
 msgstr ""
-"Wymaga użycia MPPE, z 40/128-bitowym szyfrowaniem lub wszystkich.\n"
+"Wymaga użycia MPPE, z 40/128-bitowym szyfrowaniem lub wszystkich.\n"
 "konfiguracja: require-mppe, require-mppe-128 lub require-mppe-40"
 
 #: ../properties/nm-pptp-dialog.ui.h:13
@@ -302,8 +317,8 @@ msgid ""
 "transmit and the receive directions.\n"
 "config: novj (when unchecked)"
 msgstr ""
-"Umożliwia/wyłącza kompresję nagłówków TCP/IP w stylu Van Jacobsona w obu "
-"kierunkach (wysyłanie i pobieranie).\n"
+"Umożliwia/wyłącza kompresję nagłówków TCP/IP w stylu Van Jacobsona w obu "
+"kierunkach (wysyłanie i pobieranie).\n"
 "konfiguracja: novj (kiedy nie jest wybrane)"
 
 #: ../properties/nm-pptp-dialog.ui.h:25
@@ -320,7 +335,7 @@ msgid ""
 "config: lcp-echo-failure and lcp-echo-interval"
 msgstr ""
 "Wysyła żądania echa LCP, aby stwierdzić, czy partner jest aktywny.\n"
-"konfiguracja: lcp-echo-failure i lcp-echo-interval"
+"konfiguracja: lcp-echo-failure i lcp-echo-interval"
 
 #: ../properties/nm-pptp-dialog.ui.h:29
 msgid "<b>Misc</b>"
@@ -364,7 +379,7 @@ msgid ""
 "purposes.\n"
 "config: domain <domain>"
 msgstr ""
-"Dołącza nazwę domeny <domena> do lokalnej nazwy komputera w celach "
+"Dołącza nazwę domeny <domena> do lokalnej nazwy komputera w celach "
 "uwierzytelniania.\n"
 "konfiguracja: domain <domena>"
 
@@ -386,7 +401,7 @@ msgid ""
 "<name>.\n"
 "config: user <name>"
 msgstr ""
-"Ustawia nazwę używaną do uwierzytelniania lokalnego systemu z partnerem na "
+"Ustawia nazwę używaną do uwierzytelniania lokalnego systemu z partnerem na "
 "<nazwę>.\n"
 "konfiguracja: user <nazwa>"
 

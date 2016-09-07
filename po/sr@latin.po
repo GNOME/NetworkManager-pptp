@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=Network"
 "Manager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2016-04-28 14:04+0000\n"
-"PO-Revision-Date: 2016-08-25 21:14+0200\n"
+"POT-Creation-Date: 2016-06-16 11:19+0000\n"
+"PO-Revision-Date: 2016-08-25 21:20+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: srpski <gnome-sr@googlegroups.org>\n"
 "Language: sr\n"
@@ -43,152 +43,171 @@ msgstr "Programeri Upravnika mreže"
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
 #.
-#: ../auth-dialog/main.c:154
+#: ../auth-dialog/main.c:146
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr ""
 "Morate da potvrdite identitet da biste mogli da pristupite Virtuelnoj "
 "privatnoj mreži „%s“."
 
-#: ../auth-dialog/main.c:163 ../auth-dialog/main.c:183
+#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
 msgid "Authenticate VPN"
 msgstr "Potvrdi VPN"
 
-#: ../auth-dialog/main.c:165 ../properties/nm-pptp-dialog.ui.h:43
+#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
 msgid "Password:"
 msgstr "Lozinka:"
 
-#: ../properties/advanced-dialog.c:191
+#: ../properties/advanced-dialog.c:169
 msgid "All Available (Default)"
 msgstr "Sve dostupno (osnovno)"
 
-#: ../properties/advanced-dialog.c:195
+#: ../properties/advanced-dialog.c:173
 msgid "128-bit (most secure)"
 msgstr "128-bitno (najsigurnije)"
 
-#: ../properties/advanced-dialog.c:204
+#: ../properties/advanced-dialog.c:182
 msgid "40-bit (less secure)"
 msgstr "40-bitno (manje sigurno)"
 
-#: ../properties/advanced-dialog.c:308
+#: ../properties/advanced-dialog.c:286
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:321
+#: ../properties/advanced-dialog.c:299
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:333
+#: ../properties/advanced-dialog.c:311
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:345
+#: ../properties/advanced-dialog.c:323
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:358
+#: ../properties/advanced-dialog.c:336
 msgid "EAP"
 msgstr "EAP"
 
-#: ../properties/nm-pptp.c:56
+#: ../properties/nm-pptp-editor-plugin.c:34
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Protok tunelisanja od tačke do tačke (PPTP)"
 
-#: ../properties/nm-pptp.c:57
+#: ../properties/nm-pptp-editor-plugin.c:35
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Saglasno sa Majkrosoftovim i drugim PPTP VPN serverima."
 
-#: ../src/nm-pptp-service.c:169
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
+#, c-format
+msgid "missing plugin file \"%s\""
+msgstr "nedostaje datoteka priključka „%s“"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
+#, c-format
+msgid "cannot load editor plugin: %s"
+msgstr "ne mogu da učitam priključak uređivača: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:95
+#, c-format
+msgid "cannot load factory %s from plugin: %s"
+msgstr "ne mogu da učitam pogon „%s“ iz priključka: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:121
+msgid "unknown error creating editor instance"
+msgstr "nepoznata greška prilikom stvaranja primerka uređivača"
+
+#: ../src/nm-pptp-service.c:164
 #, c-format
 msgid "invalid gateway '%s'"
 msgstr "neispravan mrežni prolaz „%s“"
 
-#: ../src/nm-pptp-service.c:183
+#: ../src/nm-pptp-service.c:178
 #, c-format
 msgid "invalid integer property '%s'"
 msgstr "neispravno svojstvo celog broja „%s“"
 
-#: ../src/nm-pptp-service.c:193
+#: ../src/nm-pptp-service.c:188
 #, c-format
 msgid "invalid boolean property '%s' (not yes or no)"
 msgstr "neispravno logičko svojstvo „%s“ (nije „da“ ili „ne“)"
 
-#: ../src/nm-pptp-service.c:200
+#: ../src/nm-pptp-service.c:195
 #, c-format
 msgid "unhandled property '%s' type %s"
 msgstr "nerukovano svojstvo „%s“ vrste %s"
 
-#: ../src/nm-pptp-service.c:211
+#: ../src/nm-pptp-service.c:206
 #, c-format
 msgid "property '%s' invalid or not supported"
 msgstr "svojstvo „%s“ je neispravno ili nije podržano"
 
-#: ../src/nm-pptp-service.c:229
+#: ../src/nm-pptp-service.c:224
 msgid "No VPN configuration options."
 msgstr "Nema opcija za VPN podešavanje."
 
-#: ../src/nm-pptp-service.c:249
+#: ../src/nm-pptp-service.c:244
 #, c-format
 msgid "Missing required option '%s'."
 msgstr "Nedostaje zatražena opcija „%s“."
 
-#: ../src/nm-pptp-service.c:269
+#: ../src/nm-pptp-service.c:264
 msgid "No VPN secrets!"
 msgstr "Nema VPN tajni!"
 
-#: ../src/nm-pptp-service.c:424
+#: ../src/nm-pptp-service.c:419
 msgid "Could not find pptp client binary."
 msgstr "Ne mogu da pronađem izvršni pptp klijenta."
 
-#: ../src/nm-pptp-service.c:437
+#: ../src/nm-pptp-service.c:432
 msgid "Missing VPN gateway."
 msgstr "Nedostaje VPN mrežni prolaz."
 
-#: ../src/nm-pptp-service.c:599
+#: ../src/nm-pptp-service.c:594
 msgid "Could not find the pppd binary."
 msgstr "Ne mogu da pronađem pptp izvršni."
 
-#: ../src/nm-pptp-service.c:659
+#: ../src/nm-pptp-service.c:654
 msgid "Missing VPN username."
 msgstr "Nedostaje VPN korisničko ime."
 
-#: ../src/nm-pptp-service.c:668
+#: ../src/nm-pptp-service.c:663
 msgid "Missing or invalid VPN password."
 msgstr "Nedostaje ili je neispravna VPN lozinka."
 
-#: ../src/nm-pptp-service.c:774
+#: ../src/nm-pptp-service.c:769
 #, c-format
 msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
 msgstr "ne mogu da pretvorim IP adresu PPTP VPN mrežnog prolaza „%s“ (%d)"
 
-#: ../src/nm-pptp-service.c:792
+#: ../src/nm-pptp-service.c:787
 #, c-format
 msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
 msgstr "ne mogu da potražim IP adresu PPTP VPN mrežnog prolaza „%s“ (%d)"
 
-#: ../src/nm-pptp-service.c:816
+#: ../src/nm-pptp-service.c:811
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway '%s'"
 msgstr "nisu vraćene upotrebljive adrese za PPTP VPN mrežni prolaz „%s“"
 
-#: ../src/nm-pptp-service.c:845
+#: ../src/nm-pptp-service.c:840
 msgid "Invalid or missing PPTP gateway."
 msgstr "Neispravan ili nedostaje PPTP mrežni prolaz."
 
-#: ../src/nm-pptp-service.c:1090
+#: ../src/nm-pptp-service.c:1085
 msgid "Don't quit when VPN connection terminates"
 msgstr "Ne prekida kada se završava VPN veza"
 
-#: ../src/nm-pptp-service.c:1091
+#: ../src/nm-pptp-service.c:1086
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr ""
 "Uključuje opširno zapisivanje zarad ispravljanja grešaka (može da izloži lozinke)"
 
-#: ../src/nm-pptp-service.c:1092
+#: ../src/nm-pptp-service.c:1087
 msgid "D-Bus name to use for this instance"
 msgstr "Naziv D-sabirnice koja će se koristiti za ovaj primerak"
 
-#: ../src/nm-pptp-service.c:1115
+#: ../src/nm-pptp-service.c:1110
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."

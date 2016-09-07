@@ -1,7 +1,5 @@
 /* -*- Mode: C; tab-width: 4; indent-tabs-mode: t; c-basic-offset: 4 -*- */
 /***************************************************************************
- * nm-pptp.h : GNOME UI dialogs for configuring pptp VPN connections
- *
  * Copyright (C) 2008 Dan Williams, <dcbw@redhat.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -20,27 +18,8 @@
  *
  **************************************************************************/
 
-#ifndef _NM_PPTP_H_
-#define _NM_PPTP_H_
-
-#include <glib-object.h>
-
-typedef enum
-{
-	PPTP_PLUGIN_UI_ERROR_UNKNOWN = 0,
-	PPTP_PLUGIN_UI_ERROR_INVALID_CONNECTION,
-	PPTP_PLUGIN_UI_ERROR_INVALID_PROPERTY,
-	PPTP_PLUGIN_UI_ERROR_MISSING_PROPERTY,
-	PPTP_PLUGIN_UI_ERROR_FILE_NOT_READABLE,
-	PPTP_PLUGIN_UI_ERROR_FILE_NOT_PPTP
-} PptpPluginUiError;
-
-#define PPTP_TYPE_PLUGIN_UI_ERROR (pptp_plugin_ui_error_get_type ()) 
-GType pptp_plugin_ui_error_get_type (void);
-
-#define PPTP_PLUGIN_UI_ERROR (pptp_plugin_ui_error_quark ())
-GQuark pptp_plugin_ui_error_quark (void);
-
+#ifndef __NM_PPTP_EDITOR_PLUGIN_H__
+#define __NM_PPTP_EDITOR_PLUGIN_H__
 
 #define PPTP_TYPE_PLUGIN_UI            (pptp_plugin_ui_get_type ())
 #define PPTP_PLUGIN_UI(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), PPTP_TYPE_PLUGIN_UI, PptpPluginUi))
@@ -62,26 +41,14 @@ struct _PptpPluginUiClass {
 
 GType pptp_plugin_ui_get_type (void);
 
+typedef NMVpnEditor *(*NMVpnEditorFactory) (NMVpnEditorPlugin *editor_plugin,
+                                            NMConnection *connection,
+                                            GError **error);
 
-#define PPTP_TYPE_PLUGIN_UI_WIDGET            (pptp_plugin_ui_widget_get_type ())
-#define PPTP_PLUGIN_UI_WIDGET(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), PPTP_TYPE_PLUGIN_UI_WIDGET, PptpPluginUiWidget))
-#define PPTP_PLUGIN_UI_WIDGET_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), PPTP_TYPE_PLUGIN_UI_WIDGET, PptpPluginUiWidgetClass))
-#define PPTP_IS_PLUGIN_UI_WIDGET(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), PPTP_TYPE_PLUGIN_UI_WIDGET))
-#define PPTP_IS_PLUGIN_UI_WIDGET_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), PPTP_TYPE_PLUGIN_UI_WIDGET))
-#define PPTP_PLUGIN_UI_WIDGET_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), PPTP_TYPE_PLUGIN_UI_WIDGET, PptpPluginUiWidgetClass))
+NMVpnEditor *
+nm_vpn_editor_factory_pptp (NMVpnEditorPlugin *editor_plugin,
+                            NMConnection *connection,
+                            GError **error);
 
-typedef struct _PptpPluginUiWidget PptpPluginUiWidget;
-typedef struct _PptpPluginUiWidgetClass PptpPluginUiWidgetClass;
-
-struct _PptpPluginUiWidget {
-	GObject parent;
-};
-
-struct _PptpPluginUiWidgetClass {
-	GObjectClass parent;
-};
-
-GType pptp_plugin_ui_widget_get_type (void);
-
-#endif	/* _NM_PPTP_H_ */
+#endif /* __NM_PPTP_EDITOR_PLUGIN_H__ */
 

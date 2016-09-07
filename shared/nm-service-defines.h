@@ -20,8 +20,8 @@
  * Copyright 2008, 2014 Red Hat, Inc.
  */
 
-#ifndef NM_PPTP_SERVICE_DEFINES_H
-#define NM_PPTP_SERVICE_DEFINES_H
+#ifndef __NM_SERVICE_DEFINES_H__
+#define __NM_SERVICE_DEFINES_H__
 
 #define NM_DBUS_SERVICE_PPTP    "org.freedesktop.NetworkManager.pptp"
 
@@ -53,4 +53,4 @@
 #define NM_PPTP_KEY_LCP_ECHO_INTERVAL "lcp-echo-interval"
 #define NM_PPTP_KEY_UNIT_NUM          "unit"
 
-#endif /* NM_PPTP_SERVICE_DEFINES_H */
+#endif /* __NM_SERVICE_DEFINES_H__ */

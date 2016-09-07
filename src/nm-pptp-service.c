@@ -20,9 +20,9 @@
  * (C) Copyright 2008 - 2014 Red Hat, Inc.
  */
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
+#include "nm-default.h"
+
+#include "nm-pptp-service.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -43,11 +43,6 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 
-#include <glib/gi18n.h>
-
-#include <NetworkManager.h>
-
-#include "nm-pptp-service.h"
 #include "nm-ppp-status.h"
 #include "nm-pptp-pppd-service-dbus.h"
 
@@ -367,7 +362,7 @@ pppd_timed_out (gpointer user_data)
 	NMPptpPlugin *plugin = NM_PPTP_PLUGIN (user_data);
 
 	g_warning ("Looks like pppd didn't initialize our dbus module");
-	nm_vpn_service_plugin_failure (NM_VPN_SERVICE_PLUGIN (plugin), NM_VPN_CONNECTION_STATE_REASON_SERVICE_START_TIMEOUT);
+	nm_vpn_service_plugin_failure (NM_VPN_SERVICE_PLUGIN (plugin), NM_VPN_PLUGIN_FAILURE_CONNECT_FAILED);
 
 	return FALSE;
 }
@@ -1125,6 +1120,8 @@ main (int argc, char *argv[])
 
 	if (bus_name)
 		setenv ("NM_DBUS_SERVICE_PPTP", bus_name, 0);
+	else
+		unsetenv ("NM_DBUS_SERVICE_PPTP");
 
 	plugin = nm_pptp_plugin_new (bus_name);
 	if (!plugin)

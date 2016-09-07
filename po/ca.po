@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-23 08:10+0100\n"
-"PO-Revision-Date: 2016-01-13 09:04+0100\n"
+"POT-Creation-Date: 2016-09-07 21:39+0200\n"
+"PO-Revision-Date: 2016-09-07 11:47+0200\n"
 "Last-Translator: Walter Garcia-Fontes <walter.garcia@upf.edu>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
@@ -21,62 +21,202 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
+#: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
+msgid "PPTP VPN client"
+msgstr "Client VPN PPTP"
+
+#: ../appdata/network-manager-pptp.metainfo.xml.in.h:2
+msgid "Client for PPTP virtual private networks"
+msgstr "Client per a xarxes privades virtuals PPTP"
+
+#: ../appdata/network-manager-pptp.metainfo.xml.in.h:3
+msgid "Support for configuring PPTP virtual private network connections."
+msgstr "Suport per configurar connexions a xarxes privades virtuals PPTP."
+
+#: ../appdata/network-manager-pptp.metainfo.xml.in.h:4
+msgid "Compatible with various PPTP servers including Microsoft."
+msgstr "Compatible amb diversos servidors PPTP incloent-hi Microsoft."
+
+#: ../appdata/network-manager-pptp.metainfo.xml.in.h:5
+msgid "The NetworkManager Developers"
+msgstr "Els desenvolupadors del NetworkManager"
+
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
 #.
-#: ../auth-dialog/main.c:154
+#: ../auth-dialog/main.c:146
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgstr ""
 "Cal que us autentiqueu per a poder accedir a la xarxa privada virtual «%s»."
 
-#: ../auth-dialog/main.c:163 ../auth-dialog/main.c:183
+#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
 msgid "Authenticate VPN"
 msgstr "Autentica la VPN"
 
-#: ../auth-dialog/main.c:165 ../properties/nm-pptp-dialog.ui.h:43
+#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
 msgid "Password:"
 msgstr "Contrasenya:"
 
-#: ../properties/advanced-dialog.c:191
+#: ../properties/advanced-dialog.c:169
 msgid "All Available (Default)"
 msgstr "Tots els disponibles (predeterminat)"
 
-#: ../properties/advanced-dialog.c:195
+#: ../properties/advanced-dialog.c:173
 msgid "128-bit (most secure)"
 msgstr "128-bits (el més segur)"
 
-#: ../properties/advanced-dialog.c:204
+#: ../properties/advanced-dialog.c:182
 msgid "40-bit (less secure)"
 msgstr "40-bits (menys segur)"
 
-#: ../properties/advanced-dialog.c:308
+#: ../properties/advanced-dialog.c:286
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:321
+#: ../properties/advanced-dialog.c:299
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:333
+#: ../properties/advanced-dialog.c:311
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:345
+#: ../properties/advanced-dialog.c:323
 msgid "MSCHAPv2"
 msgstr "MSCHAP v2"
 
-#: ../properties/advanced-dialog.c:358
+#: ../properties/advanced-dialog.c:336
 msgid "EAP"
 msgstr "EAP"
 
-#: ../properties/nm-pptp.c:56
+#: ../properties/nm-pptp-editor-plugin.c:34
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Protocol de túnel punt a punt (PPTP)"
 
-#: ../properties/nm-pptp.c:57
+#: ../properties/nm-pptp-editor-plugin.c:35
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Compatible amb els servidors PPTP VPN de Microsoft i d'altres."
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
+#, c-format
+msgid "missing plugin file \"%s\""
+msgstr "fitxer «%s» de connector absent"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
+#, c-format
+msgid "cannot load editor plugin: %s"
+msgstr "no s'ha pogut carregar el connector d'editor: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:95
+#, c-format
+msgid "cannot load factory %s from plugin: %s"
+msgstr "no es pot carregar la fàbrica %s des del connector: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:121
+msgid "unknown error creating editor instance"
+msgstr ""
+"s'ha produït un error desconegut quan es creava la instància de l'editor"
+
+#: ../src/nm-pptp-service.c:164
+#, c-format
+msgid "invalid gateway '%s'"
+msgstr "passarel·la «%s» no vàlida"
+
+#: ../src/nm-pptp-service.c:178
+#, c-format
+msgid "invalid integer property '%s'"
+msgstr "propietat «%s» d'enter no vàlida"
+
+#: ../src/nm-pptp-service.c:188
+#, c-format
+msgid "invalid boolean property '%s' (not yes or no)"
+msgstr "propietat booleana «%s» no vàlida (no és sí o no)"
+
+#: ../src/nm-pptp-service.c:195
+#, c-format
+msgid "unhandled property '%s' type %s"
+msgstr "propietat «%s» no gestionada de tipus %s"
+
+#: ../src/nm-pptp-service.c:206
+#, c-format
+msgid "property '%s' invalid or not supported"
+msgstr "la propietat «%s» no és vàlida o no està suportada"
+
+#: ../src/nm-pptp-service.c:224
+msgid "No VPN configuration options."
+msgstr "No hi ha opcions de configuració de la VPN."
+
+#: ../src/nm-pptp-service.c:244
+#, c-format
+msgid "Missing required option '%s'."
+msgstr "Falta l'opció requerida «%s»."
+
+#: ../src/nm-pptp-service.c:264
+msgid "No VPN secrets!"
+msgstr "No hi ha secrets de la VPN!"
+
+#: ../src/nm-pptp-service.c:419
+msgid "Could not find pptp client binary."
+msgstr "No s'ha pogut trobar el binari del client pptp."
+
+#: ../src/nm-pptp-service.c:432
+msgid "Missing VPN gateway."
+msgstr "Falta la passarel·la de la VPN."
+
+#: ../src/nm-pptp-service.c:594
+msgid "Could not find the pppd binary."
+msgstr "No s'ha pogut trobar el binari pppd."
+
+#: ../src/nm-pptp-service.c:654
+msgid "Missing VPN username."
+msgstr "Falta el nom d'usuari de la VPN."
+
+#: ../src/nm-pptp-service.c:663
+msgid "Missing or invalid VPN password."
+msgstr "Falta la contrasenya de la VPN o no és vàlida."
+
+#: ../src/nm-pptp-service.c:769
+#, c-format
+msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
+msgstr ""
+"no s'ha pogut convertir l'adreça IP de la passarel·la PPTP VPN «%s» (%d)"
+
+#: ../src/nm-pptp-service.c:787
+#, c-format
+msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
+msgstr "no s'ha pogut buscar l'adreça ID de la passarel·la PPTP VPN «%s» (%d)"
+
+#: ../src/nm-pptp-service.c:811
+#, c-format
+msgid "no usable addresses returned for PPTP VPN gateway '%s'"
+msgstr "no s'han retornat adreces usables per a la passarel·la PPTP VPN «%s»"
+
+#: ../src/nm-pptp-service.c:840
+msgid "Invalid or missing PPTP gateway."
+msgstr "Passarel·la PPTP no vàlida o faltant."
+
+#: ../src/nm-pptp-service.c:1085
+msgid "Don't quit when VPN connection terminates"
+msgstr "No surtis quan acabi la connexió de la VPN"
+
+#: ../src/nm-pptp-service.c:1086
+msgid "Enable verbose debug logging (may expose passwords)"
+msgstr ""
+"Habilita el registre de depuració amb missatges (potser s'exposaran les "
+"contrasenyes)"
+
+#: ../src/nm-pptp-service.c:1087
+msgid "D-Bus name to use for this instance"
+msgstr "Nom del D-Bus a usar en aquesta instància"
+
+#: ../src/nm-pptp-service.c:1110
+msgid ""
+"nm-pptp-service provides integrated PPTP VPN capability (compatible with "
+"Microsoft and other implementations) to NetworkManager."
+msgstr ""
+"el nm-pptp-service proveeix funcionalitat PPTP VPN integrada (compatible amb "
+"Microsoft i altres implementacions) per al NetworkManager."
 
 #: ../properties/nm-pptp-dialog.ui.h:1
 msgid "Default"
@@ -99,7 +239,7 @@ msgid ""
 "Allow/disable authentication methods.\n"
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 msgstr ""
-"Permet/inhabilita els mètodos d'autenticació.\n"
+"Permet/inhabilita els mètodes d'autenticació.\n"
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:7
@@ -275,117 +415,17 @@ msgstr "Nom d'usuari:"
 msgid "Ad_vanced..."
 msgstr "A_vançat..."
 
-#: ../src/nm-pptp-service.c:166
-#, c-format
-msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
-msgstr ""
-"no s'ha pogut convertir l'adreça IP de la passarel·la PPTP VPN «%s» (%d)"
+#~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
+#~ msgstr ""
+#~ "no s'han retornat adreces usables per a la passarel·la PPTP VPN «%s» (%d)"
 
-#: ../src/nm-pptp-service.c:184
-#, c-format
-msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
-msgstr "no s'ha pogut buscar l'adreça ID de la passarel·la PPTP VPN «%s» (%d)"
+#~ msgid "Could not find secrets (connection invalid, no vpn setting)."
+#~ msgstr ""
+#~ "No s'ha pogut trobar els secrets (la connexió no és vàlida, no hi "
+#~ "paràmetres de configuració vpn)."
 
-#: ../src/nm-pptp-service.c:208
-#, c-format
-msgid "no usable addresses returned for PPTP VPN gateway '%s'"
-msgstr "no s'han retornat adreces usables per a la passarel·la PPTP VPN «%s»"
-
-#: ../src/nm-pptp-service.c:219
-#, c-format
-msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
-msgstr ""
-"no s'han retornat adreces usables per a la passarel·la PPTP VPN «%s» (%d)"
-
-#: ../src/nm-pptp-service.c:246
-msgid "Could not find secrets (connection invalid, no vpn setting)."
-msgstr ""
-"No s'ha pogut trobar els secrets (la connexió no és vàlida, no hi paràmetres "
-"de configuració vpn)."
-
-#: ../src/nm-pptp-service.c:258
-msgid "Missing or invalid VPN username."
-msgstr "Falta el nom d'usuari de la VPN o no és vàlid."
-
-#: ../src/nm-pptp-service.c:268
-msgid "Missing or invalid VPN password."
-msgstr "Falta la contrasenya de la VPN o no és vàlida."
-
-#: ../src/nm-pptp-service.c:462
-msgid "No cached credentials."
-msgstr "No hi ha credencials a la memòria cau."
-
-#: ../src/nm-pptp-service.c:618
-#, c-format
-msgid "invalid gateway '%s'"
-msgstr "passarel·la «%s» no vàlida"
-
-#: ../src/nm-pptp-service.c:632
-#, c-format
-msgid "invalid integer property '%s'"
-msgstr "propietat «%s» d'enter no vàlida"
-
-#: ../src/nm-pptp-service.c:642
-#, c-format
-msgid "invalid boolean property '%s' (not yes or no)"
-msgstr "propietat booleana «%s» no vàlida (no és sí o no)"
-
-#: ../src/nm-pptp-service.c:649
-#, c-format
-msgid "unhandled property '%s' type %s"
-msgstr "propietat «%s» no gestionada de tipus %s"
-
-#: ../src/nm-pptp-service.c:660
-#, c-format
-msgid "property '%s' invalid or not supported"
-msgstr "la propietat «%s» no és vàlida o no està suportada"
-
-#: ../src/nm-pptp-service.c:678
-msgid "No VPN configuration options."
-msgstr "No hi ha opcions de configuració de la VPN."
-
-#: ../src/nm-pptp-service.c:698
-#, c-format
-msgid "Missing required option '%s'."
-msgstr "Falta l'opció requerida «%s»."
-
-#: ../src/nm-pptp-service.c:718
-msgid "No VPN secrets!"
-msgstr "No ha secrets de la VPN!"
-
-#: ../src/nm-pptp-service.c:875
-msgid "Could not find pptp client binary."
-msgstr "No s'ha pogut trobar el binari del client pptp."
-
-#: ../src/nm-pptp-service.c:888
-msgid "Missing VPN gateway."
-msgstr "Falta la passarel·la de la VPN."
-
-#: ../src/nm-pptp-service.c:1049
-msgid "Could not find the pppd binary."
-msgstr "No s'ha pogut trobar el binari pppd."
-
-#: ../src/nm-pptp-service.c:1151
-msgid "Invalid or missing PPTP gateway."
-msgstr "Passarel·la PPTP no vàlida o faltant."
-
-#: ../src/nm-pptp-service.c:1337
-msgid "Don't quit when VPN connection terminates"
-msgstr "No surtis quan acabi la connexió de la VPN"
-
-#: ../src/nm-pptp-service.c:1338
-msgid "Enable verbose debug logging (may expose passwords)"
-msgstr ""
-"Habilita el registre de depuració amb missatges (potser s'exposaran les "
-"contrasenyes)"
-
-#: ../src/nm-pptp-service.c:1361
-msgid ""
-"nm-pptp-service provides integrated PPTP VPN capability (compatible with "
-"Microsoft and other implementations) to NetworkManager."
-msgstr ""
-"el nm-pptp-service proveeix funcionalitat PPTP VPN integrada (compatible amb "
-"Microsoft i altres implementacions) per al NetworkManager."
+#~ msgid "No cached credentials."
+#~ msgstr "No hi ha credencials a la memòria cau."
 
 #~ msgid "_Secondary Password:"
 #~ msgstr "Contrasenya _secundària:"
@@ -787,9 +827,6 @@ msgstr ""
 
 #~ msgid "Do you want to replace it with the one you are saving?"
 #~ msgstr "Voleu reemplaçar-lo amb el que voleu desar?"
-
-#~ msgid "PPTP Client"
-#~ msgstr "Client PPTP"
 
 #~ msgid "Remote:  %s"
 #~ msgstr "Remot: %s"

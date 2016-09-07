@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2016-06-16 11:19+0000\n"
+"POT-Creation-Date: 2016-05-23 07:07+0000\n"
 "PO-Revision-Date: 2016-05-26 13:18+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
@@ -100,22 +100,63 @@ msgstr "Protocolo de túnel punto a punto (PPTP)"
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Compatible con servidores PPTP VPN de Microsoft y otros."
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
+#: ../shared/nm-utils/nm-shared-utils.c:185
+#, c-format
+msgid "object class '%s' has no property named '%s'"
+msgstr "la clase del objeto «%s» no tiene ninguna propiedad llamada «%s»"
+
+#: ../shared/nm-utils/nm-shared-utils.c:192
+#, c-format
+msgid "property '%s' of object class '%s' is not writable"
+msgstr "la propiedad «%s» del objeto de la clase «%s» no se puede escribir"
+
+#: ../shared/nm-utils/nm-shared-utils.c:199
+#, c-format
+msgid ""
+"construct property \"%s\" for object '%s' can't be set after construction"
+msgstr ""
+"no se puede establecer la propiedad «%s» del constructor para el objeto «%s» "
+"después de la construcción"
+
+#: ../shared/nm-utils/nm-shared-utils.c:207
+#, c-format
+msgid "'%s::%s' is not a valid property name; '%s' is not a GObject subtype"
+msgstr ""
+"«%s::%s» no es un nombre de propiedad válido; «%s» no es un subtipo de "
+"GObject"
+
+#: ../shared/nm-utils/nm-shared-utils.c:216
+#, c-format
+msgid "unable to set property '%s' of type '%s' from value of type '%s'"
+msgstr ""
+"no se puede establecer la propiedad «%s» de tipo «%s» con un valor de tipo "
+"«%s»"
+
+#: ../shared/nm-utils/nm-shared-utils.c:227
+#, c-format
+msgid ""
+"value \"%s\" of type '%s' is invalid or out of range for property '%s' of "
+"type '%s'"
+msgstr ""
+"el valor «%s» de tipo «%s» no es válido o está fuera de rango para la "
+"propiedad «%s» de tipo «%s»"
+
+#: ../shared/nm-vpn/nm-vpn-plugin-utils.c:80
 #, c-format
 msgid "missing plugin file \"%s\""
 msgstr "falta el archivo del complemento «%s»"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
+#: ../shared/nm-vpn/nm-vpn-plugin-utils.c:86
 #, c-format
 msgid "cannot load editor plugin: %s"
 msgstr "no se puede cargar el complemento del editor: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:95
+#: ../shared/nm-vpn/nm-vpn-plugin-utils.c:95
 #, c-format
 msgid "cannot load factory %s from plugin: %s"
 msgstr "no se puede cargar la fábrica %s desde el complemento: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:121
+#: ../shared/nm-vpn/nm-vpn-plugin-utils.c:121
 msgid "unknown error creating editor instance"
 msgstr "error desconocido al crear la instancia del editor"
 
@@ -412,35 +453,6 @@ msgstr "Usuario:"
 #: ../properties/nm-pptp-dialog.ui.h:47
 msgid "Ad_vanced..."
 msgstr "A_vanzado..."
-
-#~ msgid "object class '%s' has no property named '%s'"
-#~ msgstr "la clase del objeto «%s» no tiene ninguna propiedad llamada «%s»"
-
-#~ msgid "property '%s' of object class '%s' is not writable"
-#~ msgstr "la propiedad «%s» del objeto de la clase «%s» no se puede escribir"
-
-#~ msgid ""
-#~ "construct property \"%s\" for object '%s' can't be set after construction"
-#~ msgstr ""
-#~ "no se puede establecer la propiedad «%s» del constructor para el objeto "
-#~ "«%s» después de la construcción"
-
-#~ msgid "'%s::%s' is not a valid property name; '%s' is not a GObject subtype"
-#~ msgstr ""
-#~ "«%s::%s» no es un nombre de propiedad válido; «%s» no es un subtipo de "
-#~ "GObject"
-
-#~ msgid "unable to set property '%s' of type '%s' from value of type '%s'"
-#~ msgstr ""
-#~ "no se puede establecer la propiedad «%s» de tipo «%s» con un valor de "
-#~ "tipo «%s»"
-
-#~ msgid ""
-#~ "value \"%s\" of type '%s' is invalid or out of range for property '%s' of "
-#~ "type '%s'"
-#~ msgstr ""
-#~ "el valor «%s» de tipo «%s» no es válido o está fuera de rango para la "
-#~ "propiedad «%s» de tipo «%s»"
 
 #~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 #~ msgstr ""
