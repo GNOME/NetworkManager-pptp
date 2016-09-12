@@ -10,7 +10,6 @@ This is a new stable release of NetworkManager-pptp.  Notable changes include:
   usable by nmcli and a UI plugin for nm-applet and gnome components
 * Support NM_VPN_LOG_LEVEL environment variable to control debug
   logging from NetworkManager
-* Support multiple concurrent VPNC connections
 * Updated Brazilian Portuguese, Catalan, Czech, German, Hungarian, Indonesian,
   Lithuanian, Polish, Serbian, Serbian Latin, Spanish translations
 * Various cleanups
