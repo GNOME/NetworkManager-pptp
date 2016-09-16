@@ -1088,9 +1088,7 @@ main (int argc, char *argv[])
 		{NULL}
 	};
 
-#if !GLIB_CHECK_VERSION (2, 35, 0)
-	g_type_init ();
-#endif
+	nm_g_type_init ();
 
 	/* locale will be set according to environment LC_* variables */
 	setlocale (LC_ALL, "");
@@ -1109,7 +1107,12 @@ main (int argc, char *argv[])
 	g_option_context_set_summary (opt_ctx,
 	    _("nm-pptp-service provides integrated PPTP VPN capability (compatible with Microsoft and other implementations) to NetworkManager."));
 
-	g_option_context_parse (opt_ctx, &argc, &argv, NULL);
+	if (!g_option_context_parse (opt_ctx, &argc, &argv, &error)) {
+		g_printerr ("Error parsing the command line options: %s\n", error->message);
+		g_option_context_free (opt_ctx);
+		g_error_free (error);
+		return EXIT_FAILURE;
+	}
 	g_option_context_free (opt_ctx);
 
 	if (getenv ("NM_PPP_DEBUG"))
@@ -1147,5 +1150,5 @@ main (int argc, char *argv[])
 	g_main_loop_unref (main_loop);
 	g_object_unref (plugin);
 
-	exit (EXIT_SUCCESS);
+	return EXIT_SUCCESS;
 }
