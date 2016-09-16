@@ -44,7 +44,13 @@ int plugin_init (void);
 
 char pppd_version[] = VERSION;
 
-static GDBusProxy *proxy = NULL;
+/*****************************************************************************/
+
+struct {
+	GDBusProxy *proxy;
+} gl/*lobal*/;
+
+/*****************************************************************************/
 
 static void
 nm_phasechange (void *data, int arg)
@@ -52,7 +58,7 @@ nm_phasechange (void *data, int arg)
 	NMPPPStatus ppp_status = NM_PPP_STATUS_UNKNOWN;
 	char *ppp_phase;
 
-	g_return_if_fail (G_IS_DBUS_PROXY (proxy));
+	g_return_if_fail (G_IS_DBUS_PROXY (gl.proxy));
 
 	switch (arg) {
 	case PHASE_DEAD:
@@ -119,7 +125,7 @@ nm_phasechange (void *data, int arg)
 	           ppp_phase);
 
 	if (ppp_status != NM_PPP_STATUS_UNKNOWN) {
-		g_dbus_proxy_call (proxy,
+		g_dbus_proxy_call (gl.proxy,
 		                   "SetState",
 		                   g_variant_new ("(u)", ppp_status),
 		                   G_DBUS_CALL_FLAGS_NONE, -1,
@@ -136,7 +142,7 @@ nm_ip_up (void *data, int arg)
 	ipcp_options peer_opts = ipcp_hisoptions[0];
 	GVariantBuilder builder;
 
-	g_return_if_fail (G_IS_DBUS_PROXY (proxy));
+	g_return_if_fail (G_IS_DBUS_PROXY (gl.proxy));
 
 	g_message ("nm-pptp-ppp-plugin: (%s): ip-up event", __func__);
 
@@ -201,7 +207,7 @@ nm_ip_up (void *data, int arg)
 
 	g_message ("nm-pptp-ppp-plugin: (%s): sending Ip4Config to NetworkManager-pptp...", __func__);
 
-	g_dbus_proxy_call (proxy,
+	g_dbus_proxy_call (gl.proxy,
 	                   "SetIp4Config",
 	                   g_variant_new ("(a{sv})", &builder),
 	                   G_DBUS_CALL_FLAGS_NONE, -1,
@@ -237,11 +243,11 @@ get_credentials (char *username, char *password)
 	}
 
 	g_return_val_if_fail (username, -1);
-	g_return_val_if_fail (G_IS_DBUS_PROXY (proxy), -1);
+	g_return_val_if_fail (G_IS_DBUS_PROXY (gl.proxy), -1);
 
 	g_message ("nm-pptp-ppp-plugin: (%s): passwd-hook, requesting credentials...", __func__);
 
-	ret = g_dbus_proxy_call_sync (proxy,
+	ret = g_dbus_proxy_call_sync (gl.proxy,
 	                              "NeedSecrets",
 	                              NULL,
 	                              G_DBUS_CALL_FLAGS_NONE, -1,
@@ -283,12 +289,11 @@ get_credentials (char *username, char *password)
 static void
 nm_exit_notify (void *data, int arg)
 {
-	g_return_if_fail (G_IS_DBUS_PROXY (proxy));
+	g_return_if_fail (G_IS_DBUS_PROXY (gl.proxy));
 
 	g_message ("nm-pptp-ppp-plugin: (%s): cleaning up", __func__);
 
-	g_object_unref (proxy);
-	proxy = NULL;
+	g_clear_object (&gl.proxy);
 }
 
 int
@@ -298,9 +303,7 @@ plugin_init (void)
 	GError *err = NULL;
 	const char *bus_name;
 
-#if !GLIB_CHECK_VERSION (2, 35, 0)
-	g_type_init ();
-#endif
+	nm_g_type_init ();
 
 	bus_name = getenv ("NM_DBUS_SERVICE_PPTP");
 	if (!bus_name)
@@ -318,16 +321,16 @@ plugin_init (void)
 		return -1;
 	}
 
-	proxy = g_dbus_proxy_new_sync (bus,
-	                               G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES,
-	                               NULL,
-	                               bus_name,
-	                               NM_DBUS_PATH_PPTP_PPP,
-	                               NM_DBUS_INTERFACE_PPTP_PPP,
-	                               NULL, &err);
+	gl.proxy = g_dbus_proxy_new_sync (bus,
+	                                  G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES,
+	                                  NULL,
+	                                  bus_name,
+	                                  NM_DBUS_PATH_PPTP_PPP,
+	                                  NM_DBUS_INTERFACE_PPTP_PPP,
+	                                  NULL, &err);
 	g_object_unref (bus);
 
-	if (!proxy) {
+	if (!gl.proxy) {
 		g_warning ("nm-pptp-pppd-plugin: (%s): couldn't create D-Bus proxy: %s",
 		           __func__, err->message);
 		g_error_free (err);
@@ -341,7 +344,6 @@ plugin_init (void)
 
 	add_notifier (&phasechange, nm_phasechange, NULL);
 	add_notifier (&ip_up_notifier, nm_ip_up, NULL);
-	add_notifier (&exitnotify, nm_exit_notify, proxy);
-
+	add_notifier (&exitnotify, nm_exit_notify, NULL);
 	return 0;
 }
