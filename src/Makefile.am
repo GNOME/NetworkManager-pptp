@@ -4,6 +4,8 @@ noinst_LTLIBRARIES = libnm-pptp-pppd-service-dbus.la
 
 shared_sources = \
     $(top_srcdir)/shared/nm-service-defines.h \
+    $(top_srcdir)/shared/nm-utils/nm-shared-utils.c \
+    $(top_srcdir)/shared/nm-utils/nm-shared-utils.h \
     $(top_srcdir)/shared/nm-utils/nm-vpn-plugin-macros.h
 
 AM_CPPFLAGS = \
