@@ -16,6 +16,7 @@ libexec_PROGRAMS = nm-pptp-service
 
 nm_pptp_service_SOURCES = \
     $(top_srcdir)/shared/nm-service-defines.h \
+    $(top_srcdir)/shared/nm-utils/nm-vpn-plugin-macros.h \
     nm-pptp-service.c \
     nm-pptp-service.h
 

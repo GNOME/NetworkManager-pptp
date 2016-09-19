@@ -45,6 +45,7 @@
 
 #include "nm-ppp-status.h"
 #include "nm-pptp-pppd-service-dbus.h"
+#include "nm-utils/nm-vpn-plugin-macros.h"
 
 #if !defined(DIST_VERSION)
 # define DIST_VERSION VERSION
@@ -52,6 +53,7 @@
 
 static struct {
 	gboolean debug;
+	int log_level;
 } gl/*lobal*/;
 
 static void nm_pptp_plugin_initable_iface_init (GInitableIface *iface);
@@ -75,6 +77,30 @@ typedef struct {
 #define NM_PPTP_PPPD_PLUGIN PLUGINDIR "/nm-pptp-pppd-plugin.so"
 #define NM_PPTP_WAIT_PPPD 10000 /* 10 seconds */
 #define PPTP_SERVICE_SECRET_TRIES "pptp-service-secret-tries"
+
+/*****************************************************************************/
+
+#define _NMLOG(level, ...) \
+    G_STMT_START { \
+         if (gl.log_level >= (level)) { \
+              g_print ("nm-pptp[%ld] %-7s " _NM_UTILS_MACRO_FIRST (__VA_ARGS__) "\n", \
+                       (long) getpid (), \
+                       nm_utils_syslog_to_str (level) \
+                       _NM_UTILS_MACRO_REST (__VA_ARGS__)); \
+         } \
+    } G_STMT_END
+
+static gboolean
+_LOGD_enabled (void)
+{
+	return gl.log_level >= LOG_INFO;
+}
+
+#define _LOGD(...) _NMLOG(LOG_INFO,    __VA_ARGS__)
+#define _LOGI(...) _NMLOG(LOG_NOTICE,  __VA_ARGS__)
+#define _LOGW(...) _NMLOG(LOG_WARNING, __VA_ARGS__)
+
+/*****************************************************************************/
 
 typedef struct {
 	const char *name;
@@ -280,14 +306,14 @@ pppd_watch_cb (GPid pid, gint status, gpointer user_data)
 	if (WIFEXITED (status)) {
 		error = WEXITSTATUS (status);
 		if (error != 0)
-			g_warning ("pppd exited with error code %d", error);
+			_LOGW ("pppd exited with error code %d", error);
 	}
 	else if (WIFSTOPPED (status))
-		g_warning ("pppd stopped unexpectedly with signal %d", WSTOPSIG (status));
+		_LOGW ("pppd stopped unexpectedly with signal %d", WSTOPSIG (status));
 	else if (WIFSIGNALED (status))
-		g_warning ("pppd died with signal %d", WTERMSIG (status));
+		_LOGW ("pppd died with signal %d", WTERMSIG (status));
 	else
-		g_warning ("pppd died from an unknown cause");
+		_LOGW ("pppd died from an unknown cause");
 
 	/* Reap child if needed. */
 	waitpid (priv->pid, NULL, WNOHANG);
@@ -363,7 +389,7 @@ pppd_timed_out (gpointer user_data)
 {
 	NMPptpPlugin *plugin = NM_PPTP_PLUGIN (user_data);
 
-	g_warning ("Looks like pppd didn't initialize our dbus module");
+	_LOGW ("Looks like pppd didn't initialize our dbus module");
 	nm_vpn_service_plugin_failure (NM_VPN_SERVICE_PLUGIN (plugin), NM_VPN_PLUGIN_FAILURE_CONNECT_FAILED);
 
 	return FALSE;
@@ -409,8 +435,6 @@ construct_pppd_args (NMPptpPlugin *plugin,
 	GPtrArray *args = NULL;
 	const char *value, *pptp_binary;
 	char *ipparam, *tmp;
-	const char *loglevel0 = "--loglevel 0";
-	const char *loglevel2 = "--loglevel 2";
 
 	pptp_binary = nm_find_pptp ();
 	if (!pptp_binary) {
@@ -438,13 +462,13 @@ construct_pppd_args (NMPptpPlugin *plugin,
 	ipparam = g_strdup_printf ("nm-pptp-service-%d", getpid ());
 
 	g_ptr_array_add (args, (gpointer) g_strdup ("pty"));
-	tmp = g_strdup_printf ("%s %s --nolaunchpppd %s --logstring %s",
+	tmp = g_strdup_printf ("%s %s --nolaunchpppd --loglevel %c --logstring %s",
 	                       pptp_binary, gwaddr,
-	                       gl.debug ? loglevel2 : loglevel0,
+	                       _LOGD_enabled () ? '2' : '0',
 	                       ipparam);
 	g_ptr_array_add (args, (gpointer) tmp);
 
-	if (gl.debug)
+	if (_LOGD_enabled ())
 		g_ptr_array_add (args, (gpointer) g_strdup ("debug"));
 
 	/* PPP options */
@@ -530,7 +554,7 @@ construct_pppd_args (NMPptpPlugin *plugin,
 			g_ptr_array_add (args, (gpointer) g_strdup ("lcp-echo-failure"));
 			g_ptr_array_add (args, (gpointer) g_strdup_printf ("%ld", tmp_int));
 		} else {
-			g_warning ("failed to convert lcp-echo-failure value '%s'", value);
+			_LOGW ("failed to convert lcp-echo-failure value '%s'", value);
 		}
 	} else {
 		g_ptr_array_add (args, (gpointer) g_strdup ("lcp-echo-failure"));
@@ -548,7 +572,7 @@ construct_pppd_args (NMPptpPlugin *plugin,
 			g_ptr_array_add (args, (gpointer) g_strdup ("lcp-echo-interval"));
 			g_ptr_array_add (args, (gpointer) g_strdup_printf ("%ld", tmp_int));
 		} else {
-			g_warning ("failed to convert lcp-echo-interval value '%s'", value);
+			_LOGW ("failed to convert lcp-echo-interval value '%s'", value);
 		}
 	} else {
 		g_ptr_array_add (args, (gpointer) g_strdup ("lcp-echo-interval"));
@@ -562,7 +586,7 @@ construct_pppd_args (NMPptpPlugin *plugin,
 			g_ptr_array_add (args, (gpointer) g_strdup ("unit"));
 			g_ptr_array_add (args, (gpointer) g_strdup_printf ("%ld", tmp_int));
 		} else
-			g_warning ("failed to convert unit value '%s'", value);
+			_LOGW ("failed to convert unit value '%s'", value);
 	}
 
 	g_ptr_array_add (args, (gpointer) g_strdup ("plugin"));
@@ -608,7 +632,7 @@ nm_pptp_start_pppd_binary (NMPptpPlugin *plugin,
 	}
 	free_pppd_args (pppd_argv);
 
-	g_message ("pppd started with pid %d", pid);
+	_LOGI ("pppd started with pid %d", pid);
 
 	NM_PPTP_PLUGIN_GET_PRIVATE (plugin)->pid = pid;
 	g_child_watch_add (pid, pppd_watch_cb, plugin);
@@ -861,7 +885,8 @@ real_connect (NMVpnServicePlugin *plugin,
 	g_clear_object (&priv->connection);
 	priv->connection = g_object_ref (connection);
 
-	if (getenv ("NM_PPP_DUMP_CONNECTION") || gl.debug)
+	if (   getenv ("NM_PPP_DUMP_CONNECTION")
+	    || _LOGD_enabled ())
 		nm_connection_dump (connection);
 
 	return nm_pptp_start_pppd_binary (NM_PPTP_PLUGIN (plugin),
@@ -920,7 +945,7 @@ real_disconnect (NMVpnServicePlugin *plugin, GError **err)
 		else
 			kill (priv->pid, SIGKILL);
 
-		g_message ("Terminated ppp daemon with PID %d.", priv->pid);
+		_LOGI ("Terminated ppp daemon with PID %d.", priv->pid);
 		priv->pid = 0;
 	}
 
@@ -1059,7 +1084,7 @@ nm_pptp_plugin_new (const char *bus_name)
 	                         NM_VPN_SERVICE_PLUGIN_DBUS_WATCH_PEER, !gl.debug,
 	                         NULL);
 	if (!plugin) {
-		g_warning ("Failed to initialize a plugin instance: %s", error->message);
+		_LOGW ("Failed to initialize a plugin instance: %s", error->message);
 		g_error_free (error);
 	}
 
@@ -1081,12 +1106,13 @@ main (int argc, char *argv[])
 	GOptionContext *opt_ctx = NULL;
 	char *conntrack_module[] = { "/sbin/modprobe", "nf_conntrack_pptp", NULL };
 	GError *error = NULL;
-	gchar *bus_name = NM_DBUS_SERVICE_PPTP;
+	gs_free char *bus_name_free = NULL;
+	const char *bus_name;
 
 	GOptionEntry options[] = {
 		{ "persist", 0, 0, G_OPTION_ARG_NONE, &persist, N_("Don't quit when VPN connection terminates"), NULL },
 		{ "debug", 0, 0, G_OPTION_ARG_NONE, &gl.debug, N_("Enable verbose debug logging (may expose passwords)"), NULL },
-		{ "bus-name", 0, 0, G_OPTION_ARG_STRING, &bus_name, N_("D-Bus name to use for this instance"), NULL },
+		{ "bus-name", 0, 0, G_OPTION_ARG_STRING, &bus_name_free, N_("D-Bus name to use for this instance"), NULL },
 		{NULL}
 	};
 
@@ -1117,16 +1143,17 @@ main (int argc, char *argv[])
 	}
 	g_option_context_free (opt_ctx);
 
+	bus_name = bus_name_free ?: NM_DBUS_SERVICE_PPTP;
+
 	if (getenv ("NM_PPP_DEBUG"))
 		gl.debug = TRUE;
 
-	if (gl.debug)
-		g_message ("nm-pptp-service (version " DIST_VERSION ") starting...");
+	gl.log_level = gl.debug ? LOG_INFO : LOG_NOTICE;
 
-	if (bus_name)
-		setenv ("NM_DBUS_SERVICE_PPTP", bus_name, 0);
-	else
-		unsetenv ("NM_DBUS_SERVICE_PPTP");
+	_LOGD ("nm-pptp-service (version " DIST_VERSION ") starting...");
+	_LOGD ("   uses%s --bus-name \"%s\"", bus_name_free ? "" : " default", bus_name);
+
+	setenv ("NM_DBUS_SERVICE_PPTP", bus_name, 0);
 
 	plugin = nm_pptp_plugin_new (bus_name);
 	if (!plugin)
@@ -1143,7 +1170,7 @@ main (int argc, char *argv[])
 	 * https://bugzilla.redhat.com/show_bug.cgi?id=1187328
 	 */
 	if (!g_spawn_sync (NULL, conntrack_module, NULL, 0, NULL, NULL, NULL, NULL, NULL, &error)) {
-		g_warning ("modprobing nf_conntrack_pptp failed: %s", error->message);
+		_LOGW ("modprobing nf_conntrack_pptp failed: %s", error->message);
 		g_error_free (error);
 	}
 
