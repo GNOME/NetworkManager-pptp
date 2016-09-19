@@ -50,7 +50,9 @@
 # define DIST_VERSION VERSION
 #endif
 
-static gboolean debug = FALSE;
+static struct {
+	gboolean debug;
+} gl/*lobal*/;
 
 static void nm_pptp_plugin_initable_iface_init (GInitableIface *iface);
 
@@ -438,11 +440,11 @@ construct_pppd_args (NMPptpPlugin *plugin,
 	g_ptr_array_add (args, (gpointer) g_strdup ("pty"));
 	tmp = g_strdup_printf ("%s %s --nolaunchpppd %s --logstring %s",
 	                       pptp_binary, gwaddr,
-	                       debug ? loglevel2 : loglevel0,
+	                       gl.debug ? loglevel2 : loglevel0,
 	                       ipparam);
 	g_ptr_array_add (args, (gpointer) tmp);
 
-	if (debug)
+	if (gl.debug)
 		g_ptr_array_add (args, (gpointer) g_strdup ("debug"));
 
 	/* PPP options */
@@ -859,7 +861,7 @@ real_connect (NMVpnServicePlugin *plugin,
 	g_clear_object (&priv->connection);
 	priv->connection = g_object_ref (connection);
 
-	if (getenv ("NM_PPP_DUMP_CONNECTION") || debug)
+	if (getenv ("NM_PPP_DUMP_CONNECTION") || gl.debug)
 		nm_connection_dump (connection);
 
 	return nm_pptp_start_pppd_binary (NM_PPTP_PLUGIN (plugin),
@@ -1054,7 +1056,7 @@ nm_pptp_plugin_new (const char *bus_name)
 
 	plugin = g_initable_new (NM_TYPE_PPTP_PLUGIN, NULL, &error,
 	                         NM_VPN_SERVICE_PLUGIN_DBUS_SERVICE_NAME, bus_name,
-	                         NM_VPN_SERVICE_PLUGIN_DBUS_WATCH_PEER, !debug,
+	                         NM_VPN_SERVICE_PLUGIN_DBUS_WATCH_PEER, !gl.debug,
 	                         NULL);
 	if (!plugin) {
 		g_warning ("Failed to initialize a plugin instance: %s", error->message);
@@ -1083,7 +1085,7 @@ main (int argc, char *argv[])
 
 	GOptionEntry options[] = {
 		{ "persist", 0, 0, G_OPTION_ARG_NONE, &persist, N_("Don't quit when VPN connection terminates"), NULL },
-		{ "debug", 0, 0, G_OPTION_ARG_NONE, &debug, N_("Enable verbose debug logging (may expose passwords)"), NULL },
+		{ "debug", 0, 0, G_OPTION_ARG_NONE, &gl.debug, N_("Enable verbose debug logging (may expose passwords)"), NULL },
 		{ "bus-name", 0, 0, G_OPTION_ARG_STRING, &bus_name, N_("D-Bus name to use for this instance"), NULL },
 		{NULL}
 	};
@@ -1116,9 +1118,9 @@ main (int argc, char *argv[])
 	g_option_context_free (opt_ctx);
 
 	if (getenv ("NM_PPP_DEBUG"))
-		debug = TRUE;
+		gl.debug = TRUE;
 
-	if (debug)
+	if (gl.debug)
 		g_message ("nm-pptp-service (version " DIST_VERSION ") starting...");
 
 	if (bus_name)
