@@ -105,10 +105,10 @@ _LOGD_enabled (void)
 typedef struct {
 	const char *name;
 	GType type;
-	gboolean required;
+	bool required:1;
 } ValidProperty;
 
-static ValidProperty valid_properties[] = {
+static const ValidProperty valid_properties[] = {
 	{ NM_PPTP_KEY_GATEWAY,           G_TYPE_STRING, TRUE },
 	{ NM_PPTP_KEY_USER,              G_TYPE_STRING, FALSE },
 	{ NM_PPTP_KEY_DOMAIN,            G_TYPE_STRING, FALSE },
@@ -128,12 +128,12 @@ static ValidProperty valid_properties[] = {
 	{ NM_PPTP_KEY_LCP_ECHO_INTERVAL, G_TYPE_UINT, FALSE },
 	{ NM_PPTP_KEY_UNIT_NUM,          G_TYPE_UINT, FALSE },
 	{ NM_PPTP_KEY_PASSWORD"-flags",  G_TYPE_UINT, FALSE },
-	{ NULL,                          G_TYPE_NONE, FALSE }
+	{ NULL }
 };
 
-static ValidProperty valid_secrets[] = {
+static const ValidProperty valid_secrets[] = {
 	{ NM_PPTP_KEY_PASSWORD,          G_TYPE_STRING, FALSE },
-	{ NULL,                          G_TYPE_NONE,   FALSE }
+	{ NULL }
 };
 
 static gboolean
@@ -155,7 +155,7 @@ validate_gateway (const char *gateway)
 }
 
 typedef struct ValidateInfo {
-	ValidProperty *table;
+	const ValidProperty *table;
 	GError **error;
 	gboolean have_items;
 } ValidateInfo;
@@ -176,7 +176,7 @@ validate_one_property (const char *key, const char *value, gpointer user_data)
 		return;
 
 	for (i = 0; info->table[i].name; i++) {
-		ValidProperty prop = info->table[i];
+		const ValidProperty prop = info->table[i];
 		long int tmp;
 
 		if (strcmp (prop.name, key))
@@ -258,7 +258,7 @@ nm_pptp_properties_validate (NMSettingVpn *s_vpn,
 
 	/* Ensure required properties exist */
 	for (i = 0; valid_properties[i].name; i++) {
-		ValidProperty prop = valid_properties[i];
+		const ValidProperty prop = valid_properties[i];
 		const char *value;
 
 		if (!prop.required)
