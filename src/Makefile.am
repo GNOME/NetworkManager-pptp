@@ -58,6 +58,7 @@ pppd_plugindir = $(PPPD_PLUGIN_DIR)
 pppd_plugin_LTLIBRARIES = nm-pptp-pppd-plugin.la
 
 nm_pptp_pppd_plugin_la_SOURCES = \
+    $(shared_sources) \
     nm-pptp-pppd-plugin.c \
     nm-ppp-status.h
 
