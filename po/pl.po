@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-10 18:24+0200\n"
-"PO-Revision-Date: 2016-09-10 18:25+0200\n"
+"POT-Creation-Date: 2016-09-20 20:20+0200\n"
+"PO-Revision-Date: 2016-09-20 20:21+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -98,6 +98,45 @@ msgstr "Protokół tunelowania Point-to-Point (PPTP)"
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Zgodny z serwerami firmy Microsoft i innymi serwerami VPN PPTP."
 
+#: ../shared/nm-utils/nm-shared-utils.c:185
+#, c-format
+msgid "object class '%s' has no property named '%s'"
+msgstr "klasa obiektów „%s” nie ma właściwości o nazwie „%s”"
+
+#: ../shared/nm-utils/nm-shared-utils.c:192
+#, c-format
+msgid "property '%s' of object class '%s' is not writable"
+msgstr "właściwość „%s” klasy obiektów „%s” nie jest zapisywalna"
+
+#: ../shared/nm-utils/nm-shared-utils.c:199
+#, c-format
+msgid ""
+"construct property \"%s\" for object '%s' can't be set after construction"
+msgstr ""
+"właściwość konstruktu „%s” dla obiektu „%s” nie może zostać ustawiona po "
+"konstrukcji"
+
+#: ../shared/nm-utils/nm-shared-utils.c:207
+#, c-format
+msgid "'%s::%s' is not a valid property name; '%s' is not a GObject subtype"
+msgstr ""
+"„%s::%s” nie jest prawidłową nazwą właściwości; „%s” nie jest podtypem "
+"GObject"
+
+#: ../shared/nm-utils/nm-shared-utils.c:216
+#, c-format
+msgid "unable to set property '%s' of type '%s' from value of type '%s'"
+msgstr "nie można ustawić właściwości „%s” typu „%s” z wartości typu „%s”"
+
+#: ../shared/nm-utils/nm-shared-utils.c:227
+#, c-format
+msgid ""
+"value \"%s\" of type '%s' is invalid or out of range for property '%s' of "
+"type '%s'"
+msgstr ""
+"wartość „%s” typu „%s” jest nieprawidłowa lub spoza zakresu dla właściwości "
+"„%s” typu „%s”"
+
 #: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
 #, c-format
 msgid "missing plugin file \"%s\""
@@ -117,97 +156,97 @@ msgstr "nie można wczytać generatora %s z wtyczki: %s"
 msgid "unknown error creating editor instance"
 msgstr "nieznany błąd podczas tworzenia wystąpienia edytora"
 
-#: ../src/nm-pptp-service.c:164
+#: ../src/nm-pptp-service.c:193
 #, c-format
 msgid "invalid gateway '%s'"
 msgstr "nieprawidłowa brama „%s”"
 
-#: ../src/nm-pptp-service.c:178
+#: ../src/nm-pptp-service.c:207
 #, c-format
 msgid "invalid integer property '%s'"
 msgstr "nieprawidłowa własność liczby całkowitej „%s”"
 
-#: ../src/nm-pptp-service.c:188
+#: ../src/nm-pptp-service.c:217
 #, c-format
 msgid "invalid boolean property '%s' (not yes or no)"
 msgstr ""
 "nieprawidłowa własność zmiennej logicznej „%s” (nie wynosi „yes” lub „no”)"
 
-#: ../src/nm-pptp-service.c:195
+#: ../src/nm-pptp-service.c:224
 #, c-format
 msgid "unhandled property '%s' type %s"
 msgstr "nieobsługiwana własność „%s” typu „%s”"
 
-#: ../src/nm-pptp-service.c:206
+#: ../src/nm-pptp-service.c:235
 #, c-format
 msgid "property '%s' invalid or not supported"
 msgstr "własność „%s” jest nieprawidłowa lub nieobsługiwana"
 
-#: ../src/nm-pptp-service.c:224
+#: ../src/nm-pptp-service.c:253
 msgid "No VPN configuration options."
 msgstr "Brak opcji konfiguracji VPN."
 
-#: ../src/nm-pptp-service.c:244
+#: ../src/nm-pptp-service.c:273
 #, c-format
 msgid "Missing required option '%s'."
 msgstr "Brak wymaganej opcji „%s”."
 
-#: ../src/nm-pptp-service.c:264
+#: ../src/nm-pptp-service.c:293
 msgid "No VPN secrets!"
 msgstr "Brak haseł VPN."
 
-#: ../src/nm-pptp-service.c:419
+#: ../src/nm-pptp-service.c:447
 msgid "Could not find pptp client binary."
 msgstr "Nie można odnaleźć pliku binarnego pptp."
 
-#: ../src/nm-pptp-service.c:432
+#: ../src/nm-pptp-service.c:460
 msgid "Missing VPN gateway."
 msgstr "Brak bramy VPN."
 
-#: ../src/nm-pptp-service.c:594
+#: ../src/nm-pptp-service.c:629
 msgid "Could not find the pppd binary."
 msgstr "Nie można odnaleźć pliku binarnego pppd."
 
-#: ../src/nm-pptp-service.c:654
+#: ../src/nm-pptp-service.c:689
 msgid "Missing VPN username."
 msgstr "Brak nazwy użytkownika VPN."
 
-#: ../src/nm-pptp-service.c:663
+#: ../src/nm-pptp-service.c:698
 msgid "Missing or invalid VPN password."
 msgstr "Brak hasła VPN lub jest nieprawidłowe."
 
-#: ../src/nm-pptp-service.c:769
+#: ../src/nm-pptp-service.c:804
 #, c-format
 msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
 msgstr "nie można skonwertować adresu IP bramy VPN PPTP „%s” (%d)"
 
-#: ../src/nm-pptp-service.c:787
+#: ../src/nm-pptp-service.c:822
 #, c-format
 msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
 msgstr "nie można wyszukać adresu IP bramy VPN PPTP „%s” (%d)"
 
-#: ../src/nm-pptp-service.c:811
+#: ../src/nm-pptp-service.c:846
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway '%s'"
 msgstr "nie zwrócono używalnych adresów dla bramy VPN PPTP „%s”"
 
-#: ../src/nm-pptp-service.c:840
+#: ../src/nm-pptp-service.c:875
 msgid "Invalid or missing PPTP gateway."
 msgstr "Brak bramy PPTP lub jest nieprawidłowa."
 
-#: ../src/nm-pptp-service.c:1085
+#: ../src/nm-pptp-service.c:1123
 msgid "Don't quit when VPN connection terminates"
 msgstr "Nie kończy działania, kiedy połączenie VPN jest kończone"
 
-#: ../src/nm-pptp-service.c:1086
+#: ../src/nm-pptp-service.c:1124
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Włącza więcej komunikatów debugowania (może wyjawić hasła)"
 
-#: ../src/nm-pptp-service.c:1087
+#: ../src/nm-pptp-service.c:1125
 msgid "D-Bus name to use for this instance"
 msgstr "Nazwa D-Bus dla tego wystąpienia"
 
-#: ../src/nm-pptp-service.c:1110
+#: ../src/nm-pptp-service.c:1146
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
