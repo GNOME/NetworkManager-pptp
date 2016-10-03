@@ -806,7 +806,7 @@ config: user &lt;name&gt;</property>
                   <object class="GtkLabel" id="label1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Ad_vanced...</property>
+                    <property name="label" translatable="yes">Ad_vanced…</property>
                     <property name="use_markup">True</property>
                     <property name="use_underline">True</property>
                   </object>

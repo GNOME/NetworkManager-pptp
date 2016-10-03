@@ -190,7 +190,7 @@ validate_one_property (const char *key, const char *value, gpointer user_data)
 				g_set_error (info->error,
 				             NM_VPN_PLUGIN_ERROR,
 				             NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS,
-				             _("invalid gateway '%s'"),
+				             _("invalid gateway “%s”"),
 				             key);
 				return;
 			}
@@ -204,7 +204,7 @@ validate_one_property (const char *key, const char *value, gpointer user_data)
 			g_set_error (info->error,
 			             NM_VPN_PLUGIN_ERROR,
 			             NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS,
-			             _("invalid integer property '%s'"),
+			             _("invalid integer property “%s”"),
 			             key);
 			break;
 		case G_TYPE_BOOLEAN:
@@ -214,14 +214,14 @@ validate_one_property (const char *key, const char *value, gpointer user_data)
 			g_set_error (info->error,
 			             NM_VPN_PLUGIN_ERROR,
 			             NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS,
-			             _("invalid boolean property '%s' (not yes or no)"),
+			             _("invalid boolean property “%s” (not yes or no)"),
 			             key);
 			break;
 		default:
 			g_set_error (info->error,
 			             NM_VPN_PLUGIN_ERROR,
 			             NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS,
-			             _("unhandled property '%s' type %s"),
+			             _("unhandled property “%s” type %s"),
 			             key, g_type_name (prop.type));
 			break;
 		}
@@ -232,7 +232,7 @@ validate_one_property (const char *key, const char *value, gpointer user_data)
 		g_set_error (info->error,
 		             NM_VPN_PLUGIN_ERROR,
 		             NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS,
-		             _("property '%s' invalid or not supported"),
+		             _("property “%s” invalid or not supported"),
 		             key);
 	}
 }
@@ -270,7 +270,7 @@ nm_pptp_properties_validate (NMSettingVpn *s_vpn,
 			g_set_error (error,
 			             NM_VPN_PLUGIN_ERROR,
 			             NM_VPN_PLUGIN_ERROR_BAD_ARGUMENTS,
-			             _("Missing required option '%s'."),
+			             _("Missing required option “%s”."),
 			             prop.name);
 			return FALSE;
 		}
@@ -801,7 +801,7 @@ lookup_gateway (NMPptpPlugin *self,
 			g_set_error (error,
 			             NM_VPN_PLUGIN_ERROR,
 			             NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED,
-			             _("couldn't convert PPTP VPN gateway IP address '%s' (%d)"),
+			             _("couldn’t convert PPTP VPN gateway IP address “%s” (%d)"),
 			             src, errno);
 			return FALSE;
 		}
@@ -819,7 +819,7 @@ lookup_gateway (NMPptpPlugin *self,
 		g_set_error (error,
 		             NM_VPN_PLUGIN_ERROR,
 		             NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED,
-		             _("couldn't look up PPTP VPN gateway IP address '%s' (%d)"),
+		             _("couldn’t look up PPTP VPN gateway IP address “%s” (%d)"),
 		             src, err);
 		return FALSE;
 	}
@@ -843,7 +843,7 @@ lookup_gateway (NMPptpPlugin *self,
 		g_set_error (error,
 		             NM_VPN_PLUGIN_ERROR,
 		             NM_VPN_PLUGIN_ERROR_LAUNCH_FAILED,
-		             _("no usable addresses returned for PPTP VPN gateway '%s'"),
+		             _("no usable addresses returned for PPTP VPN gateway “%s”"),
 		             src);
 		return FALSE;
 	}
@@ -1120,7 +1120,7 @@ main (int argc, char *argv[])
 	char sbuf[30];
 
 	GOptionEntry options[] = {
-		{ "persist", 0, 0, G_OPTION_ARG_NONE, &persist, N_("Don't quit when VPN connection terminates"), NULL },
+		{ "persist", 0, 0, G_OPTION_ARG_NONE, &persist, N_("Don’t quit when VPN connection terminates"), NULL },
 		{ "debug", 0, 0, G_OPTION_ARG_NONE, &gl.debug, N_("Enable verbose debug logging (may expose passwords)"), NULL },
 		{ "bus-name", 0, 0, G_OPTION_ARG_STRING, &bus_name_free, N_("D-Bus name to use for this instance"), NULL },
 		{NULL}
