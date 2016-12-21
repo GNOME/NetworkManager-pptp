@@ -2,10 +2,9 @@
 # translation of NetworkManager-openvpn.master.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2006.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2009, 2011.
-# 
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2015, 2016.
 #
 msgid ""
@@ -13,10 +12,10 @@ msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2016-08-25 19:22+0000\n"
-"PO-Revision-Date: 2016-05-26 13:18+0200\n"
+"POT-Creation-Date: 2016-10-03 21:09+0000\n"
+"PO-Revision-Date: 2016-12-21 10:34+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,7 +48,8 @@ msgstr "Los desarrolladores de NetworkManager"
 #.
 #: ../auth-dialog/main.c:146
 #, c-format
-msgid "You need to authenticate to access the Virtual Private Network '%s'."
+#| msgid "You need to authenticate to access the Virtual Private Network '%s'."
+msgid "You need to authenticate to access the Virtual Private Network “%s”."
 msgstr "Necesita autenticarse para acceder a la red privada virtual «%s»"
 
 #: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
@@ -100,6 +100,47 @@ msgstr "Protocolo de túnel punto a punto (PPTP)"
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Compatible con servidores PPTP VPN de Microsoft y otros."
 
+#: ../shared/nm-utils/nm-shared-utils.c:185
+#, c-format
+msgid "object class '%s' has no property named '%s'"
+msgstr "la clase del objeto «%s» no tiene ninguna propiedad llamada «%s»"
+
+#: ../shared/nm-utils/nm-shared-utils.c:192
+#, c-format
+msgid "property '%s' of object class '%s' is not writable"
+msgstr "la propiedad «%s» del objeto de la clase «%s» no se puede escribir"
+
+#: ../shared/nm-utils/nm-shared-utils.c:199
+#, c-format
+msgid ""
+"construct property \"%s\" for object '%s' can't be set after construction"
+msgstr ""
+"no se puede establecer la propiedad «%s» del constructor para el objeto «%s» "
+"después de la construcción"
+
+#: ../shared/nm-utils/nm-shared-utils.c:207
+#, c-format
+msgid "'%s::%s' is not a valid property name; '%s' is not a GObject subtype"
+msgstr ""
+"«%s::%s» no es un nombre de propiedad válido; «%s» no es un subtipo de "
+"GObject"
+
+#: ../shared/nm-utils/nm-shared-utils.c:216
+#, c-format
+msgid "unable to set property '%s' of type '%s' from value of type '%s'"
+msgstr ""
+"no se puede establecer la propiedad «%s» de tipo «%s» con un valor de tipo "
+"«%s»"
+
+#: ../shared/nm-utils/nm-shared-utils.c:227
+#, c-format
+msgid ""
+"value \"%s\" of type '%s' is invalid or out of range for property '%s' of "
+"type '%s'"
+msgstr ""
+"el valor «%s» de tipo «%s» no es válido o está fuera de rango para la "
+"propiedad «%s» de tipo «%s»"
+
 #: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
 #, c-format
 msgid "missing plugin file \"%s\""
@@ -119,96 +160,106 @@ msgstr "no se puede cargar la fábrica %s desde el complemento: %s"
 msgid "unknown error creating editor instance"
 msgstr "error desconocido al crear la instancia del editor"
 
-#: ../src/nm-pptp-service.c:164
+#: ../src/nm-pptp-service.c:193
 #, c-format
-msgid "invalid gateway '%s'"
-msgstr "puerta de enlace «%s» no válida."
+#| msgid "invalid gateway '%s'"
+msgid "invalid gateway “%s”"
+msgstr "puerta de enlace «%s» no válida"
 
-#: ../src/nm-pptp-service.c:178
+#: ../src/nm-pptp-service.c:207
 #, c-format
-msgid "invalid integer property '%s'"
+#| msgid "invalid integer property '%s'"
+msgid "invalid integer property “%s”"
 msgstr "propiedad entera «%s» no válida"
 
-#: ../src/nm-pptp-service.c:188
+#: ../src/nm-pptp-service.c:217
 #, c-format
-msgid "invalid boolean property '%s' (not yes or no)"
+#| msgid "invalid boolean property '%s' (not yes or no)"
+msgid "invalid boolean property “%s” (not yes or no)"
 msgstr "propiedad booleana «%s» no válida (no es «sí» o «no»)"
 
-#: ../src/nm-pptp-service.c:195
+#: ../src/nm-pptp-service.c:224
 #, c-format
-msgid "unhandled property '%s' type %s"
+#| msgid "unhandled property '%s' type %s"
+msgid "unhandled property “%s” type %s"
 msgstr "no se puede manejar la propiedad «%s» tipo %s"
 
-#: ../src/nm-pptp-service.c:206
+#: ../src/nm-pptp-service.c:235
 #, c-format
-msgid "property '%s' invalid or not supported"
+#| msgid "property '%s' invalid or not supported"
+msgid "property “%s” invalid or not supported"
 msgstr "propiedad «%s» no válida o no soportada"
 
-#: ../src/nm-pptp-service.c:224
+#: ../src/nm-pptp-service.c:253
 msgid "No VPN configuration options."
 msgstr "No existen opciones de configuración VPN."
 
-#: ../src/nm-pptp-service.c:244
+#: ../src/nm-pptp-service.c:273
 #, c-format
-msgid "Missing required option '%s'."
+#| msgid "Missing required option '%s'."
+msgid "Missing required option “%s”."
 msgstr "Falta la opción requerida «%s»."
 
-#: ../src/nm-pptp-service.c:264
+#: ../src/nm-pptp-service.c:293
 msgid "No VPN secrets!"
 msgstr "No existen secretos VPN"
 
-#: ../src/nm-pptp-service.c:419
+#: ../src/nm-pptp-service.c:447
 msgid "Could not find pptp client binary."
 msgstr "No se pudo encontrar el binario del cliente pptp"
 
-#: ../src/nm-pptp-service.c:432
+#: ../src/nm-pptp-service.c:460
 msgid "Missing VPN gateway."
 msgstr "Falta la puerta de enlace VPN."
 
-#: ../src/nm-pptp-service.c:594
+#: ../src/nm-pptp-service.c:629
 msgid "Could not find the pppd binary."
 msgstr "No se pudo encontrar el binario del cliente pptpd."
 
-#: ../src/nm-pptp-service.c:654
+#: ../src/nm-pptp-service.c:689
 msgid "Missing VPN username."
 msgstr "Falta el nombre de usuario VPN."
 
-#: ../src/nm-pptp-service.c:663
+#: ../src/nm-pptp-service.c:698
 msgid "Missing or invalid VPN password."
 msgstr "Falta o no es válida la contraseña de la VPN."
 
-#: ../src/nm-pptp-service.c:769
+#: ../src/nm-pptp-service.c:804
 #, c-format
-msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
+#| msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
+msgid "couldn’t convert PPTP VPN gateway IP address “%s” (%d)"
 msgstr "no se pudo convertir la IP de la puerta de enlace VPN PPTP «%s» (%d)"
 
-#: ../src/nm-pptp-service.c:787
+#: ../src/nm-pptp-service.c:822
 #, c-format
-msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
+#| msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
+msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
 msgstr "no se pudo encontrar la IP de la puerta de enlace VPN PPTP «%s» (%d)"
 
-#: ../src/nm-pptp-service.c:811
+#: ../src/nm-pptp-service.c:846
 #, c-format
-msgid "no usable addresses returned for PPTP VPN gateway '%s'"
+#| msgid "no usable addresses returned for PPTP VPN gateway '%s'"
+msgid "no usable addresses returned for PPTP VPN gateway “%s”"
 msgstr "la puerta de enlace VPN PPTP devolvió una dirección no usable «%s»"
 
-#: ../src/nm-pptp-service.c:840
+#: ../src/nm-pptp-service.c:875
 msgid "Invalid or missing PPTP gateway."
 msgstr "Falta o no es válida la puerta de enlace PPTP."
 
-#: ../src/nm-pptp-service.c:1085
-msgid "Don't quit when VPN connection terminates"
+#: ../src/nm-pptp-service.c:1123
+#| msgid "Don't quit when VPN connection terminates"
+msgid "Don’t quit when VPN connection terminates"
 msgstr "No salir cuando la conexión VPN finaliza"
 
-#: ../src/nm-pptp-service.c:1086
+#: ../src/nm-pptp-service.c:1124
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Activar registro de depuración detallado (puede exponer contraseñas)"
 
-#: ../src/nm-pptp-service.c:1087
+#: ../src/nm-pptp-service.c:1125
 msgid "D-Bus name to use for this instance"
 msgstr "Nombre de D-Bus que usar para esta instancia"
 
-#: ../src/nm-pptp-service.c:1110
+#: ../src/nm-pptp-service.c:1146
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
@@ -225,8 +276,9 @@ msgid "PPTP Advanced Options"
 msgstr "Opciones avanzadas de PPTP"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
-msgid "<b>Authentication</b>"
-msgstr "<b>Autenticación</b>"
+#| msgid "<b>Authentication</b>"
+msgid "Authentication"
+msgstr "Autenticación"
 
 #: ../properties/nm-pptp-dialog.ui.h:4
 msgid "Allow the following authentication methods:"
@@ -241,8 +293,9 @@ msgstr ""
 "opción: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:7
-msgid "<b>Security and Compression</b>"
-msgstr "<b>Seguridad y compresión</b>"
+#| msgid "<b>Security and Compression</b>"
+msgid "Security and Compression"
+msgstr "Seguridad y compresión"
 
 #: ../properties/nm-pptp-dialog.ui.h:8
 msgid "Use _Point-to-Point encryption (MPPE)"
@@ -322,8 +375,8 @@ msgstr ""
 "opción: novj (desmarcada)"
 
 #: ../properties/nm-pptp-dialog.ui.h:25
-msgid "<b>Echo</b>"
-msgstr "<b>Eco</b>"
+msgid "Echo"
+msgstr "Eco"
 
 #: ../properties/nm-pptp-dialog.ui.h:26
 msgid "Send PPP _echo packets"
@@ -338,8 +391,8 @@ msgstr ""
 "opción: lcp-echo-failure y lcp-echo-interval"
 
 #: ../properties/nm-pptp-dialog.ui.h:29
-msgid "<b>Misc</b>"
-msgstr "<b>Varios</b>"
+msgid "Misc"
+msgstr "Varios"
 
 #: ../properties/nm-pptp-dialog.ui.h:30
 msgid "Use custom _unit number:"
@@ -354,8 +407,9 @@ msgstr ""
 "opción: unit <n>"
 
 #: ../properties/nm-pptp-dialog.ui.h:33
-msgid "<b>General</b>"
-msgstr "<b>General</b>"
+#| msgid "<b>General</b>"
+msgid "General"
+msgstr "General"
 
 #: ../properties/nm-pptp-dialog.ui.h:34
 msgid ""
@@ -370,8 +424,9 @@ msgid "_Gateway:"
 msgstr "_Pasarela:"
 
 #: ../properties/nm-pptp-dialog.ui.h:37
-msgid "<b>Optional</b>"
-msgstr "<b>Opcional</b>"
+#| msgid "<b>Optional</b>"
+msgid "Optional"
+msgstr "Opcional"
 
 #: ../properties/nm-pptp-dialog.ui.h:38
 msgid ""
@@ -410,37 +465,15 @@ msgid "User name:"
 msgstr "Usuario:"
 
 #: ../properties/nm-pptp-dialog.ui.h:47
-msgid "Ad_vanced..."
+#| msgid "Ad_vanced..."
+msgid "Ad_vanced…"
 msgstr "A_vanzado..."
 
-#~ msgid "object class '%s' has no property named '%s'"
-#~ msgstr "la clase del objeto «%s» no tiene ninguna propiedad llamada «%s»"
+#~ msgid "<b>Echo</b>"
+#~ msgstr "<b>Eco</b>"
 
-#~ msgid "property '%s' of object class '%s' is not writable"
-#~ msgstr "la propiedad «%s» del objeto de la clase «%s» no se puede escribir"
-
-#~ msgid ""
-#~ "construct property \"%s\" for object '%s' can't be set after construction"
-#~ msgstr ""
-#~ "no se puede establecer la propiedad «%s» del constructor para el objeto "
-#~ "«%s» después de la construcción"
-
-#~ msgid "'%s::%s' is not a valid property name; '%s' is not a GObject subtype"
-#~ msgstr ""
-#~ "«%s::%s» no es un nombre de propiedad válido; «%s» no es un subtipo de "
-#~ "GObject"
-
-#~ msgid "unable to set property '%s' of type '%s' from value of type '%s'"
-#~ msgstr ""
-#~ "no se puede establecer la propiedad «%s» de tipo «%s» con un valor de "
-#~ "tipo «%s»"
-
-#~ msgid ""
-#~ "value \"%s\" of type '%s' is invalid or out of range for property '%s' of "
-#~ "type '%s'"
-#~ msgstr ""
-#~ "el valor «%s» de tipo «%s» no es válido o está fuera de rango para la "
-#~ "propiedad «%s» de tipo «%s»"
+#~ msgid "<b>Misc</b>"
+#~ msgstr "<b>Varios</b>"
 
 #~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 #~ msgstr ""
