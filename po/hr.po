@@ -6,16 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2017-01-25 23:15+0000\n"
-"PO-Revision-Date: 2017-03-16 18:35+0000\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
+"POT-Creation-Date: 2017-04-10 13:19+0000\n"
+"PO-Revision-Date: 2017-05-09 23:43+0200\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2017-04-09 22:48+0000\n"
-"X-Generator: Launchpad (build 18343)\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
 msgid "PPTP VPN client"
@@ -39,11 +41,11 @@ msgstr "Razvijatelji mrežnog upravitelja"
 
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
-#. 
+#.
 #: ../auth-dialog/main.c:146
 #, c-format
-msgid "You need to authenticate to access the Virtual Private Network '%s'."
-msgstr "Potrebna vam je ovjera za pristup Virtualnoj Privatnoj Mreži '%s'."
+msgid "You need to authenticate to access the Virtual Private Network “%s”."
+msgstr "Potrebna vam je ovjera za pristup Virtualnoj Privatnoj Mreži “%s“."
 
 #: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
 msgid "Authenticate VPN"
@@ -152,28 +154,28 @@ msgstr "nepoznata greška stvaranja primjerka uređivača"
 
 #: ../src/nm-pptp-service.c:193
 #, c-format
-msgid "invalid gateway '%s'"
-msgstr "neispravan pristupnik '%s'"
+msgid "invalid gateway “%s”"
+msgstr "neispravan pristupnik “%s“"
 
 #: ../src/nm-pptp-service.c:207
 #, c-format
-msgid "invalid integer property '%s'"
-msgstr "nevaljan broj objekta '%s'"
+msgid "invalid integer property “%s”"
+msgstr "nevaljan broj objekta “%s”"
 
 #: ../src/nm-pptp-service.c:217
 #, c-format
-msgid "invalid boolean property '%s' (not yes or no)"
-msgstr "nevaljan boolean objekt '%s' (ne da ili da)"
+msgid "invalid boolean property “%s” (not yes or no)"
+msgstr "nevaljan boolean objekt “%s” (ne da ili da)"
 
 #: ../src/nm-pptp-service.c:224
 #, c-format
-msgid "unhandled property '%s' type %s"
-msgstr "Nerukujući objekt '%s' vrste %s"
+msgid "unhandled property “%s” type %s"
+msgstr "Nerukujući objekt “%s” vrste %s"
 
 #: ../src/nm-pptp-service.c:235
 #, c-format
-msgid "property '%s' invalid or not supported"
-msgstr "objekt '%s' neispravan ili nepodržan"
+msgid "property “%s” invalid or not supported"
+msgstr "objekt “%s” neispravan ili nepodržan"
 
 #: ../src/nm-pptp-service.c:253
 msgid "No VPN configuration options."
@@ -181,8 +183,8 @@ msgstr "Nema mogućnosti VPN podešavanja."
 
 #: ../src/nm-pptp-service.c:273
 #, c-format
-msgid "Missing required option '%s'."
-msgstr "Nedostaje potrebna mogućnost '%s'."
+msgid "Missing required option “%s”."
+msgstr "Nedostaje potrebna mogućnost “%s”."
 
 #: ../src/nm-pptp-service.c:293
 msgid "No VPN secrets!"
@@ -210,31 +212,30 @@ msgstr "VPN lozinka nedostaje ili je neispravna."
 
 #: ../src/nm-pptp-service.c:804
 #, c-format
-msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
-msgstr "nemoguće pretvoriti IP adresu PPTP VPN pristupnika '%s' (%d)"
+msgid "couldn’t convert PPTP VPN gateway IP address “%s” (%d)"
+msgstr "nemoguće pretvoriti IP adresu PPTP VPN pristupnika “%s” (%d)"
 
 #: ../src/nm-pptp-service.c:822
 #, c-format
-msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
-msgstr "nemoguće potražiti IP adresu PPTP VPN pristupnika '%s' (%d)"
+msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
+msgstr "nemoguće potražiti IP adresu PPTP VPN pristupnika “%s” (%d)"
 
 #: ../src/nm-pptp-service.c:846
 #, c-format
-msgid "no usable addresses returned for PPTP VPN gateway '%s'"
-msgstr "Nema vraćene iskoristive adrese za PPTP VPN pristupnik '%s'"
+msgid "no usable addresses returned for PPTP VPN gateway “%s”"
+msgstr "Nema vraćene iskoristive adrese za PPTP VPN pristupnik “%s”"
 
 #: ../src/nm-pptp-service.c:875
 msgid "Invalid or missing PPTP gateway."
 msgstr "Pogrešan ili nedostajuć PPTP pristupnik."
 
 #: ../src/nm-pptp-service.c:1123
-msgid "Don't quit when VPN connection terminates"
+msgid "Don’t quit when VPN connection terminates"
 msgstr "Ne zatvaraj kada se VPN povezivanje prekida"
 
 #: ../src/nm-pptp-service.c:1124
 msgid "Enable verbose debug logging (may expose passwords)"
-msgstr ""
-"Omogući opširno zapisivanje otklanjanja grešaka (može otkriti lozinke)"
+msgstr "Omogući opširno zapisivanje otklanjanja grešaka (može otkriti lozinke)"
 
 #: ../src/nm-pptp-service.c:1125
 msgid "D-Bus name to use for this instance"
@@ -257,8 +258,8 @@ msgid "PPTP Advanced Options"
 msgstr "PPTP napredne mogućnosti"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
-msgid "<b>Authentication</b>"
-msgstr "<b>Ovjera</b>"
+msgid "Authentication"
+msgstr "Ovjera"
 
 #: ../properties/nm-pptp-dialog.ui.h:4
 msgid "Allow the following authentication methods:"
@@ -274,8 +275,8 @@ msgstr ""
 "refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:7
-msgid "<b>Security and Compression</b>"
-msgstr "<b>Sigurnost i sažimanje</b>"
+msgid "Security and Compression"
+msgstr "Sigurnost i sažimanje"
 
 #: ../properties/nm-pptp-dialog.ui.h:8
 msgid "Use _Point-to-Point encryption (MPPE)"
@@ -355,8 +356,8 @@ msgstr ""
 "podešavanje: novj (kada nije odabrano)"
 
 #: ../properties/nm-pptp-dialog.ui.h:25
-msgid "<b>Echo</b>"
-msgstr "<b>Jeka</b>"
+msgid "Echo"
+msgstr ""
 
 #: ../properties/nm-pptp-dialog.ui.h:26
 msgid "Send PPP _echo packets"
@@ -371,8 +372,8 @@ msgstr ""
 "podešavanje: lcp-echo-failure i lcp-echo-interval"
 
 #: ../properties/nm-pptp-dialog.ui.h:29
-msgid "<b>Misc</b>"
-msgstr "<b>Ostalo</b>"
+msgid "Misc"
+msgstr "Ostalo"
 
 #: ../properties/nm-pptp-dialog.ui.h:30
 msgid "Use custom _unit number:"
@@ -387,8 +388,8 @@ msgstr ""
 "podešavanje: jedinica <n>"
 
 #: ../properties/nm-pptp-dialog.ui.h:33
-msgid "<b>General</b>"
-msgstr "<b>Općenito</b>"
+msgid "General"
+msgstr "Općenito"
 
 #: ../properties/nm-pptp-dialog.ui.h:34
 msgid ""
@@ -403,8 +404,8 @@ msgid "_Gateway:"
 msgstr "_Pristupnik:"
 
 #: ../properties/nm-pptp-dialog.ui.h:37
-msgid "<b>Optional</b>"
-msgstr "<b>Neobavezno</b>"
+msgid "Optional"
+msgstr "Neobavezno"
 
 #: ../properties/nm-pptp-dialog.ui.h:38
 msgid ""
@@ -441,5 +442,11 @@ msgid "User name:"
 msgstr "Korisničko ime:"
 
 #: ../properties/nm-pptp-dialog.ui.h:47
-msgid "Ad_vanced..."
+msgid "Ad_vanced…"
 msgstr "Na_predno..."
+
+#~ msgid "<b>Echo</b>"
+#~ msgstr "<b>Jeka</b>"
+
+#~ msgid "<b>Misc</b>"
+#~ msgstr "<b>Ostalo</b>"
