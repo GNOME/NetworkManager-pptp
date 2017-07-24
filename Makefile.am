@@ -26,9 +26,6 @@ dbusservice_DATA = nm-pptp-service.conf
 nmvpnservicedir = $(NM_VPN_SERVICE_DIR)
 nmvpnservice_DATA = nm-pptp-service.name
 
-uidir = $(datadir)/gnome-vpn-properties/pptp
-ui_DATA =
-
 BUILT_SOURCES =
 
 ###############################################################################
@@ -119,7 +116,11 @@ src_nm_pptp_pppd_plugin_la_LIBADD = \
 
 ###############################################################################
 
-ui_DATA += properties/nm-pptp-dialog.ui
+properties/resources.h: properties/gresource.xml
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) $< --target=$@ --sourcedir=$(srcdir)/properties --generate-header --internal
+
+properties/resources.c: properties/gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/properties --generate-dependencies $(srcdir)/properties/gresource.xml)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) $< --target=$@ --sourcedir=$(srcdir)/properties --generate-source --internal
 
 plugin_sources = \
 	shared/nm-utils/nm-vpn-plugin-macros.h \
@@ -129,6 +130,8 @@ plugin_sources = \
 editor_sources = \
 	$(shared_sources) \
 	shared/nm-utils/nm-vpn-plugin-utils.h \
+	properties/resources.c \
+	properties/resources.h \
 	properties/advanced-dialog.c \
 	properties/advanced-dialog.h \
 	properties/nm-pptp-editor.c \
@@ -136,11 +139,15 @@ editor_sources = \
 
 properties_cppflags = \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
-	-DUIDIR=\""$(uidir)"\" \
 	-I$(top_srcdir)/shared
+
+CLEANFILES += \
+	properties/resources.c \
+	properties/resources.h
 
 EXTRA_DIST += \
 	properties/nm-pptp-dialog.ui \
+	properties/gresource.xml \
 	properties/libnm-pptp-properties.ver \
 	properties/libnm-vpn-plugin-pptp.ver \
 	properties/libnm-vpn-plugin-pptp-editor.ver
@@ -225,6 +232,8 @@ endif
 
 auth_dialog_nm_pptp_auth_dialog_SOURCES = \
 	$(shared_sources) \
+	properties/resources.c \
+	properties/resources.h \
 	auth-dialog/main.c
 auth_dialog_nm_pptp_auth_dialog_CFLAGS = \
 	$(GLIB_CFLAGS) \
