@@ -1,16 +1,247 @@
-AUTOMAKE_OPTIONS = foreign
+AUTOMAKE_OPTIONS = foreign subdir-objects
 
-SUBDIRS = shared properties src po
+DISTCHECK_CONFIGURE_FLAGS = \
+	--enable-more-warnings=yes
 
-if WITH_GNOME
-SUBDIRS += auth-dialog
-endif
+libexec_PROGRAMS =
+
+noinst_LTLIBRARIES =
+
+EXTRA_DIST =
+
+CLEANFILES =
+
+noinst_PROGRAMS =
+
+SUBDIRS = \
+	. \
+	po
+
+plugindir = $(libdir)/NetworkManager
+plugin_LTLIBRARIES =
 
 dbusservicedir = $(sysconfdir)/dbus-1/system.d
 dbusservice_DATA = nm-pptp-service.conf
 
 nmvpnservicedir = $(NM_VPN_SERVICE_DIR)
 nmvpnservice_DATA = nm-pptp-service.name
+
+uidir = $(datadir)/gnome-vpn-properties/pptp
+ui_DATA =
+
+BUILT_SOURCES =
+
+###############################################################################
+
+shared_sources = \
+	shared/nm-default.h \
+	shared/nm-utils/gsystem-local-alloc.h \
+	shared/nm-utils/nm-macros-internal.h \
+	shared/nm-utils/nm-shared-utils.c \
+	shared/nm-utils/nm-shared-utils.h
+
+EXTRA_DIST += \
+	shared/README
+
+src_cppflags = \
+	$(GLIB_CFLAGS) \
+	$(LIBNM_CFLAGS) \
+	-I$(top_srcdir)/shared \
+	-I$(builddir)/src \
+	-DNM_PPTP_LOCALEDIR=\"$(datadir)/locale\" \
+	-DNM_PPTP_STATEDIR=\"$(pptp_statedir)\" \
+	-DPLUGINDIR=\"$(PPPD_PLUGIN_DIR)\"
+
+###############################################################################
+
+noinst_LTLIBRARIES += src/libnm-pptp-pppd-service-dbus.la
+
+nodist_src_libnm_pptp_pppd_service_dbus_la_SOURCES = \
+	src/nm-pptp-pppd-service-dbus.c \
+	src/nm-pptp-pppd-service-dbus.h
+
+src_libnm_pptp_pppd_service_dbus_la_CPPFLAGS = \
+	$(src_cppflags) \
+	$(filter-out -DGLIB_VERSION_MAX_ALLOWED%,$(AM_CPPFLAGS))
+
+src/nm-pptp-pppd-service-dbus.h: $(top_srcdir)/src/nm-pptp-pppd-service.xml
+	$(AM_V_GEN) gdbus-codegen \
+		--generate-c-code $(basename $@) \
+		--c-namespace NMDBus \
+		--interface-prefix org.freedesktop.NetworkManager \
+		$<
+
+src/nm-pptp-pppd-service-dbus.c: src/nm-pptp-pppd-service-dbus.h
+	@true
+
+BUILT_SOURCES += \
+	src/nm-pptp-pppd-service-dbus.h \
+	src/nm-pptp-pppd-service-dbus.c
+
+CLEANFILES += \
+	src/nm-pptp-pppd-service-dbus.h \
+	src/nm-pptp-pppd-service-dbus.c
+
+EXTRA_DIST += \
+	src/nm-pptp-pppd-service.xml
+
+###############################################################################
+
+libexec_PROGRAMS += src/nm-pptp-service
+
+src_nm_pptp_service_SOURCES = \
+	$(shared_sources) \
+	shared/nm-service-defines.h \
+	src/nm-ppp-status.h \
+	src/nm-pptp-service.h \
+	src/nm-pptp-service.c
+src_nm_pptp_service_CPPFLAGS = $(src_cppflags)
+src_nm_pptp_service_LDADD = \
+	src/libnm-pptp-pppd-service-dbus.la \
+	$(GLIB_LIBS) \
+	$(LIBNM_LIBS)
+
+###############################################################################
+
+pppd_plugindir = $(PPPD_PLUGIN_DIR)
+pppd_plugin_LTLIBRARIES = src/nm-pptp-pppd-plugin.la
+
+src_nm_pptp_pppd_plugin_la_SOURCES = \
+	$(shared_sources) \
+	src/nm-pptp-pppd-plugin.c \
+	src/nm-ppp-status.h
+src_nm_pptp_pppd_plugin_la_CPPFLAGS = $(src_cppflags)
+src_nm_pptp_pppd_plugin_la_LDFLAGS = \
+	-module -avoid-version
+src_nm_pptp_pppd_plugin_la_LIBADD = \
+	$(GLIB_LIBS)
+	$(LIBNM_LIBS)
+
+###############################################################################
+
+ui_DATA += properties/nm-pptp-dialog.ui
+
+plugin_sources = \
+	shared/nm-utils/nm-vpn-plugin-macros.h \
+	properties/nm-pptp-editor-plugin.c \
+	properties/nm-pptp-editor-plugin.h
+
+editor_sources = \
+	$(shared_sources) \
+	shared/nm-utils/nm-vpn-plugin-utils.h \
+	properties/advanced-dialog.c \
+	properties/advanced-dialog.h \
+	properties/nm-pptp-editor.c \
+	properties/nm-pptp-editor.h
+
+properties_cppflags = \
+	-DLOCALEDIR=\"$(datadir)/locale\" \
+	-DUIDIR=\""$(uidir)"\" \
+	-I$(top_srcdir)/shared
+
+EXTRA_DIST += \
+	properties/nm-pptp-dialog.ui \
+	properties/libnm-pptp-properties.ver \
+	properties/libnm-vpn-plugin-pptp.ver \
+	properties/libnm-vpn-plugin-pptp-editor.ver
+
+###############################################################################
+
+plugin_LTLIBRARIES += properties/libnm-vpn-plugin-pptp.la
+
+properties_libnm_vpn_plugin_pptp_la_SOURCES = \
+	shared/nm-utils/nm-vpn-plugin-utils.c \
+	$(plugin_sources)
+properties_libnm_vpn_plugin_pptp_la_CFLAGS = \
+	$(GLIB_CFLAGS) \
+	$(LIBNM_CFLAGS)
+properties_libnm_vpn_plugin_pptp_la_CPPFLAGS = \
+	-DNETWORKMANAGER_COMPILATION=NM_NETWORKMANAGER_COMPILATION_LIB_BASE \
+	-DNM_PLUGIN_DIR=\"$(NM_PLUGIN_DIR)\" \
+	$(properties_cppflags)
+properties_libnm_vpn_plugin_pptp_la_LIBADD = \
+	$(GLIB_LIBS) \
+	$(LIBNM_LIBS)
+properties_libnm_vpn_plugin_pptp_la_LDFLAGS = \
+	-avoid-version \
+	-Wl,--version-script="$(srcdir)/properties/libnm-vpn-plugin-pptp.ver"
+
+###############################################################################
+
+plugin_LTLIBRARIES += properties/libnm-vpn-plugin-pptp-editor.la
+
+properties_libnm_vpn_plugin_pptp_editor_la_SOURCES = \
+	$(editor_sources)
+properties_libnm_vpn_plugin_pptp_editor_la_CFLAGS = \
+	$(GLIB_CFLAGS) \
+	$(GTK_CFLAGS) \
+	$(LIBNM_CFLAGS) \
+	$(LIBNMA_CFLAGS)
+properties_libnm_vpn_plugin_pptp_editor_la_CPPFLAGS = \
+	-DNETWORKMANAGER_COMPILATION=NM_NETWORKMANAGER_COMPILATION_LIB_EDITOR \
+	$(properties_cppflags)
+properties_libnm_vpn_plugin_pptp_editor_la_LIBADD = \
+	$(GLIB_LIBS) \
+	$(GTK_LIBS) \
+	$(LIBNM_LIBS) \
+	$(LIBNMA_LIBS)
+properties_libnm_vpn_plugin_pptp_editor_la_LDFLAGS = \
+	-avoid-version \
+	-Wl,--version-script="$(srcdir)/properties/libnm-vpn-plugin-pptp-editor.ver"
+
+###############################################################################
+
+if WITH_LIBNM_GLIB
+plugin_LTLIBRARIES += properties/libnm-pptp-properties.la
+endif
+
+properties_libnm_pptp_properties_la_SOURCES = \
+	shared/nm-utils/nm-glib.h \
+	$(plugin_sources) \
+	$(editor_sources)
+properties_libnm_pptp_properties_la_CFLAGS = \
+	$(GLIB_CFLAGS) \
+	$(GTK_CFLAGS) \
+	$(LIBNM_GLIB_CFLAGS) \
+	$(LIBNM_GTK_CFLAGS)
+properties_libnm_pptp_properties_la_CPPFLAGS = \
+	-DNETWORKMANAGER_COMPILATION=NM_NETWORKMANAGER_COMPILATION_LIB \
+	-DNM_VPN_OLD \
+	$(properties_cppflags)
+properties_libnm_pptp_properties_la_LIBADD = \
+	$(GLIB_LIBS) \
+	$(GTK_LIBS) \
+	$(LIBNM_GLIB_LIBS) \
+	$(LIBNM_GLIB_LIBS)
+properties_libnm_pptp_properties_la_LDFLAGS = \
+	-avoid-version \
+	-Wl,--version-script="$(srcdir)/properties/libnm-pptp-properties.ver"
+
+###############################################################################
+
+if WITH_GNOME
+libexec_PROGRAMS += auth-dialog/nm-pptp-auth-dialog
+endif
+
+auth_dialog_nm_pptp_auth_dialog_SOURCES = \
+	$(shared_sources) \
+	auth-dialog/main.c
+auth_dialog_nm_pptp_auth_dialog_CFLAGS = \
+	$(GLIB_CFLAGS) \
+	$(GTK_CFLAGS) \
+	$(LIBNM_CFLAGS) \
+	$(LIBNMA_CFLAGS) \
+	$(LIBSECRET_CFLAGS)
+auth_dialog_nm_pptp_auth_dialog_CPPFLAGS = \
+	-I$(top_srcdir)/shared
+auth_dialog_nm_pptp_auth_dialog_LDADD = \
+	$(GLIB_LIBS) \
+	$(GTK_LIBS) \
+	$(LIBNM_LIBS) \
+	$(LIBNMA_LIBS) \
+	$(LIBSECRET_LIBS)
+
+###############################################################################
 
 if WITH_LIBNM_GLIB
 # Install a file with full path to plugins for an old gnome-shell
@@ -36,23 +267,26 @@ appdata_in_files = appdata/network-manager-pptp.metainfo.xml.in
 @INTLTOOL_XML_RULE@
 
 nm-pptp-service.name: $(srcdir)/nm-pptp-service.name.in
-	sed -e 's|[@]LIBEXECDIR[@]|$(libexecdir)|g' \
+	$(AM_V_GEN) sed -e 's|[@]LIBEXECDIR[@]|$(libexecdir)|g' \
 	    -e 's|[@]PLUGINDIR[@]/|@NM_PLUGIN_DIR_NAME_FILE@|g' \
-	    $< >$@
+	    $^ >$@
 
-DISTCHECK_CONFIGURE_FLAGS = --enable-more-warnings=yes
+EXTRA_DIST += \
+	nm-pptp-service.name.in \
+	$(dbusservice_DATA) \
+	$(appdata_in_files) \
+	$(appdata_files) \
+	intltool-extract.in \
+	intltool-merge.in \
+	intltool-update.in
 
-EXTRA_DIST = nm-pptp-service.name.in \
-             $(dbusservice_DATA)  \
-             $(appdata_in_files)  \
-             $(appdata_files)      \
-             intltool-extract.in  \
-             intltool-merge.in    \
-             intltool-update.in
+CLEANFILES += \
+	$(nmvpnservice_DATA) \
+	$(appdata_files)
 
-CLEANFILES = $(nmvpnservice_DATA) \
-             $(appdata_files)
-
-DISTCLEANFILES = intltool-extract intltool-merge intltool-update
+DISTCLEANFILES = \
+	intltool-extract \
+	intltool-merge \
+	intltool-update
 
 ACLOCAL_AMFLAGS = -I m4
