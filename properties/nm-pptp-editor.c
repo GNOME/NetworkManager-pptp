@@ -425,7 +425,6 @@ nm_vpn_plugin_ui_widget_interface_new (NMConnection *connection, GError **error)
 
 	ui_file = g_strdup_printf ("%s/%s", UIDIR, "nm-pptp-dialog.ui");
 	priv->builder = gtk_builder_new ();
-
 	gtk_builder_set_translation_domain (priv->builder, GETTEXT_PACKAGE);
 
 	if (!gtk_builder_add_from_file (priv->builder, ui_file, error)) {

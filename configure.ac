@@ -6,6 +6,7 @@ AC_INIT(NetworkManager-pptp,
         NetworkManager-pptp)
 AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-xz])
 AM_MAINTAINER_MODE
+AM_SILENT_RULES([yes])
 
 AC_CONFIG_MACRO_DIR([m4])
 
@@ -140,17 +141,15 @@ fi
 
 AC_CONFIG_FILES([
 Makefile
-src/Makefile
-auth-dialog/Makefile
-properties/Makefile
 po/Makefile.in
-shared/Makefile
 ])
 AC_OUTPUT
 
 echo ""
 echo "Build configuration: "
+echo "  --with-dist-version=$ac_distver"
 echo "  --with-gnome=$with_gnome"
 echo "  --with-libnm-glib=$with_libnm_glib"
+echo "  --with-pppd-plugin-dir=$PPPD_PLUGIN_DIR"
 echo "  --enable-absolute-paths=$enable_absolute_paths"
 echo "  --enable-more-warnings=$set_more_warnings"
