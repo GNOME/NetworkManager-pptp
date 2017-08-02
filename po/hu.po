@@ -452,11 +452,11 @@ msgstr "Felhasználónév:"
 msgid "Ad_vanced…"
 msgstr "S_peciális…"
 
-#~ msgid "<b>Echo</b>"
-#~ msgstr "<b>Visszhang</b>"
+#~ msgid "Echo"
+#~ msgstr "Visszhang"
 
-#~ msgid "<b>Misc</b>"
-#~ msgstr "<b>Egyéb</b>"
+#~ msgid "Misc"
+#~ msgstr "Egyéb"
 
 #~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 #~ msgstr "Nem küldött a PPTP VPN-átjáró használható IP-címet: „%s” (%d)"

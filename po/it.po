@@ -454,11 +454,11 @@ msgstr "Nome utente:"
 msgid "Ad_vanced…"
 msgstr "A_vanzate…"
 
-#~ msgid "<b>Echo</b>"
-#~ msgstr "<b>Eco</b>"
+#~ msgid "Echo"
+#~ msgstr "Eco"
 
-#~ msgid "<b>Misc</b>"
-#~ msgstr "<b>Varie</b>"
+#~ msgid "Misc"
+#~ msgstr "Varie"
 
 #~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 #~ msgstr ""

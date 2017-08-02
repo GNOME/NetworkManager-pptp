@@ -280,7 +280,7 @@ msgid "PPTP Advanced Options"
 msgstr "Opções avançadas de PPTP"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
-#| msgid "<b>Authentication</b>"
+#| msgid "Authentication"
 msgid "Authentication"
 msgstr "Autenticação"
 
@@ -297,7 +297,7 @@ msgstr ""
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:7
-#| msgid "<b>Security and Compression</b>"
+#| msgid "Security and Compression"
 msgid "Security and Compression"
 msgstr "Segurança e compressão"
 
@@ -412,7 +412,7 @@ msgstr ""
 "config: unit <n>"
 
 #: ../properties/nm-pptp-dialog.ui.h:33
-#| msgid "<b>General</b>"
+#| msgid "General"
 msgid "General"
 msgstr "Geral"
 
@@ -429,7 +429,7 @@ msgid "_Gateway:"
 msgstr "_Gateway:"
 
 #: ../properties/nm-pptp-dialog.ui.h:37
-#| msgid "<b>Optional</b>"
+#| msgid "Optional"
 msgid "Optional"
 msgstr "Opcional"
 
@@ -473,11 +473,11 @@ msgstr "Nome de usuário:"
 msgid "Ad_vanced…"
 msgstr "A_vançado…"
 
-#~ msgid "<b>Echo</b>"
-#~ msgstr "<b>Eco</b>"
+#~ msgid "Echo"
+#~ msgstr "Eco"
 
-#~ msgid "<b>Misc</b>"
-#~ msgstr "<b>Diverso</b>"
+#~ msgid "Misc"
+#~ msgstr "Diverso"
 
 #~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 #~ msgstr ""

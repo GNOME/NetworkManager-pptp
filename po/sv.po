@@ -466,11 +466,11 @@ msgstr "A_vancerat…"
 #~ msgid "No cached credentials."
 #~ msgstr "Inga mellanlagrade inloggningsuppgifter."
 
-#~ msgid "<b>Echo</b>"
-#~ msgstr "<b>Eko</b>"
+#~ msgid "Echo"
+#~ msgstr "Eko"
 
-#~ msgid "<b>Misc</b>"
-#~ msgstr "<b>Övrigt</b>"
+#~ msgid "Misc"
+#~ msgstr "Övrigt"
 
 #~ msgid "Invalid VPN username."
 #~ msgstr "Ogiltigt VPN-användarnamn."

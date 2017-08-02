@@ -450,11 +450,11 @@ msgstr "Naudotojo vardas:"
 msgid "Ad_vanced…"
 msgstr "Išplėsti_niai…"
 
-#~ msgid "<b>Echo</b>"
-#~ msgstr "<b>Aidas</b>"
+#~ msgid "Echo"
+#~ msgstr "Aidas"
 
-#~ msgid "<b>Misc</b>"
-#~ msgstr "<b>Įvairūs</b>"
+#~ msgid "Misc"
+#~ msgstr "Įvairūs"
 
 #~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 #~ msgstr "negrąžinti tinkami PPTP VPN kelvedžio „%s“ adresai (%d)"

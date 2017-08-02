@@ -270,7 +270,7 @@ msgid "PPTP Advanced Options"
 msgstr "Напредне опције за ППТП"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
-#| msgid "<b>Authentication</b>"
+#| msgid "Authentication"
 msgid "Authentication"
 msgstr "Пријава"
 
@@ -288,7 +288,7 @@ msgstr ""
 "eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:7
-#| msgid "<b>Security and Compression</b>"
+#| msgid "Security and Compression"
 msgid "Security and Compression"
 msgstr "Безбедност и сажимање"
 
@@ -402,7 +402,7 @@ msgstr ""
 "подешавање: јединица <n>"
 
 #: ../properties/nm-pptp-dialog.ui.h:33
-#| msgid "<b>General</b>"
+#| msgid "General"
 msgid "General"
 msgstr "Опште"
 
@@ -419,7 +419,7 @@ msgid "_Gateway:"
 msgstr "_Мрежни пролаз:"
 
 #: ../properties/nm-pptp-dialog.ui.h:37
-#| msgid "<b>Optional</b>"
+#| msgid "Optional"
 msgid "Optional"
 msgstr "Изборно"
 
@@ -463,11 +463,11 @@ msgstr "Корисничко име:"
 msgid "Ad_vanced…"
 msgstr "_Напредно…"
 
-#~ msgid "<b>Echo</b>"
-#~ msgstr "<b>Одјек</b>"
+#~ msgid "Echo"
+#~ msgstr "Одјек"
 
-#~ msgid "<b>Misc</b>"
-#~ msgstr "<b>Разно</b>"
+#~ msgid "Misc"
+#~ msgstr "Разно"
 
 #~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 #~ msgstr "нису враћене употребљиве адресе за ППТП ВПН мрежни пролаз „%s“ (%d)"

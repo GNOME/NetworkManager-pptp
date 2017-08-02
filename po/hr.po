@@ -445,8 +445,8 @@ msgstr "Korisničko ime:"
 msgid "Ad_vanced…"
 msgstr "Na_predno..."
 
-#~ msgid "<b>Echo</b>"
-#~ msgstr "<b>Jeka</b>"
+#~ msgid "Echo"
+#~ msgstr "Jeka"
 
-#~ msgid "<b>Misc</b>"
-#~ msgstr "<b>Ostalo</b>"
+#~ msgid "Misc"
+#~ msgstr "Ostalo"

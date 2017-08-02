@@ -463,11 +463,11 @@ msgstr "Benutzername:"
 msgid "Ad_vanced…"
 msgstr "Er_weitert …"
 
-#~ msgid "<b>Echo</b>"
-#~ msgstr "<b>Echo</b>"
+#~ msgid "Echo"
+#~ msgstr "Echo"
 
-#~ msgid "<b>Misc</b>"
-#~ msgstr "<b>Verschiedenes</b>"
+#~ msgid "Misc"
+#~ msgstr "Verschiedenes"
 
 #~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 #~ msgstr ""

@@ -89,8 +89,8 @@ msgid "PPTP Advanced Options"
 msgstr "Дополнительные параметры PPTP"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
-msgid "<b>Authentication</b>"
-msgstr "<b>Аутентификация</b>"
+msgid "Authentication"
+msgstr "Аутентификация"
 
 #: ../properties/nm-pptp-dialog.ui.h:4
 msgid "Allow the following authentication methods:"
@@ -105,8 +105,8 @@ msgstr ""
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:7
-msgid "<b>Security and Compression</b>"
-msgstr "<b>Шифрование и сжатие</b>"
+msgid "Security and Compression"
+msgstr "Шифрование и сжатие"
 
 #: ../properties/nm-pptp-dialog.ui.h:8
 msgid "Use _Point-to-Point encryption (MPPE)"
@@ -186,8 +186,8 @@ msgstr ""
 "config: novj (если не выбрано)"
 
 #: ../properties/nm-pptp-dialog.ui.h:25
-msgid "<b>Echo</b>"
-msgstr "<b>Эхо</b>"
+msgid "Echo"
+msgstr "Эхо"
 
 #: ../properties/nm-pptp-dialog.ui.h:26
 msgid "Send PPP _echo packets"
@@ -202,9 +202,9 @@ msgstr ""
 "config: lcp-echo-failure и lcp-echo-interval"
 
 #: ../properties/nm-pptp-dialog.ui.h:29
-#| msgid "<b>Echo</b>"
-msgid "<b>Misc</b>"
-msgstr "<b>Прочее</b>"
+#| msgid "Echo"
+msgid "Misc"
+msgstr "Прочее"
 
 #: ../properties/nm-pptp-dialog.ui.h:30
 msgid "Use custom _unit number:"
@@ -219,8 +219,8 @@ msgstr ""
 "config: номер <n>"
 
 #: ../properties/nm-pptp-dialog.ui.h:33
-msgid "<b>General</b>"
-msgstr "<b>Общие</b>"
+msgid "General"
+msgstr "Общие"
 
 #: ../properties/nm-pptp-dialog.ui.h:34
 msgid ""
@@ -235,8 +235,8 @@ msgid "_Gateway:"
 msgstr "_Шлюз:"
 
 #: ../properties/nm-pptp-dialog.ui.h:37
-msgid "<b>Optional</b>"
-msgstr "<b>Дополнительные</b>"
+msgid "Optional"
+msgstr "Дополнительные"
 
 #: ../properties/nm-pptp-dialog.ui.h:38
 msgid ""
