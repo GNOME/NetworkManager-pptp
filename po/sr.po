@@ -463,12 +463,6 @@ msgstr "Корисничко име:"
 msgid "Ad_vanced…"
 msgstr "_Напредно…"
 
-#~ msgid "Echo"
-#~ msgstr "Одјек"
-
-#~ msgid "Misc"
-#~ msgstr "Разно"
-
 #~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 #~ msgstr "нису враћене употребљиве адресе за ППТП ВПН мрежни пролаз „%s“ (%d)"
 

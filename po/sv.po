@@ -466,12 +466,6 @@ msgstr "A_vancerat…"
 #~ msgid "No cached credentials."
 #~ msgstr "Inga mellanlagrade inloggningsuppgifter."
 
-#~ msgid "Echo"
-#~ msgstr "Eko"
-
-#~ msgid "Misc"
-#~ msgstr "Övrigt"
-
 #~ msgid "Invalid VPN username."
 #~ msgstr "Ogiltigt VPN-användarnamn."
 

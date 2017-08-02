@@ -484,9 +484,6 @@ msgstr "A_vanceret …"
 #~ msgid "PPTP VPN Connection Manager"
 #~ msgstr "Håndtering af PPTP-VPN-forbindelser"
 
-#~ msgid "Echo"
-#~ msgstr "Ekko"
-
 #~ msgid "Saved"
 #~ msgstr "Gemt"
 

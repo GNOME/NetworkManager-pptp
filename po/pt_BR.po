@@ -473,12 +473,6 @@ msgstr "Nome de usuário:"
 msgid "Ad_vanced…"
 msgstr "A_vançado…"
 
-#~ msgid "Echo"
-#~ msgstr "Eco"
-
-#~ msgid "Misc"
-#~ msgstr "Diverso"
-
 #~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 #~ msgstr ""
 #~ "nenhum endereço usável retornado para o gateway PPTP VPN \"%s\" (%d)"

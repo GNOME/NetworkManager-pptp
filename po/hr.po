@@ -444,9 +444,3 @@ msgstr "Korisničko ime:"
 #: ../properties/nm-pptp-dialog.ui.h:47
 msgid "Ad_vanced…"
 msgstr "Na_predno..."
-
-#~ msgid "Echo"
-#~ msgstr "Jeka"
-
-#~ msgid "Misc"
-#~ msgstr "Ostalo"
