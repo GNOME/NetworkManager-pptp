@@ -276,7 +276,6 @@ msgid "PPTP Advanced Options"
 msgstr "Opciones avanzadas de PPTP"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
-#| msgid "Authentication"
 msgid "Authentication"
 msgstr "Autenticación"
 
@@ -293,7 +292,6 @@ msgstr ""
 "opción: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:7
-#| msgid "Security and Compression"
 msgid "Security and Compression"
 msgstr "Seguridad y compresión"
 
@@ -407,7 +405,6 @@ msgstr ""
 "opción: unit <n>"
 
 #: ../properties/nm-pptp-dialog.ui.h:33
-#| msgid "General"
 msgid "General"
 msgstr "General"
 
@@ -424,7 +421,6 @@ msgid "_Gateway:"
 msgstr "_Pasarela:"
 
 #: ../properties/nm-pptp-dialog.ui.h:37
-#| msgid "Optional"
 msgid "Optional"
 msgstr "Opcional"
 

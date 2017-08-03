@@ -201,7 +201,6 @@ msgstr ""
 "config: lcp-echo-failure και lcp-echo-interval"
 
 #: ../properties/nm-pptp-dialog.ui.h:29
-#| msgid "Echo"
 msgid "Misc"
 msgstr "Λοιπά"
 
