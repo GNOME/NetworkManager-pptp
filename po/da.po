@@ -11,9 +11,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2016-10-03 21:09+0000\n"
+"POT-Creation-Date: 2017-08-03 13:59+0000\n"
 "PO-Revision-Date: 2017-02-25 19:30+0100\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -53,7 +53,7 @@ msgstr "Udviklerne af Netværkshåndtering"
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network “%s”."
 msgstr ""
-"Du skal opnå godkendelse for at tilgå det virtuelle private netværk \"%s\"."
+"Du skal opnå godkendelse for at tilgå det virtuelle private netværk “%s”."
 
 #: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
 msgid "Authenticate VPN"
@@ -104,57 +104,56 @@ msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Kompatibel med Microsoft og andre PPTP-VPN-servere."
 
 # streng også i modulet applet
-#: ../shared/nm-utils/nm-shared-utils.c:185
+#: ../shared/nm-utils/nm-shared-utils.c:264
 #, c-format
 msgid "object class '%s' has no property named '%s'"
-msgstr "objektklassen \"%s\" har ingen egenskab ved navn \"%s\""
+msgstr "objektklassen “%s” har ingen egenskab ved navn “%s”"
 
 # streng også i modulet applet
-#: ../shared/nm-utils/nm-shared-utils.c:192
+#: ../shared/nm-utils/nm-shared-utils.c:271
 #, c-format
 msgid "property '%s' of object class '%s' is not writable"
-msgstr "egenskaben \"%s\" for objektklassen \"%s\" er skrivebeskyttet"
+msgstr "egenskaben “%s” for objektklassen “%s” er skrivebeskyttet"
 
 # streng også i modulet applet
-#: ../shared/nm-utils/nm-shared-utils.c:199
+#: ../shared/nm-utils/nm-shared-utils.c:278
 #, c-format
 msgid ""
 "construct property \"%s\" for object '%s' can't be set after construction"
 msgstr ""
-"construct-egenskaben \"%s\" for objektet \"%s\" kan ikke angives efter "
+"construct-egenskaben “%s” for objektet “%s” kan ikke angives efter "
 "konstruktion"
 
 # streng også i modulet applet
-#: ../shared/nm-utils/nm-shared-utils.c:207
+#: ../shared/nm-utils/nm-shared-utils.c:286
 #, c-format
 msgid "'%s::%s' is not a valid property name; '%s' is not a GObject subtype"
 msgstr ""
-"\"%s::%s\" er ikke et gyldigt egenskabsnavn; \"%s\" er ikke en undertype af "
+"“%s::%s” er ikke et gyldigt egenskabsnavn; “%s” er ikke en undertype af "
 "GObjekt"
 
 # streng også i modulet applet
-#: ../shared/nm-utils/nm-shared-utils.c:216
+#: ../shared/nm-utils/nm-shared-utils.c:295
 #, c-format
 msgid "unable to set property '%s' of type '%s' from value of type '%s'"
 msgstr ""
-"kan ikke angive egenskaben \"%s\" af type \"%s\" ud fra værdien af typen \"%s"
-"\""
+"kan ikke angive egenskaben “%s” af type “%s” ud fra værdien af typen “%s”"
 
 # streng også i modulet applet
-#: ../shared/nm-utils/nm-shared-utils.c:227
+#: ../shared/nm-utils/nm-shared-utils.c:306
 #, c-format
 msgid ""
 "value \"%s\" of type '%s' is invalid or out of range for property '%s' of "
 "type '%s'"
 msgstr ""
-"værdien \"%s\" af typen \"%s\" er ugyldig eller uden for intervallet for "
-"egenskaben \"%s\" af typen \"%s\""
+"værdien “%s” af typen “%s” er ugyldig eller uden for intervallet for "
+"egenskaben “%s” af typen “%s”"
 
 # streng også i modulet vpnc
 #: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
 #, c-format
 msgid "missing plugin file \"%s\""
-msgstr "manglende udvidelsesmodulfil \"%s\""
+msgstr "manglende udvidelsesmodulfil “%s”"
 
 # streng også i modulet vpnc
 #: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
@@ -176,27 +175,27 @@ msgstr "ukendt fejl i forsøget på at danne redigeringsinstans"
 #: ../src/nm-pptp-service.c:193
 #, c-format
 msgid "invalid gateway “%s”"
-msgstr "ugyldig gateway \"%s\""
+msgstr "ugyldig gateway “%s”"
 
 #: ../src/nm-pptp-service.c:207
 #, c-format
 msgid "invalid integer property “%s”"
-msgstr "ugyldig heltalsegenskab \"%s\""
+msgstr "ugyldig heltalsegenskab “%s”"
 
 #: ../src/nm-pptp-service.c:217
 #, c-format
 msgid "invalid boolean property “%s” (not yes or no)"
-msgstr "ugyldig boolesk egenskab \"%s\" (ikke ja eller nej)"
+msgstr "ugyldig boolesk egenskab “%s” (ikke ja eller nej)"
 
 #: ../src/nm-pptp-service.c:224
 #, c-format
 msgid "unhandled property “%s” type %s"
-msgstr "egenskab \"%s\" type %s er ikke håndteret"
+msgstr "egenskab “%s” type %s er ikke håndteret"
 
 #: ../src/nm-pptp-service.c:235
 #, c-format
 msgid "property “%s” invalid or not supported"
-msgstr "egenskab \"%s\" er ugyldig eller ikke understøttet"
+msgstr "egenskab “%s” er ugyldig eller ikke understøttet"
 
 #: ../src/nm-pptp-service.c:253
 msgid "No VPN configuration options."
@@ -205,7 +204,7 @@ msgstr "Ingen indstillinger for VPN-konfiguration."
 #: ../src/nm-pptp-service.c:273
 #, c-format
 msgid "Missing required option “%s”."
-msgstr "Mangler krævet indstilling \"%s\"."
+msgstr "Mangler krævet indstilling “%s”."
 
 #: ../src/nm-pptp-service.c:293
 msgid "No VPN secrets!"
@@ -234,17 +233,17 @@ msgstr "Manglende eller ugyldig VPN-adgangskode."
 #: ../src/nm-pptp-service.c:804
 #, c-format
 msgid "couldn’t convert PPTP VPN gateway IP address “%s” (%d)"
-msgstr "kunne ikke konvertere PPTP-VPN-gatewayens IP-adresse \"%s\" (%d)"
+msgstr "kunne ikke konvertere PPTP-VPN-gatewayens IP-adresse “%s” (%d)"
 
 #: ../src/nm-pptp-service.c:822
 #, c-format
 msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
-msgstr "kunne ikke slå PPTP-VPN-gatewayens IP-adresse \"%s\" (%d) op"
+msgstr "kunne ikke slå PPTP-VPN-gatewayens IP-adresse “%s” (%d) op"
 
 #: ../src/nm-pptp-service.c:846
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway “%s”"
-msgstr "ingen brugbare adresser returneret for PPTP-VPN-gatewayen \"%s\""
+msgstr "ingen brugbare adresser returneret for PPTP-VPN-gatewayen “%s”"
 
 #: ../src/nm-pptp-service.c:875
 msgid "Invalid or missing PPTP gateway."
@@ -495,7 +494,7 @@ msgstr "A_vanceret …"
 
 #~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 #~ msgstr ""
-#~ "ingen brugbare adresser returneret for PPTP VPN-adgangspunkt \"%s\" (%d)"
+#~ "ingen brugbare adresser returneret for PPTP VPN-adgangspunkt “%s” (%d)"
 
 #~ msgid "Could not find secrets (connection invalid, no vpn setting)."
 #~ msgstr ""
