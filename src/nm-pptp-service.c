@@ -497,8 +497,14 @@ construct_pppd_args (NMPptpPlugin *plugin,
 	value = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_USER);
 	if (!value || !*value)
 		value = nm_setting_vpn_get_user_name (s_vpn);
-	if (!value || !*value) {
+	if (value && *value) {
 		g_ptr_array_add (args, (gpointer) g_strdup ("user"));
+		g_ptr_array_add (args, (gpointer) g_strdup (value));
+	}
+
+	value = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_GATEWAY);
+	if (value && *value) {
+		g_ptr_array_add (args, (gpointer) g_strdup ("remotename"));
 		g_ptr_array_add (args, (gpointer) g_strdup (value));
 	}
 
