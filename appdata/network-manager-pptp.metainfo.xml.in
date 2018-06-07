@@ -25,11 +25,11 @@
 
   <screenshots>
     <screenshot type="default">
-      <image width="800" height="498">https://git.gnome.org/browse/network-manager-pptp/plain/appdata/pptp.png</image>
+      <image width="800" height="498">https://gitlab.gnome.org/GNOME/NetworkManager-pptp/raw/master/appdata/pptp.png</image>
     </screenshot>
     <screenshot>
       <caption>The advanced options dialog</caption>
-      <image width="800" height="619">https://git.gnome.org/browse/network-manager-pptp/plain/appdata/pptp-advanced.png</image>
+      <image width="800" height="619">https://gitlab.gnome.org/GNOME/NetworkManager-pptp/raw/master/appdata/pptp-advanced.png</image>
     </screenshot>
   </screenshots>
 
