@@ -2,7 +2,7 @@ AC_PREREQ(2.59)
 
 AC_INIT(NetworkManager-pptp,
         1.2.7,
-        https://bugzilla.gnome.org/enter_bug.cgi?product=NetworkManager,
+        https://gitlab.gnome.org/GNOME/NetworkManager-pptp/issues,
         NetworkManager-pptp)
 AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-xz])
 AM_MAINTAINER_MODE
