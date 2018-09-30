@@ -175,7 +175,9 @@ properties_libnm_vpn_plugin_pptp_la_LDFLAGS = \
 
 ###############################################################################
 
+if WITH_GNOME
 plugin_LTLIBRARIES += properties/libnm-vpn-plugin-pptp-editor.la
+endif
 
 properties_libnm_vpn_plugin_pptp_editor_la_SOURCES = \
 	$(editor_sources)
