@@ -1,4 +1,17 @@
 =======================================================
+NetworkManager-pptp-1.2.8
+Overview of changes since NetworkManager-pptp-1.2.6
+=======================================================
+
+This is a new stable release of NetworkManager-pptp.  Notable changes include:
+
+* Migrate project home to gitlab (https://gitlab.gnome.org/GNOME/NetworkManager-pptp)
+* Improve project description in doap file.
+* Fix build without GTK/Gnome.
+* Build fixes for CI integration.
+* Update Catalan translation.
+
+=======================================================
 NetworkManager-pptp-1.2.6
 Overview of changes since network-manager-pptp-1.2.4
 =======================================================
