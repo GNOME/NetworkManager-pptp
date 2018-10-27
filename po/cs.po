@@ -9,9 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2016-10-15 20:50+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
+"issues\n"
+"POT-Creation-Date: 2018-10-24 13:32+0000\n"
 "PO-Revision-Date: 2016-10-17 10:59+0200\n"
 "Last-Translator: Zdeněk Hataš <zdenek.hatas@gmail.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
@@ -98,59 +98,62 @@ msgstr "Point-to-Point Tunneling Protocol (PPTP)"
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Kompatibilní s PPTP VPN servery od Microsoftu a ostatních."
 
-#: ../shared/nm-utils/nm-shared-utils.c:185
+#: ../shared/nm-utils/nm-shared-utils.c:264
 #, c-format
 msgid "object class '%s' has no property named '%s'"
 msgstr "objektová třída „%s“ nemá vlastnost s názvem „%s„“"
 
-#: ../shared/nm-utils/nm-shared-utils.c:192
+#: ../shared/nm-utils/nm-shared-utils.c:271
 #, c-format
 msgid "property '%s' of object class '%s' is not writable"
 msgstr "vlastnost „%s“ objektové třídy „%s“ není zapisovatelná"
 
-#: ../shared/nm-utils/nm-shared-utils.c:199
+#: ../shared/nm-utils/nm-shared-utils.c:278
 #, c-format
 msgid ""
 "construct property \"%s\" for object '%s' can't be set after construction"
 msgstr ""
-"konstrukce vlastnosti „%s“ pro objekt „%s“ nemůže být nastavena po "
-"vytvoření"
+"konstrukce vlastnosti „%s“ pro objekt „%s“ nemůže být nastavena po vytvoření"
 
-#: ../shared/nm-utils/nm-shared-utils.c:207
+#: ../shared/nm-utils/nm-shared-utils.c:286
 #, c-format
 msgid "'%s::%s' is not a valid property name; '%s' is not a GObject subtype"
 msgstr "„%s::%s“ není název vlastnosti; „%s“ není podtyp objektu GObject"
 
-#: ../shared/nm-utils/nm-shared-utils.c:216
+#: ../shared/nm-utils/nm-shared-utils.c:295
 #, c-format
 msgid "unable to set property '%s' of type '%s' from value of type '%s'"
 msgstr "nelze nastavit vlastnost „%s“ typu „%s“ z hodnoty typu „%s“"
 
-#: ../shared/nm-utils/nm-shared-utils.c:227
+#: ../shared/nm-utils/nm-shared-utils.c:306
 #, c-format
 msgid ""
 "value \"%s\" of type '%s' is invalid or out of range for property '%s' of "
 "type '%s'"
 msgstr ""
-"hodnota „%s“ typu „%s“ je neplatná nebo mimo rozsah vlastnosti „%s“ typu "
-"„%s“"
+"hodnota „%s“ typu „%s“ je neplatná nebo mimo rozsah vlastnosti „%s“ typu „%s“"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:69
+#, c-format
+msgid "unable to get editor plugin name: %s"
+msgstr "nelze zjistit název zásuvného modulu editoru: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:103
 #, c-format
 msgid "missing plugin file \"%s\""
 msgstr "chybějící soubor zásuvného modulu „%s“"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:109
 #, c-format
 msgid "cannot load editor plugin: %s"
 msgstr "nelze nahrát editor zásuvného modulu: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:95
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:118
 #, c-format
 msgid "cannot load factory %s from plugin: %s"
 msgstr "nelze nahrát generátor %s ze zásuvného modulu: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:121
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:144
 msgid "unknown error creating editor instance"
 msgstr "neznámá chyba vytváření instance editoru"
 
@@ -200,50 +203,50 @@ msgstr "Nelze najít program klienta pptp."
 msgid "Missing VPN gateway."
 msgstr "Chybí brána VPN."
 
-#: ../src/nm-pptp-service.c:629
+#: ../src/nm-pptp-service.c:635
 msgid "Could not find the pppd binary."
 msgstr "Nelze nalézt program pptp."
 
-#: ../src/nm-pptp-service.c:689
+#: ../src/nm-pptp-service.c:695
 msgid "Missing VPN username."
 msgstr "Chybí jméno uživatele VPN."
 
-#: ../src/nm-pptp-service.c:698
+#: ../src/nm-pptp-service.c:704
 msgid "Missing or invalid VPN password."
 msgstr "Chybějící nebo neplatné heslo pro VPN."
 
-#: ../src/nm-pptp-service.c:804
+#: ../src/nm-pptp-service.c:810
 #, c-format
 msgid "couldn’t convert PPTP VPN gateway IP address “%s” (%d)"
 msgstr "nelze převést adresu IP „%s“ (%d) brány PPTP VPN"
 
-#: ../src/nm-pptp-service.c:822
+#: ../src/nm-pptp-service.c:828
 #, c-format
 msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
 msgstr "nelze nalézt adresu IP „%s“ (%d) brány PPTP VPN"
 
-#: ../src/nm-pptp-service.c:846
+#: ../src/nm-pptp-service.c:852
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway “%s”"
 msgstr "nebyla vrácena žádná použitelná adresa brány PPTP VPN „%s“"
 
-#: ../src/nm-pptp-service.c:875
+#: ../src/nm-pptp-service.c:881
 msgid "Invalid or missing PPTP gateway."
 msgstr "Neplatná nebo chybějící brána PPTP."
 
-#: ../src/nm-pptp-service.c:1123
+#: ../src/nm-pptp-service.c:1129
 msgid "Don’t quit when VPN connection terminates"
 msgstr "Neukončovat během ukončování spojení VPN"
 
-#: ../src/nm-pptp-service.c:1124
+#: ../src/nm-pptp-service.c:1130
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Povolit podrobný ladicí výpis (může prozradit hesla)"
 
-#: ../src/nm-pptp-service.c:1125
+#: ../src/nm-pptp-service.c:1131
 msgid "D-Bus name to use for this instance"
 msgstr "Název použitý v D-Bus pro tuto instanci"
 
-#: ../src/nm-pptp-service.c:1146
+#: ../src/nm-pptp-service.c:1152
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
@@ -446,4 +449,3 @@ msgstr "Uživatelské jméno:"
 #: ../properties/nm-pptp-dialog.ui.h:47
 msgid "Ad_vanced…"
 msgstr "P_okročilé…"
-
