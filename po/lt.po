@@ -2,15 +2,15 @@
 # Copyright (C) 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the NetworkManager package.
 # Žygimantas Beručka <zygis@gnome.org>, 2008.
-# Aurimas Černius <aurisc4@gmail.com>, 2015, 2016, 2017.
+# Aurimas Černius <aurisc4@gmail.com>, 2015-2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp HEAD\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2017-02-26 22:59+0000\n"
-"PO-Revision-Date: 2017-03-13 23:50+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
+"issues\n"
+"POT-Creation-Date: 2018-10-24 13:32+0000\n"
+"PO-Revision-Date: 2018-11-25 19:07+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Gtranslator 3.30.1\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
 msgid "PPTP VPN client"
@@ -138,22 +138,28 @@ msgstr ""
 "reikšmė „%s“, kuri priklauso tipui „%s“, yra netinkama arba už savybės „%s“, "
 "priklausančios tipui „%s“, ribų"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:69
+#, c-format
+#| msgid "cannot load editor plugin: %s"
+msgid "unable to get editor plugin name: %s"
+msgstr "nepavyksta gauti redaktoriaus įskiepio pavadinimo: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:103
 #, c-format
 msgid "missing plugin file \"%s\""
 msgstr "trūksta „%s“ įskiepio failo"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:109
 #, c-format
 msgid "cannot load editor plugin: %s"
 msgstr "nepavyksta įkelti redaktoriaus įskiepio: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:95
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:118
 #, c-format
 msgid "cannot load factory %s from plugin: %s"
 msgstr "nepavyksta įkelti %s gamyklos iš įskiepio: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:121
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:144
 msgid "unknown error creating editor instance"
 msgstr "nežinoma klaida kuriant redaktoriaus vienetą"
 
@@ -203,50 +209,50 @@ msgstr "Nepavyko rasti pptp klientinės programos."
 msgid "Missing VPN gateway."
 msgstr "Trūksta VPN tinklų sietuvo."
 
-#: ../src/nm-pptp-service.c:629
+#: ../src/nm-pptp-service.c:635
 msgid "Could not find the pppd binary."
 msgstr "Nepavyko rasti pppd programos."
 
-#: ../src/nm-pptp-service.c:689
+#: ../src/nm-pptp-service.c:695
 msgid "Missing VPN username."
 msgstr "Trūksta VPN naudotojo vardo."
 
-#: ../src/nm-pptp-service.c:698
+#: ../src/nm-pptp-service.c:704
 msgid "Missing or invalid VPN password."
 msgstr "Nėra arba netinkamas VPN slaptažodis."
 
-#: ../src/nm-pptp-service.c:804
+#: ../src/nm-pptp-service.c:810
 #, c-format
 msgid "couldn’t convert PPTP VPN gateway IP address “%s” (%d)"
 msgstr "nepavyko pakeisti PPTP VPN tinklų sietuvo IP adreso „%s“ (%d)"
 
-#: ../src/nm-pptp-service.c:822
+#: ../src/nm-pptp-service.c:828
 #, c-format
 msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
 msgstr "nepavyko rasti PPTP VPN tinklų sietuvo IP adreso „%s“ (%d)"
 
-#: ../src/nm-pptp-service.c:846
+#: ../src/nm-pptp-service.c:852
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway “%s”"
 msgstr "negrąžinta jokių tinkamų PPTP VPN tinklų sietuvo „%s“ adresų"
 
-#: ../src/nm-pptp-service.c:875
+#: ../src/nm-pptp-service.c:881
 msgid "Invalid or missing PPTP gateway."
 msgstr "Netinkamas arba trūkstamas PPTP tinklų sietuvas."
 
-#: ../src/nm-pptp-service.c:1123
+#: ../src/nm-pptp-service.c:1129
 msgid "Don’t quit when VPN connection terminates"
 msgstr "Neišeiti, kai nutrūksta VPN ryšys"
 
-#: ../src/nm-pptp-service.c:1124
+#: ../src/nm-pptp-service.c:1130
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Įjungti išsamų derinimo žurnalą (gali parodyti slaptažodžius)"
 
-#: ../src/nm-pptp-service.c:1125
+#: ../src/nm-pptp-service.c:1131
 msgid "D-Bus name to use for this instance"
 msgstr "D-Bus vardas, naudojamas šiam vienetui"
 
-#: ../src/nm-pptp-service.c:1146
+#: ../src/nm-pptp-service.c:1152
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
