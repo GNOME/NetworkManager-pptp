@@ -5,22 +5,22 @@
 #
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2006.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2009, 2011.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2015, 2016.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2016-10-03 21:09+0000\n"
-"PO-Revision-Date: 2016-12-21 10:34+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
+"issues\n"
+"POT-Creation-Date: 2018-10-24 13:32+0000\n"
+"PO-Revision-Date: 2019-01-29 16:44+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 3.31.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
@@ -48,7 +48,6 @@ msgstr "Los desarrolladores de NetworkManager"
 #.
 #: ../auth-dialog/main.c:146
 #, c-format
-#| msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgid "You need to authenticate to access the Virtual Private Network “%s”."
 msgstr "Necesita autenticarse para acceder a la red privada virtual «%s»"
 
@@ -100,17 +99,17 @@ msgstr "Protocolo de túnel punto a punto (PPTP)"
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Compatible con servidores PPTP VPN de Microsoft y otros."
 
-#: ../shared/nm-utils/nm-shared-utils.c:185
+#: ../shared/nm-utils/nm-shared-utils.c:264
 #, c-format
 msgid "object class '%s' has no property named '%s'"
 msgstr "la clase del objeto «%s» no tiene ninguna propiedad llamada «%s»"
 
-#: ../shared/nm-utils/nm-shared-utils.c:192
+#: ../shared/nm-utils/nm-shared-utils.c:271
 #, c-format
 msgid "property '%s' of object class '%s' is not writable"
 msgstr "la propiedad «%s» del objeto de la clase «%s» no se puede escribir"
 
-#: ../shared/nm-utils/nm-shared-utils.c:199
+#: ../shared/nm-utils/nm-shared-utils.c:278
 #, c-format
 msgid ""
 "construct property \"%s\" for object '%s' can't be set after construction"
@@ -118,21 +117,21 @@ msgstr ""
 "no se puede establecer la propiedad «%s» del constructor para el objeto «%s» "
 "después de la construcción"
 
-#: ../shared/nm-utils/nm-shared-utils.c:207
+#: ../shared/nm-utils/nm-shared-utils.c:286
 #, c-format
 msgid "'%s::%s' is not a valid property name; '%s' is not a GObject subtype"
 msgstr ""
 "«%s::%s» no es un nombre de propiedad válido; «%s» no es un subtipo de "
 "GObject"
 
-#: ../shared/nm-utils/nm-shared-utils.c:216
+#: ../shared/nm-utils/nm-shared-utils.c:295
 #, c-format
 msgid "unable to set property '%s' of type '%s' from value of type '%s'"
 msgstr ""
 "no se puede establecer la propiedad «%s» de tipo «%s» con un valor de tipo "
 "«%s»"
 
-#: ../shared/nm-utils/nm-shared-utils.c:227
+#: ../shared/nm-utils/nm-shared-utils.c:306
 #, c-format
 msgid ""
 "value \"%s\" of type '%s' is invalid or out of range for property '%s' of "
@@ -141,52 +140,53 @@ msgstr ""
 "el valor «%s» de tipo «%s» no es válido o está fuera de rango para la "
 "propiedad «%s» de tipo «%s»"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:69
+#, c-format
+#| msgid "cannot load editor plugin: %s"
+msgid "unable to get editor plugin name: %s"
+msgstr "no se puede obtener el nombre del complemento del editor: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:103
 #, c-format
 msgid "missing plugin file \"%s\""
 msgstr "falta el archivo del complemento «%s»"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:109
 #, c-format
 msgid "cannot load editor plugin: %s"
 msgstr "no se puede cargar el complemento del editor: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:95
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:118
 #, c-format
 msgid "cannot load factory %s from plugin: %s"
 msgstr "no se puede cargar la fábrica %s desde el complemento: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:121
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:144
 msgid "unknown error creating editor instance"
 msgstr "error desconocido al crear la instancia del editor"
 
 #: ../src/nm-pptp-service.c:193
 #, c-format
-#| msgid "invalid gateway '%s'"
 msgid "invalid gateway “%s”"
 msgstr "puerta de enlace «%s» no válida"
 
 #: ../src/nm-pptp-service.c:207
 #, c-format
-#| msgid "invalid integer property '%s'"
 msgid "invalid integer property “%s”"
 msgstr "propiedad entera «%s» no válida"
 
 #: ../src/nm-pptp-service.c:217
 #, c-format
-#| msgid "invalid boolean property '%s' (not yes or no)"
 msgid "invalid boolean property “%s” (not yes or no)"
 msgstr "propiedad booleana «%s» no válida (no es «sí» o «no»)"
 
 #: ../src/nm-pptp-service.c:224
 #, c-format
-#| msgid "unhandled property '%s' type %s"
 msgid "unhandled property “%s” type %s"
 msgstr "no se puede manejar la propiedad «%s» tipo %s"
 
 #: ../src/nm-pptp-service.c:235
 #, c-format
-#| msgid "property '%s' invalid or not supported"
 msgid "property “%s” invalid or not supported"
 msgstr "propiedad «%s» no válida o no soportada"
 
@@ -196,7 +196,6 @@ msgstr "No existen opciones de configuración VPN."
 
 #: ../src/nm-pptp-service.c:273
 #, c-format
-#| msgid "Missing required option '%s'."
 msgid "Missing required option “%s”."
 msgstr "Falta la opción requerida «%s»."
 
@@ -212,54 +211,50 @@ msgstr "No se pudo encontrar el binario del cliente pptp"
 msgid "Missing VPN gateway."
 msgstr "Falta la puerta de enlace VPN."
 
-#: ../src/nm-pptp-service.c:629
+#: ../src/nm-pptp-service.c:635
 msgid "Could not find the pppd binary."
 msgstr "No se pudo encontrar el binario del cliente pptpd."
 
-#: ../src/nm-pptp-service.c:689
+#: ../src/nm-pptp-service.c:695
 msgid "Missing VPN username."
 msgstr "Falta el nombre de usuario VPN."
 
-#: ../src/nm-pptp-service.c:698
+#: ../src/nm-pptp-service.c:704
 msgid "Missing or invalid VPN password."
 msgstr "Falta o no es válida la contraseña de la VPN."
 
-#: ../src/nm-pptp-service.c:804
+#: ../src/nm-pptp-service.c:810
 #, c-format
-#| msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
 msgid "couldn’t convert PPTP VPN gateway IP address “%s” (%d)"
 msgstr "no se pudo convertir la IP de la puerta de enlace VPN PPTP «%s» (%d)"
 
-#: ../src/nm-pptp-service.c:822
+#: ../src/nm-pptp-service.c:828
 #, c-format
-#| msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
 msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
 msgstr "no se pudo encontrar la IP de la puerta de enlace VPN PPTP «%s» (%d)"
 
-#: ../src/nm-pptp-service.c:846
+#: ../src/nm-pptp-service.c:852
 #, c-format
-#| msgid "no usable addresses returned for PPTP VPN gateway '%s'"
 msgid "no usable addresses returned for PPTP VPN gateway “%s”"
 msgstr "la puerta de enlace VPN PPTP devolvió una dirección no usable «%s»"
 
-#: ../src/nm-pptp-service.c:875
+#: ../src/nm-pptp-service.c:881
 msgid "Invalid or missing PPTP gateway."
 msgstr "Falta o no es válida la puerta de enlace PPTP."
 
-#: ../src/nm-pptp-service.c:1123
-#| msgid "Don't quit when VPN connection terminates"
+#: ../src/nm-pptp-service.c:1129
 msgid "Don’t quit when VPN connection terminates"
 msgstr "No salir cuando la conexión VPN finaliza"
 
-#: ../src/nm-pptp-service.c:1124
+#: ../src/nm-pptp-service.c:1130
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Activar registro de depuración detallado (puede exponer contraseñas)"
 
-#: ../src/nm-pptp-service.c:1125
+#: ../src/nm-pptp-service.c:1131
 msgid "D-Bus name to use for this instance"
 msgstr "Nombre de D-Bus que usar para esta instancia"
 
-#: ../src/nm-pptp-service.c:1146
+#: ../src/nm-pptp-service.c:1152
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
@@ -461,7 +456,6 @@ msgid "User name:"
 msgstr "Usuario:"
 
 #: ../properties/nm-pptp-dialog.ui.h:47
-#| msgid "Ad_vanced..."
 msgid "Ad_vanced…"
 msgstr "A_vanzado..."
 
