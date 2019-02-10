@@ -6,15 +6,15 @@
 # Mads Bille Lundby <lundbymads@gmail.com>, 2009.
 # Kim Iskov <kimiskov@gmail.com>, 2010.
 # Joe Hansen <joedalton2@yahoo.dk>, 2011, 2012.
-# Alan Mortensen <alanmortensen.am@gmail.com>, 2017.
+# Alan Mortensen <alanmortensen.am@gmail.com>, 2017, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2017-08-03 13:59+0000\n"
-"PO-Revision-Date: 2017-02-25 19:30+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
+"issues\n"
+"POT-Creation-Date: 2018-10-24 13:32+0000\n"
+"PO-Revision-Date: 2019-01-26 15:59+0100\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
 msgid "PPTP VPN client"
@@ -150,25 +150,31 @@ msgstr ""
 "egenskaben “%s” af typen “%s”"
 
 # streng også i modulet vpnc
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:69
+#, c-format
+msgid "unable to get editor plugin name: %s"
+msgstr "kan ikke hente navnet på udvidelsesmodulet til redigering: %s"
+
+# streng også i modulet vpnc
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:103
 #, c-format
 msgid "missing plugin file \"%s\""
 msgstr "manglende udvidelsesmodulfil “%s”"
 
 # streng også i modulet vpnc
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:109
 #, c-format
 msgid "cannot load editor plugin: %s"
 msgstr "kan ikke indlæse udvidelsesmodul til redigering: %s"
 
 # streng også i modulet vpnc
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:95
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:118
 #, c-format
 msgid "cannot load factory %s from plugin: %s"
 msgstr "kan ikke indlæse fabrikken %s fra udvidelsesmodul: %s"
 
 # streng også i modulet vpnc
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:121
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:144
 msgid "unknown error creating editor instance"
 msgstr "ukendt fejl i forsøget på at danne redigeringsinstans"
 
@@ -218,51 +224,51 @@ msgstr "Kunne ikke finde binærfil for pptp-klient."
 msgid "Missing VPN gateway."
 msgstr "Mangler VPN-gateway."
 
-#: ../src/nm-pptp-service.c:629
+#: ../src/nm-pptp-service.c:635
 msgid "Could not find the pppd binary."
 msgstr "Kunne ikke finde binærfil for pppd."
 
-#: ../src/nm-pptp-service.c:689
+#: ../src/nm-pptp-service.c:695
 msgid "Missing VPN username."
 msgstr "Manglende VPN-brugernavn."
 
-#: ../src/nm-pptp-service.c:698
+#: ../src/nm-pptp-service.c:704
 msgid "Missing or invalid VPN password."
 msgstr "Manglende eller ugyldig VPN-adgangskode."
 
-#: ../src/nm-pptp-service.c:804
+#: ../src/nm-pptp-service.c:810
 #, c-format
 msgid "couldn’t convert PPTP VPN gateway IP address “%s” (%d)"
 msgstr "kunne ikke konvertere PPTP-VPN-gatewayens IP-adresse “%s” (%d)"
 
-#: ../src/nm-pptp-service.c:822
+#: ../src/nm-pptp-service.c:828
 #, c-format
 msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
 msgstr "kunne ikke slå PPTP-VPN-gatewayens IP-adresse “%s” (%d) op"
 
-#: ../src/nm-pptp-service.c:846
+#: ../src/nm-pptp-service.c:852
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway “%s”"
 msgstr "ingen brugbare adresser returneret for PPTP-VPN-gatewayen “%s”"
 
-#: ../src/nm-pptp-service.c:875
+#: ../src/nm-pptp-service.c:881
 msgid "Invalid or missing PPTP gateway."
 msgstr "Ugyldig eller manglende PPTP-gateway."
 
-#: ../src/nm-pptp-service.c:1123
+#: ../src/nm-pptp-service.c:1129
 msgid "Don’t quit when VPN connection terminates"
 msgstr "Afslut ikke når VPN-forbindelse afslutter"
 
-#: ../src/nm-pptp-service.c:1124
+#: ../src/nm-pptp-service.c:1130
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Aktiver uddybende fejlsøgningslog (kan afsløre adgangskoder)"
 
 # streng findes også i vpnc
-#: ../src/nm-pptp-service.c:1125
+#: ../src/nm-pptp-service.c:1131
 msgid "D-Bus name to use for this instance"
 msgstr "Navn på D-Bus der skal bruges i dette tilfælde"
 
-#: ../src/nm-pptp-service.c:1146
+#: ../src/nm-pptp-service.c:1152
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
@@ -456,7 +462,8 @@ msgid ""
 "<name>.\n"
 "config: user <name>"
 msgstr ""
-"Angiv navnet for godkendelse af det lokale system for modparten til <navn>.\n"
+"Angiv navnet for godkendelse af det lokale system for modparten til "
+"<navn>.\n"
 "Konfiguration: user <navn>"
 
 #: ../properties/nm-pptp-dialog.ui.h:46
