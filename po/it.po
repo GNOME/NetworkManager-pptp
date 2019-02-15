@@ -1,17 +1,18 @@
 # Italian translation of  NetworkManager-PPTP.
 # Copyright (C) 2006, 2007, 2008, 2009, 2010, 2012, 2015, 2016, 2017 the NetworkManager-PPTP'S COPYRIGHT HOLDER
+# Copyright (C) 2019 the NetworkManager-PPTP'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the NetworkManager-PPTP package.
 # Francesco Marletta <francesco.marletta@tiscali.it>, 2006, 2007, 2008, 2009, 2010.
 # Luca Ferretti <elle.uca@libero.it>, 2010.
-# Milo Casagrande <milo@milo.name>, 2012, 2015, 2016, 2017.
+# Milo Casagrande <milo@milo.name>, 2012, 2015, 2016, 2017, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2017-02-26 08:39+0000\n"
-"PO-Revision-Date: 2017-03-14 13:31+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
+"issues\n"
+"POT-Creation-Date: 2018-10-24 13:32+0000\n"
+"PO-Revision-Date: 2019-02-15 13:53+0100\n"
 "Last-Translator: Milo Casagrande <milo@milo.name>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2012-04-14 14:49+0000\n"
-"X-Generator: Poedit 2.0beta3\n"
+"X-Generator: Poedit 2.2.1\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
@@ -139,22 +140,27 @@ msgstr ""
 "il valore «%s» di tipo «%s» non è valido o fuori dall'intervallo per la "
 "proprietà «%s» di tipo «%s»"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:69
+#, c-format
+msgid "unable to get editor plugin name: %s"
+msgstr "impossibile ottenere il nome del plugin dell'editor: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:103
 #, c-format
 msgid "missing plugin file \"%s\""
 msgstr "file di plugin «%s» mancante"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:109
 #, c-format
 msgid "cannot load editor plugin: %s"
-msgstr "Impossibile caricare l'editor del plugin: %s"
+msgstr "impossibile caricare l'editor del plugin: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:95
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:118
 #, c-format
 msgid "cannot load factory %s from plugin: %s"
 msgstr "impossibile caricare %s dal plugin: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:121
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:144
 msgid "unknown error creating editor instance"
 msgstr "errore sconosciuto nel create l'istanza dell'editor"
 
@@ -204,52 +210,52 @@ msgstr "Impossibile trovare il binario del client pptp."
 msgid "Missing VPN gateway."
 msgstr "Gateway VPN mancante."
 
-#: ../src/nm-pptp-service.c:629
+#: ../src/nm-pptp-service.c:635
 msgid "Could not find the pppd binary."
 msgstr "Impossibile trovare il binario pppd."
 
-#: ../src/nm-pptp-service.c:689
+#: ../src/nm-pptp-service.c:695
 msgid "Missing VPN username."
 msgstr "Nome utente VPN mancante."
 
-#: ../src/nm-pptp-service.c:698
+#: ../src/nm-pptp-service.c:704
 msgid "Missing or invalid VPN password."
 msgstr "Password VPN mancante o non valida."
 
-#: ../src/nm-pptp-service.c:804
+#: ../src/nm-pptp-service.c:810
 #, c-format
 msgid "couldn’t convert PPTP VPN gateway IP address “%s” (%d)"
 msgstr "impossibile convertire l'indirizzo IP «%s» del gateway VPN PPTP (%d)"
 
-#: ../src/nm-pptp-service.c:822
+#: ../src/nm-pptp-service.c:828
 #, c-format
 msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
 msgstr "impossibile trovare l'indirizzo IP «%s» del gateway VPN PPTP (%d)"
 
-#: ../src/nm-pptp-service.c:846
+#: ../src/nm-pptp-service.c:852
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway “%s”"
 msgstr ""
 "non è stato restituito alcun indirizzo utilizzabile per il gateway VPN PPTP "
 "«%s»"
 
-#: ../src/nm-pptp-service.c:875
+#: ../src/nm-pptp-service.c:881
 msgid "Invalid or missing PPTP gateway."
 msgstr "Gateway PPTP non valido o mancante."
 
-#: ../src/nm-pptp-service.c:1123
+#: ../src/nm-pptp-service.c:1129
 msgid "Don’t quit when VPN connection terminates"
 msgstr "Non esce quando la connessione VPN termina"
 
-#: ../src/nm-pptp-service.c:1124
+#: ../src/nm-pptp-service.c:1130
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Abilita output prolisso per il debug (potrebbe visualizzare password)"
 
-#: ../src/nm-pptp-service.c:1125
+#: ../src/nm-pptp-service.c:1131
 msgid "D-Bus name to use for this instance"
 msgstr "Nome D-Bus da usare per questa istanza"
 
-#: ../src/nm-pptp-service.c:1146
+#: ../src/nm-pptp-service.c:1152
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
@@ -453,31 +459,3 @@ msgstr "Nome utente:"
 #: ../properties/nm-pptp-dialog.ui.h:47
 msgid "Ad_vanced…"
 msgstr "A_vanzate…"
-
-#~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
-#~ msgstr ""
-#~ "non è stato restituito alcun indirizzo utilizzabile per il gateway VPN "
-#~ "PPTP «%s» (%d)"
-
-#~ msgid "Could not find secrets (connection invalid, no vpn setting)."
-#~ msgstr ""
-#~ "Impossibile trovare segreti (connessione non valida o nessuna "
-#~ "impostazione VPN)."
-
-#~ msgid "Missing or invalid VPN username."
-#~ msgstr "Nome utente VPN mancante o non valido."
-
-#~ msgid "No cached credentials."
-#~ msgstr "Nessuna credenziale salvata."
-
-#~ msgid "Saved"
-#~ msgstr "Salvato"
-
-#~ msgid "Always Ask"
-#~ msgstr "Chiedi sempre"
-
-#~ msgid "Not Required"
-#~ msgstr "Non richiesto"
-
-#~ msgid "Invalid VPN username."
-#~ msgstr "Nome utente VPN non valido."
