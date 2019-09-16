@@ -5,19 +5,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=Network"
-"Manager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2016-10-03 21:09+0000\n"
-"PO-Revision-Date: 2017-02-12 18:45+0200\n"
-"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
+"issues\n"
+"POT-Creation-Date: 2018-10-24 13:32+0000\n"
+"PO-Revision-Date: 2019-09-16 08:49+0200\n"
+"Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "Language-Team: Serbian <(nothing)>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
-"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
 msgid "PPTP VPN client"
@@ -44,7 +45,6 @@ msgstr "Програмери Управника мреже"
 #.
 #: ../auth-dialog/main.c:146
 #, c-format
-#| msgid "You need to authenticate to access the Virtual Private Network '%s'."
 msgid "You need to authenticate to access the Virtual Private Network “%s”."
 msgstr ""
 "Морате да потврдите идентитет да бисте могли да приступите Виртуелној "
@@ -98,34 +98,34 @@ msgstr "Проток тунелисања од тачке до тачке (ПП�
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Сагласно са Мајкрософтовим и другим ППТП ВПН серверима."
 
-#: ../shared/nm-utils/nm-shared-utils.c:185
+#: ../shared/nm-utils/nm-shared-utils.c:264
 #, c-format
 msgid "object class '%s' has no property named '%s'"
 msgstr "класа објекта „%s“ нема својство „%s“"
 
-#: ../shared/nm-utils/nm-shared-utils.c:192
+#: ../shared/nm-utils/nm-shared-utils.c:271
 #, c-format
 msgid "property '%s' of object class '%s' is not writable"
 msgstr "својство „%s“ класе објекта „%s“ није уписиво"
 
-#: ../shared/nm-utils/nm-shared-utils.c:199
+#: ../shared/nm-utils/nm-shared-utils.c:278
 #, c-format
 msgid ""
 "construct property \"%s\" for object '%s' can't be set after construction"
 msgstr ""
 "својство изградње „%s“ за објекат „%s“ се не може поставити након изградње"
 
-#: ../shared/nm-utils/nm-shared-utils.c:207
+#: ../shared/nm-utils/nm-shared-utils.c:286
 #, c-format
 msgid "'%s::%s' is not a valid property name; '%s' is not a GObject subtype"
 msgstr "„%s::%s„ није исправан назив својства; „%s“ није подврста Гобјекта"
 
-#: ../shared/nm-utils/nm-shared-utils.c:216
+#: ../shared/nm-utils/nm-shared-utils.c:295
 #, c-format
 msgid "unable to set property '%s' of type '%s' from value of type '%s'"
 msgstr "не могу да поставим својство „%s“ врсте „%s“ из вредности врсте „%s“"
 
-#: ../shared/nm-utils/nm-shared-utils.c:227
+#: ../shared/nm-utils/nm-shared-utils.c:306
 #, c-format
 msgid ""
 "value \"%s\" of type '%s' is invalid or out of range for property '%s' of "
@@ -134,52 +134,52 @@ msgstr ""
 "вредност „%s“ врсте „%s“ је неисправна или ван опсега за својство „%s“ врсте "
 "„%s“"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:69
+#, c-format
+msgid "unable to get editor plugin name: %s"
+msgstr "не могу да добавим назив прикључка уређивача: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:103
 #, c-format
 msgid "missing plugin file \"%s\""
 msgstr "недостаје датотека прикључка „%s“"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:109
 #, c-format
 msgid "cannot load editor plugin: %s"
 msgstr "не могу да учитам прикључак уређивача: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:95
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:118
 #, c-format
 msgid "cannot load factory %s from plugin: %s"
 msgstr "не могу да учитам погон „%s“ из прикључка: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:121
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:144
 msgid "unknown error creating editor instance"
 msgstr "непозната грешка приликом стварања примерка уређивача"
 
 #: ../src/nm-pptp-service.c:193
 #, c-format
-#| msgid "invalid gateway '%s'"
 msgid "invalid gateway “%s”"
 msgstr "неисправан мрежни пролаз „%s“"
 
 #: ../src/nm-pptp-service.c:207
 #, c-format
-#| msgid "invalid integer property '%s'"
 msgid "invalid integer property “%s”"
 msgstr "неисправно својство целог броја „%s“"
 
 #: ../src/nm-pptp-service.c:217
 #, c-format
-#| msgid "invalid boolean property '%s' (not yes or no)"
 msgid "invalid boolean property “%s” (not yes or no)"
 msgstr "неисправно логичко својство „%s“ (није „да“ или „не“)"
 
 #: ../src/nm-pptp-service.c:224
 #, c-format
-#| msgid "unhandled property '%s' type %s"
 msgid "unhandled property “%s” type %s"
 msgstr "неруковано својство „%s“ врсте %s"
 
 #: ../src/nm-pptp-service.c:235
 #, c-format
-#| msgid "property '%s' invalid or not supported"
 msgid "property “%s” invalid or not supported"
 msgstr "својство „%s“ је неисправно или није подржано"
 
@@ -189,7 +189,6 @@ msgstr "Нема опција за ВПН подешавање."
 
 #: ../src/nm-pptp-service.c:273
 #, c-format
-#| msgid "Missing required option '%s'."
 msgid "Missing required option “%s”."
 msgstr "Недостаје затражена опција „%s“."
 
@@ -205,55 +204,51 @@ msgstr "Не могу да пронађем извршни пптп клијен
 msgid "Missing VPN gateway."
 msgstr "Недостаје ВПН мрежни пролаз."
 
-#: ../src/nm-pptp-service.c:629
+#: ../src/nm-pptp-service.c:635
 msgid "Could not find the pppd binary."
 msgstr "Не могу да пронађем пптп извршни."
 
-#: ../src/nm-pptp-service.c:689
+#: ../src/nm-pptp-service.c:695
 msgid "Missing VPN username."
 msgstr "Недостаје ВПН корисничко име."
 
-#: ../src/nm-pptp-service.c:698
+#: ../src/nm-pptp-service.c:704
 msgid "Missing or invalid VPN password."
 msgstr "Недостаје или је неисправна ВПН лозинка."
 
-#: ../src/nm-pptp-service.c:804
+#: ../src/nm-pptp-service.c:810
 #, c-format
-#| msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
 msgid "couldn’t convert PPTP VPN gateway IP address “%s” (%d)"
 msgstr "не могу да претворим ИП адресу ППТП ВПН мрежног пролаза „%s“ (%d)"
 
-#: ../src/nm-pptp-service.c:822
+#: ../src/nm-pptp-service.c:828
 #, c-format
-#| msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
 msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
 msgstr "не могу да потражим ИП адресу ППТП ВПН мрежног пролаза „%s“ (%d)"
 
-#: ../src/nm-pptp-service.c:846
+#: ../src/nm-pptp-service.c:852
 #, c-format
-#| msgid "no usable addresses returned for PPTP VPN gateway '%s'"
 msgid "no usable addresses returned for PPTP VPN gateway “%s”"
 msgstr "нису враћене употребљиве адресе за ППТП ВПН мрежни пролаз „%s“"
 
-#: ../src/nm-pptp-service.c:875
+#: ../src/nm-pptp-service.c:881
 msgid "Invalid or missing PPTP gateway."
 msgstr "Неисправан или недостаје ППТП мрежни пролаз."
 
-#: ../src/nm-pptp-service.c:1123
-#| msgid "Don't quit when VPN connection terminates"
+#: ../src/nm-pptp-service.c:1129
 msgid "Don’t quit when VPN connection terminates"
 msgstr "Не прекида када се завршава ВПН веза"
 
-#: ../src/nm-pptp-service.c:1124
+#: ../src/nm-pptp-service.c:1130
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr ""
 "Укључује опширно записивање зарад исправљања грешака (може да изложи лозинке)"
 
-#: ../src/nm-pptp-service.c:1125
+#: ../src/nm-pptp-service.c:1131
 msgid "D-Bus name to use for this instance"
 msgstr "Назив Д-сабирнице која ће се користити за овај примерак"
 
-#: ../src/nm-pptp-service.c:1146
+#: ../src/nm-pptp-service.c:1152
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
@@ -455,7 +450,6 @@ msgid "User name:"
 msgstr "Корисничко име:"
 
 #: ../properties/nm-pptp-dialog.ui.h:47
-#| msgid "Ad_vanced..."
 msgid "Ad_vanced…"
 msgstr "_Напредно…"
 
