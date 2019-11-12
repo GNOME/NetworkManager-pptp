@@ -6,18 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2017-02-26 08:39+0000\n"
-"PO-Revision-Date: 2017-04-08 16:26+0700\n"
-"Last-Translator: Andika Triwidada <atriwidada@gnome.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
+"issues\n"
+"POT-Creation-Date: 2018-10-24 13:32+0000\n"
+"PO-Revision-Date: 2019-11-12 23:31+0700\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian Translator <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
 msgid "PPTP VPN client"
@@ -134,22 +134,27 @@ msgstr ""
 "nilai \"%s\" dengan tipe '%s' tidak valid atau di luar jangkauan bagi "
 "properti '%s' bertipe '%s'"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:69
+#, c-format
+msgid "unable to get editor plugin name: %s"
+msgstr "tidak bisa memperoleh nama pengaya penyunting: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:103
 #, c-format
 msgid "missing plugin file \"%s\""
 msgstr "kurang berkas pengaya \"%s\""
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:109
 #, c-format
 msgid "cannot load editor plugin: %s"
 msgstr "tidak bisa memuat pengaya penyunting: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:95
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:118
 #, c-format
 msgid "cannot load factory %s from plugin: %s"
 msgstr "tidak bisa memuat pabrik %s dari pengaya: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:121
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:144
 msgid "unknown error creating editor instance"
 msgstr "galat tidak dikenal saat membuat instansi penyunting"
 
@@ -199,52 +204,52 @@ msgstr "Tak bisa temukan biner klien pptp."
 msgid "Missing VPN gateway."
 msgstr "Gateway VPN hilang."
 
-#: ../src/nm-pptp-service.c:629
+#: ../src/nm-pptp-service.c:635
 msgid "Could not find the pppd binary."
 msgstr "Tak bisa temukan biner pppd."
 
-#: ../src/nm-pptp-service.c:689
+#: ../src/nm-pptp-service.c:695
 msgid "Missing VPN username."
 msgstr "Nama pengguna VPN hilang."
 
-#: ../src/nm-pptp-service.c:698
+#: ../src/nm-pptp-service.c:704
 msgid "Missing or invalid VPN password."
 msgstr "Sandi VPN hilang atau tak valid."
 
-#: ../src/nm-pptp-service.c:804
+#: ../src/nm-pptp-service.c:810
 #, c-format
 msgid "couldn’t convert PPTP VPN gateway IP address “%s” (%d)"
 msgstr "tak bisa mengonversi alamat IP \"%s\" gateway VPN PPTP (%d)"
 
-#: ../src/nm-pptp-service.c:822
+#: ../src/nm-pptp-service.c:828
 #, c-format
 msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
 msgstr "tak bisa mencari alamat IP \"%s\" gateway VPN PPTP (%d)"
 
-#: ../src/nm-pptp-service.c:846
+#: ../src/nm-pptp-service.c:852
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway “%s”"
 msgstr ""
 "tidak ada alamat yang dapat dipakai yang diperoleh bagi gateway VPN PPTP \"%s"
 "\""
 
-#: ../src/nm-pptp-service.c:875
+#: ../src/nm-pptp-service.c:881
 msgid "Invalid or missing PPTP gateway."
 msgstr "Gateway PPTP tak valid atau hilang."
 
-#: ../src/nm-pptp-service.c:1123
+#: ../src/nm-pptp-service.c:1129
 msgid "Don’t quit when VPN connection terminates"
 msgstr "Jangan keluar ketika koneksi VPN berakhir"
 
-#: ../src/nm-pptp-service.c:1124
+#: ../src/nm-pptp-service.c:1130
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Aktifkan log pengawakutuan verbose (mungkin mengungkap sandi)"
 
-#: ../src/nm-pptp-service.c:1125
+#: ../src/nm-pptp-service.c:1131
 msgid "D-Bus name to use for this instance"
 msgstr "Nama D-Bus untuk dipakai bagi instansi ini"
 
-#: ../src/nm-pptp-service.c:1146
+#: ../src/nm-pptp-service.c:1152
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
@@ -446,4 +451,4 @@ msgstr "Nama pengguna:"
 
 #: ../properties/nm-pptp-dialog.ui.h:47
 msgid "Ad_vanced…"
-msgstr "Tingkat la_njut..."
+msgstr "Tingkat _Lanjut…"
