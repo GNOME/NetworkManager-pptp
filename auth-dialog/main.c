@@ -154,7 +154,7 @@ get_secrets (const char *vpn_uuid,
 		g_key_file_set_string (keyfile, UI_KEYFILE_GROUP, "Description", prompt);
 		g_key_file_set_string (keyfile, UI_KEYFILE_GROUP, "Title", _("Authenticate VPN"));
 
-		keyfile_add_entry_info (keyfile, NM_PPTP_KEY_PASSWORD, pw ? pw : "", _("Password:"), TRUE, allow_interaction);
+		keyfile_add_entry_info (keyfile, NM_PPTP_KEY_PASSWORD, pw ? pw : "", _("Password"), TRUE, allow_interaction);
 
 		keyfile_print_stdout (keyfile);
 		g_key_file_unref (keyfile);
