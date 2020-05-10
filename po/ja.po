@@ -1,10 +1,12 @@
 # Japanese message catalog for NetworkManager-pptp
-# Copyright (C) 2006,2007,2011 THE NetworkManager-pptp's COPYRIGHT HOLDER
+# Copyright (C) 2006-2007, 2011-2012, 2020 THE NetworkManager-pptp's COPYRIGHT HOLDER
 # This file is distributed under the same license as the NetworkManager-openvpn package.
 # Satoru SATOH <ss@gnome.gr.jp>, 2006, 2007.
 # Hajime Taira <htaira@redhat.com>, 2011.
 # NISHIBORI Kiyotaka <ml.nishibori.kiyotaka@gmail.com>, 2011.
 # OKANO Takayoshi <kano@na.rim.or.jp>, 2011.
+# Jiro Matsuzawa <jmatsuzawa@src.gnome.org>, 2012.
+# sicklylife <translation@sicklylife.jp>, 2020.
 #
 msgid ""
 msgstr ""
@@ -12,8 +14,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
 "issues\n"
 "POT-Creation-Date: 2020-05-04 15:39+0000\n"
-"PO-Revision-Date: 2012-01-01 19:56+0900\n"
-"Last-Translator: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>\n"
+"PO-Revision-Date: 2020-05-10 21:00+0900\n"
+"Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +24,7 @@ msgstr ""
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
 msgid "PPTP VPN client"
-msgstr ""
+msgstr "PPTP VPN クライアント"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:2
 msgid "Client for PPTP virtual private networks"
@@ -33,10 +35,8 @@ msgid "Support for configuring PPTP virtual private network connections."
 msgstr ""
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:4
-#, fuzzy
-#| msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgid "Compatible with various PPTP servers including Microsoft."
-msgstr "Microsoft と、その他の PPTP VPN サーバーとの互換性"
+msgstr "Microsoft を含む、さまざまな PPTP サーバーとの互換性"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:5
 msgid "The NetworkManager Developers"
@@ -46,20 +46,17 @@ msgstr ""
 #. * that the password should never be saved.
 #.
 #: ../auth-dialog/main.c:146
-#, fuzzy, c-format
-#| msgid "You need to authenticate to access the Virtual Private Network '%s'."
+#, c-format
 msgid "You need to authenticate to access the Virtual Private Network “%s”."
-msgstr "仮想プライベートネットワーク %s にアクセスするには認証が必要です。"
+msgstr "仮想プライベートネットワーク“%s”にアクセスするには認証が必要です。"
 
 #: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
 msgid "Authenticate VPN"
 msgstr "認証 VPN"
 
 #: ../auth-dialog/main.c:157
-#, fuzzy
-#| msgid "Password:"
 msgid "Password"
-msgstr "パスワード:"
+msgstr "パスワード"
 
 #: ../properties/advanced-dialog.c:169
 msgid "All Available (Default)"
@@ -142,12 +139,12 @@ msgstr ""
 #: ../shared/nm-utils/nm-vpn-plugin-utils.c:103
 #, c-format
 msgid "missing plugin file \"%s\""
-msgstr ""
+msgstr "プラグインファイル \"%s\" がありません"
 
 #: ../shared/nm-utils/nm-vpn-plugin-utils.c:109
 #, c-format
 msgid "cannot load editor plugin: %s"
-msgstr ""
+msgstr "エディタープラグインを読み込めません: %s"
 
 #: ../shared/nm-utils/nm-vpn-plugin-utils.c:118
 #, c-format
@@ -159,53 +156,47 @@ msgid "unknown error creating editor instance"
 msgstr ""
 
 #: ../src/nm-pptp-service.c:193
-#, fuzzy, c-format
-#| msgid "invalid gateway '%s'"
+#, c-format
 msgid "invalid gateway “%s”"
-msgstr "無効なゲートウェイ %s"
+msgstr "無効なゲートウェイ“%s”"
 
 #: ../src/nm-pptp-service.c:207
-#, fuzzy, c-format
-#| msgid "invalid integer property '%s'"
+#, c-format
 msgid "invalid integer property “%s”"
-msgstr "数値型パラメーター %s が無効な数値です。"
+msgstr "無効な数値型パラメーターの数値“%s”"
 
 #: ../src/nm-pptp-service.c:217
-#, fuzzy, c-format
-#| msgid "invalid boolean property '%s' (not yes or no)"
+#, c-format
 msgid "invalid boolean property “%s” (not yes or no)"
 msgstr ""
-"ブーリアン型パラメーター %s が無効な値です。(値はyes、noではありません)"
+"無効なブーリアン型パラメーターの値“%s” (yes、no ではありません)"
 
 #: ../src/nm-pptp-service.c:224
-#, fuzzy, c-format
-#| msgid "unhandled property '%s' type %s"
+#, c-format
 msgid "unhandled property “%s” type %s"
-msgstr "対処できない %s 型パラメーターの %s"
+msgstr "対処できない“%s”型パラメーターの %s"
 
 #: ../src/nm-pptp-service.c:235
-#, fuzzy, c-format
-#| msgid "property '%s' invalid or not supported"
+#, c-format
 msgid "property “%s” invalid or not supported"
-msgstr "パラメーター %s は無効かサポートされていません。"
+msgstr "パラメーター“%s”は無効かサポートされていません"
 
 #: ../src/nm-pptp-service.c:253
 msgid "No VPN configuration options."
 msgstr "VPN 構成オプションがありません。"
 
 #: ../src/nm-pptp-service.c:273
-#, fuzzy, c-format
-#| msgid "Missing required option '%s'."
+#, c-format
 msgid "Missing required option “%s”."
-msgstr "必須オプション %s が不足しています。"
+msgstr "必須オプション“%s”が不足しています。"
 
 #: ../src/nm-pptp-service.c:293
 msgid "No VPN secrets!"
-msgstr "VPN シークレットがありません。"
+msgstr "VPN シークレットがありません!"
 
 #: ../src/nm-pptp-service.c:447
 msgid "Could not find pptp client binary."
-msgstr "pptp クライアントのバイナリーが見つかりません。"
+msgstr "pptp クライアントのバイナリが見つかりませんでした。"
 
 #: ../src/nm-pptp-service.c:460
 msgid "Missing VPN gateway."
@@ -213,7 +204,7 @@ msgstr "VPN ゲートウェイが不足しています。"
 
 #: ../src/nm-pptp-service.c:635
 msgid "Could not find the pppd binary."
-msgstr "pppd のバイナリーが見つかりません。"
+msgstr "pppd のバイナリが見つかりませんでした。"
 
 #: ../src/nm-pptp-service.c:695
 msgid "Missing VPN username."
@@ -224,41 +215,36 @@ msgid "Missing or invalid VPN password."
 msgstr "VPN パスワードが不足しているか、無効です。"
 
 #: ../src/nm-pptp-service.c:810
-#, fuzzy, c-format
-#| msgid "couldn't convert PPTP VPN gateway IP address '%s' (%d)"
+#, c-format
 msgid "couldn’t convert PPTP VPN gateway IP address “%s” (%d)"
-msgstr "PPTP VPN ゲートウェイのIPアドレス %s (%d) を変換できません。"
+msgstr "PPTP VPN ゲートウェイの IP アドレス“%s” (%d) を変換できませんでした"
 
 #: ../src/nm-pptp-service.c:828
-#, fuzzy, c-format
-#| msgid "couldn't look up PPTP VPN gateway IP address '%s' (%d)"
+#, c-format
 msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
-msgstr "PPTP VPN ゲートウェイのIPアドレス %s (%d) が参照できません。"
+msgstr "PPTP VPN ゲートウェイの IP アドレス“%s” (%d) が参照できませんでした"
 
 #: ../src/nm-pptp-service.c:852
-#, fuzzy, c-format
-#| msgid "no usable addresses returned for PPTP VPN gateway '%s'"
+#, c-format
 msgid "no usable addresses returned for PPTP VPN gateway “%s”"
 msgstr ""
-"PPTP VPN ゲートウェイ %s から使用可能なアドレスがないと返答がありました。"
+"PPTP VPN ゲートウェイ“%s”から使用可能なアドレスがないと返答がありました"
 
 #: ../src/nm-pptp-service.c:881
 msgid "Invalid or missing PPTP gateway."
 msgstr "PPTP ゲートウェイが無効か不足しています。"
 
 #: ../src/nm-pptp-service.c:1129
-#, fuzzy
-#| msgid "Don't quit when VPN connection terminates"
 msgid "Don’t quit when VPN connection terminates"
-msgstr "VPN 接続が切断された時に終了しないでください。"
+msgstr "VPN 接続が切断されても終了しない"
 
 #: ../src/nm-pptp-service.c:1130
 msgid "Enable verbose debug logging (may expose passwords)"
-msgstr "詳細なデバッグ情報の保存を有効にする。(パスワードも含まれます。)"
+msgstr "詳細なデバッグ情報の保存を有効にする (パスワードも含まれます)"
 
 #: ../src/nm-pptp-service.c:1131
 msgid "D-Bus name to use for this instance"
-msgstr ""
+msgstr "このインスタンスの D-Bus 名"
 
 #: ../src/nm-pptp-service.c:1152
 msgid ""
@@ -274,7 +260,7 @@ msgstr "デフォルト"
 
 #: ../properties/nm-pptp-dialog.ui.h:2
 msgid "PPTP Advanced Options"
-msgstr "PPTP 詳細なオプション"
+msgstr "PPTP 詳細オプション"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
 msgid "Authentication"
@@ -418,7 +404,7 @@ msgstr "NT ドメイン:"
 
 #: ../properties/nm-pptp-dialog.ui.h:41
 msgid "Show password"
-msgstr "パスワードを表示します。"
+msgstr "パスワードを表示"
 
 #: ../properties/nm-pptp-dialog.ui.h:42
 msgid "Password passed to PPTP when prompted for it."
@@ -440,21 +426,14 @@ msgid "User name:"
 msgstr "ユーザー名:"
 
 #: ../properties/nm-pptp-dialog.ui.h:47
-#, fuzzy
-#| msgid "Ad_vanced..."
 msgid "Ad_vanced…"
-msgstr "詳細設定(_V)"
+msgstr "詳細(_V)…"
 
 #~ msgid "_Password:"
 #~ msgstr "パスワード(_P):"
 
 #~ msgid "_Secondary Password:"
 #~ msgstr "第二パスワード(_S):"
-
-#, fuzzy
-#~| msgid "Show password"
-#~ msgid "Sh_ow passwords"
-#~ msgstr "パスワードを表示します。"
 
 #~ msgid "Add, Remove, and Edit PPTP VPN Connections"
 #~ msgstr "PPTP VPN 接続の追加、削除または編集"
@@ -469,7 +448,7 @@ msgstr "詳細設定(_V)"
 
 #~ msgid "Could not find secrets (connection invalid, no vpn setting)."
 #~ msgstr ""
-#~ "VPN シークレットが見つかりません。(接続が無効か、VPN 設定されていません。)"
+#~ "VPN シークレットが見つかりませんでした (接続が無効か、VPN 設定されていません)"
 
 #~ msgid "Invalid VPN username."
 #~ msgstr "無効な VPN ユーザー名です。"
@@ -477,17 +456,8 @@ msgstr "詳細設定(_V)"
 #~ msgid "No cached credentials."
 #~ msgstr "キャッシュされた資格情報がありません。"
 
-#~ msgid "_Username:"
-#~ msgstr "ユーザ名(_U):"
-
-#~ msgid "_Domain:"
-#~ msgstr "ドメイン(_D):"
-
 #~ msgid "Connect _anonymously"
 #~ msgstr "匿名で接続(_A)"
-
-#~ msgid "Connect as _user:"
-#~ msgstr "ユーザで接続(_U):"
 
 #~ msgid "_Remember passwords for this session"
 #~ msgstr "このセッションのパスワードを記憶する(_R)"
@@ -542,24 +512,18 @@ msgstr "詳細設定(_V)"
 #~ msgid "VPN Connection Manager (PPP generic)"
 #~ msgstr "VPN 接続マネージャ (PPP 一般)"
 
-#~ msgid "00:00:00:00"
-#~ msgstr "00:00:00:00"
-
 #~ msgid "Delays &amp; Timeouts"
 #~ msgstr "遅延とタイムアウト"
 
 #~ msgid "Packet Parameters"
-#~ msgstr "パケットパラメータ"
-
-#~ msgid "<i>Example: 172.16.0.0/16 10.11.12.0/24</i>"
-#~ msgstr "<i>例: 172.16.0.0/16 10.11.12.0/24</i>"
+#~ msgstr "パケットパラメーター"
 
 #~ msgid ""
 #~ "A list of extra options to pppd as would be typed on the command line"
 #~ msgstr "コマンド行で入力する ppd へのその他のオプションのリスト"
 
 #~ msgid "Allow B_SD Compression"
-#~ msgstr "BSD 圧縮を有効にする (_S)"
+#~ msgstr "BSD 圧縮を有効にする(_S)"
 
 #~ msgid "C_hannel:"
 #~ msgstr "チャンネル(_H):"
@@ -642,10 +606,10 @@ msgstr "詳細設定(_V)"
 #~ msgstr "MS CHAP を拒否(_M)"
 
 #~ msgid "Require 128 bit M_PPE encryption"
-#~ msgstr "128 bit MPPE 暗号が必要 (_P)"
+#~ msgstr "128 bit MPPE 暗号が必要(_P)"
 
 #~ msgid "Require MPPE _encryption"
-#~ msgstr "MPPE 暗号が必要 (_E)"
+#~ msgstr "MPPE 暗号が必要(_E)"
 
 #~ msgid "Require explicit IP _address"
 #~ msgstr "明示的な IP アドレスが必要(_A)"
@@ -683,7 +647,7 @@ msgstr "詳細設定(_V)"
 #~ msgstr "タイプ(_E):"
 
 #~ msgid "Use peer _DNS"
-#~ msgstr "ピーア DNS を使用 (_D)"
+#~ msgstr "ピーア DNS を使用(_D)"
 
 #~ msgid "When checked the \"refuse-chap\" option is passed to pppd."
 #~ msgstr "チェックすると \"refuse-chap\" オプションが pppd に渡されます"
@@ -717,20 +681,8 @@ msgstr "詳細設定(_V)"
 #~ "When this check box is cleared the \"noauth\" option is passed to pppd."
 #~ msgstr "チェックすると \"noauth\" オプションが pppd に渡されます"
 
-#~ msgid "_Access point name:"
-#~ msgstr "アクセスポイント名(_A):"
-
-#~ msgid "_Device address:"
-#~ msgstr "デバイスアドレス(_D):"
-
-#~ msgid "_Hardware RTS/CTS"
-#~ msgstr "ハードウェア RTS/CTS (_H)"
-
 #~ msgid "_Import Saved Configuration..."
 #~ msgstr "保存されている設定をインポート(_I)..."
-
-#~ msgid "_Modem connection"
-#~ msgstr "モデム接続(_M)"
 
 #~ msgid "_Only use VPN connection for these addresses:"
 #~ msgstr "これらのアドレスについてのみ VPN 接続を使用(_O):"
@@ -739,34 +691,13 @@ msgstr "詳細設定(_V)"
 #~ msgstr "パケットタイプ(_P):"
 
 #~ msgid "_Peer DNS through tunnel"
-#~ msgstr "トンネルを介したピーア DNS (_P)"
+#~ msgstr "トンネルを介したピア DNS(_P)"
 
 #~ msgid "_Require MPPC compression"
 #~ msgstr "MPPC 圧縮が必要(_R)"
 
 #~ msgid "pppd tunnel (PPTP, BTGPRS, Dialup)"
 #~ msgstr "pppd トンネル (PPTP, BTGPRS, ダイアルアップ)"
-
-#~ msgid "Name"
-#~ msgstr "名前"
-
-#~ msgid "PPTP Server"
-#~ msgstr "PPTP サーバ"
-
-#~ msgid "Telephone Number"
-#~ msgstr "電話番号"
-
-#~ msgid "Bluetooth Address"
-#~ msgstr "Bluetooth アドレス"
-
-#~ msgid "Bluetooth Channel"
-#~ msgstr "Bluetooth チャンネル"
-
-#~ msgid "GPRS APN"
-#~ msgstr "GPRS APN"
-
-#~ msgid "GPRS IP"
-#~ msgstr "GPRS IP"
 
 #~ msgid "GPRS Context No."
 #~ msgstr "GPRS コンテキスト番号"
@@ -783,9 +714,6 @@ msgstr "詳細設定(_V)"
 #~ msgid "Require IP to be provided"
 #~ msgstr "提供される IP が必要"
 
-#~ msgid "Use Peer DNS"
-#~ msgstr "ピーア DNS を使用"
-
 #~ msgid "Use 128 bit MPPE encryption"
 #~ msgstr "128 bit MPPE 暗号を使用"
 
@@ -800,9 +728,6 @@ msgstr "詳細設定(_V)"
 
 #~ msgid "Exclusive device access by pppd"
 #~ msgstr "pppd による排他的なデバイスアクセス"
-
-#~ msgid "Authenticate remote peer"
-#~ msgstr "リモートピーアを認証"
 
 #~ msgid "Refuse EAP"
 #~ msgstr "EAP を拒否"
@@ -840,9 +765,6 @@ msgstr "詳細設定(_V)"
 #~ msgid "The following '%s' connection will be created:"
 #~ msgstr "次の '%s' 接続を作成します:"
 
-#~ msgid "\t%s:  %s\n"
-#~ msgstr "\t%s:  %s\n"
-
 #~ msgid "The connection details can be changed using the \"Back\" button."
 #~ msgstr "接続の詳細は\"戻る\"ボタンで戻って変更できます。"
 
@@ -852,35 +774,11 @@ msgstr "詳細設定(_V)"
 #~ msgid "Save as..."
 #~ msgstr "別名で保存..."
 
-#~ msgid "A file named \"%s\" already exists."
-#~ msgstr "ファイル \"%s\" は既にあります。"
-
-#~ msgid "Do you want to replace it with the one you are saving?"
-#~ msgstr "保存しようとしているファイルで上書きしますか?"
-
 #~ msgid "Tunnel via pppd"
 #~ msgstr "pppd 経由でトンネル"
 
-#~ msgid "Bluetooth options"
-#~ msgstr "Bluetooth オプション"
-
-#~ msgid "Connection Name"
-#~ msgstr "接続名"
-
-#~ msgid "Dial-up options"
-#~ msgstr "ダイアルアップオプション"
-
-#~ msgid "PPTP options"
-#~ msgstr "PPTP オプション"
-
 #~ msgid "Required Information"
 #~ msgstr "必須情報"
-
-#~ msgid "Routing options"
-#~ msgstr "ルーティングオプション"
-
-#~ msgid "MPPC Compression"
-#~ msgstr "MPPC 圧縮"
 
 #~ msgid "MPPE encryption"
 #~ msgstr "MPPE 暗号"
