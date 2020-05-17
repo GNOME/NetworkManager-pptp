@@ -1,16 +1,16 @@
 # Polish translation for NetworkManager-pptp.
-# Copyright © 2008-2018 the NetworkManager-pptp authors.
+# Copyright © 2008-2020 the NetworkManager-pptp authors.
 # This file is distributed under the same license as the NetworkManager-pptp package.
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2008-2009.
-# Piotr Drąg <piotrdrag@gmail.com>, 2010-2018.
-# Aviary.pl <community-poland@mozilla.org>, 2008-2018.
+# Piotr Drąg <piotrdrag@gmail.com>, 2010-2020.
+# Aviary.pl <community-poland@mozilla.org>, 2008-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-28 17:54+0100\n"
-"PO-Revision-Date: 2018-10-28 17:55+0100\n"
+"POT-Creation-Date: 2020-05-17 11:55+0200\n"
+"PO-Revision-Date: 2020-05-17 11:57+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -50,13 +50,13 @@ msgstr ""
 "Aby uzyskać dostęp do wirtualnej sieci prywatnej „%s”, należy się "
 "uwierzytelnić."
 
-#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
+#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:176
 msgid "Authenticate VPN"
 msgstr "Uwierzytelnianie VPN"
 
-#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
-msgid "Password:"
-msgstr "Hasło:"
+#: ../auth-dialog/main.c:157
+msgid "Password"
+msgstr "Hasło"
 
 #: ../properties/advanced-dialog.c:169
 msgid "All Available (Default)"
@@ -438,6 +438,10 @@ msgstr "Wyświetlanie hasła"
 #: ../properties/nm-pptp-dialog.ui.h:42
 msgid "Password passed to PPTP when prompted for it."
 msgstr "Hasło przekazywane do PPTP."
+
+#: ../properties/nm-pptp-dialog.ui.h:43
+msgid "Password:"
+msgstr "Hasło:"
 
 #: ../properties/nm-pptp-dialog.ui.h:44
 msgid ""
