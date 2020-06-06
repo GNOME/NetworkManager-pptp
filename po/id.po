@@ -1,15 +1,15 @@
 # Indonesian translation of network-manager-pptp.
 # Copyright (C) 2009 THE network-manager-pptp'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the network-manager-pptp package.
-# Andika Triwidada <andika@gmail.com>, 2009, 2010, 2011, 2012.
+# Andika Triwidada <andika@gmail.com>, 2009-2012, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager-pptp master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
 "issues\n"
-"POT-Creation-Date: 2018-10-24 13:32+0000\n"
-"PO-Revision-Date: 2019-11-12 23:31+0700\n"
+"POT-Creation-Date: 2020-05-26 23:28+0000\n"
+"PO-Revision-Date: 2020-06-06 16:23+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian Translator <gnome@i15n.org>\n"
 "Language: id\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
 msgid "PPTP VPN client"
@@ -48,13 +48,13 @@ msgid "You need to authenticate to access the Virtual Private Network “%s”."
 msgstr ""
 "Anda perlu mengotentikasi untuk mengakses Virtual Private Network \"%s\"."
 
-#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
+#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:176
 msgid "Authenticate VPN"
 msgstr "Otentikasikan VPN"
 
-#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
-msgid "Password:"
-msgstr "Kata sandi:"
+#: ../auth-dialog/main.c:157
+msgid "Password"
+msgstr "Kata sandi"
 
 #: ../properties/advanced-dialog.c:169
 msgid "All Available (Default)"
@@ -434,6 +434,10 @@ msgstr "Tampilkan kata sandi"
 #: ../properties/nm-pptp-dialog.ui.h:42
 msgid "Password passed to PPTP when prompted for it."
 msgstr "Sandi disampaikan ke PPTP ketika diminta."
+
+#: ../properties/nm-pptp-dialog.ui.h:43
+msgid "Password:"
+msgstr "Kata sandi:"
 
 #: ../properties/nm-pptp-dialog.ui.h:44
 msgid ""
