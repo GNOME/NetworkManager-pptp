@@ -4,22 +4,22 @@
 # package.
 #
 # Tino Meinen <a.t.meinen@chello.nl>, 2008.
-# Nathan Follens <nthn@unseen.is>, 2018-2019.
+# Nathan Follens <nthn@unseen.is>, 2018-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager PPTP\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
 "issues\n"
-"POT-Creation-Date: 2018-10-24 13:32+0000\n"
-"PO-Revision-Date: 2019-01-18 09:08+0100\n"
+"POT-Creation-Date: 2020-05-26 23:28+0000\n"
+"PO-Revision-Date: 2020-08-25 22:06+0200\n"
 "Last-Translator: Nathan Follens <nthn@unseen.is>\n"
-"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+"Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
 msgid "PPTP VPN client"
@@ -52,13 +52,13 @@ msgstr ""
 "Om toegang te krijgen tot het virtuele privénetwerk ‘%s’ moet u zich "
 "aanmelden."
 
-#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
+#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:176
 msgid "Authenticate VPN"
 msgstr "Aanmeldingscontrole voor VPN"
 
-#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
-msgid "Password:"
-msgstr "Wachtwoord:"
+#: ../auth-dialog/main.c:157
+msgid "Password"
+msgstr "Wachtwoord"
 
 #: ../properties/advanced-dialog.c:169
 msgid "All Available (Default)"
@@ -439,6 +439,10 @@ msgstr "Wachtwoord tonen"
 #: ../properties/nm-pptp-dialog.ui.h:42
 msgid "Password passed to PPTP when prompted for it."
 msgstr "Wachtwoord dat aan PPTP wordt doorgegeven wanneer gevraagd."
+
+#: ../properties/nm-pptp-dialog.ui.h:43
+msgid "Password:"
+msgstr "Wachtwoord:"
 
 #: ../properties/nm-pptp-dialog.ui.h:44
 msgid ""
