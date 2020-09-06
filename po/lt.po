@@ -2,15 +2,15 @@
 # Copyright (C) 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the NetworkManager package.
 # Žygimantas Beručka <zygis@gnome.org>, 2008.
-# Aurimas Černius <aurisc4@gmail.com>, 2015-2018.
+# Aurimas Černius <aurisc4@gmail.com>, 2015-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp HEAD\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
 "issues\n"
-"POT-Creation-Date: 2018-10-24 13:32+0000\n"
-"PO-Revision-Date: 2018-11-25 19:07+0200\n"
+"POT-Creation-Date: 2020-05-26 23:28+0000\n"
+"PO-Revision-Date: 2020-09-06 22:56+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Gtranslator 3.30.1\n"
+"%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 3.36.0\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
 msgid "PPTP VPN client"
@@ -51,13 +51,14 @@ msgstr ""
 "Norint gauti prieigą prie Virtualiojo Privačiojo Tinklo „%s“, reikia "
 "nustatyti jūsų tapatybę."
 
-#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
+#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:176
 msgid "Authenticate VPN"
 msgstr "Nustatyti tapatybę VPN"
 
-#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
-msgid "Password:"
-msgstr "Slaptažodis:"
+#: ../auth-dialog/main.c:157
+#| msgid "Password:"
+msgid "Password"
+msgstr "Slaptažodis"
 
 #: ../properties/advanced-dialog.c:169
 msgid "All Available (Default)"
@@ -140,7 +141,6 @@ msgstr ""
 
 #: ../shared/nm-utils/nm-vpn-plugin-utils.c:69
 #, c-format
-#| msgid "cannot load editor plugin: %s"
 msgid "unable to get editor plugin name: %s"
 msgstr "nepavyksta gauti redaktoriaus įskiepio pavadinimo: %s"
 
@@ -438,6 +438,10 @@ msgstr "Rodyti slaptažodį"
 #: ../properties/nm-pptp-dialog.ui.h:42
 msgid "Password passed to PPTP when prompted for it."
 msgstr "Slaptažodis, perduodamas PPTP, kai jo prašoma."
+
+#: ../properties/nm-pptp-dialog.ui.h:43
+msgid "Password:"
+msgstr "Slaptažodis:"
 
 #: ../properties/nm-pptp-dialog.ui.h:44
 msgid ""
