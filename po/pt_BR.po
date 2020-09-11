@@ -10,21 +10,23 @@
 # Djavan Fagundes <djavan@comum.org>, 2011.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2012, 2016, 2017, 2018.
 # Freire de Almeida <laudivan@riseup.net>, 2016.
+# Henrique Machado Campos <henriquecamposrj@gmail.com>, 2020.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
 "issues\n"
-"POT-Creation-Date: 2018-10-24 13:32+0000\n"
-"PO-Revision-Date: 2018-11-22 07:39-0200\n"
-"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
+"POT-Creation-Date: 2020-05-26 23:28+0000\n"
+"PO-Revision-Date: 2020-09-10 21:43-0300\n"
+"Last-Translator: Henrique Machado Campos <henriquecamposrj@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Virtaal 1.0.0-beta1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Gtranslator 3.36.0\n"
 "X-Project-Style: gnome\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
@@ -56,13 +58,14 @@ msgid "You need to authenticate to access the Virtual Private Network “%s”."
 msgstr ""
 "Você precisa autenticar-se para acessar a Rede Particular Virtual “%s”."
 
-#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
+#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:176
 msgid "Authenticate VPN"
 msgstr "Autenticar VPN"
 
-#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
-msgid "Password:"
-msgstr "Senha:"
+#: ../auth-dialog/main.c:157
+#| msgid "Password:"
+msgid "Password"
+msgstr "Senha"
 
 #: ../properties/advanced-dialog.c:169
 msgid "All Available (Default)"
@@ -146,7 +149,6 @@ msgstr ""
 
 #: ../shared/nm-utils/nm-vpn-plugin-utils.c:69
 #, c-format
-#| msgid "cannot load editor plugin: %s"
 msgid "unable to get editor plugin name: %s"
 msgstr "não pôde obter nome do plug-in do editor: %s"
 
@@ -446,6 +448,10 @@ msgstr "Mostrar senha"
 #: ../properties/nm-pptp-dialog.ui.h:42
 msgid "Password passed to PPTP when prompted for it."
 msgstr "Senha passada para PPTP quando lhe for solicitado."
+
+#: ../properties/nm-pptp-dialog.ui.h:43
+msgid "Password:"
+msgstr "Senha:"
 
 #: ../properties/nm-pptp-dialog.ui.h:44
 msgid ""
