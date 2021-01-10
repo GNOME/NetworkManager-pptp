@@ -33,7 +33,7 @@ msgstr "Client per a xarxes privades virtuals PPTP"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:3
 msgid "Support for configuring PPTP virtual private network connections."
-msgstr "Suport per configurar connexions a xarxes privades virtuals PPTP."
+msgstr "Suport per a configurar connexions a xarxes privades virtuals PPTP."
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:4
 msgid "Compatible with various PPTP servers including Microsoft."
@@ -304,7 +304,7 @@ msgid ""
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
 "Nota: l'encriptació MPPE només està disponible amb els mètodes "
-"d'autenticació MSCHAP. Per habilitar aquesta opció, seleccioneu un o més "
+"d'autenticació MSCHAP. Per a habilitar aquesta opció, seleccioneu un o més "
 "dels mètodes d'autenticació MSCHAP: MSCHAP o MSCHAPv2."
 
 #: ../properties/nm-pptp-dialog.ui.h:10
@@ -330,7 +330,7 @@ msgid ""
 msgstr ""
 "Permet al MPPE d'usar el mode amb estat. S'intentarà encara el mode sense "
 "estat primer.\n"
-"\"config: mppe-stateful (si està marcat)."
+"\"config: mppe-stateful (si està marcat)"
 
 #: ../properties/nm-pptp-dialog.ui.h:16
 msgid "Allow _BSD data compression"
@@ -383,7 +383,7 @@ msgid ""
 "Send LCP echo-requests to find out whether peer is alive.\n"
 "config: lcp-echo-failure and lcp-echo-interval"
 msgstr ""
-"Envia demandes d'eco LCP per veure si el parell està viu.\n"
+"Envia demandes d'eco LCP per a veure si el parell està viu.\n"
 "config: lcp-echo-failure i lcop-echo-interval"
 
 #: ../properties/nm-pptp-dialog.ui.h:29
