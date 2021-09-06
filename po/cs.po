@@ -5,15 +5,16 @@
 # Jakub Friedl <jfriedl@suse.cz>, 2006.
 # Jiří Eischmann <jiri@eischmann.cz>, 2008.
 # Zdeněk Hataš <zdenek.hatas@gmail.com>, 2009 - 2016.
+# Marek Černocký <marek@manet.cz>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
 "issues\n"
-"POT-Creation-Date: 2018-10-24 13:32+0000\n"
-"PO-Revision-Date: 2016-10-17 10:59+0200\n"
-"Last-Translator: Zdeněk Hataš <zdenek.hatas@gmail.com>\n"
+"POT-Creation-Date: 2020-05-26 23:28+0000\n"
+"PO-Revision-Date: 2021-09-06 12:46+0200\n"
+"Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -50,13 +51,13 @@ msgstr "Vývojáři NetworkManageru"
 msgid "You need to authenticate to access the Virtual Private Network “%s”."
 msgstr "Pro přístup k virtuální privátní síti „%s“ musíte provést autentizaci."
 
-#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
+#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:176
 msgid "Authenticate VPN"
 msgstr "Autentizovat VPN"
 
-#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
-msgid "Password:"
-msgstr "Heslo:"
+#: ../auth-dialog/main.c:157
+msgid "Password"
+msgstr "Heslo"
 
 #: ../properties/advanced-dialog.c:169
 msgid "All Available (Default)"
@@ -431,6 +432,10 @@ msgstr "Zobrazit heslo"
 #: ../properties/nm-pptp-dialog.ui.h:42
 msgid "Password passed to PPTP when prompted for it."
 msgstr "Heslo poskytnuté PPTP pokud o něj požádá."
+
+#: ../properties/nm-pptp-dialog.ui.h:43
+msgid "Password:"
+msgstr "Heslo:"
 
 #: ../properties/nm-pptp-dialog.ui.h:44
 msgid ""
