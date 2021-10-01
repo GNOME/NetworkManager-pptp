@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: network-manager-pptp\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
 "issues\n"
-"POT-Creation-Date: 2018-10-24 13:32+0000\n"
-"PO-Revision-Date: 2019-03-27 16:17+0100\n"
+"POT-Creation-Date: 2020-05-26 23:28+0000\n"
+"PO-Revision-Date: 2021-10-01 18:32+0200\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2017-04-09 22:48+0000\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
 msgid "PPTP VPN client"
@@ -47,13 +47,13 @@ msgstr "Razvijatelji mrežnog upravitelja"
 msgid "You need to authenticate to access the Virtual Private Network “%s”."
 msgstr "Potrebna vam je ovjera za pristup Virtualnoj Privatnoj Mreži “%s“."
 
-#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
+#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:176
 msgid "Authenticate VPN"
 msgstr "Ovjeri VPM"
 
-#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
-msgid "Password:"
-msgstr "Lozinka:"
+#: ../auth-dialog/main.c:157
+msgid "Password"
+msgstr "Lozinka"
 
 #: ../properties/advanced-dialog.c:169
 msgid "All Available (Default)"
@@ -175,7 +175,7 @@ msgstr "nevaljan boolean objekt “%s” (ne da ili da)"
 #: ../src/nm-pptp-service.c:224
 #, c-format
 msgid "unhandled property “%s” type %s"
-msgstr "Nerukujući objekt “%s” vrste %s"
+msgstr "nerukujući objekt “%s” vrste %s"
 
 #: ../src/nm-pptp-service.c:235
 #, c-format
@@ -228,7 +228,7 @@ msgstr "nemoguće potražiti IP adresu PPTP VPN pristupnika “%s” (%d)"
 #: ../src/nm-pptp-service.c:852
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway “%s”"
-msgstr "Nema vraćene iskoristive adrese za PPTP VPN pristupnik “%s”"
+msgstr "nema vraćene iskoristive adrese za PPTP VPN pristupnik “%s”"
 
 #: ../src/nm-pptp-service.c:881
 msgid "Invalid or missing PPTP gateway."
@@ -433,6 +433,10 @@ msgstr "Prikaži lozinku"
 msgid "Password passed to PPTP when prompted for it."
 msgstr "Lozinka proslijeđena PPTP-u pri upitu."
 
+#: ../properties/nm-pptp-dialog.ui.h:43
+msgid "Password:"
+msgstr "Lozinka:"
+
 #: ../properties/nm-pptp-dialog.ui.h:44
 msgid ""
 "Set the name used for authenticating the local system to the peer to "
@@ -448,4 +452,4 @@ msgstr "Korisničko ime:"
 
 #: ../properties/nm-pptp-dialog.ui.h:47
 msgid "Ad_vanced…"
-msgstr "Na_predno..."
+msgstr "Na_predno…"
