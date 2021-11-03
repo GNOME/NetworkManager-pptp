@@ -1,7 +1,8 @@
 AUTOMAKE_OPTIONS = subdir-objects
 
 DISTCHECK_CONFIGURE_FLAGS = \
-	--enable-more-warnings=yes
+	--enable-more-warnings=yes \
+	--with-gtk4
 
 libexec_PROGRAMS =
 
@@ -122,6 +123,14 @@ properties/resources.h: properties/gresource.xml
 properties/resources.c: properties/gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/properties --generate-dependencies $(srcdir)/properties/gresource.xml)
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) $< --target=$@ --sourcedir=$(srcdir)/properties --generate-source --internal
 
+gtk4/resources.c: properties/gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies $(srcdir)/properties/gresource.xml |sed "s,^,$(builddir)/gtk4/,")
+	@mkdir -p $(builddir)/gtk4
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) $< --target=$@ --sourcedir=$(builddir)/gtk4 --generate-source --internal
+
+gtk4/%.ui: properties/%.ui
+	@mkdir -p $(builddir)/gtk4
+	gtk4-builder-tool simplify --3to4 $< |grep -v can-default >$@
+
 plugin_sources = \
 	shared/nm-utils/nm-vpn-plugin-macros.h \
 	properties/nm-pptp-editor-plugin.c \
@@ -141,7 +150,9 @@ properties_cppflags = \
 
 CLEANFILES += \
 	properties/resources.c \
-	properties/resources.h
+	properties/resources.h \
+	gtk4/resources.c \
+	gtk4/nm-pptp-dialog.ui
 
 EXTRA_DIST += \
 	properties/nm-pptp-dialog.ui \
@@ -197,6 +208,32 @@ properties_libnm_vpn_plugin_pptp_editor_la_LIBADD = \
 properties_libnm_vpn_plugin_pptp_editor_la_LDFLAGS = \
 	-avoid-version \
 	-Wl,--version-script="$(srcdir)/properties/libnm-vpn-plugin-pptp-editor.ver"
+
+###############################################################################
+
+if WITH_GTK4
+plugin_LTLIBRARIES += properties/libnm-gtk4-vpn-plugin-pptp-editor.la
+endif
+
+properties_libnm_gtk4_vpn_plugin_pptp_editor_la_SOURCES = \
+	$(editor_sources)
+nodist_properties_libnm_gtk4_vpn_plugin_pptp_editor_la_SOURCES = \
+	gtk4/resources.c \
+	properties/resources.h
+properties_libnm_gtk4_vpn_plugin_pptp_editor_la_CFLAGS = \
+	$(GLIB_CFLAGS) \
+	$(GTK4_CFLAGS) \
+	$(LIBNM_CFLAGS) \
+	$(LIBNMA_GTK4_CFLAGS)
+properties_libnm_gtk4_vpn_plugin_pptp_editor_la_CPPFLAGS = \
+	$(properties_libnm_vpn_plugin_pptp_editor_la_CPPFLAGS)
+properties_libnm_gtk4_vpn_plugin_pptp_editor_la_LIBADD = \
+	$(GLIB_LIBS) \
+	$(GTK4_LIBS) \
+	$(LIBNM_LIBS) \
+	$(LIBNMA_GTK4_LIBS)
+properties_libnm_gtk4_vpn_plugin_pptp_editor_la_LDFLAGS = \
+	$(properties_libnm_vpn_plugin_pptp_editor_la_LDFLAGS)
 
 ###############################################################################
 

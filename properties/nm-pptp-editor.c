@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 4; indent-tabs-mode: t; c-basic-offset: 4 -*- */
 /***************************************************************************
  * Copyright (C) 2008 Dan Williams, <dcbw@redhat.com>
- * Copyright (C) 2008 - 2011 Red Hat, Inc.
+ * Copyright (C) 2008 - 2022 Red Hat, Inc.
  * Based on work by David Zeuthen, <davidz@redhat.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -58,7 +58,7 @@ check_validity (PptpPluginUiWidget *self, GError **error)
 	const char *str;
 
 	widget = GTK_WIDGET (gtk_builder_get_object (priv->builder, "gateway_entry"));
-	str = gtk_entry_get_text (GTK_ENTRY (widget));
+	str = gtk_editable_get_text (GTK_EDITABLE (widget));
 	if (!str || !strlen (str)) {
 		g_set_error (error,
 		             NMV_EDITOR_PLUGIN_ERROR,
@@ -80,8 +80,8 @@ static void
 advanced_dialog_close_cb (GtkWidget *dialog, gpointer user_data)
 {
 	gtk_widget_hide (dialog);
-	/* gtk_widget_destroy() will remove the window from the window group */
-	gtk_widget_destroy (dialog);
+	/* gtk_window_destroy() will remove the window from the window group */
+	gtk_window_destroy (GTK_WINDOW (dialog));
 }
 
 static void
@@ -113,10 +113,11 @@ advanced_button_clicked_cb (GtkWidget *button, gpointer user_data)
 {
 	PptpPluginUiWidget *self = PPTP_PLUGIN_UI_WIDGET (user_data);
 	PptpPluginUiWidgetPrivate *priv = PPTP_PLUGIN_UI_WIDGET_GET_PRIVATE (self);
-	GtkWidget *dialog, *toplevel;
+	GtkWidget *dialog;
+	GtkRoot *root;
 
-	toplevel = gtk_widget_get_toplevel (priv->widget);
-	g_return_if_fail (gtk_widget_is_toplevel (toplevel));
+	root = gtk_widget_get_root (priv->widget);
+	g_return_if_fail (GTK_IS_WINDOW(root));
 
 	dialog = advanced_dialog_new (priv->advanced);
 	if (!dialog) {
@@ -126,15 +127,15 @@ advanced_button_clicked_cb (GtkWidget *button, gpointer user_data)
 
 	gtk_window_group_add_window (priv->window_group, GTK_WINDOW (dialog));
 	if (!priv->window_added) {
-		gtk_window_group_add_window (priv->window_group, GTK_WINDOW (toplevel));
+		gtk_window_group_add_window (priv->window_group, GTK_WINDOW (root));
 		priv->window_added = TRUE;
 	}
 
-	gtk_window_set_transient_for (GTK_WINDOW (dialog), GTK_WINDOW (toplevel));
+	gtk_window_set_transient_for (GTK_WINDOW (dialog), GTK_WINDOW (root));
 	g_signal_connect (G_OBJECT (dialog), "response", G_CALLBACK (advanced_dialog_response_cb), self);
 	g_signal_connect (G_OBJECT (dialog), "close", G_CALLBACK (advanced_dialog_close_cb), self);
 
-	gtk_widget_show_all (dialog);
+	gtk_widget_show (dialog);
 }
 
 static void
@@ -154,7 +155,7 @@ setup_password_widget (PptpPluginUiWidget *self,
 
 	if (s_vpn) {
 		value = nm_setting_vpn_get_secret (s_vpn, secret_name);
-		gtk_entry_set_text (GTK_ENTRY (widget), value ? value : "");
+		gtk_editable_set_text (GTK_EDITABLE (widget), value ? value : "");
 	}
 
 	g_signal_connect (widget, "changed", G_CALLBACK (stuff_changed_cb), self);
@@ -167,7 +168,7 @@ show_toggled_cb (GtkCheckButton *button, PptpPluginUiWidget *self)
 	GtkWidget *widget;
 	gboolean visible;
 
-	visible = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (button));
+	visible = gtk_check_button_get_active (GTK_CHECK_BUTTON (button));
 
 	widget = GTK_WIDGET (gtk_builder_get_object (priv->builder, "user_password_entry"));
 	g_assert (widget);
@@ -209,7 +210,7 @@ init_password_icon (PptpPluginUiWidget *self,
 	 */
 	if (s_vpn)
 		nm_setting_get_secret_flags (NM_SETTING (s_vpn), secret_key, &pw_flags, NULL);
-	value = gtk_entry_get_text (GTK_ENTRY (entry));
+	value = gtk_editable_get_text (GTK_EDITABLE (entry));
 	if ((!value || !*value) && (pw_flags == NM_SETTING_SECRET_FLAG_NONE))
 		nma_utils_update_password_storage (entry, NM_SETTING_SECRET_FLAG_NOT_SAVED,
 		                                   (NMSetting *) s_vpn, secret_key);
@@ -237,7 +238,7 @@ init_plugin_ui (PptpPluginUiWidget *self, NMConnection *connection, GError **err
 	if (s_vpn) {
 		value = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_GATEWAY);
 		if (value && strlen (value))
-			gtk_entry_set_text (GTK_ENTRY (widget), value);
+			gtk_editable_set_text (GTK_EDITABLE (widget), value);
 	}
 	g_signal_connect (G_OBJECT (widget), "changed", G_CALLBACK (stuff_changed_cb), self);
 
@@ -248,7 +249,7 @@ init_plugin_ui (PptpPluginUiWidget *self, NMConnection *connection, GError **err
 	if (s_vpn) {
 		value = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_USER);
 		if (value && strlen (value))
-			gtk_entry_set_text (GTK_ENTRY (widget), value);
+			gtk_editable_set_text (GTK_EDITABLE (widget), value);
 	}
 	g_signal_connect (G_OBJECT (widget), "changed", G_CALLBACK (stuff_changed_cb), self);
 
@@ -259,7 +260,7 @@ init_plugin_ui (PptpPluginUiWidget *self, NMConnection *connection, GError **err
 	if (s_vpn) {
 		value = nm_setting_vpn_get_data_item (s_vpn, NM_PPTP_KEY_DOMAIN);
 		if (value && strlen (value))
-			gtk_entry_set_text (GTK_ENTRY (widget), value);
+			gtk_editable_set_text (GTK_EDITABLE (widget), value);
 	}
 	g_signal_connect (G_OBJECT (widget), "changed", G_CALLBACK (stuff_changed_cb), self);
 
@@ -324,7 +325,7 @@ save_password_and_flags (NMSettingVpn *s_vpn,
 	switch (flags) {
 	case NM_SETTING_SECRET_FLAG_NONE:
 	case NM_SETTING_SECRET_FLAG_AGENT_OWNED:
-		password = gtk_entry_get_text (GTK_ENTRY (entry));
+		password = gtk_editable_get_text (GTK_EDITABLE (entry));
 		if (password && strlen (password))
 			nm_setting_vpn_add_secret (s_vpn, secret_key, password);
 		break;
@@ -356,13 +357,13 @@ update_connection (NMVpnEditor *iface,
 
 	/* Gateway */
 	widget = GTK_WIDGET (gtk_builder_get_object (priv->builder, "gateway_entry"));
-	str = gtk_entry_get_text (GTK_ENTRY (widget));
+	str = gtk_editable_get_text (GTK_EDITABLE (widget));
 	if (str && strlen (str))
 		nm_setting_vpn_add_data_item (s_vpn, NM_PPTP_KEY_GATEWAY, str);
 
 	/* Username */
 	widget = GTK_WIDGET (gtk_builder_get_object (priv->builder, "user_entry"));
-	str = gtk_entry_get_text (GTK_ENTRY (widget));
+	str = gtk_editable_get_text (GTK_EDITABLE (widget));
 	if (str && strlen (str))
 		nm_setting_vpn_add_data_item (s_vpn, NM_PPTP_KEY_USER, str);
 
@@ -374,7 +375,7 @@ update_connection (NMVpnEditor *iface,
 
 	/* Domain */
 	widget = GTK_WIDGET (gtk_builder_get_object (priv->builder, "domain_entry"));
-	str = gtk_entry_get_text (GTK_ENTRY (widget));
+	str = gtk_editable_get_text (GTK_EDITABLE (widget));
 	if (str && strlen (str))
 		nm_setting_vpn_add_data_item (s_vpn, NM_PPTP_KEY_DOMAIN, str);
 

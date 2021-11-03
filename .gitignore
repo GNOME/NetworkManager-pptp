@@ -32,6 +32,7 @@ m4/lt*.m4
 appdata/network-manager-pptp.metainfo.xml
 /cscope.*
 /properties/resources.[ch]
+/gtk4
 
 auth-dialog/nm-pptp-auth-dialog
 nm-pptp-service.name
