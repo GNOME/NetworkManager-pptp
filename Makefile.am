@@ -130,8 +130,6 @@ plugin_sources = \
 editor_sources = \
 	$(shared_sources) \
 	shared/nm-utils/nm-vpn-plugin-utils.h \
-	properties/resources.c \
-	properties/resources.h \
 	properties/advanced-dialog.c \
 	properties/advanced-dialog.h \
 	properties/nm-pptp-editor.c \
@@ -181,6 +179,9 @@ endif
 
 properties_libnm_vpn_plugin_pptp_editor_la_SOURCES = \
 	$(editor_sources)
+nodist_properties_libnm_vpn_plugin_pptp_editor_la_SOURCES = \
+	properties/resources.c \
+	properties/resources.h
 properties_libnm_vpn_plugin_pptp_editor_la_CFLAGS = \
 	$(GLIB_CFLAGS) \
 	$(GTK_CFLAGS) \
@@ -208,6 +209,9 @@ properties_libnm_pptp_properties_la_SOURCES = \
 	shared/nm-utils/nm-glib.h \
 	$(plugin_sources) \
 	$(editor_sources)
+nodist_properties_libnm_pptp_properties_la_SOURCES = \
+	properties/resources.c \
+	properties/resources.h
 properties_libnm_pptp_properties_la_CFLAGS = \
 	$(GLIB_CFLAGS) \
 	$(GTK_CFLAGS) \
@@ -234,8 +238,6 @@ endif
 
 auth_dialog_nm_pptp_auth_dialog_SOURCES = \
 	$(shared_sources) \
-	properties/resources.c \
-	properties/resources.h \
 	auth-dialog/main.c
 auth_dialog_nm_pptp_auth_dialog_CFLAGS = \
 	$(GLIB_CFLAGS) \
