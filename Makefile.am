@@ -131,6 +131,11 @@ gtk4/%.ui: properties/%.ui
 	@mkdir -p $(builddir)/gtk4
 	gtk4-builder-tool simplify --3to4 $< |grep -v can-default >$@
 
+# Include a prebuilt file in tarball, to avoid hitting
+# https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/4415
+EXTRA_DIST += \
+	gtk4/nm-pptp-dialog.ui
+
 plugin_sources = \
 	shared/nm-utils/nm-vpn-plugin-macros.h \
 	properties/nm-pptp-editor-plugin.c \
