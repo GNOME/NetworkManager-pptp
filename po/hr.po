@@ -318,8 +318,8 @@ msgid ""
 "Require the use of MPPE, with 40/128-bit encryption or all.\n"
 "    config: require-mppe, require-mppe-128 or require-mppe-40"
 msgstr ""
-"Potrebno za korištenje MPPE, s 40/128-bitnim šifriranjem ili  svim.\n"
-"    podešavanje: require-mppe, require-mppe-128 or require-mppe-40"
+"Potrebno za korištenje MPPE, s 40/128-bitnim šifriranjem ili svim.\n"
+"    podešavanje: require-mppe, require-mppe-128 ili require-mppe-40"
 
 #: ../properties/nm-pptp-dialog.ui.h:16
 msgid "Allow st_ateful encryption"
