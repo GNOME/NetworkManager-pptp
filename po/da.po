@@ -15,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
 "issues\n"
 "POT-Creation-Date: 2022-03-13 12:29+0000\n"
-"PO-Revision-Date: 2022-03-16 16:42+0100\n"
+"PO-Revision-Date: 2022-03-27 13:48+0200\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -274,7 +274,7 @@ msgstr "Avancerede PPP-indstillinger"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
 msgid "Advanced Properties"
-msgstr "Avancerede indstillinger"
+msgstr "Avancerede egenskaber"
 
 #: ../properties/nm-pptp-dialog.ui.h:4
 msgid "_Cancel"
