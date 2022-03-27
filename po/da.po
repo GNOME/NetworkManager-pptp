@@ -6,7 +6,7 @@
 # Mads Bille Lundby <lundbymads@gmail.com>, 2009.
 # Kim Iskov <kimiskov@gmail.com>, 2010.
 # Joe Hansen <joedalton2@yahoo.dk>, 2011, 2012.
-# Alan Mortensen <alanmortensen.am@gmail.com>, 2017, 2019.
+# Alan Mortensen <alanmortensen.am@gmail.com>, 2017, 2019, 2022.
 # scootergrisen, 2020.
 #
 msgid ""
@@ -14,15 +14,16 @@ msgstr ""
 "Project-Id-Version: network-manager-pptp master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
 "issues\n"
-"POT-Creation-Date: 2020-09-11 20:43+0000\n"
-"PO-Revision-Date: 2020-12-30 00:00+0200\n"
-"Last-Translator: scootergrisen\n"
+"POT-Creation-Date: 2022-03-13 12:29+0000\n"
+"PO-Revision-Date: 2022-03-16 16:42+0100\n"
+"Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
 msgid "PPTP VPN client"
@@ -59,39 +60,39 @@ msgstr ""
 msgid "Authenticate VPN"
 msgstr "Godkend VPN"
 
-#: ../auth-dialog/main.c:157
+#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
 msgid "Password"
 msgstr "Adgangskode"
 
-#: ../properties/advanced-dialog.c:169
+#: ../properties/advanced-dialog.c:170
 msgid "All Available (Default)"
 msgstr "Alle tilgængelige (standard)"
 
-#: ../properties/advanced-dialog.c:173
+#: ../properties/advanced-dialog.c:174
 msgid "128-bit (most secure)"
 msgstr "128-bit (mest sikker)"
 
-#: ../properties/advanced-dialog.c:182
+#: ../properties/advanced-dialog.c:183
 msgid "40-bit (less secure)"
 msgstr "40-bit (mindre sikker)"
 
-#: ../properties/advanced-dialog.c:286
+#: ../properties/advanced-dialog.c:287
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:299
+#: ../properties/advanced-dialog.c:300
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:311
+#: ../properties/advanced-dialog.c:312
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:323
+#: ../properties/advanced-dialog.c:324
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:336
+#: ../properties/advanced-dialog.c:337
 msgid "EAP"
 msgstr "EAP"
 
@@ -272,14 +273,26 @@ msgid "PPTP Advanced Options"
 msgstr "Avancerede PPP-indstillinger"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
+msgid "Advanced Properties"
+msgstr "Avancerede indstillinger"
+
+#: ../properties/nm-pptp-dialog.ui.h:4
+msgid "_Cancel"
+msgstr "_Annullér"
+
+#: ../properties/nm-pptp-dialog.ui.h:5
+msgid "_Apply"
+msgstr "An_vend"
+
+#: ../properties/nm-pptp-dialog.ui.h:6
 msgid "Authentication"
 msgstr "Godkendelse"
 
-#: ../properties/nm-pptp-dialog.ui.h:4
+#: ../properties/nm-pptp-dialog.ui.h:7
 msgid "Allow the following authentication methods:"
 msgstr "Tillad følgende metoder til godkendelse:"
 
-#: ../properties/nm-pptp-dialog.ui.h:5
+#: ../properties/nm-pptp-dialog.ui.h:8
 msgid ""
 "Allow/disable authentication methods.\n"
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
@@ -288,15 +301,15 @@ msgstr ""
 "Konfiguration: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, "
 "refuse-eap"
 
-#: ../properties/nm-pptp-dialog.ui.h:7
+#: ../properties/nm-pptp-dialog.ui.h:10
 msgid "Security and Compression"
 msgstr "Sikkerhed og komprimering"
 
-#: ../properties/nm-pptp-dialog.ui.h:8
+#: ../properties/nm-pptp-dialog.ui.h:11
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Anvend _punkt-til-punkt-kryptering (MPPE)"
 
-#: ../properties/nm-pptp-dialog.ui.h:9
+#: ../properties/nm-pptp-dialog.ui.h:12
 msgid ""
 "Note: MPPE encryption is only available with MSCHAP authentication methods. "
 "To enable this checkbox, select one or more of the MSCHAP authentication "
@@ -306,23 +319,23 @@ msgstr ""
 "Vælg en eller flere MSCHAP-godkendelsesmetoder (MSCHAP eller MSCHAPv2) for "
 "at aktivere dette afkrydsningsfelt."
 
-#: ../properties/nm-pptp-dialog.ui.h:10
+#: ../properties/nm-pptp-dialog.ui.h:13
 msgid "_Security:"
 msgstr "_Sikkerhed:"
 
-#: ../properties/nm-pptp-dialog.ui.h:11
+#: ../properties/nm-pptp-dialog.ui.h:14
 msgid ""
 "Require the use of MPPE, with 40/128-bit encryption or all.\n"
-"config: require-mppe, require-mppe-128 or require-mppe-40"
+"    config: require-mppe, require-mppe-128 or require-mppe-40"
 msgstr ""
 "Kræv brug af MPPE, med 40/128-bit-kryptering eller alle.\n"
-"Konfiguration: require-mppe, require-mppe-128 eller require-mppe-40"
+"    Konfiguration: require-mppe, require-mppe-128 eller require-mppe-40"
 
-#: ../properties/nm-pptp-dialog.ui.h:13
+#: ../properties/nm-pptp-dialog.ui.h:16
 msgid "Allow st_ateful encryption"
 msgstr "Tillad tilst_andsbaseret kryptering"
 
-#: ../properties/nm-pptp-dialog.ui.h:14
+#: ../properties/nm-pptp-dialog.ui.h:17
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first.\n"
 "config: mppe-stateful (when checked)"
@@ -331,11 +344,11 @@ msgstr ""
 "først.\n"
 "Konfiguration: mppe-stateful (når afkrydset)"
 
-#: ../properties/nm-pptp-dialog.ui.h:16
+#: ../properties/nm-pptp-dialog.ui.h:19
 msgid "Allow _BSD data compression"
 msgstr "Tillad _BSD-datakomprimering"
 
-#: ../properties/nm-pptp-dialog.ui.h:17
+#: ../properties/nm-pptp-dialog.ui.h:20
 msgid ""
 "Allow/disable BSD-Compress compression.\n"
 "config: nobsdcomp (when unchecked)"
@@ -343,11 +356,11 @@ msgstr ""
 "Tillad/deaktivér komprimering med BSD-Compress.\n"
 "Konfiguration: nobsdcomp (når ikke afkrydset)"
 
-#: ../properties/nm-pptp-dialog.ui.h:19
+#: ../properties/nm-pptp-dialog.ui.h:22
 msgid "Allow _Deflate data compression"
 msgstr "Tillad _Deflate-datakomprimering"
 
-#: ../properties/nm-pptp-dialog.ui.h:20
+#: ../properties/nm-pptp-dialog.ui.h:23
 msgid ""
 "Allow/disable Deflate compression.\n"
 "config: nodeflate (when unchecked)"
@@ -355,11 +368,11 @@ msgstr ""
 "Tillad/deaktivér komprimering med Deflate.\n"
 "Konfiguration: nodeflate (når ikke afkrydset)"
 
-#: ../properties/nm-pptp-dialog.ui.h:22
+#: ../properties/nm-pptp-dialog.ui.h:25
 msgid "Use TCP _header compression"
 msgstr "Anvend TCP-_headerkomprimering"
 
-#: ../properties/nm-pptp-dialog.ui.h:23
+#: ../properties/nm-pptp-dialog.ui.h:26
 msgid ""
 "Allow/disable Van Jacobson style TCP/IP header compression in both the "
 "transmit and the receive directions.\n"
@@ -369,15 +382,15 @@ msgstr ""
 "afsendelse og modtagelse.\n"
 "Konfiguration: novj (når ikke afkrydset)"
 
-#: ../properties/nm-pptp-dialog.ui.h:25
-msgid "Echo"
-msgstr "Ekko"
+#: ../properties/nm-pptp-dialog.ui.h:28
+msgid "Misc"
+msgstr "Diverse"
 
-#: ../properties/nm-pptp-dialog.ui.h:26
+#: ../properties/nm-pptp-dialog.ui.h:29
 msgid "Send PPP _echo packets"
 msgstr "Send PPP-_ekkopakker"
 
-#: ../properties/nm-pptp-dialog.ui.h:27
+#: ../properties/nm-pptp-dialog.ui.h:30
 msgid ""
 "Send LCP echo-requests to find out whether peer is alive.\n"
 "config: lcp-echo-failure and lcp-echo-interval"
@@ -385,27 +398,27 @@ msgstr ""
 "Send LCP-echo-forespørgsler for at undersøge om modparten er i live.\n"
 "Konfiguration: lcp-echo-failure og lcp-echo-interval"
 
-#: ../properties/nm-pptp-dialog.ui.h:29
-msgid "Misc"
-msgstr "Diverse"
-
-#: ../properties/nm-pptp-dialog.ui.h:30
+#: ../properties/nm-pptp-dialog.ui.h:32
 msgid "Use custom _unit number:"
 msgstr "Anvend tilpasset enhedsn_ummer:"
 
-#: ../properties/nm-pptp-dialog.ui.h:31
+#: ../properties/nm-pptp-dialog.ui.h:33
 msgid ""
 "Enable custom index for ppp<n> device name.\n"
-"config: unit <n>"
+"    config: unit <n>"
 msgstr ""
 "Aktivér tilpasset indeks for ppp<n>-enhedsnavn.\n"
-"Konfiguration: unit <n>"
+"    Konfiguration: unit <n>"
 
-#: ../properties/nm-pptp-dialog.ui.h:33
+#: ../properties/nm-pptp-dialog.ui.h:35
 msgid "General"
 msgstr "Generelt"
 
-#: ../properties/nm-pptp-dialog.ui.h:34
+#: ../properties/nm-pptp-dialog.ui.h:36
+msgid "_Gateway"
+msgstr "_Gateway"
+
+#: ../properties/nm-pptp-dialog.ui.h:37
 msgid ""
 "PPTP server IP or name.\n"
 "config: the first parameter of pptp"
@@ -413,15 +426,37 @@ msgstr ""
 "PPTP-server-IP eller -navn.\n"
 "Konfiguration: den første parameter for pptp"
 
-#: ../properties/nm-pptp-dialog.ui.h:36
-msgid "_Gateway:"
-msgstr "_Gateway:"
-
-#: ../properties/nm-pptp-dialog.ui.h:37
+#: ../properties/nm-pptp-dialog.ui.h:39
 msgid "Optional"
 msgstr "Valgfrit"
 
-#: ../properties/nm-pptp-dialog.ui.h:38
+#: ../properties/nm-pptp-dialog.ui.h:40
+msgid "User name"
+msgstr "Brugernavn"
+
+#: ../properties/nm-pptp-dialog.ui.h:41
+msgid ""
+"Set the name used for authenticating the local system to the peer to "
+"<name>.\n"
+"config: user <name>"
+msgstr ""
+"Angiv navnet for godkendelse af det lokale system for modparten til "
+"<navn>.\n"
+"Konfiguration: user <navn>"
+
+#: ../properties/nm-pptp-dialog.ui.h:44
+msgid "Password passed to PPTP when prompted for it."
+msgstr "Adgangskode sendes til PPTP, når der bliver spurgt efter den."
+
+#: ../properties/nm-pptp-dialog.ui.h:45
+msgid "Show password"
+msgstr "Vis adgangskode"
+
+#: ../properties/nm-pptp-dialog.ui.h:46
+msgid "NT Domain"
+msgstr "NT-domæne"
+
+#: ../properties/nm-pptp-dialog.ui.h:47
 msgid ""
 "Append the domain name <domain> to the local host name for authentication "
 "purposes.\n"
@@ -431,35 +466,12 @@ msgstr ""
 "godkendelsesformål.\n"
 "Konfiguration: domain <domæne>"
 
-#: ../properties/nm-pptp-dialog.ui.h:40
-msgid "NT Domain:"
-msgstr "NT-domæne:"
-
-#: ../properties/nm-pptp-dialog.ui.h:41
-msgid "Show password"
-msgstr "Vis adgangskode"
-
-#: ../properties/nm-pptp-dialog.ui.h:42
-msgid "Password passed to PPTP when prompted for it."
-msgstr "Adgangskode sendes til PPTP, når der bliver spurgt efter den."
-
-#: ../properties/nm-pptp-dialog.ui.h:43
-msgid "Password:"
-msgstr "Adgangskode:"
-
-#: ../properties/nm-pptp-dialog.ui.h:44
-msgid ""
-"Set the name used for authenticating the local system to the peer to "
-"<name>.\n"
-"config: user <name>"
-msgstr ""
-"Angiv navnet for godkendelse af det lokale system for modparten til <navn>.\n"
-"Konfiguration: user <navn>"
-
-#: ../properties/nm-pptp-dialog.ui.h:46
-msgid "User name:"
-msgstr "Brugernavn:"
-
-#: ../properties/nm-pptp-dialog.ui.h:47
-msgid "Ad_vanced…"
+#: ../properties/nm-pptp-dialog.ui.h:49
+msgid "Advance_d…"
 msgstr "A_vanceret …"
+
+#~ msgid "Echo"
+#~ msgstr "Ekko"
+
+#~ msgid "Password:"
+#~ msgstr "Adgangskode:"
