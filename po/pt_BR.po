@@ -11,22 +11,23 @@
 # Rafael Fontenelle <rafaelff@gnome.org>, 2012, 2016, 2017, 2018.
 # Freire de Almeida <laudivan@riseup.net>, 2016.
 # Henrique Machado Campos <henriquecamposrj@gmail.com>, 2020.
+# Matheus Barbosa <mdpb.matheus@gmail.com>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkManager-pptp\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
 "issues\n"
-"POT-Creation-Date: 2020-05-26 23:28+0000\n"
-"PO-Revision-Date: 2020-09-10 21:43-0300\n"
-"Last-Translator: Henrique Machado Campos <henriquecamposrj@gmail.com>\n"
+"POT-Creation-Date: 2022-03-13 12:29+0000\n"
+"PO-Revision-Date: 2022-03-13 16:01-0300\n"
+"Last-Translator: Matheus Barbosa <mdpb.matheus@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
-"X-Generator: Gtranslator 3.36.0\n"
+"X-Generator: Gtranslator 40.0\n"
 "X-Project-Style: gnome\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
@@ -62,40 +63,39 @@ msgstr ""
 msgid "Authenticate VPN"
 msgstr "Autenticar VPN"
 
-#: ../auth-dialog/main.c:157
-#| msgid "Password:"
+#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
 msgid "Password"
 msgstr "Senha"
 
-#: ../properties/advanced-dialog.c:169
+#: ../properties/advanced-dialog.c:170
 msgid "All Available (Default)"
 msgstr "Todas disponíveis (padrão)"
 
-#: ../properties/advanced-dialog.c:173
+#: ../properties/advanced-dialog.c:174
 msgid "128-bit (most secure)"
 msgstr "128 bits (mais seguro)"
 
-#: ../properties/advanced-dialog.c:182
+#: ../properties/advanced-dialog.c:183
 msgid "40-bit (less secure)"
 msgstr "40 bits (menos seguro)"
 
-#: ../properties/advanced-dialog.c:286
+#: ../properties/advanced-dialog.c:287
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:299
+#: ../properties/advanced-dialog.c:300
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:311
+#: ../properties/advanced-dialog.c:312
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:323
+#: ../properties/advanced-dialog.c:324
 msgid "MSCHAPv2"
 msgstr "MSCHAP v.2"
 
-#: ../properties/advanced-dialog.c:336
+#: ../properties/advanced-dialog.c:337
 msgid "EAP"
 msgstr "EAP"
 
@@ -278,14 +278,27 @@ msgid "PPTP Advanced Options"
 msgstr "Opções avançadas de PPTP"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
+#| msgid "PPTP Advanced Options"
+msgid "Advanced Properties"
+msgstr "Propriedades avançadas"
+
+#: ../properties/nm-pptp-dialog.ui.h:4
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#: ../properties/nm-pptp-dialog.ui.h:5
+msgid "_Apply"
+msgstr "_Aplicar"
+
+#: ../properties/nm-pptp-dialog.ui.h:6
 msgid "Authentication"
 msgstr "Autenticação"
 
-#: ../properties/nm-pptp-dialog.ui.h:4
+#: ../properties/nm-pptp-dialog.ui.h:7
 msgid "Allow the following authentication methods:"
 msgstr "Permitir os seguintes métodos de autenticação:"
 
-#: ../properties/nm-pptp-dialog.ui.h:5
+#: ../properties/nm-pptp-dialog.ui.h:8
 msgid ""
 "Allow/disable authentication methods.\n"
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
@@ -293,15 +306,15 @@ msgstr ""
 "Permitir/desabilitar métodos de autenticação.\n"
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
-#: ../properties/nm-pptp-dialog.ui.h:7
+#: ../properties/nm-pptp-dialog.ui.h:10
 msgid "Security and Compression"
 msgstr "Segurança e compressão"
 
-#: ../properties/nm-pptp-dialog.ui.h:8
+#: ../properties/nm-pptp-dialog.ui.h:11
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "Usar criptografia _ponto a ponto (MPPE)"
 
-#: ../properties/nm-pptp-dialog.ui.h:9
+#: ../properties/nm-pptp-dialog.ui.h:12
 msgid ""
 "Note: MPPE encryption is only available with MSCHAP authentication methods. "
 "To enable this checkbox, select one or more of the MSCHAP authentication "
@@ -311,24 +324,27 @@ msgstr ""
 "MSCHAP. Para ativar esta opção, selecione um ou mais dos métodos de "
 "autenticação MSCHAP: MSCHAP ou MSCHAPv2."
 
-#: ../properties/nm-pptp-dialog.ui.h:10
+#: ../properties/nm-pptp-dialog.ui.h:13
 msgid "_Security:"
 msgstr "_Segurança:"
 
-#: ../properties/nm-pptp-dialog.ui.h:11
+#: ../properties/nm-pptp-dialog.ui.h:14
+#| msgid ""
+#| "Require the use of MPPE, with 40/128-bit encryption or all.\n"
+#| "config: require-mppe, require-mppe-128 or require-mppe-40"
 msgid ""
 "Require the use of MPPE, with 40/128-bit encryption or all.\n"
-"config: require-mppe, require-mppe-128 or require-mppe-40"
+"    config: require-mppe, require-mppe-128 or require-mppe-40"
 msgstr ""
-"REquer o usao de MPPE, com criptografia 40/128-bit ou tudo.\n"
-"config: require-mppe, require-mppe-128 or require-mppe-40"
+"Requer o uso de MPPE, com criptografia 40/128-bit ou tudo.\n"
+"    configuração: require-mppe, require-mppe-128 ou require-mppe-40"
 
-#: ../properties/nm-pptp-dialog.ui.h:13
+#: ../properties/nm-pptp-dialog.ui.h:16
 msgid "Allow st_ateful encryption"
 msgstr "Permitir criptogr_afia com monitoração de estado"
 
 # stateful = em estado de conexão (baseei-me em "stateful firewall", do Tanenbaum, Redes de Computadores, 5.ed.)
-#: ../properties/nm-pptp-dialog.ui.h:14
+#: ../properties/nm-pptp-dialog.ui.h:17
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first.\n"
 "config: mppe-stateful (when checked)"
@@ -337,11 +353,11 @@ msgstr ""
 "a primeira tentativa.\n"
 "config: mppe-stateful (quando marcado)"
 
-#: ../properties/nm-pptp-dialog.ui.h:16
+#: ../properties/nm-pptp-dialog.ui.h:19
 msgid "Allow _BSD data compression"
 msgstr "Permitir compressão de dados _BSD"
 
-#: ../properties/nm-pptp-dialog.ui.h:17
+#: ../properties/nm-pptp-dialog.ui.h:20
 msgid ""
 "Allow/disable BSD-Compress compression.\n"
 "config: nobsdcomp (when unchecked)"
@@ -349,11 +365,11 @@ msgstr ""
 "Permitir/desabilitar compressão com BSD-Compress.\n"
 "config: nobsdcomp (quando desmarcado)"
 
-#: ../properties/nm-pptp-dialog.ui.h:19
+#: ../properties/nm-pptp-dialog.ui.h:22
 msgid "Allow _Deflate data compression"
 msgstr "Permitir compressão de dados _Deflate"
 
-#: ../properties/nm-pptp-dialog.ui.h:20
+#: ../properties/nm-pptp-dialog.ui.h:23
 msgid ""
 "Allow/disable Deflate compression.\n"
 "config: nodeflate (when unchecked)"
@@ -361,11 +377,11 @@ msgstr ""
 "Permitir/desabilitar compressão com Deflate.\n"
 "config: nodeflate (quando desmarcado)"
 
-#: ../properties/nm-pptp-dialog.ui.h:22
+#: ../properties/nm-pptp-dialog.ui.h:25
 msgid "Use TCP _header compression"
 msgstr "Usar compressão de cabeçal_ho TCP"
 
-#: ../properties/nm-pptp-dialog.ui.h:23
+#: ../properties/nm-pptp-dialog.ui.h:26
 msgid ""
 "Allow/disable Van Jacobson style TCP/IP header compression in both the "
 "transmit and the receive directions.\n"
@@ -375,15 +391,15 @@ msgstr ""
 "Jacobson em tanto a transmissão quanto na recepção.\n"
 "config: novj (quando desmarcado)"
 
-#: ../properties/nm-pptp-dialog.ui.h:25
-msgid "Echo"
-msgstr "Echo"
+#: ../properties/nm-pptp-dialog.ui.h:28
+msgid "Misc"
+msgstr "Miscelânea"
 
-#: ../properties/nm-pptp-dialog.ui.h:26
+#: ../properties/nm-pptp-dialog.ui.h:29
 msgid "Send PPP _echo packets"
 msgstr "Enviar pacotes PPP de _eco"
 
-#: ../properties/nm-pptp-dialog.ui.h:27
+#: ../properties/nm-pptp-dialog.ui.h:30
 msgid ""
 "Send LCP echo-requests to find out whether peer is alive.\n"
 "config: lcp-echo-failure and lcp-echo-interval"
@@ -391,27 +407,31 @@ msgstr ""
 "Enviar echo-requests LCP para encontrar se o par está vivo.\n"
 "config: lcp-echo-failure e lcp-echo-interval"
 
-#: ../properties/nm-pptp-dialog.ui.h:29
-msgid "Misc"
-msgstr "Miscelânea"
-
-#: ../properties/nm-pptp-dialog.ui.h:30
+#: ../properties/nm-pptp-dialog.ui.h:32
 msgid "Use custom _unit number:"
 msgstr "Usar número de _unidade personalizado:"
 
-#: ../properties/nm-pptp-dialog.ui.h:31
+#: ../properties/nm-pptp-dialog.ui.h:33
+#| msgid ""
+#| "Enable custom index for ppp<n> device name.\n"
+#| "config: unit <n>"
 msgid ""
 "Enable custom index for ppp<n> device name.\n"
-"config: unit <n>"
+"    config: unit <n>"
 msgstr ""
 "Habilita índice personalizado para o nome de dispositivo ppp<n>.\n"
-"config: unit <n>"
+"    configuração: unidade <n>"
 
-#: ../properties/nm-pptp-dialog.ui.h:33
+#: ../properties/nm-pptp-dialog.ui.h:35
 msgid "General"
 msgstr "Geral"
 
-#: ../properties/nm-pptp-dialog.ui.h:34
+#: ../properties/nm-pptp-dialog.ui.h:36
+#| msgid "_Gateway:"
+msgid "_Gateway"
+msgstr "_Gateway"
+
+#: ../properties/nm-pptp-dialog.ui.h:37
 msgid ""
 "PPTP server IP or name.\n"
 "config: the first parameter of pptp"
@@ -419,15 +439,38 @@ msgstr ""
 "IP ou nome do servidor PPTP.\n"
 "config: o primeiro parâmetro de pptp"
 
-#: ../properties/nm-pptp-dialog.ui.h:36
-msgid "_Gateway:"
-msgstr "_Gateway:"
-
-#: ../properties/nm-pptp-dialog.ui.h:37
+#: ../properties/nm-pptp-dialog.ui.h:39
 msgid "Optional"
 msgstr "Opcional"
 
-#: ../properties/nm-pptp-dialog.ui.h:38
+#: ../properties/nm-pptp-dialog.ui.h:40
+#| msgid "User name:"
+msgid "User name"
+msgstr "Nome de usuário"
+
+#: ../properties/nm-pptp-dialog.ui.h:41
+msgid ""
+"Set the name used for authenticating the local system to the peer to "
+"<name>.\n"
+"config: user <name>"
+msgstr ""
+"Definir o nome usado para autenticar o sistema local ao par como <nome>.\n"
+"config: user <nome>"
+
+#: ../properties/nm-pptp-dialog.ui.h:44
+msgid "Password passed to PPTP when prompted for it."
+msgstr "Senha passada para PPTP quando lhe for solicitado."
+
+#: ../properties/nm-pptp-dialog.ui.h:45
+msgid "Show password"
+msgstr "Mostrar senha"
+
+#: ../properties/nm-pptp-dialog.ui.h:46
+#| msgid "NT Domain:"
+msgid "NT Domain"
+msgstr "Domínio NT"
+
+#: ../properties/nm-pptp-dialog.ui.h:47
 msgid ""
 "Append the domain name <domain> to the local host name for authentication "
 "purposes.\n"
@@ -437,38 +480,16 @@ msgstr ""
 "de autenticação.\n"
 "config: domain <domínio>"
 
-#: ../properties/nm-pptp-dialog.ui.h:40
-msgid "NT Domain:"
-msgstr "Domínio NT:"
+#: ../properties/nm-pptp-dialog.ui.h:49
+#| msgid "Ad_vanced…"
+msgid "Advance_d…"
+msgstr "Avança_do…"
 
-#: ../properties/nm-pptp-dialog.ui.h:41
-msgid "Show password"
-msgstr "Mostrar senha"
+#~ msgid "Echo"
+#~ msgstr "Echo"
 
-#: ../properties/nm-pptp-dialog.ui.h:42
-msgid "Password passed to PPTP when prompted for it."
-msgstr "Senha passada para PPTP quando lhe for solicitado."
-
-#: ../properties/nm-pptp-dialog.ui.h:43
-msgid "Password:"
-msgstr "Senha:"
-
-#: ../properties/nm-pptp-dialog.ui.h:44
-msgid ""
-"Set the name used for authenticating the local system to the peer to "
-"<name>.\n"
-"config: user <name>"
-msgstr ""
-"Definir o nome usado para autenticar o sistema local ao par como <nome>.\n"
-"config: user <nome>"
-
-#: ../properties/nm-pptp-dialog.ui.h:46
-msgid "User name:"
-msgstr "Nome de usuário:"
-
-#: ../properties/nm-pptp-dialog.ui.h:47
-msgid "Ad_vanced…"
-msgstr "A_vançado…"
+#~ msgid "Password:"
+#~ msgstr "Senha:"
 
 #~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 #~ msgstr ""
