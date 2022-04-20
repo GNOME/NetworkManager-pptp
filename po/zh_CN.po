@@ -12,16 +12,16 @@ msgstr ""
 "Project-Id-Version: NetworkManager-pptp master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
 "issues\n"
-"POT-Creation-Date: 2020-08-30 01:05+0000\n"
-"PO-Revision-Date: 2021-11-07 14:53+0800\n"
-"Last-Translator: Dingzhong Chen <wsxy162@gmail.com>\n"
+"POT-Creation-Date: 2022-04-15 17:29+0000\n"
+"PO-Revision-Date: 2022-04-20 09:45-0400\n"
+"Last-Translator: Luke Luo <njlyf2011@hotmail.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
-"X-Generator: Gtranslator 40.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
 msgid "PPTP VPN client"
@@ -55,39 +55,39 @@ msgstr "您需要进行身份验证才能访问虚拟专用网络“%s”。"
 msgid "Authenticate VPN"
 msgstr "验证 VPN"
 
-#: ../auth-dialog/main.c:157
+#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
 msgid "Password"
 msgstr "密码"
 
-#: ../properties/advanced-dialog.c:169
+#: ../properties/advanced-dialog.c:170
 msgid "All Available (Default)"
 msgstr "全部可用（默认）"
 
-#: ../properties/advanced-dialog.c:173
+#: ../properties/advanced-dialog.c:174
 msgid "128-bit (most secure)"
 msgstr "128 位（最安全的）"
 
-#: ../properties/advanced-dialog.c:182
+#: ../properties/advanced-dialog.c:183
 msgid "40-bit (less secure)"
 msgstr "40 位（不太安全）"
 
-#: ../properties/advanced-dialog.c:286
+#: ../properties/advanced-dialog.c:287
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:299
+#: ../properties/advanced-dialog.c:300
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:311
+#: ../properties/advanced-dialog.c:312
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:323
+#: ../properties/advanced-dialog.c:324
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:336
+#: ../properties/advanced-dialog.c:337
 msgid "EAP"
 msgstr "EAP"
 
@@ -263,14 +263,26 @@ msgid "PPTP Advanced Options"
 msgstr "PPTP 高级选项"
 
 #: ../properties/nm-pptp-dialog.ui.h:3
+msgid "Advanced Properties"
+msgstr "PPTP 属性"
+
+#: ../properties/nm-pptp-dialog.ui.h:4
+msgid "_Cancel"
+msgstr "取消(_C)"
+
+#: ../properties/nm-pptp-dialog.ui.h:5
+msgid "_Apply"
+msgstr "应用(_A)"
+
+#: ../properties/nm-pptp-dialog.ui.h:6
 msgid "Authentication"
 msgstr "身份验证"
 
-#: ../properties/nm-pptp-dialog.ui.h:4
+#: ../properties/nm-pptp-dialog.ui.h:7
 msgid "Allow the following authentication methods:"
 msgstr "允许以下验证方法："
 
-#: ../properties/nm-pptp-dialog.ui.h:5
+#: ../properties/nm-pptp-dialog.ui.h:8
 msgid ""
 "Allow/disable authentication methods.\n"
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
@@ -278,40 +290,40 @@ msgstr ""
 "允许/禁用身份验证方法。\n"
 "配置：refuse-pap、refuse-chap、refuse-mschap、refuse-mschap-v2、refuse-eap"
 
-#: ../properties/nm-pptp-dialog.ui.h:7
+#: ../properties/nm-pptp-dialog.ui.h:10
 msgid "Security and Compression"
 msgstr "安全性及压缩"
 
-#: ../properties/nm-pptp-dialog.ui.h:8
+#: ../properties/nm-pptp-dialog.ui.h:11
 msgid "Use _Point-to-Point encryption (MPPE)"
 msgstr "使用点到点加密（MPPE）(_P)"
 
-#: ../properties/nm-pptp-dialog.ui.h:9
+#: ../properties/nm-pptp-dialog.ui.h:12
 msgid ""
 "Note: MPPE encryption is only available with MSCHAP authentication methods. "
 "To enable this checkbox, select one or more of the MSCHAP authentication "
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
-"注意：MPPE 加密仅在使用 MSCHAP 验证方式时可用。要启用此选项，请选择 MSCHAP 验"
-"证方式之中的一个或多个：MSCHAP 或 MSCHAPv2。"
+"注意：MPPE 加密仅在使用 MSCHAP 验证方式时可用。要启用此选项，请选择 MSCHAP "
+"验证方式之中的一个或多个：MSCHAP 或 MSCHAPv2。"
 
-#: ../properties/nm-pptp-dialog.ui.h:10
+#: ../properties/nm-pptp-dialog.ui.h:13
 msgid "_Security:"
 msgstr "安全性(_S)："
 
-#: ../properties/nm-pptp-dialog.ui.h:11
+#: ../properties/nm-pptp-dialog.ui.h:14
 msgid ""
 "Require the use of MPPE, with 40/128-bit encryption or all.\n"
-"config: require-mppe, require-mppe-128 or require-mppe-40"
+"    config: require-mppe, require-mppe-128 or require-mppe-40"
 msgstr ""
 "需要使用 40/128 位或全部 MPPE 加密。\n"
-"配置：require-mppe、require-mppe-128 或者 require-mppe-40"
+"    配置：require-mppe、require-mppe-128 或者 require-mppe-40"
 
-#: ../properties/nm-pptp-dialog.ui.h:13
+#: ../properties/nm-pptp-dialog.ui.h:16
 msgid "Allow st_ateful encryption"
 msgstr "允许有状态加密(_A)"
 
-#: ../properties/nm-pptp-dialog.ui.h:14
+#: ../properties/nm-pptp-dialog.ui.h:17
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first.\n"
 "config: mppe-stateful (when checked)"
@@ -319,11 +331,11 @@ msgstr ""
 "允许 MPPE 使用有状态模式。仍会优先尝试无状态模式。\n"
 "配置：mppe-stateful（选中时）"
 
-#: ../properties/nm-pptp-dialog.ui.h:16
+#: ../properties/nm-pptp-dialog.ui.h:19
 msgid "Allow _BSD data compression"
 msgstr "允许 _BSD 数据压缩"
 
-#: ../properties/nm-pptp-dialog.ui.h:17
+#: ../properties/nm-pptp-dialog.ui.h:20
 msgid ""
 "Allow/disable BSD-Compress compression.\n"
 "config: nobsdcomp (when unchecked)"
@@ -331,11 +343,11 @@ msgstr ""
 "允许/禁用  BSD-Compress 压缩。\n"
 "配置：nobsdcomp（未选中时）"
 
-#: ../properties/nm-pptp-dialog.ui.h:19
+#: ../properties/nm-pptp-dialog.ui.h:22
 msgid "Allow _Deflate data compression"
 msgstr "允许 _Deflate 数据压缩"
 
-#: ../properties/nm-pptp-dialog.ui.h:20
+#: ../properties/nm-pptp-dialog.ui.h:23
 msgid ""
 "Allow/disable Deflate compression.\n"
 "config: nodeflate (when unchecked)"
@@ -343,11 +355,11 @@ msgstr ""
 "允许/禁用 Deflate 压缩。\n"
 "配置：nodeflate（未选中时）"
 
-#: ../properties/nm-pptp-dialog.ui.h:22
+#: ../properties/nm-pptp-dialog.ui.h:25
 msgid "Use TCP _header compression"
 msgstr "使用 TCP 首部压缩(_H)"
 
-#: ../properties/nm-pptp-dialog.ui.h:23
+#: ../properties/nm-pptp-dialog.ui.h:26
 msgid ""
 "Allow/disable Van Jacobson style TCP/IP header compression in both the "
 "transmit and the receive directions.\n"
@@ -356,15 +368,15 @@ msgstr ""
 "允许/禁用在发送和接受方向启用 Van Jacobson 样式 TCP/IP 首部压缩。\n"
 "配置：novj（未选中时）"
 
-#: ../properties/nm-pptp-dialog.ui.h:25
-msgid "Echo"
-msgstr "回响"
+#: ../properties/nm-pptp-dialog.ui.h:28
+msgid "Misc"
+msgstr "杂项"
 
-#: ../properties/nm-pptp-dialog.ui.h:26
+#: ../properties/nm-pptp-dialog.ui.h:29
 msgid "Send PPP _echo packets"
 msgstr "发送 PPP 回响包(_E)"
 
-#: ../properties/nm-pptp-dialog.ui.h:27
+#: ../properties/nm-pptp-dialog.ui.h:30
 msgid ""
 "Send LCP echo-requests to find out whether peer is alive.\n"
 "config: lcp-echo-failure and lcp-echo-interval"
@@ -372,27 +384,27 @@ msgstr ""
 "发送 LCP echo-requests 来检查对等连接是否存活。\n"
 "配置：lcp-echo-failure 和 lcp-echo-interval"
 
-#: ../properties/nm-pptp-dialog.ui.h:29
-msgid "Misc"
-msgstr "杂项"
-
-#: ../properties/nm-pptp-dialog.ui.h:30
+#: ../properties/nm-pptp-dialog.ui.h:32
 msgid "Use custom _unit number:"
 msgstr "使用自定义单元数目(_U)："
 
-#: ../properties/nm-pptp-dialog.ui.h:31
+#: ../properties/nm-pptp-dialog.ui.h:33
 msgid ""
 "Enable custom index for ppp<n> device name.\n"
-"config: unit <n>"
+"    config: unit <n>"
 msgstr ""
 "为 ppp<n> 设备名启用自定义索引。\n"
 "配置：unit <n>"
 
-#: ../properties/nm-pptp-dialog.ui.h:33
+#: ../properties/nm-pptp-dialog.ui.h:35
 msgid "General"
 msgstr "常规"
 
-#: ../properties/nm-pptp-dialog.ui.h:34
+#: ../properties/nm-pptp-dialog.ui.h:36
+msgid "_Gateway"
+msgstr "网关(_G)"
+
+#: ../properties/nm-pptp-dialog.ui.h:37
 msgid ""
 "PPTP server IP or name.\n"
 "config: the first parameter of pptp"
@@ -400,40 +412,15 @@ msgstr ""
 "PPTP 服务器 IP 或名称。\n"
 "配置：pptp 的第一项参数"
 
-#: ../properties/nm-pptp-dialog.ui.h:36
-msgid "_Gateway:"
-msgstr "网关(_G)："
-
-#: ../properties/nm-pptp-dialog.ui.h:37
+#: ../properties/nm-pptp-dialog.ui.h:39
 msgid "Optional"
 msgstr "可选项"
 
-#: ../properties/nm-pptp-dialog.ui.h:38
-msgid ""
-"Append the domain name <domain> to the local host name for authentication "
-"purposes.\n"
-"config: domain <domain>"
-msgstr ""
-"以验证目的添加域名到本地主机名。\n"
-"配置：domain <域名>"
-
 #: ../properties/nm-pptp-dialog.ui.h:40
-msgid "NT Domain:"
-msgstr "NT 域："
+msgid "User name"
+msgstr "用户名"
 
 #: ../properties/nm-pptp-dialog.ui.h:41
-msgid "Show password"
-msgstr "显示密码"
-
-#: ../properties/nm-pptp-dialog.ui.h:42
-msgid "Password passed to PPTP when prompted for it."
-msgstr "当被提示时传递给 PPTP 的密码。"
-
-#: ../properties/nm-pptp-dialog.ui.h:43
-msgid "Password:"
-msgstr "密码："
-
-#: ../properties/nm-pptp-dialog.ui.h:44
 msgid ""
 "Set the name used for authenticating the local system to the peer to "
 "<name>.\n"
@@ -442,13 +429,36 @@ msgstr ""
 "设置用于验证本地系统对等连接到的 <名称>。\n"
 "配置：user <名称>"
 
+#: ../properties/nm-pptp-dialog.ui.h:44
+msgid "Password passed to PPTP when prompted for it."
+msgstr "当被提示时传递给 PPTP 的密码。"
+
+#: ../properties/nm-pptp-dialog.ui.h:45
+msgid "Show password"
+msgstr "显示密码"
+
 #: ../properties/nm-pptp-dialog.ui.h:46
-msgid "User name:"
-msgstr "用户名(_U)："
+msgid "NT Domain"
+msgstr "NT 域"
 
 #: ../properties/nm-pptp-dialog.ui.h:47
-msgid "Ad_vanced…"
-msgstr "高级(_V)…"
+msgid ""
+"Append the domain name <domain> to the local host name for authentication "
+"purposes.\n"
+"config: domain <domain>"
+msgstr ""
+"以验证目的添加域名到本地主机名。\n"
+"配置：domain <域名>"
+
+#: ../properties/nm-pptp-dialog.ui.h:49
+msgid "Advance_d…"
+msgstr "高级(_D)…"
+
+#~ msgid "Echo"
+#~ msgstr "回响"
+
+#~ msgid "Password:"
+#~ msgstr "密码："
 
 #~ msgid "<b>Echo</b>"
 #~ msgstr "<b>回响</b>"
