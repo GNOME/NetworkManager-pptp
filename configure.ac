@@ -4,7 +4,7 @@ AC_INIT(NetworkManager-pptp,
         1.2.11,
         https://gitlab.gnome.org/GNOME/NetworkManager-pptp/issues,
         NetworkManager-pptp)
-AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-xz -Wno-portability])
+AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-xz -Wno-portability])
 AM_MAINTAINER_MODE
 AM_SILENT_RULES([yes])
 
