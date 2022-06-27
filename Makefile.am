@@ -273,7 +273,9 @@ if WITH_GNOME
 appdata_DATA = $(appdata_files)
 endif
 appdata_in_files = appdata/network-manager-pptp.metainfo.xml.in
-@INTLTOOL_XML_RULE@
+
+appdata/network-manager-pptp.metainfo.xml: appdata/network-manager-pptp.metainfo.xml.in
+	$(AM_V_GEN)$(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 
 nm-pptp-service.name: $(srcdir)/nm-pptp-service.name.in
 	$(AM_V_GEN) sed -e 's|[@]LIBEXECDIR[@]|$(libexecdir)|g' \
@@ -284,18 +286,10 @@ EXTRA_DIST += \
 	nm-pptp-service.name.in \
 	$(dbusservice_DATA) \
 	$(appdata_in_files) \
-	$(appdata_files) \
-	intltool-extract.in \
-	intltool-merge.in \
-	intltool-update.in
+	$(appdata_files)
 
 CLEANFILES += \
 	$(nmvpnservice_DATA) \
 	$(appdata_files)
-
-DISTCLEANFILES = \
-	intltool-extract \
-	intltool-merge \
-	intltool-update
 
 ACLOCAL_AMFLAGS = -I m4
