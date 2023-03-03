@@ -23,12 +23,6 @@
 #include <config.h>
 #define ___CONFIG_H__
 
-/* pppd headers *sigh* */
-#include <pppd/pppd.h>
-#include <pppd/fsm.h>
-#include <pppd/ipcp.h>
-
-#include "nm-default.h"
 
 #include <string.h>
 #include <stdlib.h>
@@ -37,15 +31,17 @@
 #include <arpa/inet.h>
 #include <dlfcn.h>
 
-#include "nm-pptp-service.h"
-#include "nm-ppp-status.h"
+#include "nm-pptp-pppd-status.h"
+#include "nm-pptp-pppd-compat.h"
 
+#include "nm-default.h"
+#include "nm-pptp-service.h"
 #include "nm-utils/nm-shared-utils.h"
 #include "nm-utils/nm-vpn-plugin-macros.h"
 
 int plugin_init (void);
 
-char pppd_version[] = VERSION;
+char pppd_version[] = PPPD_VERSION;
 
 /*****************************************************************************/
 
@@ -158,7 +154,7 @@ nm_phasechange (void *data, int arg)
 static void
 nm_ip_up (void *data, int arg)
 {
-	guint32 pppd_made_up_address = htonl (0x0a404040 + ifunit);
+	guint32 pppd_made_up_address = htonl (0x0a404040 + ppp_ifunit());
 	ipcp_options opts = ipcp_gotoptions[0];
 	ipcp_options peer_opts = ipcp_hisoptions[0];
 	GVariantBuilder builder;
@@ -177,7 +173,7 @@ nm_ip_up (void *data, int arg)
 
 	g_variant_builder_add (&builder, "{sv}",
 	                       NM_VPN_PLUGIN_IP4_CONFIG_TUNDEV,
-	                       g_variant_new_string (ifname));
+	                       g_variant_new_string (ppp_ifname()));
 
 	g_variant_builder_add (&builder, "{sv}",
 	                       NM_VPN_PLUGIN_IP4_CONFIG_ADDRESS,
@@ -354,8 +350,9 @@ plugin_init (void)
 	pap_passwd_hook = get_credentials;
 	pap_check_hook = get_pap_check;
 
-	add_notifier (&phasechange, nm_phasechange, NULL);
-	add_notifier (&ip_up_notifier, nm_ip_up, NULL);
-	add_notifier (&exitnotify, nm_exit_notify, NULL);
+	ppp_add_notify (NF_PHASE_CHANGE, nm_phasechange, NULL);
+	ppp_add_notify (NF_IP_UP, nm_ip_up, NULL);
+	ppp_add_notify (NF_EXIT, nm_exit_notify, NULL);
+
 	return 0;
 }

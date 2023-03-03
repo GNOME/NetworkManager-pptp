@@ -91,7 +91,7 @@ libexec_PROGRAMS += src/nm-pptp-service
 src_nm_pptp_service_SOURCES = \
 	$(shared_sources) \
 	shared/nm-service-defines.h \
-	src/nm-ppp-status.h \
+	src/nm-pptp-pppd-status.h \
 	src/nm-pptp-service.h \
 	src/nm-pptp-service.c
 src_nm_pptp_service_CPPFLAGS = $(src_cppflags)
@@ -108,7 +108,8 @@ pppd_plugin_LTLIBRARIES = src/nm-pptp-pppd-plugin.la
 src_nm_pptp_pppd_plugin_la_SOURCES = \
 	$(shared_sources) \
 	src/nm-pptp-pppd-plugin.c \
-	src/nm-ppp-status.h
+	src/nm-pptp-pppd-compat.h \
+	src/nm-pptp-pppd-status.h
 src_nm_pptp_pppd_plugin_la_CPPFLAGS = $(src_cppflags)
 src_nm_pptp_pppd_plugin_la_LDFLAGS = \
 	-module -avoid-version

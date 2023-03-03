@@ -43,7 +43,7 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 
-#include "nm-ppp-status.h"
+#include "nm-pptp-pppd-status.h"
 #include "nm-pptp-pppd-service-dbus.h"
 #include "nm-utils/nm-shared-utils.h"
 #include "nm-utils/nm-vpn-plugin-macros.h"
