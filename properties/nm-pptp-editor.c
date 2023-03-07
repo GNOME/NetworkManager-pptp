@@ -508,8 +508,6 @@ pptp_plugin_ui_widget_interface_init (NMVpnEditorInterface *iface_class)
 
 /*****************************************************************************/
 
-#ifndef NM_VPN_OLD
-
 #include "nm-pptp-editor-plugin.h"
 
 G_MODULE_EXPORT NMVpnEditor *
@@ -521,5 +519,3 @@ nm_vpn_editor_factory_pptp (NMVpnEditorPlugin *editor_plugin,
 
 	return nm_vpn_plugin_ui_widget_interface_new (connection, error);
 }
-#endif
-

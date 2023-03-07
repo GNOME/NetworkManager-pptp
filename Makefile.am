@@ -34,6 +34,7 @@ BUILT_SOURCES =
 shared_sources = \
 	shared/nm-default.h \
 	shared/nm-utils/gsystem-local-alloc.h \
+	shared/nm-utils/nm-glib.h \
 	shared/nm-utils/nm-macros-internal.h \
 	shared/nm-utils/nm-shared-utils.c \
 	shared/nm-utils/nm-shared-utils.h
@@ -162,7 +163,6 @@ CLEANFILES += \
 EXTRA_DIST += \
 	properties/nm-pptp-dialog.ui \
 	properties/gresource.xml \
-	properties/libnm-pptp-properties.ver \
 	properties/libnm-vpn-plugin-pptp.ver \
 	properties/libnm-vpn-plugin-pptp-editor.ver
 
@@ -242,37 +242,6 @@ properties_libnm_gtk4_vpn_plugin_pptp_editor_la_LDFLAGS = \
 
 ###############################################################################
 
-if WITH_LIBNM_GLIB
-plugin_LTLIBRARIES += properties/libnm-pptp-properties.la
-endif
-
-properties_libnm_pptp_properties_la_SOURCES = \
-	shared/nm-utils/nm-glib.h \
-	$(plugin_sources) \
-	$(editor_sources)
-nodist_properties_libnm_pptp_properties_la_SOURCES = \
-	properties/resources.c \
-	properties/resources.h
-properties_libnm_pptp_properties_la_CFLAGS = \
-	$(GLIB_CFLAGS) \
-	$(GTK_CFLAGS) \
-	$(LIBNM_GLIB_CFLAGS) \
-	$(LIBNM_GTK_CFLAGS)
-properties_libnm_pptp_properties_la_CPPFLAGS = \
-	-DNETWORKMANAGER_COMPILATION=NM_NETWORKMANAGER_COMPILATION_LIB \
-	-DNM_VPN_OLD \
-	$(properties_cppflags)
-properties_libnm_pptp_properties_la_LIBADD = \
-	$(GLIB_LIBS) \
-	$(GTK_LIBS) \
-	$(LIBNM_GLIB_LIBS) \
-	$(LIBNM_GLIB_LIBS)
-properties_libnm_pptp_properties_la_LDFLAGS = \
-	-avoid-version \
-	-Wl,--version-script="$(srcdir)/properties/libnm-pptp-properties.ver"
-
-###############################################################################
-
 if WITH_GNOME
 libexec_PROGRAMS += auth-dialog/nm-pptp-auth-dialog
 endif
@@ -296,21 +265,6 @@ auth_dialog_nm_pptp_auth_dialog_LDADD = \
 	$(LIBSECRET_LIBS)
 
 ###############################################################################
-
-if WITH_LIBNM_GLIB
-# Install a file with full path to plugins for an old gnome-shell
-# https://bugzilla.gnome.org/show_bug.cgi?id=693590
-install-data-hook:
-	mkdir -p $(DESTDIR)$(sysconfdir)/NetworkManager/VPN
-	sed -e "1s|^|# This file is obsoleted by a file in $(NM_VPN_SERVICE_DIR)\n\n|" \
-	    -e 's|[@]LIBEXECDIR[@]|$(libexecdir)|g' \
-	    -e 's|[@]PLUGINDIR[@]|@NM_PLUGIN_DIR@|g' \
-	    <$(srcdir)/nm-pptp-service.name.in \
-	    >$(DESTDIR)$(sysconfdir)/NetworkManager/VPN/nm-pptp-service.name
-
-uninstall-hook:
-	 rm -f $(DESTDIR)$(sysconfdir)/NetworkManager/VPN/nm-pptp-service.name
-endif
 
 appdatadir = $(datadir)/metainfo
 appdata_files = $(appdata_in_files:.xml.in=.xml)
