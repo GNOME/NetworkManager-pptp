@@ -12,6 +12,7 @@ AC_CONFIG_MACRO_DIR([m4])
 
 AC_CONFIG_HEADERS([config.h])
 
+dnl Define _SYSTEM_EXTENSIONS for various things like strcasestr()
 AC_USE_SYSTEM_EXTENSIONS
 
 dnl
@@ -19,7 +20,10 @@ dnl Require programs
 dnl
 AC_PROG_CC
 AM_PROG_CC_C_O
+AC_PROG_CPP
+AC_PROG_EGREP
 AC_PROG_INSTALL
+AC_PROG_GCC_TRADITIONAL
 LT_INIT([disable-static])
 
 AC_PATH_PROG(GLIB_COMPILE_RESOURCES, glib-compile-resources)
