@@ -13,16 +13,16 @@ msgstr ""
 "Project-Id-Version: network-manager-pptp main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
 "issues\n"
-"POT-Creation-Date: 2022-03-13 12:29+0000\n"
-"PO-Revision-Date: 2022-03-20 22:47+0300\n"
-"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"POT-Creation-Date: 2022-07-08 04:07+0000\n"
+"PO-Revision-Date: 2023-03-06 23:46+0300\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-POOTLE-MTIME: 1434044079.000000\n"
 
 #: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
@@ -287,14 +287,14 @@ msgstr "Kimlik Doğrulama"
 
 #: ../properties/nm-pptp-dialog.ui.h:7
 msgid "Allow the following authentication methods:"
-msgstr "Aşağıdaki kimlik denetleme yöntemlerine izin ver:"
+msgstr "Aşağıdaki kimlik doğrulama yöntemlerine izin ver:"
 
 #: ../properties/nm-pptp-dialog.ui.h:8
 msgid ""
 "Allow/disable authentication methods.\n"
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 msgstr ""
-"Kimlik doğrulama yöntemlerine izin ver/kapat.\n"
+"Kimlik doğrulama yöntemlerine izin ver/devre dışı bırak.\n"
 "yapılandırma: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, "
 "refuse-eap"
 
