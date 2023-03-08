@@ -12,16 +12,17 @@ AC_CONFIG_MACRO_DIR([m4])
 
 AC_CONFIG_HEADERS([config.h])
 
+AC_USE_SYSTEM_EXTENSIONS
+
 dnl
 dnl Require programs
 dnl
 AC_PROG_CC
 AM_PROG_CC_C_O
 AC_PROG_INSTALL
-AC_PROG_LIBTOOL
+LT_INIT([disable-static])
 AC_PATH_PROG(GLIB_COMPILE_RESOURCES, glib-compile-resources)
 
-AC_GNU_SOURCE
 
 AC_CHECK_PROG([has_file], file, yes, no)
 if test x$has_file = xno ; then
@@ -36,7 +37,6 @@ fi
 dnl
 dnl Required headers
 dnl
-AC_HEADER_STDC
 AC_CHECK_HEADERS(fcntl.h paths.h sys/ioctl.h sys/time.h syslog.h unistd.h)
 
 AC_CHECK_HEADERS(pppd/pppd.h,,
@@ -56,7 +56,6 @@ dnl Checks for typedefs, structures, and compiler characteristics.
 dnl
 AC_TYPE_MODE_T
 AC_TYPE_PID_T
-AC_HEADER_TIME
 
 dnl
 dnl Checks for library functions.
@@ -93,8 +92,10 @@ GETTEXT_PACKAGE=NetworkManager-pptp
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
 
-IT_PROG_INTLTOOL([0.35])
-AM_GLIB_GNU_GETTEXT
+AM_GNU_GETTEXT([external])
+# Remove AM_GNU_GETTEXT_VERSION once autoreconf supports REQUIRE_VERSION
+AM_GNU_GETTEXT_VERSION([0.19])
+AM_GNU_GETTEXT_REQUIRE_VERSION([0.19])
 
 # gio-unix will require glib and gio
 PKG_CHECK_MODULES(GLIB, gmodule-2.0 gio-unix-2.0 >= 2.34)
