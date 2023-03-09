@@ -1,4 +1,19 @@
 ==========================================================
+NetworkManager-pptp-1.2.12
+Overview of changes since NetworkManager-pptp-1.2.10
+==========================================================
+
+This is a new stable release of NetworkManager-pptp.  Notable changes include:
+
+* Dropped the libnm-glib support (obsolete since 2014).
+* Add support for building with upcoming pppd version (2.5.0).
+* Improvement to the build & test system.
+* Updates to the Basque, Brazilian Portuguese, Catalan, Chinese, Croatian,
+  Czech, Danish, Dutch, Georgian, German, Hungarian, Indonesian,
+  Lithuanian, Polish, Serbian, Slovenian, Spanish, Swedish, Turkish and
+  Ukrainian translations.
+
+==========================================================
 NetworkManager-pptp-1.2.10
 Overview of changes since NetworkManager-pptp-1.2.8
 ==========================================================
