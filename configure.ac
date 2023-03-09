@@ -1,7 +1,7 @@
 AC_PREREQ(2.59)
 
 AC_INIT(NetworkManager-pptp,
-        1.2.11,
+        1.2.12,
         https://gitlab.gnome.org/GNOME/NetworkManager-pptp/issues,
         NetworkManager-pptp)
 AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-xz -Wno-portability])
