@@ -10,39 +10,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
-"product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2017-08-03 13:59+0000\n"
-"PO-Revision-Date: 2017-12-20 00:24+0300\n"
-"Last-Translator: Stas Solovey <whats_up@tut.by>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
+"issues\n"
+"POT-Creation-Date: 2023-03-08 10:19+0000\n"
+"PO-Revision-Date: 2023-04-15 20:59+0300\n"
+"Last-Translator: Aleksandr Melman <Alexmelman88@gmail.com>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.0.5\n"
-
-#: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
-msgid "PPTP VPN client"
-msgstr "PPTP VPN клиент"
-
-#: ../appdata/network-manager-pptp.metainfo.xml.in.h:2
-msgid "Client for PPTP virtual private networks"
-msgstr "Клиент для виртуальных приватных сетей PPTP"
-
-#: ../appdata/network-manager-pptp.metainfo.xml.in.h:3
-msgid "Support for configuring PPTP virtual private network connections."
-msgstr "Поддержка настройки приватных сетевых соединений PPTP."
-
-#: ../appdata/network-manager-pptp.metainfo.xml.in.h:4
-msgid "Compatible with various PPTP servers including Microsoft."
-msgstr "Совместим с различными серверами PPTP, включая Microsoft."
-
-#: ../appdata/network-manager-pptp.metainfo.xml.in.h:5
-msgid "The NetworkManager Developers"
-msgstr "Разработчики NetworkManager"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
@@ -53,51 +33,51 @@ msgid "You need to authenticate to access the Virtual Private Network “%s”."
 msgstr ""
 "Необходима аутентификация для доступа к виртуальной приватной сети «%s»."
 
-#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
+#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:176
 msgid "Authenticate VPN"
 msgstr "Аутентификация VPN"
 
-#: ../auth-dialog/main.c:157 ../properties/nm-pptp-dialog.ui.h:43
-msgid "Password:"
-msgstr "Пароль:"
+#: ../auth-dialog/main.c:157
+msgid "Password"
+msgstr "Пароль"
 
-#: ../properties/advanced-dialog.c:169
+#: ../properties/advanced-dialog.c:170
 msgid "All Available (Default)"
 msgstr "Все доступные (по умолчанию)"
 
-#: ../properties/advanced-dialog.c:173
+#: ../properties/advanced-dialog.c:174
 msgid "128-bit (most secure)"
 msgstr "128-бит (наиболее защищённое)"
 
-#: ../properties/advanced-dialog.c:182
+#: ../properties/advanced-dialog.c:183
 msgid "40-bit (less secure)"
 msgstr "40-бит (менее защищённое)"
 
-#: ../properties/advanced-dialog.c:286
+#: ../properties/advanced-dialog.c:287
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:299
+#: ../properties/advanced-dialog.c:300
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:311
+#: ../properties/advanced-dialog.c:312
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:323
+#: ../properties/advanced-dialog.c:324
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:336
+#: ../properties/advanced-dialog.c:337
 msgid "EAP"
 msgstr "EAP"
 
-#: ../properties/nm-pptp-editor-plugin.c:34
+#: ../properties/nm-pptp-editor-plugin.c:29
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Туннельный протокол типа точка-точка (PPTP)"
 
-#: ../properties/nm-pptp-editor-plugin.c:35
+#: ../properties/nm-pptp-editor-plugin.c:30
 msgid "Compatible with Microsoft and other PPTP VPN servers."
 msgstr "Совместим с серверами Microsoft и другими серверами PPTP VPN."
 
@@ -140,22 +120,27 @@ msgstr ""
 "значение «%s» типа «%s» недействительно или вне диапазона для свойства «%s» "
 "типа «%s»"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:80
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:69
+#, c-format
+msgid "unable to get editor plugin name: %s"
+msgstr "не удалось получить имя модуля редактора: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:103
 #, c-format
 msgid "missing plugin file \"%s\""
 msgstr "отсутствует файл плагина «%s»"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:86
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:109
 #, c-format
 msgid "cannot load editor plugin: %s"
 msgstr "невозможно загрузить плагин редактора: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:95
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:118
 #, c-format
 msgid "cannot load factory %s from plugin: %s"
 msgstr "невозможно загрузить прошивку %s из плагина: %s"
 
-#: ../shared/nm-utils/nm-vpn-plugin-utils.c:121
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:144
 msgid "unknown error creating editor instance"
 msgstr "неизвестная ошибка создания экземпляра редактора"
 
@@ -205,50 +190,50 @@ msgstr "Не удалось найти исполняемый файл клие�
 msgid "Missing VPN gateway."
 msgstr "Отсутствует шлюз VPN."
 
-#: ../src/nm-pptp-service.c:629
+#: ../src/nm-pptp-service.c:635
 msgid "Could not find the pppd binary."
 msgstr "Не удалось найти исполняемый файл pppd."
 
-#: ../src/nm-pptp-service.c:689
+#: ../src/nm-pptp-service.c:695
 msgid "Missing VPN username."
 msgstr "Отсутствует имя пользователя VPN."
 
-#: ../src/nm-pptp-service.c:698
+#: ../src/nm-pptp-service.c:704
 msgid "Missing or invalid VPN password."
 msgstr "Пароль VPN отсутствует или неверный."
 
-#: ../src/nm-pptp-service.c:804
+#: ../src/nm-pptp-service.c:810
 #, c-format
 msgid "couldn’t convert PPTP VPN gateway IP address “%s” (%d)"
 msgstr "не удалось преобразовать IP-адрес шлюза PPTP VPN «%s» (%d)"
 
-#: ../src/nm-pptp-service.c:822
+#: ../src/nm-pptp-service.c:828
 #, c-format
 msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
 msgstr "не удалось найти IP-адрес шлюза PPTP VPN «%s» (%d)"
 
-#: ../src/nm-pptp-service.c:846
+#: ../src/nm-pptp-service.c:852
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway “%s”"
 msgstr "не получено приемлемых адресов для шлюза PPTP VPN «%s»"
 
-#: ../src/nm-pptp-service.c:875
+#: ../src/nm-pptp-service.c:881
 msgid "Invalid or missing PPTP gateway."
 msgstr "Шлюз PPTP отсутствует или неверный."
 
-#: ../src/nm-pptp-service.c:1123
+#: ../src/nm-pptp-service.c:1129
 msgid "Don’t quit when VPN connection terminates"
 msgstr "Не завершать работу при отключении VPN"
 
-#: ../src/nm-pptp-service.c:1124
+#: ../src/nm-pptp-service.c:1130
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr "Включить подробный режим отладки (могут отображаться пароли)"
 
-#: ../src/nm-pptp-service.c:1125
+#: ../src/nm-pptp-service.c:1131
 msgid "D-Bus name to use for this instance"
 msgstr "Имя D-Bus для использования в этом экземпляре"
 
-#: ../src/nm-pptp-service.c:1146
+#: ../src/nm-pptp-service.c:1152
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
@@ -256,201 +241,184 @@ msgstr ""
 "nm-pptp-service позволяет использовать PPTP VPN (совместимые с Microsoft и "
 "другими реализациями) в NetworkManager."
 
-#: ../properties/nm-pptp-dialog.ui.h:1
-msgid "Default"
-msgstr "По умолчанию"
+#~ msgid "PPTP VPN client"
+#~ msgstr "PPTP VPN клиент"
 
-#: ../properties/nm-pptp-dialog.ui.h:2
-msgid "PPTP Advanced Options"
-msgstr "Дополнительные параметры PPTP"
+#~ msgid "Client for PPTP virtual private networks"
+#~ msgstr "Клиент для виртуальных приватных сетей PPTP"
 
-#: ../properties/nm-pptp-dialog.ui.h:3
-msgid "Authentication"
-msgstr "Аутентификация"
+#~ msgid "Support for configuring PPTP virtual private network connections."
+#~ msgstr "Поддержка настройки приватных сетевых соединений PPTP."
 
-#: ../properties/nm-pptp-dialog.ui.h:4
-msgid "Allow the following authentication methods:"
-msgstr "Разрешить следующие методы аутентификации:"
+#~ msgid "Compatible with various PPTP servers including Microsoft."
+#~ msgstr "Совместим с различными серверами PPTP, включая Microsoft."
 
-#: ../properties/nm-pptp-dialog.ui.h:5
-msgid ""
-"Allow/disable authentication methods.\n"
-"config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
-msgstr ""
-"Разрешить/запретить методы аутентификации.\n"
-"config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
+#~ msgid "The NetworkManager Developers"
+#~ msgstr "Разработчики NetworkManager"
 
-#: ../properties/nm-pptp-dialog.ui.h:7
-msgid "Security and Compression"
-msgstr "Шифрование и сжатие"
+#~ msgid "Default"
+#~ msgstr "По умолчанию"
 
-#: ../properties/nm-pptp-dialog.ui.h:8
-msgid "Use _Point-to-Point encryption (MPPE)"
-msgstr "Использовать шифрование _MPPE"
+#~ msgid "PPTP Advanced Options"
+#~ msgstr "Дополнительные параметры PPTP"
 
-#: ../properties/nm-pptp-dialog.ui.h:9
-msgid ""
-"Note: MPPE encryption is only available with MSCHAP authentication methods. "
-"To enable this checkbox, select one or more of the MSCHAP authentication "
-"methods: MSCHAP or MSCHAPv2."
-msgstr ""
-"Замечание: Шифрование MPPE доступно только с методами аутентификации MSCHAP. "
-"Чтобы включить данный пункт, выберите один или более методов аутентификации "
-"MSCHAP: MSCHAP или MSCHAPv2."
+#~ msgid "Authentication"
+#~ msgstr "Аутентификация"
 
-#: ../properties/nm-pptp-dialog.ui.h:10
-msgid "_Security:"
-msgstr "_Шифрование:"
+#~ msgid "Allow the following authentication methods:"
+#~ msgstr "Разрешить следующие методы аутентификации:"
 
-#: ../properties/nm-pptp-dialog.ui.h:11
-msgid ""
-"Require the use of MPPE, with 40/128-bit encryption or all.\n"
-"config: require-mppe, require-mppe-128 or require-mppe-40"
-msgstr ""
-"Требуется использовать MPPE с 40- или 128-битным шифрованием.\n"
-"config: require-mppe, require-mppe-128 или require-mppe-40"
+#~ msgid ""
+#~ "Allow/disable authentication methods.\n"
+#~ "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-"
+#~ "eap"
+#~ msgstr ""
+#~ "Разрешить/запретить методы аутентификации.\n"
+#~ "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-"
+#~ "eap"
 
-#: ../properties/nm-pptp-dialog.ui.h:13
-msgid "Allow st_ateful encryption"
-msgstr "Включить _Stateful Encryption"
+#~ msgid "Security and Compression"
+#~ msgstr "Шифрование и сжатие"
 
-#: ../properties/nm-pptp-dialog.ui.h:14
-msgid ""
-"Allow MPPE to use stateful mode. Stateless mode is still attempted first.\n"
-"config: mppe-stateful (when checked)"
-msgstr ""
-"Разрешить MPPE использовать контекстный (stateful) режим. Сначала "
-"производится попытка использовать простой (stateless) режим.\n"
-"config: mppe-stateful (если не выбрано)"
+#~ msgid "Use _Point-to-Point encryption (MPPE)"
+#~ msgstr "Использовать шифрование _MPPE"
 
-#: ../properties/nm-pptp-dialog.ui.h:16
-msgid "Allow _BSD data compression"
-msgstr "Использовать для данных сжатие _BSD"
+#~ msgid ""
+#~ "Note: MPPE encryption is only available with MSCHAP authentication "
+#~ "methods. To enable this checkbox, select one or more of the MSCHAP "
+#~ "authentication methods: MSCHAP or MSCHAPv2."
+#~ msgstr ""
+#~ "Замечание: Шифрование MPPE доступно только с методами аутентификации "
+#~ "MSCHAP. Чтобы включить данный пункт, выберите один или более методов "
+#~ "аутентификации MSCHAP: MSCHAP или MSCHAPv2."
 
-#: ../properties/nm-pptp-dialog.ui.h:17
-msgid ""
-"Allow/disable BSD-Compress compression.\n"
-"config: nobsdcomp (when unchecked)"
-msgstr ""
-"Разрешить/запретить сжатие BSD-Compress.\n"
-"config: nobsdcomp (если не выбрано)"
+#~ msgid "_Security:"
+#~ msgstr "_Шифрование:"
 
-#: ../properties/nm-pptp-dialog.ui.h:19
-msgid "Allow _Deflate data compression"
-msgstr "Использовать для данных сжатие _Deflate"
+#~ msgid ""
+#~ "Require the use of MPPE, with 40/128-bit encryption or all.\n"
+#~ "config: require-mppe, require-mppe-128 or require-mppe-40"
+#~ msgstr ""
+#~ "Требуется использовать MPPE с 40- или 128-битным шифрованием.\n"
+#~ "config: require-mppe, require-mppe-128 или require-mppe-40"
 
-#: ../properties/nm-pptp-dialog.ui.h:20
-msgid ""
-"Allow/disable Deflate compression.\n"
-"config: nodeflate (when unchecked)"
-msgstr ""
-"Разрешить/запретить сжатие Deflate.\n"
-"config: nodeflate (если не выбрано)"
+#~ msgid "Allow st_ateful encryption"
+#~ msgstr "Включить _Stateful Encryption"
 
-#: ../properties/nm-pptp-dialog.ui.h:22
-msgid "Use TCP _header compression"
-msgstr "Использовать сжатие _заголовков TCP"
+#~ msgid ""
+#~ "Allow MPPE to use stateful mode. Stateless mode is still attempted "
+#~ "first.\n"
+#~ "config: mppe-stateful (when checked)"
+#~ msgstr ""
+#~ "Разрешить MPPE использовать контекстный (stateful) режим. Сначала "
+#~ "производится попытка использовать простой (stateless) режим.\n"
+#~ "config: mppe-stateful (если не выбрано)"
 
-#: ../properties/nm-pptp-dialog.ui.h:23
-msgid ""
-"Allow/disable Van Jacobson style TCP/IP header compression in both the "
-"transmit and the receive directions.\n"
-"config: novj (when unchecked)"
-msgstr ""
-"Разрешить/запретить сжатие заголовков TCP/IP по методу Ван Якобсона в "
-"направлениях передачи и приёма.\n"
-"config: novj (если не выбрано)"
+#~ msgid "Allow _BSD data compression"
+#~ msgstr "Использовать для данных сжатие _BSD"
 
-#: ../properties/nm-pptp-dialog.ui.h:25
-msgid "Echo"
-msgstr "Эхо"
+#~ msgid ""
+#~ "Allow/disable BSD-Compress compression.\n"
+#~ "config: nobsdcomp (when unchecked)"
+#~ msgstr ""
+#~ "Разрешить/запретить сжатие BSD-Compress.\n"
+#~ "config: nobsdcomp (если не выбрано)"
 
-#: ../properties/nm-pptp-dialog.ui.h:26
-msgid "Send PPP _echo packets"
-msgstr "Посылать _эхо-пакеты PPP"
+#~ msgid "Allow _Deflate data compression"
+#~ msgstr "Использовать для данных сжатие _Deflate"
 
-#: ../properties/nm-pptp-dialog.ui.h:27
-msgid ""
-"Send LCP echo-requests to find out whether peer is alive.\n"
-"config: lcp-echo-failure and lcp-echo-interval"
-msgstr ""
-"Посылать эхо-запросы LCP, чтобы проверить состояние узла.\n"
-"config: lcp-echo-failure и lcp-echo-interval"
+#~ msgid ""
+#~ "Allow/disable Deflate compression.\n"
+#~ "config: nodeflate (when unchecked)"
+#~ msgstr ""
+#~ "Разрешить/запретить сжатие Deflate.\n"
+#~ "config: nodeflate (если не выбрано)"
 
-#: ../properties/nm-pptp-dialog.ui.h:29
-msgid "Misc"
-msgstr "Прочее"
+#~ msgid "Use TCP _header compression"
+#~ msgstr "Использовать сжатие _заголовков TCP"
 
-#: ../properties/nm-pptp-dialog.ui.h:30
-msgid "Use custom _unit number:"
-msgstr "Использовать пользовательский номер устройства:"
+#~ msgid ""
+#~ "Allow/disable Van Jacobson style TCP/IP header compression in both the "
+#~ "transmit and the receive directions.\n"
+#~ "config: novj (when unchecked)"
+#~ msgstr ""
+#~ "Разрешить/запретить сжатие заголовков TCP/IP по методу Ван Якобсона в "
+#~ "направлениях передачи и приёма.\n"
+#~ "config: novj (если не выбрано)"
 
-#: ../properties/nm-pptp-dialog.ui.h:31
-msgid ""
-"Enable custom index for ppp<n> device name.\n"
-"config: unit <n>"
-msgstr ""
-"Включить пользовательский индекс для ppp<n> имени устройства.\n"
-"config: номер <n>"
+#~ msgid "Echo"
+#~ msgstr "Эхо"
 
-#: ../properties/nm-pptp-dialog.ui.h:33
-msgid "General"
-msgstr "Общие"
+#~ msgid "Send PPP _echo packets"
+#~ msgstr "Посылать _эхо-пакеты PPP"
 
-#: ../properties/nm-pptp-dialog.ui.h:34
-msgid ""
-"PPTP server IP or name.\n"
-"config: the first parameter of pptp"
-msgstr ""
-"IP-адрес или имя PPTP-сервера.\n"
-"config: первый параметр pptp"
+#~ msgid ""
+#~ "Send LCP echo-requests to find out whether peer is alive.\n"
+#~ "config: lcp-echo-failure and lcp-echo-interval"
+#~ msgstr ""
+#~ "Посылать эхо-запросы LCP, чтобы проверить состояние узла.\n"
+#~ "config: lcp-echo-failure и lcp-echo-interval"
 
-#: ../properties/nm-pptp-dialog.ui.h:36
-msgid "_Gateway:"
-msgstr "_Шлюз:"
+#~ msgid "Misc"
+#~ msgstr "Прочее"
 
-#: ../properties/nm-pptp-dialog.ui.h:37
-msgid "Optional"
-msgstr "Дополнительные"
+#~ msgid "Use custom _unit number:"
+#~ msgstr "Использовать пользовательский номер устройства:"
 
-#: ../properties/nm-pptp-dialog.ui.h:38
-msgid ""
-"Append the domain name <domain> to the local host name for authentication "
-"purposes.\n"
-"config: domain <domain>"
-msgstr ""
-"Добавить имя домена <domain> к имени локального узла для аутентификации.\n"
-"config: domain <domain>"
+#~ msgid ""
+#~ "Enable custom index for ppp<n> device name.\n"
+#~ "config: unit <n>"
+#~ msgstr ""
+#~ "Включить пользовательский индекс для ppp<n> имени устройства.\n"
+#~ "config: номер <n>"
 
-#: ../properties/nm-pptp-dialog.ui.h:40
-msgid "NT Domain:"
-msgstr "NT-домен:"
+#~ msgid "General"
+#~ msgstr "Общие"
 
-#: ../properties/nm-pptp-dialog.ui.h:41
-msgid "Show password"
-msgstr "Показать пароль"
+#~ msgid ""
+#~ "PPTP server IP or name.\n"
+#~ "config: the first parameter of pptp"
+#~ msgstr ""
+#~ "IP-адрес или имя PPTP-сервера.\n"
+#~ "config: первый параметр pptp"
 
-#: ../properties/nm-pptp-dialog.ui.h:42
-msgid "Password passed to PPTP when prompted for it."
-msgstr "Пароль, передаваемый PPTP по запросу."
+#~ msgid "_Gateway:"
+#~ msgstr "_Шлюз:"
 
-#: ../properties/nm-pptp-dialog.ui.h:44
-msgid ""
-"Set the name used for authenticating the local system to the peer to "
-"<name>.\n"
-"config: user <name>"
-msgstr ""
-"Установить имя, используемое для аутентификации локальной системы к узлу "
-"<name>.\n"
-"config: имя пользователя <name>"
+#~ msgid "Optional"
+#~ msgstr "Дополнительные"
 
-#: ../properties/nm-pptp-dialog.ui.h:46
-msgid "User name:"
-msgstr "Имя пользователя:"
+#~ msgid ""
+#~ "Append the domain name <domain> to the local host name for authentication "
+#~ "purposes.\n"
+#~ "config: domain <domain>"
+#~ msgstr ""
+#~ "Добавить имя домена <domain> к имени локального узла для аутентификации.\n"
+#~ "config: domain <domain>"
 
-#: ../properties/nm-pptp-dialog.ui.h:47
-msgid "Ad_vanced…"
-msgstr "_Дополнительно…"
+#~ msgid "NT Domain:"
+#~ msgstr "NT-домен:"
+
+#~ msgid "Show password"
+#~ msgstr "Показать пароль"
+
+#~ msgid "Password passed to PPTP when prompted for it."
+#~ msgstr "Пароль, передаваемый PPTP по запросу."
+
+#~ msgid ""
+#~ "Set the name used for authenticating the local system to the peer to "
+#~ "<name>.\n"
+#~ "config: user <name>"
+#~ msgstr ""
+#~ "Установить имя, используемое для аутентификации локальной системы к узлу "
+#~ "<name>.\n"
+#~ "config: имя пользователя <name>"
+
+#~ msgid "User name:"
+#~ msgstr "Имя пользователя:"
+
+#~ msgid "Ad_vanced…"
+#~ msgstr "_Дополнительно…"
 
 #~ msgid "no usable addresses returned for PPTP VPN gateway '%s' (%d)"
 #~ msgstr "не получен приемлемый IP-адрес шлюза PPTP VPN «%s» (%d)"
