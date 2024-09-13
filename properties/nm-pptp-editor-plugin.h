@@ -33,6 +33,7 @@ typedef struct _PptpPluginUiClass PptpPluginUiClass;
 
 struct _PptpPluginUi {
 	GObject parent;
+	char *module_path;
 };
 
 struct _PptpPluginUiClass {
@@ -51,4 +52,3 @@ nm_vpn_editor_factory_pptp (NMVpnEditorPlugin *editor_plugin,
                             GError **error);
 
 #endif /* __NM_PPTP_EDITOR_PLUGIN_H__ */
-

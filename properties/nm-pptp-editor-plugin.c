@@ -121,10 +121,19 @@ get_suggested_filename (NMVpnEditorPlugin *iface, NMConnection *connection)
 	return g_strdup_printf ("%s (pptp).conf", id);
 }
 
+#if !NM_CHECK_VERSION(1, 52, 0)
+#define NM_VPN_EDITOR_PLUGIN_CAPABILITY_NO_EDITOR 0x08
+#endif
+
 static NMVpnEditorPluginCapability
 get_capabilities (NMVpnEditorPlugin *iface)
 {
-	return NM_VPN_EDITOR_PLUGIN_CAPABILITY_NONE;
+	NMVpnEditorPluginCapability capabilities;
+
+	capabilities = NM_VPN_EDITOR_PLUGIN_CAPABILITY_NONE;
+	if (PPTP_PLUGIN_UI(iface)->module_path == NULL)
+			capabilities |= NM_VPN_EDITOR_PLUGIN_CAPABILITY_NO_EDITOR;
+	return capabilities;
 }
 
 static NMVpnEditor *
@@ -142,26 +151,7 @@ _call_editor_factory (gpointer factory,
 static NMVpnEditor *
 get_editor (NMVpnEditorPlugin *iface, NMConnection *connection, GError **error)
 {
-	gpointer gtk3_only_symbol;
-	GModule *self_module;
-	const char *editor;
-
-	g_return_val_if_fail (PPTP_IS_PLUGIN_UI (iface), NULL);
-	g_return_val_if_fail (NM_IS_CONNECTION (connection), NULL);
-	g_return_val_if_fail (!error || !*error, NULL);
-
-
-	self_module = g_module_open (NULL, 0);
-	g_module_symbol (self_module, "gtk_container_add", &gtk3_only_symbol);
-	g_module_close (self_module);
-
-	if (gtk3_only_symbol) {
-		editor = "libnm-vpn-plugin-pptp-editor.so";
-	} else {
-		editor = "libnm-gtk4-vpn-plugin-pptp-editor.so";
-	}
-
-	return nm_vpn_plugin_utils_load_editor (editor,
+	return nm_vpn_plugin_utils_load_editor (PPTP_PLUGIN_UI(iface)->module_path,
 						"nm_vpn_editor_factory_pptp",
 						_call_editor_factory,
 						iface,
@@ -191,11 +181,22 @@ get_property (GObject *object, guint prop_id,
 }
 
 static void
+dispose (GObject *object)
+{
+	PptpPluginUi *editor_plugin = PPTP_PLUGIN_UI(object);
+
+	g_clear_pointer (&editor_plugin->module_path, g_free);
+
+	G_OBJECT_CLASS (pptp_plugin_ui_parent_class)->dispose (object);
+}
+
+static void
 pptp_plugin_ui_class_init (PptpPluginUiClass *req_class)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (req_class);
 
 	object_class->get_property = get_property;
+	object_class->dispose = dispose;
 
 	g_object_class_override_property (object_class,
 	                                  PROP_NAME,
@@ -230,12 +231,26 @@ pptp_plugin_ui_interface_init (NMVpnEditorPluginInterface *iface_class)
 G_MODULE_EXPORT NMVpnEditorPlugin *
 nm_vpn_editor_plugin_factory (GError **error)
 {
-	if (error)
-		g_return_val_if_fail (*error == NULL, NULL);
+	PptpPluginUi *editor_plugin;
+	gpointer gtk3_only_symbol;
+	GModule *self_module;
+
+	g_return_val_if_fail (!error || !*error, NULL);
 
 	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 
-	return NM_VPN_EDITOR_PLUGIN (g_object_new (PPTP_TYPE_PLUGIN_UI, NULL));
+	self_module = g_module_open (NULL, 0);
+	g_module_symbol (self_module, "gtk_container_add", &gtk3_only_symbol);
+	g_module_close (self_module);
+
+	editor_plugin = g_object_new (PPTP_TYPE_PLUGIN_UI, NULL);
+	editor_plugin->module_path = nm_vpn_plugin_utils_get_editor_module_path
+		(gtk3_only_symbol ?
+		 "libnm-vpn-plugin-pptp-editor.so" :
+		 "libnm-gtk4-vpn-plugin-pptp-editor.so",
+		 NULL);
+
+	return NM_VPN_EDITOR_PLUGIN(editor_plugin);
 }
 
