@@ -230,7 +230,7 @@ msgstr ""
 #: ../src/nm-pptp-service.c:828
 #, c-format
 msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
-msgstr "no s'ha pogut buscar l'adreça ID de la passarel·la PPTP VPN «%s» (%d)"
+msgstr "no s'ha pogut buscar l'adreça IP de la passarel·la PPTP VPN «%s» (%d)"
 
 #: ../src/nm-pptp-service.c:852
 #, c-format
