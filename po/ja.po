@@ -1,5 +1,5 @@
 # Japanese message catalog for NetworkManager-pptp
-# Copyright (C) 2006-2007, 2011-2012, 2020 THE NetworkManager-pptp's COPYRIGHT HOLDER
+# Copyright (C) 2006-2007, 2011-2012, 2020, 2025 THE NetworkManager-pptp's COPYRIGHT HOLDER
 # This file is distributed under the same license as the NetworkManager-openvpn package.
 # Satoru SATOH <ss@gnome.gr.jp>, 2006, 2007.
 # Hajime Taira <htaira@redhat.com>, 2011.
@@ -7,40 +7,23 @@
 # OKANO Takayoshi <kano@na.rim.or.jp>, 2011.
 # Jiro Matsuzawa <jmatsuzawa@src.gnome.org>, 2012.
 # sicklylife <translation@sicklylife.jp>, 2020.
+# Makoto Sakaguchi <ycco34vx@gmail.com>, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: NetworkManager-pptp master\n"
+"Project-Id-Version: NetworkManager-pptp main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
 "issues\n"
-"POT-Creation-Date: 2020-05-04 15:39+0000\n"
-"PO-Revision-Date: 2020-05-10 21:00+0900\n"
-"Last-Translator: sicklylife <translation@sicklylife.jp>\n"
+"POT-Creation-Date: 2025-05-10 21:24+0000\n"
+"PO-Revision-Date: 2025-07-27 12:00+0900\n"
+"Last-Translator: Makoto Sakaguchi <ycco34vx@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: ../appdata/network-manager-pptp.metainfo.xml.in.h:1
-msgid "PPTP VPN client"
-msgstr "PPTP VPN クライアント"
-
-#: ../appdata/network-manager-pptp.metainfo.xml.in.h:2
-msgid "Client for PPTP virtual private networks"
-msgstr ""
-
-#: ../appdata/network-manager-pptp.metainfo.xml.in.h:3
-msgid "Support for configuring PPTP virtual private network connections."
-msgstr ""
-
-#: ../appdata/network-manager-pptp.metainfo.xml.in.h:4
-msgid "Compatible with various PPTP servers including Microsoft."
-msgstr "Microsoft を含む、さまざまな PPTP サーバーとの互換性"
-
-#: ../appdata/network-manager-pptp.metainfo.xml.in.h:5
-msgid "The NetworkManager Developers"
-msgstr ""
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.6\n"
 
 #. Otherwise, we have no saved password, or the password flags indicated
 #. * that the password should never be saved.
@@ -48,81 +31,84 @@ msgstr ""
 #: ../auth-dialog/main.c:146
 #, c-format
 msgid "You need to authenticate to access the Virtual Private Network “%s”."
-msgstr "仮想プライベートネットワーク“%s”にアクセスするには認証が必要です。"
+msgstr "仮想プライベートネットワーク “%s” にアクセスするには認証が必要です。"
 
-#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:175
+#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:176
 msgid "Authenticate VPN"
-msgstr "認証 VPN"
+msgstr "VPN 認証"
 
 #: ../auth-dialog/main.c:157
 msgid "Password"
 msgstr "パスワード"
 
-#: ../properties/advanced-dialog.c:169
+#: ../properties/advanced-dialog.c:170
 msgid "All Available (Default)"
 msgstr "利用可能なものすべて (デフォルト)"
 
-#: ../properties/advanced-dialog.c:173
+#: ../properties/advanced-dialog.c:174
 msgid "128-bit (most secure)"
 msgstr "128 ビット (最も安全)"
 
-#: ../properties/advanced-dialog.c:182
+#: ../properties/advanced-dialog.c:183
 msgid "40-bit (less secure)"
 msgstr "40 ビット (最低限の安全)"
 
-#: ../properties/advanced-dialog.c:286
+#: ../properties/advanced-dialog.c:287
 msgid "PAP"
 msgstr "PAP"
 
-#: ../properties/advanced-dialog.c:299
+#: ../properties/advanced-dialog.c:300
 msgid "CHAP"
 msgstr "CHAP"
 
-#: ../properties/advanced-dialog.c:311
+#: ../properties/advanced-dialog.c:312
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
-#: ../properties/advanced-dialog.c:323
+#: ../properties/advanced-dialog.c:324
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
-#: ../properties/advanced-dialog.c:336
+#: ../properties/advanced-dialog.c:337
 msgid "EAP"
 msgstr "EAP"
 
-#: ../properties/nm-pptp-editor-plugin.c:34
+#: ../properties/nm-pptp-editor-plugin.c:29
 msgid "Point-to-Point Tunneling Protocol (PPTP)"
 msgstr "Point-to-Point Tunneling Protocol (PPTP)"
 
-#: ../properties/nm-pptp-editor-plugin.c:35
+#: ../properties/nm-pptp-editor-plugin.c:30
 msgid "Compatible with Microsoft and other PPTP VPN servers."
-msgstr "Microsoft と、その他の PPTP VPN サーバーとの互換性"
+msgstr "Microsoft およびその他の PPTP VPN サーバーと互換性があります。"
 
 #: ../shared/nm-utils/nm-shared-utils.c:264
 #, c-format
 msgid "object class '%s' has no property named '%s'"
-msgstr ""
+msgstr "オブジェクトクラス '%s' には プロパティ '%s' がありません"
 
 #: ../shared/nm-utils/nm-shared-utils.c:271
 #, c-format
 msgid "property '%s' of object class '%s' is not writable"
-msgstr ""
+msgstr "オブジェクトクラス '%s' のプロパティ '%s' は書き込みできません"
 
 #: ../shared/nm-utils/nm-shared-utils.c:278
 #, c-format
 msgid ""
 "construct property \"%s\" for object '%s' can't be set after construction"
 msgstr ""
+"オブジェクト '%s' のコンストラクトプロパティ \"%s\" は構築後に設定できません"
 
 #: ../shared/nm-utils/nm-shared-utils.c:286
 #, c-format
 msgid "'%s::%s' is not a valid property name; '%s' is not a GObject subtype"
 msgstr ""
+"'%s::%s' は有効なプロパティ名ではありません。'%s' は GObject のサブタイプでは"
+"ありません"
 
 #: ../shared/nm-utils/nm-shared-utils.c:295
 #, c-format
 msgid "unable to set property '%s' of type '%s' from value of type '%s'"
-msgstr ""
+msgstr "プロパティ '%s' (型 '%s') に型 '%s' の値を設定できません"
 
 #: ../shared/nm-utils/nm-shared-utils.c:306
 #, c-format
@@ -130,16 +116,18 @@ msgid ""
 "value \"%s\" of type '%s' is invalid or out of range for property '%s' of "
 "type '%s'"
 msgstr ""
+"プロパティ '%3$s' (型 '%4$s') に対して、型 '%2$s' の値 \"%1$s\" は無効または"
+"範囲外です"
 
 #: ../shared/nm-utils/nm-vpn-plugin-utils.c:69
 #, c-format
 msgid "unable to get editor plugin name: %s"
-msgstr ""
+msgstr "エディタープラグイン名を取得できません: %s"
 
 #: ../shared/nm-utils/nm-vpn-plugin-utils.c:103
 #, c-format
 msgid "missing plugin file \"%s\""
-msgstr "プラグインファイル \"%s\" がありません"
+msgstr "プラグインファイル \"%s\" が見つかりません"
 
 #: ../shared/nm-utils/nm-vpn-plugin-utils.c:109
 #, c-format
@@ -149,37 +137,36 @@ msgstr "エディタープラグインを読み込めません: %s"
 #: ../shared/nm-utils/nm-vpn-plugin-utils.c:118
 #, c-format
 msgid "cannot load factory %s from plugin: %s"
-msgstr ""
+msgstr "プラグインからファクトリ %s を読み込めません: %s"
 
 #: ../shared/nm-utils/nm-vpn-plugin-utils.c:144
 msgid "unknown error creating editor instance"
-msgstr ""
+msgstr "エディターインスタンスの作成中に不明なエラーが発生しました"
 
 #: ../src/nm-pptp-service.c:193
 #, c-format
 msgid "invalid gateway “%s”"
-msgstr "無効なゲートウェイ“%s”"
+msgstr "無効なゲートウェイ “%s”"
 
 #: ../src/nm-pptp-service.c:207
 #, c-format
 msgid "invalid integer property “%s”"
-msgstr "無効な数値型パラメーターの数値“%s”"
+msgstr "無効な整数型プロパティ “%s”"
 
 #: ../src/nm-pptp-service.c:217
 #, c-format
 msgid "invalid boolean property “%s” (not yes or no)"
-msgstr ""
-"無効なブーリアン型パラメーターの値“%s” (yes、no ではありません)"
+msgstr "無効なブーリアン型プロパティ “%s” (yes または no ではありません)"
 
 #: ../src/nm-pptp-service.c:224
 #, c-format
 msgid "unhandled property “%s” type %s"
-msgstr "対処できない“%s”型パラメーターの %s"
+msgstr "処理されていないプロパティ “%s” (型: %s)"
 
 #: ../src/nm-pptp-service.c:235
 #, c-format
 msgid "property “%s” invalid or not supported"
-msgstr "パラメーター“%s”は無効かサポートされていません"
+msgstr "プロパティ “%s” は無効またはサポートされていません"
 
 #: ../src/nm-pptp-service.c:253
 msgid "No VPN configuration options."
@@ -188,7 +175,7 @@ msgstr "VPN 構成オプションがありません。"
 #: ../src/nm-pptp-service.c:273
 #, c-format
 msgid "Missing required option “%s”."
-msgstr "必須オプション“%s”が不足しています。"
+msgstr "必須オプション “%s” がありません。"
 
 #: ../src/nm-pptp-service.c:293
 msgid "No VPN secrets!"
@@ -196,15 +183,15 @@ msgstr "VPN シークレットがありません!"
 
 #: ../src/nm-pptp-service.c:447
 msgid "Could not find pptp client binary."
-msgstr "pptp クライアントのバイナリが見つかりませんでした。"
+msgstr "PPTP クライアントバイナリが見つかりませんでした。"
 
 #: ../src/nm-pptp-service.c:460
 msgid "Missing VPN gateway."
-msgstr "VPN ゲートウェイが不足しています。"
+msgstr "VPN ゲートウェイがありません。"
 
 #: ../src/nm-pptp-service.c:635
 msgid "Could not find the pppd binary."
-msgstr "pppd のバイナリが見つかりませんでした。"
+msgstr "pppd バイナリが見つかりませんでした。"
 
 #: ../src/nm-pptp-service.c:695
 msgid "Missing VPN username."
@@ -212,222 +199,125 @@ msgstr "VPN ユーザー名がありません。"
 
 #: ../src/nm-pptp-service.c:704
 msgid "Missing or invalid VPN password."
-msgstr "VPN パスワードが不足しているか、無効です。"
+msgstr "VPN パスワードがないか無効です。"
 
 #: ../src/nm-pptp-service.c:810
 #, c-format
 msgid "couldn’t convert PPTP VPN gateway IP address “%s” (%d)"
-msgstr "PPTP VPN ゲートウェイの IP アドレス“%s” (%d) を変換できませんでした"
+msgstr "PPTP VPN ゲートウェイの IP アドレス “%s” を変換できませんでした (%d)"
 
 #: ../src/nm-pptp-service.c:828
 #, c-format
 msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
-msgstr "PPTP VPN ゲートウェイの IP アドレス“%s” (%d) が参照できませんでした"
+msgstr "PPTP VPN ゲートウェイの IP アドレス “%s” を検索できませんでした (%d)"
 
 #: ../src/nm-pptp-service.c:852
 #, c-format
 msgid "no usable addresses returned for PPTP VPN gateway “%s”"
 msgstr ""
-"PPTP VPN ゲートウェイ“%s”から使用可能なアドレスがないと返答がありました"
+"PPTP VPN ゲートウェイ “%s” に対して使用可能なアドレスが返されませんでした"
 
 #: ../src/nm-pptp-service.c:881
 msgid "Invalid or missing PPTP gateway."
-msgstr "PPTP ゲートウェイが無効か不足しています。"
+msgstr "PPTP ゲートウェイが無効または見つかりません。"
 
 #: ../src/nm-pptp-service.c:1129
 msgid "Don’t quit when VPN connection terminates"
-msgstr "VPN 接続が切断されても終了しない"
+msgstr "VPN 接続が終了しても終了しない"
 
 #: ../src/nm-pptp-service.c:1130
 msgid "Enable verbose debug logging (may expose passwords)"
-msgstr "詳細なデバッグ情報の保存を有効にする (パスワードも含まれます)"
+msgstr "詳細なデバッグログを有効にする (パスワードが露出する可能性があります)"
 
 #: ../src/nm-pptp-service.c:1131
 msgid "D-Bus name to use for this instance"
-msgstr "このインスタンスの D-Bus 名"
+msgstr "このインスタンスで使用する D-Bus 名"
 
 #: ../src/nm-pptp-service.c:1152
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
 msgstr ""
-"nm-pptp-service は NetworkManager に対して PPTP VPN 互換性 (Microsoft とその"
-"他の実装との互換性) を提供します。"
+"nm-pptp-service は NetworkManager に統合された PPTP VPN 機能 (Microsoft およ"
+"びその他の実装と互換) を提供します。"
 
-#: ../properties/nm-pptp-dialog.ui.h:1
-msgid "Default"
-msgstr "デフォルト"
+#~ msgid "PPTP VPN client"
+#~ msgstr "PPTP VPN クライアント"
 
-#: ../properties/nm-pptp-dialog.ui.h:2
-msgid "PPTP Advanced Options"
-msgstr "PPTP 詳細オプション"
+#~ msgid "Compatible with various PPTP servers including Microsoft."
+#~ msgstr "Microsoft を含む、さまざまな PPTP サーバーとの互換性"
 
-#: ../properties/nm-pptp-dialog.ui.h:3
-msgid "Authentication"
-msgstr "認証"
+#~ msgid "Default"
+#~ msgstr "デフォルト"
 
-#: ../properties/nm-pptp-dialog.ui.h:4
-msgid "Allow the following authentication methods:"
-msgstr "次の認証方式を許可します。"
+#~ msgid "PPTP Advanced Options"
+#~ msgstr "PPTP 詳細オプション"
 
-#: ../properties/nm-pptp-dialog.ui.h:5
-msgid ""
-"Allow/disable authentication methods.\n"
-"config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
-msgstr ""
+#~ msgid "Authentication"
+#~ msgstr "認証"
 
-#: ../properties/nm-pptp-dialog.ui.h:7
-msgid "Security and Compression"
-msgstr "暗号化と圧縮"
+#~ msgid "Allow the following authentication methods:"
+#~ msgstr "次の認証方式を許可します。"
 
-#: ../properties/nm-pptp-dialog.ui.h:8
-msgid "Use _Point-to-Point encryption (MPPE)"
-msgstr "MPPE 暗号を使用する(_P)"
+#~ msgid "Security and Compression"
+#~ msgstr "暗号化と圧縮"
 
-#: ../properties/nm-pptp-dialog.ui.h:9
-msgid ""
-"Note: MPPE encryption is only available with MSCHAP authentication methods. "
-"To enable this checkbox, select one or more of the MSCHAP authentication "
-"methods: MSCHAP or MSCHAPv2."
-msgstr ""
-"注: MPPE 暗号は、MSCHAP 認証方式でのみ利用可能です。このチェックボックスを有"
-"効にするには、MSCHAP 認証方式である MSCHAP または MSCHAPv2 のいずれか、または"
-"複数を選択してください。"
+#~ msgid "Use _Point-to-Point encryption (MPPE)"
+#~ msgstr "MPPE 暗号を使用する(_P)"
 
-#: ../properties/nm-pptp-dialog.ui.h:10
-msgid "_Security:"
-msgstr "セキュリティ(_S):"
+#~ msgid ""
+#~ "Note: MPPE encryption is only available with MSCHAP authentication "
+#~ "methods. To enable this checkbox, select one or more of the MSCHAP "
+#~ "authentication methods: MSCHAP or MSCHAPv2."
+#~ msgstr ""
+#~ "注: MPPE 暗号は、MSCHAP 認証方式でのみ利用可能です。このチェックボックスを"
+#~ "有効にするには、MSCHAP 認証方式である MSCHAP または MSCHAPv2 のいずれか、"
+#~ "または複数を選択してください。"
 
-#: ../properties/nm-pptp-dialog.ui.h:11
-msgid ""
-"Require the use of MPPE, with 40/128-bit encryption or all.\n"
-"config: require-mppe, require-mppe-128 or require-mppe-40"
-msgstr ""
+#~ msgid "_Security:"
+#~ msgstr "セキュリティ(_S):"
 
-#: ../properties/nm-pptp-dialog.ui.h:13
-msgid "Allow st_ateful encryption"
-msgstr "ステートフル暗号を許可する(_A)"
+#~ msgid "Allow st_ateful encryption"
+#~ msgstr "ステートフル暗号を許可する(_A)"
 
-#: ../properties/nm-pptp-dialog.ui.h:14
-msgid ""
-"Allow MPPE to use stateful mode. Stateless mode is still attempted first.\n"
-"config: mppe-stateful (when checked)"
-msgstr ""
+#~ msgid "Allow _BSD data compression"
+#~ msgstr "BSD データ圧縮を許可する(_B)"
 
-#: ../properties/nm-pptp-dialog.ui.h:16
-msgid "Allow _BSD data compression"
-msgstr "BSD データ圧縮を許可する(_B)"
+#~ msgid "Allow _Deflate data compression"
+#~ msgstr "デフレート圧縮を許可する(_D)"
 
-#: ../properties/nm-pptp-dialog.ui.h:17
-msgid ""
-"Allow/disable BSD-Compress compression.\n"
-"config: nobsdcomp (when unchecked)"
-msgstr ""
+#~ msgid "Use TCP _header compression"
+#~ msgstr "TCP ヘッダー圧縮を使用する(_H)"
 
-#: ../properties/nm-pptp-dialog.ui.h:19
-msgid "Allow _Deflate data compression"
-msgstr "デフレート圧縮を許可する(_D)"
+#~ msgid "Echo"
+#~ msgstr "Echo"
 
-#: ../properties/nm-pptp-dialog.ui.h:20
-msgid ""
-"Allow/disable Deflate compression.\n"
-"config: nodeflate (when unchecked)"
-msgstr ""
+#~ msgid "Send PPP _echo packets"
+#~ msgstr "PPP Echo パケットを送信する(_E)"
 
-#: ../properties/nm-pptp-dialog.ui.h:22
-msgid "Use TCP _header compression"
-msgstr "TCP ヘッダー圧縮を使用する(_H)"
+#~ msgid "General"
+#~ msgstr "一般"
 
-#: ../properties/nm-pptp-dialog.ui.h:23
-msgid ""
-"Allow/disable Van Jacobson style TCP/IP header compression in both the "
-"transmit and the receive directions.\n"
-"config: novj (when unchecked)"
-msgstr ""
+#~ msgid "_Gateway:"
+#~ msgstr "ゲートウェイ(_G):"
 
-#: ../properties/nm-pptp-dialog.ui.h:25
-msgid "Echo"
-msgstr "Echo"
+#~ msgid "Optional"
+#~ msgstr "オプション"
 
-#: ../properties/nm-pptp-dialog.ui.h:26
-msgid "Send PPP _echo packets"
-msgstr "PPP Echo パケットを送信する(_E)"
+#~ msgid "NT Domain:"
+#~ msgstr "NT ドメイン:"
 
-#: ../properties/nm-pptp-dialog.ui.h:27
-msgid ""
-"Send LCP echo-requests to find out whether peer is alive.\n"
-"config: lcp-echo-failure and lcp-echo-interval"
-msgstr ""
+#~ msgid "Show password"
+#~ msgstr "パスワードを表示"
 
-#: ../properties/nm-pptp-dialog.ui.h:29
-msgid "Misc"
-msgstr ""
+#~ msgid "Password:"
+#~ msgstr "パスワード:"
 
-#: ../properties/nm-pptp-dialog.ui.h:30
-msgid "Use custom _unit number:"
-msgstr ""
+#~ msgid "User name:"
+#~ msgstr "ユーザー名:"
 
-#: ../properties/nm-pptp-dialog.ui.h:31
-msgid ""
-"Enable custom index for ppp<n> device name.\n"
-"config: unit <n>"
-msgstr ""
-
-#: ../properties/nm-pptp-dialog.ui.h:33
-msgid "General"
-msgstr "一般"
-
-#: ../properties/nm-pptp-dialog.ui.h:34
-msgid ""
-"PPTP server IP or name.\n"
-"config: the first parameter of pptp"
-msgstr ""
-
-#: ../properties/nm-pptp-dialog.ui.h:36
-msgid "_Gateway:"
-msgstr "ゲートウェイ(_G):"
-
-#: ../properties/nm-pptp-dialog.ui.h:37
-msgid "Optional"
-msgstr "オプション"
-
-#: ../properties/nm-pptp-dialog.ui.h:38
-msgid ""
-"Append the domain name <domain> to the local host name for authentication "
-"purposes.\n"
-"config: domain <domain>"
-msgstr ""
-
-#: ../properties/nm-pptp-dialog.ui.h:40
-msgid "NT Domain:"
-msgstr "NT ドメイン:"
-
-#: ../properties/nm-pptp-dialog.ui.h:41
-msgid "Show password"
-msgstr "パスワードを表示"
-
-#: ../properties/nm-pptp-dialog.ui.h:42
-msgid "Password passed to PPTP when prompted for it."
-msgstr ""
-
-#: ../properties/nm-pptp-dialog.ui.h:43
-msgid "Password:"
-msgstr "パスワード:"
-
-#: ../properties/nm-pptp-dialog.ui.h:44
-msgid ""
-"Set the name used for authenticating the local system to the peer to "
-"<name>.\n"
-"config: user <name>"
-msgstr ""
-
-#: ../properties/nm-pptp-dialog.ui.h:46
-msgid "User name:"
-msgstr "ユーザー名:"
-
-#: ../properties/nm-pptp-dialog.ui.h:47
-msgid "Ad_vanced…"
-msgstr "詳細(_V)…"
+#~ msgid "Ad_vanced…"
+#~ msgstr "詳細(_V)…"
 
 #~ msgid "_Password:"
 #~ msgstr "パスワード(_P):"
@@ -448,7 +338,8 @@ msgstr "詳細(_V)…"
 
 #~ msgid "Could not find secrets (connection invalid, no vpn setting)."
 #~ msgstr ""
-#~ "VPN シークレットが見つかりませんでした (接続が無効か、VPN 設定されていません)"
+#~ "VPN シークレットが見つかりませんでした (接続が無効か、VPN 設定されていませ"
+#~ "ん)"
 
 #~ msgid "Invalid VPN username."
 #~ msgstr "無効な VPN ユーザー名です。"
