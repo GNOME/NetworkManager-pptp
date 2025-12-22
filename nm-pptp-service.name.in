@@ -3,6 +3,7 @@ name=pptp
 service=org.freedesktop.NetworkManager.pptp
 program=@LIBEXECDIR@/nm-pptp-service
 supports-multiple-connections=true
+supports-safe-private-file-access=true
 
 [libnm]
 plugin=@PLUGINDIR@/libnm-vpn-plugin-pptp.so
