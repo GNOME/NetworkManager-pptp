@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: NetworkManager-pptp.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=NetworkManager&keywords=I18N+L10N&component=VPN: pptp\n"
-"POT-Creation-Date: 2015-08-31 12:20+0000\n"
-"PO-Revision-Date: 2016-03-10 14:28+0200\n"
-"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
+"POT-Creation-Date: 2016-03-21 18:46+0000\n"
+"PO-Revision-Date: 2016-03-22 11:37+0200\n"
+"Last-Translator: Yannis Koutsoukos <giankoyt@gmail.com>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Otherwise, we have no saved password, or the password flags indicated
@@ -88,8 +88,8 @@ msgid "PPTP Advanced Options"
 msgstr "Προχωρημένες επιλογές PPTP "
 
 #: ../properties/nm-pptp-dialog.ui.h:3
-msgid "Authentication"
-msgstr "Πιστοποίηση"
+msgid "<b>Authentication</b>"
+msgstr "<b>Πιστοποίηση</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:4
 msgid "Allow the following authentication methods:"
@@ -104,8 +104,8 @@ msgstr ""
 "config: refuse-pap, refuse-chap, refuse-mschap, refuse-mschap-v2, refuse-eap"
 
 #: ../properties/nm-pptp-dialog.ui.h:7
-msgid "Security and Compression"
-msgstr "Ασφάλεια και Συμπίεση"
+msgid "<b>Security and Compression</b>"
+msgstr "<b>Ασφάλεια και Συμπίεση</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:8
 msgid "Use _Point-to-Point encryption (MPPE)"
@@ -185,8 +185,8 @@ msgstr ""
 "config: novj (όταν δεν είναι επιλεγμένο)"
 
 #: ../properties/nm-pptp-dialog.ui.h:25
-msgid "Echo"
-msgstr "Echo"
+msgid "<b>Echo</b>"
+msgstr "<b>Echo</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:26
 msgid "Send PPP _echo packets"
@@ -201,8 +201,8 @@ msgstr ""
 "config: lcp-echo-failure και lcp-echo-interval"
 
 #: ../properties/nm-pptp-dialog.ui.h:29
-msgid "Misc"
-msgstr "Λοιπά"
+msgid "<b>Misc</b>"
+msgstr "<b>Λοιπά</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:30
 msgid "Use custom _unit number:"
@@ -217,8 +217,8 @@ msgstr ""
 "ρύθμιση: unit <n>"
 
 #: ../properties/nm-pptp-dialog.ui.h:33
-msgid "General"
-msgstr "Γενικά"
+msgid "<b>General</b>"
+msgstr "<b>Γενικά</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:34
 msgid ""
@@ -233,8 +233,8 @@ msgid "_Gateway:"
 msgstr "Πύ_λη:"
 
 #: ../properties/nm-pptp-dialog.ui.h:37
-msgid "Optional"
-msgstr "Προαιρετικά"
+msgid "<b>Optional</b>"
+msgstr "<b>Προαιρετικά</b>"
 
 #: ../properties/nm-pptp-dialog.ui.h:38
 msgid ""
@@ -311,75 +311,79 @@ msgstr "Λείπει ή μη έγκυρο όνομα χρήστη VPN."
 msgid "Missing or invalid VPN password."
 msgstr "Λείπει ή μη έγκυρος κωδικός πρόσβασης VPN."
 
-#: ../src/nm-pptp-service.c:460
+#: ../src/nm-pptp-service.c:462
 msgid "No cached credentials."
 msgstr "Δεν υπάρχουν προσωρινά αποθηκευμένα διαπιστευτήρια."
 
-#: ../src/nm-pptp-service.c:616
+#: ../src/nm-pptp-service.c:618
 #, c-format
 msgid "invalid gateway '%s'"
 msgstr "Μη έγκυρη πύλη '%s'"
 
-#: ../src/nm-pptp-service.c:630
+#: ../src/nm-pptp-service.c:632
 #, c-format
 msgid "invalid integer property '%s'"
 msgstr "Μη έγκυρη ακέραια τιμή '%s'"
 
-#: ../src/nm-pptp-service.c:640
+#: ../src/nm-pptp-service.c:642
 #, c-format
 msgid "invalid boolean property '%s' (not yes or no)"
 msgstr "μη έγκυρη λογική τιμή '%s' (ούτε ναι ή όχι)"
 
-#: ../src/nm-pptp-service.c:647
+#: ../src/nm-pptp-service.c:649
 #, c-format
 msgid "unhandled property '%s' type %s"
 msgstr "απρόσμενη τιμή '%s' τύπου %s"
 
-#: ../src/nm-pptp-service.c:658
+#: ../src/nm-pptp-service.c:660
 #, c-format
 msgid "property '%s' invalid or not supported"
 msgstr "Μη έγκυρη ή μη υποστηριζόμενη τιμή '%s'"
 
-#: ../src/nm-pptp-service.c:676
+#: ../src/nm-pptp-service.c:678
 msgid "No VPN configuration options."
 msgstr "Δεν υπάρχουν επιλογές ρύθμισης παραμέτρων VPN."
 
-#: ../src/nm-pptp-service.c:696
+#: ../src/nm-pptp-service.c:698
 #, c-format
 msgid "Missing required option '%s'."
 msgstr "Λείπει η απαιτούμενη επιλογή '%s'."
 
-#: ../src/nm-pptp-service.c:716
+#: ../src/nm-pptp-service.c:718
 msgid "No VPN secrets!"
 msgstr "Δεν υπάρχουν απόρρητα VPN!"
 
-#: ../src/nm-pptp-service.c:874
+#: ../src/nm-pptp-service.c:875
 msgid "Could not find pptp client binary."
 msgstr "Δεν είναι δυνατή η εύρεση του εκτελέσιμου πελάτη pptp."
 
-#: ../src/nm-pptp-service.c:887
+#: ../src/nm-pptp-service.c:888
 msgid "Missing VPN gateway."
 msgstr "Λείπει η πύλη VPN"
 
-#: ../src/nm-pptp-service.c:1048
+#: ../src/nm-pptp-service.c:1049
 msgid "Could not find the pppd binary."
 msgstr "Δεν είναι δυνατή η εύρεση του εκτελέσιμου pppd."
 
-#: ../src/nm-pptp-service.c:1161
+#: ../src/nm-pptp-service.c:1151
 msgid "Invalid or missing PPTP gateway."
 msgstr "Λείπει ή μη έγκυρη PPTP πύλη."
 
-#: ../src/nm-pptp-service.c:1347
+#: ../src/nm-pptp-service.c:1338
 msgid "Don't quit when VPN connection terminates"
 msgstr "Να μην γίνει έξοδος όταν η σύνδεση VPN τερματίζει."
 
-#: ../src/nm-pptp-service.c:1348
+#: ../src/nm-pptp-service.c:1339
 msgid "Enable verbose debug logging (may expose passwords)"
 msgstr ""
 "Ενεργοποίηση καταγραφής εντοπισμού σφαλμάτων (μπορεί να εκθέσει τους "
 "κωδικούς πρόσβασης)"
 
-#: ../src/nm-pptp-service.c:1371
+#: ../src/nm-pptp-service.c:1340
+msgid "D-Bus name to use for this instance"
+msgstr "Ονομασία του D-Bus που θα χρησιμοποιηθεί για αυτή τη περίπτωση"
+
+#: ../src/nm-pptp-service.c:1363
 msgid ""
 "nm-pptp-service provides integrated PPTP VPN capability (compatible with "
 "Microsoft and other implementations) to NetworkManager."
