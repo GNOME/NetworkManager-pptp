@@ -1,0 +1,231 @@
+# Kazakh translation for NetworkManager-pptp.
+# Copyright (C) 2026 NetworkManager-pptp's COPYRIGHT HOLDER
+# This file is distributed under the same license as the NetworkManager-pptp package.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>,  2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: NetworkManager-pptp main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/NetworkManager-pptp/"
+"issues\n"
+"POT-Creation-Date: 2026-03-10 21:24+0000\n"
+"PO-Revision-Date: 2026-03-14 12:42+0500\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <Kazakh>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+
+#. Otherwise, we have no saved password, or the password flags indicated
+#. * that the password should never be saved.
+#: ../auth-dialog/main.c:146
+#, c-format
+msgid "You need to authenticate to access the Virtual Private Network “%s”."
+msgstr ""
+"«%s» виртуалды жеке желісіне қол жеткізу үшін аутентификациядан өтуіңіз керек."
+
+#: ../auth-dialog/main.c:155 ../auth-dialog/main.c:176
+msgid "Authenticate VPN"
+msgstr "VPN аутентификациясы"
+
+#: ../auth-dialog/main.c:157
+msgid "Password"
+msgstr "Пароль"
+
+#: ../properties/advanced-dialog.c:170
+msgid "All Available (Default)"
+msgstr "Барлық қолжетімді (үнсіз келісім бойынша)"
+
+#: ../properties/advanced-dialog.c:174
+msgid "128-bit (most secure)"
+msgstr "128-биттік (ең қауіпсіз)"
+
+#: ../properties/advanced-dialog.c:183
+msgid "40-bit (less secure)"
+msgstr "40-биттік (қауіпсіздігі төменірек)"
+
+#: ../properties/advanced-dialog.c:287
+msgid "PAP"
+msgstr "PAP"
+
+#: ../properties/advanced-dialog.c:300
+msgid "CHAP"
+msgstr "CHAP"
+
+#: ../properties/advanced-dialog.c:312
+msgid "MSCHAP"
+msgstr "MSCHAP"
+
+#: ../properties/advanced-dialog.c:324
+msgid "MSCHAPv2"
+msgstr "MSCHAPv2"
+
+#: ../properties/advanced-dialog.c:337
+msgid "EAP"
+msgstr "EAP"
+
+#: ../properties/nm-pptp-editor-plugin.c:29
+msgid "Point-to-Point Tunneling Protocol (PPTP)"
+msgstr "Point-to-Point Tunneling Protocol (PPTP)"
+
+#: ../properties/nm-pptp-editor-plugin.c:30
+msgid "Compatible with Microsoft and other PPTP VPN servers."
+msgstr "Microsoft және басқа PPTP VPN серверлерімен үйлесімді."
+
+#: ../shared/nm-utils/nm-shared-utils.c:264
+#, c-format
+msgid "object class '%s' has no property named '%s'"
+msgstr "«%s» объект класының «%s» атты қасиеті жоқ"
+
+#: ../shared/nm-utils/nm-shared-utils.c:271
+#, c-format
+msgid "property '%s' of object class '%s' is not writable"
+msgstr "«%s» қасиеті («%s» объект класының) жазу үшін қолжетімсіз"
+
+#: ../shared/nm-utils/nm-shared-utils.c:278
+#, c-format
+msgid "construct property \"%s\" for object '%s' can't be set after construction"
+msgstr ""
+"«%s» құрастыру қасиеті («%s» объектісі үшін) құрастырудан кейін орнатылмайды"
+
+#: ../shared/nm-utils/nm-shared-utils.c:286
+#, c-format
+msgid "'%s::%s' is not a valid property name; '%s' is not a GObject subtype"
+msgstr "«%s::%s» — жарамды қасиет атауы емес; «%s» — GObject ішкі түрі емес"
+
+#: ../shared/nm-utils/nm-shared-utils.c:295
+#, c-format
+msgid "unable to set property '%s' of type '%s' from value of type '%s'"
+msgstr "«%s» қасиетін (түрі «%s») «%s» түріндегі мәннен орнату мүмкін емес"
+
+#: ../shared/nm-utils/nm-shared-utils.c:306
+#, c-format
+msgid ""
+"value \"%s\" of type '%s' is invalid or out of range for property '%s' of type "
+"'%s'"
+msgstr ""
+"«%s» мәні (түрі «%s») «%s» қасиеті үшін (түрі «%s») жарамсыз немесе ауқымнан "
+"тыс"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:69
+#, c-format
+msgid "unable to get editor plugin name: %s"
+msgstr "түзеткіш плагинінің атауын алу мүмкін емес: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:103
+#, c-format
+msgid "missing plugin file \"%s\""
+msgstr "«%s» плагин файлы жоқ"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:109
+#, c-format
+msgid "cannot load editor plugin: %s"
+msgstr "түзеткіш плагинін жүктеу мүмкін емес: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:118
+#, c-format
+msgid "cannot load factory %s from plugin: %s"
+msgstr "плагиннен %s фабрикасын жүктеу мүмкін емес: %s"
+
+#: ../shared/nm-utils/nm-vpn-plugin-utils.c:144
+msgid "unknown error creating editor instance"
+msgstr "түзеткіш данасын жасау кезінде белгісіз қате орын алды"
+
+#: ../src/nm-pptp-service.c:193
+#, c-format
+msgid "invalid gateway “%s”"
+msgstr "«%s» шлюзі жарамсыз"
+
+#: ../src/nm-pptp-service.c:207
+#, c-format
+msgid "invalid integer property “%s”"
+msgstr "«%s» бүтін санды қасиеті жарамсыз"
+
+#: ../src/nm-pptp-service.c:217
+#, c-format
+msgid "invalid boolean property “%s” (not yes or no)"
+msgstr "жарамсыз логикалық «%s» қасиеті (иә немесе жоқ емес)"
+
+#: ../src/nm-pptp-service.c:224
+#, c-format
+msgid "unhandled property “%s” type %s"
+msgstr "өңделмеген «%s» қасиеті, түрі %s"
+
+#: ../src/nm-pptp-service.c:235
+#, c-format
+msgid "property “%s” invalid or not supported"
+msgstr "«%s» қасиеті жарамсыз немесе оған қолдау көрсетілмейді"
+
+#: ../src/nm-pptp-service.c:253
+msgid "No VPN configuration options."
+msgstr "VPN баптау опциялары жоқ."
+
+#: ../src/nm-pptp-service.c:273
+#, c-format
+msgid "Missing required option “%s”."
+msgstr "Қажетті «%s» опциясы жоқ."
+
+#: ../src/nm-pptp-service.c:293
+msgid "No VPN secrets!"
+msgstr "VPN құпиялары жоқ!"
+
+#: ../src/nm-pptp-service.c:447
+msgid "Could not find pptp client binary."
+msgstr "pptp клиентінің бинарлық файлы табылмады."
+
+#: ../src/nm-pptp-service.c:460
+msgid "Missing VPN gateway."
+msgstr "VPN шлюзі жоқ."
+
+#: ../src/nm-pptp-service.c:635
+msgid "Could not find the pppd binary."
+msgstr "pppd бинарлық файлы табылмады."
+
+#: ../src/nm-pptp-service.c:695
+msgid "Missing VPN username."
+msgstr "VPN пайдаланушы аты жоқ."
+
+#: ../src/nm-pptp-service.c:704
+msgid "Missing or invalid VPN password."
+msgstr "VPN паролі жоқ немесе жарамсыз."
+
+#: ../src/nm-pptp-service.c:810
+#, c-format
+msgid "couldn’t convert PPTP VPN gateway IP address “%s” (%d)"
+msgstr "PPTP VPN шлюзінің «%s» IP адресін түрлендіру мүмкін болмады (%d)"
+
+#: ../src/nm-pptp-service.c:828
+#, c-format
+msgid "couldn’t look up PPTP VPN gateway IP address “%s” (%d)"
+msgstr "PPTP VPN шлюзінің «%s» IP адресін іздеу мүмкін болмады (%d)"
+
+#: ../src/nm-pptp-service.c:852
+#, c-format
+msgid "no usable addresses returned for PPTP VPN gateway “%s”"
+msgstr "PPTP VPN «%s» шлюзі үшін жарамды адрестер қайтарылмады"
+
+#: ../src/nm-pptp-service.c:881
+msgid "Invalid or missing PPTP gateway."
+msgstr "PPTP шлюзі жарамсыз немесе жоқ."
+
+#: ../src/nm-pptp-service.c:1129
+msgid "Don’t quit when VPN connection terminates"
+msgstr "VPN қосылымы аяқталған кезде шықпау"
+
+#: ../src/nm-pptp-service.c:1130
+msgid "Enable verbose debug logging (may expose passwords)"
+msgstr "Толық жөндеу журналын іске қосу (парольдерді ашуы мүмкін)"
+
+#: ../src/nm-pptp-service.c:1131
+msgid "D-Bus name to use for this instance"
+msgstr "Осы дана үшін қолданылатын D-Bus атауы"
+
+#: ../src/nm-pptp-service.c:1152
+msgid ""
+"nm-pptp-service provides integrated PPTP VPN capability (compatible with "
+"Microsoft and other implementations) to NetworkManager."
+msgstr ""
+"nm-pptp-service NetworkManager үшін интеграцияланған PPTP VPN мүмкіндігін "
+"(Microsoft және басқа іске асырулармен үйлесімді) ұсынады."
